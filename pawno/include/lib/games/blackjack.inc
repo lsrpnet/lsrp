@@ -12,7 +12,7 @@ Podpisano: Mateusz.
 #define BLACKJACK_MAX_PLAYERS				4
 #define BLACKJACK_MAX_PLAYER_CARDS			6
 
-// StĂłĹ‚ do blackjacka
+// Stół do blackjacka
 #define OBJECT_BLACKJACK_TABLE				2188
 
 // Etapy

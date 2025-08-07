@@ -135,7 +135,7 @@ public OnPlayerConnect(playerid)
 		mysql_free_result()
 		
 		if(done) OnPlayerLogin(playerid)
-		else ShowPlayerDialog(playerid, D_LOGIN, DIALOG_STYLE_PASSWORD, Panel logowania, Witaj na serwerze SERVER_NAME.\nWprowadz haslo do konta, aby moc rozpoczac gre., Zaloguj, WyjdĹ¸)
+		else ShowPlayerDialog(playerid, D_LOGIN, DIALOG_STYLE_PASSWORD, Panel logowania, Witaj na serwerze SERVER_NAME.\nWprowadz haslo do konta, aby moc rozpoczac gre., Zaloguj, Wyjdź)
 	)
 	else
 	(
@@ -1024,7 +1024,7 @@ public SetPlayerSpawn(playerid)
 		
 		if(PlayerCache(playerid)(pArrestTime) (= 1)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Twój wyrok dobiegł końca.\nTeraz możesz opuścić areszt podchodząc do wyjścia i używając komendy /opusc, bądĹ¸ pozostać i grać dalej tutaj.\nMiłej gry!, OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Twój wyrok dobiegł końca.\nTeraz możesz opuścić areszt podchodząc do wyjścia i używając komendy /opusc, bądź¸ pozostać i grać dalej tutaj.\nMiłej gry!, OK, )
 		)
 		
 		return 1
@@ -1145,7 +1145,7 @@ public SetPlayerSpawn(playerid)
 	
 	SetCameraBehindPlayer(playerid)
 	
-	if(PlayerCache(playerid)(pHours) ( 1)	ShowPlayerDialog(playerid, D_INTRODUCTION, DIALOG_STYLE_MSGBOX, Wprowadzenie (1/2), Witaj na serwerze SERVER_NAME.\n\nPojawiłeś się w metrze Los Santos, na mieście znajdziesz wiele różnego rodzaju\ninstytucji, dzięki którym będziesz mógł przyjąć się do pracy\na także skorzystać z ich usług np. kupić telefon, bądĹ¸ zjeść obiad.\n\nNa pierwszy etat udaj się do urzędu miasta, by wyrobić dokumenty niezbędne do gry., Dalej, Zamknij)
+	if(PlayerCache(playerid)(pHours) ( 1)	ShowPlayerDialog(playerid, D_INTRODUCTION, DIALOG_STYLE_MSGBOX, Wprowadzenie (1/2), Witaj na serwerze SERVER_NAME.\n\nPojawiłeś się w metrze Los Santos, na mieście znajdziesz wiele różnego rodzaju\ninstytucji, dzięki którym będziesz mógł przyjąć się do pracy\na także skorzystać z ich usług np. kupić telefon, bądź¸ zjeść obiad.\n\nNa pierwszy etat udaj się do urzędu miasta, by wyrobić dokumenty niezbędne do gry., Dalej, Zamknij)
 	return 1
 )
 
@@ -1262,7 +1262,7 @@ public OnPlayerDeath(playerid, killerid, reason)
 					format(string, sizeof(string), %s\nKLAMSTWO PRZY WYBORZE SKONCZY SIE AUTOMATYCZNA, PERMAMENTNA BANICJA\n\n, string)
 					format(string, sizeof(string), %s(ffffff)Czy zabic Twoja postac?, string)
 
-					ShowPlayerDialog(playerid, D_FCK_DECISION, DIALOG_STYLE_MSGBOX, ĹšmierÄ‡ postaci, string, Zabij, Anuluj)
+					ShowPlayerDialog(playerid, D_FCK_DECISION, DIALOG_STYLE_MSGBOX, Śmierć postaci, string, Zabij, Anuluj)
 				)
 				else
 				(
@@ -1465,7 +1465,7 @@ public OnPlayerClickPlayer(playerid, clickedplayerid, source)
 	string(128)
 	MainPlayerTable(playerid) = clickedplayerid
 	
-	format(string, sizeof(string), WprowadĹ¸ treść prywatnej wiadomości, która zostanie wysłana do gracza %s., PlayerName(clickedplayerid))
+	format(string, sizeof(string), Wprowadź¸ treść prywatnej wiadomości, która zostanie wysłana do gracza %s., PlayerName(clickedplayerid))
 	ShowPlayerDialog(playerid, D_SEND_PW, DIALOG_STYLE_INPUT, Wysyłanie prywatnej wiadomości, string, Wyślij, Anuluj)
 	return 1
 )

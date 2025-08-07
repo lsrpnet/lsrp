@@ -5033,7 +5033,7 @@ CMD:szpital(playerid, params())
 	
 	if(PlayerCache(playerid)(pInsurance) )= gettime()) // ma ubezpieczenie
 	(
-		if(GroupData(insuranceID)(gCash) )= 45 && PlayerCache(playerid)(pInsuranceCount) (= 14) // grupa ma kasÄ™ i nie wykorzystaĹ‚ limitu
+		if(GroupData(insuranceID)(gCash) )= 45 && PlayerCache(playerid)(pInsuranceCount) (= 14) // grupa ma kasę i nie wykorzystał limitu
 		(
 			charge = 0
 		)
@@ -5058,7 +5058,7 @@ CMD:szpital(playerid, params())
 	(
 		if(PlayerCache(playerid)(pInsuranceCount) (= 14) // nie wykorzystal limitu
 		(
-			if(GroupData(insuranceID)(gCash) )= 45) // firma ma wiÄ™cej niĹĽ 45 dolce
+			if(GroupData(insuranceID)(gCash) )= 45) // firma ma więcej niż 45 dolce
 			(
 				GroupData(insuranceID)(gCash) -= 45
 				SaveGroup(insuranceID)
@@ -12296,8 +12296,8 @@ CMD:knebel(playerid, params())
 		if(PlayerCache(giveplayer_id)(pGagged) == playerid)
 		(
 			PlayerCache(giveplayer_id)(pGagged) = INVALID_PLAYER_ID
-			GuiMsg(playerid,Ĺ’ciągnąłeś knebel.,0)
-			GuiMsg(giveplayer_id,Ĺ’ciągnięto Ci knebel z ust.,0)
+			GuiMsg(playerid,Ściągnąłeś knebel.,0)
+			GuiMsg(giveplayer_id,Ściągnięto Ci knebel z ust.,0)
 			return 1
 		)
 
@@ -12473,7 +12473,7 @@ CMD:worek(playerid, params())
 			PlayerCache(giveplayer_id)(pBagged) = INVALID_PLAYER_ID
 			UnbagPlayerHead(giveplayer_id)
 
-			GuiMsg(playerid,Ĺ’ciągnąłeś worek z głowy swojej ofiary.,0)
+			GuiMsg(playerid,Ściągnąłeś worek z głowy swojej ofiary.,0)
 			GuiMsg(giveplayer_id,Z Twojej głowy ściągnięto worek, znów widzisz wszystko dookoła.,0)
 			return 1
 		)
@@ -13176,18 +13176,18 @@ CMD:camper(playerid, params())
 	vehid = GetClosestVehicle(playerid, 5.0)
 	if(vehid == INVALID_VEHICLE_ID)
 	(
-		GuiMsg(playerid, W pobli?u nie ma ?adnego wozu kempingowego., 1)
+		GuiMsg(playerid, W pobliżu nie ma żadnego wozu kempingowego., 1)
 		return 1
 	)
 
 	if(GetVehicleModel(vehid) != 508)
 	(
-		GuiMsg(playerid, W pobli?u nie ma ?adnego Campera., 1)
+		GuiMsg(playerid, W pobliżu nie ma żadnego Campera., 1)
 		return 1
 	)
 	if(CarInfo(vehid)(cLocked) == true)
 	(
-		GuiMsg(playerid, Najbli?szy Camper jest zamkniety., 1)
+		GuiMsg(playerid, Najbliższy Camper jest zamkniety., 1)
 		return 1
 	)
 	TogglePlayerControllable(playerid, false)
@@ -13209,7 +13209,7 @@ CMD:boat(playerid, params())
 		GetVehiclePos(currentVeh, Pos(0), Pos(1), Pos(2))
 		if(CarInfo(currentVeh)(cLocked) == true)
 		(
-			GuiMsg(playerid, Ta 3ódĹş jest zamkniety., 1)
+			GuiMsg(playerid, Ta łódź jest zamkniety., 1)
 			return 1
 		)
 		SetPlayerPos(playerid, Pos(0), Pos(1), Pos(2)+5.0)
@@ -13221,18 +13221,18 @@ CMD:boat(playerid, params())
 	vehid = GetClosestVehicle(playerid, 5.0)
 	if(vehid == INVALID_VEHICLE_ID)
 	(
-		GuiMsg(playerid, W pobli?u nie ma ?adnej 3odzi., 1)
+		GuiMsg(playerid, W pobliżu nie ma żadnej łodzi., 1)
 		return 1
 	)
 
 	if(GetVehicleModel(vehid) != 484 && GetVehicleModel(vehid) != 454)
 	(
-		GuiMsg(playerid, W pobli?u nie ma ?adnej 3odzi., 1)
+		GuiMsg(playerid, W pobliżu nie ma żadnej łodzi., 1)
 		return 1
 	)
 	if(CarInfo(vehid)(cLocked) == true)
 	(
-		GuiMsg(playerid, Najbli?sza 3ódĹş jest zamknieta., 1)
+		GuiMsg(playerid, Najbliższa łódź jest zamknieta., 1)
 		return 1
 	)
 	TogglePlayerControllable(playerid, false)
@@ -13819,7 +13819,7 @@ CMD:handel(playerid, params())
 		(
 			if(countCornerDealers(i) )= 1)
 			(
-				occupied = true // ktoĹ› handluje na cornerze na strefie tego gangu
+				occupied = true // ktoś handluje na cornerze na strefie tego gangu
 			)
 		)
 	)

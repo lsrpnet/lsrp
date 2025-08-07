@@ -420,7 +420,7 @@ new		SKIP_OBJECTS = 	false		// false in stable
 #define SEX_DOGGY	4	// Sex na pieska
 
 // Typy dni do pogody
-#define DAY_FREEZING	1  // MroĽnie zimno (poniżej 0 *C)
+#define DAY_FREEZING	1  // Mroźnie zimno (poniżej 0 *C)
 #define DAY_COLD		2  // Zimno (0 - 15 *C)
 #define DAY_WARM		3  // Ciepło (16 - 25 *C)
 #define DAY_HOT			4  // Gorąco (26 - 36 *C)

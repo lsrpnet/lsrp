@@ -192,7 +192,7 @@ stock slots_StartGame(playerid,gameid)
 	PlayerTextDrawSetString(playerid,TextDrawCardWelcome(playerid), ~g~Jednoreki bandyta)
 	PlayerTextDrawShow(playerid,TextDrawCardWelcome(playerid))
 	
-	// CoĹ› siÄ™ zbugowaĹ‚ ten textdraw, to trudno, komentujÄ™
+	// Coś się zbugował ten textdraw, to trudno, komentuję
 	//PlayerTextDrawSetString(playerid,TextDrawCardTable(playerid),~n~~n~~n~~n~~n~~n~~n~~n~~n~~n~~n~~n~~n~)
 	//PlayerTextDrawShow(playerid,TextDrawCardTable(playerid))
 	

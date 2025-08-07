@@ -5532,7 +5532,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 									format(string, sizeof(string), ** Twój pager pokazał na ekranie numer %d. **, Phones(phoneid)(phoneNumber))
 									SendClientMessage(i, COLOR_LIGHTRED, string)
 
-									SendClientMessage(playerid, COLOR_DO, ** W słuchawce słychać dĽwięk potwierdzenia połączenia. **)
+									SendClientMessage(playerid, COLOR_DO, ** W słuchawce słychać dźwięk potwierdzenia połączenia. **)
 									return 1
 								)
 							)
@@ -6767,7 +6767,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 						printf((casino) %d nie ma bw, kajdanek, kajdanek still, clickedplayerid)
 						if(!IsPlayerInAnyVehicle(clickedplayerid))
 						(
-							printf((casino) %d nie w pojeĽdzie, clickedplayerid)
+							printf((casino) %d nie w pojeździe, clickedplayerid)
 							BJInviteToGame(playerid, clickedplayerid)
 							return 1
 						)
@@ -6775,7 +6775,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				)
 			)
 
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystąpił błąd, Nie możesz teraz zaprosić tego gracza. Gracz nie może:\n\nByć niepodłączony, nie zalogowany lub nie zespawnowany\nNie może mieć BW lub być skutym\nNie może być w pojeĽdzie, OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystąpił błąd, Nie możesz teraz zaprosić tego gracza. Gracz nie może:\n\nByć niepodłączony, nie zalogowany lub nie zespawnowany\nNie może mieć BW lub być skutym\nNie może być w pojeździe, OK, )
 			return 1
 		)
 		else
@@ -7271,7 +7271,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					(
 						if(CanPlayerHearPhone(i, Call(callid)(calledDevID)))
 						(
-							SendClientMessage(i, COLOR_DO, ** Słyszysz dĽwięk telefonu w pobliżu. Brzmi jak budka telefoniczna. **)
+							SendClientMessage(i, COLOR_DO, ** Słyszysz dźwięk telefonu w pobliżu. Brzmi jak budka telefoniczna. **)
 							PlayerPlaySound(i, 20600, 0.0, 0.0, 0.0)
 						)
 					)
@@ -9361,7 +9361,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			)
 			else
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystšpił błšd, Nie posiadasz u nas konta, załóż je na WEB_URL., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystąpił błąd, Nie posiadasz u nas konta, załóż je na WEB_URL., OK, )
 
 				printf((mysql) Gracz %s nie został odnaleziony w bazie danych - zostaje wyrzucony z serwera., PlayerRealName(playerid))
 				Kick(playerid)
@@ -9390,7 +9390,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			)
 			else
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystšpił błšd, Obecnie na serwerze zalogowana jest już jaka? postać z tego konta globalnego., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystąpił błąd, Obecnie na serwerze zalogowana jest już jaka? postać z tego konta globalnego., OK, )
 				Kick(playerid)
 			)
 		)
