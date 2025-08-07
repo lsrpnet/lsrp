@@ -6,7 +6,7 @@ ls-rp.net server source code
 
 | Name                                            | Status         |
 | ----------------------------------------------- | -------------- |
-| gamemode.pwn                                    | 0% (0/280)     |
+| gamemode.pwn                                    | 100% (280/280) |
 | lib\casino\blackjack.inc                        | 0% (0/482)     |
 | lib\casino\casino.inc                           | 0% (0/12)      |
 | lib\games\basket.inc                            | 0% (0/92)      |
