@@ -36,7 +36,7 @@ ls-rp.net server source code
 | lib\cmd.inc                                     | 0% (0/14621)   |
 | lib\config.inc                                  | 0% (0/5471)    |
 | lib\cooking.inc                                 | 0% (0/517)     |
-| lib\DB.inc                                      | 0% (0/20)      |
+| lib\DB.inc                                      | 100% (20/20)   |
 | lib\dialog.inc                                  | 0% (0/9940)    |
 | lib\door.inc                                    | 0% (0/1212)    |
 | lib\ducktape.inc                                | 0% (0/314)     |
