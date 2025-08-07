@@ -246,7 +246,7 @@ stock ShowGangZoneSummary(playerid, gangzone_id, type = GZ_SUMMARY_VISITOR)
 (
 	if(!GangZoneInfo(gangzone_id)(gUID) || !GangZoneInfo(gangzone_id)(gOwner))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst±pił bł±d, Cos jest nie tak z ta strefa. Zgłos to do administratora., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystąpił błąd, Cos jest nie tak z ta strefa. Zgłos to do administratora., OK, )
 		return 1
 	)
 

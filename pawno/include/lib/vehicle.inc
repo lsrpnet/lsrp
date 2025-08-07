@@ -197,7 +197,7 @@ public SaveVehicle(gameid, what)
 	)
 	if(what & SAVE_VEH_THINGS)
 	(
-		// Pozostałe (wła¶ciciel, model, nazwa, last activity)
+		// Pozostałe (właściciel, model, nazwa, last activity)
 		format(query, sizeof(query),  car_owner = %d, car_ownertype = %d, car_model = %d, car_name = %s, car_register = %d,
 		CarInfo(gameid)(cOwner),
 		CarInfo(gameid)(cOwnerType),

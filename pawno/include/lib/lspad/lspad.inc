@@ -313,7 +313,7 @@ stock LSPad_Cars(playerid, action) (
 		)
 
 		if(iindex == 0) (
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Nie posiadasz żadnych pojazdów z zamkiem elektronicznym (lub nie s± zespawnowane)., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Nie posiadasz żadnych pojazdów z zamkiem elektronicznym (lub nie są zespawnowane)., OK, )
 		)
 
 		LSPad_ReopenAnn(playerid) = 0
@@ -491,7 +491,7 @@ public LSPad_PlayerTDListener(playerid, PlayerText:playertextid) (
 		LSPad_Bank(playerid, 1)
 	) else if(playertextid == LSPad_SettingsCode) (
 		itemid = PlayerCache(playerid)(pLSPadItemID)
-		ShowPlayerDialog(playerid, D_LSPAD_NEWPASSWORD, DIALOG_STYLE_INPUT, ItemInfo(itemid)(iName), Wpisz nowe 4-cyfrowe hasło lub 0 aby usunać hasło z urz±dzenia., Ustaw, Wyjdzź)
+		ShowPlayerDialog(playerid, D_LSPAD_NEWPASSWORD, DIALOG_STYLE_INPUT, ItemInfo(itemid)(iName), Wpisz nowe 4-cyfrowe hasło lub 0 aby usunać hasło z urządzenia., Ustaw, Wyjdzź)
 	) else (
 
 		for(i = 0 i ( 8 i++) (

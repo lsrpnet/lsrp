@@ -3623,7 +3623,7 @@ CMD:tel(playerid, params())
 								format(string, sizeof(string), ** Twój pager pokazał na ekranie numer %d. **, PlayerCache(playerid)(pPhoneNumber))
 								SendClientMessage(i, COLOR_LIGHTRED, string)
 
-								SendClientMessage(playerid, COLOR_DO, ** W słuchawce słychać dźwięk potwierdzenia połÂ±czenia. **)
+								SendClientMessage(playerid, COLOR_DO, ** W słuchawce słychać dźwięk potwierdzenia połączenia. **)
 								return 1
 							)
 						)
@@ -3865,7 +3865,7 @@ CMD:od(playerid, params()) return cmd_odbierz(playerid, params)
 
 CMD:zakoncz(playerid, params())
 (
-	// W poniższym kodzie zakładamy że kończÂ±cy rozmowę to dzwoniÂ±cy a nie odbireajÂ±cy nawet jeżeli to nie prawda.
+	// W poniższym kodzie zakładamy że kończący rozmowę to dzwoniący a nie odbireający nawet jeżeli to nie prawda.
 	// Logia się zgadza przez ustalenie kto jest tym drugim i operowaniem na zasadzie zminnej other (drugi).
 
 	callid = PlayerCache(playerid)(pCall)
@@ -5012,7 +5012,7 @@ CMD:szpital(playerid, params())
 
 	if(PlayerCache(playerid)(pHospitalization))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystąpił błąd, JesteśÂ¶ w trakcie hospitalizacji, powinieneś leżeć w swojej sali., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystąpił błąd, Jesteś w trakcie hospitalizacji, powinieneś leżeć w swojej sali., OK, )
 		return 1
 	)
 	if(PlayerCache(playerid)(pAJ))

@@ -247,12 +247,12 @@ public BJTextDrawClickListener(playerid, Text:clickedid) (
 				)
 				if(strlen(list_players))
 				(
-					ShowPlayerDialog(playerid, D_BLACKJACK_INVITE, DIALOG_STYLE_LIST, Gracze znajduj±cy się w pobliżu:, list_players, Zapros, Zamknij)
+					ShowPlayerDialog(playerid, D_BLACKJACK_INVITE, DIALOG_STYLE_LIST, Gracze znajdujący się w pobliżu:, list_players, Zapros, Zamknij)
 					return 1
 				)
 				else
 				(
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_LIST, Wyst±pił bł±d., W pobliżu nie ma żadnych graczy., OK, )
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_LIST, Wystąpił błąd., W pobliżu nie ma żadnych graczy., OK, )
 					return 1
 				)
 

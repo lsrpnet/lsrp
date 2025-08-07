@@ -261,14 +261,14 @@ public OnPlayerPickUpPickup(playerid, pickupid)
 		gangzone_id = GetCurrentPlayerGangZone(playerid)
 		if(gangzone_id == -1)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst±pił bł±d, Ten pickup niedziała tak jak powinien. Zgło¶ to Administracji., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystąpił błąd, Ten pickup niedziała tak jak powinien. Zgłoś to Administracji., OK, )
 			return 1
 		)
 
 		group_id_fix = GetGroupID(GangZoneInfo(gangzone_id)(gOwner))
 		if(!GroupData(group_id_fix)(gUID))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst±pił bł±d, Ten pickup niedziała tak jak powinien. Zgło¶ to Administracji., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystąpił błąd, Ten pickup niedziała tak jak powinien. Zgłoś to Administracji., OK, )
 			return 1
 		)
 
@@ -279,7 +279,7 @@ public OnPlayerPickUpPickup(playerid, pickupid)
 		)
 
 		string(128)
-		format(string, sizeof(string), Aktualnie w magazynie znajduje się %d marihuany.\nKolejna dostawa pojawi się w poniedziałek.\nBierz ile potrzeba ale używaj z głow±.\n\nWpisz ilo¶ć do pobrania, GangZoneInfo(gangzone_id)(gMarihuana))
+		format(string, sizeof(string), Aktualnie w magazynie znajduje się %d marihuany.\nKolejna dostawa pojawi się w poniedziałek.\nBierz ile potrzeba ale używaj z głową.\n\nWpisz ilość do pobrania, GangZoneInfo(gangzone_id)(gMarihuana))
 		ShowPlayerDialog(playerid, D_GETZONE_MARIHUANA, DIALOG_STYLE_INPUT, Magazyn marihuany, string, OK, Anuluj)
 		return 1
 	)
@@ -288,14 +288,14 @@ public OnPlayerPickUpPickup(playerid, pickupid)
 		gangzone_id = GetCurrentPlayerGangZone(playerid)
 		if(gangzone_id == -1)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst±pił bł±d, Ten pickup niedziała tak jak powinien. Zgło¶ to Administracji., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystąpił błąd, Ten pickup niedziała tak jak powinien. Zgłoś to Administracji., OK, )
 			return 1
 		)
 
 		group_id_fix = GetGroupID(GangZoneInfo(gangzone_id)(gOwner))
 		if(!GroupData(group_id_fix)(gUID))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst±pił bł±d, Ten pickup niedziała tak jak powinien. Zgło¶ to Administracji., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystąpił błąd, Ten pickup niedziała tak jak powinien. Zgłoś to Administracji., OK, )
 			return 1
 		)
 
@@ -306,7 +306,7 @@ public OnPlayerPickUpPickup(playerid, pickupid)
 		)
 
 		string(128)
-		format(string, sizeof(string), Aktualnie w magazynie znajduje się %d amfetaminy.\nKolejna dostawa pojawi się w poniedziałek.\nBierz ile potrzeba ale używaj z głow±.\n\nWpisz ilo¶ć do pobrania, GangZoneInfo(gangzone_id)(gAmp))
+		format(string, sizeof(string), Aktualnie w magazynie znajduje się %d amfetaminy.\nKolejna dostawa pojawi się w poniedziałek.\nBierz ile potrzeba ale używaj z głową.\n\nWpisz ilość do pobrania, GangZoneInfo(gangzone_id)(gAmp))
 		ShowPlayerDialog(playerid, D_GETZONE_AMP, DIALOG_STYLE_INPUT, Magazyn Fety, string, OK, Anuluj)
 		return 1
 	)
@@ -315,14 +315,14 @@ public OnPlayerPickUpPickup(playerid, pickupid)
 		gangzone_id = GetCurrentPlayerGangZone(playerid)
 		if(gangzone_id == -1)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst±pił bł±d, Ten pickup niedziała tak jak powinien. Zgło¶ to Administracji., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystąpił błąd, Ten pickup niedziała tak jak powinien. Zgłoś to Administracji., OK, )
 			return 1
 		)
 
 		group_id_fix = GetGroupID(GangZoneInfo(gangzone_id)(gOwner))
 		if(!GroupData(group_id_fix)(gUID))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst±pił bł±d, Ten pickup niedziała tak jak powinien. Zgło¶ to Administracji., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystąpił błąd, Ten pickup niedziała tak jak powinien. Zgłoś to Administracji., OK, )
 			return 1
 		)
 
@@ -333,7 +333,7 @@ public OnPlayerPickUpPickup(playerid, pickupid)
 		)
 
 		string(128)
-		format(string, sizeof(string), Aktualnie w magazynie znajduje się %d metaamfetaminy.\nKolejna dostawa pojawi się w poniedziałek.\nBierz ile potrzeba ale używaj z głow±.\n\nWpisz ilo¶ć do pobrania, GangZoneInfo(gangzone_id)(gMetaamp))
+		format(string, sizeof(string), Aktualnie w magazynie znajduje się %d metaamfetaminy.\nKolejna dostawa pojawi się w poniedziałek.\nBierz ile potrzeba ale używaj z głową.\n\nWpisz ilość do pobrania, GangZoneInfo(gangzone_id)(gMetaamp))
 		ShowPlayerDialog(playerid, D_GETZONE_METAAMP, DIALOG_STYLE_INPUT, Magazyn Mety, string, OK, Anuluj)
 		return 1
 	)

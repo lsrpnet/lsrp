@@ -121,7 +121,7 @@ task OnMinuteTimer(60000)()
 					)
 				)
 
-				// Łatka na obecn± chwile - system o¶wietlenia do zmiany.
+				// Łatka na obecną chwile - system oświetlenia do zmiany.
 				if(Plants(plantid)(plantVW) == 0)
 					Plants(plantid)(plantSun) += 4
 				else
@@ -636,7 +636,7 @@ task OnMinuteTimer(60000)()
 				GetVehiclePos(vehid, VehX, VehY, VehZ)
 
 				string(128)
-				format(string, sizeof(string), (( Pojazd %s (%s) zostaje odspawnowany ponieważ jego wła¶ciciel wyszedł z gry ponad 5 minut temu. )), CarInfo(vehid)(cName), VehicleData(CarInfo(vehid)(cModel) - 400)(vName))
+				format(string, sizeof(string), (( Pojazd %s (%s) zostaje odspawnowany ponieważ jego właściciel wyszedł z gry ponad 5 minut temu. )), CarInfo(vehid)(cName), VehicleData(CarInfo(vehid)(cModel) - 400)(vName))
 				
 				foreach(Player, i)
 				(
@@ -4204,19 +4204,19 @@ task OnSecondTimer(1000)()
 
 			if(floatround(Gangbang(gbid)(gbAttackingDeaths) / 2.0) ) a_count)
 			(
-				// Wygrana broni±cych
+				// Wygrana broniących
 				// lock terenu
 			)
 
 			if(floatround(Gangbang(gbid)(gbDefendingDeaths) / 2.0) ) d_count)
 			(
-				// Wygrana atakuj±cych
+				// Wygrana atakujących
 				// przekazanie terenu
 			)
 
 			if(Gangbang(gbid)(gbStartTime) + 60*10 ( gettime())
 			(
-				// koniec i wygrywaj± broni±cy
+				// koniec i wygrywają broniący
 			)
 		)
 	)

@@ -799,11 +799,11 @@ public ShowPlayerItemInfo(playerid, itemid)
 		case ITEM_DECKOFCARDS:
 			format(fdesc, sizeof(fdesc), Karty do grania.\nPo użyciu będziesz mógł zagrać w Blackjacka z osobami wokół Ciebie.\nPodczas używania kart nie możesz być w trakcie oferowania/przyjmowania oferty, hospitalizacji, malowania pojazdu, etc.\n\nOpis przedmiotu: %s, desc)
 		case ITEM_LSPAD:
-			format(fdesc, sizeof(fdesc), Urz±dzenie elektroniczne posiadaj±ce wiele funkcji, od pogody i kalendarza do zarz±dzania elektronicznymi zamkami i sprawdzania stanu konta bankowego.\nTapeta: %d\n\nOpis przedmiotu:\n\t %s, v1, desc)
+			format(fdesc, sizeof(fdesc), Urządzenie elektroniczne posiadające wiele funkcji, od pogody i kalendarza do zarządzania elektronicznymi zamkami i sprawdzania stanu konta bankowego.\nTapeta: %d\n\nOpis przedmiotu:\n\t %s, v1, desc)
 		case ITEM_ELOCK:
 			format(fdesc, sizeof(fdesc), Zamek Elektroniczny. Pozawala na zdalne kontrolowanie drzwi\npoprzez LSPad.\n\nOpis przedmiotu:\n\t %s, desc)
 		case ITEM_PAGER:
-			format(fdesc, sizeof(fdesc), Pager. Pozwala na odebranie wiadomo¶ci o chęci kontaktu z Tob± bez płacenia za drogie połaczenie telefoniczne.\nNumer: %d\n\nOpis przedmiotu:\n\t %s, v1, desc)
+			format(fdesc, sizeof(fdesc), Pager. Pozwala na odebranie wiadomości o chęci kontaktu z Tobą bez płacenia za drogie połaczenie telefoniczne.\nNumer: %d\n\nOpis przedmiotu:\n\t %s, v1, desc)
 		case ITEM_ROPE:
 			format(fdesc, sizeof(fdesc), Zwyczajny zwój liny pozwalający na unieruchomienie innej osoby, lub wykonanie prymitywnego stryczka.\n/lina (ID Gracza) \n\nOpis przedmiotu:\n\t %s, desc)
 		case ITEM_HEADBAG:

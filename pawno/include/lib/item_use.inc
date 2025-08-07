@@ -2257,7 +2257,7 @@ public OnPlayerUseItem(playerid, itemid)
 						(
 							if(DoorData(doorid)(dElock))
 							(
-								ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystąpił błąd, Te drzwi maj± już elektroniczny zamek., OK, )
+								ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystąpił błąd, Te drzwi mają już elektroniczny zamek., OK, )
 								return 1
 							)
 							else 
@@ -2265,7 +2265,7 @@ public OnPlayerUseItem(playerid, itemid)
 								DoorData(doorid)(dElock) = 1
 								SaveDoor(doorid, SAVE_DOOR_THINGS)
 
-								ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Elektroniczny zamek został założony.\nPamiętaj aby odegrać odpowiedni± akcję (min. 5 minut)., OK, )
+								ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Elektroniczny zamek został założony.\nPamiętaj aby odegrać odpowiednią akcję (min. 5 minut)., OK, )
 								ApplyAnimation(playerid, INT_HOUSE, wash_up, 7.1, 0, 0, 0, 0, 0, 1)
 
 								DeleteItem(ItemInfo(itemid)(iUID))
@@ -2274,7 +2274,7 @@ public OnPlayerUseItem(playerid, itemid)
 						)
 						else
 						(
-							ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystąpił błąd, Wła¶ciciel drzwi musi być obecny przy zakładaniu zamka., OK, )
+							ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystąpił błąd, Właściciel drzwi musi być obecny przy zakładaniu zamka., OK, )
 							return 1
 						)
 	  			  	)
@@ -2442,7 +2442,7 @@ public OnPlayerUseItem(playerid, itemid)
 				CreatePlant(PLANT_WEED, Marihuana, PosX, PosY, PosZ, interior, world)
 				DeleteItem(ItemInfo(itemid)(iUID))
 
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Twoja ro¶linka została zasadzona. Pamiętaj aby o ni± dbać., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Twoja roślinka została zasadzona. Pamiętaj aby o nią dbać., OK, )
 				return 1
 			) else (
 				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Musisz stać przy doniczce aby zasadzić krzak marihuany.\nDostępne modele: 2203, 2242, 743, 742, 741, OK, )

@@ -2777,7 +2777,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			)
 			else
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystąpił błąd, Ten gracz nie posiada jeszcze domu w zwi±zku z czym nie może kupić pojazdu., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystąpił błąd, Ten gracz nie posiada jeszcze domu w związku z czym nie może kupić pojazdu., OK, )
 			)
 
 			MainPlayerTable(playerid) = 0
@@ -5532,7 +5532,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 									format(string, sizeof(string), ** Twój pager pokazał na ekranie numer %d. **, Phones(phoneid)(phoneNumber))
 									SendClientMessage(i, COLOR_LIGHTRED, string)
 
-									SendClientMessage(playerid, COLOR_DO, ** W słuchawce słychać dĽwięk potwierdzenia poł±czenia. **)
+									SendClientMessage(playerid, COLOR_DO, ** W słuchawce słychać dĽwięk potwierdzenia połączenia. **)
 									return 1
 								)
 							)
@@ -5644,7 +5644,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			(
 				if(Phones(phoneid)(phoneBusy))
 				(
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst±pił bł±d, Kto¶ już używa tej budki., OK, )
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystąpił błąd, Ktoś już używa tej budki., OK, )
 					EndCall(callid)
 					return 0
 				)
@@ -6661,7 +6661,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			)
 			else
 			(
-				ShowPlayerDialog(playerid, D_LSPAD_NEWPASSWORD, DIALOG_STYLE_INPUT, ItemInfo(itemid)(iName), Haslo niepoprawne!\n\nWpisz nowe 4-cyfrowe hasło lub 0 aby usunać hasło z urz±dzenia., Ustaw, Wyjdzź)
+				ShowPlayerDialog(playerid, D_LSPAD_NEWPASSWORD, DIALOG_STYLE_INPUT, ItemInfo(itemid)(iName), Haslo niepoprawne!\n\nWpisz nowe 4-cyfrowe hasło lub 0 aby usunać hasło z urządzenia., Ustaw, Wyjdzź)
 				return 1
 			)
 
@@ -6690,7 +6690,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			)
 			else
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst±pił bł±d, Tyle nie dostaniesz. Nie spłaciłe¶ jeszcze ostatniej partii!, OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystąpił błąd, Tyle nie dostaniesz. Nie spłaciłeś jeszcze ostatniej partii!, OK, )
 				return 1	
 			)
 		)
@@ -6717,7 +6717,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			)
 			else
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst±pił bł±d, Tyle nie dostaniesz. Nie spłaciłe¶ jeszcze ostatniej partii!, OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystąpił błąd, Tyle nie dostaniesz. Nie spłaciłeś jeszcze ostatniej partii!, OK, )
 				return 1	
 			)
 		)
@@ -6744,7 +6744,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			)
 			else
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst±pił bł±d, Tyle nie dostaniesz. Nie spłaciłe¶ jeszcze ostatniej partii!, OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystąpił błąd, Tyle nie dostaniesz. Nie spłaciłeś jeszcze ostatniej partii!, OK, )
 				return 1	
 			)
 		)
@@ -6775,7 +6775,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				)
 			)
 
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst±pił bł±d, Nie możesz teraz zaprosić tego gracza. Gracz nie może:\n\nByć niepodł±czony, nie zalogowany lub nie zespawnowany\nNie może mieć BW lub być skutym\nNie może być w pojeĽdzie, OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystąpił błąd, Nie możesz teraz zaprosić tego gracza. Gracz nie może:\n\nByć niepodłączony, nie zalogowany lub nie zespawnowany\nNie może mieć BW lub być skutym\nNie może być w pojeĽdzie, OK, )
 			return 1
 		)
 		else
@@ -6793,7 +6793,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			if(stime + 10 ( gettime()) (
 				MainPlayerTable(playerid) = 0
 				SecondPlayerTable(playerid) = 0
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst±pił bł±d, To zaporszenie straciło już swoj± ważno¶ć., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystąpił błąd, To zaporszenie straciło już swoją ważność., OK, )
 				return 1
 			)
 			else
@@ -7665,13 +7665,13 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			group_id_fix = GetPlayerDutyGroupID(playerid)
 			if(group_id_fix == INVALID_GROUP_ID)
 			(
-				GuiMsg(playerid, Musisz być na duty grupy, któr± chcesz wydać kartę.,1)
+				GuiMsg(playerid, Musisz być na duty grupy, którą chcesz wydać kartę.,1)
 				return 1
 			)
 
 			if(!IsPlayerPermissedGroup(playerid, GroupData(group_id_fix)(gUID), PERM_LEADER))
 			(
-				GuiMsg(playerid, Nie jeste¶ liderem tej grupy!,1)
+				GuiMsg(playerid, Nie jesteś liderem tej grupy!,1)
 				return 1
 			)
 

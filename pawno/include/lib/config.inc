@@ -423,8 +423,8 @@ new		SKIP_OBJECTS = 	false		// false in stable
 #define DAY_FREEZING	1  // MroĽnie zimno (poniżej 0 *C)
 #define DAY_COLD		2  // Zimno (0 - 15 *C)
 #define DAY_WARM		3  // Ciepło (16 - 25 *C)
-#define DAY_HOT			4  // Gor±co (26 - 36 *C)
-#define DAY_HELL		5  // Piekielnie gor±co (36+ *C)
+#define DAY_HOT			4  // Gorąco (26 - 36 *C)
+#define DAY_HELL		5  // Piekielnie gorąco (36+ *C)
 
 // Typy dni ogólnie, w tygodniu
 #define DAY_SATURDAY 0
@@ -1759,7 +1759,7 @@ PlayerText:pLicenseLine(MAX_PLAYERS)
 
 Text:LSPad_Frame(22)
 Text:LSPad_MenuTD(12)
-Text:LSPad_BG(MAX_PLAYERS) // (N) - Używany w stary sposób bo kolejno¶ci się pierdol±.
+Text:LSPad_BG(MAX_PLAYERS) // (N) - Używany w stary sposób bo kolejności się pierdolą.
 PlayerText:LSPad_MenuTDClickable(10)
 PlayerText:LSPad_Taskbar(9)
 PlayerText:LSPad_Calendar(5)
