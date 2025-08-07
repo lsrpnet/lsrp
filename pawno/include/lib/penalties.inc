@@ -16,7 +16,7 @@ public LoadPlayerPunish(playerid)
 			)
 			case PUNISH_BLOCK_CHAR:
 			(
-				format(string, sizeof(string), Ta postaÊ zosta≥a zablokowana z powodem: %s\n\nZa≥Ûø nowπ lub ubiegaj siÍ o odblokowanie poprzedniej., punish_reason)
+				format(string, sizeof(string), Ta postaƒá zosta≈Ça zablokowana z powodem: %s\n\nZa≈Ç√≥≈º nowƒÖ lub ubiegaj siƒô o odblokowanie poprzedniej., punish_reason)
 				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 			
 				Kick(playerid)
@@ -245,7 +245,7 @@ hrp_Ban(playerid, giveplayer_id, reason(), days)
 	TextDrawSetString(Text:TextDrawPunishInfo, string)
 
 	TextDrawShowForAll(Text:TextDrawPunishInfo)
-	// Jeúli jest w pojeüdzie
+	// Je≈õli jest w poje≈∫dzie
 	if(GetPlayerState(playerid) == PLAYER_STATE_DRIVER)
 	(
 		vehid = GetPlayerVehicleID(playerid)
@@ -298,7 +298,7 @@ hrp_AdminJail(playerid, giveplayer_id, reason(), time)
 	SetPlayerInterior(playerid, 0)
 	SetPlayerVirtualWorld(playerid, playerid + 1000)
 
-	// Jeúli jest w pojeüdzie
+	// Je≈õli jest w poje≈∫dzie
 	if(GetPlayerState(playerid) == PLAYER_STATE_DRIVER)
 	(
 		vehid = GetPlayerVehicleID(playerid)

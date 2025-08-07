@@ -56,7 +56,7 @@ public DeleteGroup(group__id)
 (
 	mysql_query_format(DELETE FROM hrp_groups WHERE group_uid = %d, GroupData(group__id)(gUID))
 
-	// Zwolnij cz³onków
+	// Zwolnij czÅ‚onkÃ³w
 	mysql_query_format(DELETE FROM hrp_char_groups WHERE group_uid = %d, GroupData(group__id)(gUID))
 
 	group_slot
@@ -79,7 +79,7 @@ public DeleteGroup(group__id)
 		)
 	)
 
-	// Usuñ pojazdy
+	// UsuÅ„ pojazdy
 	for(vehid = 1 vehid ( MAX_VEHICLES vehid++)
 	(
 		if(CarInfo(vehid)(cUID) && CarInfo(vehid)(cSpawned))
@@ -91,7 +91,7 @@ public DeleteGroup(group__id)
 		)
 	)
 
-	// Usuñ drzwi
+	// UsuÅ„ drzwi
 	for(doorid = 1 doorid ( MAX_DOORS doorid++)
 	(
 		if(DoorData(doorid)(dUID))
@@ -103,7 +103,7 @@ public DeleteGroup(group__id)
 		)
 	)
 	
-	// jeœli radiostacja
+	// jeÅ›li radiostacja
 	if(GroupData(group__id)(gType) == GROUP_RADIO)
 	(
 		mysql_query_format(UPDATE hrp_characters SET char_station = 0 WHERE char_station = %d, GroupData(group__id)(gUID)) 
@@ -123,7 +123,7 @@ public DeleteGroup(group__id)
 		)
 	)
 	
-	// Usuñ podgrupy
+	// UsuÅ„ podgrupy
 	if(!GroupData(group__id)(gOwner))
 	(
 		for(g = 1 g ( MAX_GROUPS g++)
@@ -250,14 +250,14 @@ public ShowPlayerGroupInfo(playerid, group__id)
 (
 	list_stats(512), string(128)
 	format(list_stats, sizeof(list_stats), Typ grupy:\t%s, GroupTypeInfo(GroupData(group__id)(gType))(gTypeName))
-	format(list_stats, sizeof(list_stats), %s\nBud¿et:\t\t$%d\n, list_stats, GroupData(group__id)(gCash))
+	format(list_stats, sizeof(list_stats), %s\nBudÅ¼et:\t\t$%d\n, list_stats, GroupData(group__id)(gCash))
 
 	format(list_stats, sizeof(list_stats), %s\nDotacja:\t$%d\n, list_stats, GroupData(group__id)(gDotation))
 
 	if(GroupData(group__id)(gOwner))
 	(
 		group_owner_id = GetGroupID(GroupData(group__id)(gOwner))
-		format(list_stats, sizeof(list_stats), %s\nNadrzêdna:\t%s (UID: %d)\n, list_stats, GroupData(group_owner_id)(gName), GroupData(group_owner_id)(gUID))
+		format(list_stats, sizeof(list_stats), %s\nNadrzÄ™dna:\t%s (UID: %d)\n, list_stats, GroupData(group_owner_id)(gName), GroupData(group_owner_id)(gUID))
 	)
 	
 	format(list_stats, sizeof(list_stats), %s\nTag:\t\t%s, list_stats, GroupData(group__id)(gTag))
@@ -272,7 +272,7 @@ public ShowPlayerGroupInfo(playerid, group__id)
 	)
 	format(list_stats, sizeof(list_stats), %s\nOpcja 2:\t\t%.1f, list_stats, (GroupData(group__id)(gValue2) * 0.1))
 
-	format(string, sizeof(string), %s (UID: %d) » Informacje, GroupData(group__id)(gName), GroupData(group__id)(gUID))
+	format(string, sizeof(string), %s (UID: %d) Â» Informacje, GroupData(group__id)(gName), GroupData(group__id)(gUID))
 	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_LIST, string, list_stats, Zamknij, )
 	return 1
 )
@@ -578,6 +578,6 @@ stock AddPlayerGroupLimit(playerid, group_id_fix)
 )
 
 /* -------------------------------------------------------
-  Trzeba dodaæ strefy dla biznesów do bicia duty
+  Trzeba dodaÄ‡ strefy dla biznesÃ³w do bicia duty
   ------------------------------------------------------- */
   

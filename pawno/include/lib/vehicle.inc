@@ -133,7 +133,7 @@ public LoadVehicle(gameid, uid)
 	
 	GetVehiclePos(gameid, OldVehiclePosition(gameid)(0), OldVehiclePosition(gameid)(1), OldVehiclePosition(gameid)(2))
 	
-	printf((load) Wczytano statystyki pojazdu %s (SampID: %d, UID: %d) pomyœlnie., CarInfo(gameid)(cName), gameid, CarInfo(gameid)(cUID))
+	printf((load) Wczytano statystyki pojazdu %s (SampID: %d, UID: %d) pomyÅ›lnie., CarInfo(gameid)(cName), gameid, CarInfo(gameid)(cUID))
 	return uid
 )
 
@@ -160,7 +160,7 @@ public SaveVehicle(gameid, what)
 	)
 	if(what & SAVE_VEH_ACCESS)
 	(
-		// Akcesoria pojazdu (kolory, rodzaj paliwa, paintjob, blokada na ko³o, akcesoria)
+		// Akcesoria pojazdu (kolory, rodzaj paliwa, paintjob, blokada na koÅ‚o, akcesoria)
 		format(query, sizeof(query),  car_color1 = %d, car_color2 = %d, car_fueltype = %d, car_paintjob = %d, car_blockwheel = %d, car_access = %d, car_ebreak = %d,
 		CarInfo(gameid)(cColor1),
 		CarInfo(gameid)(cColor2),
@@ -197,7 +197,7 @@ public SaveVehicle(gameid, what)
 	)
 	if(what & SAVE_VEH_THINGS)
 	(
-		// Pozosta³e (w³a¶ciciel, model, nazwa, last activity)
+		// PozostaÅ‚e (wÅ‚aÂ¶ciciel, model, nazwa, last activity)
 		format(query, sizeof(query),  car_owner = %d, car_ownertype = %d, car_model = %d, car_name = %s, car_register = %d,
 		CarInfo(gameid)(cOwner),
 		CarInfo(gameid)(cOwnerType),
@@ -213,7 +213,7 @@ public SaveVehicle(gameid, what)
 	)
 	if(what & SAVE_VEH_LOCK)
 	(
-		// Zamkniêcie pojazdu
+		// ZamkniÄ™cie pojazdu
 		format(query, sizeof(query),  car_lock = %d,
 		CarInfo(gameid)(cLocked))
 
@@ -319,7 +319,7 @@ public LoadVehicles()
 	gameid, data(256), visual(32), empty = 0
 	mysql_query(SELECT * FROM hrp_cars WHERE car_ownertype () 1)
 	
-	print((load) Rozpoczynam proces wczytywania pojazdów z bazy danych...)
+	print((load) Rozpoczynam proces wczytywania pojazdÃ³w z bazy danych...)
 
 	// Wczytaj do tablic
 	mysql_store_result()
@@ -415,7 +415,7 @@ public LoadVehicles()
 	)
 	mysql_free_result()
 	
-	// Wczytaj komponenty dla wszystkich pojazdów
+	// Wczytaj komponenty dla wszystkich pojazdÃ³w
 	
 	veh_uid, componentid
 	mysql_query(SELECT item_vehuid, item_value1 FROM hrp_items WHERE item_vehuid != 0)
@@ -448,7 +448,7 @@ public LoadVehicles()
 	)
 	mysql_free_result()
 	
-	printf((load) Wczytano %d pojazdy/ów z bazy danych., gameid)
+	printf((load) Wczytano %d pojazdy/Ã³w z bazy danych., gameid)
 	return 1
 )
 
@@ -459,16 +459,16 @@ public ShowPlayerVehicleInfo(playerid, gameid)
 	format(list_stats, sizeof(list_stats), %s\nKolory:\t\t\t%d/%d\n, list_stats, CarInfo(gameid)(cColor1), CarInfo(gameid)(cColor2))
 	if(CarInfo(gameid)(cOwnerType) == OWNER_NONE)
 	(
- 		format(list_stats, sizeof(list_stats), %s\nTyp w³aœciciela:\t\tBrak\n, list_stats)
+ 		format(list_stats, sizeof(list_stats), %s\nTyp wÅ‚aÅ›ciciela:\t\tBrak\n, list_stats)
 	)
 	if(CarInfo(gameid)(cOwnerType) == OWNER_PLAYER)
 	(
-		format(list_stats, sizeof(list_stats), %s\nTyp w³aœciciela:\t\tGracz\n, list_stats)
+		format(list_stats, sizeof(list_stats), %s\nTyp wÅ‚aÅ›ciciela:\t\tGracz\n, list_stats)
 		format(list_stats, sizeof(list_stats), %s\nUID gracza:\t\t%d\n, list_stats, CarInfo(gameid)(cOwner))
 	)
 	if(CarInfo(gameid)(cOwnerType) == OWNER_GROUP)
 	(
-		format(list_stats, sizeof(list_stats), %s\nTyp w³aœciciela:\t\tGrupa\n, list_stats)
+		format(list_stats, sizeof(list_stats), %s\nTyp wÅ‚aÅ›ciciela:\t\tGrupa\n, list_stats)
    		format(list_stats, sizeof(list_stats), %s\nUID grupy:\t\t%d\n, list_stats, CarInfo(gameid)(cOwner))
 	)
 	
@@ -495,7 +495,7 @@ public ShowPlayerVehicleInfo(playerid, gameid)
 		format(list_stats, sizeof(list_stats), %s\nRejestracja:\t\t(FB5006)Nie(FFFFFF)\n, list_stats)
 	)
 
-	format(string, sizeof(string), %s (SampID: %d, UID: %d) » Informacje, CarInfo(gameid)(cName), gameid, CarInfo(gameid)(cUID))
+	format(string, sizeof(string), %s (SampID: %d, UID: %d) Â» Informacje, CarInfo(gameid)(cName), gameid, CarInfo(gameid)(cUID))
 	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_LIST, string, list_stats, Zamknij, )
 	return 1
 )
@@ -515,11 +515,11 @@ stock ShowVehicleListForPlayer(playerid, giveplayer_id)
 	mysql_free_result()
 	if(strlen(strx) != 0)
 	(
-		ShowPlayerDialog(giveplayer_id, D_INFO, DIALOG_STYLE_LIST, Lista pojazdów:, strx, Zamknij, )
+		ShowPlayerDialog(giveplayer_id, D_INFO, DIALOG_STYLE_LIST, Lista pojazdÃ³w:, strx, Zamknij, )
 	)
 	else
 	(
-		ShowPlayerDialog(giveplayer_id, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Gracz nie posiada ¿adnych pojazdów., OK, )
+		ShowPlayerDialog(giveplayer_id, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Gracz nie posiada Å¼adnych pojazdÃ³w., OK, )
 	)
 	return 1
 )
@@ -529,7 +529,7 @@ stock ShowVehicleList(playerid)
 	uid, vehname(32), strx(256), data(256), list
 	mysql_query_format(SELECT car_uid, car_name FROM hrp_cars WHERE car_ownertype = 1 AND car_owner = %d, PlayerCache(playerid)(pUID))
 
-	printf((load) Listujê pojazdy gracza %s (UID: %d, GID: %d)..., PlayerRealName(playerid), PlayerCache(playerid)(pUID), PlayerCache(playerid)(pGID))
+	printf((load) ListujÄ™ pojazdy gracza %s (UID: %d, GID: %d)..., PlayerRealName(playerid), PlayerCache(playerid)(pUID), PlayerCache(playerid)(pGID))
 
 	mysql_store_result()
 	while(mysql_fetch_row(data, |))
@@ -541,14 +541,14 @@ stock ShowVehicleList(playerid)
 	mysql_free_result()
 	if(strlen(strx) != 0)
 	(
-		ShowPlayerDialog(playerid, D_LIST_PLAYER_CARS, DIALOG_STYLE_LIST, Lista posiadanych pojazdów:, strx, (Un)spawn, Zamknij)
+		ShowPlayerDialog(playerid, D_LIST_PLAYER_CARS, DIALOG_STYLE_LIST, Lista posiadanych pojazdÃ³w:, strx, (Un)spawn, Zamknij)
 	)
 	else
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz ¿adnych pojazdów., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz Å¼adnych pojazdÃ³w., OK, )
 	)
 
-	printf((load) Wylistowa³em pojazdy gracza %s (UID: %d, GID: %d). Znaleziono %d pojazdy/ów w bazie, PlayerRealName(playerid), PlayerCache(playerid)(pUID), PlayerCache(playerid)(pGID), list)
+	printf((load) WylistowaÅ‚em pojazdy gracza %s (UID: %d, GID: %d). Znaleziono %d pojazdy/Ã³w w bazie, PlayerRealName(playerid), PlayerCache(playerid)(pUID), PlayerCache(playerid)(pGID), list)
 	return 1
 )
 
@@ -684,7 +684,7 @@ public OnPlayerEnterVehicle(playerid, vehicleid, ispassenger)
 		hrp_SetPlayerPos(playerid, PosX, PosY, PosZ)
 	
  		string(256)
- 		format(string, sizeof(string), Na ko³o tego pojazdu zosta³a na³o¿ona blokada.\nJe¿eli jesteœ w³aœcicielem tego pojazdu, musisz zg³oœiæ siê na\nkomisariat policji w celu zdjêcia blokady za podan¹ poni¿ej kwotê pieniê¿n¹.\n\nIdentyfikator pojazdu: %d\nKoszt zdjêcia blokady wynosi: $%d, CarInfo(vehicleid)(cUID), CarInfo(vehicleid)(cWheelBlock))
+ 		format(string, sizeof(string), Na koÅ‚o tego pojazdu zostaÅ‚a naÅ‚oÅ¼ona blokada.\nJeÅ¼eli jesteÅ› wÅ‚aÅ›cicielem tego pojazdu, musisz zgÅ‚oÅ›iÄ‡ siÄ™ na\nkomisariat policji w celu zdjÄ™cia blokady za podanÄ… poniÅ¼ej kwotÄ™ pieniÄ™Å¼nÄ….\n\nIdentyfikator pojazdu: %d\nKoszt zdjÄ™cia blokady wynosi: $%d, CarInfo(vehicleid)(cUID), CarInfo(vehicleid)(cWheelBlock))
  		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 		return 1
 	)*/
@@ -697,7 +697,7 @@ public OnPlayerEnterVehicle(playerid, vehicleid, ispassenger)
 	if(PlayerCache(playerid)(pRoll))
 	(
 		hrp_SetPlayerPos(playerid, PosX, PosY, PosZ)
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Nie mo¿esz wsi¹œæ do pojazdu maj¹c rolki na nogach., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Nie moÅ¼esz wsiÄ…Å›Ä‡ do pojazdu majÄ…c rolki na nogach., OK, )
 		return 1
 	)
 	if(!ispassenger)
@@ -705,7 +705,7 @@ public OnPlayerEnterVehicle(playerid, vehicleid, ispassenger)
 		if(PlayerCache(playerid)(pGamePoints) ( 50)
 		(
 			hrp_SetPlayerPos(playerid, PosX, PosY, PosZ)
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie przegra³eœ jeszcze 5 godzin na serwerze i dlatego nie pozwalamy Ci u¿ywaæ pojazdów.\nNie martw siê, Twój pojazd profilowy dalej nale¿y do Ciebie i bêdziesz go móg³ u¿ywaæ po przegraniu 5 godzin., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie przegraÅ‚eÅ› jeszcze 5 godzin na serwerze i dlatego nie pozwalamy Ci uÅ¼ywaÄ‡ pojazdÃ³w.\nNie martw siÄ™, TwÃ³j pojazd profilowy dalej naleÅ¼y do Ciebie i bÄ™dziesz go mÃ³gÅ‚ uÅ¼ywaÄ‡ po przegraniu 5 godzin., OK, )
 			return 1
 		)
 		if(CarInfo(vehicleid)(cOwnerType) == OWNER_GROUP)
@@ -716,7 +716,7 @@ public OnPlayerEnterVehicle(playerid, vehicleid, ispassenger)
 				if(GroupData(group_id_fix)(gType) != GROUP_HIRE)
 				(
 					hrp_SetPlayerPos(playerid, PosX, PosY, PosZ)
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie mo¿esz prowadziæ tego pojazdu., OK, )
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie moÅ¼esz prowadziÄ‡ tego pojazdu., OK, )
 					return 1
 				)
 			)
@@ -727,7 +727,7 @@ public OnPlayerEnterVehicle(playerid, vehicleid, ispassenger)
 					if(!IsPlayerPermissedGroup(playerid, CarInfo(vehicleid)(cOwner), PERM_CARS))
 					(
 						hrp_SetPlayerPos(playerid, PosX, PosY, PosZ)
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie mo¿esz prowadziæ tego pojazdu., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie moÅ¼esz prowadziÄ‡ tego pojazdu., OK, )
 						return 1
 					)
 				)
@@ -737,7 +737,7 @@ public OnPlayerEnterVehicle(playerid, vehicleid, ispassenger)
 					if(GroupData(group_id_fix)(gType) != GROUP_DRIVING)
 					(
 						hrp_SetPlayerPos(playerid, PosX, PosY, PosZ)
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie mo¿esz prowadziæ tego pojazdu., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie moÅ¼esz prowadziÄ‡ tego pojazdu., OK, )
 						return 1
 					)
 				)
@@ -746,7 +746,7 @@ public OnPlayerEnterVehicle(playerid, vehicleid, ispassenger)
 		if((PlayerCache(playerid)(pBlock) & BLOCK_VEH))
 		(
 			hrp_SetPlayerPos(playerid, PosX, PosY, PosZ)
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Na Twoj¹ potaæ zosta³a na³o¿ona blokada prowadzenia pojazdów,\njeœli minie okres zarzucony przez nadaj¹cego karê, mo¿esz\nnapisaæ apelacjê, by kara ta zosta³a Ci zdjêta., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Na TwojÄ… potaÄ‡ zostaÅ‚a naÅ‚oÅ¼ona blokada prowadzenia pojazdÃ³w,\njeÅ›li minie okres zarzucony przez nadajÄ…cego karÄ™, moÅ¼esz\nnapisaÄ‡ apelacjÄ™, by kara ta zostaÅ‚a Ci zdjÄ™ta., OK, )
 			return 1
 		)
 	)
@@ -797,7 +797,7 @@ public OnVehicleDamageStatusUpdate(vehicleid, playerid)
 	if(hitValue )= 350)
 	(
 		/*
-			jak pierdoln¹³ wiêcej ni¿ 350HP to zwróæ HP
+			jak pierdolnÄ…Å‚ wiÄ™cej niÅ¼ 350HP to zwrÃ³Ä‡ HP
 		*/
 		SetVehicleHealth(vehicleid,CarInfo(vehicleid)(cHealth))
 		return 1
@@ -805,7 +805,7 @@ public OnVehicleDamageStatusUpdate(vehicleid, playerid)
 	
 	if(hitValue )= 50 && afterCrash ) hitValue)
 	(
-		//jesli waln¹³ wiêcej ni¿ 50 HP to trzeba zakolorowaæ nick gracza na chwilê
+		//jesli walnÄ…Å‚ wiÄ™cej niÅ¼ 50 HP to trzeba zakolorowaÄ‡ nick gracza na chwilÄ™
 		for(i = 0  i ( MAX_PLAYERS i++)
 		(
 			if(IsPlayerInVehicle(i,vehicleid))
@@ -829,7 +829,7 @@ public OnVehicleDamageStatusUpdate(vehicleid, playerid)
 		)
 	)
 	
-	//je¿eli wózek ma wiêcej ni¿ 900HP to
+	//jeÅ¼eli wÃ³zek ma wiÄ™cej niÅ¼ 900HP to
 	if(afterCrash )= 900)
 	(
 		CarInfo(vehicleid)(cVisual)(0) = 0
@@ -865,7 +865,7 @@ public OnVehicleEngineStarted(vehicleid)
 	)
 	if(CarInfo(vehicleid)(cFuel) (= 0)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, W tym pojeŸdzie nie ma paliwa.\nZatankuj pojazd, aby móc odpaliæ silnik., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, W tym pojeÅºdzie nie ma paliwa.\nZatankuj pojazd, aby mÃ³c odpaliÄ‡ silnik., OK, )
 		return 1
 	)
 	CarInfo(vehicleid)(cEngineTogged) = true
@@ -961,7 +961,7 @@ stock SpawnVehicle(uid)
 	data(256)
 	modelid, Float:posx, Float:posy, Float:posz, Float:posa, color1, color2
 
-	print((load) Wczytujê dane pojazdu wymagane do spawnu...)
+	print((load) WczytujÄ™ dane pojazdu wymagane do spawnu...)
 
 	mysql_store_result()
 	if(mysql_fetch_row(data, |))
@@ -970,7 +970,7 @@ stock SpawnVehicle(uid)
 	)
 	mysql_free_result()
 	// gameid = CreateVehicle(modelid, posx, posy, posz, posa, color1, color2, 7200)
-	// Ma³a modyfikacja prima
+	// MaÅ‚a modyfikacja prima
 	gameid = INVALID_VEHICLE_ID
 	if(IS_PRIMA_APRILIS)
 		gameid = CreateVehicle(542, posx, posy, posz, posa, color1, color2, 7200)
@@ -987,7 +987,7 @@ stock SpawnVehicle(uid)
 	// Koniec prima moda
 
 	
-	print((load) Dane wymagane do spawnu pojazdu zosta³y pomyœlnie wczytane.)
+	print((load) Dane wymagane do spawnu pojazdu zostaÅ‚y pomyÅ›lnie wczytane.)
 
 	LoadVehicle(gameid, uid)
 	return gameid
@@ -2210,7 +2210,7 @@ stock IsVehicleTuned(vehicleid)
 	)
 )
 
-stock IsVehicleHasTune(vehicleid,partid)	//do sprawdzania czy ma ju¿ tuning danego typu
+stock IsVehicleHasTune(vehicleid,partid)	//do sprawdzania czy ma juÅ¼ tuning danego typu
 (
 	buffer(256)
 	format(buffer,sizeof(buffer),SELECT item_name,item_value1 FROM hrp_items WHERE item_vehuid=%i AND item_type=%i AND item_value2=%i,CarInfo(vehicleid)(cUID),ITEM_TUNEPART,partid)
@@ -2243,7 +2243,7 @@ stock GetVehicleTune(playerid,vehicleid)
 	)
 	mysql_free_result()
 	
-	ShowPlayerDialog(playerid,D_VEH_ADDONS,DIALOG_STYLE_LIST,Lista dodatków,list,Wybierz,Anuluj)
+	ShowPlayerDialog(playerid,D_VEH_ADDONS,DIALOG_STYLE_LIST,Lista dodatkÃ³w,list,Wybierz,Anuluj)
 	
 	return 1
 )
@@ -2276,7 +2276,7 @@ stock Float:varX(Float:x)
 	return retVal
 )
 
-// Pobierz permanentne uszkodzenia wozu, to taka szybka regu³a i gitara
+// Pobierz permanentne uszkodzenia wozu, to taka szybka reguÅ‚a i gitara
 stock getVehicleRemoves(vehicle_id)
 (
 	buffer(256)
@@ -2320,13 +2320,13 @@ stock getVehicleRemoves(vehicle_id)
 
 stock getCarValue(model, Float:maxhp, ddoors, pdoors, bonnet, boot)
 (
-	// To bêdzie funkcja do obliczania wartoœciu pojazdu w skryptowym komisie.
+	// To bÄ™dzie funkcja do obliczania wartoÅ›ciu pojazdu w skryptowym komisie.
 	cost = 0
 	
 	return cost
 )
 
-// Takie tam, mo¿e siê przyda
+// Takie tam, moÅ¼e siÄ™ przyda
 stock IsVehicleBoat(vehicleid)
 (
 	isboat = false

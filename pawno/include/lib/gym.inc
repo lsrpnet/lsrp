@@ -94,7 +94,7 @@ public OnPlayerTrainRep(playerid)
 			TextDrawShowForPlayer(playerid, Text:TextDrawMainInfo(playerid))
 			PlayerCache(playerid)(pGymValue2) ++
 			
-			// Dodaj pkt si³y
+			// Dodaj pkt siÅ‚y
 			if(PlayerCache(playerid)(pStrength) ( 100)
 			(
 				Float:last_strength = PlayerCache(playerid)(pStrength)
@@ -120,7 +120,7 @@ public OnPlayerTrainRep(playerid)
 		if(PlayerCache(playerid)(pDailyReps) ) MAX_DAILY_REPS)
 		(
 			OnPlayerGymTrainStopped(playerid)
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Twoja postaæ jest zbyt zmêczona ¿eby pakowaæ tak d³ugi czas., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Twoja postaÄ‡ jest zbyt zmÄ™czona Å¼eby pakowaÄ‡ tak dÅ‚ugi czas., OK, )
 		)		
 		return 1
 	)
@@ -138,7 +138,7 @@ public OnPlayerTrainRep(playerid)
 			
 			PlayerCache(playerid)(pGymValue2) ++
 			
-			// Dodaj pkt si³y
+			// Dodaj pkt siÅ‚y
 			if(PlayerCache(playerid)(pStrength) ( 100)
 			(
 				Float:last_strength = PlayerCache(playerid)(pStrength)
@@ -155,7 +155,7 @@ public OnPlayerTrainRep(playerid)
 		if(PlayerCache(playerid)(pDailyReps) ) MAX_DAILY_REPS)
 		(
 			OnPlayerGymTrainStopped(playerid)
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Twoja postaæ jest zbyt zmêczona ¿eby pakowaæ tak d³ugi czas., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Twoja postaÄ‡ jest zbyt zmÄ™czona Å¼eby pakowaÄ‡ tak dÅ‚ugi czas., OK, )
 		)		
 		return 1
 	)

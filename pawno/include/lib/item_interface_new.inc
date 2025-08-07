@@ -4,7 +4,7 @@
 
 stock bGUI_LoadTextdraws(playerid)
 (
-	// kafelki mia≥y ID 1 fontu
+	// kafelki mia≈Çy ID 1 fontu
 	TextDrawMainItems(playerid) = CreatePlayerTextDraw(playerid,549.000000, 108.000000, ~n~~n~~n~~n~~n~~n~~n~~n~~n~~n~~n~~n~~n~~n~~n~~n~~n~~n~~n~~n~~n~~n~~n~~n~~n~~n~)
 	PlayerTextDrawBackgroundColor(playerid,TextDrawMainItems(playerid), 255)
 	PlayerTextDrawFont(playerid,TextDrawMainItems(playerid), 1)
@@ -432,7 +432,7 @@ stock bGUI_ListPlayerItems(playerid,pageid)
 	//SendClientMessage(playerid,0xFFFFFFAA,msg)
 	
 	
-	// pokaø textdrawa
+	// poka≈º textdrawa
 	PlayerTextDrawShow(playerid, TextDrawMainItems(playerid))
 	PlayerTextDrawShow(playerid, TextDrawItemTitle(playerid))
 	PlayerTextDrawShow(playerid, TextDrawItemNext(playerid))

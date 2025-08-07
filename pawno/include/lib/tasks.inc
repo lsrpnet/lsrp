@@ -4,7 +4,7 @@ bool:printTimers = false
 public OnMinuteTimer()*/
 task OnMinuteTimer(60000)()
 (
-	// coú zjebane jest
+	// co≈õ zjebane jest
 	if(DEBUG_MODE || printTimers)
 	(
 		SendClientMessageToAll(0x00AA00FF, (DEBUG) Timer 1 min tick passed.)
@@ -121,7 +121,7 @@ task OnMinuteTimer(60000)()
 					)
 				)
 
-				// £atka na obecn± chwile - system o∂wietlenia do zmiany.
+				// ≈Åatka na obecn¬± chwile - system o¬∂wietlenia do zmiany.
 				if(Plants(plantid)(plantVW) == 0)
 					Plants(plantid)(plantSun) += 4
 				else
@@ -139,7 +139,7 @@ task OnMinuteTimer(60000)()
 			)
 		)
 
-		if(NewHour % 19 == 0 && minute == 30) //Nie trzeba sprawdzaÊ sekundy bo to timer minutowy
+		if(NewHour % 19 == 0 && minute == 30) //Nie trzeba sprawdzaƒá sekundy bo to timer minutowy
 		(
 			if(random(50) == 34)
 			(
@@ -160,14 +160,14 @@ task OnMinuteTimer(60000)()
 			(
 				if(Logged(i) && Spawned(i))
 				(
-					ShowPlayerDialog(i, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Serwer zostanie zrestartowany o godzinie 4:00. Przez ten czas prosimy CiÍ o opuszczenie serwera., OK, )
+					ShowPlayerDialog(i, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Serwer zostanie zrestartowany o godzinie 4:00. Przez ten czas prosimy Ciƒô o opuszczenie serwera., OK, )
 				)
 				Kick(i)
 			)
 			
 			foreach(Player, i)
 			(
-				SendClientMessage(i, COLOR_RED, Serwer przechodzi przez nocny restart. Zapraszamy wkrÛtce.)
+				SendClientMessage(i, COLOR_RED, Serwer przechodzi przez nocny restart. Zapraszamy wkr√≥tce.)
 				Kick(i)
 			)
 			
@@ -243,7 +243,7 @@ task OnMinuteTimer(60000)()
 			
 			/*if(PlayerCache(i)(pCurrentZone) ) -1)
 			(
-				AddZoneTick(i)		// bÍdzie dobrze?
+				AddZoneTick(i)		// bƒôdzie dobrze?
 				zone = PlayerCache(i)(pCurrentZone)
 				if(!IsPlayerInArea(i, ZoneInfo(zone)(zMaxX), ZoneInfo(zone)(zMinX), ZoneInfo(zone)(zMaxY), ZoneInfo(zone)(zMinY)))
 				(
@@ -294,7 +294,7 @@ task OnMinuteTimer(60000)()
 					if(factor ( 1) factor = 1
 					if(factor ) 2) factor = 2
 					
-					// Jeøeli naÊpany, HP szybciej roúnie
+					// Je≈ºeli naƒápany, HP szybciej ro≈õnie
 					if(PlayerCache(i)(pSmokeLevel) )= 780)
 					(
 						if(PlayerCache(i)(pWounded))
@@ -310,7 +310,7 @@ task OnMinuteTimer(60000)()
 					(
 						if(PlayerCache(i)(pWounded))
 						(
-							// Brak pasywnego regenu hp dla ludzi z obraøeniami bez dragÛw.
+							// Brak pasywnego regenu hp dla ludzi z obra≈ºeniami bez drag√≥w.
 							//hrp_SetPlayerHealth(i, PlayerCache(i)(pHealth) + 1.0)
 						)
 						else
@@ -345,7 +345,7 @@ task OnMinuteTimer(60000)()
 						(
 							if(random(500) == 32)
 							(
-								if(GetVehicleComponentInSlot(vehid, 7) != 1025) //Sprawdzanie czy ma felgi offroad - jeøeli tak to nie przebija.
+								if(GetVehicleComponentInSlot(vehid, 7) != 1025) //Sprawdzanie czy ma felgi offroad - je≈ºeli tak to nie przebija.
 								(
 									CarInfo(vehid)(cVisual)(3) = 2 ^ random(4) // 1, 2, 4, 8, 
 									UpdateVehicleDamageStatus(vehid, CarInfo(vehid)(cVisual)(0), CarInfo(vehid)(cVisual)(1), CarInfo(vehid)(cVisual)(2), CarInfo(vehid)(cVisual)(3))
@@ -434,7 +434,7 @@ task OnMinuteTimer(60000)()
 				(
 					package_next
 					
-					// Dodaj paczkÍ do magazynu drzwi, jeúli istniejπ
+					// Dodaj paczkƒô do magazynu drzwi, je≈õli istniejƒÖ
 					if(GetDoorID(PackageInfo(package_id)(pDoorUID)))
 					(
 			 			AddDoorProduct(PackageInfo(package_id)(pItemName), PackageInfo(package_id)(pItemType), PackageInfo(package_id)(pItemValue1), PackageInfo(package_id)(pItemValue2), PackageInfo(package_id)(pItemPrice), PackageInfo(package_id)(pItemNumber), PackageInfo(package_id)(pDoorUID))
@@ -459,12 +459,12 @@ task OnMinuteTimer(60000)()
 		)
 	)
 	
-	// PÍtla na drzwi
+	// Pƒôtla na drzwi
 	foreach(Doors, doorid)
 	(
 		if(DoorData(doorid)(dUID))
 		(
-			// Jeúli jakiú budynek p≥onie
+			// Je≈õli jaki≈õ budynek p≈Çonie
 			if(DoorData(doorid)(dBurnTime))
 			(
 				string(128), Float:percent, group_id_fix
@@ -488,7 +488,7 @@ task OnMinuteTimer(60000)()
 					)
 				)
 				percent = (float(DoorData(doorid)(dBurnTime)) / 15.0) * 100
-				format(string, sizeof(string), Ten budynek stanπ≥ w p≥omieniach!\nProcent zniszczeÒ: %d%, floatround(percent))
+				format(string, sizeof(string), Ten budynek stanƒÖ≈Ç w p≈Çomieniach!\nProcent zniszcze≈Ñ: %d%, floatround(percent))
 
 				if(DoorData(doorid)(dBurnTime) ( 5)
 				(
@@ -562,25 +562,25 @@ task OnMinuteTimer(60000)()
 	)
 	
 	/*
-	// Sprawdü, czy jest po≥πczenie z mySQL
+	// Sprawd≈∫, czy jest po≈ÇƒÖczenie z mySQL
 	if(!mysql_ping())
 	(
 		mysql_reconnect()
-		print((mysql) £πczÍ siÍ z mySQL ponownie... PrÛba: 1/3)
+		print((mysql) ≈ÅƒÖczƒô siƒô z mySQL ponownie... Pr√≥ba: 1/3)
 		
 		if(!mysql_ping())
 		(
 			mysql_reconnect()
-			print((mysql) £πczÍ siÍ z mySQL ponownie... PrÛba: 2/3)
+			print((mysql) ≈ÅƒÖczƒô siƒô z mySQL ponownie... Pr√≥ba: 2/3)
 			
 			if(!mysql_ping())
 			(
 				mysql_reconnect()
-				print((mysql) £πczÍ siÍ z mySQL ponownie... PrÛba: 3/3)
+				print((mysql) ≈ÅƒÖczƒô siƒô z mySQL ponownie... Pr√≥ba: 3/3)
 				
 				if(!mysql_ping())
 				(
-					print((mysql) Po≥πczenie z bazπ danych nie by≥o moøliwe.)
+					print((mysql) Po≈ÇƒÖczenie z bazƒÖ danych nie by≈Ço mo≈ºliwe.)
 				)
 			)
 		)
@@ -636,7 +636,7 @@ task OnMinuteTimer(60000)()
 				GetVehiclePos(vehid, VehX, VehY, VehZ)
 
 				string(128)
-				format(string, sizeof(string), (( Pojazd %s (%s) zostaje odspawnowany poniewaø jego w≥a∂ciciel wyszed≥ z gry ponad 5 minut temu. )), CarInfo(vehid)(cName), VehicleData(CarInfo(vehid)(cModel) - 400)(vName))
+				format(string, sizeof(string), (( Pojazd %s (%s) zostaje odspawnowany poniewa≈º jego w≈Ça¬∂ciciel wyszed≈Ç z gry ponad 5 minut temu. )), CarInfo(vehid)(cName), VehicleData(CarInfo(vehid)(cModel) - 400)(vName))
 				
 				foreach(Player, i)
 				(
@@ -702,7 +702,7 @@ task OnSecondTimer(1000)()
 							if(GroupData(group_id_fix)(gType) == GROUP_POLICE)
 							(
 		 						PlayerCache(i)(pMainGroupSlot) = GetPlayerGroupSlot(i, GroupData(group_id_fix)(gUID)) + 1
-								format(string, sizeof(string), !!%d ** (%s): Centrala dla wszystkich jednostek, dostaliúmy informacje o strzelaninie w pobliøu %s, odbiÛr.  **, PlayerCache(i)(pMainGroupSlot), GroupData(group_id_fix)(gTag), GunRegionInfo(j)(grName))
+								format(string, sizeof(string), !!%d ** (%s): Centrala dla wszystkich jednostek, dostali≈õmy informacje o strzelaninie w pobli≈ºu %s, odbi√≥r.  **, PlayerCache(i)(pMainGroupSlot), GroupData(group_id_fix)(gTag), GunRegionInfo(j)(grName))
 								SendClientMessage(i, GroupData(group_id_fix)(gColor), string)
 								ShootsFiredInfo(j) = true
 							)
@@ -747,7 +747,7 @@ task OnSecondTimer(1000)()
 				loop_player_speed = GetPlayerSpeed(i, true),
 				loop_player_vehid = GetPlayerVehicleID(i)
 			
-			// FBI namierzanie kamerπ ludzi, ciekawe czy bÍdzie lagowaÊ
+			// FBI namierzanie kamerƒÖ ludzi, ciekawe czy bƒôdzie lagowaƒá
 			if(loop_player_weapon == 43)
 			(
 				if(IsPlayerInGroupType(i, GROUP_FBI))
@@ -759,7 +759,7 @@ task OnSecondTimer(1000)()
 					(
 						if(IsPlayerConnected(target))
 						(
-							// Warunek, øeby nie by≥o moøna zobaczyÊ kto kogo specuje i samego siebie
+							// Warunek, ≈ºeby nie by≈Ço mo≈ºna zobaczyƒá kto kogo specuje i samego siebie
 							if(GetPlayerVirtualWorld(i) == GetPlayerVirtualWorld(target) && PlayerCache(target)(pSpectate) == INVALID_PLAYER_ID && target != i)
 							(
 								Float:targetPos(3)
@@ -835,7 +835,7 @@ task OnSecondTimer(1000)()
 				
 				if(searching_id == INVALID_PLAYER_ID)
 				(
-					GuiMsg(i, Wybrany numer nagle zniknπ≥ z sieci., 1)
+					GuiMsg(i, Wybrany numer nagle zniknƒÖ≈Ç z sieci., 1)
 					PlayerCache(i)(pSearchingTime) = 0
 					PlayerCache(i)(pSearching) = -1
 				)
@@ -855,7 +855,7 @@ task OnSecondTimer(1000)()
 					)
 					else
 					(
-						GuiMsg(i, Wystπpi≥ b≥πd w sieci.\nSprÛbuj jeszcze raz., 1)
+						GuiMsg(i, WystƒÖpi≈Ç b≈ÇƒÖd w sieci.\nSpr√≥buj jeszcze raz., 1)
 					)
 				)
 			)
@@ -885,7 +885,7 @@ task OnSecondTimer(1000)()
 					DisablePlayerCheckpoint(i)
 					ApplyAnimation(i, CARRY, crry_prtial, 4.1, 0, 0, 0, 0, 0)
 					
-					GuiMsg(i, Przerwa≥eú proces sprzedaøy narkotykÛw., 0)
+					GuiMsg(i, Przerwa≈Çe≈õ proces sprzeda≈ºy narkotyk√≥w., 0)
 				)
 				
 				if(IsPlayerInAnyVehicle(i))
@@ -897,7 +897,7 @@ task OnSecondTimer(1000)()
 					DisablePlayerCheckpoint(i)
 					ApplyAnimation(i, CARRY, crry_prtial, 4.1, 0, 0, 0, 0, 0)
 					
-					GuiMsg(i, Przerwa≥eú proces sprzedaøy narkotykÛw., 0)
+					GuiMsg(i, Przerwa≈Çe≈õ proces sprzeda≈ºy narkotyk√≥w., 0)
 				)
 				
 				occupied = false
@@ -907,7 +907,7 @@ task OnSecondTimer(1000)()
 					(
 						if(countCornerDealers(j) )= 2)
 						(
-							occupied = true // ktoú handluje na cornerze na strefie tego gangu
+							occupied = true // kto≈õ handluje na cornerze na strefie tego gangu
 						)
 					)
 				)
@@ -927,24 +927,24 @@ task OnSecondTimer(1000)()
 					
 					if(float(chance) ( (CornerInfo(PlayerCache(i)(pCorner))(cRisk) / 10) + gratis )
 					(
-						// OtwÛrz GUI sprzedaøy.
+						// Otw√≥rz GUI sprzeda≈ºy.
 						PlayerCache(i)(pSelling) = true
 						
 						stringg(256), msg = random(3)
 						switch(msg)
 						(
 							case 0:
-								format(stringg, sizeof(stringg), ** Do %s podszed≥ zakapturzony, wychudzony facet., PlayerName(i))
+								format(stringg, sizeof(stringg), ** Do %s podszed≈Ç zakapturzony, wychudzony facet., PlayerName(i))
 							case 1:
-								format(stringg, sizeof(stringg), ** %s zaczπ≥ rozmawiaÊ z niskπ kobietπ, ktÛra w≥aúnie do niego podesz≥a., PlayerName(i))
+								format(stringg, sizeof(stringg), ** %s zaczƒÖ≈Ç rozmawiaƒá z niskƒÖ kobietƒÖ, kt√≥ra w≈Ça≈õnie do niego podesz≈Ça., PlayerName(i))
 							case 2:
-								format(stringg, sizeof(stringg), ** M≥ody skate podbija do %s i zaczyna z nim rozmawiaÊ, rozglπdajπc siÍ na boki., PlayerName(i))
+								format(stringg, sizeof(stringg), ** M≈Çody skate podbija do %s i zaczyna z nim rozmawiaƒá, rozglƒÖdajƒÖc siƒô na boki., PlayerName(i))
 						)
 						
 						ProxDetector(10.0, i, stringg, COLOR_DO, COLOR_DO, COLOR_DO, COLOR_DO, COLOR_DO, true)
-						ShowPlayerDialog(i, D_DRUG_DEALING_START, DIALOG_STYLE_LIST, Klient ª akcja, 1. OdpÍdü klienta\n2. Rozpocznij handel, Wybierz, Anuluj)
+						ShowPlayerDialog(i, D_DRUG_DEALING_START, DIALOG_STYLE_LIST, Klient ¬ª akcja, 1. Odpƒôd≈∫ klienta\n2. Rozpocznij handel, Wybierz, Anuluj)
 						
-						// MoøliwoúÊ poinformowania LSPD
+						// Mo≈ºliwo≈õƒá poinformowania LSPD
 						if(CornerInfo(corner_id)(cRisk) ) 10)
 						(
 							pd_alert = random(100)
@@ -960,7 +960,7 @@ task OnSecondTimer(1000)()
 											if(GroupData(group_id_fix)(gType) == GROUP_POLICE)
 											(
 												PlayerCache(plr)(pMainGroupSlot) = GetPlayerGroupSlot(plr, GroupData(group_id_fix)(gUID)) + 1
-												format(string, sizeof(string), !!%d ** (%s): Centrala dla wszystkich jednostek, dostaliúmy informacje o dilerze w pobliøu %s, odbiÛr.  **, PlayerCache(plr)(pMainGroupSlot), GroupData(group_id_fix)(gTag), GunRegionInfo(getPlayerRegion(i))(grName))
+												format(string, sizeof(string), !!%d ** (%s): Centrala dla wszystkich jednostek, dostali≈õmy informacje o dilerze w pobli≈ºu %s, odbi√≥r.  **, PlayerCache(plr)(pMainGroupSlot), GroupData(group_id_fix)(gTag), GunRegionInfo(getPlayerRegion(i))(grName))
 												SendClientMessage(plr, GroupData(group_id_fix)(gColor), string)
 											)
 										)	
@@ -983,7 +983,7 @@ task OnSecondTimer(1000)()
 											if(GroupData(group_id_fix)(gType) == GROUP_POLICE)
 											(
 												PlayerCache(plr)(pMainGroupSlot) = GetPlayerGroupSlot(plr, GroupData(group_id_fix)(gUID)) + 1
-												format(string, sizeof(string), !!%d ** (%s): Centrala dla wszystkich jednostek, dostaliúmy informacje o dilerze w pobliøu %s, odbiÛr.  **, PlayerCache(plr)(pMainGroupSlot), GroupData(group_id_fix)(gTag), GunRegionInfo(getPlayerRegion(i))(grName))
+												format(string, sizeof(string), !!%d ** (%s): Centrala dla wszystkich jednostek, dostali≈õmy informacje o dilerze w pobli≈ºu %s, odbi√≥r.  **, PlayerCache(plr)(pMainGroupSlot), GroupData(group_id_fix)(gTag), GunRegionInfo(getPlayerRegion(i))(grName))
 												SendClientMessage(plr, GroupData(group_id_fix)(gColor), string)
 											)
 										)	
@@ -1023,7 +1023,7 @@ task OnSecondTimer(1000)()
 					
 				if(PlayerCache(i)(pViewTime) == 0)
 				(
-					// koniec podglπdu
+					// koniec podglƒÖdu
 					doorid = PlayerCache(i)(pViewDoorID)
 					PlayerCache(i)(pViewDoorID) = INVALID_DOOR_ID
 					
@@ -1031,7 +1031,7 @@ task OnSecondTimer(1000)()
 					SetPlayerVirtualWorld(i, DoorData(doorid)(dEnterVW))
 					SetPlayerPos(i, DoorData(doorid)(dEnterX), DoorData(doorid)(dEnterY), DoorData(doorid)(dEnterZ))
 					
-					GuiMsg(i, Podglπd drzwi dobieg≥ koÒca., 0)
+					GuiMsg(i, PodglƒÖd drzwi dobieg≈Ç ko≈Ñca., 0)
 				)
 			)
 			
@@ -1051,7 +1051,7 @@ task OnSecondTimer(1000)()
 					if(!IsPlayerInAnyVehicle(i))
 					(
 						PlayerCache(i)(pBombTime) = 0
-						GuiMsg(i, Wysiad≥eú z pojazdu, proces uzbrajania bomby zosta≥ przerwany., 1)
+						GuiMsg(i, Wysiad≈Çe≈õ z pojazdu, proces uzbrajania bomby zosta≈Ç przerwany., 1)
 					)
 					
 					if(PlayerCache(i)(pBombTime) == 1)
@@ -1061,7 +1061,7 @@ task OnSecondTimer(1000)()
 						armveh = loop_player_vehid
 						CarInfo(armveh)(cArmed) = true
 						
-						GuiMsg(i, Zamontowa≥eú bombÍ w tym pojeüdzie, odpalenie silnika spowoduje ekspolzjÍ, uciekaj!, 1)
+						GuiMsg(i, Zamontowa≈Çe≈õ bombƒô w tym poje≈∫dzie, odpalenie silnika spowoduje ekspolzjƒô, uciekaj!, 1)
 						
 						DeleteItem(PlayerCache(i)(pBombID))
 					)
@@ -1078,7 +1078,7 @@ task OnSecondTimer(1000)()
 					if(!IsPlayerInAnyVehicle(i))
 					(
 						PlayerCache(i)(pBombTime) = 0
-						GuiMsg(i, Wysiad≥eú z pojazdu, proces szukania bomby zosta≥ przerwany., 1)
+						GuiMsg(i, Wysiad≈Çe≈õ z pojazdu, proces szukania bomby zosta≈Ç przerwany., 1)
 					)
 					
 					if(PlayerCache(i)(pBombTime) == 1)
@@ -1088,7 +1088,7 @@ task OnSecondTimer(1000)()
 						
 						if(!CarInfo(armveh)(cArmed))
 						(
-							GuiMsg(i, Nie znaleziono bomby w tym pojeüdzie., 1)
+							GuiMsg(i, Nie znaleziono bomby w tym poje≈∫dzie., 1)
 					//		return 1 // seler test, wyjebalem returna
 						)
 						else
@@ -1098,12 +1098,12 @@ task OnSecondTimer(1000)()
 							(
 								case 0..8:
 								(
-									GuiMsg(i, Znalaz≥eú bombÍ, nie odpalaj pojazdu, poniewaø wybuchnie., 1)
+									GuiMsg(i, Znalaz≈Çe≈õ bombƒô, nie odpalaj pojazdu, poniewa≈º wybuchnie., 1)
 									PlayerCache(i)(pBombFound) = 1
 								)
 								case 9:
 								(
-									GuiMsg(i, Nie znaleziono bomby w tym pojeüdzie., 1)
+									GuiMsg(i, Nie znaleziono bomby w tym poje≈∫dzie., 1)
 									PlayerCache(i)(pBombFound) = 0
 								)
 							)
@@ -1122,7 +1122,7 @@ task OnSecondTimer(1000)()
 					if(!IsPlayerInAnyVehicle(i))
 					(
 						PlayerCache(i)(pBombTime) = 0
-						GuiMsg(i, Wysiad≥eú z pojazdu, proces rozbrajania bomby zosta≥ przerwany., 1)
+						GuiMsg(i, Wysiad≈Çe≈õ z pojazdu, proces rozbrajania bomby zosta≈Ç przerwany., 1)
 					)
 					
 					if(PlayerCache(i)(pBombTime) == 1)
@@ -1131,7 +1131,7 @@ task OnSecondTimer(1000)()
 						armveh = loop_player_vehid
 						
 						CarInfo(armveh)(cArmed) = false
-						GuiMsg(i, Rozbroi≥eú bombÍ w tym pojeüdzie., 1)
+						GuiMsg(i, Rozbroi≈Çe≈õ bombƒô w tym poje≈∫dzie., 1)
 					)
 					
 					PlayerCache(i)(pBombTime)-- 
@@ -1144,7 +1144,7 @@ task OnSecondTimer(1000)()
 			
 			if(PlayerCache(i)(pLoginEx) ) 0)
 			(
-				// anti flood - niby øaden ale zawsze
+				// anti flood - niby ≈ºaden ale zawsze
 				PlayerCache(i)(pLoginEx)--
 			)
 			
@@ -1236,24 +1236,24 @@ task OnSecondTimer(1000)()
 								DisablePlayerCheckpoint(i)
 								SetPlayerCheckpoint(i, Pos(0),Pos(1),Pos(2), 7.0)
 								
-								format(buffer,sizeof(buffer),(CCCCCC)Do naczepy za≥adowano towar, teraz musisz udaÊ siÍ do punktu zrzutu.\nMiejsce docelowe: (C4B100)%s\n(CCCCCC),town)
+								format(buffer,sizeof(buffer),(CCCCCC)Do naczepy za≈Çadowano towar, teraz musisz udaƒá siƒô do punktu zrzutu.\nMiejsce docelowe: (C4B100)%s\n(CCCCCC),town)
 								switch(packagetype)
 								(
 									case CARGO_TYPE_OIL:
 									(
-										format(buffer,sizeof(buffer),%s\n(CCCCCC)Typ ≥adunku: (C4B100)paliwo(CCCCCC),buffer)
+										format(buffer,sizeof(buffer),%s\n(CCCCCC)Typ ≈Çadunku: (C4B100)paliwo(CCCCCC),buffer)
 									)
 									case CARGO_TYPE_FOOD:
 									(
-										format(buffer,sizeof(buffer),%s\n(CCCCCC)Typ ≥adunku: (C4B100)artyku≥y spoøywcze(CCCCCC),buffer)
+										format(buffer,sizeof(buffer),%s\n(CCCCCC)Typ ≈Çadunku: (C4B100)artyku≈Çy spo≈ºywcze(CCCCCC),buffer)
 									)
 									case CARGO_TYPE_TOOLS:
 									(
-										format(buffer,sizeof(buffer),%s\n(CCCCCC)Typ ≥adunku: (C4B100)narzÍdzia(CCCCCC),buffer)
+										format(buffer,sizeof(buffer),%s\n(CCCCCC)Typ ≈Çadunku: (C4B100)narzƒôdzia(CCCCCC),buffer)
 									)
 									case CARGO_TYPE_MATERIALS:
 									(
-										format(buffer,sizeof(buffer),%s\n(CCCCCC)Typ ≥adunku: (C4B100)materia≥y budowlane(CCCCCC),buffer)
+										format(buffer,sizeof(buffer),%s\n(CCCCCC)Typ ≈Çadunku: (C4B100)materia≈Çy budowlane(CCCCCC),buffer)
 									)
 								)
 								format(buffer,sizeof(buffer),%s\nNazwa zleceniodawcy: (C4B100)%s\n\nPowodzenia!,buffer,company)
@@ -1296,7 +1296,7 @@ task OnSecondTimer(1000)()
 									if(!PlayerCache(i)(pGroupDuty))
 									(
 										printf((truck-bug) Gracz %s (UID: %d) prawdopodobnie chcial teraz zbugowac nasz system bez duty., PlayerName(i), PlayerCache(i)(pUID))
-										format(msg,sizeof(msg),(CCCCCC)Nie jesteú na s≥uøbie grupy, nie otrzymasz gotÛwki za przewÛz towaru.)
+										format(msg,sizeof(msg),(CCCCCC)Nie jeste≈õ na s≈Çu≈ºbie grupy, nie otrzymasz got√≥wki za przew√≥z towaru.)
 										GuiMsg(i,msg,0)
 									)
 									else
@@ -1312,9 +1312,9 @@ task OnSecondTimer(1000)()
 										
 										AddGroupEvent(GroupData(group_id_fix)(gUID), PlayerCache(i)(pUID), 0, 0, cash, Przewoz towaru(truckers))
 										
-										AddGroupLog(i, group_id_fix, %s wykona≥ kurs za %d., PlayerName(i), cash)
+										AddGroupLog(i, group_id_fix, %s wykona≈Ç kurs za %d., PlayerName(i), cash)
 										
-										format(msg,sizeof(msg),(CCCCCC)ZakoÒczy≥eú trasÍ, otrzyma≥eú premiÍ w wysokoúci (C4B100)$%i(CCCCCC)!\nNa konto grupy dodano: (C4B100)$%i, player_cash, group_cash)
+										format(msg,sizeof(msg),(CCCCCC)Zako≈Ñczy≈Çe≈õ trasƒô, otrzyma≈Çe≈õ premiƒô w wysoko≈õci (C4B100)$%i(CCCCCC)!\nNa konto grupy dodano: (C4B100)$%i, player_cash, group_cash)
 										
 										GuiMsg(i,msg,0)
 									)
@@ -1357,7 +1357,7 @@ task OnSecondTimer(1000)()
 					
 					if(one == two && two == three)
 					(
-						// Wygrana w jednorÍkiego bandytÍ
+						// Wygrana w jednorƒôkiego bandytƒô
 						chance = random(3)
 						if(chance == 2)
 						(
@@ -1416,7 +1416,7 @@ task OnSecondTimer(1000)()
 							)
 						)
 						
-						// dodajmy wyjπtek dla tych co usuwajπ taga
+						// dodajmy wyjƒÖtek dla tych co usuwajƒÖ taga
 						if(!found)
 						(
 							if(weapon == 41 && PlayerCache(i)(pScouring) == true)
@@ -1429,7 +1429,7 @@ task OnSecondTimer(1000)()
 						(
 							if(PlayerCache(i)(pWeaponWarning) ) 2)
 							(
-								format(string, sizeof(string), Wklej ca≥y, nieedytowany screenshot tej linijki do apelacji (%s, %d), PlayerName(i), PlayerCache(i)(pUID))
+								format(string, sizeof(string), Wklej ca≈Çy, nieedytowany screenshot tej linijki do apelacji (%s, %d), PlayerName(i), PlayerCache(i)(pUID))
 								SendClientMessage(i, COLOR_RED, string)
 								
 								PlayerCache(i)(pWeaponWarning) = 0
@@ -1499,7 +1499,7 @@ task OnSecondTimer(1000)()
 				PlayerCache(i)(pBallTicks)--
 			)
 			
-			// Sprawdzanie czy gracz nie doda≥ sobie hp
+			// Sprawdzanie czy gracz nie doda≈Ç sobie hp
 			GetPlayerHealth(i, hp)
 			if(hp ( PlayerCache(i)(pHealth))
 			(
@@ -1510,7 +1510,7 @@ task OnSecondTimer(1000)()
 		 		SetPlayerHealth(i, PlayerCache(i)(pHealth))
 			)
 			
-			// Sprawdzanie czy kasa sampowa siÍ zgadza
+			// Sprawdzanie czy kasa sampowa siƒô zgadza
 			if(GetPlayerMoney(i) ) PlayerCache(i)(pCash))
 			(
 				ResetPlayerMoney(i)
@@ -1538,7 +1538,7 @@ task OnSecondTimer(1000)()
 				)
 			)
 			
-			// Sprawdzanie czy ktoú nie robi rampageu.
+			// Sprawdzanie czy kto≈õ nie robi rampageu.
 			if(PlayerCache(i)(pKillCount) ) 3 && PlayerCache(i)(pAdmin) == 0)
 			(
 				if(IsPlayerInGroupType(i, GROUP_POLICE) || IsPlayerInGroupType(i, GROUP_CRIMINAL) || IsPlayerInGroupType(i, GROUP_PRISON))
@@ -1573,7 +1573,7 @@ task OnSecondTimer(1000)()
 				PlayerCache(i)(pArmourDelay) = 0
 			)
 			
-			// Jeúli ma kamizelkÍ
+			// Je≈õli ma kamizelkƒô
 			if(PlayerCache(i)(pArmour))
 			(
 				if(PlayerCache(i)(pArmourDelay) (= 0)
@@ -1604,7 +1604,7 @@ task OnSecondTimer(1000)()
 			
 			PlayerCache(i)(pAFK) --
 			
-			// G≥Ûwna informacja
+			// G≈Ç√≥wna informacja
 			if(PlayerCache(i)(pShowInfoText))
 			(
 				PlayerCache(i)(pShowInfoText) --
@@ -1653,7 +1653,7 @@ task OnSecondTimer(1000)()
 				)
 			)
 			
-			// Freeze przy wejúciu
+			// Freeze przy wej≈õciu
 			if(PlayerCache(i)(pDoorFreeze))
 			(
 				PlayerCache(i)(pDoorFreeze) --
@@ -1750,7 +1750,7 @@ task OnSecondTimer(1000)()
 					)
 					else
 					(
-						ShowPlayerDialog(i, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Na Twoim koncie bankowym nie znajduje siÍ wystarczajπca iloúÊ\núrodkÛw aby kontynuowaÊ hospitalizacjÍ., OK, )
+						ShowPlayerDialog(i, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Na Twoim koncie bankowym nie znajduje siƒô wystarczajƒÖca ilo≈õƒá\n≈õrodk√≥w aby kontynuowaƒá hospitalizacjƒô., OK, )
 					)
 					
 					PlayerCache(i)(pHospitalBed) = 0
@@ -1781,11 +1781,11 @@ task OnSecondTimer(1000)()
 				(
 					PlayerCache(i)(pGymNutrient) = 0
 					PlayerCache(i)(pGymFactor) = 0
-					SendClientMessage(i, COLOR_DO, ** oddzia≥ywanie odøywki lub sterydu przesta≥o wystÍpowaÊ w Twoim ciele.**)
+					SendClientMessage(i, COLOR_DO, ** oddzia≈Çywanie od≈ºywki lub sterydu przesta≈Ço wystƒôpowaƒá w Twoim ciele.**)
 				)
 			)
 			
-			// Przeglπda wnÍtrze
+			// PrzeglƒÖda wnƒôtrze
 			if(PlayerCache(i)(pPreviewTime))
 			(
 				PlayerCache(i)(pPreviewTime) --
@@ -1804,7 +1804,7 @@ task OnSecondTimer(1000)()
 				)
 			)
 			
-			// Kopanie robakÛw
+			// Kopanie robak√≥w
 			if(PlayerCache(i)(pPicking) ) 0)
 			(
 				skip = false
@@ -1824,7 +1824,7 @@ task OnSecondTimer(1000)()
 				(
 					if((GetPlayerEqWeight(i) + ItemTypeInfo(ITEM_WORM)(iTypeWeight)) )= GetPlayerCapacity(i))
 					(
-						GuiMsg(i, Zabrak≥o miejsca w Twoim ekwipunku., 1)
+						GuiMsg(i, Zabrak≈Ço miejsca w Twoim ekwipunku., 1)
 					)
 					else
 					(
@@ -1835,7 +1835,7 @@ task OnSecondTimer(1000)()
 							if(wormcount (= 0)
 								goto lossworm
 							
-							GuiMsg(i, Wykopa≥eú kilka robakÛw, dodano je do Twojego ekwipunku., 0)
+							GuiMsg(i, Wykopa≈Çe≈õ kilka robak√≥w, dodano je do Twojego ekwipunku., 0)
 							temp(64)
 							format(temp, sizeof(temp), Robaki (%d szt.), wormcount)
 							CreatePlayerItem(i, temp, ITEM_WORM, wormcount, 0)
@@ -1844,7 +1844,7 @@ task OnSecondTimer(1000)()
 						)
 						else
 						(
-							GuiMsg(i, Wyszed≥eú poza teren zbierania robaczkÛw, akcja zosta≥a anulowana., 0)
+							GuiMsg(i, Wyszed≈Çe≈õ poza teren zbierania robaczk√≥w, akcja zosta≈Ça anulowana., 0)
 						)
 						
 					)
@@ -1855,7 +1855,7 @@ task OnSecondTimer(1000)()
 				GameTextForPlayer(i, timeleft, 1000, 3)
 			)
 			
-			// £owi rybki
+			// ≈Åowi rybki
 			if(PlayerCache(i)(pFish))
 			(
 				bool:cancel = false, bool:canUse = false
@@ -1866,7 +1866,7 @@ task OnSecondTimer(1000)()
 				// blint kurwa tutaj
 				if(canUse || IsPlayerInRangeOfPoint(i, 15.0, 380.1618, -2096.8606, 7.8359) || IsPlayerInRangeOfPoint(i, 15.0, 526.4686,-1938.0804,2.4405) || IsPlayerInRangeOfPoint(i, 15.0, 561.6442,-1936.8746,2.4405) || IsPlayerInRangeOfPoint(i, 15.0, 544.5582,-1948.4175,3.2605))
 				(
-	   				// Dodaj punkty za ≥owienie
+	   				// Dodaj punkty za ≈Çowienie
   					if(PlayerCache(i)(pFishing) ( 100)
 					(
 						Float:last_fishing = PlayerCache(i)(pFishing)
@@ -1981,7 +1981,7 @@ task OnSecondTimer(1000)()
 			(
 				vehid = loop_player_vehid
 								
-	 			// Nieautoryzowane wejúcie do pojazdu
+	 			// Nieautoryzowane wej≈õcie do pojazdu
 		   		if(PlayerCache(i)(pLastVeh) != vehid)
 				(
 	 				hrp_Kick(i, -1, Nieautoryzowane wejscie do pojazdu.)
@@ -2029,7 +2029,7 @@ task OnSecondTimer(1000)()
 						CarInfo(vehid)(cFuel) -= (CarInfo(vehid)(cFuelType) != TYPE_DIESEL) ? 0.022 : 0.026
 					)
 					
-					// Jeúli paliwo spadnie o 1 litr, pokaø info
+					// Je≈õli paliwo spadnie o 1 litr, poka≈º info
 	 				if(floatround(CarInfo(vehid)(cFuel), floatround_floor) ( floatround(last_fuel, floatround_floor))
 					(
 						format(string, sizeof(string), ~n~~n~~n~~n~~n~~n~~n~~g~Paliwo: ~y~%.0f/%d L, CarInfo(vehid)(cFuel), GetVehicleMaxFuel(CarInfo(vehid)(cModel)))
@@ -2043,7 +2043,7 @@ task OnSecondTimer(1000)()
 					Float:distance = floatsqroot(floatpower(floatabs(floatsub(x, VehiclePos(vehid)(0))), 2)+floatpower(floatabs(floatsub(y,VehiclePos(vehid)(1))),2)+floatpower(floatabs(floatsub(z, VehiclePos(vehid)(2))),2))
 					Tick(vehid) += floatround(distance)
 
-					// Pobierz i sprawdü dane na temat uszkodzeÒ technicznych
+					// Pobierz i sprawd≈∫ dane na temat uszkodze≈Ñ technicznych
 					if(health ( CarInfo(vehid)(cHealth))
 					(
 						hrp_VehicleActionLog(Stan HP pojazdu %s (UID: %d) ulegl zmianie. Kierowca: %s (UID: %d). Stary stan HP: %.0f, nowy stan HP: %.0f, CarInfo(vehid)(cName), CarInfo(vehid)(cUID), PlayerRealName(i), PlayerCache(i)(pUID), CarInfo(vehid)(cHealth), health)
@@ -2052,7 +2052,7 @@ task OnSecondTimer(1000)()
 	 					OnVehicleSave(vehid) ++
 					)
 
-					// Pobierz i sprawdü dane na temat uszkodzeÒ wizualnych
+					// Pobierz i sprawd≈∫ dane na temat uszkodze≈Ñ wizualnych
 					panels, doors, lights, tires
 					GetVehicleDamageStatus(vehid, panels, doors, lights, tires)
 					if(panels ( CarInfo(vehid)(cVisual)(0) || lights ( CarInfo(vehid)(cVisual)(2) || tires ( CarInfo(vehid)(cVisual)(3))
@@ -2064,7 +2064,7 @@ task OnSecondTimer(1000)()
 					// Nalicz przebieg pojazdu
 					if(Tick(vehid) )= 110)
 					(
-						// Jeúli ma pasaøera w taksÛwce
+						// Je≈õli ma pasa≈ºera w taks√≥wce
 						if(PlayerCache(i)(pTaxiPassenger) != INVALID_PLAYER_ID)
 						(
 							passenger_id = PlayerCache(i)(pTaxiPassenger)
@@ -2144,12 +2144,12 @@ task OnSecondTimer(1000)()
 						SaveVehicle(vehid, SAVE_VEH_COUNT)
 					)
 					
-					// Jeúli ma lekcjÍ jazdy
+					// Je≈õli ma lekcjƒô jazdy
 					if(PlayerCache(i)(pDrivingLesson))
 					(
 						if(CarInfo(vehid)(cOwnerType) == OWNER_GROUP)
 						(
-							// Sprawdü czy siedzi w pojeüdzie grupowym
+							// Sprawd≈∫ czy siedzi w poje≈∫dzie grupowym
 							group_id_fix = GetGroupID(CarInfo(vehid)(cOwner))
 							if(GroupData(group_id_fix)(gType) == GROUP_DRIVING)
 							(
@@ -2186,7 +2186,7 @@ task OnSecondTimer(1000)()
 				)
 			)
 			
-			// Dbanie o amunicjÍ spraya
+			// Dbanie o amunicjƒô spraya
 			
 			if(PlayerCache(i)(pScouring))
 			(
@@ -2198,7 +2198,7 @@ task OnSecondTimer(1000)()
 					ResetPlayerWeapons(i)
 					PlayerCache(i)(pScouring) = false
 					PlayerCache(i)(pScouredID) = INVALID_OBJECT_ID
-					GuiMsg(i, Za bardzo oddali≥eú siÍ od taga!\nPraca zosta≥a przerwana., 0)
+					GuiMsg(i, Za bardzo oddali≈Çe≈õ siƒô od taga!\nPraca zosta≈Ça przerwana., 0)
 				)
 				
 				weapid, ammo
@@ -2208,7 +2208,7 @@ task OnSecondTimer(1000)()
 					ResetPlayerWeapons(i)
 					PlayerCache(i)(pScouring) = false
 					PlayerCache(i)(pScouredID) = INVALID_OBJECT_ID
-					GuiMsg(i, Coú kombinujesz, musisz mieÊ spray w rÍku!\nPraca zosta≥a przerwana., 0)
+					GuiMsg(i, Co≈õ kombinujesz, musisz mieƒá spray w rƒôku!\nPraca zosta≈Ça przerwana., 0)
 				)
 				
 				if(ammo ( 5)
@@ -2228,7 +2228,7 @@ task OnSecondTimer(1000)()
 					
 					blint_SaveCash(saveUID, i)
 					msg(128)
-					format(msg, sizeof(msg),Usunπ≥eú tag!\nNa Twoje konto dodano $%d!, money)
+					format(msg, sizeof(msg),UsunƒÖ≈Çe≈õ tag!\nNa Twoje konto dodano $%d!, money)
 					GuiMsg(i, msg, 0)
 					
 					PlayerCache(i)(pDailyIncome) += money
@@ -2383,7 +2383,7 @@ task OnSecondTimer(1000)()
 					SetCameraBehindPlayer(i)
 					hrp_SetPlayerHealth(i, 20)
 
-					ShowPlayerDialog(i, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Ocknπ≥eú siÍ, jednak nie jesteú wystarczajπco na si≥ach.\nTwÛj stan zdrowia nie jest idealny - moøe udaj siÍ do szpitala?, OK, )
+					ShowPlayerDialog(i, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, OcknƒÖ≈Çe≈õ siƒô, jednak nie jeste≈õ wystarczajƒÖco na si≈Çach.\nTw√≥j stan zdrowia nie jest idealny - mo≈ºe udaj siƒô do szpitala?, OK, )
 
 					SetPlayerDrunkLevel(i, 5000)
 				)
@@ -2426,7 +2426,7 @@ task OnSecondTimer(1000)()
 				(
 					if(PlayerCache(i)(pArrestTime) == 1)
 					(
-						ShowPlayerDialog(i, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, TwÛj wyrok dobieg≥ koÒca.\nTeraz moøesz opuúciÊ areszt podchodzπc do wyjúcia i uøywajπc komendy /opusc, bπdü pozostaÊ i graÊ dalej tutaj.\nMi≥ej gry!, OK, )
+						ShowPlayerDialog(i, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Tw√≥j wyrok dobieg≈Ç ko≈Ñca.\nTeraz mo≈ºesz opu≈õciƒá areszt podchodzƒÖc do wyj≈õcia i u≈ºywajƒÖc komendy /opusc, bƒÖd≈∫ pozostaƒá i graƒá dalej tutaj.\nMi≈Çej gry!, OK, )
 					)
 					PlayerCache(i)(pArrestTime) --
 				)
@@ -2464,7 +2464,7 @@ task OnSecondTimer(1000)()
 			  							CarInfo(vehid)(cColor2) = color2
 							  			SaveVehicle(vehid, SAVE_VEH_ACCESS)
 
-										ShowPlayerDialog(i, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Pojazd zosta≥ pomyúlnie przemalowany., OK, )
+										ShowPlayerDialog(i, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Pojazd zosta≈Ç pomy≈õlnie przemalowany., OK, )
 										hrp_VehicleActionLog(Kolory pojazdu %s (UID: %d) zmienily sie. Nowe kolory: %d/%d., CarInfo(vehid)(cName), CarInfo(vehid)(cUID), color1, color2)
 									)
 									else if(PlayerCache(i)(pSprayType) == 2)
@@ -2475,7 +2475,7 @@ task OnSecondTimer(1000)()
 										CarInfo(vehid)(cPaintJob) = paintjob_id
 										SaveVehicle(vehid, SAVE_VEH_ACCESS)
 
-										ShowPlayerDialog(i, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Pojazd zosta≥ pomyúlnie przemalowany., OK, )
+										ShowPlayerDialog(i, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Pojazd zosta≈Ç pomy≈õlnie przemalowany., OK, )
 										hrp_VehicleActionLog(PaintJob pojazdu %s (UID: %d) zmienil sie. Nowy PaintJob: %d., CarInfo(vehid)(cName), CarInfo(vehid)(cUID), paintjob_id)
 									)
 									PlayerCache(i)(pSprayVeh) = INVALID_VEHICLE_ID
@@ -2520,7 +2520,7 @@ task OnSecondTimer(1000)()
 							UpdateVehicleDamageStatus(vehid, CarInfo(vehid)(cVisual)(0), CarInfo(vehid)(cVisual)(1), CarInfo(vehid)(cVisual)(2), CarInfo(vehid)(cVisual)(3))
 							
 							SaveVehicle(vehid, SAVE_VEH_COUNT)
-	  						ShowPlayerDialog(i, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Wymiana opony dobieg≥a koÒca., OK, )
+	  						ShowPlayerDialog(i, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Wymiana opony dobieg≈Ça ko≈Ñca., OK, )
 
 							PlayerCache(i)(pTireVeh) = INVALID_VEHICLE_ID
 							PlayerCache(i)(pTireTime) = 0
@@ -2549,7 +2549,7 @@ task OnSecondTimer(1000)()
 					object_id = GetClosestObject(i)
 					if(object_id == INVALID_OBJECT_ID || GetObjectModel(object_id) != OBJECT_AIR_PUMP)
 					(
-						GameTextForPlayer(i, ~r~Musisz staÊ przy kompresorze aby pompowaÊ oponÍ!, 1000, 3)
+						GameTextForPlayer(i, ~r~Musisz staƒá przy kompresorze aby pompowaƒá oponƒô!, 1000, 3)
 					)
 					else
 					(
@@ -2567,7 +2567,7 @@ task OnSecondTimer(1000)()
 							
 							mysql_query_format(UPDATE hrp_items SET item_name = %s, item_used = 0, item_value1 = 0 WHERE item_uid = %d LIMIT 1, ItemInfo(itemid)(iName), ItemInfo(itemid)(iUID))
 									
-							ShowPlayerDialog(i, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Pompowanie opon dobieg≥o koÒca., OK, )
+							ShowPlayerDialog(i, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Pompowanie opon dobieg≈Ço ko≈Ñca., OK, )
 
 							PlayerCache(i)(pOPumpItem) = 0
 							PlayerCache(i)(pOPumpTime) = 0
@@ -2596,7 +2596,7 @@ task OnSecondTimer(1000)()
 							UpdateVehicleDamageStatus(vehid, CarInfo(vehid)(cVisual)(0), CarInfo(vehid)(cVisual)(1), CarInfo(vehid)(cVisual)(2), CarInfo(vehid)(cVisual)(3))
 							
 							SaveVehicle(vehid, SAVE_VEH_COUNT)
-	  						ShowPlayerDialog(i, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Pompowanie opon dobieg≥o koÒca., OK, )
+	  						ShowPlayerDialog(i, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Pompowanie opon dobieg≈Ço ko≈Ñca., OK, )
 
 							PlayerCache(i)(pPumpVeh) = INVALID_VEHICLE_ID
 							PlayerCache(i)(pPumpTime) = 0
@@ -2648,7 +2648,7 @@ task OnSecondTimer(1000)()
 								SetVehicleHealth(vehid, 1000)
 
 								SaveVehicle(vehid, SAVE_VEH_COUNT)
-								ShowPlayerDialog(i, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Naprawa pojazdu dobieg≥a koÒca., OK, )
+								ShowPlayerDialog(i, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Naprawa pojazdu dobieg≈Ça ko≈Ñca., OK, )
 
 								PlayerCache(i)(pRepairVeh) = INVALID_VEHICLE_ID
 								PlayerCache(i)(pRepairTime) = 0
@@ -2671,7 +2671,7 @@ task OnSecondTimer(1000)()
 								SetVehicleHealth(vehid, 1000)
 
 								SaveVehicle(vehid, SAVE_VEH_COUNT)
-								ShowPlayerDialog(i, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Wymiana silnika dobieg≥a koÒca., OK, )
+								ShowPlayerDialog(i, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Wymiana silnika dobieg≈Ça ko≈Ñca., OK, )
 
 								PlayerCache(i)(pRepairVeh) = INVALID_VEHICLE_ID
 								PlayerCache(i)(pRepairType) = 0
@@ -2690,7 +2690,7 @@ task OnSecondTimer(1000)()
 								UpdateVehicleDamageStatus(vehid, 0, 0, 0, CarInfo(vehid)(cVisual)(3))
 
 								SaveVehicle(vehid, SAVE_VEH_COUNT)
-								ShowPlayerDialog(i, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Naprawa karoserii dobieg≥a koÒca., OK, )
+								ShowPlayerDialog(i, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Naprawa karoserii dobieg≈Ça ko≈Ñca., OK, )
 
 								PlayerCache(i)(pRepairVeh) = INVALID_VEHICLE_ID
 								PlayerCache(i)(pRepairType) = 0
@@ -2703,7 +2703,7 @@ task OnSecondTimer(1000)()
 								CarInfo(vehid)(cCarfax) = (CarInfo(vehid)(cCarfax) - 150.0 ( 0)? 0.0 : (CarInfo(vehid)(cCarfax) - 150)
 								
 								SaveVehicle(vehid, SAVE_VEH_COUNT)
-								ShowPlayerDialog(i, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Wymiana p≥ynÛw dobieg≥a koÒca., OK, )
+								ShowPlayerDialog(i, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Wymiana p≈Çyn√≥w dobieg≈Ça ko≈Ñca., OK, )
 
 								PlayerCache(i)(pRepairVeh) = INVALID_VEHICLE_ID
 								PlayerCache(i)(pRepairType) = 0
@@ -2716,7 +2716,7 @@ task OnSecondTimer(1000)()
 								CarInfo(vehid)(cCarfax) = (CarInfo(vehid)(cCarfax) - 160.0 ( 0)? 0.0 : (CarInfo(vehid)(cCarfax) - 160)
 
 								SaveVehicle(vehid, SAVE_VEH_COUNT)
-								ShowPlayerDialog(i, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Wymiana filtra dobieg≥a koÒca., OK, )
+								ShowPlayerDialog(i, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Wymiana filtra dobieg≈Ça ko≈Ñca., OK, )
 
 								PlayerCache(i)(pRepairVeh) = INVALID_VEHICLE_ID
 								PlayerCache(i)(pRepairType) = 0
@@ -2729,7 +2729,7 @@ task OnSecondTimer(1000)()
 								CarInfo(vehid)(cCarfax) = (CarInfo(vehid)(cCarfax) - 400.0 ( 0)? 0.0 : (CarInfo(vehid)(cCarfax) - 400)
 								
 								SaveVehicle(vehid, SAVE_VEH_COUNT)
-								ShowPlayerDialog(i, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Wymiana ch≥odnicy dobieg≥a koÒca., OK, )
+								ShowPlayerDialog(i, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Wymiana ch≈Çodnicy dobieg≈Ça ko≈Ñca., OK, )
 
 								PlayerCache(i)(pRepairVeh) = INVALID_VEHICLE_ID
 								PlayerCache(i)(pRepairType) = 0
@@ -2746,7 +2746,7 @@ task OnSecondTimer(1000)()
 				)
 			)
 			
-			// Montowanie czÍúci
+			// Montowanie czƒô≈õci
 			if(PlayerCache(i)(pMontageVeh) != INVALID_VEHICLE_ID)
 			(
 				vehid = PlayerCache(i)(pMontageVeh), Float:VehX, Float:VehY, Float:VehZ
@@ -2810,7 +2810,7 @@ task OnSecondTimer(1000)()
 							LoadVehicleTune(vehid)		//przeladuj tuning pojazdu
 						)
 						
-						// Akcesoria (alarm, immobiliser, sprzÍt audio)
+						// Akcesoria (alarm, immobiliser, sprzƒôt audio)
 						if(ItemInfo(itemid)(iType) == ITEM_ACCESS)
 						(
 							CarInfo(vehid)(cAccess) += ItemInfo(itemid)(iValue1)
@@ -2819,7 +2819,7 @@ task OnSecondTimer(1000)()
 							DeleteItem(ItemInfo(itemid)(iUID))
 						)
 						
-   						ShowPlayerDialog(i, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Montaø nowej czÍúci dobieg≥ koÒca., OK, )
+   						ShowPlayerDialog(i, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Monta≈º nowej czƒô≈õci dobieg≈Ç ko≈Ñca., OK, )
 
 						PlayerCache(i)(pMontageVeh) = INVALID_VEHICLE_ID
 						PlayerCache(i)(pMontageTime) = 0
@@ -2829,7 +2829,7 @@ task OnSecondTimer(1000)()
 				)
 			)
 			
-			// zwiπzany
+			// zwiƒÖzany
 			if(PlayerCache(i)(pRoped) != INVALID_PLAYER_ID)
 			(
 				cuffed_to = PlayerCache(i)(pRoped)
@@ -2951,7 +2951,7 @@ task OnSecondTimer(1000)()
 					PlayerCache(i)(pSearches) = INVALID_PLAYER_ID
 					PlayerCache(i)(pSearchTime) = 0
 					
-					ShowPlayerDialog(i, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Przeszukiwanie gracza zosta≥o anulowane.\nPowÛd: Gracz znajduje siÍ zbyt daleko od Ciebie., OK, )
+					ShowPlayerDialog(i, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Przeszukiwanie gracza zosta≈Ço anulowane.\nPow√≥d: Gracz znajduje siƒô zbyt daleko od Ciebie., OK, )
 
 					GameTextForPlayer(searched_player, ~r~~h~Przeszukiwanie zostalo przerwane., 4500, 3)
 				)
@@ -3023,7 +3023,7 @@ task OnSecondTimer(1000)()
 				continue
 			)
 
-			// Sprawdü czy Êwiczy, a jak Êwiczy a nie ma do tego odpowiedniej animki to zastopuj Êwiczenie
+			// Sprawd≈∫ czy ƒáwiczy, a jak ƒáwiczy a nie ma do tego odpowiedniej animki to zastopuj ƒáwiczenie
 			if(PlayerCache(i)(pGymType) != TRAIN_NONE && PlayerCache(i)(pGymPhase) != 0)
 			(
 				
@@ -3043,7 +3043,7 @@ task OnSecondTimer(1000)()
 				)
 			)
 
-			// Jeúli trenuje
+			// Je≈õli trenuje
    			if(PlayerCache(i)(pTrainTime))
 			(
 				PlayerCache(i)(pTrainTime) --
@@ -3086,7 +3086,7 @@ task OnSecondTimer(1000)()
 				)
 			)
 			
-			// Jeúli jest podczas paintballa
+			// Je≈õli jest podczas paintballa
    			if(PlayerCache(i)(pPaintballTime))
 			(
 				PlayerCache(i)(pPaintballTime) --
@@ -3342,15 +3342,15 @@ task OnSecondTimer(1000)()
 						
 						hrp_SetPlayerHealth(patient_id, 100.0)
 						
-						ShowPlayerDialog(i, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Proces leczenia zosta≥ zakoÒczony pomyúlnie., OK, )
-						ShowPlayerDialog(patient_id, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Proces leczenia zosta≥ zakoÒczony pomyúlnie., OK, )
+						ShowPlayerDialog(i, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Proces leczenia zosta≈Ç zako≈Ñczony pomy≈õlnie., OK, )
+						ShowPlayerDialog(patient_id, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Proces leczenia zosta≈Ç zako≈Ñczony pomy≈õlnie., OK, )
 					)
 				)
 				else
 				(
 					PlayerCache(i)(pHealing) = INVALID_PLAYER_ID
 				
-					ShowPlayerDialog(i, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Proces leczenia gracza zosta≥o anulowane.\nPowÛd: Gracz znajduje siÍ zbyt daleko od Ciebie., OK, )
+					ShowPlayerDialog(i, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Proces leczenia gracza zosta≈Ço anulowane.\nPow√≥d: Gracz znajduje siƒô zbyt daleko od Ciebie., OK, )
 					GameTextForPlayer(patient_id, ~r~~h~Leczenie zostalo przerwane., 4500, 3)
 				)
 			)
@@ -3443,7 +3443,7 @@ task OnSecondTimer(1000)()
 				)
 			)
 			
-			// Uzaleønienie
+			// Uzale≈ºnienie
 			if(PlayerCache(i)(pDependence) )= 400)
 			(
 				if(random(300) == 60)
@@ -3451,24 +3451,24 @@ task OnSecondTimer(1000)()
 						rand = random(5)
 				   	if(rand == 1)
 					(
-							format(string, sizeof(string), * %s zaczyna mocno kaszleÊ., PlayerName(i))
+							format(string, sizeof(string), * %s zaczyna mocno kaszleƒá., PlayerName(i))
 						FlashMe(i, string) //ProxDetector(10.0, i, string, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, false)
 					)
 					else if(rand == 2)
 					(
-  						SendClientMessage(i, COLOR_DO, ** Odczuwasz lekkie dusznoúci **)
+  						SendClientMessage(i, COLOR_DO, ** Odczuwasz lekkie duszno≈õci **)
 					)
 					else if(rand == 3)
 					(
-						SendClientMessage(i, COLOR_DO, ** Od kilku minut odnosisz wraøenie, øe ktoú CiÍ úledzi. **)
+						SendClientMessage(i, COLOR_DO, ** Od kilku minut odnosisz wra≈ºenie, ≈ºe kto≈õ Ciƒô ≈õledzi. **)
 					)
 					else if(rand == 4)
 					(
-						SendClientMessage(i, COLOR_DO, ** S≥yszysz dziwne g≥osy, zdajπce siÍ mÛwiÊ do Ciebie. **)
+						SendClientMessage(i, COLOR_DO, ** S≈Çyszysz dziwne g≈Çosy, zdajƒÖce siƒô m√≥wiƒá do Ciebie. **)
 					)
 					else if(rand == 5)
 					(
-						SendClientMessage(i, COLOR_DO, ** Masz wraøenie, jakby ktoú trzyma≥ CiÍ za rÍkÍ. **)
+						SendClientMessage(i, COLOR_DO, ** Masz wra≈ºenie, jakby kto≈õ trzyma≈Ç Ciƒô za rƒôkƒô. **)
 					)
 				)
 			)
@@ -3492,7 +3492,7 @@ task OnSecondTimer(1000)()
 			// Zaktualizuj status
 			UpdatePlayerStatus(i)
 			
-			// Odúwieø nick, jeúli status jest inny
+			// Od≈õwie≈º nick, je≈õli status jest inny
 			if(PlayerCache(i)(pStatus) != status || PlayerCache(i)(pChangeName))
 			(
 				if(!PlayerCache(i)(pMaskUID))
@@ -3508,7 +3508,7 @@ task OnSecondTimer(1000)()
 				if(PlayerCache(i)(pChangeName)) PlayerCache(i)(pChangeName) = false
 			)
 
-			// Sprawdzanie czy gracz nie spierdoli≥ spod budki przy rozmowie
+			// Sprawdzanie czy gracz nie spierdoli≈Ç spod budki przy rozmowie
 			if(PlayerCache(i)(pUsingBooth))
 			(
 				object_id = GetClosestObject(i, 3.0)				
@@ -3527,7 +3527,7 @@ task OnSecondTimer(1000)()
 				)
 			)
 			
-			// Sygna≥ po≥πczenia	- blint kurwa 1
+			// Sygna≈Ç po≈ÇƒÖczenia	- blint kurwa 1
 			h, m, s
 			gettime(h, m, s)
 			if(s % 7)
@@ -3551,7 +3551,7 @@ task OnSecondTimer(1000)()
 				)
 			)
 			
-			// Sprawdzanie sprzπtaczy
+			// Sprawdzanie sprzƒÖtaczy
 			if(PlayerCache(i)(pSweep))
 			(
 				if(PlayerCache(i)(pSweepTime) + 45 ( gettime())
@@ -3603,7 +3603,7 @@ task OnSecondTimer(1000)()
 				)
 				
 				PlayerCache(i)(pRageTime) --
-				//PlayerCache(i)(pRageTime) -= 100 // Testowy wartoúÊ do testowania efektÛw - zmniejsza z 15 minut do 15 sekund.
+				//PlayerCache(i)(pRageTime) -= 100 // Testowy warto≈õƒá do testowania efekt√≥w - zmniejsza z 15 minut do 15 sekund.
 				
 				switch(PlayerCache(i)(pRageDrug))
 				(
@@ -3622,27 +3622,27 @@ task OnSecondTimer(1000)()
 								(
 									switch(rand)
 									(
-										case 1: ( format(string, sizeof(string), ** Twoja postaÊ czuje siÍ intensywnie odprÍøona. **) rage_text = true )
-										case 2: ( format(string, sizeof(string), ** Twoja postaÊ czuje siÍ b≥ogo. **) rage_text = true )
-										case 3: ( format(string, sizeof(string), ** Twoja postaÊ czuje ulgÍ. **) rage_text = true )
+										case 1: ( format(string, sizeof(string), ** Twoja postaƒá czuje siƒô intensywnie odprƒô≈ºona. **) rage_text = true )
+										case 2: ( format(string, sizeof(string), ** Twoja postaƒá czuje siƒô b≈Çogo. **) rage_text = true )
+										case 3: ( format(string, sizeof(string), ** Twoja postaƒá czuje ulgƒô. **) rage_text = true )
 									)
 								)
 								case DRUG_USE_SMOKE:
 								(
 									switch(rand)
 									(
-										case 1: ( format(string, sizeof(string), ** Wszelkie troski ustÍpujπ. **) rage_text = true )
-										case 2: ( format(string, sizeof(string), ** Nie masz siÍ czym martwiÊ. **) rage_text = true )
-										case 3: ( format(string, sizeof(string), ** Jesteú úpiπcy. **) rage_text = true )
+										case 1: ( format(string, sizeof(string), ** Wszelkie troski ustƒôpujƒÖ. **) rage_text = true )
+										case 2: ( format(string, sizeof(string), ** Nie masz siƒô czym martwiƒá. **) rage_text = true )
+										case 3: ( format(string, sizeof(string), ** Jeste≈õ ≈õpiƒÖcy. **) rage_text = true )
 									)
 								)
 								case DRUG_USE_INJECT:
 								(
 									switch(rand)
 									(
-										case 1:( format(string, sizeof(string), ** Jesteú bardzo úpiπcy. **) rage_text = true )
-										case 2: ( format(string, sizeof(string), ** Czujesz, øe odp≥ywasz. **) rage_text = true )
-										case 3: ( format(string, sizeof(string), ** Widzisz siebie z gÛry. **) rage_text = true )
+										case 1:( format(string, sizeof(string), ** Jeste≈õ bardzo ≈õpiƒÖcy. **) rage_text = true )
+										case 2: ( format(string, sizeof(string), ** Czujesz, ≈ºe odp≈Çywasz. **) rage_text = true )
+										case 3: ( format(string, sizeof(string), ** Widzisz siebie z g√≥ry. **) rage_text = true )
 									)
 								)
 							)
@@ -3663,18 +3663,18 @@ task OnSecondTimer(1000)()
 									(
 										switch(rand)
 										(
-											case 1: ( format(string, sizeof(string), ** Nikt CiÍ nie pokona! **) rage_text = true )
-											case 2: ( format(string, sizeof(string), ** Serce wali ci jak m≥ot. **) rage_text = true )
-											case 3: ( format(string, sizeof(string), ** Ale faza ja pierdolÍ! **) rage_text = true )
+											case 1: ( format(string, sizeof(string), ** Nikt Ciƒô nie pokona! **) rage_text = true )
+											case 2: ( format(string, sizeof(string), ** Serce wali ci jak m≈Çot. **) rage_text = true )
+											case 3: ( format(string, sizeof(string), ** Ale faza ja pierdolƒô! **) rage_text = true )
 										)
 									)
 									else
 									(
 										switch(rand)
 										(
-											case 1: ( format(string, sizeof(string), ** Ktoú za tobπ chodzi od d≥uøszego czasu. **) rage_text = true )
-											case 2: ( format(string, sizeof(string), ** SpÛjrz za siebie. **) rage_text = true )
-											case 3: ( format(string, sizeof(string), ** Oni CiÍ widzπ... **) rage_text = true )
+											case 1: ( format(string, sizeof(string), ** Kto≈õ za tobƒÖ chodzi od d≈Çu≈ºszego czasu. **) rage_text = true )
+											case 2: ( format(string, sizeof(string), ** Sp√≥jrz za siebie. **) rage_text = true )
+											case 3: ( format(string, sizeof(string), ** Oni Ciƒô widzƒÖ... **) rage_text = true )
 										)
 									)
 								)
@@ -3684,8 +3684,8 @@ task OnSecondTimer(1000)()
 									(	
 										switch(rand)
 										(
-											case 1: ( format(string, sizeof(string), ** Twoje cia≥o odp≥ywa... **) rage_text = true )
-											case 2: ( format(string, sizeof(string), ** Nie czujesz siÍ za dobrze. **) rage_text = true )
+											case 1: ( format(string, sizeof(string), ** Twoje cia≈Ço odp≈Çywa... **) rage_text = true )
+											case 2: ( format(string, sizeof(string), ** Nie czujesz siƒô za dobrze. **) rage_text = true )
 											case 3: ( format(string, sizeof(string), ** Chyba zaraz odlecisz... **) rage_text = true )
 										)
 									)
@@ -3693,9 +3693,9 @@ task OnSecondTimer(1000)()
 									(
 										switch(rand)
 										(
-											case 1: ( format(string, sizeof(string), ** Obejrzyj siÍ za siebie. **) rage_text = true )
-											case 2: ( format(string, sizeof(string), ** Chyba jesteú na pods≥uchu. **) rage_text = true )
-											case 3: ( format(string, sizeof(string), ** Czujesz siÍ úledzony. **) rage_text = true )
+											case 1: ( format(string, sizeof(string), ** Obejrzyj siƒô za siebie. **) rage_text = true )
+											case 2: ( format(string, sizeof(string), ** Chyba jeste≈õ na pods≈Çuchu. **) rage_text = true )
+											case 3: ( format(string, sizeof(string), ** Czujesz siƒô ≈õledzony. **) rage_text = true )
 										)
 									)
 								)
@@ -3706,7 +3706,7 @@ task OnSecondTimer(1000)()
 										switch(rand)
 										(
 											case 1: ( format(string, sizeof(string), ** Czujesz mocne pobudzenie. **) rage_text = true )
-											case 2: ( format(string, sizeof(string), ** Chyba nie przeúpisz tej nocy. **) rage_text = true )
+											case 2: ( format(string, sizeof(string), ** Chyba nie prze≈õpisz tej nocy. **) rage_text = true )
 											case 3: ( format(string, sizeof(string), ** Twoje serce wali jak dzwon. **) rage_text = true )
 										)
 									)
@@ -3714,8 +3714,8 @@ task OnSecondTimer(1000)()
 									(
 										switch(rand)
 										(
-											case 1: ( format(string, sizeof(string), ** Czujesz siÍ úledzony. **) rage_text = true )
-											case 2: ( format(string, sizeof(string), ** Czujesz siÍ obserwowany. **) rage_text = true )
+											case 1: ( format(string, sizeof(string), ** Czujesz siƒô ≈õledzony. **) rage_text = true )
+											case 2: ( format(string, sizeof(string), ** Czujesz siƒô obserwowany. **) rage_text = true )
 											case 3: ( format(string, sizeof(string), ** Nie patrz za siebie... **) rage_text = true )
 										)
 									)
@@ -3737,18 +3737,18 @@ task OnSecondTimer(1000)()
 							(
 								switch(rand)
 								(
-									case 1: ( format(string, sizeof(string), ** Kolorowe wizualizacje wzbogacajπ twπ wizjÍ. **) rage_text = true )
-									case 2: ( format(string, sizeof(string), ** Twarze dziwnie siÍ wyginajπ, wszystko siÍ rusza. **) rage_text = true )
-									case 3: ( format(string, sizeof(string), ** Wszystko dooko≥a jest zwielokrotnione. **) rage_text = true )
+									case 1: ( format(string, sizeof(string), ** Kolorowe wizualizacje wzbogacajƒÖ twƒÖ wizjƒô. **) rage_text = true )
+									case 2: ( format(string, sizeof(string), ** Twarze dziwnie siƒô wyginajƒÖ, wszystko siƒô rusza. **) rage_text = true )
+									case 3: ( format(string, sizeof(string), ** Wszystko dooko≈Ça jest zwielokrotnione. **) rage_text = true )
 								)
 							)
 							else
 							(
 								switch(rand)
 								(
-									case 1: ( format(string, sizeof(string), ** Nigdy nie mia≥eú tak z≥ej podrÛøy! **) rage_text = true )
-									case 2: ( format(string, sizeof(string), ** Czujesz siÍ jak ostatnie gÛwno. **) rage_text = true )
-									case 3: ( format(string, sizeof(string), ** Masz krzywπ fazÍ, widzisz popieprzone rzeczy. **) rage_text = true )
+									case 1: ( format(string, sizeof(string), ** Nigdy nie mia≈Çe≈õ tak z≈Çej podr√≥≈ºy! **) rage_text = true )
+									case 2: ( format(string, sizeof(string), ** Czujesz siƒô jak ostatnie g√≥wno. **) rage_text = true )
+									case 3: ( format(string, sizeof(string), ** Masz krzywƒÖ fazƒô, widzisz popieprzone rzeczy. **) rage_text = true )
 								)
 							)
 						)
@@ -3762,18 +3762,18 @@ task OnSecondTimer(1000)()
 							(
 								switch(rand)
 								(
-									case 1: ( format(string, sizeof(string), ** Chce ci siÍ taÒczyÊ, a kaødemu ruchowi towarzyszy euforia! **) rage_text = true )
-									case 2: ( format(string, sizeof(string), ** Nie moøesz ustaÊ na miejscu. **) rage_text = true )
-									case 3: ( format(string, sizeof(string), ** Gorπco Ci! **) rage_text = true )
+									case 1: ( format(string, sizeof(string), ** Chce ci siƒô ta≈Ñczyƒá, a ka≈ºdemu ruchowi towarzyszy euforia! **) rage_text = true )
+									case 2: ( format(string, sizeof(string), ** Nie mo≈ºesz ustaƒá na miejscu. **) rage_text = true )
+									case 3: ( format(string, sizeof(string), ** GorƒÖco Ci! **) rage_text = true )
 								)
 							)
 							else
 							(
 								switch(rand)
 								(
-									case 1: ( format(string, sizeof(string), ** Zaraz siÍ zrzygasz... **) rage_text = true )
-									case 2: ( format(string, sizeof(string), ** TwÛj organizm chyba wiÍcej nie wytrzyma, czujesz, øe masz gorπczkÍ. **) rage_text = true )
-									case 3: ( format(string, sizeof(string), ** Twoja g≥owa zaraz eksploduje, wszystko wydaje siÍ zbyt g≥oúne. **) rage_text = true )
+									case 1: ( format(string, sizeof(string), ** Zaraz siƒô zrzygasz... **) rage_text = true )
+									case 2: ( format(string, sizeof(string), ** Tw√≥j organizm chyba wiƒôcej nie wytrzyma, czujesz, ≈ºe masz gorƒÖczkƒô. **) rage_text = true )
+									case 3: ( format(string, sizeof(string), ** Twoja g≈Çowa zaraz eksploduje, wszystko wydaje siƒô zbyt g≈Ço≈õne. **) rage_text = true )
 								)
 							)
 						)
@@ -3791,18 +3791,18 @@ task OnSecondTimer(1000)()
 									(
 										switch(rand)
 										(
-											case 1: ( format(string, sizeof(string), ** Nikt CiÍ nie pokona! **) rage_text = true )
-											case 2: ( format(string, sizeof(string), ** Serce wali ci jak m≥ot. **) rage_text = true )
-											case 3: ( format(string, sizeof(string), ** Ale faza ja pierdolÍ! **) rage_text = true )
+											case 1: ( format(string, sizeof(string), ** Nikt Ciƒô nie pokona! **) rage_text = true )
+											case 2: ( format(string, sizeof(string), ** Serce wali ci jak m≈Çot. **) rage_text = true )
+											case 3: ( format(string, sizeof(string), ** Ale faza ja pierdolƒô! **) rage_text = true )
 										)
 									)
 									else
 									(
 										switch(rand)
 										(
-											case 1: ( format(string, sizeof(string), ** Ktoú za tobπ chodzi od d≥uøszego czasu. **) rage_text = true )
-											case 2: ( format(string, sizeof(string), ** SpÛjrz za siebie. **) rage_text = true )
-											case 3: ( format(string, sizeof(string), ** Oni CiÍ widzπ... **) rage_text = true )
+											case 1: ( format(string, sizeof(string), ** Kto≈õ za tobƒÖ chodzi od d≈Çu≈ºszego czasu. **) rage_text = true )
+											case 2: ( format(string, sizeof(string), ** Sp√≥jrz za siebie. **) rage_text = true )
+											case 3: ( format(string, sizeof(string), ** Oni Ciƒô widzƒÖ... **) rage_text = true )
 										)
 									)
 								)
@@ -3812,8 +3812,8 @@ task OnSecondTimer(1000)()
 									(	
 										switch(rand)
 										(
-											case 1: ( format(string, sizeof(string), ** Twoje cia≥o odp≥ywa... **) rage_text = true )
-											case 2: ( format(string, sizeof(string), ** Nie czujesz siÍ za dobrze. **) rage_text = true )
+											case 1: ( format(string, sizeof(string), ** Twoje cia≈Ço odp≈Çywa... **) rage_text = true )
+											case 2: ( format(string, sizeof(string), ** Nie czujesz siƒô za dobrze. **) rage_text = true )
 											case 3: ( format(string, sizeof(string), ** Chyba zaraz odlecisz... **) rage_text = true )
 										)
 									)
@@ -3821,9 +3821,9 @@ task OnSecondTimer(1000)()
 									(
 										switch(rand)
 										(
-											case 1: ( format(string, sizeof(string), ** Obejrzyj siÍ za siebie. **) rage_text = true )
-											case 2: ( format(string, sizeof(string), ** Chyba jesteú na pods≥uchu. **) rage_text = true )
-											case 3: ( format(string, sizeof(string), ** Czujesz siÍ úledzony. **) rage_text = true )
+											case 1: ( format(string, sizeof(string), ** Obejrzyj siƒô za siebie. **) rage_text = true )
+											case 2: ( format(string, sizeof(string), ** Chyba jeste≈õ na pods≈Çuchu. **) rage_text = true )
+											case 3: ( format(string, sizeof(string), ** Czujesz siƒô ≈õledzony. **) rage_text = true )
 										)
 									)
 								)
@@ -3834,7 +3834,7 @@ task OnSecondTimer(1000)()
 										switch(rand)
 										(
 											case 1: ( format(string, sizeof(string), ** Czujesz mocne pobudzenie. **) rage_text = true )
-											case 2: ( format(string, sizeof(string), ** Chyba nie przeúpisz tej nocy. **) rage_text = true )
+											case 2: ( format(string, sizeof(string), ** Chyba nie prze≈õpisz tej nocy. **) rage_text = true )
 											case 3: ( format(string, sizeof(string), ** Twoje serce wali jak dzwon. **) rage_text = true )
 										)
 									)
@@ -3842,8 +3842,8 @@ task OnSecondTimer(1000)()
 									(
 										switch(rand)
 										(
-											case 1: ( format(string, sizeof(string), ** Czujesz siÍ úledzony. **) rage_text = true )
-											case 2: ( format(string, sizeof(string), ** Czujesz siÍ obserwowany. **) rage_text = true )
+											case 1: ( format(string, sizeof(string), ** Czujesz siƒô ≈õledzony. **) rage_text = true )
+											case 2: ( format(string, sizeof(string), ** Czujesz siƒô obserwowany. **) rage_text = true )
 											case 3: ( format(string, sizeof(string), ** Nie patrz za siebie... **) rage_text = true )
 										)
 									)
@@ -3995,7 +3995,7 @@ task OnSecondTimer(1000)()
 				)
 			)*/
 			
-			// po postrzale w rÍkÍ
+			// po postrzale w rƒôkƒô
 			if(PlayerCache(i)(pBlockShooting) ) 0)
 			(
 				PlayerCache(i)(pBlockShooting) --
@@ -4031,7 +4031,7 @@ task OnSecondTimer(1000)()
 				PlayerTextDrawSetString(i, TextDrawFuelContent(i), string)
 				PlayerTextDrawShow(i, TextDrawFuelContent(i))
 			
-				if(PlayerCache(i)(pCash) ( floatadd(RefuelData(i)(rPrice), RefuelData(i)(rPricePerL)) || CarInfo(vehid)(cFuel) + RefuelData(i)(rLiters) )= GetVehicleMaxFuel(CarInfo(vehid)(cModel))) // brak≥o kaski || bak jest pe≥ny
+				if(PlayerCache(i)(pCash) ( floatadd(RefuelData(i)(rPrice), RefuelData(i)(rPricePerL)) || CarInfo(vehid)(cFuel) + RefuelData(i)(rLiters) )= GetVehicleMaxFuel(CarInfo(vehid)(cModel))) // brak≈Ço kaski || bak jest pe≈Çny
 				(
 					price = floatround(RefuelData(i)(rPrice)), value = RefuelData(i)(rLiters), fuelstring(128)
 					hrp_GivePlayerMoney(i, -price)
@@ -4044,9 +4044,9 @@ task OnSecondTimer(1000)()
 					RefuelData(i)(rPrice) = 0.00
 					RefuelData(i)(rPricePerL) = 0.00
 					RefuelData(i)(rVeh) = 0
-					format(fuelstring, sizeof(fuelstring), Zap≥aci≥eú $%d za %d litrÛw paliwa., price, value)
+					format(fuelstring, sizeof(fuelstring), Zap≈Çaci≈Çe≈õ $%d za %d litr√≥w paliwa., price, value)
 					SendClientMessage(i, COLOR_LIGHTBLUE, fuelstring)
-					format(fuelstring, sizeof(fuelstring), * Pojazd %s zosta≥ pomyúlnie zatankowany (( %s )), CarInfo(vehid)(cName), PlayerName(i))
+					format(fuelstring, sizeof(fuelstring), * Pojazd %s zosta≈Ç pomy≈õlnie zatankowany (( %s )), CarInfo(vehid)(cName), PlayerName(i))
 					ProxDetector(10.0, i, fuelstring, COLOR_DO, COLOR_DO, COLOR_DO, COLOR_DO, COLOR_DO, true)	
 					PlayerTextDrawHide(i, TextDrawFuelContent(i))
 					TextDrawHideForPlayer(i, Text:TextDrawFuelBack)
@@ -4066,18 +4066,18 @@ task OnSecondTimer(1000)()
 					
 						if(rand == 5)
 						(
-							GuiMsg(i, Gratulacje! Za Twojπ dobrπ pracÍ na rzecz placÛwki naczelnik skrÛci≥ TwÛj wyrok o godzinÍ.\nAby ponownie zaczπÊ pracÍ uøyj klawisza H (klakson) bπdü zakoÒcz pracÍ komendπ /praca., 0)
+							GuiMsg(i, Gratulacje! Za TwojƒÖ dobrƒÖ pracƒô na rzecz plac√≥wki naczelnik skr√≥ci≈Ç Tw√≥j wyrok o godzinƒô.\nAby ponownie zaczƒÖƒá pracƒô u≈ºyj klawisza H (klakson) bƒÖd≈∫ zako≈Ñcz pracƒô komendƒÖ /praca., 0)
 							PlayerCache(i)(pArrestTime) = PlayerCache(i)(pArrestTime) - 3600	// godzina
 						)
 						else
 						(
-							GuiMsg(i, Czas dobieg≥ koÒca. Uda≥o Ci siÍ, straønik jest z Ciebie zadowolony dlatego otrzyma≥eú od niego kilka dolarÛw.\nAby ponownie zaczπÊ pracÍ uøyj klawisza H (klakson) bπdü zakoÒcz pracÍ komendπ /praca., 0)
+							GuiMsg(i, Czas dobieg≈Ç ko≈Ñca. Uda≈Ço Ci siƒô, stra≈ºnik jest z Ciebie zadowolony dlatego otrzyma≈Çe≈õ od niego kilka dolar√≥w.\nAby ponownie zaczƒÖƒá pracƒô u≈ºyj klawisza H (klakson) bƒÖd≈∫ zako≈Ñcz pracƒô komendƒÖ /praca., 0)
 							hrp_GivePlayerMoney(i, 6)
 						)
 					)
 					else
 					(
-						GuiMsg(i, Czas dobieg≥ koÒca. Niestety nie uda≥o siÍ tym razem, moøesz sprÛbowaÊ ponownie.\nAby ponownie zaczπÊ pracÍ uøyj klawisza H (klakson) bπdü zakoÒcz pracÍ komendπ /praca., 0)
+						GuiMsg(i, Czas dobieg≈Ç ko≈Ñca. Niestety nie uda≈Ço siƒô tym razem, mo≈ºesz spr√≥bowaƒá ponownie.\nAby ponownie zaczƒÖƒá pracƒô u≈ºyj klawisza H (klakson) bƒÖd≈∫ zako≈Ñcz pracƒô komendƒÖ /praca., 0)
 					)
 					
 					PlayerCache(i)(pWorkRepeat)++
@@ -4204,19 +4204,19 @@ task OnSecondTimer(1000)()
 
 			if(floatround(Gangbang(gbid)(gbAttackingDeaths) / 2.0) ) a_count)
 			(
-				// Wygrana broni±cych
+				// Wygrana broni¬±cych
 				// lock terenu
 			)
 
 			if(floatround(Gangbang(gbid)(gbDefendingDeaths) / 2.0) ) d_count)
 			(
-				// Wygrana atakuj±cych
+				// Wygrana atakuj¬±cych
 				// przekazanie terenu
 			)
 
 			if(Gangbang(gbid)(gbStartTime) + 60*10 ( gettime())
 			(
-				// koniec i wygrywaj± broni±cy
+				// koniec i wygrywaj¬± broni¬±cy
 			)
 		)
 	)
@@ -4294,7 +4294,7 @@ task OnOneHalfTimer(500)()
 					GetDynamicObjectPos(object_id, obPosX, obPosY, obPosZ)
 					if(IsPlayerInRangeOfPoint(i, 4.0, obPosX, obPosY, obPosZ))
 					(
-						if(GetVehicleComponentInSlot(vehid, 7) != 1025) //Sprawdzanie czy ma felgi offroad - jeøeli tak to nie przebija.
+						if(GetVehicleComponentInSlot(vehid, 7) != 1025) //Sprawdzanie czy ma felgi offroad - je≈ºeli tak to nie przebija.
 						(
 							CarInfo(vehid)(cVisual)(3) = random(15) + 1
 							UpdateVehicleDamageStatus(vehid, CarInfo(vehid)(cVisual)(0), CarInfo(vehid)(cVisual)(1), CarInfo(vehid)(cVisual)(2), CarInfo(vehid)(cVisual)(3))
@@ -4306,7 +4306,7 @@ task OnOneHalfTimer(500)()
 	)
 	
 	
-	// Miganie úwiate≥ dla pd, fd, mc, fbi, etc.
+	// Miganie ≈õwiate≈Ç dla pd, fd, mc, fbi, etc.
 	foreach(Vehicles, vehid)
 	(	
 		Float:health = 0.0

@@ -49,7 +49,7 @@ public LoadAllProducts()
 	data(128), product_id
 	mysql_query(SELECT * FROM hrp_products)
 	
-	print((load) Rozpoczynam proces wczytywania wszystkich produktów...)
+	print((load) Rozpoczynam proces wczytywania wszystkich produktÃ³w...)
 
 	mysql_store_result()
 	while(mysql_fetch_row(data, |))
@@ -71,7 +71,7 @@ public LoadAllProducts()
 	)
 	mysql_free_result()
 
-	printf((load) Wczytano %d produkty/ów., product_id)
+	printf((load) Wczytano %d produkty/Ã³w., product_id)
 	return 1
 )
 
@@ -81,7 +81,7 @@ public SaveProduct(product_id, what)
 	format(main_query, sizeof(main_query), UPDATE hrp_products SET)
 	if(what & SAVE_PRODUCT_THINGS)
 	(
-		// Pozosta³e (nazwa, itemtype, wartoœæ 1, wartoœæ 2, UID drzwi)
+		// PozostaÅ‚e (nazwa, itemtype, wartoÅ›Ä‡ 1, wartoÅ›Ä‡ 2, UID drzwi)
 		format(query, sizeof(query),  product_name = %s, product_itemtype = %d, product_value1 = %d, product_value2 = %d, product_dooruid = %d,
 		ProductInfo(product_id)(pName),
 		ProductInfo(product_id)(pType),
@@ -97,7 +97,7 @@ public SaveProduct(product_id, what)
 	)
 	if(what & SAVE_PRODUCT_VALUES)
 	(
-		// Wartoœci (koszt produktu, iloœæ w magazynie)
+		// WartoÅ›ci (koszt produktu, iloÅ›Ä‡ w magazynie)
 		format(query, sizeof(query),  product_price = %d, product_number = %d,
 		ProductInfo(product_id)(pPrice),
 		ProductInfo(product_id)(pNumber))
@@ -335,7 +335,7 @@ public ListPlayerDoorProducts(playerid, doorid)
 	)
 	else
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie znaleziono ¿adnych produktów w magazynie., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie znaleziono Å¼adnych produktÃ³w w magazynie., OK, )
 	)
 	return 1
 )
@@ -345,7 +345,7 @@ stock LoadProductsList(playerid)
 	doorid = GetPlayerDoorID(playerid), data(64), list_items(1024)
 	if(doorid == INVALID_DOOR_ID)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie znajdujesz siê w budynku., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie znajdujesz siÄ™ w budynku., OK, )
 		return 1
 	)
 	mysql_query_format(SELECT product_uid, product_number, product_price, product_name FROM hrp_products WHERE product_dooruid = %d, DoorData(doorid)(dUID))
@@ -365,7 +365,7 @@ stock LoadProductsList(playerid)
 	)
 	else
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie znaleziono ¿adnych produktów w magazynie., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie znaleziono Å¼adnych produktÃ³w w magazynie., OK, )
 	)
 	return 1
 )

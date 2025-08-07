@@ -28,8 +28,8 @@ stock LogPlayerByLauncher(playerid)
 	)
 	mysql_free_result()
 	
-	// Poka¿ postacie mo¿liwe do zalogowania
-	ShowPlayerDialog(playerid, D_LAUNCH_SELECT_CHAR, DIALOG_STYLE_LIST, Wybierz postaæ, char_list, Wybierz, Anuluj)
+	// PokaÅ¼ postacie moÅ¼liwe do zalogowania
+	ShowPlayerDialog(playerid, D_LAUNCH_SELECT_CHAR, DIALOG_STYLE_LIST, Wybierz postaÄ‡, char_list, Wybierz, Anuluj)
 	PlayerCache(playerid)(pLauncherLogged) = true
 	
 	// Reszta

@@ -39,10 +39,10 @@ new		SKIP_OBJECTS = 	false		// false in stable
 #define MAX_ITEM_CACHE	  6400
 //#define MAX_ITEM_WA_CACHE	  1000
 #define MAX_PHONES			100 // Maksymalna liczba budek telefonicznych.
-#define MAX_PLANTS			500 // Maksymalna liczba krzakÛw.
+#define MAX_PLANTS			500 // Maksymalna liczba krzak√≥w.
 #define MAX_CALLS			100 // Maksymalna liczba jednoczesnych konwersacji przez telefon/budke na serwerze.
-#define MAX_GANGBANGS		20  // Maksymalna liczba jednoczesnych wojen pomiÍdzy gagnami. (more than enough)
-#define MAX_HOMEPHONES 1600// Maksymalna liczba telefonÛw stacjonarnych (ERROR)
+#define MAX_GANGBANGS		20  // Maksymalna liczba jednoczesnych wojen pomiƒôdzy gagnami. (more than enough)
+#define MAX_HOMEPHONES 1600// Maksymalna liczba telefon√≥w stacjonarnych (ERROR)
 #define MAX_PRODUCTS		6000
 #define MAX_ANIMATIONS	  500
 #define MAX_PACKAGES		200
@@ -71,18 +71,18 @@ new		SKIP_OBJECTS = 	false		// false in stable
 
 #define MAX_DAILY_INCOME 	235 
 
-#define MAX_COOK			500	// maksymalna ilosc piecykow do gotowania narko≥ykÛw
+#define MAX_COOK			500	// maksymalna ilosc piecykow do gotowania narko≈Çyk√≥w
 #define MAX_INGREDIENTS	18		// maksymalna ilosc skladnikow w tworzeniu
 
-#define PAYDAYDAY		72000 // Liczba sekund co ile gracz moøe dostaÊ paydaya. 72000s = 20h.
-#define PAYDAY_CONSTANT 4 // Liczba dolarÛw ktÛre dodaje siÍ graczowi za kaødπ minutÍ na duty.
+#define PAYDAYDAY		72000 // Liczba sekund co ile gracz mo≈ºe dostaƒá paydaya. 72000s = 20h.
+#define PAYDAY_CONSTANT 4 // Liczba dolar√≥w kt√≥re dodaje siƒô graczowi za ka≈ºdƒÖ minutƒô na duty.
 
 #define PREMIUM_VEHICLES	3
 #define STANDARD_VEHICLES   1
 
 // Anty Cheat Car TP
-#define MAX_CARS_NEED_TO_BAN 		3		// ile aut ma do siebie przeteleportowaÊ, øeby zyskaÊ bana
-#define AC_PASS_NUMBER					5		// co ile minut resetowaÊ limit
+#define MAX_CARS_NEED_TO_BAN 		3		// ile aut ma do siebie przeteleportowaƒá, ≈ºeby zyskaƒá bana
+#define AC_PASS_NUMBER					5		// co ile minut resetowaƒá limit
 
 // Teams
 #define TEAM_DEFAULT			0
@@ -109,7 +109,7 @@ new		SKIP_OBJECTS = 	false		// false in stable
 #define SAVE_VEH_THINGS 		8
 #define SAVE_VEH_LOCK   		16
 
-// Zapisywanie krzakÛw
+// Zapisywanie krzak√≥w
 #define SAVE_PLANT_POS			1
 #define SAVE_PLANT_THINGS		2
 #define SAVE_PLANT_IDENTITY		4
@@ -123,7 +123,7 @@ new		SKIP_OBJECTS = 	false		// false in stable
 #define SAVE_DOOR_LIMITS	32
 #define SAVE_DOOR_PAINTBALL	64
 
-// Wczytanie ustawieÒ telefonu
+// Wczytanie ustawie≈Ñ telefonu
 #define GET_PHONE_PASSWORD 	1
 #define GET_PHONE_WALLPAPER 	2
 #define GET_PHONE_COLOR			4
@@ -147,7 +147,7 @@ new		SKIP_OBJECTS = 	false		// false in stable
 #define OWNER_PLAYER  			1
 #define OWNER_GROUP			 5
 
-// Typy interfejsÛw przedmiotÛw
+// Typy interfejs√≥w przedmiot√≥w
 #define INTERFACE_TYPE_TEXT 1
 #define INTERFACE_TYPE_GRAPHIC 2
 
@@ -163,7 +163,7 @@ new		SKIP_OBJECTS = 	false		// false in stable
 #define DIESEL_PRICE	   		2
 #define AIRFUEL_PRICE	   		8
 
-// Typy napadÛw
+// Typy napad√≥w
 #define ROBBING_NONE			0
 #define ROBBING_GANG			1
 #define ROBBING_LSPD			2
@@ -209,17 +209,17 @@ new		SKIP_OBJECTS = 	false		// false in stable
 #define GROUP_FISHING		36
 #define GROUP_TRUCKERS	37
 #define GROUP_HARDCORE	38
-#define GROUP_HIRE 39	// wypoøyczalnia wÛzkÛw
-#define GROUP_SKATE 40	// grupa skateÛw, coú jak freelancer
+#define GROUP_HIRE 39	// wypo≈ºyczalnia w√≥zk√≥w
+#define GROUP_SKATE 40	// grupa skate√≥w, co≈õ jak freelancer
 #define GROUP_RADIO 41		// radia (pewnie i tak nikt nie skorzysta)
 #define GROUP_FARM	42	// Farmerzy
-#define GROUP_DOC		43	// WiÍzienie, w sensie grupa policjantÛw
+#define GROUP_DOC		43	// Wiƒôzienie, w sensie grupa policjant√≥w
 #define GROUP_SPORT 			44	// sklep sportowy
 #define GROUP_CORONER 	45		// Wiadomix.
 #define GROUP_INSURANCE 	46	// Ubezpieczenia
 #define GROUP_PAINTBALL 	47	// Paintball
 
-// Typy sklepÛw
+// Typy sklep√≥w
 #define SHOP_SHADES			1
 #define SHOP_HATS			2
 #define SHOP_MASKS			3
@@ -234,122 +234,122 @@ new		SKIP_OBJECTS = 	false		// false in stable
 #define SHOP_HAIRCUT	12			// no nie wiem?
 #define SHOP_PAINTJOB	13		// jak grupa ma takie val 2 to moze oferowac paintjob
 
-// Miejsce przedmiotÛw
+// Miejsce przedmiot√≥w
 #define PLACE_NONE		  0
 #define PLACE_PLAYER		1   // Przedmiot gracza
-#define PLACE_VEHICLE	   2   // Przedmiot w pojeüdzie
+#define PLACE_VEHICLE	   2   // Przedmiot w poje≈∫dzie
 #define PLACE_BAG		   3   // Przedmiot w torbie
 #define PLACE_SAFE		  4   // Przedmiot w schowku
 #define PLACE_MACHINE 5		// W automacie
 
 // Sloty broni
-#define WEAPON_MAIN		0	// G≥Ûwna broÒ typu M4
-#define WEAPON_SIDE		1	// BroÒ poboczna typu Deagle
-#define WEAPON_FUNC		2	// BroÒ funkcjonalno-taktyczna typu nÛø
+#define WEAPON_MAIN		0	// G≈Ç√≥wna bro≈Ñ typu M4
+#define WEAPON_SIDE		1	// Bro≈Ñ poboczna typu Deagle
+#define WEAPON_FUNC		2	// Bro≈Ñ funkcjonalno-taktyczna typu n√≥≈º
 
-// Typy przedmiotÛw
+// Typy przedmiot√≥w
 #define TYPE_NONE		   0   // Brak
 #define ITEM_WATCH		  1   // Zegarek
-#define ITEM_FOOD		   2   // Jedzenie (value1 = iloúÊ hp)
-#define ITEM_CIGGY		  3   // Papierosy (value1 = iloúÊ sztuk)
+#define ITEM_FOOD		   2   // Jedzenie (value1 = ilo≈õƒá hp)
+#define ITEM_CIGGY		  3   // Papierosy (value1 = ilo≈õƒá sztuk)
 #define ITEM_CUBE		   4   // Kostka do gry
 #define ITEM_CLOTH		  5   // Ubranie (value1 = id skinu)
-#define ITEM_WEAPON		 6   // BroÒ (value1 = model broni, value2 = amunicja)
-#define ITEM_AMMO		   7   // Amunicja (value1 = model broni, value2 = iloúÊ amunicji)
+#define ITEM_WEAPON		 6   // Bro≈Ñ (value1 = model broni, value2 = amunicja)
+#define ITEM_AMMO		   7   // Amunicja (value1 = model broni, value2 = ilo≈õƒá amunicji)
 #define ITEM_PHONE		  8   // Telefon (value1 = numer telefonu)
-#define ITEM_CANISTER	   9   // Karnister (value1 = iloúÊ paliwa, value2 = typ paliwa)
+#define ITEM_CANISTER	   9   // Karnister (value1 = ilo≈õƒá paliwa, value2 = typ paliwa)
 #define ITEM_MASK		   10  // Maska
-#define ITEM_INHIBITOR	  11  // Paralizator (value2 = iloúÊ naboi)
-#define ITEM_PAINT		  12  // Lakier (value2 = iloúÊ naboi)
+#define ITEM_INHIBITOR	  11  // Paralizator (value2 = ilo≈õƒá naboi)
+#define ITEM_PAINT		  12  // Lakier (value2 = ilo≈õƒá naboi)
 #define ITEM_HANDCUFFS	  13  // Kajdanki
 #define ITEM_MEGAPHONE	  14  // Megafon
 #define ITEM_LINE		   15  // Lina holownicza
 #define ITEM_BEDBUG		 16  // Pluskwa
-#define ITEM_NOTEBOOK	   17  // Notes (value1 = iloúÊ karteczek)
+#define ITEM_NOTEBOOK	   17  // Notes (value1 = ilo≈õƒá karteczek)
 #define ITEM_CHIT		   18  // Karteczka (value1 = uid wpisu w bazie)
-#define ITEM_TUNING		 19  // CzÍúÊ tuningu (value1 = id komponentu)
-#define ITEM_CHECKBOOK	  20  // Ksiaøeczka czekowa (value1 = iloúÊ czekÛw)
-#define ITEM_CHECK		  21  // Czek (value1 = iloúÊ pieniÍdzy)
-#define ITEM_FISHING		22  // WÍdka (value1 = rodzaj wÍdki)
+#define ITEM_TUNING		 19  // Czƒô≈õƒá tuningu (value1 = id komponentu)
+#define ITEM_CHECKBOOK	  20  // Ksia≈ºeczka czekowa (value1 = ilo≈õƒá czek√≥w)
+#define ITEM_CHECK		  21  // Czek (value1 = ilo≈õƒá pieniƒôdzy)
+#define ITEM_FISHING		22  // Wƒôdka (value1 = rodzaj wƒôdki)
 #define ITEM_BAG			23  // Torba
-#define ITEM_DRINK		  24  // NapÛj (value1 = special_action (20 - piwo, 22 - wino, 23 - sprunk))
-#define ITEM_DRUG		   25  // Narkotyk (value1 = typ narkotyku, value2 = pozosta≥e)
+#define ITEM_DRINK		  24  // Nap√≥j (value1 = special_action (20 - piwo, 22 - wino, 23 - sprunk))
+#define ITEM_DRUG		   25  // Narkotyk (value1 = typ narkotyku, value2 = pozosta≈Çe)
 #define ITEM_JOINT		  26  // Joincik
 
-#define ITEM_BLET		   27  // Bletka (wymagana do skrÍcenia jointa)
-#define ITEM_BONGOS		 28  // Bongos (lepsze dzia≥anie palπcej siÍ w nim marihuany)
-#define ITEM_BARREL		 29  // Lufka (niezbÍdna do kokainy, morfiny etc.)
+#define ITEM_BLET		   27  // Bletka (wymagana do skrƒôcenia jointa)
+#define ITEM_BONGOS		 28  // Bongos (lepsze dzia≈Çanie palƒÖcej siƒô w nim marihuany)
+#define ITEM_BARREL		 29  // Lufka (niezbƒôdna do kokainy, morfiny etc.)
 
 #define ITEM_ATTACH		 30  // Obiekt przyczepialny (value1 = uid wpisu w bazie)
 #define ITEM_ACCESS		 31  // Akcesoria do pojazdu (value1 = typ akcesoria)
-#define ITEM_PLATE		  32  // P≥yta (value1 = UID wpisu w bazie)
-#define ITEM_PLAYER			33  // Odwtarzacz CD (value1 = UID wpisu na p≥ycie)
+#define ITEM_PLATE		  32  // P≈Çyta (value1 = UID wpisu w bazie)
+#define ITEM_PLAYER			33  // Odwtarzacz CD (value1 = UID wpisu na p≈Çycie)
 #define ITEM_KEYS		   34  // Kluczyki do pojazdu (value1 = UID pojazdu)
-#define ITEM_ARMOUR		 35  // Kamizelka kuloodporna (value1 = iloúÊ kamizelki)
-#define ITEM_GLOVES		 36  // RÍkawiczki
-#define ITEM_CORPSE		 37  // Zw≥oki (value1 = UID zabÛjcy, value2 = typ zabÛjstwa)
-#define ITEM_WINDGUN		38  // WiatrÛwka
+#define ITEM_ARMOUR		 35  // Kamizelka kuloodporna (value1 = ilo≈õƒá kamizelki)
+#define ITEM_GLOVES		 36  // Rƒôkawiczki
+#define ITEM_CORPSE		 37  // Zw≈Çoki (value1 = UID zab√≥jcy, value2 = typ zab√≥jstwa)
+#define ITEM_WINDGUN		38  // Wiatr√≥wka
 #define ITEM_ROLL		   39  // Rolki
 #define ITEM_PASS		   40  // Karnet
-#define ITEM_MOLOTOV		41  // Koktajl mo≥otowa (podpalanie budynkÛw)
+#define ITEM_MOLOTOV		41  // Koktajl mo≈Çotowa (podpalanie budynk√≥w)
 #define ITEM_PICKLOCK	   42  // Wytrych (value1 = procent powodzenia)
 #define ITEM_OPTIWAND	   43  // Optiwand
 #define ITEM_CRAFT		  44  // Crafting
 #define ITEM_FLASHBANG	  45  // Flashbang
 #define ITEM_FLASHLIGHT		46	// Latarka
 #define ITEM_WEAPON_AT		47	// Dodatek do broni
-#define ITEM_BLADE			48	// Przedmiot z ktÛrego moøna craftowaÊ broÒ
+#define ITEM_BLADE			48	// Przedmiot z kt√≥rego mo≈ºna craftowaƒá bro≈Ñ
 #define ITEM_AQUALUNG		49	// Akwalung Arczira
 #define ITEM_TIRE			50	// Zapasowa opona.
-#define ITEM_NUTRIENT		51  // Odøywka na pakierni
+#define ITEM_NUTRIENT		51  // Od≈ºywka na pakierni
 #define ITEM_TAGGER			52  // Spray do tagowania dzielnicy
 //#define ITEM_WOOD			53	// Drewno do skryptu tartaka
-//#define ITEM_ROCK			54	// KamieÒ do skryptu kopalni
-//#define ITEM_BOX			55  // Przedmiot do transportu materia≥Ûw.
+//#define ITEM_ROCK			54	// Kamie≈Ñ do skryptu kopalni
+//#define ITEM_BOX			55  // Przedmiot do transportu materia≈Ç√≥w.
 #define ITEM_DECKOFCARDS	56  // Karty
 #define ITEM_LSPAD			57  // LSPad
 #define ITEM_ELOCK			58  // Elektroniczny zamek do drzwi
 #define ITEM_PAGER			59  // Pager .. gimby nie znajo.
-#define ITEM_ROPE		60	//lina do wiπzania
-#define ITEM_HEADBAG	61		// worek na g≥owÍ
+#define ITEM_ROPE		60	//lina do wiƒÖzania
+#define ITEM_HEADBAG	61		// worek na g≈Çowƒô
 #define ITEM_GAG	62		// knebel
 #define ITEM_HOMEPHONESET	63		// stacjonarny 
-#define ITEM_TUNEPART	64	// (val 1 = ile % ma przyspieszaÊ dany pojazd val2 = typ dodatku)
+#define ITEM_TUNEPART	64	// (val 1 = ile % ma przyspieszaƒá dany pojazd val2 = typ dodatku)
 #define ITEM_NEWSPAPER	65	// (val 1 = ID wpisu w bazie wbc_press)
-#define ITEM_ROULETTE	66		// na proúbÍ gracza CzeúÊ (- ruletka (- coú na zasadzie kostki z 36 úciankami
-#define ITEM_PUTABLE	67	// obiekt odk≥adalny, moøliwoúÊ oselacji i te sprawy (- (val 1 = ID modelu)
-#define ITEM_FAKEPAPERS	68	// øÛ≥te papiery dla FBI
-#define ITEM_SEEDS		69	// Nasiona dla plantowania zio≥a
-#define ITEM_CARD 		70 	// Biznesowa karta p≥atnicza
+#define ITEM_ROULETTE	66		// na pro≈õbƒô gracza Cze≈õƒá (- ruletka (- co≈õ na zasadzie kostki z 36 ≈õciankami
+#define ITEM_PUTABLE	67	// obiekt odk≈Çadalny, mo≈ºliwo≈õƒá oselacji i te sprawy (- (val 1 = ID modelu)
+#define ITEM_FAKEPAPERS	68	// ≈º√≥≈Çte papiery dla FBI
+#define ITEM_SEEDS		69	// Nasiona dla plantowania zio≈Ça
+#define ITEM_CARD 		70 	// Biznesowa karta p≈Çatnicza
 #define ITEM_OXYGEN	71	// butla z tlenem
 #define ITEM_SURFBOARD 72 	//deska surfingowa
 #define ITEM_BOMB 73
-#define ITEM_SILENCER 74		// t≥umik
-#define ITEM_WORM 75 // robak do wÍdki
-#define ITEM_BANDAGE 76 // bandaøe
+#define ITEM_SILENCER 74		// t≈Çumik
+#define ITEM_WORM 75 // robak do wƒôdki
+#define ITEM_BANDAGE 76 // banda≈ºe
 #define ITEM_PLANT	77	// te nowe do sadzenia
 #define ITEM_SPECIAL 78		// Baloon shop, limity itp.
 #define ITEM_PRESENT	79		// prezent
 #define ITEM_SAFE 		80	// Sejfy
 #define ITEM_PBENTRY		81 // wejsciowki na paintball
 #define ITEM_COOK_INGREDIENT	82 // elementy do gotowania narkotykow
-#define ITEM_COOK_OBJECT			83 // obiekt kuchenki do gotowania narkotykÛw
+#define ITEM_COOK_OBJECT			83 // obiekt kuchenki do gotowania narkotyk√≥w
 
 // Typy kamer
 #define	MODE_THIRDPERSON	1
 #define	MODE_FIRSTPERSON	2
 
 
-//////////// NIE ZAPOMNIJ DODA∆ OPISU W ShowPlayerItemInfo W ITEM.INC ORAZ NAZWY I OBIEKTU NA DOLE FRAJERZE ////////////
+//////////// NIE ZAPOMNIJ DODAƒÜ OPISU W ShowPlayerItemInfo W ITEM.INC ORAZ NAZWY I OBIEKTU NA DOLE FRAJERZE ////////////
 
 #define ITEM_COUNT		  83
 
-// Typy dodatkÛw do broni
+// Typy dodatk√≥w do broni
 #define WA_SCOPE	1	// Celownik laserowy
 #define WA_LIGHT	2	// Latarka
 #define WA_HANDLE	3	// Uchwy
 #define WA_MAG		4	// Dodatkowy magazynek
-#define WA_SILENT	5	// T≥umik
+#define WA_SILENT	5	// T≈Çumik
 
 // Okna w menu PD
 #define PDM_START 	1 	// Okno startowe
@@ -357,7 +357,7 @@ new		SKIP_OBJECTS = 	false		// false in stable
 #define PDM_CAR		3	// Przeglad osoby
 
 // Typy ofert
-#define OFFER_NONE					0   // Nieokreúlony
+#define OFFER_NONE					0   // Nieokre≈õlony
 #define OFFER_ITEM					1   // Przedmiot
 #define OFFER_VEHICLE				2   // Pojazd
 #define OFFER_PRODUCT				3   // Produkt
@@ -366,51 +366,51 @@ new		SKIP_OBJECTS = 	false		// false in stable
 #define OFFER_REFUEL				6   // Tankowanie pojazdu
 #define OFFER_PAINT					7   // Lakierowanie pojazdu
 #define OFFER_REPAIR				8   // Naprawa pojazdu
-#define OFFER_DOOR					9   // NieruchomoúÊ
+#define OFFER_DOOR					9   // Nieruchomo≈õƒá
 #define OFFER_MANDATE				10  // Mandat
 #define OFFER_TOWING				11  // Holowanie
 #define OFFER_HEAL					12  // Leczenie
 #define OFFER_AD					13  // Reklama
-#define OFFER_MONTAGE				14  // Montaø czÍúci
+#define OFFER_MONTAGE				14  // Monta≈º czƒô≈õci
 #define OFFER_PAINTJOB				15  // PaintJob
 #define OFFER_DOCUMENT				16  // Dokument
 #define OFFER_SALON					17  // Pojazd z salonu
 #define OFFER_LESSON				18  // Lekcja jazdy
-#define OFFER_UNBLOCK				19  // ZdjÍcie blokady na kole
-#define OFFER_TRAIN					20  // Trening w si≥owni
+#define OFFER_UNBLOCK				19  // Zdjƒôcie blokady na kole
+#define OFFER_TRAIN					20  // Trening w si≈Çowni
 #define OFFER_TAX					21  // Podatek
 //#define OFFER_SHOOTING				22  // Strzelanie
 #define OFFER_KEYS					23  // Kluczyki do pojazdu
-#define OFFER_INTERIOR				24  // WnÍtrze
-#define OFFER_PREVIEW				25  // Podglπd wnÍtrza
+#define OFFER_INTERIOR				24  // Wnƒôtrze
+#define OFFER_PREVIEW				25  // PodglƒÖd wnƒôtrza
 #define OFFER_WELCOME				26  // Powitanie
 #define OFFER_AREA					27  // Teren gangu
 #define OFFER_REGISTER				28  // Rejestracja pojazdu
-#define OFFER_FEE					29  // Op≥ata
-#define OFFER_SEX					30  // Op≥ata
-#define OFFER_HOTDOG				31  // Sprzedaø hotdoga
-//#define OFFER_LOAD					32  // Za≥adowania pojazdu z materia≥ami.
-//#define OFFER_UNLOAD				33  // Roz≥adowanie pojazdu z materia≥ami.
+#define OFFER_FEE					29  // Op≈Çata
+#define OFFER_SEX					30  // Op≈Çata
+#define OFFER_HOTDOG				31  // Sprzeda≈º hotdoga
+//#define OFFER_LOAD					32  // Za≈Çadowania pojazdu z materia≈Çami.
+//#define OFFER_UNLOAD				33  // Roz≈Çadowanie pojazdu z materia≈Çami.
 #define OFFER_REPAIR_ENGINE			34  // Naprawa silnika
 #define OFFER_REPAIR_BODY			35	// Naprawa karoserii
-#define OFFER_REPAIR_FLUIDS			36	// Wymiana p≥ynÛw
+#define OFFER_REPAIR_FLUIDS			36	// Wymiana p≈Çyn√≥w
 #define OFFER_REPAIR_FILTER			37	// Wymiana filtra
-#define OFFER_REPAIR_COOLER			38	// Wymiana ch≥odnicy
+#define OFFER_REPAIR_COOLER			38	// Wymiana ch≈Çodnicy
 #define OFFER_HIRE_CAR	39
 #define OFFER_LIFE					40 // ubezpieczenie na zycie
-#define OFFER_PAINTBALL				41 // wejúciÛwka na paintball
+#define OFFER_PAINTBALL				41 // wej≈õci√≥wka na paintball
 
 // Typy napraw
 #define REPAIR_STANDARD			1	// Normalna naprawa
 #define REPAIR_ENGINE			2	// Wymiana silnika
 #define REPAIR_BODY				3	// Naprawa karoserii
-#define REPAIR_FLUIDS			4	// Wymiana p≥ynÛw
+#define REPAIR_FLUIDS			4	// Wymiana p≈Çyn√≥w
 #define REPAIR_FILTER			5	// Wymiana filtra
-#define REPAIR_COOLER			6	// Wymiana ch≥odnicy
+#define REPAIR_COOLER			6	// Wymiana ch≈Çodnicy
 
 // Typy broni do craftowania pawlika
-#define BLADE_KNIFE		1 // NÛø
-#define BLADE_BAT		2 // Pa≥ka
+#define BLADE_KNIFE		1 // N√≥≈º
+#define BLADE_BAT		2 // Pa≈Çka
 #define BLADE_KNUCKLE	3 // Kastet
 
 // Typy sexu
@@ -420,13 +420,13 @@ new		SKIP_OBJECTS = 	false		// false in stable
 #define SEX_DOGGY	4	// Sex na pieska
 
 // Typy dni do pogody
-#define DAY_FREEZING	1  // Mroºnie zimno (poniøej 0 *C)
+#define DAY_FREEZING	1  // MroƒΩnie zimno (poni≈ºej 0 *C)
 #define DAY_COLD		2  // Zimno (0 - 15 *C)
-#define DAY_WARM		3  // Ciep≥o (16 - 25 *C)
-#define DAY_HOT			4  // Gor±co (26 - 36 *C)
-#define DAY_HELL		5  // Piekielnie gor±co (36+ *C)
+#define DAY_WARM		3  // Ciep≈Ço (16 - 25 *C)
+#define DAY_HOT			4  // Gor¬±co (26 - 36 *C)
+#define DAY_HELL		5  // Piekielnie gor¬±co (36+ *C)
 
-// Typy dni ogÛlnie, w tygodniu
+// Typy dni og√≥lnie, w tygodniu
 #define DAY_SATURDAY 0
 #define DAY_SUNDAY 1
 #define DAY_MONDAY 2
@@ -444,10 +444,10 @@ new		SKIP_OBJECTS = 	false		// false in stable
 
 // Limity na bronie?
 /*
-	no jeszcze nie uøywane bo Nejman siÍ nie okreúli≥ jakie te limity majπ byÊ
+	no jeszcze nie u≈ºywane bo Nejman siƒô nie okre≈õli≈Ç jakie te limity majƒÖ byƒá
 */
 
-// Typy limitÛw w strefach (nieuøywane jeszcze)
+// Typy limit√≥w w strefach (nieu≈ºywane jeszcze)
 #define LIMIT_ZONE_NEUTRALS	0
 #define LIMIT_ZONE_ATTACK		1
 
@@ -491,17 +491,17 @@ new		SKIP_OBJECTS = 	false		// false in stable
 #define PUNISH_AJ		   	9
 #define PUNISH_BLOCK_OBJ	10
 
-// Typy banÛw
+// Typy ban√≥w
 #define BANTYPE_BAN		 	1
 #define BANTYPE_FILTER	  	2
 
-// Typy treningÛw w si≥owni
+// Typy trening√≥w w si≈Çowni
 #define TRAIN_NONE		  	0
 #define TRAIN_BENCH_PRESS   1
 #define TRAIN_BARBELL	   	2
 #define TRAIN_PUNCH_BAG	 	3
 
-// Typy umiejÍtnoúci
+// Typy umiejƒôtno≈õci
 #define SKILL_SHOOT		 	1
 #define SKILL_CONDITION	  	2
 #define SKILL_DRIVE			3
@@ -516,25 +516,25 @@ new		SKIP_OBJECTS = 	false		// false in stable
 #define JOB_SWEEPER			4
 #define JOB_HOTDOG			5
 #define JOB_PRESSER	6
-#define JOB_SCOURER	7		// ten co tagi czyúci
+#define JOB_SCOURER	7		// ten co tagi czy≈õci
 
-// Typy pojazdÛw w salonie
-#define VEH_ONESEAT			1   //  Jednoúlady
-#define VEH_THREEDOORS		2	//  TrzydrzwiÛwki
-#define VEH_FIFTHDOORS		3   //  PiÍciodrzwiÛwki
-#define VEH_HEAVY		  	4   //  Furgonetki i ciÍøarÛwki
-#define VEH_OTHERS		  	5   //  Pozosta≥e
+// Typy pojazd√≥w w salonie
+#define VEH_ONESEAT			1   //  Jedno≈õlady
+#define VEH_THREEDOORS		2	//  Trzydrzwi√≥wki
+#define VEH_FIFTHDOORS		3   //  Piƒôciodrzwi√≥wki
+#define VEH_HEAVY		  	4   //  Furgonetki i ciƒô≈ºar√≥wki
+#define VEH_OTHERS		  	5   //  Pozosta≈Çe
 
 // Uprawnienia
 #define PERM_OFFER		  	1   // Oferowanie (/o)
 #define PERM_CARS		   	2   // Pojazdy
 #define PERM_DOORS		  	4   // Drzwi
-#define PERM_ORDER		  	8   // Zamawianie produktÛw
+#define PERM_ORDER		  	8   // Zamawianie produkt√≥w
 #define PERM_CHAT		   	16  // Korzystanie z czatu OOC
 #define PERM_LEADER		 	32  // Lider
-#define PERM_GATE		   	64  // DostÍp do /brama
+#define PERM_GATE		   	64  // Dostƒôp do /brama
 
-#define PERM_LIMIT		  	127  // Moøe wszystko
+#define PERM_LIMIT		  	127  // Mo≈ºe wszystko
 
 // Dokumenty posiadane
 #define DOC_NONE			0
@@ -543,13 +543,13 @@ new		SKIP_OBJECTS = 	false		// false in stable
 #define DOC_SEND			4
 #define DOC_SANITY		  	8
 
-// Rodzaje p≥atnoúci
+// Rodzaje p≈Çatno≈õci
 #define PAYTYPE_NONE		0
 #define PAYTYPE_CASH		1
 #define PAYTYPE_CARD		2
 #define PAYTYPE_BCARD		3
 
-// Uøywalne obiekty
+// U≈ºywalne obiekty
 #define OBJECT_ATM				2942
 #define OBJECT_BENCH			2629
 #define OBJECT_BARBELL			2915
@@ -579,7 +579,7 @@ new		SKIP_OBJECTS = 	false		// false in stable
 #define OBJECT_MICROPHONE		14020
 #define OBJECT_COOK					2144	//	2170
 
-// Typy narkotykÛw
+// Typy narkotyk√≥w
 #define DRUG_MARIHUANA		1
 #define DRUG_COCAINE		2
 #define DRUG_HEROIN			3
@@ -591,7 +591,7 @@ new		SKIP_OBJECTS = 	false		// false in stable
 #define DRUG_MDMA			9
 #define DRUG_METAAMP		10
 
-// Prace w wiÍzieniu
+// Prace w wiƒôzieniu
 #define WORK_LAUNDRY		1
 #define WORK_WORKSHOP	2
 
@@ -602,10 +602,10 @@ new		SKIP_OBJECTS = 	false		// false in stable
 #define WORKSHOP_SAWING		4
 
 
-// Typy krzakÛ
+// Typy krzak√≥
 #define PLANT_WEED			1
 
-// Typy telefonÛw
+// Typy telefon√≥w
 #define DEVICE_CELL			1
 #define DEVICE_BOX			2
 #define DEVICE_HOME			3
@@ -613,7 +613,7 @@ new		SKIP_OBJECTS = 	false		// false in stable
     100 (= x (= 999			Numery alarmowe / Taxi / WN
    1000 (= x (= 9999		Numery stacjonarne
   10000 (= x (= 99999		Pagery
- 100000 (= x (= 999999		Numery komÛrkowe
+ 100000 (= x (= 999999		Numery kom√≥rkowe
 1000000 (= x (= ...			Budki telefoniczne
 */
 
@@ -631,7 +631,7 @@ new		SKIP_OBJECTS = 	false		// false in stable
 #define CORP_TYPE_MATH			1
 #define CORP_TYPE_TEXT			2
 
-// Typy uøycia
+// Typy u≈ºycia
 #define DRUG_USE_SMOKE		1
 #define DRUG_USE_SNORT		2
 #define DRUG_USE_INJECT		3
@@ -656,7 +656,7 @@ new		SKIP_OBJECTS = 	false		// false in stable
 #define WEAPON_TYPE_LIGHT   2
 #define WEAPON_TYPE_MELEE   3
 
-// Typy spawnÛw
+// Typy spawn√≥w
 #define SPAWN_NONE		  	0
 #define SPAWN_HOUSE		 	1
 #define SPAWN_HOTEL		 	2
@@ -675,17 +675,17 @@ new		SKIP_OBJECTS = 	false		// false in stable
 #define TRAILER_TYPE_OIL 584
 #define TRAILER_TYPE_TOOLS 591
 
-//Typy towarÛw
+//Typy towar√≥w
 #define CARGO_TYPE_OIL 1		//paliwo
 #define CARGO_TYPE_FOOD 2	//zarelkko
 #define CARGO_TYPE_TOOLS 3	//narzedzia
 #define CARGO_TYPE_MATERIALS 4	//materialy budowlane
 
-// Fazy koszykÛwki
-#define BALL_START 1		//rozpoczπ≥ gre
-#define BALL_TAKE 2			//podniÛs≥ pi≥kÍ
-#define BALL_THROW 3 		//rzuci≥
-#define BALL_PICKUP 4			// podniÛs≥ by przenosiÊ
+// Fazy koszyk√≥wki
+#define BALL_START 1		//rozpoczƒÖ≈Ç gre
+#define BALL_TAKE 2			//podni√≥s≈Ç pi≈Çkƒô
+#define BALL_THROW 3 		//rzuci≈Ç
+#define BALL_PICKUP 4			// podni√≥s≈Ç by przenosiƒá
 
 // Typy blokad
 #define BLOCK_NONE		0
@@ -700,7 +700,7 @@ new		SKIP_OBJECTS = 	false		// false in stable
 #define GUI_TYPE_DOCUMENT_DRIVING 1
 #define GUI_TYPE_EQUIPMENT 2
 
-// Akcesoria w pojeüdzie
+// Akcesoria w poje≈∫dzie
 #define VEH_ACCESS_NONE		 	0
 #define VEH_ACCESS_ALARM		1
 #define VEH_ACCESS_IMMO		 	2
@@ -774,21 +774,21 @@ new		SKIP_OBJECTS = 	false		// false in stable
 #define STAGE_CAM14			8
 #define STAGE_SPAWN			9
 
-// Typy zarzπdzania
+// Typy zarzƒÖdzania
 #define MANAGE_TYPE_ALL	 		1
 #define MANAGE_TYPE_USE	 		2
 #define MANAGE_TYPE_DROP   		3
 #define MANAGE_TYPE_DASHBOARD_OFFER		4
 
 
-//typy dodatkÛw do pojazdÛw
-#define VEH_ADD_TURBOCHARGER 1	//turbosprÍøarka
-#define VEH_ADD_CHARGER 2	//sprÍøarka
-#define VEH_ADD_GEARBOX 3	//skrzynia biegÛw
+//typy dodatk√≥w do pojazd√≥w
+#define VEH_ADD_TURBOCHARGER 1	//turbosprƒô≈ºarka
+#define VEH_ADD_CHARGER 2	//sprƒô≈ºarka
+#define VEH_ADD_GEARBOX 3	//skrzynia bieg√≥w
 #define VEH_ADD_SUSPENSION 4	// zawieszenie
 #define VEH_ADD_INTERCOOLER 5		//intercooler
 
-//Typy telefonÛw - marki
+//Typy telefon√≥w - marki
 #define PHONE_TYPE_OLD 					0
 #define PHONE_TYPE_BLACKBERRY 	1
 #define PHONE_TYPE_SAMSUNG 		2
@@ -799,7 +799,7 @@ new		SKIP_OBJECTS = 	false		// false in stable
 #define PHONE_TYPE_IPHONE 			7
 #define PHONE_TYPE_IPHONE_WHITE	8
 
-// Co w telefonie robiÊ moøna?
+// Co w telefonie robiƒá mo≈ºna?
 #define PHONE_ACTION_HOME 0
 #define PHONE_ACTION_SETTINGS 1
 
@@ -815,7 +815,7 @@ new		SKIP_OBJECTS = 	false		// false in stable
 #define BOX_PHASE_CARRY		2
 #define BOX_PHASE_GONEW		3
 
-// Statusy craftowania narkotykÛw
+// Statusy craftowania narkotyk√≥w
 #define COOK_STATUS_ZERO				0
 #define COOK_STATUS_FREE				1
 #define COOK_STATUS_COOKING			2
@@ -1498,9 +1498,9 @@ LogTime(MAX_PLAYERS)
 SpawnTime(MAX_PLAYERS)
 
 Preloaded(MAX_PLAYERS)
-MainPlayerTable(MAX_PLAYERS)   // G≥Ûwna tablica, s≥uøy do przypisywania w wiÍkszoúci dzia≥aniach rÛønych wartoúci
-SecondPlayerTable(MAX_PLAYERS)   // Tablica dodatkowa, s≥uøy do przypisywania w wiÍkszoúci dzia≥aniach rÛønych wartoúci
-MainPlayerStringTable(MAX_PLAYERS)(128)   // G≥Ûwna tablica, s≥uøy do przypisywania w wiÍkszoúci dzia≥aniach rÛønych wartoúci STRING
+MainPlayerTable(MAX_PLAYERS)   // G≈Ç√≥wna tablica, s≈Çu≈ºy do przypisywania w wiƒôkszo≈õci dzia≈Çaniach r√≥≈ºnych warto≈õci
+SecondPlayerTable(MAX_PLAYERS)   // Tablica dodatkowa, s≈Çu≈ºy do przypisywania w wiƒôkszo≈õci dzia≈Çaniach r√≥≈ºnych warto≈õci
+MainPlayerStringTable(MAX_PLAYERS)(128)   // G≈Ç√≥wna tablica, s≈Çu≈ºy do przypisywania w wiƒôkszo≈õci dzia≈Çaniach r√≥≈ºnych warto≈õci STRING
 
 PlayerHelpStep(MAX_PLAYERS)
 
@@ -1582,7 +1582,7 @@ tSecond = -1
 tHalf = -1
 tQuarter = -1*/
 
-// Gotowanie narkotykÛw
+// Gotowanie narkotyk√≥w
 PlayerText:ActionCook(MAX_PLAYERS)
 PlayerText:ActionAdd(MAX_PLAYERS)
 PlayerText:ActionClose(MAX_PLAYERS)
@@ -1596,12 +1596,12 @@ PlayerText:CookIngredient(MAX_INGREDIENTS)(MAX_PLAYERS)
 PlayerText:TextDrawInfoNewContent(MAX_PLAYERS)
 Text:TextDrawInfoNew
 
-// Posiad≥oúÊ kupiona!
+// Posiad≈Ço≈õƒá kupiona!
 PlayerText:TextDrawPropertyFade1(MAX_PLAYERS)
 PlayerText:TextDrawPropertyFade2(MAX_PLAYERS)
 PlayerText:TextDrawPropertyMSG(MAX_PLAYERS)
 
-//karty + stÛ≥
+//karty + st√≥≈Ç
 
 Text:TextDrawAdmin
 Text:TextDrawAdminMode(MAX_PLAYERS)
@@ -1759,7 +1759,7 @@ PlayerText:pLicenseLine(MAX_PLAYERS)
 
 Text:LSPad_Frame(22)
 Text:LSPad_MenuTD(12)
-Text:LSPad_BG(MAX_PLAYERS) // (N) - Uøywany w stary sposÛb bo kolejno∂ci siÍ pierdol±.
+Text:LSPad_BG(MAX_PLAYERS) // (N) - U≈ºywany w stary spos√≥b bo kolejno¬∂ci siƒô pierdol¬±.
 PlayerText:LSPad_MenuTDClickable(10)
 PlayerText:LSPad_Taskbar(9)
 PlayerText:LSPad_Calendar(5)
@@ -1977,7 +1977,7 @@ enum sPlayer
 	pSprayTime,
 	pSprayColor(2),
 	
-	// Montuje czÍúÊ
+	// Montuje czƒô≈õƒá
 	pMontageVeh,
 	pMontageTime,
 	pMontageItem,
@@ -1985,11 +1985,11 @@ enum sPlayer
 	pCuffed,
 	pCuffedStill,
 	
-	pRoped,		//zwiπzany
+	pRoped,		//zwiƒÖzany
 	
 	pBagged,		// czy ma worek na glowie
 	
-	pGagged,		//czy knebel w gÍbie ma
+	pGagged,		//czy knebel w gƒôbie ma
 	
 	pSearches,
 	pSearchTime,
@@ -2108,23 +2108,23 @@ enum sPlayer
 	pBusTravel,
 	pBusTime,
 	
-	// WybÛr skina
+	// Wyb√≥r skina
 	bool: pClothChanging,
 	pClothID,
 	
-	// WybÛr akcesorii
+	// Wyb√≥r akcesorii
 	bool: pAccessChanging,
 	pAccessID,
 	pAccessShop,
 	
 	bool: pAccessEditing,
 
-	// Wyúcigi
+	// Wy≈õcigi
 	pRacePhase,
 	pRacePoint,
 	pRaceCheckpoints,
 	
-	// UmiejÍtnoúci postaci
+	// Umiejƒôtno≈õci postaci
 	Float:pDriving,
 	Float:pCondition,
 	Float:pShooting,
@@ -2138,7 +2138,7 @@ enum sPlayer
 	Float:pDependence,
 	pSkillShowed,
 	
-	// KoszykÛwka
+	// Koszyk√≥wka
 	pBasketBall,
 	pBasketID,
 	bool: pHavingBall,
@@ -2193,7 +2193,7 @@ enum sPlayer
 	
 	pVehCollisions,
 	
-	// Nowe efekty dragÛw
+	// Nowe efekty drag√≥w
 	bool:pRage,
 	pRageTime,
 	pRageDrug,
@@ -2201,7 +2201,7 @@ enum sPlayer
 	pRageDrugUse,
 	Float:pRageStrength,
 	
-	// Nowe/me nad g≥owπ
+	// Nowe/me nad g≈ÇowƒÖ
 	//Text3D:pMeTag,
 	//pMeTime,
 	
@@ -2211,7 +2211,7 @@ enum sPlayer
 	// Gangzone pokazane?
 	bool:pGangZoneShowing,
 	
-	// Id samochodu z ktÛrego s≥ucha muzyki
+	// Id samochodu z kt√≥rego s≈Çucha muzyki
 	pCarMusic,
 	
 	// Typ quita
@@ -2222,7 +2222,7 @@ enum sPlayer
 	pTaggingFont,
 	pTaggingSize,
 	
-	// Uøywane dla PD do nawigacji po menu
+	// U≈ºywane dla PD do nawigacji po menu
 	pPDMenu,
 	pPDSuspect,
 	
@@ -2269,8 +2269,8 @@ enum sPlayer
 	pCallTicks,
 	
 	pTrackID,		//uid trasy z bazy
-	bool:pTrucking,		//czy aktualnie ma zlecenie jakieú
-	pPackingTime,		//czas za≥adunku lub wyladunku
+	bool:pTrucking,		//czy aktualnie ma zlecenie jakie≈õ
+	pPackingTime,		//czas za≈Çadunku lub wyladunku
 	pPackingPhase,
 	pTrailerID,
 	
@@ -2281,13 +2281,13 @@ enum sPlayer
 	
 	bool:pDive,
 	
-	pLoginEx,		//øeby za czÍsto nie prze≥adowywali )
+	pLoginEx,		//≈ºeby za czƒôsto nie prze≈Çadowywali )
 	bool:pReconnect,
 	
 	pItemPage,	//ID strony z przedmiotami
 	pInterface,		//typ interfejsu
 	bool:pUseGUI,		//czy uzywa gui
-	pSelectItem,		//uøyty item
+	pSelectItem,		//u≈ºyty item
 	
 	pHireTime,
 	pHireGroup,
@@ -2295,20 +2295,20 @@ enum sPlayer
 	pBombTime,  //czas pozostaly do konca montowania bomby
 	pBombID, // id przedmiotu
 	pBombPhase,	//typ brojenia/rozbrojenia
-	pBombFound, 		//czy bombÍ znalaz≥
+	pBombFound, 		//czy bombƒô znalaz≈Ç
 	
 	pCurrentZone, 
 	pLastZone,
 	pZoneTicks,
 	
-	pEMatSize,		// edycja tekstÛw - matsize
-	pEMatFont(32),	//edycja tekstÛw - fontface
-	pEMatBold,		// edycja tekstÛw - pogrubienie
-	pEMatFontSize, 		// edycja tekstÛw - rozmiar czcionki
+	pEMatSize,		// edycja tekst√≥w - matsize
+	pEMatFont(32),	//edycja tekst√≥w - fontface
+	pEMatBold,		// edycja tekst√≥w - pogrubienie
+	pEMatFontSize, 		// edycja tekst√≥w - rozmiar czcionki
 	
-	pJourneyID, 		// ID wozu w ktÛrym gracz teraz siedzi
+	pJourneyID, 		// ID wozu w kt√≥rym gracz teraz siedzi
 	
-	pScouredID,		// ID obiektu, ktÛry w≥aúnie usuwa
+	pScouredID,		// ID obiektu, kt√≥ry w≈Ça≈õnie usuwa
 	bool:pScouring,		// czy usuwa teraz tag
 	
 	pCurrentGUI, 
@@ -2318,7 +2318,7 @@ enum sPlayer
 	
 	bool:pCourse,			//czy jest w trakcie DMV
 	pCourseCP,			//aktualny checkpoint
-	pCourseVeh, 			// ID wozu ktÛrym kursuje
+	pCourseVeh, 			// ID wozu kt√≥rym kursuje
 	Float:pCourseMS,			//max speed
 	Float:pCourseHP,		//hp wozu
 	
@@ -2328,8 +2328,8 @@ enum sPlayer
 	pViewTime,
 	pBuyCount,	
 	
-	pBandaged,			// ID bandaøowanego gracza
-	pBandageTime,		// Czas bandaøowania
+	pBandaged,			// ID banda≈ºowanego gracza
+	pBandageTime,		// Czas banda≈ºowania
 	
 	pStation,		
 	pStationLive,			// czy nadaje live dla swojej stacji
@@ -2349,20 +2349,20 @@ enum sPlayer
 	
 	bool:pFPS,			// czy 1-osobowy
 	
-	pDailyDrugs,			// sprzedane narkotyki bierzπcego dnia
+	pDailyDrugs,			// sprzedane narkotyki bierzƒÖcego dnia
 	
-	pSparing,			// Id gracza z ktÛrym siÍ klepiemy
+	pSparing,			// Id gracza z kt√≥rym siƒô klepiemy
 	
 	pPhoneAction,		// co robi w telefonie
 	
-	pTalkedNPC,		// z ktÛrym NPC gada
+	pTalkedNPC,		// z kt√≥rym NPC gada
 	pTalkedPhase,	// faza rozmowy
 	
-	pCarsTP,			// AC do pojazdÛw
+	pCarsTP,			// AC do pojazd√≥w
 	
 	bool:pBusinessShow,			// Czy biznesy widzi na minimapie
 	
-	pFocusedID,				// ID Gracza, ktÛry jest teraz focusowany
+	pFocusedID,				// ID Gracza, kt√≥ry jest teraz focusowany
 	
 	bool:pLauncherLogged,
 	
@@ -2381,13 +2381,13 @@ enum sPlayer
 	pCorpType,
 	pCorpAnswer(24),
 	
-	bool:pCeleb,		// czy gracz jest celebrytπ
+	bool:pCeleb,		// czy gracz jest celebrytƒÖ
 	
 	pBlackJackID,
 	
-	pBlockShooting, // czy dosta≥ postrza≥ w rÍkÍ
+	pBlockShooting, // czy dosta≈Ç postrza≈Ç w rƒôkƒô
 	
-	pCookID,		// ID kuchenki na ktÛrej gotuje (-1 default)
+	pCookID,		// ID kuchenki na kt√≥rej gotuje (-1 default)
 	
 	pPrisonWork,
 	pWorkingNow,
@@ -2417,7 +2417,7 @@ Cards(MAX_CARDS)(sCards)
 // ARKHIR
 enum sPlayerWeapon 
 (
-	// BroÒ w rÍku
+	// Bro≈Ñ w rƒôku
 	bool: pEquipped,
 	bool: pShot,
 	
@@ -2440,7 +2440,7 @@ enum sCarInfo
 	Float:cPosZ,
 	Float:cPosA,
 	
-	// Pozycje do rÍcznego.
+	// Pozycje do rƒôcznego.
 	Float:cEPosX,
 	Float:cEPosY,
 	Float:cEPosZ,
@@ -2498,16 +2498,16 @@ enum sCarInfo
 	Float:cCarfax,
 	bool:cEBreak,
 	
-	bool:cTop,			//czy dach ma za≥oøony czy nie
+	bool:cTop,			//czy dach ma za≈Ço≈ºony czy nie
 	
 	Float:cBoost,
 	bool:cArmed,		//czy bombe ma
 	
 	cPoliceGrill, 	// stroboskop na grillu
-	bool:cFlashed,		//czy stroboskopy w úwietle w≥πczone
+	bool:cFlashed,		//czy stroboskopy w ≈õwietle w≈ÇƒÖczone
 	cFlashPhase,
 	
-	bool:cPilotTick,	// czy w≥aúnie ktoú go myknπ≥ pilotem
+	bool:cPilotTick,	// czy w≈Ça≈õnie kto≈õ go myknƒÖ≈Ç pilotem
 )
 CarInfo(MAX_VEHICLES)(sCarInfo)
 
@@ -2563,7 +2563,7 @@ enum sDoorCache
 	dDoorEdited
 )
 
-// PamiÍtaj øeby teø zmieniÊ sDoorCache i LoadDoors !!!
+// Pamiƒôtaj ≈ºeby te≈º zmieniƒá sDoorCache i LoadDoors !!!
 enum sDoorData
 (
 	dUID,
@@ -2721,7 +2721,7 @@ RegionInfo(3)(sRegionInfo) =
 	//(Centrum, 1003.1159,-1345.3027,13.5341),
 	(Centrum, 1460.5184, -1548.9999, 13.5668, 90.1884), // Pershing Square seler
 	(South-Central,	1743.0443, -1863.2510, 13.5753, 355.9145),
- 	(Obrzeøa miasta,	660.8438,  -573.0786,  16.3359, 177.3012)
+ 	(Obrze≈ºa miasta,	660.8438,  -573.0786,  16.3359, 177.3012)
 )
 
 enum sGunRegionInfo
@@ -2739,7 +2739,7 @@ GunRegionInfo(45)(sGunRegionInfo) =
 	(stacja Idlewood, 1938.1045, -1772.2850, 13.0075, 2),
 	(centrum Ganton, 2483.9131, -1669.7698, 12.9647, 5),
 	(niebieskie bloki Ganton, 2298.8291, -1782.8435,13.1773 , 5),
-	(boiska ko≥o Grape Street, 2308.7378, -1526.4301,24.9686, 5),
+	(boiska ko≈Ço Grape Street, 2308.7378, -1526.4301,24.9686, 5),
 	(Grape Street, 2210.5266, -1442.5980, 23.4431, 5),
 	(13th street, 2373.7241, -1302.0630, 23.4570, 5),
 	(Los Flores, 2624.1797,-1254.0232,48.8235, 5),
@@ -2765,10 +2765,10 @@ GunRegionInfo(45)(sGunRegionInfo) =
 	(siedziba WBC, 922.0455, -1440.7124, 13.0608, 1),
 	(Market Station, 808.1282, -1334.9757, 13.1698, 1),
 	(Cmentarz, 915.9384, -1102.9211, 23.9218, 3),
-	(Aleja Gwiazd wschÛd, 1254.7454, -1142.9219, 23.2811, 1),
-	(Aleja Gwiazd zachÛd, 1006.1722, -1146.5288, 23.3894, 1),
-	(Rodeo wschÛd, 623.6810, -1527.9463, 14.6209, 3),
-	(Rodeo zachÛd, 337.1937, -1551.2986, 32.7207, 3),
+	(Aleja Gwiazd wsch√≥d, 1254.7454, -1142.9219, 23.2811, 1),
+	(Aleja Gwiazd zach√≥d, 1006.1722, -1146.5288, 23.3894, 1),
+	(Rodeo wsch√≥d, 623.6810, -1527.9463, 14.6209, 3),
+	(Rodeo zach√≥d, 337.1937, -1551.2986, 32.7207, 3),
 	(Verona Beach, 366.9433, -1818.7592, 7.2837, 3),
 	(Santa Maria Beach, 627.7790, -1867.5392, 4.4293, 3),
 	(Marina, 746.2892, -1646.1876, 5.0964, 3),
@@ -2776,8 +2776,8 @@ GunRegionInfo(45)(sGunRegionInfo) =
 	(Ammu-Nation, 1364.7225, -1283.8179, 13.1716, 2),
 	(Stacja Mullholand, 1011.6169, -941.4313, 41.7679, 2),
 	(Vinewood, 1253.1919, -728.3937, 94.0441, 2),
-	(Richman wschÛd, 680.4056, -1044.7137, 49.8149, 2),
-	(Richman zachÛd, 301.9560, -1292.2285, 53.7326, 2),
+	(Richman wsch√≥d, 680.4056, -1044.7137, 49.8149, 2),
+	(Richman zach√≥d, 301.9560, -1292.2285, 53.7326, 2),
 	(Verdant Bluffs, 1258.1860, -2039.9333, 59.0953, 3),
 	(Temple, 1213.9253, -1037.8287, 31.3591, 3),
 	(Dillimore, 657.5687,-562.9366,22.1478, 3)
@@ -2814,13 +2814,13 @@ enum sItemTypeInfo
 ItemTypeInfo(ITEM_COUNT + 1)(sItemTypeInfo) =
 (
 	/* nazwa | waga | model | rotx | roty   */
-	(Nieokreúlony, 	0.0, 328, 90.0, 95.0),
+	(Nieokre≈õlony, 	0.0, 328, 90.0, 95.0),
 	(Zegarek, 		0.0, 2710, 0.0,  0.0),
 	(Jedzenie, 		0.0, 2769, 0.0,	 0.0),
 	(Papierosy, 		0.0, 1485, 0.0,  0.0),
 	(Kostka do gry, 	0.0, 328, 90.0, 95.0),
 	(Ubranie, 		0.0, 2843, 0.0,  0.0),
-	(BroÒ, 			0.0, 328, 90.0, 95.0),
+	(Bro≈Ñ, 			0.0, 328, 90.0, 95.0),
 	(Amunicja, 		0.0, 328, 90.0, 95.0),
 	(Telefon, 		0.0, 330, 90.0,  0.0),
 	(Kanister, 		0.0, 1650, 90.0, 0.0),
@@ -2836,10 +2836,10 @@ ItemTypeInfo(ITEM_COUNT + 1)(sItemTypeInfo) =
 	(Tuning,		  0.0, 328, 90.0, 95.0),
 	(Ks. Czekowa, 	0.0, 2894, 0.0,  0.0),
 	(Czek,			0.0, 328, 90.0, 95.0),
-	(WÍdka,		   0.0, 18632, 90.0, 90.0),
+	(Wƒôdka,		   0.0, 18632, 90.0, 90.0),
 	(Torba,		   0.0, 2663, 90.0,  0.0),
-	(NapÛj,		   0.0, 328, 90.0, 95.0),
-	(Uøywka,	   		0.0, 19997, 0.0, 0.0),
+	(Nap√≥j,		   0.0, 328, 90.0, 95.0),
+	(U≈ºywka,	   		0.0, 19997, 0.0, 0.0),
 	(Joint, 			0.0, 1485, 0.0,  0.0),
 	
 	(Bletka,		  0.0, 328, 90.0, 95.0),
@@ -2848,16 +2848,16 @@ ItemTypeInfo(ITEM_COUNT + 1)(sItemTypeInfo) =
 	
 	(Przyczepialny,   0.0, 328, 90.0, 95.0),
 	(Akcesoria,	   0.0, 328, 90.0, 95.0),
-	(P≥yta,		   0.0, 1961, 90.0, 180.0),
+	(P≈Çyta,		   0.0, 1961, 90.0, 180.0),
 	(Odtwarzacz,	  0.0, 328, 90.0, 95.0),
 	(Kluczyki,		0.0, 328, 90.0, 95.0),
 	(Kamizelka,	   0.0, 328, 90.0, 95.0),
-	(RÍkawiczki,	  0.0, 328, 90.0, 95.0),
-	(Zw≥oki,		  0.0, 19830, 0.0, 0.0),
-	(WiatrÛwka,	   0.0, 328,  0.0, 0.0),
+	(Rƒôkawiczki,	  0.0, 328, 90.0, 95.0),
+	(Zw≈Çoki,		  0.0, 19830, 0.0, 0.0),
+	(Wiatr√≥wka,	   0.0, 328,  0.0, 0.0),
 	(Rolki,		   0.0, 328, 90.0, 95.0),
 	(Karnet,		  0.0, 2894, 0.0,  0.0),
-	(Mo≥otowa,		0.0, 344, 90.0,  0.0),
+	(Mo≈Çotowa,		0.0, 344, 90.0,  0.0),
 	(Wytrych,		 0.0, 328, 90.0, 95.0),
 	(Optiwand,		0.0, 328, 90.0, 95.0),
 	(Craft,		   0.0, 328, 90.0, 95.0),
@@ -2867,10 +2867,10 @@ ItemTypeInfo(ITEM_COUNT + 1)(sItemTypeInfo) =
 	(Kontrabanda,			0.0, 328, 90.0, 95.0),
 	(Akwalung,			0.0, 328, 90.0, 95.0),
 	(Opona,				0.0, 328, 90.0, 95.0),
-	(Odøywka,				0.0, 2709, 0.0, 0.0),
+	(Od≈ºywka,				0.0, 2709, 0.0, 0.0),
 	(Puszka farby,		0.0, 365, 0.0, 0.0),
-	(K≥oda drewna,		0.0, 18566, 0.0, 0.0),
-	(KamieÒ,				0.0, 1303, 0.0, 0.0),
+	(K≈Çoda drewna,		0.0, 18566, 0.0, 0.0),
+	(Kamie≈Ñ,				0.0, 1303, 0.0, 0.0),
 	(Box,					0.0, 328, 0.0, 0.0),
 	(Karty,				1.0, 1877, 0.0, 0.0),
 	(LSPad,				1.0, 19864, 0.0, 0.0),
@@ -2880,25 +2880,25 @@ ItemTypeInfo(ITEM_COUNT + 1)(sItemTypeInfo) =
 	(Worek,				1.0, 328, 90.0, 95.0),
 	(Knebel,				1.0, 328, 90.0, 95.0),
 	(Telefon domowy,				1.0, 19629, 0.0,0.0),
-	(CzÍúÊ tuningowa,				4.0, 328, 90.0, 95.0),
+	(Czƒô≈õƒá tuningowa,				4.0, 328, 90.0, 95.0),
 	(Gazeta,				1.0, 2894, 0.0,  0.0),
 	(Ruletka,				1.0, 328, 90.0, 95.0),
-	(Przedmiot odk≥adalny,				1.0, 328, 90.0, 95.0),
-	(ØÛ≥te papiery,				1.0, 328, 90.0, 95.0),
+	(Przedmiot odk≈Çadalny,				1.0, 328, 90.0, 95.0),
+	(≈ª√≥≈Çte papiery,				1.0, 328, 90.0, 95.0),
 	(Nasiona,				0.25, 701, 0.0, 0.0),
 	(Karta biznesowa,		0.25, 1581, 0.0, 0.0),
 	(Butla z tlenem, 0.25,19580 ,0.0,0.0),
 	(Deska surfingowa, 0.25, 2404,0.0,0.0),
 	(Bomba, 4.0, 328, 90.0, 95.0),
-	(T≥umik, 1.5, 328, 90.0, 95.0),
+	(T≈Çumik, 1.5, 328, 90.0, 95.0),
 	(Robak, 0.25, 328, 90.0, 95.0),
-	(Bandaø, 0.25, 328, 90.0, 95.0),
+	(Banda≈º, 0.25, 328, 90.0, 95.0),
 	(Nasiono, 0.25, 328, 90.0, 95.0),
 	(Specjalny, 0.25, 328, 90.0, 95.0),
 	(Prezent, 0.25, 328, 90.0, 95.0),
 	(Sejf, 10.0, 2332, 0.0, 0.0),
 	(Wejsciowka Paintball, 0.25, 2894, 0.0, 0.0),
-	(Sk≥adnik, 0.25, 19997, 0.0, 0.0),
+	(Sk≈Çadnik, 0.25, 19997, 0.0, 0.0),
 	(Kuchenka, 10.0, 1271, 0.0, 0.0)
 )
 
@@ -2969,7 +2969,7 @@ enum sProductData
 )
 ProductInfo(MAX_PRODUCTS)(sProductData)
 
-//budki z prasπ
+//budki z prasƒÖ
 enum pressBoxPars
 (
 	bUID,
@@ -3005,28 +3005,28 @@ enum sGroupTypeInfo
 )
 GroupTypeInfo()(sGroupTypeInfo) =
 (
-	(Nieokreúlony,			0,		false,	2000,	false),
+	(Nieokre≈õlony,			0,		false,	2000,	false),
 	(Stacja benzynowa,		0,		false,	30000,	false),
 	(Gastronomia,				0,		true,	10000,	false),
 	(Bar,						0,		false,	15000,	false),
 	(Hotel,					0,		false,	7000,	true),
-	(Firma taksÛwkarska,		0,		false,	25000,	false),
+	(Firma taks√≥wkarska,		0,		false,	25000,	false),
 	(Warsztat samochodowy,	0,		false,	18000,	true),
 	(Salon samochodowy,		0,		false,	25000,	true),
 	(Firma budowlana,			0,		false,	50000,	true),
 	(Bank,					0,		false,	70000,	true),
-	(Szko≥a jazdy,			450,	false,	0,		true),
+	(Szko≈Ça jazdy,			450,	false,	0,		true),
 	(Ciucholand,				0,		false,	8000,	false),
-	(Si≥ownia,				0,		false,	10000,	false),
+	(Si≈Çownia,				0,		false,	10000,	false),
 	(Strzelnica,				0,		false,	14000,	false),
 	(Firma transportowa,		0,		false,	16500,	false),
-	(åciganci,				0,		false,	0,		false),
+	(≈öciganci,				0,		false,	0,		false),
 	(Firma Ochroniarska,		0,		true,	0,		true),
-	(Sπd,						450,	false,	0,		false),
-	(Grupa przestÍpcza,		0,		false,	0,		false),
+	(SƒÖd,						450,	false,	0,		false),
+	(Grupa przestƒôpcza,		0,		false,	0,		false),
 	(Mafia,					0,		false,	0,		false),
 	(Kartel,					0,		false,	0,		false),
-	(Dilerzy NarkotykÛw,		0,		false,	0,		false),
+	(Dilerzy Narkotyk√≥w,		0,		false,	0,		false),
 	(Police Departament,		1100,	true,	0,		true),
 	(Medical Center,			600,	true,	0,		true),
 	(FBI,						800,	true,	0,		false),
@@ -3034,7 +3034,7 @@ GroupTypeInfo()(sGroupTypeInfo) =
 	(San News,				500,	true,	0,		true),
 	(Government,				450,	true,	0,		true),
 	(National Army,			1000,	true,	0,		false),
-	(Gang wiÍzienny,			0,		false,	0,		false),
+	(Gang wiƒôzienny,			0,		false,	0,		false),
 	(Komis aut,				0,		false,	45000,	false),
 	(Sklep z koksami,			0,		false,	15000,	true),
 	(Lotnisko,				0,		true,	100000,	false),
@@ -3042,9 +3042,9 @@ GroupTypeInfo()(sGroupTypeInfo) =
 	(Kopalnia,				0, 		false,	0,		true),
 	(Rodzina,					0, 		false,	1000,	true),
 	(Rybolowstwo,				0,		false,	8000,	false),
-	(Firma ciÍøarowa,	400,	true,	0,	false),
+	(Firma ciƒô≈ºarowa,	400,	true,	0,	false),
 	(Typ hardcore,0,	false,	0,	false),
-	(Wypoøyczalnia,	200,	false,	0,	false),
+	(Wypo≈ºyczalnia,	200,	false,	0,	false),
 	(Skate,	0,false,	0,	false),
 	(Radio, 300, true, 0, false),
 	(Gospodarstwo rolne, 300, false, 0, false),
@@ -3880,7 +3880,7 @@ SkinInfo()(sSkinData) =
 	(30, 30, Szara podkoszulka),
 	(31, 70, Kowbojki),
 	(32, 25, Jensowa kurtka),
-	(33, 60, Czarny p≥aszcz),
+	(33, 60, Czarny p≈Çaszcz),
 	(34, 75, Stroj kowboja),
 	(35, 35, Rozowa koszula),
 	(36, 25, Biala koszulka),
@@ -4123,7 +4123,7 @@ enum sAccessData
 
 AccessInfo()(sAccessData) =
 (
-	/* Cennik zrobiony przez ABESa, wszelkie prawa zastrzeøone. :D */
+	/* Cennik zrobiony przez ABESa, wszelkie prawa zastrze≈ºone. :D */
 	
 	/* Komentujemy dla lagtestu */
 	
@@ -4205,12 +4205,12 @@ AccessInfo()(sAccessData) =
 	(15179, 100, Fryzura 71, 2, 0.08, 0.043, 0.0, 100.0, 90.0, -10.0, OWNER_NONE, TYPE_NONE, SHOP_HAIRCUT),
 	(15180, 100, Fryzura 72, 2, 0.08, 0.043, 0.0, 100.0, 90.0, -10.0, OWNER_NONE, TYPE_NONE, SHOP_HAIRCUT),*/
 	
-	// Pierdo≥y Custom 4.1
+	// Pierdo≈Çy Custom 4.1
 	(15067, 1800, Kolczyki 01, 17, 0.101122, 0.029638, 0.020851, -178.286, -170.2, 47.5, OWNER_NONE, TYPE_NONE, SHOP_JEWELLRY),
  	(15068, 400, Rozowy zegarek, 6, 0.101122, 0.029638, 0.020851, -178.286, -170.2, 47.5, OWNER_NONE, TYPE_NONE, SHOP_JEWELLRY),
   	(15069, 1200, Zlote bransoletki, 17, 0.101122, 0.029638, 0.020851, -178.286, -170.2, 47.5, OWNER_NONE, TYPE_NONE, SHOP_JEWELLRY),
   	(15070, 2400, Zloty zegarek, 6, 0.101122, 0.029638, 0.020851, -178.286, -170.2, 47.5, OWNER_NONE, TYPE_NONE, SHOP_JEWELLRY),
-  	(15071, 600, Bia≥y kolczyk, 17, 0.101122, 0.029638, 0.020851, -178.286, -170.2, 47.5, OWNER_NONE, TYPE_NONE, SHOP_JEWELLRY),
+  	(15071, 600, Bia≈Çy kolczyk, 17, 0.101122, 0.029638, 0.020851, -178.286, -170.2, 47.5, OWNER_NONE, TYPE_NONE, SHOP_JEWELLRY),
   	(15072, 600, Szary kolczyk, 17, 0.101122, 0.029638, 0.020851, -178.286, -170.2, 47.5, OWNER_NONE, TYPE_NONE, SHOP_JEWELLRY),
   	(15073, 600, Bialy kolczyk 2, 17, 0.101122, 0.029638, 0.020851, -178.286, -170.2, 47.5, OWNER_NONE, TYPE_NONE, SHOP_JEWELLRY),
   	(15074, 600, Zielony kolczyk, 17, 0.101122, 0.029638, 0.020851, -178.286, -170.2, 47.5, OWNER_NONE, TYPE_NONE, SHOP_JEWELLRY),
@@ -4414,7 +4414,7 @@ AccessInfo()(sAccessData) =
 	(19953, 155, Bandana Wloska twarz , 2, -0.046002, 0.053, -0.009996, -6.70001, -10.7999, -21.6999, OWNER_NONE, TYPE_NONE, SHOP_MASKS),
 	(19952, 155, Bandana Czacha twarz , 2, -0.046002, 0.053, -0.009996, -6.70001, -10.7999, -21.6999, OWNER_NONE, TYPE_NONE, SHOP_MASKS),
 	
-	// Chusty na g≥owÍ
+	// Chusty na g≈Çowƒô
 	(18891, 65, Blue Shawl, 2, 0.129967, -0.003380, 0.0, 267.881774, 354.832885, 272.176177, OWNER_NONE, TYPE_NONE, SHOP_MASKS),
 	(18892, 65, Red Shawl, 2, 0.129967, -0.003380, 0.0, 267.881774, 354.832885, 272.176177, OWNER_NONE, TYPE_NONE, SHOP_MASKS),
 	(18893, 65, Red & White Shawl, 2, 0.129967, -0.003380, 0.0, 267.881774, 354.832885, 272.176177, OWNER_NONE, TYPE_NONE, SHOP_MASKS),
@@ -4524,7 +4524,7 @@ AccessInfo()(sAccessData) =
 	(325, 100,  Kwiatki, 6, 0.045936, -0.053997, 0.029, -174.0, -135.1, -98.9001, OWNER_NONE, TYPE_NONE, SHOP_UTILITY),
 	//(14183, 200, Pies, 6, 0.017937, -0.203999, -0.274999, -110.7, -90.3001, -117.5, OWNER_NONE, TYPE_NONE, SHOP_UTILITY), // FRESHER STAHP
 	
-	// Biøuteria - 17 to szyja
+	// Bi≈ºuteria - 17 to szyja
 	(19611, 5, Frotka, 6, 0.101122, 0.029638, 0.020851, -178.286, -170.2, 47.5, OWNER_NONE, TYPE_NONE, SHOP_JEWELLRY),
 	(19760, 1200, Zegarek 01, 6, 0.101122, 0.029638, 0.020851, -178.286, -170.2, 47.5, OWNER_NONE, TYPE_NONE, SHOP_JEWELLRY),
 	(19761, 1460, Zegarek 02, 6, 0.101122, 0.029638, 0.020851, -178.286, -170.2, 47.5, OWNER_NONE, TYPE_NONE, SHOP_JEWELLRY),
@@ -4640,7 +4640,7 @@ Float:SalonVehSpawnPos(5)(4) =
 	(901.3408, -1208.8365, 16.8620, 178.8416),
 	(866.7073, -1209.3844, 16.8687, 176.9288),
 	(830.8945, -1208.5759, 16.8481, 177.3645),
-	(729.4213, -1533.5233, 2.78910, 335.1115), // £odzie
+	(729.4213, -1533.5233, 2.78910, 335.1115), // ≈Åodzie
 	(1968.5499, -2324.6646, 13.5469, 103.8927) // Samoloty
 )
 
@@ -4655,7 +4655,7 @@ Float:WholeSalePos(3)(3) =
 Penalties(9)(128) =
 (
 	Blokada biegania i bicia 7 dni,
-	Blokada prowadzenia pojazdÛw 7 dni,
+	Blokada prowadzenia pojazd√≥w 7 dni,
 	AJ na 60 minut za odwalanie,
 	Ban permamentny za cheatowanie,
 	Reset na spawn,
@@ -4675,7 +4675,7 @@ enum sPoliceCell
 	pCellCleaned
 )
 
-PoliceCell(24)(sPoliceCell) =					// areszto-wiÍzienie selera
+PoliceCell(24)(sPoliceCell) =					// areszto-wiƒôzienie selera
 (	
 	(1787.4008,-1551.0262,39.9252,6299,0),
 	(1790.7017,-1551.3041,39.9252,6299,0),
@@ -4730,7 +4730,7 @@ enum surfPars
 	Float:surfPos(7),
 	surfPlayerID,	//id akutalnego gracza
 	
-	Float:surfPosTo(3),		//do jakich coordÛw ma siÍ move
+	Float:surfPosTo(3),		//do jakich coord√≥w ma siƒô move
 )
 Surfboard(MAX_SURFBOARDS)(surfPars)
 
@@ -4819,7 +4819,7 @@ AL(7)(sAdminLevels) =
 	(FF1CD2, Engineer)
 )
 
-//£Ûøka
+//≈Å√≥≈ºka
 enum sHospitalBeds
 (
 	Float:bPosX,
@@ -4846,7 +4846,7 @@ HospitalBed(9)(sHospitalBeds) =
 	(1766.0090, -1550.0028, 40.6720, 6299, 0)			// wiezienie
 )
 
-//Obiekty odk≥adalne
+//Obiekty odk≈Çadalne
 enum pPutablePars
 (
 	pObjUID,
@@ -4996,7 +4996,7 @@ enum zonePars
 	zType,
 	zSID, // gangzone id
 	bool:zBlocked,		//czy atakowana dzis juz byla, jak true to sie nie da znow
-	zPackage,		//czy pobra≥ bonus ze strefy
+	zPackage,		//czy pobra≈Ç bonus ze strefy
 )
 ZoneInfo(MAX_ZONES)(zonePars)
 
@@ -5022,17 +5022,17 @@ enum seedPars
 	sType,
 	sValue,
 	sPlantTime,
-	sWeed,			// czy nawoøone by≥o, ewentualnie ile razy
+	sWeed,			// czy nawo≈ºone by≈Ço, ewentualnie ile razy
 	sOwner,
 	sObject,			// Id obiektu ktory trzyma konkretny seedPars
 	Text3D:sLabel,				// Wiadomo
-	bool:isSplashed,				// czy spryskano tπ roúlinÍ
+	bool:isSplashed,				// czy spryskano tƒÖ ro≈õlinƒô
 	Float:sWater,					// poziom podlania
 )
 SeedInfo(MAX_SEEDS)(seedPars)
 
 
-// Tablica na uøywane wozy moøliwe do kupna
+// Tablica na u≈ºywane wozy mo≈ºliwe do kupna
 enum usedPars
 (
 	uModel,
@@ -5049,14 +5049,14 @@ UsedCars()(usedPars) =
 	(527, Uzywana Cadrona, 7250)
 )
 
-// Tablica przechowujπca Cornery
+// Tablica przechowujƒÖca Cornery
 enum corPars
 (
 	Float:cPosX,
 	Float:cPosY,
 	Float:cPosZ,
 	bool:isUsed,
-	cRisk,			// wspÛ≥czynnik przypa≥u
+	cRisk,			// wsp√≥≈Çczynnik przypa≈Çu
 	cOwner,
 )
 CornerInfo(MAX_CORNERS)(corPars) = 
@@ -5105,10 +5105,10 @@ CornerInfo(MAX_CORNERS)(corPars) =
 	(2645.1873,-1993.5856,13.5554,false,7,0)
 )
 
-// årednia wartoúc narkotyku
+// ≈örednia warto≈õc narkotyku
 DrugCost(11) = 
 (
-0, 		// nie waøne
+0, 		// nie wa≈ºne
 20,		 // marycha - U
 130,			// kokaina - U
 60,			// heroina - U
@@ -5130,9 +5130,9 @@ Float:sceneRadius = 0.0
 bool:sceneWorks = false
 sceneDJ = INVALID_PLAYER_ID
 sceneStream(256)
-isScened(MAX_PLAYERS)		// no nie wiem, tak dziwnie nazwane chodzi o to czy akurat koleú teraz s≥ucha
+isScened(MAX_PLAYERS)		// no nie wiem, tak dziwnie nazwane chodzi o to czy akurat kole≈õ teraz s≈Çucha
 
-// WiÍzienie - seler
+// Wiƒôzienie - seler
 PrisonWorld = 6299
 
 //15188, 15108
@@ -5226,7 +5226,7 @@ public LoadSettings()
 	data(256)
 	mysql_query(SELECT * FROM hrp_settings LIMIT 1)
 	
- 	print((load) Rozpoczynam proces wczytywania ustawieÒ g≥Ûwnych...)
+ 	print((load) Rozpoczynam proces wczytywania ustawie≈Ñ g≈Ç√≥wnych...)
 
 	mysql_store_result()
 	if(mysql_fetch_row(data, |))
@@ -5244,11 +5244,11 @@ public LoadSettings()
 		SettingData(HotelPos)(3),
 		SettingData(HotelInt))
 
-		print((load) Proces wczytywania g≥Ûwnych ustawieÒ przebieg≥ bezproblemowo.)
+		print((load) Proces wczytywania g≈Ç√≥wnych ustawie≈Ñ przebieg≈Ç bezproblemowo.)
 	)
    	else
    	(
-		print((load) Wystπpi≥ b≥πd podczas procesu wczytywania ustawieÒ. Prawdopodobnie nie odnaleziono tabeli hrp_settings w bazie danych.)
+		print((load) WystƒÖpi≈Ç b≈ÇƒÖd podczas procesu wczytywania ustawie≈Ñ. Prawdopodobnie nie odnaleziono tabeli hrp_settings w bazie danych.)
 	)
 	mysql_free_result()
 	return 1
@@ -5262,7 +5262,7 @@ stock hrp_ShowPlayerDialog(playerid, dialogid, style, caption(), infoo(), button
 
 #define ShowPlayerDialog hrp_ShowPlayerDialog
 
-// Redefine CreateDynamicObject - nie ma wszystkich argumentÛw, to tylko test
+// Redefine CreateDynamicObject - nie ma wszystkich argument√≥w, to tylko test
 stock lsrp_CreateDynamicObject(modelid, Float:PosX = 0.0, Float:PosY = 0.0, Float:PosZ = 0.0, Float:RotX = 0.0, Float:RotY = 0.0, Float:RotZ = 0.0, interior_id = 0, world_id = 0, playerid = -1, Float:streamdistance = 200.0, Float:drawdistance = 200.0)
 (
 	first_id = -1, second_id = -1
@@ -5413,7 +5413,7 @@ IngredientsData()(sIngredientsData) =
 	(36, folia aluminiowa, 1),
 	(37, chlorek amonowy, 1),
 	(38, paraformaldehyd, 1),
-	(39, olej z orzeszkÛw ziemnych, 6),
+	(39, olej z orzeszk√≥w ziemnych, 6),
 	(40, aceton, 1),
 	(41, maka, 2),
 	(42, maslo, 6),
@@ -5433,7 +5433,7 @@ enum sRecipesData
 	rItemType,
 	rDrugValue,
 )
-// przy dodawaniu nowej trzeba teø dodaÊ w cooking.inc -) CMD:gotuj
+// przy dodawaniu nowej trzeba te≈º dodaƒá w cooking.inc -) CMD:gotuj
 RecipesData()(sRecipesData) =
 (
 	(CRACK, 23 24, 8.0, 2, 120, ITEM_DRUG, DRUG_CRACK),

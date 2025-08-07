@@ -68,23 +68,23 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 			(
 				if(PlayerCache(playerid)(pDailyIncome) )= MAX_DAILY_INCOME)
 				(
-					GuiMsg(playerid, Wyczerpa³eœ dzisiejszy limit dochodu z prac dorywczych.\nWróæ jutro., 1)
+					GuiMsg(playerid, WyczerpaÅ‚eÅ› dzisiejszy limit dochodu z prac dorywczych.\nWrÃ³Ä‡ jutro., 1)
 					RemovePlayerFromVehicle(playerid)
 					return 1
 				)
 				
 				
-				ShowPlayerDialog(playerid, D_SWEEP_ACCEPT, DIALOG_STYLE_MSGBOX, Praca sprz¹tacza ulic, Wsiad³eœ do pojazdu Sweeper. Urz¹d miasta udostêpnia Ci go do wykonania Twojej pracy czyszczenia ulic. Czy akceptujesz pracê sprz¹tacza?, Akceptuj, Odrzuæ)
+				ShowPlayerDialog(playerid, D_SWEEP_ACCEPT, DIALOG_STYLE_MSGBOX, Praca sprzÄ…tacza ulic, WsiadÅ‚eÅ› do pojazdu Sweeper. UrzÄ…d miasta udostÄ™pnia Ci go do wykonania Twojej pracy czyszczenia ulic. Czy akceptujesz pracÄ™ sprzÄ…tacza?, Akceptuj, OdrzuÄ‡)
 			)
 			else
 			(
 				RemovePlayerFromVehicle(playerid)
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie jesteœ sprz¹taczem ulic. Aby zmieniæ swoj¹ pracê dorywcz¹ udaj siê do urzêdu., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie jesteÅ› sprzÄ…taczem ulic. Aby zmieniÄ‡ swojÄ… pracÄ™ dorywczÄ… udaj siÄ™ do urzÄ™du., OK, )
 			)
 		)
 		
-		//no prêdkoœæ trzeba przecie¿ ustawiæ, sama sie nie ustawi
-		//POTEM DODAJ WYJ¥TKI DLA HELIKOPTERÓW I SAMOLOTÓ
+		//no prÄ™dkoÅ›Ä‡ trzeba przecieÅ¼ ustawiÄ‡, sama sie nie ustawi
+		//POTEM DODAJ WYJÄ„TKI DLA HELIKOPTERÃ“W I SAMOLOTÃ“
 		
 		/*if(model != 462 && 
 		model != 461 &&
@@ -146,10 +146,10 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 		
 		GetVehiclePos(vehid, OldVehiclePosition(vehid)(0), OldVehiclePosition(vehid)(1), OldVehiclePosition(vehid)(2))
 		
-		// wycofujemy skrypt silników
+		// wycofujemy skrypt silnikÃ³w
 		DisablePlayerSpeedCap(playerid)
 		
-		// Dodaj checkpoint jeœli Course
+		// Dodaj checkpoint jeÅ›li Course
 		if(PlayerCache(playerid)(pCourse))
 		(
 			if(CarInfo(vehid)(cOwnerType) == OWNER_GROUP)
@@ -166,7 +166,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 					ChangeVehicleEngineStatus(vehid, 1)
 					CarInfo(vehid)(cEngineTogged) = true
 					
-					GuiMsg(playerid, Rozpocz¹³eœ egzamin, pod¹¿aj za punktami.\nPoruszaj siê zgodnie z zasadami ruchu drogowego!, 0)
+					GuiMsg(playerid, RozpoczÄ…Å‚eÅ› egzamin, podÄ…Å¼aj za punktami.\nPoruszaj siÄ™ zgodnie z zasadami ruchu drogowego!, 0)
 				)
 			)
 		)
@@ -244,7 +244,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 
 			//Audio_Stop(playerid, PlayerCache(playerid)(pAudioHandle))
 		
-		// Jeœli kierowca taksówki wysi¹dzie
+		// JeÅ›li kierowca taksÃ³wki wysiÄ…dzie
 		if(PlayerCache(playerid)(pTaxiPassenger) != INVALID_PLAYER_ID)
 		(
 			passenger_id = PlayerCache(playerid)(pTaxiPassenger), price = PlayerCache(passenger_id)(pTaxiPay)
@@ -268,7 +268,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 					GroupData(group_id_fix)(gCash) += group_cash
 					SaveGroup(group_id_fix)
 					
-					format(string, sizeof(string), Otrzyma³eœ premiê w wysokoœci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
+					format(string, sizeof(string), OtrzymaÅ‚eÅ› premiÄ™ w wysokoÅ›ci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
 					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 					
 					AddGroupEvent(GroupData(group_id_fix)(gUID), PlayerCache(playerid)(pUID), PlayerCache(passenger_id)(pUID), price, group_cash, Taxi)
@@ -276,11 +276,11 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 				else
 				(
 					printf((taxi-bug) Gracz %s (UID: %d) prawdopodobnie chcial teraz zbugowac nasz system bez duty z graczem %s (UID: %d)., PlayerName(playerid), PlayerCache(playerid)(pUID), PlayerName(passenger_id), PlayerCache(passenger_id)(pUID))
-					format(string,sizeof(string),Nie jesteœ na s³u¿bie grupy, nie otrzymasz gotówki za przewóz klienta.)
+					format(string,sizeof(string),Nie jesteÅ› na sÅ‚uÅ¼bie grupy, nie otrzymasz gotÃ³wki za przewÃ³z klienta.)
 					GuiMsg(playerid,string,0)
 				)
 				
-	   			format(string, sizeof(string), Zap³aci³eœ $%d za przejazd taksówk¹., price)
+	   			format(string, sizeof(string), ZapÅ‚aciÅ‚eÅ› $%d za przejazd taksÃ³wkÄ…., price)
 				ShowPlayerDialog(passenger_id, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 			)
 
@@ -291,7 +291,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 			PlayerCache(passenger_id)(pTaxiPrice) = 0
 		)
 		
-		// Jeœli bierze udzia³ w wyœcigu
+		// JeÅ›li bierze udziaÅ‚ w wyÅ›cigu
 		if(PlayerCache(playerid)(pRacePhase))
 		(
 			if(PlayerCache(playerid)(pRacePhase) == 3)
@@ -315,7 +315,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 		
 		vehid = PlayerCache(playerid)(pLastVeh)
 		
-		// Jeœli w³¹czony GPS
+		// JeÅ›li wÅ‚Ä…czony GPS
 		if(CarInfo(vehid)(cGPS))
 		(
 			if(IsPlayerInGroupType(playerid, GROUP_POLICE))
@@ -338,7 +338,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 	)
 	if(oldstate == PLAYER_STATE_PASSENGER && newstate == PLAYER_STATE_ONFOOT)
 	(
-		// Jeœli pasa¿er taksówki wysi¹dzie
+		// JeÅ›li pasaÅ¼er taksÃ³wki wysiÄ…dzie
  		if(PlayerCache(playerid)(pTaxiVeh) != INVALID_VEHICLE_ID)
 		(
 			driverid = GetVehicleDriver(PlayerCache(playerid)(pTaxiVeh)), price = PlayerCache(playerid)(pTaxiPay)
@@ -362,7 +362,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 					GroupData(group_id_fix)(gCash) += group_cash
 					SaveGroup(group_id_fix)
 					
-					format(string, sizeof(string), Otrzyma³eœ premiê w wysokoœci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
+					format(string, sizeof(string), OtrzymaÅ‚eÅ› premiÄ™ w wysokoÅ›ci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
 					ShowPlayerDialog(driverid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 					
 					AddGroupEvent(GroupData(group_id_fix)(gUID), PlayerCache(driverid)(pUID), PlayerCache(playerid)(pUID), price, group_cash, Taxi)
@@ -370,11 +370,11 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 				else
 				(
 					printf((taxi-bug) Gracz %s (UID: %d) prawdopodobnie chcial teraz zbugowac nasz system bez duty z graczem %s (UID: %d)., PlayerName(driverid), PlayerCache(driverid)(pUID), PlayerName(playerid), PlayerCache(playerid)(pUID))
-					format(string,sizeof(string),Nie jesteœ na s³u¿bie grupy, nie otrzymasz gotówki za przewóz klienta.)
+					format(string,sizeof(string),Nie jesteÅ› na sÅ‚uÅ¼bie grupy, nie otrzymasz gotÃ³wki za przewÃ³z klienta.)
 					GuiMsg(driverid,string,0)
 				)
 				
-	   			format(string, sizeof(string), Zap³aci³eœ $%d za przejazd taksówk¹., price)
+	   			format(string, sizeof(string), ZapÅ‚aciÅ‚eÅ› $%d za przejazd taksÃ³wkÄ…., price)
 				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 			)
 						
@@ -431,7 +431,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 	)
 	
 	
-	// wysiad³ z wozu
+	// wysiadÅ‚ z wozu
 	if((oldstate == PLAYER_STATE_DRIVER || oldstate == PLAYER_STATE_PASSENGER) && newstate == PLAYER_STATE_ONFOOT)
 	(
 		if(PlayerCache(playerid)(pAudioHandle) && !PlayerCache(playerid)(pMusicPlayerUID))
@@ -468,9 +468,9 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 		if(newkeys & KEY_SPRINT)
 		(
 				price = floatround(RefuelData(playerid)(rPrice)), value = RefuelData(playerid)(rLiters), vehid = RefuelData(playerid)(rVeh), string(128)
-				if(PlayerCache(playerid)(pCash) ( price) // brak³o kaski, jakiœ jebany buger
+				if(PlayerCache(playerid)(pCash) ( price) // brakÅ‚o kaski, jakiÅ› jebany buger
 				(
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz takiej iloœci gotówki., OK, )
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz takiej iloÅ›ci gotÃ³wki., OK, )
 					PlayerCache(playerid)(pFueling) = false
 					RefuelData(playerid)(rType) = 0
 					RefuelData(playerid)(rLiters) = 0
@@ -490,9 +490,9 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 					RefuelData(playerid)(rPrice) = 0.00
 					RefuelData(playerid)(rPricePerL) = 0.00
 					RefuelData(playerid)(rVeh) = 0
-					format(string, sizeof(string), Zap³aci³eœ $%d za %d litrów paliwa., price, value)
+					format(string, sizeof(string), ZapÅ‚aciÅ‚eÅ› $%d za %d litrÃ³w paliwa., price, value)
 					SendClientMessage(playerid, COLOR_LIGHTBLUE, string)
-					format(string, sizeof(string), * Pojazd %s zosta³ pomyœlnie zatankowany (( %s )), CarInfo(vehid)(cName), PlayerName(playerid))
+					format(string, sizeof(string), * Pojazd %s zostaÅ‚ pomyÅ›lnie zatankowany (( %s )), CarInfo(vehid)(cName), PlayerName(playerid))
 					ProxDetector(10.0, playerid, string, COLOR_DO, COLOR_DO, COLOR_DO, COLOR_DO, COLOR_DO, true)
 					PlayerTextDrawHide(playerid, TextDrawFuelContent(playerid))
 					TextDrawHideForPlayer(playerid, Text:TextDrawFuelBack)					
@@ -523,7 +523,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 		)
 	)
 	
-	if(newkeys & KEY_CTRL_BACK)	// H, prace w wiêzieniu
+	if(newkeys & KEY_CTRL_BACK)	// H, prace w wiÄ™zieniu
 	(
 		if(PlayerCache(playerid)(pWorkingNow) == WORK_LAUNDRY)
 		(
@@ -531,7 +531,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 			(
 				if(PlayerCache(playerid)(pWorkRepeat) )= 10)
 				(
-					GuiMsg(playerid, Wyczerpa³eœ dzienny limit pracy, odpocznij., 0)
+					GuiMsg(playerid, WyczerpaÅ‚eÅ› dzienny limit pracy, odpocznij., 0)
 					StopPlayerPrisonWork(playerid)
 				)
 				else
@@ -545,11 +545,11 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 								PlayerCache(playerid)(pWorkingPhase) = LAUNDRY_LOADED
 								SetPlayerLaundryAnimations(playerid)
 								PoliceCell(cell_id)(pCellCleaned) = 1
-								GuiMsg(playerid, Zebra³eœ brudn¹ odzie¿ z tej celi. Udaj siê teraz ponownie do pralni.\nBêd¹c na miejscu aby wrzuciæ rzeczy do kosza u¿yj klawisza H (klakson)., 0)
+								GuiMsg(playerid, ZebraÅ‚eÅ› brudnÄ… odzieÅ¼ z tej celi. Udaj siÄ™ teraz ponownie do pralni.\nBÄ™dÄ…c na miejscu aby wrzuciÄ‡ rzeczy do kosza uÅ¼yj klawisza H (klakson)., 0)
 							)
 							else
 							(
-								GuiMsg(playerid, Niestety w tej celi nie znalaz³eœ ¿adnej brudnej odzie¿y.\nUdaj siê do kolejnej i u¿yj klawisza H (klakson)., 0)
+								GuiMsg(playerid, Niestety w tej celi nie znalazÅ‚eÅ› Å¼adnej brudnej odzieÅ¼y.\nUdaj siÄ™ do kolejnej i uÅ¼yj klawisza H (klakson)., 0)
 							)
 							break
 						)
@@ -567,12 +567,12 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 					
 					if(rand == 5)
 					(
-						GuiMsg(playerid, Gratulacje! Za Twoj¹ dobr¹ pracê na rzecz placówki naczelnik skróci³ Twój wyrok o godzinê.\nUdaj siê po kolejne ciuchy, b¹dŸ zakoñcz pracê komend¹ /praca., 0)
+						GuiMsg(playerid, Gratulacje! Za TwojÄ… dobrÄ… pracÄ™ na rzecz placÃ³wki naczelnik skrÃ³ciÅ‚ TwÃ³j wyrok o godzinÄ™.\nUdaj siÄ™ po kolejne ciuchy, bÄ…dÅº zakoÅ„cz pracÄ™ komendÄ… /praca., 0)
 						PlayerCache(playerid)(pArrestTime) = PlayerCache(playerid)(pArrestTime) - 3600	// godzina
 					)
 					else
 					(
-						GuiMsg(playerid, Brawo! Odda³eœ rzeczy do kosza na brudn¹ odzie¿ i otrzyma³eœ dwa dolary za pracê na rzecz placówki.\nUdaj siê po kolejne ciuchy, b¹dŸ zakoñcz pracê komend¹ /praca., 0)
+						GuiMsg(playerid, Brawo! OddaÅ‚eÅ› rzeczy do kosza na brudnÄ… odzieÅ¼ i otrzymaÅ‚eÅ› dwa dolary za pracÄ™ na rzecz placÃ³wki.\nUdaj siÄ™ po kolejne ciuchy, bÄ…dÅº zakoÅ„cz pracÄ™ komendÄ… /praca., 0)
 						hrp_GivePlayerMoney(playerid, 2)
 					)
 					
@@ -581,7 +581,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 				)
 				else
 				(
-					GuiMsg(playerid, Nie znajdujesz siê w pralni., 0)
+					GuiMsg(playerid, Nie znajdujesz siÄ™ w pralni., 0)
 				)
 			)
 		)
@@ -593,7 +593,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 				(
 					if(PlayerCache(playerid)(pWorkRepeat) )= 10)
 					(
-						GuiMsg(playerid, Wyczerpa³eœ dzienny limit pracy, odpocznij., 0)
+						GuiMsg(playerid, WyczerpaÅ‚eÅ› dzienny limit pracy, odpocznij., 0)
 						StopPlayerPrisonWork(playerid)
 					)
 					else
@@ -605,12 +605,12 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 				)
 				else
 				(
-					GuiMsg(playerid, Nie znajdujesz siê w warsztacie., 0)
+					GuiMsg(playerid, Nie znajdujesz siÄ™ w warsztacie., 0)
 				)
 			)
 			else if(PlayerCache(playerid)(pWorkingPhase) == WORKSHOP_SAWING)
 			(
-				GuiMsg(playerid, Przerwa³eœ pracê, aby zacz¹æ od nowa u¿yj klawisza H., 0)
+				GuiMsg(playerid, PrzerwaÅ‚eÅ› pracÄ™, aby zaczÄ…Ä‡ od nowa uÅ¼yj klawisza H., 0)
 				PlayerCache(playerid)(pWorkingRepeat) = 0
 				PlayerCache(playerid)(pWorkingPhase) = WORKSHOP_WAITING
 				StopPlayerAnimations(playerid)
@@ -675,13 +675,13 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 		
 		if(PlayerCache(playerid)(pWorkingPhase) == WORKSHOP_SAWING)
 		(
-			// mo¿na dodaæ szansê na jak¹œ nag³¹ przerwê w pracy, stêpienie pi³y
+			// moÅ¼na dodaÄ‡ szansÄ™ na jakÄ…Å› nagÅ‚Ä… przerwÄ™ w pracy, stÄ™pienie piÅ‚y
 			
 			PlayerCache(playerid)(pWorkingRepeat)++
 		)
 		
 		
-		// AC - Sprawdzanie czy nie buguj¹ amunicji - liczymy pestki po naciœniêciu LPM. Nie banowaæ przy braku zmian bo mog¹ byæ przy œcianie.
+		// AC - Sprawdzanie czy nie bugujÄ… amunicji - liczymy pestki po naciÅ›niÄ™ciu LPM. Nie banowaÄ‡ przy braku zmian bo mogÄ… byÄ‡ przy Å›cianie.
 
 		if((WeaponCache(playerid)(WEAPON_MAIN)(pWeaponUID) || WeaponCache(playerid)(WEAPON_SIDE)(pWeaponUID) || WeaponCache(playerid)(WEAPON_FUNC)(pWeaponUID)) && !PlayerCache(playerid)(pTagging))
 		(
@@ -854,7 +854,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 			skin_id = PlayerCache(playerid)(pClothID)
 			if(PlayerCache(playerid)(pCash) ( SkinInfo(skin_id)(sPrice))
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Nie staæ Ciê na zakup tego ubrania., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Nie staÄ‡ CiÄ™ na zakup tego ubrania., OK, )
 				return 1
 			)
 			hrp_GivePlayerMoney(playerid, -SkinInfo(skin_id)(sPrice))
@@ -876,7 +876,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 			GroupData(group_id_fix)(gCash) += SkinInfo(skin_id)(sPrice)
 			SaveGroup(group_id_fix)
 			
-			SendClientMessage(playerid, COLOR_INFO, Wybrane ubranie zosta³o zakupione. Kupiony przedmiot znajdziesz w swoim ekwipunku.)
+			SendClientMessage(playerid, COLOR_INFO, Wybrane ubranie zostaÅ‚o zakupione. Kupiony przedmiot znajdziesz w swoim ekwipunku.)
 			return 1
 		)
 		if(PlayerCache(playerid)(pAccessChanging))
@@ -888,7 +888,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 				(
 					if(!IsPlayerInGroupType(playerid, AccessInfo(access_id)(aOwner)))
 					(
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do kupna tego akcesoria., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do kupna tego akcesoria., OK, )
 						return 1
 					)
 				)
@@ -896,7 +896,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 			
 			if(PlayerCache(playerid)(pCash) ( AccessInfo(access_id)(aPrice))
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Nie staæ Ciê na zakup tego akcesoria., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Nie staÄ‡ CiÄ™ na zakup tego akcesoria., OK, )
 				return 1
 			)
 			hrp_GivePlayerMoney(playerid, -AccessInfo(access_id)(aPrice))
@@ -920,7 +920,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 			access_uid = mysql_insert_id()
 			
 			CreatePlayerItem(playerid, AccessInfo(access_id)(aName), ITEM_ATTACH, access_uid, 0)
-			SendClientMessage(playerid, COLOR_INFO, Wybrane akcesorie zosta³o zakupione. Kupiony przedmiot znajdziesz w swoim ekwipunku.)
+			SendClientMessage(playerid, COLOR_INFO, Wybrane akcesorie zostaÅ‚o zakupione. Kupiony przedmiot znajdziesz w swoim ekwipunku.)
 			return 1
 		)
 		if(PlayerCache(playerid)(pAccessEditing))
@@ -948,7 +948,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 
 			PlayerAttach(playerid)(aUID))
 
-			SendClientMessage(playerid, COLOR_INFO, Akcesorie zosta³o zedytowane pomyœlnie. Aby za³o¿yæ, u¿yj go ponownie.)
+			SendClientMessage(playerid, COLOR_INFO, Akcesorie zostaÅ‚o zedytowane pomyÅ›lnie. Aby zaÅ‚oÅ¼yÄ‡, uÅ¼yj go ponownie.)
 			return 1
 		)
 	)
@@ -963,7 +963,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 				return 1
 			)
 		)
-		// Zapalanie œwiate³ & odczepianie pojazdu
+		// Zapalanie Å›wiateÅ‚ & odczepianie pojazdu
 		if(newkeys & 1)
 		(
   			if(GetVehicleLightsStatus(vehid) == 1)
@@ -1005,7 +1005,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 					DetachTrailerFromVehicle(vehid)
 					CarInfo(vehid)(cTowedVeh) = INVALID_VEHICLE_ID
 
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Pojazd zosta³ odczepiony pomyœlnie., OK, )
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Pojazd zostaÅ‚ odczepiony pomyÅ›lnie., OK, )
 				)
 			)
 		)
@@ -1159,7 +1159,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 								//audio = Audio_Play(i, AUDIO_SIREN)
 								//Audio_Set3DPosition(i, audio, PosX, PosY, PosZ, 60.0)
 								PlayAudioStreamForPlayer(i, http://pliki.ls-rp.net/sounds/police.mp3)
-								format(string, sizeof(string), %s (megafon): Tu Los Santos Police Department. ZjedŸ na pobocze i zgaœ silnik. Pozostañ w pojeŸdzie., PlayerName(playerid))
+								format(string, sizeof(string), %s (megafon): Tu Los Santos Police Department. ZjedÅº na pobocze i zgaÅ› silnik. PozostaÅ„ w pojeÅºdzie., PlayerName(playerid))
 							)
 						)
 						ProxDetector(40.0, playerid, string, GroupData(group_id_fix)(gColor), GroupData(group_id_fix)(gColor), GroupData(group_id_fix)(gColor), GroupData(group_id_fix)(gColor), GroupData(group_id_fix)(gColor), true)
@@ -1176,7 +1176,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 							(
 								//audio = Audio_Play(i, AUDIO_FDSIREN)
 								//Audio_Set3DPosition(i, audio, PosX, PosY, PosZ, 60.0)
-								format(string, sizeof(string), %s (megafon): Tu Los Santos Emergency Medical Services. Ust¹p piewrszeñstwa pojazdowi uprzywilejowanemu., PlayerName(playerid))
+								format(string, sizeof(string), %s (megafon): Tu Los Santos Emergency Medical Services. UstÄ…p piewrszeÅ„stwa pojazdowi uprzywilejowanemu., PlayerName(playerid))
 							)
 						)
 						ProxDetector(40.0, playerid, string, GroupData(group_id_fix)(gColor), GroupData(group_id_fix)(gColor), GroupData(group_id_fix)(gColor), GroupData(group_id_fix)(gColor), GroupData(group_id_fix)(gColor), true)
@@ -1194,7 +1194,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 								//audio = Audio_Play(i, AUDIO_FDSIREN)
 								//Audio_Set3DPosition(i, audio, PosX, PosY, PosZ, 60.0)
 								PlayAudioStreamForPlayer(i, http://pliki.ls-rp.net/sounds/firehorn.mp3)
-								format(string, sizeof(string), %s (megafon): Tu Los Santos Fire Department. Ust¹p pierwszeñstwa pojazdowi uprzywilejowanemu., PlayerName(playerid))
+								format(string, sizeof(string), %s (megafon): Tu Los Santos Fire Department. UstÄ…p pierwszeÅ„stwa pojazdowi uprzywilejowanemu., PlayerName(playerid))
 							)
 						)
 						ProxDetector(40.0, playerid, string, GroupData(group_id_fix)(gColor), GroupData(group_id_fix)(gColor), GroupData(group_id_fix)(gColor), GroupData(group_id_fix)(gColor), GroupData(group_id_fix)(gColor), true)
@@ -1244,7 +1244,7 @@ public OnPlayerUpdate(playerid)
 (	
 	inHand = GetPlayerWeapon(playerid)
 
-	// Broñ g³ówna
+	// BroÅ„ gÅ‚Ã³wna
 	if(WeaponCache(playerid)(WEAPON_MAIN)(pWeaponUID))
 	(
 		if(inHand != WeaponCache(playerid)(WEAPON_MAIN)(pWeaponID))
@@ -1277,7 +1277,7 @@ public OnPlayerUpdate(playerid)
 		)
 	)
 	
-	// Broñ poboczna
+	// BroÅ„ poboczna
 	if(WeaponCache(playerid)(WEAPON_SIDE)(pWeaponUID))
 	(
 		if(inHand != WeaponCache(playerid)(WEAPON_SIDE)(pWeaponID))
@@ -1289,7 +1289,7 @@ public OnPlayerUpdate(playerid)
 			(
 				if(!strfind(ItemInfo(itemid)(iName), (D), true))
 				(
-					RemovePlayerAttachedObject(playerid, SLOT_WEAPON_SIDE)	// usuwamy broñ przyczepialn¹, bo flaga (D) = broñ schowana, czyli dla detektywów
+					RemovePlayerAttachedObject(playerid, SLOT_WEAPON_SIDE)	// usuwamy broÅ„ przyczepialnÄ…, bo flaga (D) = broÅ„ schowana, czyli dla detektywÃ³w
 				)
 				else
 				(
@@ -1313,7 +1313,7 @@ public OnPlayerUpdate(playerid)
 		)
 	)
 	
-	// Broñ funkcjonalna
+	// BroÅ„ funkcjonalna
 	if(WeaponCache(playerid)(WEAPON_FUNC)(pWeaponUID))
 	(
 		if(inHand != WeaponCache(playerid)(WEAPON_FUNC)(pWeaponID))
@@ -1368,7 +1368,7 @@ public OnPlayerUpdate(playerid)
 		keysa, uda, lra
 		GetPlayerKeys(playerid, keysa, uda, lra)
 
-		// Wyciskanie na ³awce
+		// Wyciskanie na Å‚awce
 		if(PlayerCache(playerid)(pGymType) == TRAIN_BENCH_PRESS)
 		(
 			if(uda ( 0)
@@ -1400,7 +1400,7 @@ public OnPlayerUpdate(playerid)
 				SetTimerEx(OnPlayerGymTrainStopped, 3000, 0, d, playerid)
 			)
 		)
-		// Wyciskanie na dwóch ciê¿arkach
+		// Wyciskanie na dwÃ³ch ciÄ™Å¼arkach
 		if(PlayerCache(playerid)(pGymType) == TRAIN_BARBELL)
 		(
 			if(keysa & KEY_SPRINT)
@@ -1484,13 +1484,13 @@ public OnPlayerUpdate(playerid)
 		TextDrawSetString(Text:TextDrawEditorTitle(playerid), string)
 	)
  	
-	// Wybiera³ka skinów w ciucholandzie
+	// WybieraÅ‚ka skinÃ³w w ciucholandzie
 	if(PlayerCache(playerid)(pClothChanging))
 	(		
 		keysa, uda, lra, string(64)
 		GetPlayerKeys(playerid, keysa, uda, lra)
 
-		if(lra ( 0) // Strza³ka w prawo
+		if(lra ( 0) // StrzaÅ‚ka w prawo
 		(
 			PlayerCache(playerid)(pClothID) ++
 
@@ -1510,7 +1510,7 @@ public OnPlayerUpdate(playerid)
 			format(string, sizeof(string), $~g~%d, SkinInfo(skin_id)(sPrice))
 			GameTextForPlayer(playerid, string, 10000, 6)
 		)
-		else if(lra ) 0) // Strza³ka w lewo
+		else if(lra ) 0) // StrzaÅ‚ka w lewo
 		(
 			PlayerCache(playerid)(pClothID) --
 
@@ -1531,13 +1531,13 @@ public OnPlayerUpdate(playerid)
 			GameTextForPlayer(playerid, string, 10000, 6)
 		)
 	)
-	// Wybiera³ka akcesorii
+	// WybieraÅ‚ka akcesorii
 	if(PlayerCache(playerid)(pAccessChanging))
 	(
 		keysa, uda, lra, string(12), counter = 0
 		GetPlayerKeys(playerid, keysa, uda, lra)
 		
-		if(!(keysa & KEY_WALK) && !(keysa & KEY_SPRINT) && lra ( 0) // Strza³ka w prawo
+		if(!(keysa & KEY_WALK) && !(keysa & KEY_SPRINT) && lra ( 0) // StrzaÅ‚ka w prawo
 		(
 			
 			PlayerCache(playerid)(pAccessID) ++
@@ -1592,7 +1592,7 @@ public OnPlayerUpdate(playerid)
 			PlayerAttach(playerid)(aScaleY) = 1.0
 			PlayerAttach(playerid)(aScaleZ) = 1.0
 		)
-		else if(!(keysa & KEY_WALK) && !(keysa & KEY_SPRINT) && lra ) 0) // Strza³ka w lewo
+		else if(!(keysa & KEY_WALK) && !(keysa & KEY_SPRINT) && lra ) 0) // StrzaÅ‚ka w lewo
 		(
 		
 			PlayerCache(playerid)(pAccessID) --
@@ -1737,7 +1737,7 @@ public OnPlayerUpdate(playerid)
 				GetPlayerKeys(playerid, keysa, uda, lra)
 
 
-				if(lra ) 0) // Strza³ka w lewo
+				if(lra ) 0) // StrzaÅ‚ka w lewo
 				(
 
 					current--
@@ -1767,7 +1767,7 @@ public OnPlayerUpdate(playerid)
 					cmd_spec(playerid, s)
 				)
 
-				if(lra ( 0) // Strza³ka w prawo
+				if(lra ( 0) // StrzaÅ‚ka w prawo
 				(
 					current++
 					if(current )= MAX_PLAYERS)
@@ -1889,12 +1889,12 @@ public OnPlayerGiveDamage(playerid, damagedid, Float:amount, weaponid)
 	if(playerid != INVALID_PLAYER_ID)
 	(
 		//class = GetWeaponClass(weaponid)
-		//Wszystkie bronie bia³e i do strzelania
+		//Wszystkie bronie biaÅ‚e i do strzelania
 		if((weaponid )= 0 && weaponid (= 5) || (weaponid ) 15 && weaponid ( 39) || (weaponid )= 10 && weaponid (= 15))
 		(
 			bool:czy_dostal_wpierdol = false
 			
-			//Reszta else to bronie bia³e
+			//Reszta else to bronie biaÅ‚e
 			if(weaponid == 0)
 			(
 				Float:health, Float:attack = floatround( PlayerCache(playerid)(pStrength) / 20 )
@@ -1979,7 +1979,7 @@ public OnPlayerGiveDamage(playerid, damagedid, Float:amount, weaponid)
 				)
 				czy_dostal_wpierdol = true
 			)
-			//Ca³a reszta oprócz bia³ych i wiatrówki, paralizatorów.
+			//CaÅ‚a reszta oprÃ³cz biaÅ‚ych i wiatrÃ³wki, paralizatorÃ³w.
 			else
 			(
 				if(amount ) 7.0)
@@ -2051,7 +2051,7 @@ public OnPlayerGiveDamage(playerid, damagedid, Float:amount, weaponid)
 						PlayerCache(damagedid)(pBleeding) = 300
 					)
 					
-					// Wydupcanie z kamizelk¹
+					// Wydupcanie z kamizelkÄ…
 					Float:chance = 0.6 * 30 + 60
 					rand = random(100)
 					if(rand )= floatround(chance))
@@ -2156,13 +2156,13 @@ public OnPlayerTakeDamage(playerid, issuerid, Float:amount, weaponid, bodypart)
 		// wszystkie bronie
         if((weaponid )= 0 && weaponid (= 5) || (weaponid ) 15 && weaponid ( 39) || (weaponid )= 10 && weaponid (= 15))
 		(
-			bool:coldsteel_dmg = false // DMG z broni bia³ej
-			bool:kevlar_shoot = false // strza³ w kamizelkê
+			bool:coldsteel_dmg = false // DMG z broni biaÅ‚ej
+			bool:kevlar_shoot = false // strzaÅ‚ w kamizelkÄ™
 			Float:attack // DMG z ataku
 			Float:targetHP = 0.0
 			GetPlayerHealth(playerid, targetHP)
 			
-			if(weaponid == 0) // piêœci
+			if(weaponid == 0) // piÄ™Å›ci
 			(
 				Float:health attack = floatround(PlayerCache(issuerid)(pStrength) / 20)
 				if(PlayerCache(issuerid)(pStrength) ) 20)
@@ -2184,7 +2184,7 @@ public OnPlayerTakeDamage(playerid, issuerid, Float:amount, weaponid, bodypart)
 				
 				coldsteel_dmg = true
 			)
-			else if(weaponid == 3 || weaponid == 5 || weaponid == 10 || weaponid == 11) // pa³ka policyjna, baseball, dildo(teleskop), dildo(metalowa rurka)
+			else if(weaponid == 3 || weaponid == 5 || weaponid == 10 || weaponid == 11) // paÅ‚ka policyjna, baseball, dildo(teleskop), dildo(metalowa rurka)
 			(
 				Float:health attack = floatround(PlayerCache(issuerid)(pStrength) / 20) * 3
 				if(PlayerCache(issuerid)(pStrength) ) 20)
@@ -2201,7 +2201,7 @@ public OnPlayerTakeDamage(playerid, issuerid, Float:amount, weaponid, bodypart)
 				
 				coldsteel_dmg = true
 			)
-			else if(weaponid == 4 || weaponid == 13) // nó¿, wibrator2(nó¿)
+			else if(weaponid == 4 || weaponid == 13) // nÃ³Å¼, wibrator2(nÃ³Å¼)
 			(
 				Float:health attack = floatround(PlayerCache(issuerid)(pStrength) / 20) * 4
 				if(PlayerCache(issuerid)(pStrength) ) 20)
@@ -2247,7 +2247,7 @@ public OnPlayerTakeDamage(playerid, issuerid, Float:amount, weaponid, bodypart)
 					)
 				)
 
-				if(bodypart == 9) // g³owa
+				if(bodypart == 9) // gÅ‚owa
 				(
 					attack = floatround(amount)
 				)
@@ -2265,7 +2265,7 @@ public OnPlayerTakeDamage(playerid, issuerid, Float:amount, weaponid, bodypart)
 						PlayerCache(playerid)(pWoundedTime) += 3
 					)
 				)
-				else if(bodypart == 6 || bodypart == 5) // prawa rêka, lewa rêka
+				else if(bodypart == 6 || bodypart == 5) // prawa rÄ™ka, lewa rÄ™ka
 				(
 					if(targetHP ( 25.0) (
 						PlayerCache(playerid)(pBlockShooting) = 5
@@ -2317,12 +2317,12 @@ public OnPlayerTakeDamage(playerid, issuerid, Float:amount, weaponid, bodypart)
 
 
 /*
-		0.3z Callback - mo¿e wyst¹piæ warning przy kompilacji, nie patrzcie na to
-		return 1 - pozwala zadaæ DMG
+		0.3z Callback - moÅ¼e wystÄ…piÄ‡ warning przy kompilacji, nie patrzcie na to
+		return 1 - pozwala zadaÄ‡ DMG
 		return 0 - nie zabierze HP
 		
-		(( przynajmniej wiki tak mówi, mo¿na zaufaæ ))
-		* póki co tylko warningi dodam, bo banowanie systemowe czêsto zawodzi
+		(( przynajmniej wiki tak mÃ³wi, moÅ¼na zaufaÄ‡ ))
+		* pÃ³ki co tylko warningi dodam, bo banowanie systemowe czÄ™sto zawodzi
 */
 
 public OnPlayerWeaponShot(playerid, weaponid, hittype, hitid, Float:fX, Float:fY, Float:fZ)
@@ -2341,13 +2341,13 @@ public OnPlayerWeaponShot(playerid, weaponid, hittype, hitid, Float:fX, Float:fY
 		)
 	)
 	
-	if( hittype == BULLET_HIT_TYPE_PLAYER ) // Tylko gdy do gracza strzeli to mo¿na wywaliæ - fix z 0.3z
+	if( hittype == BULLET_HIT_TYPE_PLAYER ) // Tylko gdy do gracza strzeli to moÅ¼na wywaliÄ‡ - fix z 0.3z
     (
         if( !( -20.0 (= fX (= 20.0 ) || !( -20.0 (= fY (= 20.0 ) || !( -20.0 (= fZ (= 20.0 ) ) 
         (
             //                Kick dla cheatera
 			hrp_Kick(playerid, -1, Cheater WC)
-            return 0 // desynchronizujemy strza³
+            return 0 // desynchronizujemy strzaÅ‚
         )
     )
 	

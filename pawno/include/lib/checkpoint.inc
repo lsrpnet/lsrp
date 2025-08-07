@@ -68,7 +68,7 @@ public OnPlayerEnterRaceCheckpoint(playerid)
 			bool:failed = false
 			if(GetPlayerVehicleID(playerid) != PlayerCache(playerid)(pCourseVeh))
 			(
-				GuiMsg(playerid, Nie dojecha³eœ tym samym pojazdem, którym rozpocz¹³eœ kurs., 1)
+				GuiMsg(playerid, Nie dojechaÅ‚eÅ› tym samym pojazdem, ktÃ³rym rozpoczÄ…Å‚eÅ› kurs., 1)
 				PlayerCache(playerid)(pCourse) = false
 				DisablePlayerRaceCheckpoint(playerid)
 				PlayerCache(playerid)(pCourseVeh) = INVALID_VEHICLE_ID
@@ -77,7 +77,7 @@ public OnPlayerEnterRaceCheckpoint(playerid)
 			
 			if(PlayerCache(playerid)(pCourseMS) ) 40.0)
 			(
-				GuiMsg(playerid, Podczas kursu przekroczy³eœ maksymaln¹ dozwolon¹ prêdkoœæ.\nKurs niezaliczony., 0)
+				GuiMsg(playerid, Podczas kursu przekroczyÅ‚eÅ› maksymalnÄ… dozwolonÄ… prÄ™dkoÅ›Ä‡.\nKurs niezaliczony., 0)
 				failed = true
 			)
 			
@@ -85,13 +85,13 @@ public OnPlayerEnterRaceCheckpoint(playerid)
 			GetVehicleHealth(PlayerCache(playerid)(pCourseVeh), vHealth)
 			if(vHealth ( 1000.0)
 			(
-				GuiMsg(playerid, Uderzy³eœ autem podczas egzaminu, niestety nie zdane!, 0)
+				GuiMsg(playerid, UderzyÅ‚eÅ› autem podczas egzaminu, niestety nie zdane!, 0)
 				failed = true
 			)
 			
 			if(!failed)
 			(
-				GuiMsg(playerid, Brawo! Zaliczy³eœ egzamin na prawo jazdy, dokument zosta³ dodany do Twojej postaci.\nSzerokiej drogi!, 0)
+				GuiMsg(playerid, Brawo! ZaliczyÅ‚eÅ› egzamin na prawo jazdy, dokument zostaÅ‚ dodany do Twojej postaci.\nSzerokiej drogi!, 0)
 				
 				PlayerCache(playerid)(pDocuments) += DOC_DRIVER
 			)
@@ -129,7 +129,7 @@ public OnPlayerEnterRaceCheckpoint(playerid)
 			
 			mysql_free_result()
 			
-			format(data, sizeof(data), Ukonczyles trasê ~r~%s. ~w~Na Twoje konto wplynela kwota ~g~$%d., rPointName(0), i)
+			format(data, sizeof(data), Ukonczyles trasÄ™ ~r~%s. ~w~Na Twoje konto wplynela kwota ~g~$%d., rPointName(0), i)
 			TextDrawSetString(Text:TextDrawMainInfo(playerid), data)
 			TextDrawShowForPlayer(playerid, Text:TextDrawMainInfo(playerid))
 			PlayerCache(playerid)(pShowInfoText) = 7
@@ -242,7 +242,7 @@ public OnPlayerPickUpPickup(playerid, pickupid)
 	(
 		if(PlayerCache(playerid)(pJob) == JOB_PRESSER)
 		(
-			ShowPlayerDialog(playerid, D_PRESS_JOB, DIALOG_STYLE_MSGBOX, Roznoszenie gazet, Czy chcesz rozpocz¹æ roznoszenie gazet?, Tak, Nie)
+			ShowPlayerDialog(playerid, D_PRESS_JOB, DIALOG_STYLE_MSGBOX, Roznoszenie gazet, Czy chcesz rozpoczÄ…Ä‡ roznoszenie gazet?, Tak, Nie)
 		)
 		else
 		(
@@ -253,7 +253,7 @@ public OnPlayerPickUpPickup(playerid, pickupid)
 	)
 	if(pickupid == JobPickup)
 	(
-		ShowPlayerDialog(playerid, D_SELECT_JOB, DIALOG_STYLE_LIST, Dostêpne prace dorywcze:, 1 - Kurier\n2 - Rybak\n3 - Sprz¹tacz ulic, Wybierz, Anuluj)
+		ShowPlayerDialog(playerid, D_SELECT_JOB, DIALOG_STYLE_LIST, DostÄ™pne prace dorywcze:, 1 - Kurier\n2 - Rybak\n3 - SprzÄ…tacz ulic, Wybierz, Anuluj)
 		return 1
 	)
 	if(pickupid == MarihuanaGangPickup)
@@ -261,25 +261,25 @@ public OnPlayerPickUpPickup(playerid, pickupid)
 		gangzone_id = GetCurrentPlayerGangZone(playerid)
 		if(gangzone_id == -1)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst±pi³ b³±d, Ten pickup niedzia³a tak jak powinien. Zg³o¶ to Administracji., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÂ±piÅ‚ bÅ‚Â±d, Ten pickup niedziaÅ‚a tak jak powinien. ZgÅ‚oÂ¶ to Administracji., OK, )
 			return 1
 		)
 
 		group_id_fix = GetGroupID(GangZoneInfo(gangzone_id)(gOwner))
 		if(!GroupData(group_id_fix)(gUID))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst±pi³ b³±d, Ten pickup niedzia³a tak jak powinien. Zg³o¶ to Administracji., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÂ±piÅ‚ bÅ‚Â±d, Ten pickup niedziaÅ‚a tak jak powinien. ZgÅ‚oÂ¶ to Administracji., OK, )
 			return 1
 		)
 
 		if(!IsPlayerPermissedGroup(playerid, GangZoneInfo(gangzone_id)(gOwner), PERM_LEADER))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do zarz¹dzania tym pojazdem., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do zarzÄ…dzania tym pojazdem., OK, )
 			return 1
 		)
 
 		string(128)
-		format(string, sizeof(string), Aktualnie w magazynie znajduje siê %d marihuany.\nKolejna dostawa pojawi siê w poniedzia³ek.\nBierz ile potrzeba ale u¿ywaj z g³ow±.\n\nWpisz ilo¶æ do pobrania, GangZoneInfo(gangzone_id)(gMarihuana))
+		format(string, sizeof(string), Aktualnie w magazynie znajduje siÄ™ %d marihuany.\nKolejna dostawa pojawi siÄ™ w poniedziaÅ‚ek.\nBierz ile potrzeba ale uÅ¼ywaj z gÅ‚owÂ±.\n\nWpisz iloÂ¶Ä‡ do pobrania, GangZoneInfo(gangzone_id)(gMarihuana))
 		ShowPlayerDialog(playerid, D_GETZONE_MARIHUANA, DIALOG_STYLE_INPUT, Magazyn marihuany, string, OK, Anuluj)
 		return 1
 	)
@@ -288,25 +288,25 @@ public OnPlayerPickUpPickup(playerid, pickupid)
 		gangzone_id = GetCurrentPlayerGangZone(playerid)
 		if(gangzone_id == -1)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst±pi³ b³±d, Ten pickup niedzia³a tak jak powinien. Zg³o¶ to Administracji., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÂ±piÅ‚ bÅ‚Â±d, Ten pickup niedziaÅ‚a tak jak powinien. ZgÅ‚oÂ¶ to Administracji., OK, )
 			return 1
 		)
 
 		group_id_fix = GetGroupID(GangZoneInfo(gangzone_id)(gOwner))
 		if(!GroupData(group_id_fix)(gUID))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst±pi³ b³±d, Ten pickup niedzia³a tak jak powinien. Zg³o¶ to Administracji., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÂ±piÅ‚ bÅ‚Â±d, Ten pickup niedziaÅ‚a tak jak powinien. ZgÅ‚oÂ¶ to Administracji., OK, )
 			return 1
 		)
 
 		if(!IsPlayerPermissedGroup(playerid, GangZoneInfo(gangzone_id)(gOwner), PERM_LEADER))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do zarz¹dzania tym pojazdem., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do zarzÄ…dzania tym pojazdem., OK, )
 			return 1
 		)
 
 		string(128)
-		format(string, sizeof(string), Aktualnie w magazynie znajduje siê %d amfetaminy.\nKolejna dostawa pojawi siê w poniedzia³ek.\nBierz ile potrzeba ale u¿ywaj z g³ow±.\n\nWpisz ilo¶æ do pobrania, GangZoneInfo(gangzone_id)(gAmp))
+		format(string, sizeof(string), Aktualnie w magazynie znajduje siÄ™ %d amfetaminy.\nKolejna dostawa pojawi siÄ™ w poniedziaÅ‚ek.\nBierz ile potrzeba ale uÅ¼ywaj z gÅ‚owÂ±.\n\nWpisz iloÂ¶Ä‡ do pobrania, GangZoneInfo(gangzone_id)(gAmp))
 		ShowPlayerDialog(playerid, D_GETZONE_AMP, DIALOG_STYLE_INPUT, Magazyn Fety, string, OK, Anuluj)
 		return 1
 	)
@@ -315,25 +315,25 @@ public OnPlayerPickUpPickup(playerid, pickupid)
 		gangzone_id = GetCurrentPlayerGangZone(playerid)
 		if(gangzone_id == -1)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst±pi³ b³±d, Ten pickup niedzia³a tak jak powinien. Zg³o¶ to Administracji., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÂ±piÅ‚ bÅ‚Â±d, Ten pickup niedziaÅ‚a tak jak powinien. ZgÅ‚oÂ¶ to Administracji., OK, )
 			return 1
 		)
 
 		group_id_fix = GetGroupID(GangZoneInfo(gangzone_id)(gOwner))
 		if(!GroupData(group_id_fix)(gUID))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst±pi³ b³±d, Ten pickup niedzia³a tak jak powinien. Zg³o¶ to Administracji., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÂ±piÅ‚ bÅ‚Â±d, Ten pickup niedziaÅ‚a tak jak powinien. ZgÅ‚oÂ¶ to Administracji., OK, )
 			return 1
 		)
 
 		if(!IsPlayerPermissedGroup(playerid, GangZoneInfo(gangzone_id)(gOwner), PERM_LEADER))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do zarz¹dzania tym pojazdem., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do zarzÄ…dzania tym pojazdem., OK, )
 			return 1
 		)
 
 		string(128)
-		format(string, sizeof(string), Aktualnie w magazynie znajduje siê %d metaamfetaminy.\nKolejna dostawa pojawi siê w poniedzia³ek.\nBierz ile potrzeba ale u¿ywaj z g³ow±.\n\nWpisz ilo¶æ do pobrania, GangZoneInfo(gangzone_id)(gMetaamp))
+		format(string, sizeof(string), Aktualnie w magazynie znajduje siÄ™ %d metaamfetaminy.\nKolejna dostawa pojawi siÄ™ w poniedziaÅ‚ek.\nBierz ile potrzeba ale uÅ¼ywaj z gÅ‚owÂ±.\n\nWpisz iloÂ¶Ä‡ do pobrania, GangZoneInfo(gangzone_id)(gMetaamp))
 		ShowPlayerDialog(playerid, D_GETZONE_METAAMP, DIALOG_STYLE_INPUT, Magazyn Mety, string, OK, Anuluj)
 		return 1
 	)
@@ -349,7 +349,7 @@ public OnPlayerPickUpPickup(playerid, pickupid)
 				sscanf(data, p(|)ds(64)dddd, package_uid, package_itemname, package_itemtype, package_itemvalue1, package_itemvalue2, package_itemnumber)
 			)
 			// seler - tutaj musi skryptowo dac bronie dla playerid
-			format(string, sizeof(string), ** Nieznajomy mê¿czyzna k³adzie skrzynkê z broni¹ na ziemiê i odchodzi.)
+			format(string, sizeof(string), ** Nieznajomy mÄ™Å¼czyzna kÅ‚adzie skrzynkÄ™ z broniÄ… na ziemiÄ™ i odchodzi.)
 			ProxDetector(10.0, playerid, string, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, true)
 			
 			for(i = 0 i ( package_itemnumber i++)
@@ -366,7 +366,7 @@ public OnPlayerPickUpPickup(playerid, pickupid)
 		)
 		else
 		(
-			format(string, sizeof(string), Nieznajomy mê¿czyzna mówi: Zmykaj st¹d szybko, nie na Ciebie czekam.)
+			format(string, sizeof(string), Nieznajomy mÄ™Å¼czyzna mÃ³wi: Zmykaj stÄ…d szybko, nie na Ciebie czekam.)
 			ProxDetector(10.0, playerid, string, COLOR_FADE1, COLOR_FADE2, COLOR_FADE3, COLOR_FADE4, COLOR_FADE5, false)
 			mysql_free_result()
 			return 1

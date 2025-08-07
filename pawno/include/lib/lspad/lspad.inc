@@ -8,7 +8,7 @@ stock LSPad(playerid, action, require_password=false) (
 
 		if(require_password) (
 			if(ItemInfo(itemid)(iValue2) != 0) (
-				ShowPlayerDialog(playerid, D_LSPAD_PASSWORD, DIALOG_STYLE_PASSWORD, ItemInfo(itemid)(iName), Wpisz kod do odblokowania urzadzenia., Odblokuj, WyjdzŸ)
+				ShowPlayerDialog(playerid, D_LSPAD_PASSWORD, DIALOG_STYLE_PASSWORD, ItemInfo(itemid)(iName), Wpisz kod do odblokowania urzadzenia., Odblokuj, WyjdzÅº)
 				return 1
 			)
 		)
@@ -248,7 +248,7 @@ stock LSPad_Doors(playerid, action) (
 		)
 
 		if(iindex == 0) (
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Nie posiadasz ¿adnych drzwi z zamkiem elektronicznym., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Nie posiadasz Å¼adnych drzwi z zamkiem elektronicznym., OK, )
 		)
 
 		LSPad_ReopenAnn(playerid) = 0
@@ -313,7 +313,7 @@ stock LSPad_Cars(playerid, action) (
 		)
 
 		if(iindex == 0) (
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Nie posiadasz ¿adnych pojazdów z zamkiem elektronicznym (lub nie s± zespawnowane)., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Nie posiadasz Å¼adnych pojazdÃ³w z zamkiem elektronicznym (lub nie sÂ± zespawnowane)., OK, )
 		)
 
 		LSPad_ReopenAnn(playerid) = 0
@@ -443,7 +443,7 @@ public LSPad_TDListener(playerid, Text:clickedid) (
 		LSPad_Desktop(playerid, 1)
 	) else if(clickedid == LSPad_BankFrame(3)) (
 		if(PlayerCache(playerid)(pHours) ) 5)
-			ShowPlayerDialog(playerid, D_TRANSFER_NUMBER, DIALOG_STYLE_INPUT, Konto bankowe » Dokonaj przelewu, WprowadŸ numer konta bankowego, na który chcesz przelaæ gotówkê., Dalej, Anuluj)
+			ShowPlayerDialog(playerid, D_TRANSFER_NUMBER, DIALOG_STYLE_INPUT, Konto bankowe Â» Dokonaj przelewu, WprowadÅº numer konta bankowego, na ktÃ³ry chcesz przelaÄ‡ gotÃ³wkÄ™., Dalej, Anuluj)
 	) else (
 
 		for(i = 0 i ( 20 i++) (
@@ -491,7 +491,7 @@ public LSPad_PlayerTDListener(playerid, PlayerText:playertextid) (
 		LSPad_Bank(playerid, 1)
 	) else if(playertextid == LSPad_SettingsCode) (
 		itemid = PlayerCache(playerid)(pLSPadItemID)
-		ShowPlayerDialog(playerid, D_LSPAD_NEWPASSWORD, DIALOG_STYLE_INPUT, ItemInfo(itemid)(iName), Wpisz nowe 4-cyfrowe has³o lub 0 aby usunaæ has³o z urz±dzenia., Ustaw, WyjdzŸ)
+		ShowPlayerDialog(playerid, D_LSPAD_NEWPASSWORD, DIALOG_STYLE_INPUT, ItemInfo(itemid)(iName), Wpisz nowe 4-cyfrowe hasÅ‚o lub 0 aby usunaÄ‡ hasÅ‚o z urzÂ±dzenia., Ustaw, WyjdzÅº)
 	) else (
 
 		for(i = 0 i ( 8 i++) (

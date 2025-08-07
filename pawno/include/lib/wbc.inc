@@ -31,7 +31,7 @@ stock LoadNewsLabels()
 	(
 		if(PressBox(i)(bUID) != 0)
 		(
-			format(string, sizeof(string), Budka z gazetami (%d)\n(E85405)(( aby kupiÊ gazetÍ uøyj komendy /kup ))(FFFFFF), PressBox(i)(bUID))
+			format(string, sizeof(string), Budka z gazetami (%d)\n(E85405)(( aby kupiƒá gazetƒô u≈ºyj komendy /kup ))(FFFFFF), PressBox(i)(bUID))
 			PressBox(i)(bText) = CreateDynamic3DTextLabel(string, COLOR_DESC, PressBox(i)(bPosX),PressBox(i)(bPosY),PressBox(i)(bPosZ), 10.0, INVALID_PLAYER_ID, INVALID_VEHICLE_ID, 1, PressBox(i)(bVW), 0, -1, 10.0)
 			//Streamer_SetIntData(STREAMER_TYPE_3D_TEXT_LABEL, label_id, E_STREAMER_EXTRA_ID, PressBox(i)(bUID))
 			count++
@@ -72,7 +72,7 @@ stock ReloadNewsboxes()
 
 
 /*
-	funkcje dotyczπce WBC i dodanych dla nich gazet
+	funkcje dotyczƒÖce WBC i dodanych dla nich gazet
 */
 
 stock ShowPlayerNewspaper(playerid,itemid)
@@ -96,7 +96,7 @@ stock ShowPlayerNewspaper(playerid,itemid)
 		(
 			author(32),title(64),text(2048)
 			sscanf(buffer,p(|)s(32)s(64)s(1024),author,title,text)
-			format(text,sizeof(text),** Nag≥Ûwek Los Santos Times ** \n\nAutor: %s\nTytu≥: %s\n\n%s,author,title,StringFormatForDialog(text))
+			format(text,sizeof(text),** Nag≈Ç√≥wek Los Santos Times ** \n\nAutor: %s\nTytu≈Ç: %s\n\n%s,author,title,StringFormatForDialog(text))
 			
 			ShowPlayerDialog(playerid,D_WBC_PRESS,DIALOG_STYLE_MSGBOX,** Egzemplarz gazety Los Santos Times **,text,Schowaj,)
 		)
@@ -111,7 +111,7 @@ stock testingShowPlayerNewspaper(playerid,itemid)
 	newsid = ItemInfo(itemid)(iValue1)
 	
 	text(2048)
-	format(text,sizeof(text),** Nag≥Ûwek Los Santos Times **\n\nAutor: %s\nTytu≥: %s \n\n%s,GetNewsAuthor(newsid),GetNewsTitle(newsid),StringFormatForDialog(GetNewsText(newsid)))
+	format(text,sizeof(text),** Nag≈Ç√≥wek Los Santos Times **\n\nAutor: %s\nTytu≈Ç: %s \n\n%s,GetNewsAuthor(newsid),GetNewsTitle(newsid),StringFormatForDialog(GetNewsText(newsid)))
 	
 	
 	ShowPlayerDialog(playerid,D_WBC_PRESS,DIALOG_STYLE_MSGBOX,** Egzemplarz gazety Los Santos Times **,text,Schowaj,)
@@ -136,7 +136,7 @@ stock InsertNews(playerid,title())
 )
 
 /*
-	podstawowe pobieranie kawa≥kÛw newsa
+	podstawowe pobieranie kawa≈Çk√≥w newsa
 */
 
 stock GetLastNewsID()

@@ -1,7 +1,7 @@
 stock hrp_Tip(playerid, givenString())
 (
 	string(256)
-	format(string, sizeof(string), U¿ycie: %s, givenString)
+	format(string, sizeof(string), UÅ¼ycie: %s, givenString)
 
 	SendClientMessage(playerid, COLOR_GREY, string)
 	return 1

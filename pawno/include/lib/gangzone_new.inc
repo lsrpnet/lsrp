@@ -1,5 +1,5 @@
 #define COLOR_ZONE_NEUTRAL 0xA6A6A6AA
-#define ZONE_TICKS_NEUTRAL	 380 //minimalny próg przejêcia neutralnej strefy
+#define ZONE_TICKS_NEUTRAL	 380 //minimalny próg przejęcia neutralnej strefy
 #define ZONE_MAX_NEUTRALS 	3		//maksymalna liczba neutralnych w tygodniu
 
 DenyAttack(MAX_GROUPS)
@@ -22,7 +22,7 @@ stock OnPlayerEnterZone(playerid, zoneid)
 	
 	if(PlayerCache(playerid)(pLastZone) != zoneid)
 	(
-		// czyœæ tick jeœli zmieni³ strefê
+		// czyść tick jeśli zmienił strefę
 		PlayerCache(playerid)(pZoneTicks) = 0
 	)
 	
@@ -305,11 +305,11 @@ stock GetZoneInfo(playerid, zoneid)
 	
 	if(!ZoneInfo(zoneid)(zOwner))
 	(
-		format(zInfo, sizeof(zInfo), %s\nW³aœciciel strefy:\t\t brak, zInfo)
+		format(zInfo, sizeof(zInfo), %s\nWłaściciel strefy:\t\t brak, zInfo)
 	)
 	else
 	(
-		format(zInfo, sizeof(zInfo), %s\nW³aœciciel strefy:\t\t%i, zInfo, ZoneInfo(zoneid)(zOwner))
+		format(zInfo, sizeof(zInfo), %s\nWłaściciel strefy:\t\t%i, zInfo, ZoneInfo(zoneid)(zOwner))
 	)
 	
 	if(ZoneInfo(zoneid)(zType) == ZONE_TYPE_NONE)
@@ -322,7 +322,7 @@ stock GetZoneInfo(playerid, zoneid)
 	)
 	if(ZoneInfo(zoneid)(zType) == ZONE_TYPE_GUN)
 	(
-		format(zInfo, sizeof(zInfo), %s\nTyp strefy:\t\t broñ, zInfo)
+		format(zInfo, sizeof(zInfo), %s\nTyp strefy:\t\t broń, zInfo)
 	)
 	if(ZoneInfo(zoneid)(zType) == ZONE_TYPE_MAIN)
 	(
@@ -344,17 +344,17 @@ stock GetZoneInfo(playerid, zoneid)
 	
 	if(ZoneInfo(zoneid)(zBlocked))
 	(
-		format(zInfo, sizeof(zInfo), %s\nAtak:\t\t nie mo¿liwy, zInfo)
+		format(zInfo, sizeof(zInfo), %s\nAtak:\t\t nie możliwy, zInfo)
 	)
 	else
 	(
-		format(zInfo, sizeof(zInfo), %s\nAtak:\t\t mo¿liwy, zInfo)
+		format(zInfo, sizeof(zInfo), %s\nAtak:\t\t możliwy, zInfo)
 	)
 	
 	
 	if(!strlen(zInfo))
 	(
-		return GuiMsg(playerid, Wyst¹pi³ b³¹d podczas ³adowania informacji o strefie., 1)
+		return GuiMsg(playerid, Wystąpił błąd podczas ładowania informacji o strefie., 1)
 	)
 	else
 	(
@@ -491,7 +491,7 @@ CMD:ztest(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		GuiMsg(playerid, Brak odpowiednich uprawnieñ., 1)
+		GuiMsg(playerid, Brak odpowiednich uprawnień., 1)
 		return 1
 	)
 	
@@ -526,7 +526,7 @@ CMD:azone(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		GuiMsg(playerid, Brak odpowiednich uprawnieñ., 1)
+		GuiMsg(playerid, Brak odpowiednich uprawnień., 1)
 		return 1
 	)
 	
@@ -569,7 +569,7 @@ CMD:azone(playerid, params())
 		ZoneInfo(zoneid)(zOwner) = 0
 		ZoneInfo(zoneid)(zType) = 0
 		
-		GuiMsg(playerid, Zneutralizowa³eœ wskazan¹ strefê., 1)
+		GuiMsg(playerid, Zneutralizowałeś wskazaną strefę., 1)
 		
 		ReloadZones() // na koniec
 	)
@@ -597,13 +597,13 @@ CMD:azone(playerid, params())
 		
 		if(zoType ( 0 || zoType ) 4)
 		(
-			GuiMsg(playerid, Podano z³y typ grupy, dopuszczalne (1-4), 1)
+			GuiMsg(playerid, Podano zły typ grupy, dopuszczalne (1-4), 1)
 			return 1
 		)
 		
 		if(GroupData(GetGroupID(group))(gType) != GROUP_CRIMINAL)
 		(
-			GuiMsg(playerid, Strefê mo¿esz podpisaæ tylko pod grupê przestêpcz¹., 1)
+			GuiMsg(playerid, Strefę możesz podpisać tylko pod grupę przestępczą., 1)
 			return 1
 		)
 		
@@ -611,7 +611,7 @@ CMD:azone(playerid, params())
 		ZoneInfo(zoneid)(zType) = zoType
 		
 		message(256)
-		format(message, sizeof(message), Przypisano strefê (ID: %i) (UID: %i) pod grupê \n %s, 
+		format(message, sizeof(message), Przypisano strefę (ID: %i) (UID: %i) pod grupę \n %s, 
 		zoneid, 
 		ZoneInfo(zoneid)(zUID),
 		GroupData(GetGroupID(group))(gName))
@@ -623,11 +623,11 @@ CMD:azone(playerid, params())
 	
 	if(!strcmp(type, przeladuj, true))
 	(
-		GuiMsg(playerid, Prze³adowano wszystkie strefy., 1)
+		GuiMsg(playerid, Przeładowano wszystkie strefy., 1)
 		
 		/*
-			inne prze³adowanie bo poprzednie siê sypa³o tak konkretnie
-			zwiêkszamy MAX_ZONES, bo coœ siê spieroli³o
+			inne przeładowanie bo poprzednie się sypało tak konkretnie
+			zwiększamy MAX_ZONES, bo coś się spieroliło
 		*/
 		
 		for(gameid = 0  gameid ( MAX_ZONES gameid++)
@@ -696,7 +696,7 @@ CMD:azone(playerid, params())
 		)
 		else
 		(
-			hrp_Tip(playerid, nie jesteœ w ¿adnej strefie)
+			hrp_Tip(playerid, nie jesteś w żadnej strefie)
 		)
 	)
 	
@@ -721,7 +721,7 @@ CMD:azone(playerid, params())
 	if(!strcmp(type, debug, true))
 	(
 		PlayerCache(playerid)(pCurrentZone)  = -1
-		GuiMsg(playerid, Wyczyœci³eœ aktualn¹ strefê.,1)
+		GuiMsg(playerid, Wyczyściłeś aktualną strefę.,1)
 	)
 	
 	if(!strcmp(type, info, true))
@@ -751,7 +751,7 @@ CMD:azone(playerid, params())
 		
 		if(!strlen(glist))
 		(
-			GuiMsg(playerid, Nie znaleziono ¿adnej strefy., 1)
+			GuiMsg(playerid, Nie znaleziono żadnej strefy., 1)
 			return 1
 		)
 		

@@ -18,7 +18,7 @@ stock StopPlayerPortAnimations(playerid)
 
 stock StopPlayerCarryPort(playerid)
 (
-	// Wy≥πczenie noszenia etc.
+	// Wy≈ÇƒÖczenie noszenia etc.
 	StopPlayerPortAnimations(playerid)
 	PlayerCache(playerid)(pCarryBox) = BOX_NONE
 	PlayerCache(playerid)(pCarryBoxPhase) = BOX_PHASE_NONE
@@ -32,7 +32,7 @@ CMD:port(playerid, params())
 (
 	if(PlayerCache(playerid)(pCarryTries) ) 2)
 	(
-		GuiMsg(playerid, Nie ma teraz øadnego ≥adunku do wziÍcia, poczekaj chwilÍ., 1)
+		GuiMsg(playerid, Nie ma teraz ≈ºadnego ≈Çadunku do wziƒôcia, poczekaj chwilƒô., 1)
 		return 1
 	)
 	
@@ -41,21 +41,21 @@ CMD:port(playerid, params())
 		target_id = PlayerCache(playerid)(pCarryPoint)
 		if( IsPlayerInRangeOfPoint(playerid, 5.0, BoxPositions(target_id)(bPosX), BoxPositions(target_id)(bPosY), BoxPositions(target_id)(bPosZ)) )
 		(
-			// zakoÒcz noszenie
+			// zako≈Ñcz noszenie
 			box_id = PlayerCache(playerid)(pCarryBox)
 			if(box_id == BOX_LIGHT)
 			(
-				GuiMsg(playerid, Od≥oøy≥eú ≥adunek na miejsce.\nOtrzyma≥eú: $2!, 0)
+				GuiMsg(playerid, Od≈Ço≈ºy≈Çe≈õ ≈Çadunek na miejsce.\nOtrzyma≈Çe≈õ: $2!, 0)
 				hrp_GivePlayerMoney(playerid, 2)
 			)
 			else if(box_id == BOX_MEDIUM)
 			(
-				GuiMsg(playerid, Od≥oøy≥eú ≥adunek na miejsce.\nOtrzyma≥eú: $4!, 0)
+				GuiMsg(playerid, Od≈Ço≈ºy≈Çe≈õ ≈Çadunek na miejsce.\nOtrzyma≈Çe≈õ: $4!, 0)
 				hrp_GivePlayerMoney(playerid, 4)
 			)
 			else if(box_id == BOX_HUGE)
 			(
-				GuiMsg(playerid, Od≥oøy≥eú ≥adunek na miejsce.\nOtrzyma≥eú: $6!, 0)
+				GuiMsg(playerid, Od≈Ço≈ºy≈Çe≈õ ≈Çadunek na miejsce.\nOtrzyma≈Çe≈õ: $6!, 0)
 				hrp_GivePlayerMoney(playerid, 6)
 			)
 			
@@ -66,7 +66,7 @@ CMD:port(playerid, params())
 		)
 		else
 		(
-			GuiMsg(playerid, Nie jesteú w miejscu roz≥adunku.\nUdaj siÍ do markera i wpisz komendÍ raz jeszcze., 1)
+			GuiMsg(playerid, Nie jeste≈õ w miejscu roz≈Çadunku.\nUdaj siƒô do markera i wpisz komendƒô raz jeszcze., 1)
 		)
 		
 		return 1
@@ -78,13 +78,13 @@ CMD:port(playerid, params())
 		(
 			// Zacznij paczki
 			DisablePlayerCheckpoint(playerid)
-			ShowPlayerDialog(playerid, D_BOX_SELECT_WEIGHT, DIALOG_STYLE_LIST, Wybierz wagÍ, 1. 25KG\n2. 50KG\n3. 85KG, Wybierz, Anuluj)
+			ShowPlayerDialog(playerid, D_BOX_SELECT_WEIGHT, DIALOG_STYLE_LIST, Wybierz wagƒô, 1. 25KG\n2. 50KG\n3. 85KG, Wybierz, Anuluj)
 		)
 		else
 		(
-			// Postaw checkpoint, daj info, øe nie jest w pobliøu
+			// Postaw checkpoint, daj info, ≈ºe nie jest w pobli≈ºu
 			SetPlayerCheckpoint(playerid, 2824.2646,-2435.8899,12.0889, 2.0)
-			GuiMsg(playerid, Udaj siÍ do wskazanego punktu by zaczπÊ roznosiÊ ≥adunki w porcie., 0)
+			GuiMsg(playerid, Udaj siƒô do wskazanego punktu by zaczƒÖƒá roznosiƒá ≈Çadunki w porcie., 0)
 		)
 	)
 	

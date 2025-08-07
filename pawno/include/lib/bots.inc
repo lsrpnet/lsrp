@@ -31,7 +31,7 @@ public setupBots()
 				// Czapka
 				SetPlayerAttachedObject(i, 1, 19065, 2, 0.100998, 0.018998, 0.015999, 18.1, 83.2, 74.0, 1.211, 1.28, 1.43)
 				
-				// Prezent do rêki
+				// Prezent do rÄ™ki
 				//SetPlayerAttachedObject(i, 2, 19054, 5, 0.0, 0.149999, 0.181999, -83.9, -11.3, -86.8, 0.3, 0.278, 0.247999)
 			)
 			
@@ -123,12 +123,12 @@ stock botTextHandler(playerid, text())
 		
 		if (strfind(text, witam, true) != -1 || 
 		strfind(text, czesc, true) != -1 || 
-		strfind(text, czeœæ, true) != -1 || 
+		strfind(text, czeÅ›Ä‡, true) != -1 || 
 		strfind(text, hej, true) != -1 || 
 		strfind(text, siema, true) != -1 || 
 		strfind(text, witaj, true) != -1)
 		(
-			SendClientMessage(playerid, BOT_CHAT_COLOR, Sasha Grey mówi: Czeœæ, chcia³byœ bym da³a Ci dupy?)
+			SendClientMessage(playerid, BOT_CHAT_COLOR, Sasha Grey mÃ³wi: CzeÅ›Ä‡, chciaÅ‚byÅ› bym daÅ‚a Ci dupy?)
 			PlayerCache(playerid)(pTalkedPhase) = 1
 		)
 		
@@ -138,7 +138,7 @@ stock botTextHandler(playerid, text())
 		strfind(text, pewnie, true) != -1)
 		(
 			if(PlayerCache(playerid)(pTalkedPhase) == 1)
-				SendClientMessage(playerid, BOT_CHAT_COLOR, Sasha Grey mówi: Okej!)
+				SendClientMessage(playerid, BOT_CHAT_COLOR, Sasha Grey mÃ³wi: Okej!)
 		)
 	)
 	// -------------------------------------------------------------
@@ -151,33 +151,33 @@ stock botTextHandler(playerid, text())
 		
 		if (strfind(text, witam, true) != -1 || 
 		strfind(text, czesc, true) != -1 || 
-		strfind(text, czeœæ, true) != -1 || 
+		strfind(text, czeÅ›Ä‡, true) != -1 || 
 		strfind(text, hej, true) != -1 || 
 		strfind(text, siema, true) != -1 || 
 		strfind(text, witaj, true) != -1)
 		(
-			SendClientMessage(playerid, BOT_CHAT_COLOR, Michael Brooks mówi: Witaj w moim sklepie, jak widzisz *wskazuje na asortyment* znajdziesz u nas odpowiedni)
-			SendClientMessage(playerid, BOT_CHAT_COLOR, (...)pomys³ na prezent dla kogoœ znajomego, zapakowaæ jeden?)
+			SendClientMessage(playerid, BOT_CHAT_COLOR, Michael Brooks mÃ³wi: Witaj w moim sklepie, jak widzisz *wskazuje na asortyment* znajdziesz u nas odpowiedni)
+			SendClientMessage(playerid, BOT_CHAT_COLOR, (...)pomysÅ‚ na prezent dla kogoÅ› znajomego, zapakowaÄ‡ jeden?)
 			PlayerCache(playerid)(pTalkedPhase) = 1
 		)
 		
 		if(PlayerCache(playerid)(pTalkedPhase) == 1)
 		(
-			// OpowiedŸ czy by³, czy nie.
+			// OpowiedÅº czy byÅ‚, czy nie.
 			if (strfind(text, tak, true) != -1 || 
 			strfind(text, pewnie, true) != -1 || 
 			strfind(text, no, true) != -1 || 
-			strfind(text, oczywiœcie, true) != -1 || 
+			strfind(text, oczywiÅ›cie, true) != -1 || 
 			strfind(text, jasne, true) != -1)
 			(
 				PlayerCache(playerid)(pTalkedPhase) = 2
-				SendClientMessage(playerid, BOT_CHAT_COLOR, Michael Brooks mówi: Jeden pakunek kosztuje $500, jesteœ pewien, ¿e chcesz go kupiæ?)
+				SendClientMessage(playerid, BOT_CHAT_COLOR, Michael Brooks mÃ³wi: Jeden pakunek kosztuje $500, jesteÅ› pewien, Å¼e chcesz go kupiÄ‡?)
 			)
 			else if(strfind(text, nie, true) != -1 || 
 			strfind(text, raczej, true) != -1 || 
 			strfind(text, hmm, true) != -1 )
 			(
-				SendClientMessage(playerid, BOT_CHAT_COLOR, Michael Brooks mówi: W porz¹dku, wróæ jak zmienisz zdanie.)
+				SendClientMessage(playerid, BOT_CHAT_COLOR, Michael Brooks mÃ³wi: W porzÄ…dku, wrÃ³Ä‡ jak zmienisz zdanie.)
 			)
 		)
 		
@@ -187,12 +187,12 @@ stock botTextHandler(playerid, text())
 			strfind(text, pewnie, true) != -1 || 
 			strfind(text, no, true) != -1 || 
 			strfind(text, okej, true) != -1 || 
-			strfind(text, oczywiœcie, true) != -1 || 
+			strfind(text, oczywiÅ›cie, true) != -1 || 
 			strfind(text, jasne, true) != -1)
 			(
 				if(PlayerCache(playerid)(pCash) ( 500)
 				(
-					SendClientMessage(playerid, BOT_CHAT_COLOR, Michael Brooks mówi: Przecie¿ nie masz przy sobie tyle pieniêdzy.)
+					SendClientMessage(playerid, BOT_CHAT_COLOR, Michael Brooks mÃ³wi: PrzecieÅ¼ nie masz przy sobie tyle pieniÄ™dzy.)
 				)
 				else
 				(
@@ -201,21 +201,21 @@ stock botTextHandler(playerid, text())
 					if(mysql_num_rows() ) 9)
 					(
 						mysql_free_result()
-						SendClientMessage(playerid, BOT_CHAT_COLOR, Michael Brooks mówi: Och! W³aœnie zabrak³o mi towaru, wróæ póŸniej.)
+						SendClientMessage(playerid, BOT_CHAT_COLOR, Michael Brooks mÃ³wi: Och! WÅ‚aÅ›nie zabrakÅ‚o mi towaru, wrÃ³Ä‡ pÃ³Åºniej.)
 						return 1
 					)
 					mysql_free_result()
 					
 					PlayerCache(playerid)(pTalkedPhase) = 3
-					SendClientMessage(playerid, BOT_CHAT_COLOR, Michael Brooks mówi: Proszê bardzo!)
-					cmd_me(talked_id, k³adzie zapakowane pude³ko przed klientem.)
+					SendClientMessage(playerid, BOT_CHAT_COLOR, Michael Brooks mÃ³wi: ProszÄ™ bardzo!)
+					cmd_me(talked_id, kÅ‚adzie zapakowane pudeÅ‚ko przed klientem.)
 					
 					hrp_GivePlayerMoney(playerid, -500)
 					SavePlayerStats(playerid, SAVE_PLAYER_BASIC)
 					
 					mysql_query_format(INSERT INTO hrp_presents VALUES(NULL, %d, %d), PlayerCache(playerid)(pGID), 1)
 					CreatePlayerItem(playerid, Prezent, ITEM_PRESENT, PlayerCache(playerid)(pGID), 0)
-					cmd_me(playerid, podaje pieni¹dze pracownikowi i zgarnia pude³ko ze stolika.)
+					cmd_me(playerid, podaje pieniÄ…dze pracownikowi i zgarnia pudeÅ‚ko ze stolika.)
 				)
 			)
 		)
@@ -230,12 +230,12 @@ stock botTextHandler(playerid, text())
 		
 		if (strfind(text, witam, true) != -1 || 
 		strfind(text, czesc, true) != -1 || 
-		strfind(text, czeœæ, true) != -1 || 
+		strfind(text, czeÅ›Ä‡, true) != -1 || 
 		strfind(text, hej, true) != -1 || 
 		strfind(text, siema, true) != -1 || 
 		strfind(text, witaj, true) != -1)
 		(
-			SendClientMessage(playerid, BOT_CHAT_COLOR, Willard Fry mówi: Taa.. Dzieñ dobry, mo¿e chcesz kupiæ los na loteriê?)
+			SendClientMessage(playerid, BOT_CHAT_COLOR, Willard Fry mÃ³wi: Taa.. DzieÅ„ dobry, moÅ¼e chcesz kupiÄ‡ los na loteriÄ™?)
 			PlayerCache(playerid)(pTalkedPhase) = 1
 		)
 		
@@ -244,17 +244,17 @@ stock botTextHandler(playerid, text())
 			if (strfind(text, tak, true) != -1 || 
 			strfind(text, pewnie, true) != -1 || 
 			strfind(text, no, true) != -1 || 
-			strfind(text, oczywiœcie, true) != -1 || 
+			strfind(text, oczywiÅ›cie, true) != -1 || 
 			strfind(text, jasne, true) != -1)
 			(
 				PlayerCache(playerid)(pTalkedPhase) = 2
-				SendClientMessage(playerid, BOT_CHAT_COLOR, Willard Fry mówi: Los jest za dziesiêæ dolarów, to jak?)
+				SendClientMessage(playerid, BOT_CHAT_COLOR, Willard Fry mÃ³wi: Los jest za dziesiÄ™Ä‡ dolarÃ³w, to jak?)
 			)
 			else if(strfind(text, nie, true) != -1 || 
 			strfind(text, raczej, true) != -1 || 
 			strfind(text, hmm, true) != -1 )
 			(
-				SendClientMessage(playerid, BOT_CHAT_COLOR, Willard Fry mówi: No dobra, to wróæ jak zmienisz zdanie, nie?)
+				SendClientMessage(playerid, BOT_CHAT_COLOR, Willard Fry mÃ³wi: No dobra, to wrÃ³Ä‡ jak zmienisz zdanie, nie?)
 			)
 		)
 		
@@ -264,24 +264,24 @@ stock botTextHandler(playerid, text())
 			strfind(text, pewnie, true) != -1 || 
 			strfind(text, no, true) != -1 || 
 			strfind(text, biore, true) != -1 || 
-			strfind(text, wezmê, true) != -1 || 
+			strfind(text, wezmÄ™, true) != -1 || 
 			strfind(text, wezme, true) != -1 || 
-			strfind(text, chcê, true) != -1 || 
+			strfind(text, chcÄ™, true) != -1 || 
 			strfind(text, chce, true) != -1 || 
-			strfind(text, oczywiœcie, true) != -1 || 
+			strfind(text, oczywiÅ›cie, true) != -1 || 
 			strfind(text, jasne, true) != -1)
 			(
 				if(PlayerCache(playerid)(pCash) ( 10)
 				(
 					PlayerCache(playerid)(pTalkedPhase) = 3
-					SendClientMessage(playerid, BOT_CHAT_COLOR, Willard Fry mówi: Nawet nie masz tyle pieniêdzy, wróæ jak bêdziesz mia³ coœ w portfelu.)
+					SendClientMessage(playerid, BOT_CHAT_COLOR, Willard Fry mÃ³wi: Nawet nie masz tyle pieniÄ™dzy, wrÃ³Ä‡ jak bÄ™dziesz miaÅ‚ coÅ› w portfelu.)
 				)
 				else
 				(
 					PlayerCache(playerid)(pTalkedPhase) = 3
-					SendClientMessage(playerid, BOT_CHAT_COLOR, Willard Fry mówi: ¯yczê wygranej.)
+					SendClientMessage(playerid, BOT_CHAT_COLOR, Willard Fry mÃ³wi: Å»yczÄ™ wygranej.)
 					
-					// Zabierz kasê, dodaj los.
+					// Zabierz kasÄ™, dodaj los.
 					cmd_me(talked_id, drukuje los, podaje go klientowi.)
 					
 					hrp_GivePlayerMoney(playerid, -10)
@@ -295,7 +295,7 @@ stock botTextHandler(playerid, text())
 			strfind(text, raczej, true) != -1 || 
 			strfind(text, hmm, true) != -1 )
 			(
-				SendClientMessage(playerid, BOT_CHAT_COLOR, Willard Fry mówi: No dobra, to wróæ jak zmienisz zdanie, nie?)
+				SendClientMessage(playerid, BOT_CHAT_COLOR, Willard Fry mÃ³wi: No dobra, to wrÃ³Ä‡ jak zmienisz zdanie, nie?)
 			)
 		)
 	)*/
@@ -303,13 +303,13 @@ stock botTextHandler(playerid, text())
 	return 1
 )
 
-// Komendy adminów
+// Komendy adminÃ³w
 // -------------------------------------------------
 CMD:spawnbot(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		GuiMsg(playerid, Brak uprawnieñ do u¿ycia tej komendy., 1)
+		GuiMsg(playerid, Brak uprawnieÅ„ do uÅ¼ycia tej komendy., 1)
 		return 1
 	)
 	
@@ -321,7 +321,7 @@ CMD:spawnbot(playerid, params())
 	)
 	
 	ConnectNPC(bot_name, bot_script)
-	sendClientPoop(playerid, » Zespawnowa³eœ bota.)
+	sendClientPoop(playerid, Â» ZespawnowaÅ‚eÅ› bota.)
 	
 	SetTimer(setupBots, 10000, false)
 	return 1

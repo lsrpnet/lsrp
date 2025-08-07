@@ -23,7 +23,7 @@ public AddGangZone(Float:MinX, Float:MinY, Float:MaxX, Float:MaxY)
 	
 	Itter_Add(GangZones, gangzone_id)
 	
-	// Poka¿ tylko dla org przestêpczych
+	// PokaÅ¼ tylko dla org przestÄ™pczych
 	/*foreach(Player, i)
 	(
  		if(Logged(i) && Spawned(i))
@@ -246,16 +246,16 @@ stock ShowGangZoneSummary(playerid, gangzone_id, type = GZ_SUMMARY_VISITOR)
 (
 	if(!GangZoneInfo(gangzone_id)(gUID) || !GangZoneInfo(gangzone_id)(gOwner))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst±pi³ b³±d, Cos jest nie tak z ta strefa. Zg³os to do administratora., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÂ±piÅ‚ bÅ‚Â±d, Cos jest nie tak z ta strefa. ZgÅ‚os to do administratora., OK, )
 		return 1
 	)
 
 	string(1024) // 2048 max
 	group_id_fix = GangZoneInfo(gangzone_id)(gOwner)
 
-	format(string, sizeof(string), W³asciciel:\t\t%s\n, GroupData(group_id_fix)(gName))
-	format(string, sizeof(string), %sSzerokosæ:\t\t%f\n, string, floatabs(GangZoneInfo(gangzone_id)(gMaxX) - GangZoneInfo(gangzone_id)(gMinX)))
-	format(string, sizeof(string), %sWysokosæ:\t\t%f\n, string, floatabs(GangZoneInfo(gangzone_id)(gMaxY) - GangZoneInfo(gangzone_id)(gMinY)))
+	format(string, sizeof(string), WÅ‚asciciel:\t\t%s\n, GroupData(group_id_fix)(gName))
+	format(string, sizeof(string), %sSzerokosÄ‡:\t\t%f\n, string, floatabs(GangZoneInfo(gangzone_id)(gMaxX) - GangZoneInfo(gangzone_id)(gMinX)))
+	format(string, sizeof(string), %sWysokosÄ‡:\t\t%f\n, string, floatabs(GangZoneInfo(gangzone_id)(gMaxY) - GangZoneInfo(gangzone_id)(gMinY)))
 
 	if(!IsPlayerInGroup(playerid, GroupData(group_id_fix)(gUID)))
 	(
@@ -276,7 +276,7 @@ stock ShowGangZoneSummary(playerid, gangzone_id, type = GZ_SUMMARY_VISITOR)
 			format(string, sizeof(string), %s-----------------\n, string)
 			format(string, sizeof(string), %s2 - Oferuj terytorium\n, string)
 			format(string, sizeof(string), %s3 - Poddaj terytorium\n, string)
-			format(string, sizeof(string), %s4 - Wydaj og³oszenie\n, string)
+			format(string, sizeof(string), %s4 - Wydaj ogÅ‚oszenie\n, string)
 		)
 	)
 

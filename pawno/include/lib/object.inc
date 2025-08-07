@@ -120,7 +120,7 @@ public OnPlayerSelectObject(playerid, type, objectid, modelid, Float:fX, Float:f
 				GetDynamicObjectPos(object_id, ObjPosX, ObjPosY, ObjPosZ)
 				GetDynamicObjectRot(object_id, ObjRotX, ObjRotY, ObjRotZ)
 
-				// Porównaj pozycjê do siebie, upewnij siê, ¿e to ten obiekt
+				// PorÃ³wnaj pozycjÄ™ do siebie, upewnij siÄ™, Å¼e to ten obiekt
 				if(!floatcmp(ObjPosX, fX) && !floatcmp(ObjPosY, fY) && !floatcmp(ObjPosZ, fZ))
 				(
 					PlayerCache(playerid)(pMoveObject) = object_id
@@ -151,7 +151,7 @@ public OnPlayerEditAttachedObject(playerid, response, index, modelid, boneid, Fl
 		case EDIT_RESPONSE_CANCEL:
 		(
 			RemovePlayerAttachedObject(playerid, SLOT_TRYING)			
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Anulowa³eœ edycjê obiektu - powróci³ on do poprzedniego stanu. Mo¿esz go za³o¿yæ u¿ywaj¹c przedmiot., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, AnulowaÅ‚eÅ› edycjÄ™ obiektu - powrÃ³ciÅ‚ on do poprzedniego stanu. MoÅ¼esz go zaÅ‚oÅ¼yÄ‡ uÅ¼ywajÄ…c przedmiot., OK, )
 		)
 		case EDIT_RESPONSE_FINAL:
 		(						
@@ -172,7 +172,7 @@ public OnPlayerEditAttachedObject(playerid, response, index, modelid, boneid, Fl
 			format(string, sizeof(string), %s access_scalex = %f, access_scaley = %f, access_scalez = %f WHERE access_uid = %d LIMIT 1, string, PlayerAttach(playerid)(aScaleX), PlayerAttach(playerid)(aScaleY), PlayerAttach(playerid)(aScaleZ), ItemInfo(itemid)(iValue1))
 			mysql_query(string)
 			
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Sukces, Obiekt zosta³ poprawnie zapisany. Mo¿esz go teraz za³o¿yæ u¿ywaj¹c przedmiot., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Sukces, Obiekt zostaÅ‚ poprawnie zapisany. MoÅ¼esz go teraz zaÅ‚oÅ¼yÄ‡ uÅ¼ywajÄ…c przedmiot., OK, )
 		)
 	)
 	ItemInfo(itemid)(iUsed) = 0
@@ -202,7 +202,7 @@ public OnPlayerEditObject(playerid, playerobject, objectid, response, Float:fX, 
 			TextDrawHideForPlayer(playerid, Text:TextDrawEditorTitle(playerid))
 
 			TextDrawHideForPlayer(playerid, Text:TextDrawMainInfo(playerid))
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Edycja obiektu zosta³a anulowana.\nObiekt powróci³ na swoje miejsce., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Edycja obiektu zostaÅ‚a anulowana.\nObiekt powrÃ³ciÅ‚ na swoje miejsce., OK, )
 		)
 		case EDIT_RESPONSE_FINAL:
 		(
@@ -216,7 +216,7 @@ public OnPlayerEditObject(playerid, playerobject, objectid, response, Float:fX, 
 			TextDrawHideForPlayer(playerid, Text:TextDrawEditorTitle(playerid))
 
 			TextDrawHideForPlayer(playerid, Text:TextDrawMainInfo(playerid))
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Pozycja obiektu zosta³a pomyœlnie zapisana., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Pozycja obiektu zostaÅ‚a pomyÅ›lnie zapisana., OK, )
 		)
 		case EDIT_RESPONSE_UPDATE:
 		(
@@ -240,7 +240,7 @@ public LoadCorpseObjects()
 	
 	mysql_query_format(SELECT item_uid, item_posx, item_posy, item_posz, item_world FROM hrp_items WHERE item_type = %d AND item_place = %d, ITEM_CORPSE, PLACE_NONE)
 	
-	print((load) Rozpoczynam proces wczytywania wszystkich cia³ z bazy...)
+	print((load) Rozpoczynam proces wczytywania wszystkich ciaÅ‚ z bazy...)
 	
 	mysql_store_result()
 	while(mysql_fetch_row(data, |))
@@ -253,7 +253,7 @@ public LoadCorpseObjects()
 	)
 	mysql_free_result()
 	
-	printf((load) Wczytano %d cia³., count)
+	printf((load) Wczytano %d ciaÅ‚., count)
 	return 1
 )
 
@@ -290,7 +290,7 @@ public LoadAllObjects()
 		Float:object_rotx, Float:object_roty, Float:object_rotz,
 		object_world, object_interior, Float:object_distance
 
-	print((load) Rozpoczynam proces wczytywania wszystkich obiektów z bazy...)
+	print((load) Rozpoczynam proces wczytywania wszystkich obiektÃ³w z bazy...)
 
 	mysql_store_result()
 	while(mysql_fetch_row(data, |))
@@ -307,9 +307,9 @@ public LoadAllObjects()
 	)
   	mysql_free_result()
 
-	printf((load) Wczytano %d obiekty/ów., object_id)
+	printf((load) Wczytano %d obiekty/Ã³w., object_id)
 	
-	printf((load) Rozpoczynam proces wczytywania tagów dla obiektów)
+	printf((load) Rozpoczynam proces wczytywania tagÃ³w dla obiektÃ³w)
 	
 	if(!DEBUG_MODE)
 		LoadObjectTags()
@@ -321,7 +321,7 @@ public LoadAllObjects()
 	return 1
 )
 
-// Szymon - tego nie zrozumiesz - ³adowanie ok. 1:30-2:00 minut
+// Szymon - tego nie zrozumiesz - Å‚adowanie ok. 1:30-2:00 minut
 stock LoadObjectTags(world = 0)
 (
 	data(512), tag_objectuid, tag_size, tag_font, tag_text(256)
@@ -395,7 +395,7 @@ stock fakeOnPlayerSelectObject(playerid, objectid, modelid, Float:fX, Float:fY, 
 				GetDynamicObjectPos(object_id, ObjPosX, ObjPosY, ObjPosZ)
 				GetDynamicObjectRot(object_id, ObjRotX, ObjRotY, ObjRotZ)
 
-				// Porównaj pozycjê do siebie, upewnij siê, ¿e to ten obiekt
+				// PorÃ³wnaj pozycjÄ™ do siebie, upewnij siÄ™, Å¼e to ten obiekt
 				if(!floatcmp(ObjPosX, fX) && !floatcmp(ObjPosY, fY) && !floatcmp(ObjPosZ, fZ))
 				(
 					PlayerCache(playerid)(pMoveObject) = object_id
@@ -453,7 +453,7 @@ stock LoadObjectMaterials()
 
 stock LoadObjectMaterial(object_id)
 (
-	// To jest funkcja tylko dla jednego obiektu, mo¿e siê przydaæ
+	// To jest funkcja tylko dla jednego obiektu, moÅ¼e siÄ™ przydaÄ‡
 	buffer(256), txd(32), tx(32), model, color, index
 	if(IsValidDynamicObject(object_id))
 	(

@@ -71,7 +71,7 @@ public LoadDoor(gameid, uid)
 	)
 	mysql_free_result()
 
-	printf((load) Wczytano statystyki drzwi %s (SampID: %d, UID: %d) pomyœlnie., DoorData(gameid)(dName), gameid, DoorData(gameid)(dUID))
+	printf((load) Wczytano statystyki drzwi %s (SampID: %d, UID: %d) pomyÅ›lnie., DoorData(gameid)(dName), gameid, DoorData(gameid)(dUID))
 	return 1
 )
 
@@ -81,7 +81,7 @@ public SaveDoor(gameid, what)
  	format(main_query, sizeof(main_query), UPDATE hrp_doors SET)
 	if(what & SAVE_DOOR_ENTER)
 	(
-		// Pozycja wejœcia
+		// Pozycja wejÅ›cia
 		format(query, sizeof(query),  door_enterx = %f, door_entery = %f, door_enterz = %f, door_entera = %f, door_enterint = %d, door_entervw = %d,
 		DoorData(gameid)(dEnterX),
 		DoorData(gameid)(dEnterY),
@@ -98,7 +98,7 @@ public SaveDoor(gameid, what)
 	)
 	if(what & SAVE_DOOR_EXIT)
 	(
-		// Pozycja wyjœcia
+		// Pozycja wyjÅ›cia
 		format(query, sizeof(query),  door_exitx = %f, door_exity = %f, door_exitz = %f, door_exita = %f, door_exitint = %d, door_exitvw = %d,
 		DoorData(gameid)(dExitX),
 		DoorData(gameid)(dExitY),
@@ -115,7 +115,7 @@ public SaveDoor(gameid, what)
 	)
 	if(what & SAVE_DOOR_THINGS)
 	(
-		// Pozosta³e (nazwa, w³aœciciel, model pickupa, koszt wstêpu, gara¿, akcesoria, czas p³oniêcia)
+		// PozostaÅ‚e (nazwa, wÅ‚aÅ›ciciel, model pickupa, koszt wstÄ™pu, garaÅ¼, akcesoria, czas pÅ‚oniÄ™cia)
 		format(query, sizeof(query),  door_name = %s, door_owner = %d, door_ownertype = %d, door_pickup = %d, door_enterpay = %d, door_garage = %d, door_access = %d, door_burntime = %d, door_wood = %d, door_rock = %d, door_elock = %d, door_cost = %d,
 		DoorData(gameid)(dName),
 		DoorData(gameid)(dOwner),
@@ -162,7 +162,7 @@ public SaveDoor(gameid, what)
 	)
 	if(what & SAVE_DOOR_LOCK)
 	(
-		// Zamkniêcie drzwi
+		// ZamkniÄ™cie drzwi
 		format(query, sizeof(query),  door_lock = %d,
 		DoorData(gameid)(dLocked))
 		
@@ -174,7 +174,7 @@ public SaveDoor(gameid, what)
 	)
 	if(what & SAVE_DOOR_LIMITS)
 	(
-		//zapisz blokadê tworzenia obiektów
+		//zapisz blokadÄ™ tworzenia obiektÃ³w
 		format(query, sizeof(query),  door_blocked = %d, door_limit=%d ,
 		DoorData(gameid)(dBlocked), DoorData(gameid)(dLimit))
 		
@@ -196,7 +196,7 @@ public DeleteDoor(gameid)
 	object_counts = MAX_OBJECTS, label_counts = CountDynamic3DTextLabels()
 	mysql_query_format(DELETE FROM hrp_doors WHERE door_uid = %d, DoorData(gameid)(dUID))
 
-	// Usuñ stare obiekty z tego VW (jeœli s¹)
+	// UsuÅ„ stare obiekty z tego VW (jeÅ›li sÄ…)
 	mysql_query_format(DELETE FROM hrp_objects WHERE object_world = %d, DoorData(gameid)(dUID))
 
 	for (object_id = 0 object_id (= object_counts object_id++)
@@ -210,7 +210,7 @@ public DeleteDoor(gameid)
 		)
 	)
 	
-	// Usuñ 3d teksty z tych drzwi
+	// UsuÅ„ 3d teksty z tych drzwi
 	mysql_query_format(DELETE FROM hrp_3dlabels WHERE label_world = %d, DoorData(gameid)(dUID))
 	
 	// usun defaultsy
@@ -228,7 +228,7 @@ public DeleteDoor(gameid)
 	)
 	
 	
-	// Wyczyœæ magazyn drzwi
+	// WyczyÅ›Ä‡ magazyn drzwi
 	mysql_query_format(DELETE FROM hrp_products WHERE product_dooruid = %d, DoorData(gameid)(dUID))
 	
 	foreach(Products, product_id)
@@ -251,7 +251,7 @@ public DeleteDoor(gameid)
 		)
 	)
 	
-	// Usuñ zamówienia do tych drzwi
+	// UsuÅ„ zamÃ³wienia do tych drzwi
 	mysql_query_format(DELETE FROM hrp_packages WHERE package_dooruid = %d, DoorData(gameid)(dUID))
 	
 	foreach(Packages, package_id)
@@ -311,7 +311,7 @@ public DeleteDoor(gameid)
 		)
 	)
 	
-	// Jeœli p³onie, usuñ dodatki
+	// JeÅ›li pÅ‚onie, usuÅ„ dodatki
 	if(DoorData(gameid)(dBurnTime) != 0)
 	(
 		DestroyDynamicObject(DoorData(gameid)(dFireObject))
@@ -460,12 +460,12 @@ public LoadDoors()
 		DoorData(gameid)(dCost) = DoorCache(dCost)
 		DoorData(gameid)(dPaintball) = DoorCache(dPaintball)
 
-		// Jeœli p³onie
+		// JeÅ›li pÅ‚onie
 		if(DoorData(gameid)(dBurnTime))
 		(
 			string(128), Float:percent = (float(DoorData(gameid)(dBurnTime)) / 15.0) * 100
 			
-			format(string, sizeof(string), Ten budynek stan¹³ w p³omieniach!\nProcent zniszczeñ: %d%, floatround(percent))
+			format(string, sizeof(string), Ten budynek stanÄ…Å‚ w pÅ‚omieniach!\nProcent zniszczeÅ„: %d%, floatround(percent))
 			DoorData(gameid)(dFireObject) = CreateDynamicObject(18690, DoorData(gameid)(dEnterX), DoorData(gameid)(dEnterY), DoorData(gameid)(dEnterZ) - 2.0, 0.0, 0.0, 0.0, DoorData(gameid)(dEnterVW), DoorData(gameid)(dEnterInt), -1, 100.0)
 
 			if(percent ( 30)
@@ -496,7 +496,7 @@ public ShowPlayerDoorInfo(playerid, gameid)
 	format(list_stats, sizeof(list_stats), PickupID:\t\t%d, DoorData(gameid)(dPickupID))
 	if(DoorData(gameid)(dLocked))
 	(
-		format(list_stats, sizeof(list_stats), %s\nDrzwi:\t\t\t(FB5006)Zamkniête(FFFFFF)\n, list_stats)
+		format(list_stats, sizeof(list_stats), %s\nDrzwi:\t\t\t(FB5006)ZamkniÄ™te(FFFFFF)\n, list_stats)
 	)
 	else
 	(
@@ -512,16 +512,16 @@ public ShowPlayerDoorInfo(playerid, gameid)
 	)
 	if(DoorData(gameid)(dOwnerType) == OWNER_NONE)
 	(
- 		format(list_stats, sizeof(list_stats), %s\nTyp w³aœciciela:\t\tBrak\n, list_stats)
+ 		format(list_stats, sizeof(list_stats), %s\nTyp wÅ‚aÅ›ciciela:\t\tBrak\n, list_stats)
 	)
 	if(DoorData(gameid)(dOwnerType) == OWNER_PLAYER)
 	(
-		format(list_stats, sizeof(list_stats), %s\nTyp w³aœciciela:\t\tGracz\n, list_stats)
+		format(list_stats, sizeof(list_stats), %s\nTyp wÅ‚aÅ›ciciela:\t\tGracz\n, list_stats)
 		format(list_stats, sizeof(list_stats), %s\nUID gracza:\t\t%d\n, list_stats, DoorData(gameid)(dOwner))
 	)
 	if(DoorData(gameid)(dOwnerType) == OWNER_GROUP)
 	(
-		format(list_stats, sizeof(list_stats), %s\nTyp w³aœciciela:\t\tGrupa\n, list_stats)
+		format(list_stats, sizeof(list_stats), %s\nTyp wÅ‚aÅ›ciciela:\t\tGrupa\n, list_stats)
 		format(list_stats, sizeof(list_stats), %s\nUID grupy:\t\t%d\n, list_stats, DoorData(gameid)(dOwner))
 	)
 	if(DoorData(gameid)(dPaintball))
@@ -530,15 +530,15 @@ public ShowPlayerDoorInfo(playerid, gameid)
 	)
 	if(DoorData(gameid)(dBlocked))
 	(
-		format(list_stats, sizeof(list_stats), %s\nBlokada obiektów:\t\t(FB5006) aktywna(FFFFFF), list_stats)
+		format(list_stats, sizeof(list_stats), %s\nBlokada obiektÃ³w:\t\t(FB5006) aktywna(FFFFFF), list_stats)
 	)
 	else
 	(
-		format(list_stats, sizeof(list_stats), %s\nBlokada obiektów: \t\tbrak, list_stats)
+		format(list_stats, sizeof(list_stats), %s\nBlokada obiektÃ³w: \t\tbrak, list_stats)
 	)
-	format(list_stats,sizeof(list_stats),%s\nLimit obiektów: \t\t%d/%d,list_stats,GetDoorObjectsAmount(gameid),DoorData(gameid)(dLimit))
+	format(list_stats,sizeof(list_stats),%s\nLimit obiektÃ³w: \t\t%d/%d,list_stats,GetDoorObjectsAmount(gameid),DoorData(gameid)(dLimit))
 	
-	format(string, sizeof(string), %s (SampID: %d, UID: %d) » Informacje, DoorData(gameid)(dName), gameid, DoorData(gameid)(dUID))
+	format(string, sizeof(string), %s (SampID: %d, UID: %d) Â» Informacje, DoorData(gameid)(dName), gameid, DoorData(gameid)(dUID))
 	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_LIST, string, list_stats, Zamknij, )
 	return 1
 )
@@ -571,7 +571,7 @@ public OnPlayerEnterDoor(playerid, doorid)
 	if(DoorData(doorid)(dWood) ) 0 || DoorData(doorid)(dRock) ) 0)
 	(
 		GameTextForPlayer(playerid, ~n~~n~~n~~n~~n~~w~Budynek jest w trakcie ~p~~h~budowy, 4000, 3)
-		ProxDetector(15.0, playerid, * W okolicy widaæ narzêdzia, ciê¿kie maszyny oraz budowlañców. *, COLOR_DO, COLOR_DO, COLOR_DO, COLOR_DO, COLOR_DO, true)
+		ProxDetector(15.0, playerid, * W okolicy widaÄ‡ narzÄ™dzia, ciÄ™Å¼kie maszyny oraz budowlaÅ„cÃ³w. *, COLOR_DO, COLOR_DO, COLOR_DO, COLOR_DO, COLOR_DO, true)
 	 	return 1
 	)
 	if(!DoorData(doorid)(dExitX))
@@ -581,12 +581,12 @@ public OnPlayerEnterDoor(playerid, doorid)
 	)
    	if(PlayerCache(playerid)(pRoll))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Nie mo¿esz wejœæ do budynku maj¹c rolki na nogach., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Nie moÅ¼esz wejÅ›Ä‡ do budynku majÄ…c rolki na nogach., OK, )
 		return 1
 	)
 	if(DoorData(doorid)(dPaintball) && !PlayerCache(playerid)(pPaintballTime))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Nie mo¿esz wejœæ na halê do paintballu., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Nie moÅ¼esz wejÅ›Ä‡ na halÄ™ do paintballu., OK, )
 		return 1
 	)
 	if(DoorData(doorid)(dPaintball) && PlayerCache(playerid)(pPaintballTime))
@@ -661,7 +661,7 @@ public OnPlayerEnterDoor(playerid, doorid)
 	(
 		if(!IsPlayerInGroupType(playerid, GROUP_FIREDEPT))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Ten budynek p³onie!\n\nZadzwoñ po s³u¿by porz¹dkowe, w przeciwnym wypadku\nbudynek ulegnie ca³kowitemu zniszczeniu!, OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Ten budynek pÅ‚onie!\n\nZadzwoÅ„ po sÅ‚uÅ¼by porzÄ…dkowe, w przeciwnym wypadku\nbudynek ulegnie caÅ‚kowitemu zniszczeniu!, OK, )
 			return 1
 		)
 		TextDrawSetString(Text:TextDrawMainInfo(playerid), Wszedles do ~r~palacego ~w~sie budynku. Uzywaj ~y~gasnicy ~w~by gasic pozar.)
@@ -735,7 +735,7 @@ public OnPlayerEnterDoor(playerid, doorid)
 	SetCameraBehindPlayer(playerid)
 	PlayerTextDrawHide(playerid, TextDrawDoorInfo(playerid))
 	
-	// Zabierz graczowi kasê za wstêp i przelej j¹ na konto w³aœciciela
+	// Zabierz graczowi kasÄ™ za wstÄ™p i przelej jÄ… na konto wÅ‚aÅ›ciciela
  	if(DoorData(doorid)(dEnterPay))
 	(
 		bool:checkbug = false
@@ -947,7 +947,7 @@ public OnPlayerExitDoor(playerid, doorid)
 		(
   			if(GetPlayerVehicleID(i) == GetPlayerVehicleID(playerid))
 			(
-				// Reszta osób w pojeŸdzie - im te¿ duty trzeba pozabieraæ
+				// Reszta osÃ³b w pojeÅºdzie - im teÅ¼ duty trzeba pozabieraÄ‡
 				group_id_fix = GetPlayerDutyGroupID(i), bool:check = false, bool:check2 = false, bool:check3 = false
 				if(group_id_fix != -1)
 				(
@@ -1033,12 +1033,12 @@ public ShowPlayerDoorAddons(playerid, gameid)
 		
 		mysql_free_result()
 		
-		ShowPlayerDialog(playerid,D_DOOR_ADDON_LIST,DIALOG_STYLE_LIST,Drzwi » dodatki,list,Wybierz,Anuluj)
+		ShowPlayerDialog(playerid,D_DOOR_ADDON_LIST,DIALOG_STYLE_LIST,Drzwi Â» dodatki,list,Wybierz,Anuluj)
 	)
 	else
 	(
 		mysql_free_result()
-		GuiMsg(playerid,Brak dodatków dla tego budynku.,0)
+		GuiMsg(playerid,Brak dodatkÃ³w dla tego budynku.,0)
 	)
 	return 1
 )
@@ -1107,7 +1107,7 @@ stock addSpecialObjects(playerid, item_uid, doorid, amount)
 	mysql_query(buffer)
 	
 	// informujemy gracza
-	GuiMsg(playerid, Pomyœlnie zwiêkszono limit obiektów w tych drzwiach!, 0)
+	GuiMsg(playerid, PomyÅ›lnie zwiÄ™kszono limit obiektÃ³w w tych drzwiach!, 0)
 	DeleteItem(item_uid)
 	return 1
 )
@@ -1121,7 +1121,7 @@ stock checkDoorsActivity()
 		(
 			if(DoorData(i)(dOwnerType) == OWNER_PLAYER)
 			(
-				// Te drzwi mog¹ nie byæ w tabeli
+				// Te drzwi mogÄ… nie byÄ‡ w tabeli
 				format(buffer, sizeof(buffer), SELECT * FROM hrp_door_defaults WHERE default_dooruid = %d, DoorData(i)(dUID))
 				mysql_query(buffer)
 				mysql_store_result()
@@ -1131,7 +1131,7 @@ stock checkDoorsActivity()
 					continue
 				)
 				
-				global_time = 0			// do wyci¹gania zmiennej
+				global_time = 0			// do wyciÄ…gania zmiennej
 				
 				door_cost, door_name(64), door_time
 				format(buffer, sizeof(buffer), SELECT default_doorcost, default_doorname, default_checktime FROM hrp_door_defaults WHERE default_dooruid = %d, DoorData(i)(dUID))
@@ -1182,7 +1182,7 @@ stock setDoorActivity(playerid)
 			mysql_store_result()
 			if(mysql_num_rows() ) 0)
 			(
-				// Zwiêkszamy czas o miesi¹c
+				// ZwiÄ™kszamy czas o miesiÄ…c
 				mysql_free_result()
 				mysql_query_format(UPDATE hrp_door_defaults SET default_checktime = %d WHERE default_dooruid = %d, gettime() + 2592000, DoorData(i)(dUID))
 			)

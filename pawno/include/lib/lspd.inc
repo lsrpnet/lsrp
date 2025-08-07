@@ -72,10 +72,10 @@ stock ShowPlayerVehiclesList(playerid, giveplayer_id)
 	
 	if(!strlen(clist))
 	(
-		GuiMsg(giveplayer_id, Nie znaleziono żadnych pojazdów zarejestrowanych w urzędzie miasta., 1)
+		GuiMsg(giveplayer_id, Nie znaleziono ĹĽadnych pojazdĂłw zarejestrowanych w urzÄ™dzie miasta., 1)
 		return 1
 	)
 	
-	ShowPlayerDialog(giveplayer_id, D_INFO, DIALOG_STYLE_LIST, Lista zarejestrowanych pojazdów, clist, OK, )
+	ShowPlayerDialog(giveplayer_id, D_INFO, DIALOG_STYLE_LIST, Lista zarejestrowanych pojazdĂłw, clist, OK, )
 	return 1
 )

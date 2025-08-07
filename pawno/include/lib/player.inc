@@ -10,7 +10,7 @@ public SavePlayerStats(playerid, what)
 	format(main_query, sizeof(main_query), UPDATE hrp_characters SET)
 	if(what & SAVE_PLAYER_BASIC)
 	(
- 		// Podstawowe (czas gry, skin, øycie, pieniπdze, warny, bw, hotel, pkt karne, dowÛd, prawko)
+ 		// Podstawowe (czas gry, skin, ≈ºycie, pieniƒÖdze, warny, bw, hotel, pkt karne, dow√≥d, prawko)
    		format(query, sizeof(query),  char_hours = %d, char_minutes = %d, char_skin = %d, char_health = %f, char_cash = %d, char_bankcash = %d, char_banknumb = %d, char_warns = %d, char_bw = %d, char_crash = %d, char_hoteluid = %d, char_pdp = %d, char_documents = %d, char_lastpay = %d, char_job = %d, char_arrest = %d, char_arresttime = %d, char_spawnplace = %d, char_house = %d, char_fightstyle = %d, char_fed = %d, char_knownstyles = %d, char_dailyreps = %d,
 		PlayerCache(playerid)(pHours),
 		PlayerCache(playerid)(pMinutes),
@@ -51,7 +51,7 @@ public SavePlayerStats(playerid, what)
 		// Continuation of the previous format.
 
 		
-		// Za d≥ugia linia - dodawaÊ tu -  dodawaÊ tu -  dodawaÊ tu -  dodawaÊ tu -  dodawaÊ tu -  dodawaÊ tu -  dodawaÊ tu -  dodawaÊ tu -  dodawaÊ tu -  dodawaÊ tu - 
+		// Za d≈Çugia linia - dodawaƒá tu -  dodawaƒá tu -  dodawaƒá tu -  dodawaƒá tu -  dodawaƒá tu -  dodawaƒá tu -  dodawaƒá tu -  dodawaƒá tu -  dodawaƒá tu -  dodawaƒá tu - 
 		format(query, sizeof(query), %s, char_wounded = %d, char_color = %d, char_arrestday = %d, char_bleeding = %d, char_insurancecount = %d, char_familyhouse = %d, char_workrepeat = %d, 
 			query, 
 			PlayerCache(playerid)(pWounded), 
@@ -86,10 +86,10 @@ public SavePlayerStats(playerid, what)
 	)
 	if(what & SAVE_PLAYER_SKILLS)
 	(
-		// Øeby nie zapisa≥o chujowi statÛw na dragach.
+		// ≈ªeby nie zapisa≈Ço chujowi stat√≥w na dragach.
 		Float:strength = (PlayerCache(playerid)(pRage))? PlayerCache(playerid)(pRageStrength) : PlayerCache(playerid)(pStrength)
 	
- 		// UmiejÍtnoúci postaci (jeødøenie, kondycja, strzelanie, ≥owienie, si≥a, uzaleøenienie)
+ 		// Umiejƒôtno≈õci postaci (je≈ºd≈ºenie, kondycja, strzelanie, ≈Çowienie, si≈Ça, uzale≈ºenienie)
    		format(query, sizeof(query),  char_fishing = %f, char_strength = %f, char_dependence = %f,
 		PlayerCache(playerid)(pFishing),
 		strength,
@@ -134,7 +134,7 @@ public ShowPlayerStats(playerid, giveplayer_id)
 	(
 		format(list_stats, sizeof(list_stats), %sZdrowie:\t\t%.2f HP\n, list_stats, PlayerCache(giveplayer_id)(pHealth))
 	)
-	format(list_stats, sizeof(list_stats), %sGotÛwka:\t\t$%d\n, list_stats, PlayerCache(giveplayer_id)(pCash))
+	format(list_stats, sizeof(list_stats), %sGot√≥wka:\t\t$%d\n, list_stats, PlayerCache(giveplayer_id)(pCash))
 
 	format(list_stats, sizeof(list_stats), %sStan konta:\t\t$%d\n, list_stats, PlayerCache(giveplayer_id)(pBankCash))
 	format(list_stats, sizeof(list_stats), %sNumer konta:\t\t%d\n, list_stats, PlayerCache(giveplayer_id)(pBankNumber))
@@ -143,8 +143,8 @@ public ShowPlayerStats(playerid, giveplayer_id)
 	
 	format(list_stats, sizeof(list_stats), %s-----\n, list_stats)
 	
-	format(list_stats, sizeof(list_stats), %s£owienie:\t\t%.2f%%\n, list_stats, PlayerCache(giveplayer_id)(pFishing))
-	format(list_stats, sizeof(list_stats), %sSi≥a:\t\t\t%.2f%%\n, list_stats, PlayerCache(giveplayer_id)(pStrength))
+	format(list_stats, sizeof(list_stats), %s≈Åowienie:\t\t%.2f%%\n, list_stats, PlayerCache(giveplayer_id)(pFishing))
+	format(list_stats, sizeof(list_stats), %sSi≈Ça:\t\t\t%.2f%%\n, list_stats, PlayerCache(giveplayer_id)(pStrength))
 	
 	format(list_stats, sizeof(list_stats), %s-----\n, list_stats)
 
@@ -174,7 +174,7 @@ public ShowPlayerStats(playerid, giveplayer_id)
 	if(PlayerCache(giveplayer_id)(pGroupDuty))
 	(
 		duty_time = (gettime() - PlayerCache(giveplayer_id)(pGroupDutyTime)) / 60
-		format(list_stats, sizeof(list_stats), %s2\tSesja s≥uøby:\t\t(FB5006)%i (FFFFFF)min\n, list_stats,duty_time)
+		format(list_stats, sizeof(list_stats), %s2\tSesja s≈Çu≈ºby:\t\t(FB5006)%i (FFFFFF)min\n, list_stats,duty_time)
 	)
 
 	//areszt
@@ -258,7 +258,7 @@ public UpdatePlayerStatus(playerid)
 	if(PlayerCache(playerid)(pBW) && !(PlayerCache(playerid)(pStatus) & STATUS_UNCON))						PlayerCache(playerid)(pStatus) += STATUS_UNCON
 	else if(!PlayerCache(playerid)(pBW) && (PlayerCache(playerid)(pStatus) & STATUS_UNCON))					PlayerCache(playerid)(pStatus) -= STATUS_UNCON
 	
-	// Status naÊpany
+	// Status naƒápany
 	if(PlayerCache(playerid)(pRage) && (PlayerCache(playerid)(pRageDrug) != DRUG_MARIHUANA) && !(PlayerCache(playerid)(pStatus) & STATUS_STONED))					PlayerCache(playerid)(pStatus) += STATUS_STONED
 	else if(!PlayerCache(playerid)(pRage) && (PlayerCache(playerid)(pStatus) & STATUS_STONED))				PlayerCache(playerid)(pStatus) -= STATUS_STONED
 	
@@ -274,7 +274,7 @@ public UpdatePlayerStatus(playerid)
 	if(PlayerCache(playerid)(pRage) && (PlayerCache(playerid)(pRageDrug) == DRUG_MARIHUANA) && !(PlayerCache(playerid)(pStatus) & STATUS_BAKED))					PlayerCache(playerid)(pStatus) += STATUS_BAKED
 	else if(!PlayerCache(playerid)(pRage) && (PlayerCache(playerid)(pStatus) & STATUS_BAKED))
 	
-	// Status s≥uchawki
+	// Status s≈Çuchawki
 	if(PlayerCache(playerid)(pMusicPlayerUID) && !(PlayerCache(playerid)(pStatus) & STATUS_EARPIECE))	 	PlayerCache(playerid)(pStatus) += STATUS_EARPIECE
 	else if(!PlayerCache(playerid)(pMusicPlayerUID) && (PlayerCache(playerid)(pStatus) & STATUS_EARPIECE))  PlayerCache(playerid)(pStatus) -= STATUS_EARPIECE
 	
@@ -286,7 +286,7 @@ public UpdatePlayerStatus(playerid)
 	if(PlayerCache(playerid)(pMaskUID) && !(PlayerCache(playerid)(pStatus) & STATUS_MASKED))				PlayerCache(playerid)(pStatus) += STATUS_MASKED
 	else if(!PlayerCache(playerid)(pMaskUID) && (PlayerCache(playerid)(pStatus) & STATUS_MASKED))			PlayerCache(playerid)(pStatus) -= STATUS_MASKED
 	
-	// Status rÍkawiczki
+	// Status rƒôkawiczki
 	if(PlayerCache(playerid)(pGloves) && !(PlayerCache(playerid)(pStatus) & STATUS_GLOVES))				 	PlayerCache(playerid)(pStatus) += STATUS_GLOVES
 	else if(!PlayerCache(playerid)(pGloves) && (PlayerCache(playerid)(pStatus) & STATUS_GLOVES))		 	PlayerCache(playerid)(pStatus) -= STATUS_GLOVES
 	
@@ -310,7 +310,7 @@ public UpdatePlayerStatus(playerid)
 	if(PlayerCache(playerid)(pRoll) && !(PlayerCache(playerid)(pStatus) & STATUS_ROLL))						PlayerCache(playerid)(pStatus) += STATUS_ROLL
 	else if(!PlayerCache(playerid)(pRoll) && (PlayerCache(playerid)(pStatus) & STATUS_ROLL))				PlayerCache(playerid)(pStatus) -= STATUS_ROLL
 	
-	// Status nowa postaÊ
+	// Status nowa postaƒá
 	if((PlayerCache(playerid)(pHours) ( 5 && PlayerCache(playerid)(pGamePoints) )= 100) && !(PlayerCache(playerid)(pStatus) & STATUS_NEWCHAR))			 PlayerCache(playerid)(pStatus) += STATUS_NEWCHAR
 	else if((PlayerCache(playerid)(pHours) )= 5 && PlayerCache(playerid)(pGamePoints) )= 100) && (PlayerCache(playerid)(pStatus) & STATUS_NEWCHAR))		 PlayerCache(playerid)(pStatus) -= STATUS_NEWCHAR
 
@@ -318,7 +318,7 @@ public UpdatePlayerStatus(playerid)
 	if(PlayerCache(playerid)(pGamePoints) ( 100 && !(PlayerCache(playerid)(pStatus) & STATUS_NEWPLAYER))	PlayerCache(playerid)(pStatus) += STATUS_NEWPLAYER
 	else if(PlayerCache(playerid)(pGamePoints) )= 100 && (PlayerCache(playerid)(pStatus) & STATUS_NEWPLAYER)) PlayerCache(playerid)(pStatus) -= STATUS_NEWPLAYER
 
-	//	Status zwiπzany
+	//	Status zwiƒÖzany
 	if(PlayerCache(playerid)(pRoped) != INVALID_PLAYER_ID && !(PlayerCache(playerid)(pStatus) & STATUS_TIED))						PlayerCache(playerid)(pStatus) += STATUS_TIED
 	else if(PlayerCache(playerid)(pRoped) == INVALID_PLAYER_ID && (PlayerCache(playerid)(pStatus) & STATUS_TIED))				PlayerCache(playerid)(pStatus) -= STATUS_TIED
 	
@@ -326,7 +326,7 @@ public UpdatePlayerStatus(playerid)
 	if(PlayerCache(playerid)(pGagged) != INVALID_PLAYER_ID && !(PlayerCache(playerid)(pStatus) & STATUS_GAGGED))						PlayerCache(playerid)(pStatus) += STATUS_GAGGED
 	else if(PlayerCache(playerid)(pGagged) == INVALID_PLAYER_ID && (PlayerCache(playerid)(pStatus) & STATUS_GAGGED))				PlayerCache(playerid)(pStatus) -= STATUS_GAGGED
 	
-	// Status worek na g≥owie
+	// Status worek na g≈Çowie
 	if(PlayerCache(playerid)(pBagged) != INVALID_PLAYER_ID && !(PlayerCache(playerid)(pStatus) & STATUS_HEADBAG))						PlayerCache(playerid)(pStatus) += STATUS_HEADBAG
 	else if(PlayerCache(playerid)(pBagged) == INVALID_PLAYER_ID && (PlayerCache(playerid)(pStatus) & STATUS_HEADBAG))				PlayerCache(playerid)(pStatus) -= STATUS_HEADBAG
 	
@@ -389,7 +389,7 @@ public UpdatePlayerUnitPositions(playerid)
 	vehid, group_id_fix,
 		Float:PosX, Float:PosY, Float:PosZ
 		
-	// UsuÒ pozycjÍ pozosta≥ych
+	// Usu≈Ñ pozycjƒô pozosta≈Çych
  	for (i = 0 i (= CountDynamicMapIcons() i++)
  	(
   		if(IsValidDynamicMapIcon(i))
@@ -401,7 +401,7 @@ public UpdatePlayerUnitPositions(playerid)
 		 )
 	)
 
-	// Pobierz nowπ pozycjÍ
+	// Pobierz nowƒÖ pozycjƒô
 	foreach(Player, i)
 	(
 		if(playerid != i)
@@ -517,7 +517,7 @@ public PayDay(playerid)
 					)
 					else
 					(
-						// @edit: Ktoú niemi≥y bugowa≥ to zakomentowaliúmy
+						// @edit: Kto≈õ niemi≈Çy bugowa≈Ç to zakomentowali≈õmy
 						//GroupData(group_id_fix)(gCash) += group_gain
 					)
 					payment += PAYDAY_CONSTANT * 45
@@ -553,7 +553,7 @@ public PayDay(playerid)
 		)
 		
 		
-		// Pokaø informacjÍ o wyp≥acie
+		// Poka≈º informacjƒô o wyp≈Çacie
 		string(128)
 		format(string, sizeof(string), Na Twoje ~y~konto bankowe ~w~wplynela wyplata w wysokosci ~g~$%d, final_pay)
 		hrp_GroupActionLog((payday) Gracz %s (UID: %d) pobral wyplate z grupy %s (UID: %d) w wysokosci: $%d, z konta grupy pobrano $%d, PlayerName(playerid), PlayerCache(playerid)(pUID), GroupData(GetGroupID(g_payed))(gName), GroupData(GetGroupID(g_payed))(gUID), final_pay, g_taken)
@@ -593,11 +593,11 @@ public ShowPlayerDirectoryForPlayer(playerid, giveplayer_id)
 	if(strlen(list_items) ) 0)
 	(
 		format(string, sizeof(string), Kartoteka - %s. Punkty karne: %d, PlayerName(giveplayer_id), PlayerCache(giveplayer_id)(pPDP))
-		ShowPlayerDialog(playerid, D_DIRECTORY_INFO, DIALOG_STYLE_LIST, string, list_items, SzczegÛ≥y, Anuluj)
+		ShowPlayerDialog(playerid, D_DIRECTORY_INFO, DIALOG_STYLE_LIST, string, list_items, Szczeg√≥≈Çy, Anuluj)
 	)
 	else
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie znaleziono øadnych wpisÛw w kartotece., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie znaleziono ≈ºadnych wpis√≥w w kartotece., OK, )
 	)
 	return 1
 )
@@ -619,11 +619,11 @@ stock ShowPlayerUidDirectoryForPlayer(playerid, uid)
 	if(strlen(list_items) ) 0)
 	(
 		format(string, sizeof(string), Kartoteka)
-		ShowPlayerDialog(playerid, D_DIRECTORY_INFO, DIALOG_STYLE_LIST, string, list_items, SzczegÛ≥y, Anuluj)
+		ShowPlayerDialog(playerid, D_DIRECTORY_INFO, DIALOG_STYLE_LIST, string, list_items, Szczeg√≥≈Çy, Anuluj)
 	)
 	else
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie znaleziono øadnych wpisÛw w kartotece., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie znaleziono ≈ºadnych wpis√≥w w kartotece., OK, )
 	)
 	return 1
 )
@@ -816,7 +816,7 @@ stock GetPlayerDoorID(playerid)
 	return doorid
 )
 /*
-	ta, wiem, øe to jest szybsze ale widocznie coú siÍ zjeba≥o i zrobiÍ po swoiemu, wolniej
+	ta, wiem, ≈ºe to jest szybsze ale widocznie co≈õ siƒô zjeba≈Ço i zrobiƒô po swoiemu, wolniej
 */
 /*stock GetPlayerDoorID(playerid)
 (
@@ -866,8 +866,8 @@ stock GetPlayerStatusInfo(playerid)
 	
 	if(PlayerCache(playerid)(pStatus) & STATUS_STONED)
 	(
- 		if(PlayerCache(playerid)(pSex) == 1)	format(status, sizeof(status), naÊpany)
- 		else									format(status, sizeof(status), naÊpana)
+ 		if(PlayerCache(playerid)(pSex) == 1)	format(status, sizeof(status), naƒápany)
+ 		else									format(status, sizeof(status), naƒápana)
 
 		if(strlen(main_status) ) 0)
 		(
@@ -893,7 +893,7 @@ stock GetPlayerStatusInfo(playerid)
 	if(PlayerCache(playerid)(pStatus) & STATUS_MUSCULAR)
 	(
 		if(PlayerCache(playerid)(pSex) == 1)	format(status, sizeof(status), muskularny)
-		else									format(status, sizeof(status), umiÍúniona)
+		else									format(status, sizeof(status), umiƒô≈õniona)
 	
 		if(strlen(main_status) ) 0)
 		(
@@ -916,7 +916,7 @@ stock GetPlayerStatusInfo(playerid)
 	
 	if(PlayerCache(playerid)(pStatus) & STATUS_EARPIECE)
 	(
- 		format(status, sizeof(status), s≥ucha muzyki)
+ 		format(status, sizeof(status), s≈Çucha muzyki)
 
 	   	if(strlen(main_status) ) 0)
 		(
@@ -950,7 +950,7 @@ stock GetPlayerStatusInfo(playerid)
 	
 	if(PlayerCache(playerid)(pStatus) & STATUS_GLOVES)
 	(
-		format(status, sizeof(status), rÍkawiczki)
+		format(status, sizeof(status), rƒôkawiczki)
 
 	   	if(strlen(main_status) ) 0)
 		(
@@ -983,7 +983,7 @@ stock GetPlayerStatusInfo(playerid)
 	
 	if(PlayerCache(playerid)(pStatus) & STATUS_NEWCHAR)
 	(
-		format(status, sizeof(status), nowa postaÊ)
+		format(status, sizeof(status), nowa postaƒá)
 		
 		if(strlen(main_status) ) 0)
 		(
@@ -1016,8 +1016,8 @@ stock GetPlayerStatusInfo(playerid)
 	
 	if(PlayerCache(playerid)(pStatus) & STATUS_TIED)
 	(
-		if(PlayerCache(playerid)(pSex) == 1)	format(status, sizeof(status), zwiπzany)
-		else									format(status, sizeof(status), zwiπzana)
+		if(PlayerCache(playerid)(pSex) == 1)	format(status, sizeof(status), zwiƒÖzany)
+		else									format(status, sizeof(status), zwiƒÖzana)
 		
 		if(strlen(main_status) ) 0)
 		(
@@ -1028,7 +1028,7 @@ stock GetPlayerStatusInfo(playerid)
 	
 	if(PlayerCache(playerid)(pStatus) & STATUS_HEADBAG)
 	(
-		format(status, sizeof(status), worek na g≥owie)
+		format(status, sizeof(status), worek na g≈Çowie)
 		
 		if(strlen(main_status) ) 0)
 		(
@@ -1039,7 +1039,7 @@ stock GetPlayerStatusInfo(playerid)
 	
 	if(PlayerCache(playerid)(pStatus) & STATUS_READ)
 	(
-		format(status, sizeof(status), czyta gazetÍ)
+		format(status, sizeof(status), czyta gazetƒô)
 		
 		if(strlen(main_status) ) 0)
 		(
@@ -1231,12 +1231,12 @@ stock IsPlayerInWater(playerid)
 	(IsPlayerInArea(playerid, 2032.1371, 1841.2656, 1703.1653, 1467.1099) && z (= 9.0484) //lv piratenschiff
 	|| (IsPlayerInArea(playerid, 2109.0725, 2065.8232, 1962.5355, 10.8547) && z (= 10.0792) //lv visage
 	|| (IsPlayerInArea(playerid, -492.5810, -1424.7122, 2836.8284, 2001.8235) && z (= 41.06) //lv staucamm
-	|| (IsPlayerInArea(playerid, -2675.1492, -2762.1792, -413.3973, -514.3894) && z (= 4.24) //sf s¸dwesten kleiner teich
+	|| (IsPlayerInArea(playerid, -2675.1492, -2762.1792, -413.3973, -514.3894) && z (= 4.24) //sf s√ºdwesten kleiner teich
 	|| (IsPlayerInArea(playerid, -453.9256, -825.7167, -1869.9600, -2072.8215) && z (= 5.72) //sf gammel teich
 	|| (IsPlayerInArea(playerid, 1281.0251, 1202.2368, -2346.7451, -2414.4492) && z (= 9.3145) //ls neben dem airport
 	|| (IsPlayerInArea(playerid, 2012.6154, 1928.9028, -1178.6207, -1221.4043) && z (= 18.45) //ls mitte teich
-	|| (IsPlayerInArea(playerid, 2326.4858, 2295.7471, -1400.2797, -1431.1266) && z (= 22.615) //ls weiter s¸dˆstlich
-	|| (IsPlayerInArea(playerid, 2550.0454, 2513.7588, 1583.3751, 1553.0753) && z (= 9.4171) //lv pool ˆstlich
+	|| (IsPlayerInArea(playerid, 2326.4858, 2295.7471, -1400.2797, -1431.1266) && z (= 22.615) //ls weiter s√ºd√∂stlich
+	|| (IsPlayerInArea(playerid, 2550.0454, 2513.7588, 1583.3751, 1553.0753) && z (= 9.4171) //lv pool √∂stlich
 	|| (IsPlayerInArea(playerid, 1102.3634, 1087.3705, -663.1653, -682.5446) && z (= 112.45) //ls pool nordwestlich
 	|| (IsPlayerInArea(playerid, 1287.7906, 1270.4369, -801.3882, -810.0527) && z (= 87.123) //pool bei maddogs haus oben
 	)
@@ -1263,10 +1263,10 @@ stock UnbagPlayerHead(playerid)
 	return 1
 )
 
-// Wiadomoúci Offline
+// Wiadomo≈õci Offline
 stock AddPlayerOfflineMessage(playeruid, text())
 (
-	// Tworzenie wiadomoúci dla goúcia, ktÛrego nie ma teraz w grze.
+	// Tworzenie wiadomo≈õci dla go≈õcia, kt√≥rego nie ma teraz w grze.
 	mysql_query_format(INSERT INTO hrp_messages VALUES(NULL, %d, %s), playeruid, text)
 	return 1
 )
@@ -1303,13 +1303,13 @@ public GoogleVerifyResponse(playerid, response_code, data())
 		page_response = strval(data)
 		if( page_response ) 0 )
 		(
-			sendClientPoop(playerid, ª Weryfikacja dwuetapowa przebieg≥a pomyúlnie.)
+			sendClientPoop(playerid, ¬ª Weryfikacja dwuetapowa przebieg≈Ça pomy≈õlnie.)
 			PlayerCache(playerid)(pVerificated) = true
 		)
 		else
 		(
-			sendClientPoop(playerid, ª Zly kod.)
-			ShowPlayerDialog(playerid, D_VERIFICATE, DIALOG_STYLE_INPUT, Weryfikacja dwuetapowa, Wypisz poniøej kod wygenerowany przez aplikacjÍ Google Authenticator., Gotowe, Anuluj)
+			sendClientPoop(playerid, ¬ª Zly kod.)
+			ShowPlayerDialog(playerid, D_VERIFICATE, DIALOG_STYLE_INPUT, Weryfikacja dwuetapowa, Wypisz poni≈ºej kod wygenerowany przez aplikacjƒô Google Authenticator., Gotowe, Anuluj)
 		)
 	)
 	else if( response_code == 3 )
@@ -1328,14 +1328,14 @@ stock GetPlayerFameStatus(playerid)
 	mysql_store_result()
 	if(mysql_num_rows() ) 0)
 	(
-		// Jest celebrytπ
+		// Jest celebrytƒÖ
 		mysql_free_result()
 		
 		PlayerCache(playerid)(pCeleb) = true
 	)
 	else
 	(
-		// Nie jest celebrytπ
+		// Nie jest celebrytƒÖ
 		mysql_free_result()
 		
 		PlayerCache(playerid)(pCeleb) = false

@@ -2,7 +2,7 @@ CMD:komunikat(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	buffer(512), type(32), varchar(32), string(64)
@@ -65,7 +65,7 @@ CMD:spojazd(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) ) -2 )
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	type(32), varchar(32), string(256)
@@ -78,7 +78,7 @@ CMD:spojazd(playerid, params())
 	(
 		if(PlayerCache(playerid)(pAdmin) ) -3 )
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 			return 1
 		)
 		
@@ -90,12 +90,12 @@ CMD:spojazd(playerid, params())
 		)
 		if(!CarInfo(vehid)(cSpawned))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
 			return 1
 		)
 		if(health ( 350 || health ) 1000)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, HP pojazdu nie mo¿e byæ mniejsze ni¿ 350 oraz wiêksze od 1000., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, HP pojazdu nie moÅ¼e byÄ‡ mniejsze niÅ¼ 350 oraz wiÄ™ksze od 1000., OK, )
 			return 1
 		)
 	 	CarInfo(vehid)(cHealth) = health
@@ -105,7 +105,7 @@ CMD:spojazd(playerid, params())
 
 		ShowAdminLog(~r~(edit) ~w~Supporter %s zmienil ilosc HP pojazdu %s (SampID: %d, UID: %d). Nowy stan HP: %.0f., PlayerName(playerid), CarInfo(vehid)(cName), vehid, CarInfo(vehid)(cUID), CarInfo(vehid)(cHealth))
 
-		format(string, sizeof(string), Stan techniczny pojazdu zosta³ zmieniony.\nHP pojazdu wynosi teraz: %.0f HP., CarInfo(vehid)(cHealth))
+		format(string, sizeof(string), Stan techniczny pojazdu zostaÅ‚ zmieniony.\nHP pojazdu wynosi teraz: %.0f HP., CarInfo(vehid)(cHealth))
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, string, OK, )
 
 		hrp_AdminActionLog(%s (UID: %d) zmienil hp pojazdu %s (UID: %d). Nowy stan HP: %.0f., PlayerName(playerid), PlayerCache(playerid)(pUID), CarInfo(vehid)(cName), CarInfo(vehid)(cUID), CarInfo(vehid)(cHealth))
@@ -115,7 +115,7 @@ CMD:spojazd(playerid, params())
 	(
 		if(PlayerCache(playerid)(pAdmin) ) -3 )
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 			return 1
 		)
 		
@@ -127,7 +127,7 @@ CMD:spojazd(playerid, params())
 		)
 		if(!CarInfo(vehid)(cSpawned))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
 			return 1
 		)
 		vehuid = CarInfo(vehid)(cUID)
@@ -146,7 +146,7 @@ CMD:spojazd(playerid, params())
 		UnspawnVehicle(vehuid)
 		SpawnVehicle(vehuid)
 
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, Pojazd zosta³ zaparkowany w miejscu, na którym w³aœnie stoi., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, Pojazd zostaÅ‚ zaparkowany w miejscu, na ktÃ³rym wÅ‚aÅ›nie stoi., OK, )
 
 		hrp_AdminActionLog(%s (UID: %d) przeparkowal pojazd %s (UID: %d) (PosX: %.3f, PosY: %.3f, PosZ: %.3f)., PlayerName(playerid), PlayerCache(playerid)(pUID), CarInfo(vehid)(cName), CarInfo(vehid)(cUID), CarInfo(vehid)(cPosX), CarInfo(vehid)(cPosY), CarInfo(vehid)(cPosZ))
 		return 1
@@ -155,7 +155,7 @@ CMD:spojazd(playerid, params())
 	(
 		if(PlayerCache(playerid)(pAdmin) ) -3 )
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 			return 1
 		)
 		
@@ -168,12 +168,12 @@ CMD:spojazd(playerid, params())
 		)
 		if(!CarInfo(vehid)(cSpawned))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
 			return 1
 		)
 		if(CarInfo(vehid)(cLocked))
 		(
-	 		format(string, sizeof(string), Pojazd %s (SampID: %d, UID: %d) zosta³ otwarty., CarInfo(vehid)(cName), vehid, CarInfo(vehid)(cUID))
+	 		format(string, sizeof(string), Pojazd %s (SampID: %d, UID: %d) zostaÅ‚ otwarty., CarInfo(vehid)(cName), vehid, CarInfo(vehid)(cUID))
 			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 
   			CarInfo(vehid)(cLocked) = false
@@ -181,7 +181,7 @@ CMD:spojazd(playerid, params())
 		)
 		else
 		(
-			format(string, sizeof(string), Pojazd %s (SampID: %d, UID: %d) zosta³ zamkniêty., CarInfo(vehid)(cName), vehid, CarInfo(vehid)(cUID))
+			format(string, sizeof(string), Pojazd %s (SampID: %d, UID: %d) zostaÅ‚ zamkniÄ™ty., CarInfo(vehid)(cName), vehid, CarInfo(vehid)(cUID))
 			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 
   			CarInfo(vehid)(cLocked) = true
@@ -194,7 +194,7 @@ CMD:spojazd(playerid, params())
 	(
 		if(PlayerCache(playerid)(pAdmin) ) -3 )
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 			return 1
 		)
 		
@@ -207,14 +207,14 @@ CMD:spojazd(playerid, params())
 		)
 		if(!CarInfo(vehid)(cSpawned))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
 			return 1
 		)
 	 	SetVehicleToRespawn(vehid)
 
 		ShowAdminLog(~r~(edit) ~w~Supporter %s przywrocil pojazd %s (SampID: %d, UID: %d) na miejsce spawnu., PlayerName(playerid), CarInfo(vehid)(cName), vehid, CarInfo(vehid)(cUID))
 
-	  	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie,Pojazd zosta³ przywrócony na miejsce spawnu., OK, )
+	  	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie,Pojazd zostaÅ‚ przywrÃ³cony na miejsce spawnu., OK, )
 
 		hrp_AdminActionLog(%s (UID: %d) przywrocil pojazd %s (UID: %d) na miejsce spawnu., PlayerName(playerid), PlayerCache(playerid)(pUID), CarInfo(vehid)(cName), CarInfo(vehid)(cUID))
 		return 1
@@ -223,7 +223,7 @@ CMD:spojazd(playerid, params())
 	(
 		if(PlayerCache(playerid)(pAdmin) ) -3 )
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 			return 1
 		)
 		
@@ -236,7 +236,7 @@ CMD:spojazd(playerid, params())
 		)
    		if(CarInfo(vehid)(cUID) == 0)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
 			return 1
 		)
 		UpdateVehicleDamageStatus(vehid, 0, 0, 0, 0)
@@ -253,7 +253,7 @@ CMD:spojazd(playerid, params())
 	(
 		if(PlayerCache(playerid)(pAdmin) ) -3 )
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 			return 1
 		)
 		
@@ -266,7 +266,7 @@ CMD:spojazd(playerid, params())
 		)
 		if(!CarInfo(vehid)(cSpawned))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
 			return 1
 		)
 		Float:PosX, Float:PosY, Float:PosZ,
@@ -287,7 +287,7 @@ CMD:spojazd(playerid, params())
 	(
 		if(PlayerCache(playerid)(pAdmin) ) -3 )
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 			return 1
 		)
 		
@@ -300,7 +300,7 @@ CMD:spojazd(playerid, params())
 		)
    		if(CarInfo(vehid)(cUID) == 0)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
 			return 1
 		)
 		UpdateVehicleDamageStatus(vehid, 0, 0, 0, 0)
@@ -312,7 +312,7 @@ CMD:spojazd(playerid, params())
 	   	SaveVehicle(vehid, SAVE_VEH_COUNT)
 		SaveVehicle(vehid, SAVE_VEH_ACCESS)
 
-		format(string, sizeof(string), Pojazd %s (UID: %d) zosta³ ca³kowicie naprawiony., CarInfo(vehid)(cName), CarInfo(vehid)(cUID))
+		format(string, sizeof(string), Pojazd %s (UID: %d) zostaÅ‚ caÅ‚kowicie naprawiony., CarInfo(vehid)(cName), CarInfo(vehid)(cUID))
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, string, OK, )
 
 		ShowAdminLog(~r~(edit) ~w~Supporter %s naprawil calkowicie pojazd %s (SampID: %d, UID: %d)., PlayerName(playerid), CarInfo(vehid)(cName), vehid, CarInfo(vehid)(cUID))
@@ -323,7 +323,7 @@ CMD:spojazd(playerid, params())
 	(
 		if(PlayerCache(playerid)(pAdmin) ) -3 )
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 			return 1
 		)
 		
@@ -336,12 +336,12 @@ CMD:spojazd(playerid, params())
 		)
 		if(!CarInfo(vehid)(cSpawned))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
 			return 1
 		)
 		if(color1 ( 0 || color1 ) 255)
 	  	(
-	   		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, ID koloru nie mo¿e byæ mniejsze ni¿ 0 a tak¿e wiêksze ni¿ 255., OK, )
+	   		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, ID koloru nie moÅ¼e byÄ‡ mniejsze niÅ¼ 0 a takÅ¼e wiÄ™ksze niÅ¼ 255., OK, )
 		 	return 1
 	   	)
 		CarInfo(vehid)(cColor1) = color1
@@ -351,7 +351,7 @@ CMD:spojazd(playerid, params())
 		
 		ShowAdminLog(~r~(edit) ~w~Supporter %s zmienil kolor pojazdu %s (SampID: %d, UID: %d). Nowy kolor: %d., PlayerName(playerid), CarInfo(vehid)(cName), vehid, CarInfo(vehid)(cUID), CarInfo(vehid)(cColor1))
 		
-		format(string, sizeof(string), Kolor pojazdu zosta³ zmieniony. Nowy kolor: %d, color1)
+		format(string, sizeof(string), Kolor pojazdu zostaÅ‚ zmieniony. Nowy kolor: %d, color1)
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, string, OK, )
 
 		hrp_AdminActionLog(%s (UID: %d) zmienil kolor pojazdu %s (UID: %d). Nowy kolor: %d., PlayerName(playerid), PlayerCache(playerid)(pUID), CarInfo(vehid)(cName), CarInfo(vehid)(cUID), CarInfo(vehid)(cColor1))
@@ -361,7 +361,7 @@ CMD:spojazd(playerid, params())
 	(
 		if(PlayerCache(playerid)(pAdmin) ) -3 )
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 			return 1
 		)
 		
@@ -374,12 +374,12 @@ CMD:spojazd(playerid, params())
 		)
 		if(!CarInfo(vehid)(cSpawned))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
 			return 1
 		)
 		if(color2 ( 0 || color2 ) 255)
 	  	(
-	   		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, ID koloru nie mo¿e byæ mniejsze ni¿ 0 a tak¿e wiêksze ni¿ 255., OK, )
+	   		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, ID koloru nie moÅ¼e byÄ‡ mniejsze niÅ¼ 0 a takÅ¼e wiÄ™ksze niÅ¼ 255., OK, )
 		 	return 1
 	   	)
 		CarInfo(vehid)(cColor2) = color2
@@ -389,7 +389,7 @@ CMD:spojazd(playerid, params())
 
 		ShowAdminLog(~r~(edit) ~w~Supporter %s zmienil kolor pojazdu %s (SampID: %d, UID: %d). Nowy kolor: %d., PlayerName(playerid), CarInfo(vehid)(cName), vehid, CarInfo(vehid)(cUID), CarInfo(vehid)(cColor2))
 
-		format(string, sizeof(string), Kolor pojazdu zosta³ zmieniony. Nowy kolor: %d, color2)
+		format(string, sizeof(string), Kolor pojazdu zostaÅ‚ zmieniony. Nowy kolor: %d, color2)
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, string, OK, )
 
 		hrp_AdminActionLog(%s (UID: %d) zmienil kolor pojazdu %s (UID: %d). Nowy kolor: %d., PlayerName(playerid), PlayerCache(playerid)(pUID), CarInfo(vehid)(cName), CarInfo(vehid)(cUID), CarInfo(vehid)(cColor2))
@@ -399,7 +399,7 @@ CMD:spojazd(playerid, params())
 	(
 		if(PlayerCache(playerid)(pAdmin) ) -3 )
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 			return 1
 		)
 		
@@ -413,8 +413,8 @@ CMD:spojazd(playerid, params())
 		vehid = GetVehicleID(vehuid)
 		if(vehid != INVALID_VEHICLE_ID)
 		(
-			format(string, sizeof(string), Ten pojazd jest ju¿ zespawnowany (SampID: %d, UID: %d)., vehid, vehuid)
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, string, OK, )
+			format(string, sizeof(string), Ten pojazd jest juÅ¼ zespawnowany (SampID: %d, UID: %d)., vehid, vehuid)
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, string, OK, )
 			return 1
 		)
 		SpawnVehicle(vehuid)
@@ -435,7 +435,7 @@ CMD:spojazd(playerid, params())
 			PlayerCache(giveplayer_id)(pCarSpawned) ++
 		)
 		
-	 	format(string, sizeof(string), Pojazd (UID: %d) zosta³ zespawnowany pomyœlnie., vehuid)
+	 	format(string, sizeof(string), Pojazd (UID: %d) zostaÅ‚ zespawnowany pomyÅ›lnie., vehuid)
 	 	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, string, OK, )
 
 		ShowAdminLog(~r~(edit) ~w~Supporter %s zespawnowal pojazd %s (SampID: %d, UID: %d)., PlayerName(playerid), CarInfo(vehid)(cName), vehid, CarInfo(vehid)(cUID))
@@ -453,7 +453,7 @@ CMD:spojazd(playerid, params())
 		
 		if(!CarInfo(vehid)(cSpawned))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
 			return 1
 		)
 		ShowPlayerVehicleInfo(playerid, vehid)
@@ -465,7 +465,7 @@ CMD:kolor(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	
@@ -486,7 +486,7 @@ CMD:fly(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	type(32), varchar(32)
@@ -543,7 +543,7 @@ CMD:abudka(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	type(32), varchar(64), string(256), gameid
@@ -588,7 +588,7 @@ CMD:abudka(playerid, params())
 			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Budka zostala usunieta., OK, )
 			return 1
 		)
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Podano nieprawidlowe sampid budki. Sprobuj /abudka lista, OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Podano nieprawidlowe sampid budki. Sprobuj /abudka lista, OK, )
 		return 1
 	)
 	if(!strcmp(type, id, true))
@@ -597,12 +597,12 @@ CMD:abudka(playerid, params())
 		(
 			if(IsPlayerInRangeOfPoint(playerid, BoothData(boothid)(bRadius), BoothData(boothid)(bPosX), BoothData(boothid)(bPosY), BoothData(boothid)(bPosZ)))
 			(
-				format(string, sizeof(string), Sampid budki: %d\nUid budki: %d\nPosX: %f|PosY: %f|PosZ: %f\nW³aœciciel: %s (Uid: %d)\nUid drzwi: %d, boothid, BoothData(boothid)(bUID), BoothData(boothid)(bPosX), BoothData(boothid)(bPosY), BoothData(boothid)(bPosZ), GroupData(GetGroupID(BoothData(boothid)(bOwner)))(gName), BoothData(boothid)(bOwner), BoothData(boothid)(bDoorUID))
+				format(string, sizeof(string), Sampid budki: %d\nUid budki: %d\nPosX: %f|PosY: %f|PosZ: %f\nWÅ‚aÅ›ciciel: %s (Uid: %d)\nUid drzwi: %d, boothid, BoothData(boothid)(bUID), BoothData(boothid)(bPosX), BoothData(boothid)(bPosY), BoothData(boothid)(bPosZ), GroupData(GetGroupID(BoothData(boothid)(bOwner)))(gName), BoothData(boothid)(bOwner), BoothData(boothid)(bDoorUID))
 				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacje na temat budki, string, OK, )
 				return 1
 			)
 		)
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie znajdujesz siê aktualnie w pobli¿u ¿adnej budki., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie znajdujesz siÄ™ aktualnie w pobliÅ¼u Å¼adnej budki., OK, )
 		return 1
 	)
 	if(!strcmp(type, lista, true))
@@ -620,7 +620,7 @@ CMD:abudka(playerid, params())
 				)
 				else
 				(
-					format(list_items, sizeof(list_items), %s\n%d\t%s, list_items, boothid, Brak w³aœcicela)
+					format(list_items, sizeof(list_items), %s\n%d\t%s, list_items, boothid, Brak wÅ‚aÅ›cicela)
 				)
 			)
 		)
@@ -637,13 +637,13 @@ CMD:abudka(playerid, params())
 		)
 		if(!BoothData(gameid)(bUID))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne sampid budki., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne sampid budki., OK, )
 			return 1
 		)
 		group_id_fix = GetGroupID(group_uid)
 		if(group_id_fix == INVALID_GROUP_ID)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne UID grupy., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne UID grupy., OK, )
 			return 1
 		)
 
@@ -653,7 +653,7 @@ CMD:abudka(playerid, params())
 		BoothData(gameid)(bOwner) = group_uid
 		SaveBooth(gameid)
 
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Budka zosta³a przypisana pod grupê., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Budka zostaÅ‚a przypisana pod grupÄ™., OK, )
 
 		return 1
 	)
@@ -667,12 +667,12 @@ CMD:abudka(playerid, params())
 		)
 		if(!BoothData(gameid)(bUID))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne sampid budki., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne sampid budki., OK, )
 			return 1
 		)
 		if(door_id == INVALID_DOOR_ID)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne sampid drzwi., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne sampid drzwi., OK, )
 			return 1
 		)
 		
@@ -682,7 +682,7 @@ CMD:abudka(playerid, params())
 		BoothData(gameid)(bDoorUID) = DoorData(door_id)(dUID)
 		SaveBooth(gameid)
 
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Drzwi zosta³y przypisane do budki., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Drzwi zostaÅ‚y przypisane do budki., OK, )
 
 		return 1
 	)
@@ -695,7 +695,7 @@ CMD:abudka(playerid, params())
 		)
 		if(!BoothData(gameid)(bUID))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne sampid budki., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne sampid budki., OK, )
 			return 1
 		)
 		hrp_SetPlayerPos(playerid, BoothData(gameid)(bPosX), BoothData(gameid)(bPosY), BoothData(gameid)(bPosZ))
@@ -710,7 +710,7 @@ CMD:apetrol(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	type(32), varchar(64), string(256), gameid
@@ -755,7 +755,7 @@ CMD:apetrol(playerid, params())
 			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, CPN zostala usunieta., OK, )
 			return 1
 		)
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Podano nieprawidlowe sampid CPNu. Sprobuj /apetrol lista, OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Podano nieprawidlowe sampid CPNu. Sprobuj /apetrol lista, OK, )
 		return 1
 	)
 	if(!strcmp(type, id, true))
@@ -764,12 +764,12 @@ CMD:apetrol(playerid, params())
 		(
 			if(IsPlayerInRangeOfPoint(playerid, PetrolData(boothid)(bRadius), PetrolData(boothid)(bPosX), PetrolData(boothid)(bPosY), PetrolData(boothid)(bPosZ)))
 			(
-				format(string, sizeof(string), Sampid CPNu: %d\nUid CPNu: %d\nPosX: %f|PosY: %f|PosZ: %f\nW³aœciciel: %s (Uid: %d), boothid, PetrolData(boothid)(bUID), PetrolData(boothid)(bPosX), PetrolData(boothid)(bPosY), PetrolData(boothid)(bPosZ), GroupData(GetGroupID(PetrolData(boothid)(bOwner)))(gName), PetrolData(boothid)(bOwner))
+				format(string, sizeof(string), Sampid CPNu: %d\nUid CPNu: %d\nPosX: %f|PosY: %f|PosZ: %f\nWÅ‚aÅ›ciciel: %s (Uid: %d), boothid, PetrolData(boothid)(bUID), PetrolData(boothid)(bPosX), PetrolData(boothid)(bPosY), PetrolData(boothid)(bPosZ), GroupData(GetGroupID(PetrolData(boothid)(bOwner)))(gName), PetrolData(boothid)(bOwner))
 				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacje na temat budki, string, OK, )
 				return 1
 			)
 		)
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie znajdujesz siê aktualnie w pobli¿u ¿adnego CPNu., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie znajdujesz siÄ™ aktualnie w pobliÅ¼u Å¼adnego CPNu., OK, )
 		return 1
 	)
 	if(!strcmp(type, lista, true))
@@ -787,7 +787,7 @@ CMD:apetrol(playerid, params())
 				)
 				else
 				(
-					format(list_items, sizeof(list_items), %s\n%d\t%s, list_items, boothid, Brak w³aœcicela)
+					format(list_items, sizeof(list_items), %s\n%d\t%s, list_items, boothid, Brak wÅ‚aÅ›cicela)
 				)
 			)
 		)
@@ -804,13 +804,13 @@ CMD:apetrol(playerid, params())
 		)
 		if(!PetrolData(gameid)(bUID))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne sampid CPNu., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne sampid CPNu., OK, )
 			return 1
 		)
 		group_id_fix = GetGroupID(group_uid)
 		if(group_id_fix == INVALID_GROUP_ID)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne UID grupy., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne UID grupy., OK, )
 			return 1
 		)
 
@@ -820,7 +820,7 @@ CMD:apetrol(playerid, params())
 		PetrolData(gameid)(bOwner) = group_uid
 		SavePetrol(gameid)
 
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, CPN zosta³a przypisana pod grupê., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, CPN zostaÅ‚a przypisana pod grupÄ™., OK, )
 
 		return 1
 	)
@@ -833,7 +833,7 @@ CMD:apetrol(playerid, params())
 		)
 		if(!PetrolData(gameid)(bUID))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne sampid cpnu., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne sampid cpnu., OK, )
 			return 1
 		)
 		hrp_SetPlayerPos(playerid, PetrolData(gameid)(bPosX), PetrolData(gameid)(bPosY), PetrolData(gameid)(bPosZ))
@@ -847,13 +847,13 @@ CMD:addsweep(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	group, price, name(64), Float:swPosX, Float:swPosY, Float:swPosZ
 	if(sscanf(params, dds(64), group, price, name))
 	(
-		hrp_Tip(playerid, /addsweep (grupa) (wyp³ata) (nazwa))
+		hrp_Tip(playerid, /addsweep (grupa) (wypÅ‚ata) (nazwa))
 		return 1
 	)
 	
@@ -874,7 +874,7 @@ CMD:apojazd(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	type(32), varchar(32), string(256)
@@ -894,19 +894,19 @@ CMD:apojazd(playerid, params())
 		)
 		if(modelid ( 400 || modelid ) 611)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Model pojazdu nie mo¿e byæ mniejszy ni¿ 400 oraz wiêkszy ni¿ 611., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Model pojazdu nie moÅ¼e byÄ‡ mniejszy niÅ¼ 400 oraz wiÄ™kszy niÅ¼ 611., OK, )
 			return 1
 		)
 	 	if(color1 ( 0 || color1 ) 255 || color2 ( 0 || color2 ) 255)
 	  	(
-	   		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, ID koloru nie mo¿e byæ mniejsze ni¿ 0 a tak¿e wiêksze ni¿ 255., OK, )
+	   		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, ID koloru nie moÅ¼e byÄ‡ mniejsze niÅ¼ 0 a takÅ¼e wiÄ™ksze niÅ¼ 255., OK, )
 		 	return 1
 	   	)
 		Float:x, Float:y, Float:z, gameid
 		GetPlayerPos(playerid, x, y, z)
 		gameid = CreateCar(modelid, x+2, y, z, 0.0, color1, color2, 6000000)
 
-		format(string, sizeof(string), Pojazd zosta³ stworzony pomyœlnie (SampID: %d)., gameid)
+		format(string, sizeof(string), Pojazd zostaÅ‚ stworzony pomyÅ›lnie (SampID: %d)., gameid)
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 		
 		ShowAdminLog(~r~(create) ~w~Administrator %s stworzyl pojazd %s (SampID: %d, UID: %d)., PlayerName(playerid), CarInfo(gameid)(cName), gameid, CarInfo(gameid)(cUID))
@@ -924,12 +924,12 @@ CMD:apojazd(playerid, params())
 		)
 		if(!CarInfo(vehid)(cSpawned))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
 			return 1
 		)
 		if(modelid ( 400 || modelid ) 611)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Model pojazdu nie mo¿e byæ mniejszy ni¿ 400 oraz wiêkszy ni¿ 611., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Model pojazdu nie moÅ¼e byÄ‡ mniejszy niÅ¼ 400 oraz wiÄ™kszy niÅ¼ 611., OK, )
 			return 1
 		)
 	 	Float:x, Float:y, Float:z, Float:a
@@ -950,7 +950,7 @@ CMD:apojazd(playerid, params())
 		UnspawnVehicle(vehuid)
 		SpawnVehicle(vehuid)
 		
-		format(string, sizeof(string), Model pojazdu zosta³ zmieniony. Nowy model: %d, modelid)
+		format(string, sizeof(string), Model pojazdu zostaÅ‚ zmieniony. Nowy model: %d, modelid)
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, string, OK, )
 		return 1
 	)
@@ -964,12 +964,12 @@ CMD:apojazd(playerid, params())
 		)
 		if(!CarInfo(vehid)(cSpawned))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
 			return 1
 		)
 		if(color1 ( 0 || color1 ) 255)
 	  	(
-	   		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, ID koloru nie mo¿e byæ mniejsze ni¿ 0 a tak¿e wiêksze ni¿ 255., OK, )
+	   		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, ID koloru nie moÅ¼e byÄ‡ mniejsze niÅ¼ 0 a takÅ¼e wiÄ™ksze niÅ¼ 255., OK, )
 		 	return 1
 	   	)
 		CarInfo(vehid)(cColor1) = color1
@@ -979,7 +979,7 @@ CMD:apojazd(playerid, params())
 		
 		ShowAdminLog(~r~(edit) ~w~Administrator %s zmienil kolor pojazdu %s (SampID: %d, UID: %d). Nowy kolor: %d., PlayerName(playerid), CarInfo(vehid)(cName), vehid, CarInfo(vehid)(cUID), CarInfo(vehid)(cColor1))
 		
-		format(string, sizeof(string), Kolor pojazdu zosta³ zmieniony. Nowy kolor: %d, color1)
+		format(string, sizeof(string), Kolor pojazdu zostaÅ‚ zmieniony. Nowy kolor: %d, color1)
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, string, OK, )
 
 		hrp_AdminActionLog(%s (UID: %d) zmienil kolor pojazdu %s (UID: %d). Nowy kolor: %d., PlayerName(playerid), PlayerCache(playerid)(pUID), CarInfo(vehid)(cName), CarInfo(vehid)(cUID), CarInfo(vehid)(cColor1))
@@ -995,12 +995,12 @@ CMD:apojazd(playerid, params())
 		)
 		if(!CarInfo(vehid)(cSpawned))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
 			return 1
 		)
 		if(color2 ( 0 || color2 ) 255)
 	  	(
-	   		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, ID koloru nie mo¿e byæ mniejsze ni¿ 0 a tak¿e wiêksze ni¿ 255., OK, )
+	   		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, ID koloru nie moÅ¼e byÄ‡ mniejsze niÅ¼ 0 a takÅ¼e wiÄ™ksze niÅ¼ 255., OK, )
 		 	return 1
 	   	)
 		CarInfo(vehid)(cColor2) = color2
@@ -1010,7 +1010,7 @@ CMD:apojazd(playerid, params())
 
 		ShowAdminLog(~r~(edit) ~w~Administrator %s zmienil kolor pojazdu %s (SampID: %d, UID: %d). Nowy kolor: %d., PlayerName(playerid), CarInfo(vehid)(cName), vehid, CarInfo(vehid)(cUID), CarInfo(vehid)(cColor2))
 
-		format(string, sizeof(string), Kolor pojazdu zosta³ zmieniony. Nowy kolor: %d, color2)
+		format(string, sizeof(string), Kolor pojazdu zostaÅ‚ zmieniony. Nowy kolor: %d, color2)
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, string, OK, )
 
 		hrp_AdminActionLog(%s (UID: %d) zmienil kolor pojazdu %s (UID: %d). Nowy kolor: %d., PlayerName(playerid), PlayerCache(playerid)(pUID), CarInfo(vehid)(cName), CarInfo(vehid)(cUID), CarInfo(vehid)(cColor2))
@@ -1026,13 +1026,13 @@ CMD:apojazd(playerid, params())
 		)
 		if(!CarInfo(vehid)(cSpawned))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
 			return 1
 		)
 		if(fuel ) GetVehicleMaxFuel(CarInfo(vehid)(cModel)))
 		(
-			format(string, sizeof(string), Nie mo¿esz ustaliæ wiêcej paliwa ni¿ zmieœci siê w baku.\nPojemnoœæ baku wynosi: %d litry/ów., GetVehicleMaxFuel(CarInfo(vehid)(cModel)))
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, string, OK, )
+			format(string, sizeof(string), Nie moÅ¼esz ustaliÄ‡ wiÄ™cej paliwa niÅ¼ zmieÅ›ci siÄ™ w baku.\nPojemnoÅ›Ä‡ baku wynosi: %d litry/Ã³w., GetVehicleMaxFuel(CarInfo(vehid)(cModel)))
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, string, OK, )
 			return 1
 		)
 		CarInfo(vehid)(cFuel) = fuel
@@ -1040,7 +1040,7 @@ CMD:apojazd(playerid, params())
 		
 		ShowAdminLog(~r~(edit) ~w~Administrator %s zmienil ilosc paliwa pojazdu %s (SampID: %d, UID: %d)., PlayerName(playerid), CarInfo(vehid)(cName), vehid, CarInfo(vehid)(cUID))
 		
-		format(string, sizeof(string), Ustalono %.0f litry/ów paliwa w pojeŸdzie %s., fuel, CarInfo(vehid)(cName))
+		format(string, sizeof(string), Ustalono %.0f litry/Ã³w paliwa w pojeÅºdzie %s., fuel, CarInfo(vehid)(cName))
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, string, OK, )
 
 		hrp_AdminActionLog(%s (UID: %d) zmienil ilosc paliwa w pojezdzie %s (UID: %d)., PlayerName(playerid), PlayerCache(playerid)(pUID), CarInfo(vehid)(cName), CarInfo(vehid)(cUID))
@@ -1056,12 +1056,12 @@ CMD:apojazd(playerid, params())
 		)
 		if(!CarInfo(vehid)(cSpawned))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
 			return 1
 		)
 		if(health ( 0 || health ) 1000)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, HP pojazdu nie mo¿e byæ mniejsze ni¿ 0 oraz wiêksze od 1000., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, HP pojazdu nie moÅ¼e byÄ‡ mniejsze niÅ¼ 0 oraz wiÄ™ksze od 1000., OK, )
 			return 1
 		)
 	 	CarInfo(vehid)(cHealth) = health
@@ -1071,7 +1071,7 @@ CMD:apojazd(playerid, params())
 	   	
 		ShowAdminLog(~r~(edit) ~w~Administrator %s zmienil ilosc HP pojazdu %s (SampID: %d, UID: %d). Nowy stan HP: %.0f., PlayerName(playerid), CarInfo(vehid)(cName), vehid, CarInfo(vehid)(cUID), CarInfo(vehid)(cHealth))
 	   	
-		format(string, sizeof(string), Stan techniczny pojazdu zosta³ zmieniony.\nHP pojazdu wynosi teraz: %.0f HP., CarInfo(vehid)(cHealth))
+		format(string, sizeof(string), Stan techniczny pojazdu zostaÅ‚ zmieniony.\nHP pojazdu wynosi teraz: %.0f HP., CarInfo(vehid)(cHealth))
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, string, OK, )
 
 		hrp_AdminActionLog(%s (UID: %d) zmienil hp pojazdu %s (UID: %d). Nowy stan HP: %.0f., PlayerName(playerid), PlayerCache(playerid)(pUID), CarInfo(vehid)(cName), CarInfo(vehid)(cUID), CarInfo(vehid)(cHealth))
@@ -1087,7 +1087,7 @@ CMD:apojazd(playerid, params())
 		)
 		if(!CarInfo(vehid)(cSpawned))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
 			return 1
 		)
 		vehuid = CarInfo(vehid)(cUID)
@@ -1106,7 +1106,7 @@ CMD:apojazd(playerid, params())
 		UnspawnVehicle(vehuid)
 		SpawnVehicle(vehuid)
 
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, Pojazd zosta³ zaparkowany w miejscu, na którym w³aœnie stoi., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, Pojazd zostaÅ‚ zaparkowany w miejscu, na ktÃ³rym wÅ‚aÅ›nie stoi., OK, )
 
 		hrp_AdminActionLog(%s (UID: %d) przeparkowal pojazd %s (UID: %d) (PosX: %.3f, PosY: %.3f, PosZ: %.3f)., PlayerName(playerid), PlayerCache(playerid)(pUID), CarInfo(vehid)(cName), CarInfo(vehid)(cUID), CarInfo(vehid)(cPosX), CarInfo(vehid)(cPosY), CarInfo(vehid)(cPosZ))
 		return 1
@@ -1121,12 +1121,12 @@ CMD:apojazd(playerid, params())
 		)
 		if(!CarInfo(vehid)(cSpawned))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
 			return 1
 		)
 		if(CarInfo(vehid)(cLocked))
 		(
-	 		format(string, sizeof(string), Pojazd %s (SampID: %d, UID: %d) zosta³ otwarty., CarInfo(vehid)(cName), vehid, CarInfo(vehid)(cUID))
+	 		format(string, sizeof(string), Pojazd %s (SampID: %d, UID: %d) zostaÅ‚ otwarty., CarInfo(vehid)(cName), vehid, CarInfo(vehid)(cUID))
 			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 		
   			CarInfo(vehid)(cLocked) = false
@@ -1134,7 +1134,7 @@ CMD:apojazd(playerid, params())
 		)
 		else
 		(
-			format(string, sizeof(string), Pojazd %s (SampID: %d, UID: %d) zosta³ zamkniêty., CarInfo(vehid)(cName), vehid, CarInfo(vehid)(cUID))
+			format(string, sizeof(string), Pojazd %s (SampID: %d, UID: %d) zostaÅ‚ zamkniÄ™ty., CarInfo(vehid)(cName), vehid, CarInfo(vehid)(cUID))
 			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 		
   			CarInfo(vehid)(cLocked) = true
@@ -1153,14 +1153,14 @@ CMD:apojazd(playerid, params())
 		)
 		if(!CarInfo(vehid)(cSpawned))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
 			return 1
 		)
 	 	SetVehicleToRespawn(vehid)
 	 	
 		ShowAdminLog(~r~(edit) ~w~Administrator %s przywrocil pojazd %s (SampID: %d, UID: %d) na miejsce spawnu., PlayerName(playerid), CarInfo(vehid)(cName), vehid, CarInfo(vehid)(cUID))
 	 	
-	  	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie,Pojazd zosta³ przywrócony na miejsce spawnu., OK, )
+	  	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie,Pojazd zostaÅ‚ przywrÃ³cony na miejsce spawnu., OK, )
 
 		hrp_AdminActionLog(%s (UID: %d) przywrocil pojazd %s (UID: %d) na miejsce spawnu., PlayerName(playerid), PlayerCache(playerid)(pUID), CarInfo(vehid)(cName), CarInfo(vehid)(cUID))
 		return 1
@@ -1175,7 +1175,7 @@ CMD:apojazd(playerid, params())
 		)
 		if(!CarInfo(vehid)(cSpawned))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
 			return 1
 		)
 		CarInfo(vehid)(cMileage) = mileage
@@ -1199,7 +1199,7 @@ CMD:apojazd(playerid, params())
 		)
 		if(!CarInfo(vehid)(cSpawned))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
 			return 1
 		)
    		ShowAdminLog(~r~(delete) ~w~Administrator %s usunal pojazd %s (SampID: %d, UID: %d) z bazy., PlayerName(playerid), CarInfo(vehid)(cName), vehid, CarInfo(vehid)(cUID))
@@ -1207,7 +1207,7 @@ CMD:apojazd(playerid, params())
 		
 	 	DeleteVehicle(vehid)
 		
-	  	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, Pojazd zosta³ pomyœlnie usuniêty z bazy danych., OK, )
+	  	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, Pojazd zostaÅ‚ pomyÅ›lnie usuniÄ™ty z bazy danych., OK, )
 		return 1
 	)
 	if(!strcmp(type, visual, true))
@@ -1220,7 +1220,7 @@ CMD:apojazd(playerid, params())
 		)
    		if(CarInfo(vehid)(cUID) == 0)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
 			return 1
 		)
 		UpdateVehicleDamageStatus(vehid, 0, 0, 0, 0)
@@ -1238,10 +1238,10 @@ CMD:apojazd(playerid, params())
 		vehid = GetClosestVehicle(playerid)
    		if(!vehid)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie znaleziono ¿adnego pojazdu w pobli¿u., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie znaleziono Å¼adnego pojazdu w pobliÅ¼u., OK, )
 			return 1
 		)
-		format(string, sizeof(string), Najbli¿szy pojazd to \%s\ (SampID: %d)., CarInfo(vehid)(cName), vehid)
+		format(string, sizeof(string), NajbliÅ¼szy pojazd to \%s\ (SampID: %d)., CarInfo(vehid)(cName), vehid)
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 		return 1
 	)
@@ -1255,12 +1255,12 @@ CMD:apojazd(playerid, params())
 		)
 		if(!CarInfo(vehid)(cSpawned))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
 			return 1
 		)
 		if(CarInfo(vehid)(cBlocked))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Ten pojazd jest pojazdem profilowym - nie mo¿esz go przypisaæ., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Ten pojazd jest pojazdem profilowym - nie moÅ¼esz go przypisaÄ‡., OK, )
 			return 1
 		)
 		if(!strcmp(owner_type, gracz, true))
@@ -1274,12 +1274,12 @@ CMD:apojazd(playerid, params())
 			)
 			if(giveplayer_id == INVALID_PLAYER_ID)
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Podano b³êdne ID gracza., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Podano bÅ‚Ä™dne ID gracza., OK, )
 				return 1
 			)
 			if(!Logged(giveplayer_id))
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Gracz o podanym ID nie jest zalogowany., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Gracz o podanym ID nie jest zalogowany., OK, )
 				return 1
 			)
 			if(CarInfo(vehid)(cOwnerType) == OWNER_PLAYER)
@@ -1317,7 +1317,7 @@ CMD:apojazd(playerid, params())
 					PlayerCache(giveplayer_id)(pCarSpawned) ++
 				)
 			)
-			format(string, sizeof(string), Pojazd %s (SampID: %d, UID: %d) zosta³ przypisany pomyœlnie.\n\nTyp w³aœciciela: gracz\nW³aœciciel: %s (ID: %d, UID: %d), CarInfo(vehid)(cName), vehid, CarInfo(vehid)(cUID), PlayerName(giveplayer_id), giveplayer_id, PlayerCache(giveplayer_id)(pUID))
+			format(string, sizeof(string), Pojazd %s (SampID: %d, UID: %d) zostaÅ‚ przypisany pomyÅ›lnie.\n\nTyp wÅ‚aÅ›ciciela: gracz\nWÅ‚aÅ›ciciel: %s (ID: %d, UID: %d), CarInfo(vehid)(cName), vehid, CarInfo(vehid)(cUID), PlayerName(giveplayer_id), giveplayer_id, PlayerCache(giveplayer_id)(pUID))
 			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, string, OK, )
 
 			ShowAdminLog(~r~(edit) ~w~Administrator %s przypisal pojazd %s (SampID: %d, UID: %d) pod gracza., PlayerName(playerid), CarInfo(vehid)(cName), vehid, CarInfo(vehid)(cUID))
@@ -1336,7 +1336,7 @@ CMD:apojazd(playerid, params())
 			group_id_fix = GetGroupID(group_uid)
  			if(group_id_fix == INVALID_GROUP_ID)
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne UID grupy., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne UID grupy., OK, )
 				return 1
 			)
    			if(CarInfo(vehid)(cOwnerType) == OWNER_PLAYER)
@@ -1352,7 +1352,7 @@ CMD:apojazd(playerid, params())
 			
 			SaveVehicle(vehid, SAVE_VEH_THINGS)
 			
-			format(string, sizeof(string), Pojazd %s (SampID: %d, UID: %d) zosta³ przypisany pomyœlnie.\n\nTyp w³aœciciela: grupa\nW³aœciciel: %s (UID: %d), CarInfo(vehid)(cName), vehid, CarInfo(vehid)(cUID), GroupData(group_id_fix)(gName), GroupData(group_id_fix)(gUID))
+			format(string, sizeof(string), Pojazd %s (SampID: %d, UID: %d) zostaÅ‚ przypisany pomyÅ›lnie.\n\nTyp wÅ‚aÅ›ciciela: grupa\nWÅ‚aÅ›ciciel: %s (UID: %d), CarInfo(vehid)(cName), vehid, CarInfo(vehid)(cUID), GroupData(group_id_fix)(gName), GroupData(group_id_fix)(gUID))
 			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, string, OK, )
 
 			ShowAdminLog(~r~(edit) ~w~Administrator %s przypisal pojazd %s (SampID: %d, UID: %d) pod grupe., PlayerName(playerid), CarInfo(vehid)(cName), vehid, CarInfo(vehid)(cUID))
@@ -1381,7 +1381,7 @@ CMD:apojazd(playerid, params())
 
 			SaveVehicle(vehid, SAVE_VEH_THINGS)
 
-			format(string, sizeof(string), Pojazd %s (SampID: %d, UID: %d) zosta³ przypisany pomyœlnie.\n\nTyp w³aœciciela: gracz\nW³aœciciel: UID %d, CarInfo(vehid)(cName), vehid, CarInfo(vehid)(cUID), p_uid)
+			format(string, sizeof(string), Pojazd %s (SampID: %d, UID: %d) zostaÅ‚ przypisany pomyÅ›lnie.\n\nTyp wÅ‚aÅ›ciciela: gracz\nWÅ‚aÅ›ciciel: UID %d, CarInfo(vehid)(cName), vehid, CarInfo(vehid)(cUID), p_uid)
 			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, string, OK, )
 
 			ShowAdminLog(~r~(edit) ~w~Administrator %s przypisal pojazd %s (SampID: %d, UID: %d) pod gracza., PlayerName(playerid), CarInfo(vehid)(cName), vehid, CarInfo(vehid)(cUID))
@@ -1400,7 +1400,7 @@ CMD:apojazd(playerid, params())
 		)
 		if(!CarInfo(vehid)(cSpawned))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
 			return 1
 		)
 		ShowPlayerVehicleInfo(playerid, vehid)
@@ -1416,7 +1416,7 @@ CMD:apojazd(playerid, params())
 		)
 		if(!CarInfo(vehid)(cSpawned))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
 			return 1
 		)
    		ShowAdminLog(~r~(edit) ~w~Administrator %s odspawnowal pojazd %s (SampID: %d, UID: %d)., PlayerName(playerid), CarInfo(vehid)(cName), vehid, CarInfo(vehid)(cUID))
@@ -1438,7 +1438,7 @@ CMD:apojazd(playerid, params())
 			PlayerCache(giveplayer_id)(pCarSpawned) --
 		)
 		
-	 	format(string, sizeof(string), Pojazd %s (UID: %d) zosta³ odspawnowany pomyœlnie., CarInfo(vehid)(cName), CarInfo(vehid)(cUID))
+	 	format(string, sizeof(string), Pojazd %s (UID: %d) zostaÅ‚ odspawnowany pomyÅ›lnie., CarInfo(vehid)(cName), CarInfo(vehid)(cUID))
 	 	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, string, OK, )
 		return 1
 	)
@@ -1453,8 +1453,8 @@ CMD:apojazd(playerid, params())
 		vehid = GetVehicleID(vehuid)
 		if(vehid != INVALID_VEHICLE_ID)
 		(
-			format(string, sizeof(string), Ten pojazd jest ju¿ zespawnowany (SampID: %d, UID: %d)., vehid, vehuid)
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, string, OK, )
+			format(string, sizeof(string), Ten pojazd jest juÅ¼ zespawnowany (SampID: %d, UID: %d)., vehid, vehuid)
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, string, OK, )
 			return 1
 		)
 		SpawnVehicle(vehuid)
@@ -1475,7 +1475,7 @@ CMD:apojazd(playerid, params())
 			PlayerCache(giveplayer_id)(pCarSpawned) ++
 		)
 		
-	 	format(string, sizeof(string), Pojazd (UID: %d) zosta³ zespawnowany pomyœlnie., vehuid)
+	 	format(string, sizeof(string), Pojazd (UID: %d) zostaÅ‚ zespawnowany pomyÅ›lnie., vehuid)
 	 	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, string, OK, )
 
 		ShowAdminLog(~r~(edit) ~w~Administrator %s zespawnowal pojazd %s (SampID: %d, UID: %d)., PlayerName(playerid), CarInfo(vehid)(cName), vehid, CarInfo(vehid)(cUID))
@@ -1492,7 +1492,7 @@ CMD:apojazd(playerid, params())
 				UpdateVehicleDamageStatus(vehid, CarInfo(vehid)(cVisual)(0), CarInfo(vehid)(cVisual)(1), CarInfo(vehid)(cVisual)(2), CarInfo(vehid)(cVisual)(3))
 			)
 		)
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, Wszystkie nieu¿ywane pojazdy zosta³y przywrócone na miejsce spawnu., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, Wszystkie nieuÅ¼ywane pojazdy zostaÅ‚y przywrÃ³cone na miejsce spawnu., OK, )
 
 		ShowAdminLog(~r~(edit) ~w~Administrator %s przywrocil wszystkie nieuzywane pojazdy na miejsce spawnu., PlayerName(playerid))
 		hrp_AdminActionLog(%s (UID: %d) przywrocil wszystkie nieuzywane pojazdy na miejsce spawnu., PlayerName(playerid), PlayerCache(playerid)(pUID))
@@ -1508,12 +1508,12 @@ CMD:apojazd(playerid, params())
 		)
 		if(!CarInfo(vehid)(cSpawned))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
 			return 1
 		)
 		if(GetPlayerState(playerid) != PLAYER_STATE_ONFOOT)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Aby móc przeteleportowaæ siê do pojazdu, nie mo¿esz siedzieæ w innym., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Aby mÃ³c przeteleportowaÄ‡ siÄ™ do pojazdu, nie moÅ¼esz siedzieÄ‡ w innym., OK, )
 			return 1
 		)
 		virtual_world = GetVehicleVirtualWorld(vehid)
@@ -1524,7 +1524,7 @@ CMD:apojazd(playerid, params())
 		SetPlayerInterior(playerid, CarInfo(vehid)(cInteriorID))
 		PlayerCache(playerid)(pLastVeh) = vehid
 		
-		format(string, sizeof(string), Zosta³eœ przeteleportowany do pojazdu %s (SampID: %d, UID: %d)., CarInfo(vehid)(cName), vehid, CarInfo(vehid)(cUID))
+		format(string, sizeof(string), ZostaÅ‚eÅ› przeteleportowany do pojazdu %s (SampID: %d, UID: %d)., CarInfo(vehid)(cName), vehid, CarInfo(vehid)(cUID))
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, string, OK, )
 
 		ShowAdminLog(~r~(teleport) ~w~Administrator %s przeteleportowal sie do pojazdu %s (SampID: %d, UID: %d)., PlayerName(playerid), CarInfo(vehid)(cName), vehid, CarInfo(vehid)(cUID))
@@ -1541,7 +1541,7 @@ CMD:apojazd(playerid, params())
 		)
 		if(!CarInfo(vehid)(cSpawned))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
 			return 1
 		)
 		Float:PosX, Float:PosY, Float:PosZ,
@@ -1568,7 +1568,7 @@ CMD:apojazd(playerid, params())
 		)
    		if(CarInfo(vehid)(cUID) == 0)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
 			return 1
 		)
 		UpdateVehicleDamageStatus(vehid, 0, 0, 0, 0)
@@ -1580,7 +1580,7 @@ CMD:apojazd(playerid, params())
 	   	SaveVehicle(vehid, SAVE_VEH_COUNT)
 		SaveVehicle(vehid, SAVE_VEH_ACCESS)
 
-		format(string, sizeof(string), Pojazd %s (UID: %d) zosta³ ca³kowicie naprawiony., CarInfo(vehid)(cName), CarInfo(vehid)(cUID))
+		format(string, sizeof(string), Pojazd %s (UID: %d) zostaÅ‚ caÅ‚kowicie naprawiony., CarInfo(vehid)(cName), CarInfo(vehid)(cUID))
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, string, OK, )
 
 		ShowAdminLog(~r~(edit) ~w~Administrator %s naprawil calkowicie pojazd %s (SampID: %d, UID: %d)., PlayerName(playerid), CarInfo(vehid)(cName), vehid, CarInfo(vehid)(cUID))
@@ -1592,7 +1592,7 @@ CMD:apojazd(playerid, params())
 		Float:PosX, Float:PosY, Float:PosZ, radius
 		if(sscanf(varchar, d, radius))
 		(
-			hrp_Tip(playerid, /apojazd resrange (odleg³oœæ))
+			hrp_Tip(playerid, /apojazd resrange (odlegÅ‚oÅ›Ä‡))
 			return 1
 		)
 		
@@ -1609,7 +1609,7 @@ CMD:apojazd(playerid, params())
 				)
 			)
 		)
-		format(string, sizeof(string), Pojazdy w obrêbie %d metrów zosta³y przywrócone na miejsce spawnu., radius)
+		format(string, sizeof(string), Pojazdy w obrÄ™bie %d metrÃ³w zostaÅ‚y przywrÃ³cone na miejsce spawnu., radius)
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, string, OK, )
 
 		ShowAdminLog(~r~(edit) ~w~Administrator %s przywrocil pojazdy w obrebie %d metrow na miejsce spawnu., PlayerName(playerid), radius)
@@ -1626,7 +1626,7 @@ CMD:apojazd(playerid, params())
 		)
    		if(CarInfo(vehid)(cUID) == 0)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID pojazdu.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
 			return 1
 		)
 		
@@ -1658,7 +1658,7 @@ CMD:adrzwi(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	type(32), varchar(64), string(128)
@@ -1680,18 +1680,18 @@ CMD:adrzwi(playerid, params())
 		
 		if(!DoorData(doorid)(dUID))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID drzwi.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID drzwi.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
 			return 1
 		)
 		if(DoorData(doorid)(dOwnerType) != OWNER_GROUP)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Te drzwi nie sa przypisane pod typ grupy.\n, OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Te drzwi nie sa przypisane pod typ grupy.\n, OK, )
 			return 1
 		)
 		group_id_fix = GetGroupID(DoorData(doorid)(dOwner))
 		if(GroupData(group_id_fix)(gType) != GROUP_PAINTBALL)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Te drzwi nie sa przypisane na grupe PAINTBALL., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Te drzwi nie sa przypisane na grupe PAINTBALL., OK, )
 			return 1
 		)
 		if(!DoorData(doorid)(dPaintball))
@@ -1699,14 +1699,14 @@ CMD:adrzwi(playerid, params())
 			DoorData(doorid)(dPaintball) = true
 			SaveDoor(doorid, SAVE_DOOR_PAINTBALL)
 			
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Opcje drzwi » Paintball, Te drzwi zostaly ustalone jako hala do gry w paintball., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Opcje drzwi Â» Paintball, Te drzwi zostaly ustalone jako hala do gry w paintball., OK, )
 		)
 		else
 		(
 			DoorData(doorid)(dPaintball) = false
 			SaveDoor(doorid, SAVE_DOOR_PAINTBALL)
 			
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Opcje drzwi » Paintball, Te drzwi nie sa juz hala do gry w paintballa., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Opcje drzwi Â» Paintball, Te drzwi nie sa juz hala do gry w paintballa., OK, )
 		)
 	)
 	if(!strcmp(type, przejazd, true))
@@ -1720,7 +1720,7 @@ CMD:adrzwi(playerid, params())
 		
 		if(!DoorData(doorid)(dUID))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID drzwi.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID drzwi.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
 			return 1
 		)
 		
@@ -1729,14 +1729,14 @@ CMD:adrzwi(playerid, params())
 			DoorData(doorid)(dGarage) = true
 			SaveDoor(doorid, SAVE_DOOR_THINGS)
 			
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Opcje drzwi » Mozlioœæ przejazdu, Mo¿liwoœæ przejazdu samochodem przez drzwi zosta³a w³¹czona.\n\nOd tej pory bêdziesz móg³ wjechaæ dowolnym pojazdem do budynku.\nAby wjechaæ pojazdem do budynku skorzystaj z komendy /przejazd., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Opcje drzwi Â» MozlioÅ›Ä‡ przejazdu, MoÅ¼liwoÅ›Ä‡ przejazdu samochodem przez drzwi zostaÅ‚a wÅ‚Ä…czona.\n\nOd tej pory bÄ™dziesz mÃ³gÅ‚ wjechaÄ‡ dowolnym pojazdem do budynku.\nAby wjechaÄ‡ pojazdem do budynku skorzystaj z komendy /przejazd., OK, )
 		)
 		else
 		(
 			DoorData(doorid)(dGarage) = false
 			SaveDoor(doorid, SAVE_DOOR_THINGS)
 			
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Opcje drzwi » Mozlioœæ przejazdu, Mo¿liwoœæ przejazdu samochodem przez drzwi zosta³a wy³¹czona., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Opcje drzwi Â» MozlioÅ›Ä‡ przejazdu, MoÅ¼liwoÅ›Ä‡ przejazdu samochodem przez drzwi zostaÅ‚a wyÅ‚Ä…czona., OK, )
 		)
 	)
 	if(!strcmp(type, sprzedaz, true))
@@ -1750,13 +1750,13 @@ CMD:adrzwi(playerid, params())
 		
 		if(!DoorData(doorid)(dUID))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID drzwi.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID drzwi.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
 			return 1
 		)
 		
 		if(cost (= 0)
 		(
-			GuiMsg(playerid, Cena nie mo¿e byæ mniejsza ani równa zeru., 0)
+			GuiMsg(playerid, Cena nie moÅ¼e byÄ‡ mniejsza ani rÃ³wna zeru., 0)
 			return 1
 		)
 		
@@ -1767,10 +1767,10 @@ CMD:adrzwi(playerid, params())
 		SaveDoor(doorid, SAVE_DOOR_THINGS)
 		
 		msg(256)
-		format(msg, sizeof(msg), Ustali³eœ cenê drzwi %s na $%d!, DoorData(doorid)(dName), DoorData(doorid)(dCost))
+		format(msg, sizeof(msg), UstaliÅ‚eÅ› cenÄ™ drzwi %s na $%d!, DoorData(doorid)(dName), DoorData(doorid)(dCost))
 		GuiMsg(playerid, msg, 0)
 		
-		// Dodaæ do defaults
+		// DodaÄ‡ do defaults
 		format(msg, sizeof(msg), SELECT * FROM hrp_door_defaults WHERE default_dooruid = %d, DoorData(doorid)(dUID))
 		mysql_query(msg)
 		mysql_store_result()
@@ -1796,13 +1796,13 @@ CMD:adrzwi(playerid, params())
 		
 		if(!DoorData(doorid)(dUID))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID drzwi.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID drzwi.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
 			return 1
 		)
 		
 		if(limit ( 0)
 		(
-			GuiMsg(playerid,Wprowadzono nieprawid³ow¹ liczbê.,1)
+			GuiMsg(playerid,Wprowadzono nieprawidÅ‚owÄ… liczbÄ™.,1)
 			return 1
 		)
 		
@@ -1810,7 +1810,7 @@ CMD:adrzwi(playerid, params())
 		SaveDoor(doorid, SAVE_DOOR_LIMITS)
 		
 		msg(256)
-		format(msg,sizeof(msg),Zmieni³eœ limit obiektów dla drzwi %s (UID: %d)\nNowy limit wynosi: %d obiektów.,DoorData(doorid)(dName),DoorData(doorid)(dUID),limit)
+		format(msg,sizeof(msg),ZmieniÅ‚eÅ› limit obiektÃ³w dla drzwi %s (UID: %d)\nNowy limit wynosi: %d obiektÃ³w.,DoorData(doorid)(dName),DoorData(doorid)(dUID),limit)
 		GuiMsg(playerid,msg,0)
 		
 		ShowAdminLog(~r~(create) ~w~Administrator %s ustawil limit obiektow drzwi %s (SampID: %d, UID: %d) Limit: %d., PlayerName(playerid),DoorData(doorid)(dName),doorid,DoorData(doorid)(dUID),limit)
@@ -1826,7 +1826,7 @@ CMD:adrzwi(playerid, params())
 		
 		if(!DoorData(doorid)(dUID))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID drzwi.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID drzwi.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
 			return 1
 		)
 		
@@ -1834,14 +1834,14 @@ CMD:adrzwi(playerid, params())
 		if(DoorData(doorid)(dBlocked))
 		(
 			DoorData(doorid)(dBlocked) = false
-			format(doorMsg,sizeof(doorMsg),Odblokowa³eœ mo¿liwoœæ tworzenia obiektów dla drzwi %s (UID:%i),DoorData(doorid)(dName),DoorData(doorid)(dUID))
+			format(doorMsg,sizeof(doorMsg),OdblokowaÅ‚eÅ› moÅ¼liwoÅ›Ä‡ tworzenia obiektÃ³w dla drzwi %s (UID:%i),DoorData(doorid)(dName),DoorData(doorid)(dUID))
 			
 			ShowAdminLog(~r~(create) ~w~Administrator %s odblokowal drzwi %s (SampID: %d, UID: %d)., PlayerName(playerid),DoorData(doorid)(dName),doorid,DoorData(doorid)(dUID))
 		)
 		else
 		(
 			DoorData(doorid)(dBlocked) = true
-			format(doorMsg,sizeof(doorMsg),Zablokowa³eœ mo¿liwoœæ tworzenia obiektów dla drzwi %s (UID:%i),DoorData(doorid)(dName),DoorData(doorid)(dUID))
+			format(doorMsg,sizeof(doorMsg),ZablokowaÅ‚eÅ› moÅ¼liwoÅ›Ä‡ tworzenia obiektÃ³w dla drzwi %s (UID:%i),DoorData(doorid)(dName),DoorData(doorid)(dUID))
 			
 			ShowAdminLog(~r~(create) ~w~Administrator %s zablokowal drzwi %s (SampID: %d, UID: %d)., PlayerName(playerid),DoorData(doorid)(dName),doorid,DoorData(doorid)(dUID))
 		)
@@ -1859,7 +1859,7 @@ CMD:adrzwi(playerid, params())
 		)
 		if(GetPlayerState(playerid) != PLAYER_STATE_ONFOOT)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Aby stworzyæ drzwi, musisz byæ w pozycji stoj¹cej., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Aby stworzyÄ‡ drzwi, musisz byÄ‡ w pozycji stojÄ…cej., OK, )
 			return 1
 		)
    		Float:EnterX, Float:EnterY, Float:EnterZ, Float:EnterA
@@ -1871,7 +1871,7 @@ CMD:adrzwi(playerid, params())
 		
 		gameid = CreateDoor(EnterX, EnterY, EnterZ, EnterA, interior, virtual_world, door_name)
 		
-		format(string, sizeof(string), Drzwi zosta³y stworzone pomyœlnie %s (SampID: %d)., door_name, gameid)
+		format(string, sizeof(string), Drzwi zostaÅ‚y stworzone pomyÅ›lnie %s (SampID: %d)., door_name, gameid)
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, string, OK, )
 		
 		// Ustawianie automatycznie exitVW
@@ -1891,7 +1891,7 @@ CMD:adrzwi(playerid, params())
 		)
 		if(!DoorData(doorid)(dUID))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID drzwi.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID drzwi.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
 			return 1
 		)
 		GetPlayerPos(playerid, DoorData(doorid)(dExitX), DoorData(doorid)(dExitY), DoorData(doorid)(dExitZ))
@@ -1900,7 +1900,7 @@ CMD:adrzwi(playerid, params())
 		DoorData(doorid)(dExitInt) = GetPlayerInterior(playerid)
 		SaveDoor(doorid, SAVE_DOOR_EXIT)
 		
-		format(string, sizeof(string), Pozycja wyjœcia dla drzwi %s (SampID: %d, UID: %d) zosta³a ustalona., DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID))
+		format(string, sizeof(string), Pozycja wyjÅ›cia dla drzwi %s (SampID: %d, UID: %d) zostaÅ‚a ustalona., DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID))
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, string, OK, )
 
 		ShowAdminLog(~r~(edit) ~w~Administrator %s zmienil pozycje wyjscia z drzwi %s (SampID: %d, UID: %d)., PlayerName(playerid), DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID))
@@ -1916,7 +1916,7 @@ CMD:adrzwi(playerid, params())
 		)
 		if(!DoorData(doorid)(dUID))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID drzwi.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID drzwi.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
 			return 1
 		)
 		GetPlayerPos(playerid, DoorData(doorid)(dEnterX), DoorData(doorid)(dEnterY), DoorData(doorid)(dEnterZ))
@@ -1928,7 +1928,7 @@ CMD:adrzwi(playerid, params())
 		DestroyPickup(doorid)
 		CreatePickup(DoorData(doorid)(dPickupID), 2, DoorData(doorid)(dEnterX), DoorData(doorid)(dEnterY), DoorData(doorid)(dEnterZ), DoorData(doorid)(dEnterVW))
 
-		format(string, sizeof(string), Pozycja wejœcia dla drzwi %s (SampID: %d, UID: %d) zosta³a ustalona., DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID))
+		format(string, sizeof(string), Pozycja wejÅ›cia dla drzwi %s (SampID: %d, UID: %d) zostaÅ‚a ustalona., DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID))
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, string, OK, )
 
 		ShowAdminLog(~r~(edit) ~w~Administrator %s zmienil pozycje wejscia do drzwi %s (SampID: %d, UID: %d)., PlayerName(playerid), DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID))
@@ -1944,13 +1944,13 @@ CMD:adrzwi(playerid, params())
 		)
 		if(!DoorData(doorid)(dUID))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID drzwi.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID drzwi.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
 			return 1
 		)
 		DoorData(doorid)(dExitVW) = exitvw
 		SaveDoor(doorid, SAVE_DOOR_EXIT)
 		
-		format(string, sizeof(string), VirtualWorld wyjœcia dla drzwi %s (SampID: %d, UID: %d) zosta³ ustalony (VW: %d)., DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID), exitvw)
+		format(string, sizeof(string), VirtualWorld wyjÅ›cia dla drzwi %s (SampID: %d, UID: %d) zostaÅ‚ ustalony (VW: %d)., DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID), exitvw)
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, string, OK, )
 
 		ShowAdminLog(~r~(edit) ~w~Administrator %s zmienil virtual world wyjsciowy w drzwiach %s (SampID: %d, UID: %d)., PlayerName(playerid), DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID))
@@ -1966,13 +1966,13 @@ CMD:adrzwi(playerid, params())
 		)
 		if(!DoorData(doorid)(dUID))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID drzwi.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID drzwi.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
 			return 1
 		)
 		DoorData(doorid)(dEnterVW) = entervw
 		SaveDoor(doorid, SAVE_DOOR_ENTER)
 
-		format(string, sizeof(string), VirtualWorld wyjœcia dla drzwi %s (SampID: %d, UID: %d) zosta³ ustalony (VW: %d)., DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID), entervw)
+		format(string, sizeof(string), VirtualWorld wyjÅ›cia dla drzwi %s (SampID: %d, UID: %d) zostaÅ‚ ustalony (VW: %d)., DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID), entervw)
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, string, OK, )
 
 		ShowAdminLog(~r~(edit) ~w~Administrator %s zmienil virtual world wejsciowy w drzwiach %s (SampID: %d, UID: %d)., PlayerName(playerid), DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID))
@@ -1988,13 +1988,13 @@ CMD:adrzwi(playerid, params())
 		)
 		if(!DoorData(doorid)(dUID))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID drzwi.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID drzwi.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
 			return 1
 		)
 		ChangePickup(playerid) = doorid
 		
-		format(string, sizeof(string), %s (SampID: %d, UID: %d) » Pickup, DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID))
-		ShowPlayerDialog(playerid, D_CHANGE_PICKUP, DIALOG_STYLE_LIST, string, 1. Informacja\n2. Banknot\n3. Zielony domek\n4. Niebieski domek\n5. Serduszko\n6. Gwiazdka\n7. Dyskietka\n8. Koszulka\n9. Bia³a strza³ka\n10. Tabliczka FOR SALE\n11. Czerwony domek\n12. Pomarañczowy domek\n13. ¯ó³ty domek, Wybierz, Anuluj)
+		format(string, sizeof(string), %s (SampID: %d, UID: %d) Â» Pickup, DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID))
+		ShowPlayerDialog(playerid, D_CHANGE_PICKUP, DIALOG_STYLE_LIST, string, 1. Informacja\n2. Banknot\n3. Zielony domek\n4. Niebieski domek\n5. Serduszko\n6. Gwiazdka\n7. Dyskietka\n8. Koszulka\n9. BiaÅ‚a strzaÅ‚ka\n10. Tabliczka FOR SALE\n11. Czerwony domek\n12. PomaraÅ„czowy domek\n13. Å»Ã³Å‚ty domek, Wybierz, Anuluj)
 		return 1
 	)
 	if(!strcmp(type, usun, true))
@@ -2007,14 +2007,14 @@ CMD:adrzwi(playerid, params())
 		)
 		if(!DoorData(doorid)(dUID))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID drzwi.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID drzwi.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
 			return 1
 		)
 		ShowAdminLog(~r~(edit) ~w~Administrator %s usunal drzwi %s (SampID: %d, UID: %d) z bazy., PlayerName(playerid), DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID))
 		
 		DeleteDoor(doorid)
 		
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, Drzwi zosta³y pomyœlnie usuniête z bazy danych., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, Drzwi zostaÅ‚y pomyÅ›lnie usuniÄ™te z bazy danych., OK, )
 		return 1
 	)
 	if(!strcmp(type, nazwa, true))
@@ -2027,10 +2027,10 @@ CMD:adrzwi(playerid, params())
 		)
 		if(!DoorData(doorid)(dUID))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID drzwi.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID drzwi.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
 			return 1
 		)
-		format(string, sizeof(string), Nazwa dla drzwi %s (SampID: %d, UID: %d) zosta³a zmieniona pomyœlnie.\nNowa nazwa: %s., DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID), door_name)
+		format(string, sizeof(string), Nazwa dla drzwi %s (SampID: %d, UID: %d) zostaÅ‚a zmieniona pomyÅ›lnie.\nNowa nazwa: %s., DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID), door_name)
 		ShowAdminLog(~r~(edit) ~w~Administrator %s zmienil nazwe drzwi %s (SampID: %d, UID: %d). Nowa nazwa: %s., PlayerName(playerid), DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID), door_name)
 
 		strmid(DoorData(doorid)(dName), door_name, 0, strlen(door_name), 32)
@@ -2050,7 +2050,7 @@ CMD:adrzwi(playerid, params())
 		)
 		if(!DoorData(doorid)(dUID))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID drzwi.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID drzwi.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
 			return 1
 		)
 		if(!strcmp(owner_type, gracz, true))
@@ -2064,12 +2064,12 @@ CMD:adrzwi(playerid, params())
 			)
 			if(giveplayer_id == INVALID_PLAYER_ID)
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Podano b³êdne ID gracza., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Podano bÅ‚Ä™dne ID gracza., OK, )
 				return 1
 			)
 			if(!Logged(giveplayer_id))
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Gracz o podanym ID nie jest zalogowany., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Gracz o podanym ID nie jest zalogowany., OK, )
 				return 1
 			)
 
@@ -2097,7 +2097,7 @@ CMD:adrzwi(playerid, params())
 			
 			SaveDoor(doorid, SAVE_DOOR_THINGS)
 			
-			format(string, sizeof(string), Drzwi %s (SampID: %d, UID: %d) zosta³y przypisane pomyœlnie.\n\nTyp w³aœciciela: gracz\nW³aœciciel: %s (ID: %d, UID: %d), DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID), PlayerName(giveplayer_id), giveplayer_id, PlayerCache(giveplayer_id)(pUID))
+			format(string, sizeof(string), Drzwi %s (SampID: %d, UID: %d) zostaÅ‚y przypisane pomyÅ›lnie.\n\nTyp wÅ‚aÅ›ciciela: gracz\nWÅ‚aÅ›ciciel: %s (ID: %d, UID: %d), DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID), PlayerName(giveplayer_id), giveplayer_id, PlayerCache(giveplayer_id)(pUID))
 			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, string, OK, )
 
 			ShowAdminLog(~r~(edit) ~w~Administrator %s przypisal drzwi %s (SampID: %d, UID: %d) pod gracza., PlayerName(playerid), DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID))
@@ -2115,7 +2115,7 @@ CMD:adrzwi(playerid, params())
 			group_id_fix = GetGroupID(group_uid)
   			if(group_id_fix == INVALID_GROUP_ID)
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne UID grupy., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne UID grupy., OK, )
 				return 1
 			)
 			
@@ -2141,7 +2141,7 @@ CMD:adrzwi(playerid, params())
 			
 			SaveDoor(doorid, SAVE_DOOR_THINGS)
 			
-   			format(string, sizeof(string), Drzwi %s (SampID: %d, UID: %d) zosta³y przypisane pomyœlnie.\n\nTyp w³aœciciela: grupa\nW³aœciciel: %s (UID: %d), DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID), GroupData(group_id_fix)(gName), GroupData(group_id_fix)(gUID))
+   			format(string, sizeof(string), Drzwi %s (SampID: %d, UID: %d) zostaÅ‚y przypisane pomyÅ›lnie.\n\nTyp wÅ‚aÅ›ciciela: grupa\nWÅ‚aÅ›ciciel: %s (UID: %d), DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID), GroupData(group_id_fix)(gName), GroupData(group_id_fix)(gUID))
 			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, string, OK, )
 
 			ShowAdminLog(~r~(edit) ~w~Administrator %s przypisal drzwi %s (SampID: %d, UID: %d) pod grupa., PlayerName(playerid), DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID))
@@ -2179,7 +2179,7 @@ CMD:adrzwi(playerid, params())
 
 			SaveDoor(doorid, SAVE_DOOR_THINGS)
 
-   			format(string, sizeof(string), Drzwi %s (SampID: %d, UID: %d) zosta³y przypisane pomyœlnie.\n\nTyp w³aœciciela: gracz\nW³aœciciel: UID %d, DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID), p_uid)
+   			format(string, sizeof(string), Drzwi %s (SampID: %d, UID: %d) zostaÅ‚y przypisane pomyÅ›lnie.\n\nTyp wÅ‚aÅ›ciciela: gracz\nWÅ‚aÅ›ciciel: UID %d, DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID), p_uid)
 			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, string, OK, )
 
 			ShowAdminLog(~r~(edit) ~w~Administrator %s przypisal drzwi %s (SampID: %d, UID: %d) pod gracza., PlayerName(playerid), DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID))
@@ -2196,7 +2196,7 @@ CMD:adrzwi(playerid, params())
 				if((IsPlayerInRangeOfPoint(playerid, 2.0, DoorData(d)(dEnterX), DoorData(d)(dEnterY), DoorData(d)(dEnterZ)) && GetPlayerVirtualWorld(playerid) == DoorData(d)(dEnterVW)) || (IsPlayerInRangeOfPoint(playerid, 2.0, DoorData(d)(dExitX), DoorData(d)(dExitY), DoorData(d)(dExitZ)) && GetPlayerVirtualWorld(playerid) == DoorData(d)(dExitVW)))
 				(
 		   			DoorData(d)(dLocked) = 0
-					format(string, sizeof(string), Drzwi %s (SampID: %d, UID: %d) zosta³y otwarte., DoorData(d)(dName), d, DoorData(d)(dUID))
+					format(string, sizeof(string), Drzwi %s (SampID: %d, UID: %d) zostaÅ‚y otwarte., DoorData(d)(dName), d, DoorData(d)(dUID))
 
 					SaveDoor(d, SAVE_DOOR_LOCK)
 					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, string, OK, )
@@ -2216,19 +2216,19 @@ CMD:adrzwi(playerid, params())
 		)
   		if(!DoorData(doorid)(dUID))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID drzwi.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID drzwi.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
 			return 1
 		)
 		
 		if(DoorData(doorid)(dLocked))
 		(
 			DoorData(doorid)(dLocked) = 0
-			format(string, sizeof(string), Drzwi %s (SampID: %d, UID: %d) zosta³y otwarte., DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID))
+			format(string, sizeof(string), Drzwi %s (SampID: %d, UID: %d) zostaÅ‚y otwarte., DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID))
 		)
 		else
 		(
 			DoorData(doorid)(dLocked) = 1
-			format(string, sizeof(string), Drzwi %s (SampID: %d, UID: %d) zosta³y zamkniête., DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID))
+			format(string, sizeof(string), Drzwi %s (SampID: %d, UID: %d) zostaÅ‚y zamkniÄ™te., DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID))
 		)
 		SaveDoor(doorid, SAVE_DOOR_LOCK)
 		
@@ -2245,12 +2245,12 @@ CMD:adrzwi(playerid, params())
 			(
 				format(strx, sizeof(strx), %s\n%d\t%s, strx, int, Interiors(int)(INTERIOR_NAME))
 			)
-			ShowPlayerDialog(playerid, D_SELECT_INTERIOR, DIALOG_STYLE_LIST, Dostêpne interiory, strx, Wybierz, Zamknij)
+			ShowPlayerDialog(playerid, D_SELECT_INTERIOR, DIALOG_STYLE_LIST, DostÄ™pne interiory, strx, Wybierz, Zamknij)
 			return 1
 		)
 		if(interiorid ) 145 || interiorid ( 0)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, B³êdne ID interioru, nie mo¿e wynieœæ wiêcej ni¿ 145 ani mniej ni¿ 0., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, BÅ‚Ä™dne ID interioru, nie moÅ¼e wynieÅ›Ä‡ wiÄ™cej niÅ¼ 145 ani mniej niÅ¼ 0., OK, )
 			return 1
 		)
 	 	hrp_SetPlayerPos(playerid, Interiors(interiorid)(INTERIOR_X), Interiors(interiorid)(INTERIOR_Y), Interiors(interiorid)(INTERIOR_Z))
@@ -2258,7 +2258,7 @@ CMD:adrzwi(playerid, params())
 	 	
 	 	SetPlayerFacingAngle(playerid, Interiors(interiorid)(INTERIOR_A))
 	 	
-	 	format(string, sizeof(string), Zosta³eœ pomyœlnie przeteleportowany do interioru %s (InteriorID: %d)., Interiors(interiorid)(INTERIOR_NAME), Interiors(interiorid)(INTERIOR_ID))
+	 	format(string, sizeof(string), ZostaÅ‚eÅ› pomyÅ›lnie przeteleportowany do interioru %s (InteriorID: %d)., Interiors(interiorid)(INTERIOR_NAME), Interiors(interiorid)(INTERIOR_ID))
 	  	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, string, OK, )
 		return 1
 	)
@@ -2272,7 +2272,7 @@ CMD:adrzwi(playerid, params())
 		)
 		if(!DoorData(doorid)(dUID))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID drzwi.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID drzwi.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
 			return 1
 		)
 		hrp_SetPlayerPos(playerid, DoorData(doorid)(dEnterX), DoorData(doorid)(dEnterY), DoorData(doorid)(dEnterZ))
@@ -2280,7 +2280,7 @@ CMD:adrzwi(playerid, params())
 		
 		SetPlayerVirtualWorld(playerid, DoorData(doorid)(dEnterVW))
 		
-		format(string, sizeof(string), Zosta³eœ przeteleportowany do drzwi %s (SampID: %d, UID: %d)., DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID))
+		format(string, sizeof(string), ZostaÅ‚eÅ› przeteleportowany do drzwi %s (SampID: %d, UID: %d)., DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID))
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, string, OK, )
 
 		ShowAdminLog(~r~(teleport) ~w~Administrator %s przeteleportowal sie do drzwi %s (SampID: %d, UID: %d)., PlayerName(playerid), DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID))
@@ -2302,7 +2302,7 @@ CMD:adrzwi(playerid, params())
 		)
 		else
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie znaleziono ¿adnych drzwi., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie znaleziono Å¼adnych drzwi., OK, )
 		)
 		return 1
 	)
@@ -2317,7 +2317,7 @@ CMD:adrzwi(playerid, params())
 		doorid = GetDoorID(door_uid)
 		if(!DoorData(doorid)(dUID))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne UID drzwi., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne UID drzwi., OK, )
 			return 1
 		)
 		format(string, sizeof(string), Znaleziono drzwi %s (SampID: %d, UID: %d)., DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID))
@@ -2334,7 +2334,7 @@ CMD:adrzwi(playerid, params())
 		)
 		if(!DoorData(doorid)(dUID))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID drzwi.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID drzwi.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
 			return 1
 		)
 		ShowPlayerDoorInfo(playerid, doorid)
@@ -2350,7 +2350,7 @@ CMD:adrzwi(playerid, params())
 		)
 		if(!DoorData(doorid)(dUID))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID drzwi.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID drzwi.\nPodaj identyfikator ten z gry, nie z bazy danych., OK, )
 			return 1
 		)
 		DoorData(doorid)(dRobbed) = false
@@ -2366,7 +2366,7 @@ CMD:aprzedmiot(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	type(32), varchar(64), string(128)
@@ -2385,44 +2385,44 @@ CMD:aprzedmiot(playerid, params())
 		)
  		if(giveplayer_id == playerid)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie mo¿esz zabraæ przedmiotu sobie., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie moÅ¼esz zabraÄ‡ przedmiotu sobie., OK, )
 			return 1
 		)
 		if(giveplayer_id == INVALID_PLAYER_ID)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Podano b³êdne ID gracza., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Podano bÅ‚Ä™dne ID gracza., OK, )
 			return 1
 		)
 		if(!Logged(giveplayer_id))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Gracz o podanym ID nie jest zalogowany., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Gracz o podanym ID nie jest zalogowany., OK, )
 			return 1
 		)
 
 		itemid = GetItemID(item_uid)
 		if(!ItemInfo(itemid)(iUID))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono nieprawid³owe UID przedmiotu., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono nieprawidÅ‚owe UID przedmiotu., OK, )
 			return 1
 		)
 		if(ItemInfo(itemid)(iPlace) != PLACE_PLAYER || ItemInfo(itemid)(iOwner) != PlayerCache(giveplayer_id)(pUID))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Ten przedmiot nie nale¿y do tego gracza., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Ten przedmiot nie naleÅ¼y do tego gracza., OK, )
 			return 1
 		)
 		if(ItemInfo(itemid)(iUsed))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie mo¿esz zabraæ tego przedmiotu, poniewa¿ jest on w u¿ytku., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie moÅ¼esz zabraÄ‡ tego przedmiotu, poniewaÅ¼ jest on w uÅ¼ytku., OK, )
 			return 1
 		)
 
 		ItemInfo(itemid)(iOwner) = PlayerCache(playerid)(pUID)
 		mysql_query_format(UPDATE hrp_items SET item_owner = %d WHERE item_uid = %d LIMIT 1, PlayerCache(playerid)(pUID), ItemInfo(itemid)(iUID))
 
-		format(string, sizeof(string), Zabra³eœ przedmiot %s (SampID: %d, UID: %d) graczu %s.\nPrzedmiot pojawi³ siê w Twoim ekwipunku., ItemInfo(itemid)(iName), itemid, ItemInfo(itemid)(iUID), PlayerName(giveplayer_id))
+		format(string, sizeof(string), ZabraÅ‚eÅ› przedmiot %s (SampID: %d, UID: %d) graczu %s.\nPrzedmiot pojawiÅ‚ siÄ™ w Twoim ekwipunku., ItemInfo(itemid)(iName), itemid, ItemInfo(itemid)(iUID), PlayerName(giveplayer_id))
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 
-		format(string, sizeof(string), Admin %s zabra³ Ci przedmiot %s (SampID: %d, UID: %d)., PlayerName(playerid), ItemInfo(itemid)(iName), itemid, ItemInfo(itemid)(iUID))
+		format(string, sizeof(string), Admin %s zabraÅ‚ Ci przedmiot %s (SampID: %d, UID: %d)., PlayerName(playerid), ItemInfo(itemid)(iName), itemid, ItemInfo(itemid)(iUID))
 		ShowPlayerDialog(giveplayer_id, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 		return 1
 	)
@@ -2436,24 +2436,24 @@ CMD:aprzedmiot(playerid, params())
 		)
 		if(item_type == ITEM_INHIBITOR || item_type == ITEM_WINDGUN)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Ten typ przedmiotu nie jest ju¿ u¿ywany., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Ten typ przedmiotu nie jest juÅ¼ uÅ¼ywany., OK, )
 			return 1
 		)
 		if(item_type == ITEM_CHECK)
 		(
 			info(64)
 			format(info, sizeof(info), %s what are you doing? %s! Stahp!, PlayerName(playerid), PlayerName(playerid))
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, info, OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, info, OK, )
 			return 1
 		)
 		if(item_type ( 0 || item_type ) ITEM_COUNT)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono nieprawid³owy typ przedmiotu., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono nieprawidÅ‚owy typ przedmiotu., OK, )
 			return 1
 		)
 		item_uid = CreatePlayerItem(playerid, item_name, item_type, item_value1, item_value2)
 		
-		format(string, sizeof(string), Przedmiot %s (UID: %d) zosta³ stworzony pomyœlnie.\nTyp przedmiotu: %s\n\nPrzedmiot znajdziesz w swoim ekwipunku., item_name, item_uid, ItemTypeInfo(item_type)(iTypeName))
+		format(string, sizeof(string), Przedmiot %s (UID: %d) zostaÅ‚ stworzony pomyÅ›lnie.\nTyp przedmiotu: %s\n\nPrzedmiot znajdziesz w swoim ekwipunku., item_name, item_uid, ItemTypeInfo(item_type)(iTypeName))
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, string, OK, )
 
 		hrp_AdminActionLog(%s (UID: %d) stworzyl przedmiot %s (UID: %d, Value1: %d, Value2: %d)., PlayerName(playerid), PlayerCache(playerid)(pUID), item_name, item_uid, item_value1, item_value2)
@@ -2469,12 +2469,12 @@ CMD:aprzedmiot(playerid, params())
 		)
 		if(item_type ( 0 || item_type ) ITEM_COUNT)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono nieprawid³owy typ przedmiotu., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono nieprawidÅ‚owy typ przedmiotu., OK, )
 			return 1
 		)
 		item_uid = CreatePlayerItem(playerid, item_name, item_type, item_value1, item_value2)
 		
-		format(string, sizeof(string), Przedmiot %s (UID: %d) zosta³ stworzony pomyœlnie.\nTyp przedmiotu: %s\n\nPrzedmiot znajdziesz w swoim ekwipunku., item_name, item_uid, ItemTypeInfo(item_type)(iTypeName))
+		format(string, sizeof(string), Przedmiot %s (UID: %d) zostaÅ‚ stworzony pomyÅ›lnie.\nTyp przedmiotu: %s\n\nPrzedmiot znajdziesz w swoim ekwipunku., item_name, item_uid, ItemTypeInfo(item_type)(iTypeName))
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, string, OK, )
 
 		hrp_AdminActionLog(%s (UID: %d) stworzyl przedmiot %s (UID: %d, Value1: %d, Value2: %d)., PlayerName(playerid), PlayerCache(playerid)(pUID), item_name, item_uid, item_value1, item_value2)
@@ -2494,13 +2494,13 @@ CMD:aprzedmiot(playerid, params())
 		itemid = GetItemID(item_uid)
 		if(!ItemInfo(itemid)(iUID))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne UID przedmiotu.\nPamiêtaj, ¿e przedmiot musi byæ w posiadaniu gracza., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne UID przedmiotu.\nPamiÄ™taj, Å¼e przedmiot musi byÄ‡ w posiadaniu gracza., OK, )
 			return 1
 		)
 		
 		if(item_type == ITEM_INHIBITOR || item_type == ITEM_WINDGUN)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Ten typ przedmiotu nie jest ju¿ u¿ywany., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Ten typ przedmiotu nie jest juÅ¼ uÅ¼ywany., OK, )
 			return 1
 		)
 
@@ -2519,7 +2519,7 @@ CMD:aprzedmiot(playerid, params())
 		ItemInfo(itemid)(iWeight) = weight
 		mysql_query_format(UPDATE hrp_items SET item_type = %d, item_weight = %f WHERE item_uid = %d LIMIT 1, ItemInfo(itemid)(iType), ItemInfo(itemid)(iWeight), ItemInfo(itemid)(iUID))
 		
-		format(string, sizeof(string), Typ przedmiotu %s (SampID: %d, UID: %d) zosta³ pomyœlnie zmieniony.\nNowy typ przedmiotu: %s., ItemInfo(itemid)(iName), itemid, ItemInfo(itemid)(iUID), ItemTypeInfo(ItemInfo(itemid)(iType))(iTypeName))
+		format(string, sizeof(string), Typ przedmiotu %s (SampID: %d, UID: %d) zostaÅ‚ pomyÅ›lnie zmieniony.\nNowy typ przedmiotu: %s., ItemInfo(itemid)(iName), itemid, ItemInfo(itemid)(iUID), ItemTypeInfo(ItemInfo(itemid)(iType))(iTypeName))
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, string, OK, )
 
 		hrp_AdminActionLog(%s (UID: %d) zmienil typ przedmiotu %s (UID: %d). Nowy typ: %s, PlayerName(playerid), PlayerCache(playerid)(pUID), ItemInfo(itemid)(iName), ItemInfo(itemid)(iUID), ItemTypeInfo(ItemInfo(itemid)(iType))(iTypeName))
@@ -2536,10 +2536,10 @@ CMD:aprzedmiot(playerid, params())
 		itemid = GetItemID(item_uid)
 		if(!ItemInfo(itemid)(iUID))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne UID przedmiotu.\nPamiêtaj, ¿e przedmiot musi byæ w posiadaniu gracza., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne UID przedmiotu.\nPamiÄ™taj, Å¼e przedmiot musi byÄ‡ w posiadaniu gracza., OK, )
 			return 1
 		)
-		format(string, sizeof(string), Nazwa przedmiotu %s (SampID: %d, UID: %d) zosta³a pomyœlnie zmieniona.\nNowa nazwa przedmiotu: %s., ItemInfo(itemid)(iName), itemid, ItemInfo(itemid)(iUID), item_name)
+		format(string, sizeof(string), Nazwa przedmiotu %s (SampID: %d, UID: %d) zostaÅ‚a pomyÅ›lnie zmieniona.\nNowa nazwa przedmiotu: %s., ItemInfo(itemid)(iName), itemid, ItemInfo(itemid)(iUID), item_name)
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, string, OK, )
 
 		hrp_AdminActionLog(%s (UID: %d) zmienil nazwe przedmiotu %s (UID: %d). Nowa nazwa: %s., PlayerName(playerid), PlayerCache(playerid)(pUID), ItemInfo(itemid)(iName), ItemInfo(itemid)(iUID), item_name)
@@ -2559,13 +2559,13 @@ CMD:aprzedmiot(playerid, params())
 		itemid = GetItemID(item_uid)
 		if(!ItemInfo(itemid)(iUID))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne UID przedmiotu.\nPamiêtaj, ¿e przedmiot musi byæ w posiadaniu gracza., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne UID przedmiotu.\nPamiÄ™taj, Å¼e przedmiot musi byÄ‡ w posiadaniu gracza., OK, )
 			return 1
 		)
 		ItemInfo(itemid)(iValue1) = item_value1
 		mysql_query_format(UPDATE hrp_items SET item_value1 = %d WHERE item_uid = %d LIMIT 1, ItemInfo(itemid)(iValue1), ItemInfo(itemid)(iUID))
 
-		format(string, sizeof(string), Wartoœæ nr. 1 przedmiotu %s (SampID: %d, UID: %d) zosta³a pomyœlnie zmieniona.\nNowa wartoœæ nr. 1 przedmiotu: %d., ItemInfo(itemid)(iName), itemid, ItemInfo(itemid)(iUID), ItemInfo(itemid)(iValue1))
+		format(string, sizeof(string), WartoÅ›Ä‡ nr. 1 przedmiotu %s (SampID: %d, UID: %d) zostaÅ‚a pomyÅ›lnie zmieniona.\nNowa wartoÅ›Ä‡ nr. 1 przedmiotu: %d., ItemInfo(itemid)(iName), itemid, ItemInfo(itemid)(iUID), ItemInfo(itemid)(iValue1))
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, string, OK, )
 
 		hrp_AdminActionLog(%s (UID: %d) zmienil wartosc 1 przedmiotu %s (UID: %d). Nowa wartosc: %d., PlayerName(playerid), PlayerCache(playerid)(pUID), ItemInfo(itemid)(iName), ItemInfo(itemid)(iUID), ItemInfo(itemid)(iValue1))
@@ -2582,13 +2582,13 @@ CMD:aprzedmiot(playerid, params())
 		itemid = GetItemID(item_uid)
 		if(!ItemInfo(itemid)(iUID))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne UID przedmiotu.\nPamiêtaj, ¿e przedmiot musi byæ w posiadaniu gracza., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne UID przedmiotu.\nPamiÄ™taj, Å¼e przedmiot musi byÄ‡ w posiadaniu gracza., OK, )
 			return 1
 		)
 		ItemInfo(itemid)(iValue2) = item_value2
 		mysql_query_format(UPDATE hrp_items SET item_value2 = %d WHERE item_uid = %d LIMIT 1, ItemInfo(itemid)(iValue2), ItemInfo(itemid)(iUID))
 
-		format(string, sizeof(string), Wartoœæ nr. 2 przedmiotu %s (SampID: %d, UID: %d) zosta³a pomyœlnie zmieniona.\nNowa wartoœæ nr. 2 przedmiotu: %d., ItemInfo(itemid)(iName), itemid, ItemInfo(itemid)(iUID), ItemInfo(itemid)(iValue2))
+		format(string, sizeof(string), WartoÅ›Ä‡ nr. 2 przedmiotu %s (SampID: %d, UID: %d) zostaÅ‚a pomyÅ›lnie zmieniona.\nNowa wartoÅ›Ä‡ nr. 2 przedmiotu: %d., ItemInfo(itemid)(iName), itemid, ItemInfo(itemid)(iUID), ItemInfo(itemid)(iValue2))
   		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, string, OK, )
 
 		hrp_AdminActionLog(%s (UID: %d) zmienil wartosc 2 przedmiotu %s (UID: %d). Nowa wartosc: %d., PlayerName(playerid), PlayerCache(playerid)(pUID), ItemInfo(itemid)(iName), ItemInfo(itemid)(iUID), ItemInfo(itemid)(iValue2))
@@ -2605,7 +2605,7 @@ CMD:aprzedmiot(playerid, params())
 		itemid = GetItemID(item_uid)
 		if(!ItemInfo(itemid)(iUID) || itemid == 0)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne UID przedmiotu.\nPamiêtaj, ¿e przedmiot musi byæ w posiadaniu gracza., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne UID przedmiotu.\nPamiÄ™taj, Å¼e przedmiot musi byÄ‡ w posiadaniu gracza., OK, )
 			return 1
 		)
 		ShowPlayerItemInfo(playerid, itemid)
@@ -2620,13 +2620,13 @@ CMD:sdo(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) ) -2 && PlayerCache(playerid)(pAdmin) ( 1)
 	(	
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie masz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie masz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	range, string(256), endstring(256)
 	if(sscanf(params, ds(128), range, string))
 	(
-		hrp_Tip(playerid, /sdo (odleg³oœæ) (Sytuacja))
+		hrp_Tip(playerid, /sdo (odlegÅ‚oÅ›Ä‡) (Sytuacja))
 		return 1
 	)
 	string(0) = chrtoupper(string(0))
@@ -2660,29 +2660,29 @@ CMD:propsuj(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	
 	giveplayer_id, gamescore, reason(128), string(256)
 	if(sscanf(params, uds(128), giveplayer_id, gamescore, reason))
 	(
-		hrp_Tip(playerid, /propsuj (ID gracza) (Iloœæ GS) (Powód))
+		hrp_Tip(playerid, /propsuj (ID gracza) (IloÅ›Ä‡ GS) (PowÃ³d))
 		return 1
 	)	
 	if(giveplayer_id == INVALID_PLAYER_ID)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Podano b³êdne ID gracza., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Podano bÅ‚Ä™dne ID gracza., OK, )
 		return 1
 	)
 	if(IsPlayerNPC(giveplayer_id))
 	(
-		GuiMsg(playerid, Nie mo¿esz karaæ bota., 1)
+		GuiMsg(playerid, Nie moÅ¼esz karaÄ‡ bota., 1)
 		return 1
 	)
 	if(!Logged(giveplayer_id))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Gracz o podanym ID nie jest zalogowany., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Gracz o podanym ID nie jest zalogowany., OK, )
 		return 1
 	)
 	
@@ -2723,7 +2723,7 @@ CMD:i(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	if(isnull(params))
@@ -2763,33 +2763,33 @@ CMD:aj(playerid, params())
 (
    	if(PlayerCache(playerid)(pAdmin) ) -2 && PlayerCache(playerid)(pAdmin) ( 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	giveplayer_id, time, reason(128)
 	if(sscanf(params, dds(128), giveplayer_id, time, reason))
 	(
-		hrp_Tip(playerid, /aj (ID gracza) (Czas (min)) (Powód))
+		hrp_Tip(playerid, /aj (ID gracza) (Czas (min)) (PowÃ³d))
 		return 1
 	)
 	if(giveplayer_id == INVALID_PLAYER_ID)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Podano b³êdne ID gracza., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Podano bÅ‚Ä™dne ID gracza., OK, )
 		return 1
 	)
 	if(IsPlayerNPC(giveplayer_id))
 	(
-		GuiMsg(playerid, Nie mo¿esz karaæ bota., 1)
+		GuiMsg(playerid, Nie moÅ¼esz karaÄ‡ bota., 1)
 		return 1
 	)
 	if(!Logged(giveplayer_id))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Gracz o podanym ID nie jest zalogowany., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Gracz o podanym ID nie jest zalogowany., OK, )
 		return 1
 	)
 	if(PlayerCache(giveplayer_id)(pAJ))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Ten gracz jest ju¿ uwiêziony w AdminJail., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Ten gracz jest juÅ¼ uwiÄ™ziony w AdminJail., OK, )
 		return 1
 	)
 	if(PlayerCache(giveplayer_id)(pBW))
@@ -2814,7 +2814,7 @@ CMD:unaj(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) ) -2 && PlayerCache(playerid)(pAdmin) ( 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	giveplayer_id, string(128)
@@ -2825,17 +2825,17 @@ CMD:unaj(playerid, params())
 	)
 	if(giveplayer_id == INVALID_PLAYER_ID)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Podano b³êdne ID gracza., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Podano bÅ‚Ä™dne ID gracza., OK, )
 		return 1
 	)
 	if(!Logged(giveplayer_id))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Gracz o podanym ID nie jest zalogowany., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Gracz o podanym ID nie jest zalogowany., OK, )
 		return 1
 	)
 	if(!PlayerCache(giveplayer_id)(pAJ))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Ten gracz nie jest uwiêziony w AdminJail., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Ten gracz nie jest uwiÄ™ziony w AdminJail., OK, )
 		return 1
 	)
 	
@@ -2844,7 +2844,7 @@ CMD:unaj(playerid, params())
 	PlayerCache(giveplayer_id)(pAJ) = 0
 	SetPlayerSpawn(giveplayer_id)
 	
-	format(string, sizeof(string), Gracz %s zosta³ zwolniony z kary AdminJaila., PlayerName(giveplayer_id))
+	format(string, sizeof(string), Gracz %s zostaÅ‚ zwolniony z kary AdminJaila., PlayerName(giveplayer_id))
 	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 	return 1
 )
@@ -2853,28 +2853,28 @@ CMD:kick(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) ) -2 && PlayerCache(playerid)(pAdmin) ( 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	giveplayer_id, reason(128)
 	if(sscanf(params, ds(128), giveplayer_id, reason))
 	(
-		hrp_Tip(playerid, /kick (ID gracza) (Powód))
+		hrp_Tip(playerid, /kick (ID gracza) (PowÃ³d))
 		return 1
 	)
 	if(giveplayer_id == INVALID_PLAYER_ID)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Podano b³êdne ID gracza., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Podano bÅ‚Ä™dne ID gracza., OK, )
 		return 1
 	)
 	if(IsPlayerNPC(giveplayer_id))
 	(
-		GuiMsg(playerid, Nie mo¿esz karaæ bota., 1)
+		GuiMsg(playerid, Nie moÅ¼esz karaÄ‡ bota., 1)
 		return 1
 	)
 	if(!Logged(giveplayer_id))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Gracz o podanym ID nie jest zalogowany., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Gracz o podanym ID nie jest zalogowany., OK, )
 		return 1
 	)
 	reason(0) = chrtoupper(reason(0))
@@ -2886,28 +2886,28 @@ CMD:warn(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) ) -2 && PlayerCache(playerid)(pAdmin) ( 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	giveplayer_id, days, reason(128)
 	if(sscanf(params, dds(128), giveplayer_id, days, reason))
 	(
-		hrp_Tip(playerid, /warn (ID gracza) (Czas w dniach) (Powód))
+		hrp_Tip(playerid, /warn (ID gracza) (Czas w dniach) (PowÃ³d))
 		return 1
 	)
 	if(giveplayer_id == INVALID_PLAYER_ID)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Podano b³êdne ID gracza., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Podano bÅ‚Ä™dne ID gracza., OK, )
 		return 1
 	)
 	if(IsPlayerNPC(giveplayer_id))
 	(
-		GuiMsg(playerid, Nie mo¿esz karaæ bota., 1)
+		GuiMsg(playerid, Nie moÅ¼esz karaÄ‡ bota., 1)
 		return 1
 	)
 	if(!Logged(giveplayer_id))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Gracz o podanym ID nie jest zalogowany., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Gracz o podanym ID nie jest zalogowany., OK, )
 		return 1
 	)
 	reason(0) = chrtoupper(reason(0))
@@ -2919,7 +2919,7 @@ CMD:unwarn(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) ) -2 && PlayerCache(playerid)(pAdmin) ( 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	giveplayer_id, string(128)
@@ -2930,31 +2930,31 @@ CMD:unwarn(playerid, params())
 	)
 	if(giveplayer_id == INVALID_PLAYER_ID)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Podano b³êdne ID gracza., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Podano bÅ‚Ä™dne ID gracza., OK, )
 		return 1
 	)
 	if(IsPlayerNPC(giveplayer_id))
 	(
-		GuiMsg(playerid, Nie mo¿esz karaæ bota., 1)
+		GuiMsg(playerid, Nie moÅ¼esz karaÄ‡ bota., 1)
 		return 1
 	)
 	if(!Logged(giveplayer_id))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Gracz o podanym ID nie jest zalogowany., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Gracz o podanym ID nie jest zalogowany., OK, )
 		return 1
 	)
 	if(PlayerCache(giveplayer_id)(pWarns) (= 0)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Ten gracz nie ma na swoim koncie ¿adnych warnów., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Ten gracz nie ma na swoim koncie Å¼adnych warnÃ³w., OK, )
 		return 1
 	)
 	PlayerCache(giveplayer_id)(pWarns) -= 1
 	mysql_query_format(UPDATE hrp_punishlogs SET punish_end = %d WHERE punish_owneruid = %d AND punish_type = %d ORDER BY punish_uid DESC LIMIT 1, gettime(), PlayerCache(giveplayer_id)(pUID), PUNISH_WARN, gettime())
 	
-	format(string, sizeof(string), %s zdj¹³ Ci warna. Obecny stan ostrze¿eñ: %d, PlayerName(playerid), PlayerCache(giveplayer_id)(pWarns))
+	format(string, sizeof(string), %s zdjÄ…Å‚ Ci warna. Obecny stan ostrzeÅ¼eÅ„: %d, PlayerName(playerid), PlayerCache(giveplayer_id)(pWarns))
 	ShowPlayerDialog(giveplayer_id, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 	
-	format(string, sizeof(string), Zdj¹³eœ warna dla %s. Obecny stan ostrze¿eñ: %d, PlayerName(giveplayer_id), PlayerCache(giveplayer_id)(pWarns))
+	format(string, sizeof(string), ZdjÄ…Å‚eÅ› warna dla %s. Obecny stan ostrzeÅ¼eÅ„: %d, PlayerName(giveplayer_id), PlayerCache(giveplayer_id)(pWarns))
 	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 	return 1
 )
@@ -2963,7 +2963,7 @@ CMD:fck(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	giveplayer_id
@@ -2974,18 +2974,18 @@ CMD:fck(playerid, params())
 	)
 	if(giveplayer_id == INVALID_PLAYER_ID)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Podano b³êdne ID gracza., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Podano bÅ‚Ä™dne ID gracza., OK, )
 		return 1
 	)
 	if(!Logged(giveplayer_id))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Gracz o podanym ID nie jest zalogowany., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Gracz o podanym ID nie jest zalogowany., OK, )
 		return 1
 	)
 	
 	MainPlayerTable(playerid) = giveplayer_id
 	string(128)
-	format(string, sizeof(string), PotwierdŸ FCK dla gracza %s (uid: %d) (id: %d), PlayerName(giveplayer_id), PlayerCache(giveplayer_id)(pUID), giveplayer_id)
+	format(string, sizeof(string), PotwierdÅº FCK dla gracza %s (uid: %d) (id: %d), PlayerName(giveplayer_id), PlayerCache(giveplayer_id)(pUID), giveplayer_id)
 	ShowPlayerDialog(playerid, D_FCK_CONFIRM, DIALOG_STYLE_MSGBOX, Force Character Kill, string, Tak, Nie)
 	return 1
 )
@@ -2994,7 +2994,7 @@ CMD:block(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) ) -2 && PlayerCache(playerid)(pAdmin) ( 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	type(12), varchar(256)
@@ -3008,27 +3008,27 @@ CMD:block(playerid, params())
 	   	giveplayer_id, days, reason(128)
 		if(sscanf(varchar, dds(128), giveplayer_id, days, reason))
 		(
-			hrp_Tip(playerid, /block char (ID gracza) (Czas w dniach) (Powód))
+			hrp_Tip(playerid, /block char (ID gracza) (Czas w dniach) (PowÃ³d))
 			return 1
 		)
 		if(giveplayer_id == INVALID_PLAYER_ID)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Podano b³êdne ID gracza., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Podano bÅ‚Ä™dne ID gracza., OK, )
 			return 1
 		)
 		if(IsPlayerNPC(giveplayer_id))
 		(
-			GuiMsg(playerid, Nie mo¿esz karaæ bota., 1)
+			GuiMsg(playerid, Nie moÅ¼esz karaÄ‡ bota., 1)
 			return 1
 		)
 		if(!Logged(giveplayer_id))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Gracz o podanym ID nie jest zalogowany., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Gracz o podanym ID nie jest zalogowany., OK, )
 			return 1
 		)
 		if(PlayerCache(giveplayer_id)(pBlock) & BLOCK_CHAR)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Ten gracz zosta³ ju¿ zablokowany!, OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Ten gracz zostaÅ‚ juÅ¼ zablokowany!, OK, )
 			return 1
 		)
 		reason(0) = chrtoupper(reason(0))
@@ -3040,27 +3040,27 @@ CMD:block(playerid, params())
 		giveplayer_id, days, reason(128)
 		if(sscanf(varchar, dds(128), giveplayer_id, days, reason))
 		(
-			hrp_Tip(playerid, /block veh (ID gracza) (Czas w dniach) (Powód))
+			hrp_Tip(playerid, /block veh (ID gracza) (Czas w dniach) (PowÃ³d))
 			return 1
 		)
 		if(giveplayer_id == INVALID_PLAYER_ID)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Podano b³êdne ID gracza., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Podano bÅ‚Ä™dne ID gracza., OK, )
 			return 1
 		)
 		if(IsPlayerNPC(giveplayer_id))
 		(
-			GuiMsg(playerid, Nie mo¿esz karaæ bota., 1)
+			GuiMsg(playerid, Nie moÅ¼esz karaÄ‡ bota., 1)
 			return 1
 		)
 		if(!Logged(giveplayer_id))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Gracz o podanym ID nie jest zalogowany., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Gracz o podanym ID nie jest zalogowany., OK, )
 			return 1
 		)
 		if(PlayerCache(giveplayer_id)(pBlock) & BLOCK_VEH)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Ten gracz ma ju¿ na³o¿on¹ blokadê prowadzenia pojazdów., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Ten gracz ma juÅ¼ naÅ‚oÅ¼onÄ… blokadÄ™ prowadzenia pojazdÃ³w., OK, )
 			return 1
 		)
 		reason(0) = chrtoupper(reason(0))
@@ -3072,27 +3072,27 @@ CMD:block(playerid, params())
 		giveplayer_id, days, reason(128)
 		if(sscanf(varchar, dds(128), giveplayer_id, days, reason))
 		(
-			hrp_Tip(playerid, /block run (ID gracza) (Czas w dniach) (Powód))
+			hrp_Tip(playerid, /block run (ID gracza) (Czas w dniach) (PowÃ³d))
 			return 1
 		)
 		if(giveplayer_id == INVALID_PLAYER_ID)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Podano b³êdne ID gracza., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Podano bÅ‚Ä™dne ID gracza., OK, )
 			return 1
 		)
 		if(IsPlayerNPC(giveplayer_id))
 		(
-			GuiMsg(playerid, Nie mo¿esz karaæ bota., 1)
+			GuiMsg(playerid, Nie moÅ¼esz karaÄ‡ bota., 1)
 			return 1
 		)
 		if(!Logged(giveplayer_id))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Gracz o podanym ID nie jest zalogowany., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Gracz o podanym ID nie jest zalogowany., OK, )
 			return 1
 		)
 		if(PlayerCache(giveplayer_id)(pBlock) & BLOCK_RUN)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Ten gracz ma ju¿ na³o¿on¹ blokadê biegania., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Ten gracz ma juÅ¼ naÅ‚oÅ¼onÄ… blokadÄ™ biegania., OK, )
 			return 1
 		)
   		reason(0) = chrtoupper(reason(0))
@@ -3104,27 +3104,27 @@ CMD:block(playerid, params())
 		giveplayer_id, days, reason(128)
 		if(sscanf(varchar, dds(128), giveplayer_id, days, reason))
 		(
-			hrp_Tip(playerid, /block ooc (ID gracza) (Czas w dniach) (Powód))
+			hrp_Tip(playerid, /block ooc (ID gracza) (Czas w dniach) (PowÃ³d))
 			return 1
 		)
 		if(giveplayer_id == INVALID_PLAYER_ID)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Podano b³êdne ID gracza., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Podano bÅ‚Ä™dne ID gracza., OK, )
 			return 1
 		)
 		if(IsPlayerNPC(giveplayer_id))
 		(
-			GuiMsg(playerid, Nie mo¿esz karaæ bota., 1)
+			GuiMsg(playerid, Nie moÅ¼esz karaÄ‡ bota., 1)
 			return 1
 		)
 		if(!Logged(giveplayer_id))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Gracz o podanym ID nie jest zalogowany., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Gracz o podanym ID nie jest zalogowany., OK, )
 			return 1
 		)
 		if(PlayerCache(giveplayer_id)(pBlock) & BLOCK_OOC)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Ten gracz ma ju¿ na³o¿on¹ blokadê pisania na czacie OOC., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Ten gracz ma juÅ¼ naÅ‚oÅ¼onÄ… blokadÄ™ pisania na czacie OOC., OK, )
 			return 1
 		)
   		reason(0) = chrtoupper(reason(0))
@@ -3136,27 +3136,27 @@ CMD:block(playerid, params())
 		giveplayer_id, days, reason(128)
 		if(sscanf(varchar, dds(128), giveplayer_id, days, reason))
 		(
-			hrp_Tip(playerid, /block obj (ID gracza) (Czas w dniach) (Powód))
+			hrp_Tip(playerid, /block obj (ID gracza) (Czas w dniach) (PowÃ³d))
 			return 1
 		)
 		if(giveplayer_id == INVALID_PLAYER_ID)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Podano b³êdne ID gracza., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Podano bÅ‚Ä™dne ID gracza., OK, )
 			return 1
 		)
 		if(IsPlayerNPC(giveplayer_id))
 		(
-			GuiMsg(playerid, Nie mo¿esz karaæ bota., 1)
+			GuiMsg(playerid, Nie moÅ¼esz karaÄ‡ bota., 1)
 			return 1
 		)
 		if(!Logged(giveplayer_id))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Gracz o podanym ID nie jest zalogowany., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Gracz o podanym ID nie jest zalogowany., OK, )
 			return 1
 		)
 		if(PlayerCache(giveplayer_id)(pBlock) & BLOCK_OBJ)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Ten gracz ma ju¿ na³o¿on¹ blokadê edycji obiektów przyczepialnych., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Ten gracz ma juÅ¼ naÅ‚oÅ¼onÄ… blokadÄ™ edycji obiektÃ³w przyczepialnych., OK, )
 			return 1
 		)
   		reason(0) = chrtoupper(reason(0))
@@ -3170,7 +3170,7 @@ CMD:unblock(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) ) -2 && PlayerCache(playerid)(pAdmin) ( 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	type(12), varchar(32), string(128)
@@ -3189,27 +3189,27 @@ CMD:unblock(playerid, params())
 		)
 		if(giveplayer_id == INVALID_PLAYER_ID)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Podano b³êdne ID gracza., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Podano bÅ‚Ä™dne ID gracza., OK, )
 			return 1
 		)
 		if(!Logged(giveplayer_id))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Gracz o podanym ID nie jest zalogowany., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Gracz o podanym ID nie jest zalogowany., OK, )
 			return 1
 		)
 		if(!(PlayerCache(giveplayer_id)(pBlock) & BLOCK_VEH))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Ten gracz nie ma na³o¿onej blokady prowadzenia pojazdów., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Ten gracz nie ma naÅ‚oÅ¼onej blokady prowadzenia pojazdÃ³w., OK, )
 			return 1
 		)
 		PlayerCache(giveplayer_id)(pBlock) -= BLOCK_VEH
 
 		mysql_query_format(UPDATE hrp_punishlogs SET punish_end = %d WHERE punish_owneruid = %d AND punish_type = %d, gettime(), PlayerCache(giveplayer_id)(pUID), PUNISH_BLOCK_VEH)
 		
-		format(string, sizeof(string), %s zdj¹³ Ci blokadê prowadzenia pojazdów., PlayerName(playerid))
+		format(string, sizeof(string), %s zdjÄ…Å‚ Ci blokadÄ™ prowadzenia pojazdÃ³w., PlayerName(playerid))
 		ShowPlayerDialog(giveplayer_id, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 
-		format(string, sizeof(string), Zdj¹³eœ %s blokadê prowadzenia pojazdów., PlayerName(giveplayer_id))
+		format(string, sizeof(string), ZdjÄ…Å‚eÅ› %s blokadÄ™ prowadzenia pojazdÃ³w., PlayerName(giveplayer_id))
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 		return 1
 	)
@@ -3223,27 +3223,27 @@ CMD:unblock(playerid, params())
 		)
 		if(giveplayer_id == INVALID_PLAYER_ID)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Podano b³êdne ID gracza., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Podano bÅ‚Ä™dne ID gracza., OK, )
 			return 1
 		)
 		if(!Logged(giveplayer_id))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Gracz o podanym ID nie jest zalogowany., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Gracz o podanym ID nie jest zalogowany., OK, )
 			return 1
 		)
 		if(!(PlayerCache(giveplayer_id)(pBlock) & BLOCK_RUN))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Ten gracz nie ma na³o¿onej blokady biegania i bicia., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Ten gracz nie ma naÅ‚oÅ¼onej blokady biegania i bicia., OK, )
 			return 1
 		)
 		PlayerCache(giveplayer_id)(pBlock) -= BLOCK_RUN
 
 		mysql_query_format(UPDATE hrp_punishlogs SET punish_end = %d WHERE punish_owneruid = %d AND punish_type = %d, gettime(), PlayerCache(giveplayer_id)(pUID), PUNISH_BLOCK_RUN)
 		
-		format(string, sizeof(string), %s zdj¹³ Ci blokadê biegania i bicia., PlayerName(playerid))
+		format(string, sizeof(string), %s zdjÄ…Å‚ Ci blokadÄ™ biegania i bicia., PlayerName(playerid))
 		ShowPlayerDialog(giveplayer_id, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 
-		format(string, sizeof(string), Zdj¹³eœ %s blokadê biegania i bicia., PlayerName(giveplayer_id))
+		format(string, sizeof(string), ZdjÄ…Å‚eÅ› %s blokadÄ™ biegania i bicia., PlayerName(giveplayer_id))
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 		return 1
 	)
@@ -3257,27 +3257,27 @@ CMD:unblock(playerid, params())
 		)
 		if(giveplayer_id == INVALID_PLAYER_ID)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Podano b³êdne ID gracza., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Podano bÅ‚Ä™dne ID gracza., OK, )
 			return 1
 		)
 		if(!Logged(giveplayer_id))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Gracz o podanym ID nie jest zalogowany., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Gracz o podanym ID nie jest zalogowany., OK, )
 			return 1
 		)
 		if(!(PlayerCache(giveplayer_id)(pBlock) & BLOCK_OOC))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Ten gracz nie ma na³o¿onej blokady czatu OOC., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Ten gracz nie ma naÅ‚oÅ¼onej blokady czatu OOC., OK, )
 			return 1
 		)
 		PlayerCache(giveplayer_id)(pBlock) -= BLOCK_OOC
 
 		mysql_query_format(UPDATE hrp_punishlogs SET punish_end = %d WHERE punish_owneruid = %d AND punish_type = %d, gettime(), PlayerCache(giveplayer_id)(pUID), PUNISH_BLOCK_OOC)
 
-		format(string, sizeof(string), %s zdj¹³ Ci blokadê czatu OOC., PlayerName(playerid))
+		format(string, sizeof(string), %s zdjÄ…Å‚ Ci blokadÄ™ czatu OOC., PlayerName(playerid))
 		ShowPlayerDialog(giveplayer_id, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 
-		format(string, sizeof(string), Zdj¹³eœ %s blokadê czatu OOC., PlayerName(giveplayer_id))
+		format(string, sizeof(string), ZdjÄ…Å‚eÅ› %s blokadÄ™ czatu OOC., PlayerName(giveplayer_id))
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 		return 1
 	)
@@ -3291,27 +3291,27 @@ CMD:unblock(playerid, params())
 		)
 		if(giveplayer_id == INVALID_PLAYER_ID)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Podano b³êdne ID gracza., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Podano bÅ‚Ä™dne ID gracza., OK, )
 			return 1
 		)
 		if(!Logged(giveplayer_id))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Gracz o podanym ID nie jest zalogowany., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Gracz o podanym ID nie jest zalogowany., OK, )
 			return 1
 		)
 		if(!(PlayerCache(giveplayer_id)(pBlock) & BLOCK_OBJ))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Ten gracz nie ma na³o¿onej blokady edycji obiektów., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Ten gracz nie ma naÅ‚oÅ¼onej blokady edycji obiektÃ³w., OK, )
 			return 1
 		)
 		PlayerCache(giveplayer_id)(pBlock) -= BLOCK_OBJ
 
 		mysql_query_format(UPDATE hrp_punishlogs SET punish_end = %d WHERE punish_owneruid = %d AND punish_type = %d, gettime(), PlayerCache(giveplayer_id)(pUID), PUNISH_BLOCK_OBJ)
 
-		format(string, sizeof(string), %s zdj¹³ Ci blokadê edycji obiektów., PlayerName(playerid))
+		format(string, sizeof(string), %s zdjÄ…Å‚ Ci blokadÄ™ edycji obiektÃ³w., PlayerName(playerid))
 		ShowPlayerDialog(giveplayer_id, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 
-		format(string, sizeof(string), Zdj¹³eœ %s blokadê edycji obiektów., PlayerName(giveplayer_id))
+		format(string, sizeof(string), ZdjÄ…Å‚eÅ› %s blokadÄ™ edycji obiektÃ³w., PlayerName(giveplayer_id))
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 		return 1
 	)
@@ -3322,28 +3322,28 @@ CMD:ban(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) ) -3 && PlayerCache(playerid)(pAdmin) ( 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	giveplayer_id, days, reason(128)
 	if(sscanf(params, dds(128), giveplayer_id, days, reason))
 	(
-		hrp_Tip(playerid, /ban (ID gracza) (Czas w dniach) (Powód))
+		hrp_Tip(playerid, /ban (ID gracza) (Czas w dniach) (PowÃ³d))
 		return 1
 	)
 	if(giveplayer_id == INVALID_PLAYER_ID)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Podano b³êdne ID gracza., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Podano bÅ‚Ä™dne ID gracza., OK, )
 		return 1
 	)
 	if(IsPlayerNPC(giveplayer_id))
 	(
-		GuiMsg(playerid, Nie mo¿esz karaæ bota., 1)
+		GuiMsg(playerid, Nie moÅ¼esz karaÄ‡ bota., 1)
 		return 1
 	)
 	if(!Logged(giveplayer_id))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Gracz o podanym ID nie jest zalogowany., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Gracz o podanym ID nie jest zalogowany., OK, )
 		return 1
 	)
 	reason(0) = chrtoupper(reason(0))
@@ -3355,7 +3355,7 @@ CMD:unban(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) ) -3 && PlayerCache(playerid)(pAdmin) ( 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	IP(16), string(128)
@@ -3370,7 +3370,7 @@ CMD:unban(playerid, params())
 	
 	mysql_query_format(DELETE FROM hrp_bans WHERE ban_ip = %s AND ban_type == 1, IP)
 
-	format(string, sizeof(string), Adres IP %s zosta³ pomyœlnie odbanowany., IP)
+	format(string, sizeof(string), Adres IP %s zostaÅ‚ pomyÅ›lnie odbanowany., IP)
 	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 	return 1
 )
@@ -3379,7 +3379,7 @@ CMD:tp(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	Float:PosX, Float:PosY, Float:PosZ, INT, VW
@@ -3402,7 +3402,7 @@ CMD:respawn(playerid, params())
 	//if(PlayerCache(playerid)(pAdmin) == 0)
 	if(PlayerCache(playerid)(pAdmin) ) -2 && PlayerCache(playerid)(pAdmin) ( 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	giveplayer_id, string(128)
@@ -3413,22 +3413,22 @@ CMD:respawn(playerid, params())
 	)
 	if(giveplayer_id == INVALID_PLAYER_ID)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Podano b³êdne ID gracza., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Podano bÅ‚Ä™dne ID gracza., OK, )
 		return 1
 	)
 	if(!Logged(giveplayer_id))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Gracz o podanym ID nie jest zalogowany., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Gracz o podanym ID nie jest zalogowany., OK, )
 		return 1
 	)
 	if(PlayerCache(giveplayer_id)(pBW))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Ten gracz ma BW., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Ten gracz ma BW., OK, )
 		return 1
 	)
 	if(PlayerCache(giveplayer_id)(pAJ))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Ten gracz jest uwiêziony w AdminJail., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Ten gracz jest uwiÄ™ziony w AdminJail., OK, )
 		return 1
 	)
 
@@ -3437,7 +3437,7 @@ CMD:respawn(playerid, params())
 	SetPlayerSpawn(giveplayer_id)
 	SpawnPlayer(giveplayer_id)
 
-	format(string, sizeof(string), Gracz %s (ID: %d) zosta³ pomyœlnie zrespawnowany., PlayerCache(giveplayer_id)(pName), giveplayer_id)
+	format(string, sizeof(string), Gracz %s (ID: %d) zostaÅ‚ pomyÅ›lnie zrespawnowany., PlayerCache(giveplayer_id)(pName), giveplayer_id)
 	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 	return 1
 )
@@ -3448,7 +3448,7 @@ CMD:ptp(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) ) -2 && PlayerCache(playerid)(pAdmin) ( 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	getplayer_id, giveplayer_id, string(128)
@@ -3459,12 +3459,12 @@ CMD:ptp(playerid, params())
 	)
 	if(giveplayer_id == INVALID_PLAYER_ID)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Podano b³êdne ID gracza., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Podano bÅ‚Ä™dne ID gracza., OK, )
 		return 1
 	)
 	if(!Logged(giveplayer_id))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Gracz o podanym ID nie jest zalogowany., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Gracz o podanym ID nie jest zalogowany., OK, )
 		return 1
 	)
 	Float:PosX, Float:PosY, Float:PosZ,
@@ -3480,7 +3480,7 @@ CMD:ptp(playerid, params())
 	SetPlayerInterior(getplayer_id, interior_id)
 	SetPlayerVirtualWorld(getplayer_id, virtual_world)
 	
-	format(string, sizeof(string), Gracz %s zosta³ przeteleportowany do gracza %s pomyœlnie., PlayerName(getplayer_id), PlayerName(giveplayer_id))
+	format(string, sizeof(string), Gracz %s zostaÅ‚ przeteleportowany do gracza %s pomyÅ›lnie., PlayerName(getplayer_id), PlayerName(giveplayer_id))
 	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 	return 1
 )
@@ -3489,7 +3489,7 @@ CMD:burton(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	time1, time2
@@ -3508,7 +3508,7 @@ CMD:goto(playerid, params())
 	if(PlayerCache(playerid)(pAdmin) ) -2 && PlayerCache(playerid)(pAdmin) ( 1)
 	//if(PlayerCache(playerid)(pAdmin) == 0)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	giveplayer_id
@@ -3519,12 +3519,12 @@ CMD:goto(playerid, params())
 	)
 	if(giveplayer_id == INVALID_PLAYER_ID)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Podano b³êdne ID gracza., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Podano bÅ‚Ä™dne ID gracza., OK, )
 		return 1
 	)
 	if(!Logged(giveplayer_id))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Gracz o podanym ID nie jest zalogowany., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Gracz o podanym ID nie jest zalogowany., OK, )
 		return 1
 	)
 	Float:PosX, Float:PosY, Float:PosZ, Float:PosA
@@ -3547,7 +3547,7 @@ CMD:gethere(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) ) -2 && PlayerCache(playerid)(pAdmin) ( 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	giveplayer_id
@@ -3558,12 +3558,12 @@ CMD:gethere(playerid, params())
 	)
 	if(giveplayer_id == INVALID_PLAYER_ID)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Podano b³êdne ID gracza., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Podano bÅ‚Ä™dne ID gracza., OK, )
 		return 1
 	)
 	if(!Logged(giveplayer_id))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Gracz o podanym ID nie jest zalogowany., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Gracz o podanym ID nie jest zalogowany., OK, )
 		return 1
 	)
 	Float:PosX, Float:PosY, Float:PosZ, Float:PosA
@@ -3587,7 +3587,7 @@ CMD:spec(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) ) -2 && PlayerCache(playerid)(pAdmin) ( 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	giveplayer_id
@@ -3604,23 +3604,23 @@ CMD:spec(playerid, params())
 	)
 	if(giveplayer_id == playerid)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie mo¿esz podgl¹daæ siebie., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie moÅ¼esz podglÄ…daÄ‡ siebie., OK, )
 		return 1
 	)
 	if(giveplayer_id == INVALID_PLAYER_ID)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Podano b³êdne ID gracza., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Podano bÅ‚Ä™dne ID gracza., OK, )
 		return 1
 	)
 	if(!Logged(giveplayer_id))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Gracz o podanym ID nie jest zalogowany., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Gracz o podanym ID nie jest zalogowany., OK, )
 		return 1
 	)
 	if(PlayerCache(giveplayer_id)(pSpectate) != INVALID_PLAYER_ID)
 	(
 		giveplayer_id = PlayerCache(giveplayer_id)(pSpectate)
-		//ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Ten gracz podgl¹da innego gracza., OK, )
+		//ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Ten gracz podglÄ…da innego gracza., OK, )
 	)
 	if(PlayerCache(playerid)(pSpectate) == INVALID_PLAYER_ID)
 	(
@@ -3718,7 +3718,7 @@ CMD:setint(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) ) -2 && PlayerCache(playerid)(pAdmin) ( 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	giveplayer_id, interior_id, string(128)
@@ -3729,17 +3729,17 @@ CMD:setint(playerid, params())
 	)
 	if(giveplayer_id == INVALID_PLAYER_ID)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Podano b³êdne ID gracza., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Podano bÅ‚Ä™dne ID gracza., OK, )
 		return 1
 	)
 	if(!Logged(giveplayer_id))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Gracz o podanym ID nie jest zalogowany., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Gracz o podanym ID nie jest zalogowany., OK, )
 		return 1
 	)
 	SetPlayerInterior(giveplayer_id, interior_id)
 	
-	format(string, sizeof(string), InteriorID gracza %s zosta³ zmieniony pomyœlnie.\nNowy interior: %d, PlayerName(giveplayer_id), interior_id)
+	format(string, sizeof(string), InteriorID gracza %s zostaÅ‚ zmieniony pomyÅ›lnie.\nNowy interior: %d, PlayerName(giveplayer_id), interior_id)
 	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 	return 1
 )
@@ -3748,7 +3748,7 @@ CMD:setvw(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) ) -2 && PlayerCache(playerid)(pAdmin) ( 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	giveplayer_id, virtual_world, string(128)
@@ -3759,17 +3759,17 @@ CMD:setvw(playerid, params())
 	)
 	if(giveplayer_id == INVALID_PLAYER_ID)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Podano b³êdne ID gracza., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Podano bÅ‚Ä™dne ID gracza., OK, )
 		return 1
 	)
 	if(!Logged(giveplayer_id))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Gracz o podanym ID nie jest zalogowany., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Gracz o podanym ID nie jest zalogowany., OK, )
 		return 1
 	)
 	SetPlayerVirtualWorld(giveplayer_id, virtual_world)
 
-	format(string, sizeof(string), VirualWorld gracza %s zosta³ zmieniony pomyœlnie.\nNowy VirtualWorld: %d, PlayerName(giveplayer_id), virtual_world)
+	format(string, sizeof(string), VirualWorld gracza %s zostaÅ‚ zmieniony pomyÅ›lnie.\nNowy VirtualWorld: %d, PlayerName(giveplayer_id), virtual_world)
 	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 	return 1
 )
@@ -3778,23 +3778,23 @@ CMD:sethp(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) ) -2 && PlayerCache(playerid)(pAdmin) ( 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	giveplayer_id, Float:health, string(128)
 	if(sscanf(params, df, giveplayer_id, health))
 	(
-		hrp_Tip(playerid, /sethp (ID gracza) (Iloœæ HP))
+		hrp_Tip(playerid, /sethp (ID gracza) (IloÅ›Ä‡ HP))
 		return 1
 	)
 	if(giveplayer_id == INVALID_PLAYER_ID)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Podano b³êdne ID gracza., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Podano bÅ‚Ä™dne ID gracza., OK, )
 		return 1
 	)
 	if(!Logged(giveplayer_id))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Gracz o podanym ID nie jest zalogowany., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Gracz o podanym ID nie jest zalogowany., OK, )
 		return 1
 	)
 
@@ -3810,7 +3810,7 @@ CMD:sethp(playerid, params())
 		PlayerDamageCache(giveplayer_id)(i) = false
 	)
 
-	format(string, sizeof(string), HP gracza %s zosta³o pomyœlnie zmienione. Nowy stan HP: %.1f, PlayerName(giveplayer_id), health)
+	format(string, sizeof(string), HP gracza %s zostaÅ‚o pomyÅ›lnie zmienione. Nowy stan HP: %.1f, PlayerName(giveplayer_id), health)
 	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 	return 1
 )
@@ -3819,7 +3819,7 @@ CMD:setskin(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) ) -2 && PlayerCache(playerid)(pAdmin) ( 1)
 	(
-		 ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		 ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	giveplayer_id, skin_id, string(128)
@@ -3830,27 +3830,27 @@ CMD:setskin(playerid, params())
 	)
 	if(giveplayer_id == INVALID_PLAYER_ID)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Podano b³êdne ID gracza., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Podano bÅ‚Ä™dne ID gracza., OK, )
 		return 1
 	)
 	if(!Logged(giveplayer_id))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Gracz o podanym ID nie jest zalogowany., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Gracz o podanym ID nie jest zalogowany., OK, )
 		return 1
 	)
 	if(skin_id ( 0 || skin_id ) 311)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono nieprawid³owe ID skina., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono nieprawidÅ‚owe ID skina., OK, )
 		return 1
 	)
 	if(skin_id == 300)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Skin ID 300 cos kurwa buguje., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Skin ID 300 cos kurwa buguje., OK, )
 		return 1
 	)
 	hrp_SetPlayerSkin(giveplayer_id, skin_id)
 
-	format(string, sizeof(string), Skin gracza %s zosta³ pomyœlnie zmieniony. Nowy skin: %d, PlayerName(giveplayer_id), skin_id)
+	format(string, sizeof(string), Skin gracza %s zostaÅ‚ pomyÅ›lnie zmieniony. Nowy skin: %d, PlayerName(giveplayer_id), skin_id)
 	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 	return 1
 )
@@ -3859,40 +3859,40 @@ CMD:setskill(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	if(PlayerCache(playerid)(pUserColor) != 1 && PlayerCache(playerid)(pUserColor) != 3)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Sorry ale na polecenie gamemasterów tylko oni maj¹ dostêp do tej komendy :(., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Sorry ale na polecenie gamemasterÃ³w tylko oni majÄ… dostÄ™p do tej komendy :(., OK, )
 		return 1
 	)
 	giveplayer_id, skill_name(12), skill_lvl, string(128)
 	if(sscanf(params, s(12)udf, skill_name, giveplayer_id, skill_lvl))
 	(
-		hrp_Tip(playerid, /setskill (Nazwa skilla) (ID gracza) (Poziom)\n\nDostêpne nazwy:\n - lowienie\n - plywanie\n - sila)
+		hrp_Tip(playerid, /setskill (Nazwa skilla) (ID gracza) (Poziom)\n\nDostÄ™pne nazwy:\n - lowienie\n - plywanie\n - sila)
 		return 1
 	)
 	if(!strcmp(skill_name, lowienie, true))
 	(
 		if(giveplayer_id == INVALID_PLAYER_ID)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Podano b³êdne ID gracza., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Podano bÅ‚Ä™dne ID gracza., OK, )
 			return 1
 		)
 		if(!Logged(giveplayer_id))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Gracz o podanym ID nie jest zalogowany., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Gracz o podanym ID nie jest zalogowany., OK, )
 			return 1
 		)
 		if(skill_lvl ( 0 || skill_lvl ) 100)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono nieprawid³owy poziom umiejêtnoœci., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono nieprawidÅ‚owy poziom umiejÄ™tnoÅ›ci., OK, )
 			return 1
 		)
 		PlayerCache(giveplayer_id)(pFishing) = skill_lvl
 		
-		format(string, sizeof(string), Umiejetnoœæ ³owienia dla gracza %s zmieniona: %f, PlayerName(giveplayer_id), skill_lvl)
+		format(string, sizeof(string), UmiejetnoÅ›Ä‡ Å‚owienia dla gracza %s zmieniona: %f, PlayerName(giveplayer_id), skill_lvl)
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 		return 1
 	)
@@ -3900,22 +3900,22 @@ CMD:setskill(playerid, params())
 	(
 		if(giveplayer_id == INVALID_PLAYER_ID)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Podano b³êdne ID gracza., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Podano bÅ‚Ä™dne ID gracza., OK, )
 			return 1
 		)
 		if(!Logged(giveplayer_id))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Gracz o podanym ID nie jest zalogowany., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Gracz o podanym ID nie jest zalogowany., OK, )
 			return 1
 		)
 		if(skill_lvl ( 0 || skill_lvl ) 100)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono nieprawid³owy poziom umiejêtnoœci., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono nieprawidÅ‚owy poziom umiejÄ™tnoÅ›ci., OK, )
 			return 1
 		)
 		PlayerCache(giveplayer_id)(pStrength) = skill_lvl
 		
-		format(string, sizeof(string), Si³a dla gracza %s zmieniona: %f, PlayerName(giveplayer_id), skill_lvl)
+		format(string, sizeof(string), SiÅ‚a dla gracza %s zmieniona: %f, PlayerName(giveplayer_id), skill_lvl)
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 		return 1
 	)
@@ -3926,30 +3926,30 @@ CMD:settime(playerid, params())
 (
    	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		 ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		 ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	giveplayer_id, time_type(12), time
 	if(sscanf(params, ds(12)d, giveplayer_id, time_type, time))
 	(
-		hrp_Tip(playerid, /settime (ID gracza) (Typ czasu (godzina, minuta)) (Wartoœæ))
+		hrp_Tip(playerid, /settime (ID gracza) (Typ czasu (godzina, minuta)) (WartoÅ›Ä‡))
 		return 1
 	)
    	if(giveplayer_id == INVALID_PLAYER_ID)
 	(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Podano b³êdne ID gracza., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Podano bÅ‚Ä™dne ID gracza., OK, )
 			return 1
 	)
 	if(!Logged(giveplayer_id))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Gracz o podanym ID nie jest zalogowany., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Gracz o podanym ID nie jest zalogowany., OK, )
  		return 1
 	)
 	if(!strcmp(time_type, godzina, true))
 	(
 		if(time ( 0)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nieprawid³owy czas., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, NieprawidÅ‚owy czas., OK, )
 			return 1
 		)
 		PlayerCache(giveplayer_id)(pHours) = time
@@ -3959,7 +3959,7 @@ CMD:settime(playerid, params())
 	(
 		if(time ( 0 || time ) 60)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³ad, Nieprawid³owy czas., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚ad, NieprawidÅ‚owy czas., OK, )
 			return 1
 		)
 		PlayerCache(giveplayer_id)(pMinutes) = time
@@ -3972,7 +3972,7 @@ CMD:freeze(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) ) -2 && PlayerCache(playerid)(pAdmin) ( 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	giveplayer_id, string(64)
@@ -3983,17 +3983,17 @@ CMD:freeze(playerid, params())
 	)
 	if(giveplayer_id == INVALID_PLAYER_ID)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Podano b³êdne ID gracza., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Podano bÅ‚Ä™dne ID gracza., OK, )
 		return 1
 	)
 	if(!Logged(giveplayer_id))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Gracz o podanym ID nie jest zalogowany., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Gracz o podanym ID nie jest zalogowany., OK, )
 		return 1
 	)
 	hrp_TogglePlayerControllable(giveplayer_id, false)
 	
-	format(string, sizeof(string), Gracz %s zosta³ zamro¿ony., PlayerName(giveplayer_id))
+	format(string, sizeof(string), Gracz %s zostaÅ‚ zamroÅ¼ony., PlayerName(giveplayer_id))
 	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 	return 1
 )
@@ -4003,7 +4003,7 @@ CMD:unfreeze(playerid, params())
 	//if(PlayerCache(playerid)(pAdmin) == 0)
 	if(PlayerCache(playerid)(pAdmin) ) -2 && PlayerCache(playerid)(pAdmin) ( 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	giveplayer_id, string(64)
@@ -4014,17 +4014,17 @@ CMD:unfreeze(playerid, params())
 	)
 	if(giveplayer_id == INVALID_PLAYER_ID)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Podano b³êdne ID gracza., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Podano bÅ‚Ä™dne ID gracza., OK, )
 		return 1
 	)
 	if(!Logged(giveplayer_id))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Gracz o podanym ID nie jest zalogowany., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Gracz o podanym ID nie jest zalogowany., OK, )
 		return 1
 	)
 	hrp_TogglePlayerControllable(giveplayer_id, true)
 
-	format(string, sizeof(string), Gracz %s zosta³ odmro¿ony., PlayerName(giveplayer_id))
+	format(string, sizeof(string), Gracz %s zostaÅ‚ odmroÅ¼ony., PlayerName(giveplayer_id))
 	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 	return 1
 )
@@ -4033,12 +4033,12 @@ CMD:ac(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	if(PlayerCache(playerid)(pAdminChat) == false)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie mo¿esz pisaæ na czacie administratorskim poniewa¿ go wy³¹czy³es (/togac)., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie moÅ¼esz pisaÄ‡ na czacie administratorskim poniewaÅ¼ go wyÅ‚Ä…czyÅ‚es (/togac)., OK, )
 		return 1
 	)
 	if(isnull(params))
@@ -4071,18 +4071,18 @@ CMD:togac(playerid, params())
 	string(128)
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	if(PlayerCache(playerid)(pAdminChat) == true)
 	(
 		PlayerCache(playerid)(pAdminChat) = false
-		format(string, sizeof(string), Czat Administratorów zosta³ dla Ciebie wy³¹czony.)
+		format(string, sizeof(string), Czat AdministratorÃ³w zostaÅ‚ dla Ciebie wyÅ‚Ä…czony.)
 	)
 	else
 	(
 		PlayerCache(playerid)(pAdminChat) = true
-		format(string, sizeof(string), Czat Administratoruf zosta³ dla Ciebie w³¹czony.)
+		format(string, sizeof(string), Czat Administratoruf zostaÅ‚ dla Ciebie wÅ‚Ä…czony.)
 	)
 
 	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
@@ -4095,7 +4095,7 @@ CMD:sc(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) )= 0)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	if(isnull(params))
@@ -4124,7 +4124,7 @@ CMD:gc(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) == 0)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	if(isnull(params))
@@ -4153,7 +4153,7 @@ CMD:gtx(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	if(isnull(params))
@@ -4172,7 +4172,7 @@ CMD:ado(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	if(isnull(params))
@@ -4192,7 +4192,7 @@ CMD:slap(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) ) -2 && PlayerCache(playerid)(pAdmin) ( 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	giveplayer_id
@@ -4203,12 +4203,12 @@ CMD:slap(playerid, params())
 	)
 	if(giveplayer_id == INVALID_PLAYER_ID)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Podano b³êdne ID gracza., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Podano bÅ‚Ä™dne ID gracza., OK, )
 		return 1
 	)
 	if(!Logged(giveplayer_id))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Gracz o podanym ID nie jest zalogowany., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Gracz o podanym ID nie jest zalogowany., OK, )
 		return 1
 	)
 	Float:PosX, Float:PosY, Float:PosZ
@@ -4225,7 +4225,7 @@ CMD:playername(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 
@@ -4237,16 +4237,16 @@ CMD:playername(playerid, params())
 	)
    	if(giveplayer_id == INVALID_PLAYER_ID)
 	(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Podano b³êdne ID gracza., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Podano bÅ‚Ä™dne ID gracza., OK, )
 			return 1
 	)
 	if(!Logged(giveplayer_id))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Gracz o podanym ID nie jest zalogowany., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Gracz o podanym ID nie jest zalogowany., OK, )
  		return 1
 	)
 
-	format(string, sizeof(string), Nick gracza %s (UID: %d) zosta³ zmieniony.\nNowy nick: %s., PlayerCache(giveplayer_id)(pName), giveplayer_id, new_name)
+	format(string, sizeof(string), Nick gracza %s (UID: %d) zostaÅ‚ zmieniony.\nNowy nick: %s., PlayerCache(giveplayer_id)(pName), giveplayer_id, new_name)
 	strmid(PlayerCache(giveplayer_id)(pName), new_name, 0, strlen(new_name), MAX_PLAYER_NAME)
 	PlayerCache(giveplayer_id)(pChangeName) = true
 
@@ -4258,7 +4258,7 @@ CMD:abus(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
  		return 1
 	)
 	type(32), varchar(32), string(128)
@@ -4280,7 +4280,7 @@ CMD:abus(playerid, params())
 		
 		busstop_id = CreateBusStop(busstop_name, PosX, PosY, PosZ + 0.25)
 		
-		format(string, sizeof(string), Stworzono nowy przystanek.\nNazwa przystanku: %s (SampID: %d, UID: %d).\n\nPrzystanek stworzony zosta³ w tym miejscu., busstop_name, busstop_id, BusStopData(busstop_id)(bUID))
+		format(string, sizeof(string), Stworzono nowy przystanek.\nNazwa przystanku: %s (SampID: %d, UID: %d).\n\nPrzystanek stworzony zostaÅ‚ w tym miejscu., busstop_name, busstop_id, BusStopData(busstop_id)(bUID))
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 		return 1
 	)
@@ -4294,7 +4294,7 @@ CMD:abus(playerid, params())
 		)
 		if(!BusStopData(busstop_id)(bUID))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono nieprawid³owy nr. przystanku., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono nieprawidÅ‚owy nr. przystanku., OK, )
 			return 1
 		)
    		strmid(BusStopData(busstop_id)(bName), busstop_name, 0, strlen(busstop_name), 32)
@@ -4304,7 +4304,7 @@ CMD:abus(playerid, params())
 		format(string, sizeof(string), Przystanek nr %d:\n%s., busstop_id, busstop_name)
 		UpdateDynamic3DTextLabelText(Text3D:BusStopData(busstop_id)(bNameTag), COLOR_LIGHTBLUE, string)
 
-		format(string, sizeof(string), Nazwa przystanku (SampID: %d, UID: %d) zosta³a zmieniona pomyœlnie.\nNowa nazwa przystanku: %s., busstop_id, BusStopData(busstop_id)(bUID), busstop_name)
+		format(string, sizeof(string), Nazwa przystanku (SampID: %d, UID: %d) zostaÅ‚a zmieniona pomyÅ›lnie.\nNowa nazwa przystanku: %s., busstop_id, BusStopData(busstop_id)(bUID), busstop_name)
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 		return 1
 	)
@@ -4318,7 +4318,7 @@ CMD:abus(playerid, params())
 		)
 		if(!BusStopData(busstop_id)(bUID))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono nieprawid³owy nr. przystanku., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono nieprawidÅ‚owy nr. przystanku., OK, )
 			return 1
 		)
    		Float:PosX, Float:PosY, Float:PosZ
@@ -4334,7 +4334,7 @@ CMD:abus(playerid, params())
 		Streamer_SetFloatData(STREAMER_TYPE_3D_TEXT_LABEL, Text3D:BusStopData(busstop_id)(bNameTag), E_STREAMER_Y, BusStopData(busstop_id)(bPosY))
 		Streamer_SetFloatData(STREAMER_TYPE_3D_TEXT_LABEL, Text3D:BusStopData(busstop_id)(bNameTag), E_STREAMER_Z, BusStopData(busstop_id)(bPosZ))
 
-		format(string, sizeof(string), Pozycja przystanku (SampID: %d, UID: %d) zosta³a zmieniona pomyœlnie., busstop_id, BusStopData(busstop_id)(bUID))
+		format(string, sizeof(string), Pozycja przystanku (SampID: %d, UID: %d) zostaÅ‚a zmieniona pomyÅ›lnie., busstop_id, BusStopData(busstop_id)(bUID))
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 		return 1
 	)
@@ -4348,10 +4348,10 @@ CMD:abus(playerid, params())
 		)
 		if(!BusStopData(busstop_id)(bUID))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono nieprawid³owy nr. przystanku., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono nieprawidÅ‚owy nr. przystanku., OK, )
 			return 1
 		)
-	 	format(string, sizeof(string), Przystanek (SampID: %d, SampID: %d) zosta³ pomyœlnie usuniêty., busstop_id, BusStopData(busstop_id)(bUID))
+	 	format(string, sizeof(string), Przystanek (SampID: %d, SampID: %d) zostaÅ‚ pomyÅ›lnie usuniÄ™ty., busstop_id, BusStopData(busstop_id)(bUID))
 
 		DeleteBusStop(busstop_id)
 
@@ -4370,10 +4370,10 @@ CMD:abus(playerid, params())
 		)
 		if(strlen(list_busstop) (= 0)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie ma ¿adnych utworzonych przystanków., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie ma Å¼adnych utworzonych przystankÃ³w., OK, )
 			return 1
 		)
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_LIST, Lista przystanków:, list_busstop, Zamknij, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_LIST, Lista przystankÃ³w:, list_busstop, Zamknij, )
 		return 1
 	)
 	return 1
@@ -4383,7 +4383,7 @@ CMD:phr(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
  		return 1
 	)
 	type(32), varchar(32), string(128)
@@ -4397,14 +4397,14 @@ CMD:phr(playerid, params())
 		Float:photoradar_maxspeed
 		if(sscanf(varchar, f, photoradar_maxspeed))
 		(
-			hrp_Tip(playerid, /phr stworz (Max. prêdkoœæ))
+			hrp_Tip(playerid, /phr stworz (Max. prÄ™dkoÅ›Ä‡))
 			return 1
 		)
 		Float:PosX, Float:PosY, Float:PosZ
 		GetPlayerPos(playerid, PosX, PosY, PosZ)
 
 		AddPhotoRadar(PosX, PosY, PosZ, photoradar_maxspeed)
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Pomyœlnie postawiono fotoradar.\nU¿yj komendy /phr lista, by ujrzeæ ich listê., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, PomyÅ›lnie postawiono fotoradar.\nUÅ¼yj komendy /phr lista, by ujrzeÄ‡ ich listÄ™., OK, )
 		return 1
 	)
 	if(!strcmp(type, pozycja, true))
@@ -4417,7 +4417,7 @@ CMD:phr(playerid, params())
 		)
 		if(!PhotoRadarInfo(photoradar_id)(pUID))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono nieprawid³owe ID fotoradaru., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono nieprawidÅ‚owe ID fotoradaru., OK, )
 			return 1
 		)
    		Float:PosX, Float:PosY, Float:PosZ
@@ -4429,7 +4429,7 @@ CMD:phr(playerid, params())
 
 		SavePhotoRadar(photoradar_id)
 		
-		format(string, sizeof(string), Pozycja fotoradaru (SampID: %d, UID: %d) zosta³a zmieniona pomyœlnie., photoradar_id, PhotoRadarInfo(photoradar_id)(pUID))
+		format(string, sizeof(string), Pozycja fotoradaru (SampID: %d, UID: %d) zostaÅ‚a zmieniona pomyÅ›lnie., photoradar_id, PhotoRadarInfo(photoradar_id)(pUID))
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 		return 1
 	)
@@ -4443,10 +4443,10 @@ CMD:phr(playerid, params())
 		)
 		if(!PhotoRadarInfo(photoradar_id)(pUID))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono nieprawid³owe ID fotoradaru., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono nieprawidÅ‚owe ID fotoradaru., OK, )
 			return 1
 		)
-	 	format(string, sizeof(string), Fotoradar (SampID: %d, SampID: %d) zosta³ pomyœlnie usuniêty., photoradar_id, PhotoRadarInfo(photoradar_id)(pUID))
+	 	format(string, sizeof(string), Fotoradar (SampID: %d, SampID: %d) zostaÅ‚ pomyÅ›lnie usuniÄ™ty., photoradar_id, PhotoRadarInfo(photoradar_id)(pUID))
 
 		DeletePhotoRadar(photoradar_id)
 
@@ -4465,10 +4465,10 @@ CMD:phr(playerid, params())
 		)
 		if(strlen(list_photoradars) (= 0)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie ma ¿adnych utworzonych fotoradarów., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie ma Å¼adnych utworzonych fotoradarÃ³w., OK, )
 			return 1
 		)
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_LIST, Lista przystanków:, list_photoradars, Zamknij, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_LIST, Lista przystankÃ³w:, list_photoradars, Zamknij, )
 		return 1
 	)
 	return 1
@@ -4478,7 +4478,7 @@ CMD:ggate(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	group_uid
@@ -4489,7 +4489,7 @@ CMD:ggate(playerid, params())
 	)
 	if(PlayerCache(playerid)(pMoveObject) == INVALID_OBJECT_ID)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie edytujesz aktualnie ¿adnego obiektu., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie edytujesz aktualnie Å¼adnego obiektu., OK, )
 		return 1
 	)
 	object_id = PlayerCache(playerid)(pMoveObject)
@@ -4499,7 +4499,7 @@ CMD:ggate(playerid, params())
 	mysql_query_format(UPDATE hrp_objects SET object_owner = %d WHERE object_uid = %d LIMIT 1, group_uid, object_uid)
 
 	string(64), group_id_fix = GetGroupID(group_uid)
-	format(string, sizeof(string), Przypisano obiekt o uid: %d pod grupê %s (Uid: %d), object_uid, GroupData(group_id_fix)(gName), GroupData(group_id_fix)(gUID))
+	format(string, sizeof(string), Przypisano obiekt o uid: %d pod grupÄ™ %s (Uid: %d), object_uid, GroupData(group_id_fix)(gName), GroupData(group_id_fix)(gUID))
  	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 	return 1
 )
@@ -4508,7 +4508,7 @@ CMD:pgate(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	player_uid
@@ -4519,7 +4519,7 @@ CMD:pgate(playerid, params())
 	)
 	if(PlayerCache(playerid)(pMoveObject) == INVALID_OBJECT_ID)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie edytujesz aktualnie ¿adnego obiektu., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie edytujesz aktualnie Å¼adnego obiektu., OK, )
 		return 1
 	)
 	object_id = PlayerCache(playerid)(pMoveObject)
@@ -4538,7 +4538,7 @@ CMD:wczytaj(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	world_id
@@ -4552,7 +4552,7 @@ CMD:wczytaj(playerid, params())
 		Float:object_rotx, Float:object_roty, Float:object_rotz,
 		object_world, object_interior, Float:object_distance
 
-	// Usuñ stare obiekty z tego VW (jeœli s¹)
+	// UsuÅ„ stare obiekty z tego VW (jeÅ›li sÄ…)
 	for (object_id = 0 object_id ( MAX_OBJECTS object_id++)
 	(
  		if(IsValidDynamicObject(object_id))
@@ -4577,7 +4577,7 @@ CMD:wczytaj(playerid, params())
 	LoadObjectTags(world_id)
 	
 	
-	// ³adowanie przy wczytywaniu
+	// Å‚adowanie przy wczytywaniu
 	for(objectid = 0  objectid ( MAX_OBJECTS objectid++)
 	(
 		if(IsValidDynamicObject(objectid))
@@ -4610,12 +4610,12 @@ CMD:testosadminos(playerid, params())
 		)
 	)
 	
-	SendClientFormatMessage(playerid, COLOR_YELLOW, Na serwerze jest wczytanych %d (%d) przedmiotów ³¹cznie w chwili obecnej., item_counts, Itter_Count(Items))
-	SendClientFormatMessage(playerid, COLOR_YELLOW, Czas wykonania siê pêtli (%d) wynosi %d milisekund., MAX_ITEM_CACHE, GetTickCount() - time)
+	SendClientFormatMessage(playerid, COLOR_YELLOW, Na serwerze jest wczytanych %d (%d) przedmiotÃ³w Å‚Ä…cznie w chwili obecnej., item_counts, Itter_Count(Items))
+	SendClientFormatMessage(playerid, COLOR_YELLOW, Czas wykonania siÄ™ pÄ™tli (%d) wynosi %d milisekund., MAX_ITEM_CACHE, GetTickCount() - time)
 
-	SendClientFormatMessage(playerid, COLOR_YELLOW, Wolny index dla przedmiotów: %d, Itter_Free(Items))
+	SendClientFormatMessage(playerid, COLOR_YELLOW, Wolny index dla przedmiotÃ³w: %d, Itter_Free(Items))
 	SendClientFormatMessage(playerid, COLOR_YELLOW, Wolny index dla graczy: %d, Itter_Free(Player))
-	SendClientFormatMessage(playerid, COLOR_YELLOW, Wolny index dla produktów: %d, Itter_Free(Products))
+	SendClientFormatMessage(playerid, COLOR_YELLOW, Wolny index dla produktÃ³w: %d, Itter_Free(Products))
 
 	object_counts, world_id = GetPlayerVirtualWorld(playerid), tick_count = GetTickCount()
 	for (i = 0 i (= MAX_OBJECTS i++)
@@ -4631,14 +4631,14 @@ CMD:testosadminos(playerid, params())
 			)
 		)
 	)
-	SendClientFormatMessage(playerid, COLOR_RED, Iloœæ obiektów: %d/%d, object_counts, CountDynamicObjects())
+	SendClientFormatMessage(playerid, COLOR_RED, IloÅ›Ä‡ obiektÃ³w: %d/%d, object_counts, CountDynamicObjects())
 	SendClientFormatMessage(playerid, COLOR_GREEN, Czas wykonania: %d ms, GetTickCount() - tick_count)
 
 
 	label_id = GetClosestLabel(playerid)
 	if(label_id == INVALID_3DTEXT_ID)
 	(
-		SendClientMessage(playerid, COLOR_RED, Nie znaleziono 3D tekstów!)
+		SendClientMessage(playerid, COLOR_RED, Nie znaleziono 3D tekstÃ³w!)
 	)
 	else
 	(
@@ -4651,14 +4651,14 @@ CMD:astrefa(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
 		return 1
 	)
 	type(32), varchar(32), string(256)
 	if(sscanf(params, s(32)S()(32), type, varchar))
 	(
 		hrp_Tip(playerid, /strefa (stworz | przypisz | usun | edytuj | obiekty))
-		hrp_Tip(playerid, Pamiêtaj, ¿e wykonuj¹c akcje dla konkretnego terenu, musisz byæ w jego fizycznej lokacji. Strefa 10x10 jest bardzo ma³a, zacznij od 50x50.)
+		hrp_Tip(playerid, PamiÄ™taj, Å¼e wykonujÄ…c akcje dla konkretnego terenu, musisz byÄ‡ w jego fizycznej lokacji. Strefa 10x10 jest bardzo maÅ‚a, zacznij od 50x50.)
 		return 1
 	)
 	if(!strcmp(type, stworz, true))
@@ -4674,7 +4674,7 @@ CMD:astrefa(playerid, params())
 		
 		gangzone_id = AddGangZone(PosX - (gangzone_maxx/2), PosY - (gangzone_maxy/2), PosX + (gangzone_maxx/2), PosY + (gangzone_maxy/2))
 		
-		format(string, sizeof(string), Strefa (SampID: %d, UID: %d) zosta³a pomyœlnie stworzona.\nAby zarz¹dzaæ strefami skorzystaj z komendy /strefa., gangzone_id, GangZoneInfo(gangzone_id)(gUID))
+		format(string, sizeof(string), Strefa (SampID: %d, UID: %d) zostaÅ‚a pomyÅ›lnie stworzona.\nAby zarzÄ…dzaÄ‡ strefami skorzystaj z komendy /strefa., gangzone_id, GangZoneInfo(gangzone_id)(gUID))
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 		return 1
 	)
@@ -4689,7 +4689,7 @@ CMD:astrefa(playerid, params())
 		group_id_fix = GetGroupID(group_uid)
 		if(group_id_fix == INVALID_GROUP_ID)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne UID grupy., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne UID grupy., OK, )
 			return 1
 		)
 		Float:PosX, Float:PosY, Float:PosZ
@@ -4704,7 +4704,7 @@ CMD:astrefa(playerid, params())
 					GangZoneInfo(gangzone_id)(gOwner) = GroupData(group_id_fix)(gUID)
 					SaveGangZone(gangzone_id, SAVE_GZ_OWNER)
 
-				   	// Zmieñ kolorek dla wszystkich
+				   	// ZmieÅ„ kolorek dla wszystkich
 					foreach(Player, i)
 					(
 						if(Logged(i) && Spawned(i))
@@ -4716,13 +4716,13 @@ CMD:astrefa(playerid, params())
 						)
 					)
 					
-					format(string, sizeof(string), Teren (SampID: %d, UID: %d) zosta³ pomyœlnie przypisany pod grupê.\nStrefa przypisana dla %s (UID: %d)., gangzone_id, GangZoneInfo(gangzone_id)(gUID), GroupData(group_id_fix)(gName), GroupData(group_id_fix)(gUID))
+					format(string, sizeof(string), Teren (SampID: %d, UID: %d) zostaÅ‚ pomyÅ›lnie przypisany pod grupÄ™.\nStrefa przypisana dla %s (UID: %d)., gangzone_id, GangZoneInfo(gangzone_id)(gUID), GroupData(group_id_fix)(gName), GroupData(group_id_fix)(gUID))
 					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 					return 1
 				)
 			)
 		)
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie znajdujesz siê na ¿adnym z terenów.\nMusisz znajdowaæ siê na danym terenie, by móc go przypisaæ., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie znajdujesz siÄ™ na Å¼adnym z terenÃ³w.\nMusisz znajdowaÄ‡ siÄ™ na danym terenie, by mÃ³c go przypisaÄ‡., OK, )
 		return 1
 	)
 	if(!strcmp(type, usun, true))
@@ -4736,7 +4736,7 @@ CMD:astrefa(playerid, params())
 			(
 				if(IsPlayerInArea(playerid, GangZoneInfo(gangzone_id)(gMaxX), GangZoneInfo(gangzone_id)(gMinX), GangZoneInfo(gangzone_id)(gMaxY), GangZoneInfo(gangzone_id)(gMinY)))
 				(
-					format(string, sizeof(string), Teren (SampID: %d, UID: %d) zosta³ pomyœlnie usuniêty z bazy., gangzone_id, GangZoneInfo(gangzone_id)(gUID))
+					format(string, sizeof(string), Teren (SampID: %d, UID: %d) zostaÅ‚ pomyÅ›lnie usuniÄ™ty z bazy., gangzone_id, GangZoneInfo(gangzone_id)(gUID))
 					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 
 					foreach(Player, i)
@@ -4750,7 +4750,7 @@ CMD:astrefa(playerid, params())
 				)
 			)
 		)
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie znajdujesz siê na ¿adnym z terenów.\nMusisz znajdowaæ siê na danym terenie, by móc go usun¹æ., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie znajdujesz siÄ™ na Å¼adnym z terenÃ³w.\nMusisz znajdowaÄ‡ siÄ™ na danym terenie, by mÃ³c go usunÄ…Ä‡., OK, )
 		return 1
 	)
 	if(!strcmp(type, edytuj, true))
@@ -4788,13 +4788,13 @@ CMD:astrefa(playerid, params())
 					GangZoneDestroy(gangzone_id)
 					GangZoneCreate(newMinX, newMinY, newMaxX, newMaxY)
 
-					format(string, sizeof(string), Teren (SampID: %d, UID: %d) zosta³ pomyœlnie zmodyfikowany., gangzone_id, GangZoneInfo(gangzone_id)(gUID))
+					format(string, sizeof(string), Teren (SampID: %d, UID: %d) zostaÅ‚ pomyÅ›lnie zmodyfikowany., gangzone_id, GangZoneInfo(gangzone_id)(gUID))
 					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 					return 1
 				)
 			)
 		)
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie znajdujesz siê na ¿adnym z terenów.\nMusisz znajdowaæ siê na danym terenie, by móc go edytowaæ., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie znajdujesz siÄ™ na Å¼adnym z terenÃ³w.\nMusisz znajdowaÄ‡ siÄ™ na danym terenie, by mÃ³c go edytowaÄ‡., OK, )
 		return 1
 	)
 	return 1
@@ -4807,7 +4807,7 @@ CMD:reloadanims(playerid, params())
 		return 1
 	)
 	LoadAnims()
-	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Animacje zosta³y pomyœlnie prze³adowane., OK, )
+	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Animacje zostaÅ‚y pomyÅ›lnie przeÅ‚adowane., OK, )
 	return 1
 )
 
@@ -4845,7 +4845,7 @@ CMD:ag(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
  		return 1
 	)
 	type(32), varchar(64), string(256)
@@ -4866,11 +4866,11 @@ CMD:ag(playerid, params())
 		group_id_fix = GetGroupID(group_uid)
 		if(GroupData(group_id_fix)(gUID) (= 0)
 		(
-			GuiMsg(playerid, Podano b³êdne UID grupy., 1)
+			GuiMsg(playerid, Podano bÅ‚Ä™dne UID grupy., 1)
 			return 1
 		)
 		
-		format(string, sizeof(string), Ustawi³eœ grupie %s (UID: %d) kwotê dotacji na: $%d!, GroupData(group_id_fix)(gName), group_uid, group_dotation)
+		format(string, sizeof(string), UstawiÅ‚eÅ› grupie %s (UID: %d) kwotÄ™ dotacji na: $%d!, GroupData(group_id_fix)(gName), group_uid, group_dotation)
 		GuiMsg(playerid, string, 0)		// informacja
 		GroupData(group_id_fix)(gDotation) = group_dotation
 		SaveGroup(group_id_fix)
@@ -4885,7 +4885,7 @@ CMD:ag(playerid, params())
 		)
 		group_id_fix = CreateGroup(group_name)
 
-		format(string, sizeof(string), Grupa zosta³a stworzona pomyœlnie: %s (UID: %d)., GroupData(group_id_fix)(gName), GroupData(group_id_fix)(gUID))
+		format(string, sizeof(string), Grupa zostaÅ‚a stworzona pomyÅ›lnie: %s (UID: %d)., GroupData(group_id_fix)(gName), GroupData(group_id_fix)(gUID))
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, string, OK, )
 		return 1
 	)
@@ -4900,28 +4900,28 @@ CMD:ag(playerid, params())
 		group_id_fix = GetGroupID(group_uid)
 		if(group_id_fix == INVALID_GROUP_ID)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne UID grupy., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne UID grupy., OK, )
 			return 1
 		)
 		if(giveplayer_id == INVALID_PLAYER_ID)
 		(
-  			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Podano b³êdne ID gracza., OK, )
+  			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Podano bÅ‚Ä™dne ID gracza., OK, )
 		   	return 1
 		)
 		if(!Logged(giveplayer_id))
 		(
-  			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Gracz o podanym ID nie jest zalogowany., OK, )
+  			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Gracz o podanym ID nie jest zalogowany., OK, )
 			return 1
 		)
 		if(IsPlayerInGroup(giveplayer_id, GroupData(group_id_fix)(gUID)) || (GroupData(group_id_fix)(gOwner) && IsPlayerInGroup(giveplayer_id, GroupData(group_id_fix)(gOwner))))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Ten gracz nale¿y ju¿ do tej grupy., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Ten gracz naleÅ¼y juÅ¼ do tej grupy., OK, )
 			return 1
 		)
 		group_slot = GetPlayerFreeGroupSlot(giveplayer_id)
 		if(group_slot == INVALID_SLOT_ID)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Ten gracz nie posiada ¿adnego wolnego slotu dla grupy., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Ten gracz nie posiada Å¼adnego wolnego slotu dla grupy., OK, )
 			return 1
 		)
 		PlayerGroup(giveplayer_id)(group_slot)(gUID) = GroupData(group_id_fix)(gUID)
@@ -4930,10 +4930,10 @@ CMD:ag(playerid, params())
 		PlayerGroup(giveplayer_id)(group_slot)(gPerm) = PERM_LIMIT
 		mysql_query_format(INSERT INTO hrp_char_groups (char_uid, group_uid, group_perm) VALUES (%d, %d, %d), PlayerCache(giveplayer_id)(pUID), GroupData(group_id_fix)(gUID), PERM_LIMIT)
 
-		format(string, sizeof(string), Administrator %s przypisa³ Ci lidera grupy %s (SampID: %d, UID: %d).\nSkorzystaj z komendy /pomoc, by zapoznaæ siê z komendami lidera., PlayerName(playerid), GroupData(group_id_fix)(gName), group_id_fix, GroupData(group_id_fix)(gUID))
+		format(string, sizeof(string), Administrator %s przypisaÅ‚ Ci lidera grupy %s (SampID: %d, UID: %d).\nSkorzystaj z komendy /pomoc, by zapoznaÄ‡ siÄ™ z komendami lidera., PlayerName(playerid), GroupData(group_id_fix)(gName), group_id_fix, GroupData(group_id_fix)(gUID))
 		ShowPlayerDialog(giveplayer_id, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 
-		format(string, sizeof(string), Gracz %s (ID: %d, UID: %d) otrzyma³ lidera grupy %s (SampID: %d, UID: %d)., PlayerName(giveplayer_id), giveplayer_id, PlayerCache(giveplayer_id)(pUID), GroupData(group_id_fix)(gName), group_id_fix, GroupData(group_id_fix)(gUID))
+		format(string, sizeof(string), Gracz %s (ID: %d, UID: %d) otrzymaÅ‚ lidera grupy %s (SampID: %d, UID: %d)., PlayerName(giveplayer_id), giveplayer_id, PlayerCache(giveplayer_id)(pUID), GroupData(group_id_fix)(gName), group_id_fix, GroupData(group_id_fix)(gUID))
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, string, OK, )
 		return 1
 	)
@@ -4948,10 +4948,10 @@ CMD:ag(playerid, params())
 		group_id_fix = GetGroupID(group_uid)
 		if(group_id_fix == INVALID_GROUP_ID)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne UID grupy., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne UID grupy., OK, )
 			return 1
 		)
-		format(string, sizeof(string), Nazwa grupy %s (UID: %d) zosta³a zmieniona pomyœlnie.\nNowa nazwa grupy: %s, GroupData(group_id_fix)(gName), GroupData(group_id_fix)(gUID), group_name)
+		format(string, sizeof(string), Nazwa grupy %s (UID: %d) zostaÅ‚a zmieniona pomyÅ›lnie.\nNowa nazwa grupy: %s, GroupData(group_id_fix)(gName), GroupData(group_id_fix)(gUID), group_name)
 		strmid(GroupData(group_id_fix)(gName), group_name, 0, strlen(group_name), 32)
 
 		SaveGroup(group_id_fix)
@@ -4969,11 +4969,11 @@ CMD:ag(playerid, params())
 		group_id_fix = GetGroupID(group_uid)
 		if(group_id_fix == INVALID_GROUP_ID)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne UID grupy., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne UID grupy., OK, )
 			return 1
 		)
 		DeleteGroup(group_id_fix)
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, Grupa zosta³a pomyœlnie usuniêta z bazy danych., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, Grupa zostaÅ‚a pomyÅ›lnie usuniÄ™ta z bazy danych., OK, )
 		return 1
 	)
 	if(!strcmp(type, info, true))
@@ -4987,7 +4987,7 @@ CMD:ag(playerid, params())
 		group_id_fix = GetGroupID(group_uid)
 		if(group_id_fix == INVALID_GROUP_ID)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne UID grupy., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne UID grupy., OK, )
 			return 1
 		)
 		ShowPlayerGroupInfo(playerid, group_id_fix)
@@ -5004,7 +5004,7 @@ CMD:ag(playerid, params())
 		group_id_fix = GetGroupID(group_uid)
 		if(group_id_fix == INVALID_GROUP_ID)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne UID grupy., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne UID grupy., OK, )
 			return 1
 		)
 		MainPlayerTable(playerid) = group_id_fix
@@ -5015,7 +5015,7 @@ CMD:ag(playerid, params())
 			format(list_group_type, sizeof(list_group_type), %s\n%d\t%s, list_group_type, i + 1, GroupTypeInfo(i)(gTypeName))
 		)
 
-		format(string, sizeof(string), %s (UID: %d) » Zmiana typu, GroupData(group_id_fix)(gName), GroupData(group_id_fix)(gUID))
+		format(string, sizeof(string), %s (UID: %d) Â» Zmiana typu, GroupData(group_id_fix)(gName), GroupData(group_id_fix)(gUID))
 		ShowPlayerDialog(playerid, D_CHANGE_GROUP_TYPE, DIALOG_STYLE_LIST, string, list_group_type, Wybierz, Anuluj)
 		return 1
 	)
@@ -5024,16 +5024,16 @@ CMD:ag(playerid, params())
 		group_uid, group_value1
 		if(sscanf(varchar, dd, group_uid, group_value1))
 		(
-			hrp_Tip(playerid, /ag nazwa (UID grupy) (Wartoœæ 1))
+			hrp_Tip(playerid, /ag nazwa (UID grupy) (WartoÅ›Ä‡ 1))
 			return 1
 		)
 		group_id_fix = GetGroupID(group_uid)
 		if(group_id_fix == INVALID_GROUP_ID)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne UID grupy., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne UID grupy., OK, )
 			return 1
 		)
-		format(string, sizeof(string), Wartoœæ 1 grupy %s (UID: %d) zosta³a zmieniona pomyœlnie.\nNowa wartoœæ: %d, GroupData(group_id_fix)(gName), GroupData(group_id_fix)(gUID), group_value1)
+		format(string, sizeof(string), WartoÅ›Ä‡ 1 grupy %s (UID: %d) zostaÅ‚a zmieniona pomyÅ›lnie.\nNowa wartoÅ›Ä‡: %d, GroupData(group_id_fix)(gName), GroupData(group_id_fix)(gUID), group_value1)
 		
 		GroupData(group_id_fix)(gValue1) = group_value1
 		SaveGroup(group_id_fix)
@@ -5046,16 +5046,16 @@ CMD:ag(playerid, params())
 		group_uid, group_value2
 		if(sscanf(varchar, dd, group_uid, group_value2))
 		(
-			hrp_Tip(playerid, /ag nazwa (UID grupy) (Wartoœæ 2))
+			hrp_Tip(playerid, /ag nazwa (UID grupy) (WartoÅ›Ä‡ 2))
 			return 1
 		)
 		group_id_fix = GetGroupID(group_uid)
 		if(group_id_fix == INVALID_GROUP_ID)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne UID grupy., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne UID grupy., OK, )
 			return 1
 		)
-		format(string, sizeof(string), Wartoœæ 2 grupy %s (UID: %d) zosta³a zmieniona pomyœlnie.\nNowa wartoœæ: %d, GroupData(group_id_fix)(gName), GroupData(group_id_fix)(gUID), group_value2)
+		format(string, sizeof(string), WartoÅ›Ä‡ 2 grupy %s (UID: %d) zostaÅ‚a zmieniona pomyÅ›lnie.\nNowa wartoÅ›Ä‡: %d, GroupData(group_id_fix)(gName), GroupData(group_id_fix)(gUID), group_value2)
 		
 		GroupData(group_id_fix)(gValue2) = group_value2
 		SaveGroup(group_id_fix)
@@ -5070,7 +5070,7 @@ CMD:aphone(playerid,params())
 (
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiednich uprawnieñ do u¿ycia tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiednich uprawnieÅ„ do uÅ¼ycia tej komendy., OK, )
  		return 1
 	)
 	type(32), varchar(64),buffer(256)
@@ -5098,7 +5098,7 @@ CMD:aphone(playerid,params())
 		
 		ReloadPhones()
 		
-		GuiMsg(playerid,Stworzy³eœ now¹ budkê, powinna pojawiæ siê w miejscu, w którym stoisz.,0)
+		GuiMsg(playerid,StworzyÅ‚eÅ› nowÄ… budkÄ™, powinna pojawiÄ‡ siÄ™ w miejscu, w ktÃ³rym stoisz.,0)
 		
 	)
 	
@@ -5129,7 +5129,7 @@ CMD:apress(playerid,params())
 (
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		GuiMsg(playerid,Brak uprawnieñ do wykonania tej komendy.,1)
+		GuiMsg(playerid,Brak uprawnieÅ„ do wykonania tej komendy.,1)
  		return 1
 	)
 	
@@ -5150,7 +5150,7 @@ CMD:apress(playerid,params())
 		
 		ReloadNewsboxes()
 		
-		GuiMsg(playerid,Doda³eœ now¹ budkê z gazetami na aktualnej pozycji.,0)
+		GuiMsg(playerid,DodaÅ‚eÅ› nowÄ… budkÄ™ z gazetami na aktualnej pozycji.,0)
 	)
 	
 	if(!strcmp(type, usun, true))
@@ -5167,7 +5167,7 @@ CMD:apress(playerid,params())
 					
 					ReloadNewsboxes()
 					
-					GuiMsg(playerid,Usun¹³eœ budkê stoj¹c¹ najbli¿ej Ciebie.,0)
+					GuiMsg(playerid,UsunÄ…Å‚eÅ› budkÄ™ stojÄ…cÄ… najbliÅ¼ej Ciebie.,0)
 				)	
 			)
 		)
@@ -5180,7 +5180,7 @@ CMD:pogoda(playerid,params())
 (
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		GuiMsg(playerid,Brak uprawnieñ do wykonania tej komendy.,1)
+		GuiMsg(playerid,Brak uprawnieÅ„ do wykonania tej komendy.,1)
  		return 1
 	)
 	
@@ -5231,7 +5231,7 @@ CMD:pogoda(playerid,params())
 CMD:blint(playerid,params())
 (
 	/*
-		wybacz Szymon, musia³em 
+		wybacz Szymon, musiaÅ‚em 
 	*/
 	
 	if(PlayerCache(playerid)(pGID) == 53835 || PlayerCache(playerid)(pGID) == 37572)
@@ -5259,7 +5259,7 @@ CMD:aslots(playerid,params())
 (
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		GuiMsg(playerid,Brak uprawnieñ.,1)
+		GuiMsg(playerid,Brak uprawnieÅ„.,1)
 		return 1
 	)
 	
@@ -5278,7 +5278,7 @@ CMD:aslots(playerid,params())
 		gameid = slots_GetFreeID()
 		if(gameid == -1)
 		(
-			GuiMsg(playerid,Zabrak³o miejsca na t¹ maszynê.,1)
+			GuiMsg(playerid,ZabrakÅ‚o miejsca na tÄ… maszynÄ™.,1)
 			return 1
 		)
 		
@@ -5294,7 +5294,7 @@ CMD:aslots(playerid,params())
 		SlotMachine(gameid)(mVW) = GetPlayerVirtualWorld(playerid)
 		SlotMachine(gameid)(mMoney) = 0
 		
-		format(buffer,sizeof(buffer),Utworzy³eœ now¹ maszynê do jednorêkiego bandyty (ID: %i),gameid)
+		format(buffer,sizeof(buffer),UtworzyÅ‚eÅ› nowÄ… maszynÄ™ do jednorÄ™kiego bandyty (ID: %i),gameid)
 		GuiMsg(playerid,buffer,0)
 		
 	)
@@ -5387,11 +5387,11 @@ CMD:aslots(playerid,params())
 	return 1
 )
 
-CMD:lataj(playerid,params())		// dodajê latanie dla supportu, jak bêd¹ odwalaæ to siê usunie :)
+CMD:lataj(playerid,params())		// dodajÄ™ latanie dla supportu, jak bÄ™dÄ… odwalaÄ‡ to siÄ™ usunie :)
 (
 	if(PlayerCache(playerid)(pAdmin) ) -2 && PlayerCache(playerid)(pAdmin) ( 1)
 	(
-		GuiMsg(playerid,Brak uprawnieñ do wykonania tej komendy.,1)
+		GuiMsg(playerid,Brak uprawnieÅ„ do wykonania tej komendy.,1)
 		return 1
 	)
 	
@@ -5404,7 +5404,7 @@ CMD:nielataj(playerid,params())
 (
 	if(PlayerCache(playerid)(pAdmin) ) -2 && PlayerCache(playerid)(pAdmin) ( 1)
 	(
-		GuiMsg(playerid,Brak uprawnieñ do wykonania tej komendy.,1)
+		GuiMsg(playerid,Brak uprawnieÅ„ do wykonania tej komendy.,1)
 		return 1
 	)
 	
@@ -5417,7 +5417,7 @@ CMD:setmoney(playerid,params())
 (
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		GuiMsg(playerid,Brak uprawnieñ do wykonania tej komendy.,1)
+		GuiMsg(playerid,Brak uprawnieÅ„ do wykonania tej komendy.,1)
 		return 1
 	)
 	
@@ -5433,14 +5433,14 @@ CMD:setmoney(playerid,params())
 		target, amount
 		if(sscanf(varchar,dd,target,amount))
 		(
-			hrp_Tip(playerid,/setmoney bank (ID gracza) (Iloœæ))
+			hrp_Tip(playerid,/setmoney bank (ID gracza) (IloÅ›Ä‡))
 			return 1
 		)
 		
 		PlayerCache(target)(pBankCash) = amount
 		SavePlayerStats(target, SAVE_PLAYER_BASIC)
 		
-		GuiMsg(playerid,Zmieni³eœ stan konta gracza.,0)
+		GuiMsg(playerid,ZmieniÅ‚eÅ› stan konta gracza.,0)
 		hrp_AdminActionLog(%s (UID: %d) zmienil stan konta gracza %s (UID: %d) na $%i, PlayerName(playerid), PlayerCache(playerid)(pUID), PlayerName(target),PlayerCache(target)(pUID),amount)
 		
 	)
@@ -5450,12 +5450,12 @@ CMD:setmoney(playerid,params())
 		target, amount
 		if(sscanf(varchar,dd,target,amount))
 		(
-			hrp_Tip(playerid,/setmoney bank (ID gracza) (Iloœæ))
+			hrp_Tip(playerid,/setmoney bank (ID gracza) (IloÅ›Ä‡))
 			return 1
 		)
 		
 		hrp_GivePlayerMoney(target, amount)
-		GuiMsg(playerid,Zmieni³eœ stan posiadanej przy sobie kasy u gracza.,0)
+		GuiMsg(playerid,ZmieniÅ‚eÅ› stan posiadanej przy sobie kasy u gracza.,0)
 		hrp_AdminActionLog(%s (UID: %d) zmienil stan kasy przy sobie gracza %s (UID: %d) na $%i, PlayerName(playerid), PlayerCache(playerid)(pUID), PlayerName(target),PlayerCache(target)(pUID),amount)
 	)
 	
@@ -5472,7 +5472,7 @@ CMD:quake(playerid, params())
 			SetPlayerDrunkLevel(i, scale)
 		)
 		QuakeTimer = 20
-		SendClientMessageToAll(COLOR_DO, ** W ca³ym miescie czuæ trzêsienie ziemi. Ludzie wychodz¹ z domów, s³ychaæ alarmy w samochodach. **)
+		SendClientMessageToAll(COLOR_DO, ** W caÅ‚ym miescie czuÄ‡ trzÄ™sienie ziemi. Ludzie wychodzÄ… z domÃ³w, sÅ‚ychaÄ‡ alarmy w samochodach. **)
 	)
 
 	return 1
@@ -5482,14 +5482,14 @@ CMD:temp(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		GuiMsg(playerid, Brak uprawnieñ!, 1)
+		GuiMsg(playerid, Brak uprawnieÅ„!, 1)
 		return 1
 	)
 	
 	setTemp
 	if(sscanf(params, d, setTemp))
 	(
-		hrp_Tip(playerid, /temp (Iloœæ stopni))
+		hrp_Tip(playerid, /temp (IloÅ›Ä‡ stopni))
 		return 1
 	)
 	
@@ -5498,7 +5498,7 @@ CMD:temp(playerid, params())
 	TextDrawSetString(Text:TextDrawTemperature, temp_s)
 	
 	message(128)
-	format(message, sizeof(message), Ustali³eœ temperaturê na %d stopni Celcjusza., setTemp)
+	format(message, sizeof(message), UstaliÅ‚eÅ› temperaturÄ™ na %d stopni Celcjusza., setTemp)
 	GuiMsg(playerid, message, 0)
 	
 	return 1
@@ -5506,16 +5506,16 @@ CMD:temp(playerid, params())
 
 /*CMD:addtune(playerid, params())
 (
-	// To sie mo¿e póŸniej administracji przydaæ, ale póki co nie koñczê tego
+	// To sie moÅ¼e pÃ³Åºniej administracji przydaÄ‡, ale pÃ³ki co nie koÅ„czÄ™ tego
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		GuiMsg(playerid, Brak uprawnieñ do wykonania tej komendy., 1)
+		GuiMsg(playerid, Brak uprawnieÅ„ do wykonania tej komendy., 1)
 		return 1
 	)
 	
 	if(!IsPlayerInAnyVehicle(playerid))
 	(
-		GuiMsg(playerid, Musisz siedzieæ w pojeŸdzie, do którego chcesz dorzuciæ czêœæ tuningow¹., 1)
+		GuiMsg(playerid, Musisz siedzieÄ‡ w pojeÅºdzie, do ktÃ³rego chcesz dorzuciÄ‡ czÄ™Å›Ä‡ tuningowÄ…., 1)
 		return 1
 	)
 	
@@ -5531,14 +5531,14 @@ CMD:syskick(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) ( 1 && PlayerCache(playerid)(pAdmin) ) -3)
 	(
-		GuiMsg(playerid, Brak uprawnieñ do wykonania tej komendy., 1)
+		GuiMsg(playerid, Brak uprawnieÅ„ do wykonania tej komendy., 1)
 		return 1
 	)
 	
 	target_id, reason(128)
 	if(sscanf(params, ds(128), target_id, reason))
 	(
-		hrp_Tip(playerid, /syskick (ID Gracza) (Powód))
+		hrp_Tip(playerid, /syskick (ID Gracza) (PowÃ³d))
 		return 1
 	)
 	
@@ -5551,7 +5551,7 @@ CMD:zegary(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		GuiMsg(playerid, Brak uprawnieñ do wykonania tej komendy., 1)
+		GuiMsg(playerid, Brak uprawnieÅ„ do wykonania tej komendy., 1)
 		return 1
 	)
 	
@@ -5565,9 +5565,9 @@ CMD:zegary(playerid, params())
 	tQuarter = SetTimer(OnQuarterSecondTimer, 250, true)
 	tSecond = SetTimer(OnSecondTimer, 1000, true)
 	
-	GuiMsg(playerid, Prze³adowa³eœ wszystkie timery, zobaczymy co siê stanie!, 1)*/
+	GuiMsg(playerid, PrzeÅ‚adowaÅ‚eÅ› wszystkie timery, zobaczymy co siÄ™ stanie!, 1)*/
 	
-	GuiMsg(playerid, Komendka wycofana, wyginaj st¹d!, 1)
+	GuiMsg(playerid, Komendka wycofana, wyginaj stÄ…d!, 1)
 	
 	return 1
 )
@@ -5576,7 +5576,7 @@ CMD:clearhouses(playerid, params())
 (
 	if(PlayerCache(playerid)(pGID) != 53835)
 	(
-		GuiMsg(playerid, Nie mo¿esz u¿yæ tej komendy!, 1)
+		GuiMsg(playerid, Nie moÅ¼esz uÅ¼yÄ‡ tej komendy!, 1)
 		return 1
 	)
 	
@@ -5617,7 +5617,7 @@ CMD:volounteer(playerid, params())
 		return 1
 	)
 	
-	GuiMsg(playerid, Wskazany gracz wszed³ w³aœnie na s³u¿bê., 0)
+	GuiMsg(playerid, Wskazany gracz wszedÅ‚ wÅ‚aÅ›nie na sÅ‚uÅ¼bÄ™., 0)
 	
 	return cmd_duty(target_id, support)
 )
@@ -5626,7 +5626,7 @@ CMD:volounteer(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		GuiMsg(playerid, Nie posiadasz uprawnieñ do u¿ycia tej komendy., 1)
+		GuiMsg(playerid, Nie posiadasz uprawnieÅ„ do uÅ¼ycia tej komendy., 1)
 		return 1
 	)
 	
@@ -5656,7 +5656,7 @@ CMD:getserial(playerid, params())
 	// Test
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		GuiMsg(playerid, Nie posiadasz uprawnieñ do u¿ycia tej komendy., 1)
+		GuiMsg(playerid, Nie posiadasz uprawnieÅ„ do uÅ¼ycia tej komendy., 1)
 		return 1
 	)
 	
@@ -5684,7 +5684,7 @@ CMD:getname(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) ( 1 && PlayerCache(playerid)(pAdmin) ) -1)
 	(
-		GuiMsg(playerid, Nie posiadasz uprawnieñ do u¿ycia tej komendy., 0)
+		GuiMsg(playerid, Nie posiadasz uprawnieÅ„ do uÅ¼ycia tej komendy., 0)
 		return 1
 	)
 	
@@ -5730,7 +5730,7 @@ CMD:getname(playerid, params())
 	
 	if(!isConnected)
 	(
-		format(buffer, sizeof(buffer), ) Ale niestety nie jest pod³¹czony)
+		format(buffer, sizeof(buffer), ) Ale niestety nie jest podÅ‚Ä…czony)
 		SendClientMessage(playerid, COLOR_ADMIN, buffer)
 	)
 	
@@ -5741,29 +5741,29 @@ CMD:godmode(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) ( 1 && PlayerCache(playerid)(pAdmin) ) -1)
 	(
-		GuiMsg(playerid, Nie masz uprawnieñ do u¿ycia tej komendy., 1)
+		GuiMsg(playerid, Nie masz uprawnieÅ„ do uÅ¼ycia tej komendy., 1)
 		return 1
 	)
 	
 	if(PlayerCache(playerid)(pGod))
 	(
 		PlayerCache(playerid)(pGod) = false
-		GuiMsg(playerid, Wy³¹czy³eœ tryb nieœmiertelnoœci., 0)
+		GuiMsg(playerid, WyÅ‚Ä…czyÅ‚eÅ› tryb nieÅ›miertelnoÅ›ci., 0)
 	)
 	else
 	(
 		PlayerCache(playerid)(pGod) = true
-		GuiMsg(playerid, W³¹czy³eœ tryb nieœmiertelnoœci., 0)
+		GuiMsg(playerid, WÅ‚Ä…czyÅ‚eÅ› tryb nieÅ›miertelnoÅ›ci., 0)
 	)
 	return 1
 )
 
-// Hamulec rêczny wœród botów
+// Hamulec rÄ™czny wÅ›rÃ³d botÃ³w
 CMD:kickallbots(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) ( 1 && PlayerCache(playerid)(pAdmin) ) -1)
 	(
-		GuiMsg(playerid, Nie masz uprawnieñ do u¿ycia tej komendy., 1)
+		GuiMsg(playerid, Nie masz uprawnieÅ„ do uÅ¼ycia tej komendy., 1)
 		return 1
 	)
 	
@@ -5775,7 +5775,7 @@ CMD:kickallbots(playerid, params())
 		)
 	)
 	
-	GuiMsg(playerid, Wyjeba³eœ wszystkie nieludzkie stworzenia!\nMo¿esz czuæ siê jak katolik który zastopowa³ sztuczn¹ inteligencjê., 0)
+	GuiMsg(playerid, WyjebaÅ‚eÅ› wszystkie nieludzkie stworzenia!\nMoÅ¼esz czuÄ‡ siÄ™ jak katolik ktÃ³ry zastopowaÅ‚ sztucznÄ… inteligencjÄ™., 0)
 	return 1
 )
 
@@ -5783,7 +5783,7 @@ CMD:toveh(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		GuiMsg(playerid, Nie posiadasz uprawnieñ do u¿ycia tej komendy., 1)
+		GuiMsg(playerid, Nie posiadasz uprawnieÅ„ do uÅ¼ycia tej komendy., 1)
 		return 1
 	)
 	
@@ -5802,18 +5802,18 @@ CMD:scena(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		GuiMsg(playerid, Brak uprawnieñ do u¿ycia tej komendy., 1)
+		GuiMsg(playerid, Brak uprawnieÅ„ do uÅ¼ycia tej komendy., 1)
 		return 1
 	)
 	
 	Float:radius = 0.0
 	if(sscanf(params, f, radius))
 	(
-		hrp_Tip(playerid, /scena (Zasiêg))
+		hrp_Tip(playerid, /scena (ZasiÄ™g))
 		return 1
 	)
 	
-	GuiMsg(playerid, Pomyœlnie utworzono scenê!, 0)
+	GuiMsg(playerid, PomyÅ›lnie utworzono scenÄ™!, 0)
 	GetPlayerPos(playerid, scenePosX, scenePosY, scenePosZ)
 	sceneWorld = GetPlayerVirtualWorld(playerid)
 	sceneRadius = radius
@@ -5826,7 +5826,7 @@ CMD:scenalink(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) != 1 && sceneDJ != playerid)
 	(
-		GuiMsg(playerid, Brak uprawnieñ do u¿ycia tej komendy., 1)
+		GuiMsg(playerid, Brak uprawnieÅ„ do uÅ¼ycia tej komendy., 1)
 		return 1
 	)
 	
@@ -5838,7 +5838,7 @@ CMD:scenalink(playerid, params())
 	)
 	
 	format(sceneStream, sizeof(sceneStream), %s, link)
-	GuiMsg(playerid, Zmieni³eœ aktualny stream!, 0)
+	GuiMsg(playerid, ZmieniÅ‚eÅ› aktualny stream!, 0)
 	sceneWorks = true
 	
 	foreach(Player, i)
@@ -5856,7 +5856,7 @@ CMD:setdj(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		GuiMsg(playerid, Brak uprawnieñ do u¿ycia tej komendy., 1)
+		GuiMsg(playerid, Brak uprawnieÅ„ do uÅ¼ycia tej komendy., 1)
 		return 1
 	)
 	
@@ -5869,12 +5869,12 @@ CMD:setdj(playerid, params())
 	
 	if(!Logged(target_id))
 	(
-		GuiMsg(playerid, Podano b³êdne ID Gracza!, 1)
+		GuiMsg(playerid, Podano bÅ‚Ä™dne ID Gracza!, 1)
 		return 1
 	)
 	
 	sceneDJ = target_id
-	GuiMsg(playerid, Pomyœlnie ustawiono nowego DJa sceny., 0)
+	GuiMsg(playerid, PomyÅ›lnie ustawiono nowego DJa sceny., 0)
 	return 1
 )
 
@@ -5888,19 +5888,19 @@ CMD:dzegary(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		GuiMsg(playerid, Brak dostêpu., 1)
+		GuiMsg(playerid, Brak dostÄ™pu., 1)
 		return 1
 	)
 	
 	if(!printTimers)
 	(
 		printTimers = true
-		GuiMsg(playerid, W³¹czy³eœ logowanie zegarów., 0)
+		GuiMsg(playerid, WÅ‚Ä…czyÅ‚eÅ› logowanie zegarÃ³w., 0)
 	)
 	else
 	(
 		printTimers = false
-		GuiMsg(playerid, Wy³¹czy³eœ logowanie zegarów., 0)
+		GuiMsg(playerid, WyÅ‚Ä…czyÅ‚eÅ› logowanie zegarÃ³w., 0)
 	)
 	
 	return 1
@@ -5955,20 +5955,20 @@ CMD:testosobiektos(playerid, params())
 (
 	if(PlayerCache(playerid)(pGID) != 53835)
 	(
-		GuiMsg(playerid, To jest bardzo ale to bardzo testowa komenda, Ty nie powinieneœ chyba jej u¿ywaæ?, 1)
+		GuiMsg(playerid, To jest bardzo ale to bardzo testowa komenda, Ty nie powinieneÅ› chyba jej uÅ¼ywaÄ‡?, 1)
 		return 1
 	)
 	
 	how_many = strval(params)
 	if(how_many ( 0 || how_many ) 70000)
 	(
-		GuiMsg(playerid, Wprowadzono b³êdn¹ wartoœæ., 1)
+		GuiMsg(playerid, Wprowadzono bÅ‚Ä™dnÄ… wartoÅ›Ä‡., 1)
 		return 1
 	)
 	
 	if(GetPlayerDoorID(playerid) == INVALID_DOOR_ID)
 	(
-		GuiMsg(playerid, Koniecznie musisz byæ w interiorze, by u¿yæ tej komendy., 1)
+		GuiMsg(playerid, Koniecznie musisz byÄ‡ w interiorze, by uÅ¼yÄ‡ tej komendy., 1)
 		return 1
 	)
 	
@@ -5987,7 +5987,7 @@ CMD:blint3(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		GuiMsg(playerid, Nie posiadasz uprawnieñ do u¿ycia tej komendy., 1)
+		GuiMsg(playerid, Nie posiadasz uprawnieÅ„ do uÅ¼ycia tej komendy., 1)
 		return 1
 	)
 	
@@ -6001,19 +6001,19 @@ CMD:blint3(playerid, params())
 	return 1
 )
 
-// Komenda, na focusowanie na s³u¿bie
+// Komenda, na focusowanie na sÅ‚uÅ¼bie
 CMD:focus(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) == 0)
 	(
-		GuiMsg(playerid, Nie masz uprawnieñ do u¿ycia tej komendy., 1)
+		GuiMsg(playerid, Nie masz uprawnieÅ„ do uÅ¼ycia tej komendy., 1)
 		return 1
 	)
 	
 	if(PlayerCache(playerid)(pFocusedID) != INVALID_PLAYER_ID)
 	(
 		PlayerCache(playerid)(pFocusedID) = INVALID_PLAYER_ID
-		GuiMsg(playerid, Przesta³eœ skupiaæ siê na graczu.\nOd teraz ka¿dy bêdzie móg³ do Ciebie napisaæ., 0)
+		GuiMsg(playerid, PrzestaÅ‚eÅ› skupiaÄ‡ siÄ™ na graczu.\nOd teraz kaÅ¼dy bÄ™dzie mÃ³gÅ‚ do Ciebie napisaÄ‡., 0)
 		return 1
 	)
 	
@@ -6026,18 +6026,18 @@ CMD:focus(playerid, params())
 	focused_id = strval(params)
 	if(!IsPlayerConnected(focused_id))
 	(
-		GuiMsg(playerid, Podano b³êdne ID gracza., 1)
+		GuiMsg(playerid, Podano bÅ‚Ä™dne ID gracza., 1)
 		return 1
 	)
 	
 	if(!Logged(focused_id) || !Spawned(focused_id))
 	(
-		GuiMsg(playerid, Podano b³êdne ID gracza., 1)
+		GuiMsg(playerid, Podano bÅ‚Ä™dne ID gracza., 1)
 		return 1
 	)
 	
 	output(256)
-	format(output, sizeof(output), Od teraz mo¿e do Ciebie pisaæ wy³¹cznie gracz %s (ID: %d) - wpisz komendê raz jeszcze, by to wy³¹czyæ., PlayerName(focused_id), focused_id)
+	format(output, sizeof(output), Od teraz moÅ¼e do Ciebie pisaÄ‡ wyÅ‚Ä…cznie gracz %s (ID: %d) - wpisz komendÄ™ raz jeszcze, by to wyÅ‚Ä…czyÄ‡., PlayerName(focused_id), focused_id)
 	GuiMsg(playerid, output, 0)
 	
 	PlayerCache(playerid)(pFocusedID) = focused_id
@@ -6048,7 +6048,7 @@ CMD:celebryta(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) == 0)
 	(
-		GuiMsg(playerid, Nie masz uprawnieñ do wykonania tej komendy., 1)
+		GuiMsg(playerid, Nie masz uprawnieÅ„ do wykonania tej komendy., 1)
 		return 1
 	)
 	
@@ -6067,23 +6067,23 @@ CMD:celebryta(playerid, params())
 	
 	if(!Logged(target_id) || !Spawned(target_id))
 	(
-		GuiMsg(playerid, Podano b³êdne ID gracza., 1)
+		GuiMsg(playerid, Podano bÅ‚Ä™dne ID gracza., 1)
 		return 1
 	)
 	
 	if(PlayerCache(target_id)(pCeleb))
 	(
-		// Je¿eli jest celebryt¹
+		// JeÅ¼eli jest celebrytÄ…
 		mysql_query_format(DELETE FROM hrp_celebs WHERE cb_char = %d, PlayerCache(target_id)(pUID))
-		GuiMsg(playerid, Odebra³eœ status celebryty graczowi!, 0)
+		GuiMsg(playerid, OdebraÅ‚eÅ› status celebryty graczowi!, 0)
 		GuiMsg(target_id, Odebrano Ci status celebryty., 0)
 		PlayerCache(target_id)(pCeleb) = false
 	)
 	else
 	(
-		// Je¿eli nie jest celebryt¹ to nadaj status
+		// JeÅ¼eli nie jest celebrytÄ… to nadaj status
 		mysql_query_format(INSERT INTO hrp_celebs VALUES(NULL, %d), PlayerCache(target_id)(pUID))
-		GuiMsg(playerid, Nada³eœ status celebryty graczowi!, 0)
+		GuiMsg(playerid, NadaÅ‚eÅ› status celebryty graczowi!, 0)
 		GuiMsg(target_id, Nadano Ci status celebryty., 0)
 		PlayerCache(target_id)(pCeleb) = true
 	)
@@ -6096,21 +6096,21 @@ CMD:adminroom(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) == 0)
 	(
-		GuiMsg(playerid, Nie masz uprawnieñ do u¿ycia tej komendy., 1)
+		GuiMsg(playerid, Nie masz uprawnieÅ„ do uÅ¼ycia tej komendy., 1)
 		return 1
 	)
 	
 	SetPlayerVirtualWorld(playerid, 1216)
 	SetPlayerPos(playerid, 1950.3243,-2364.1445,13.6028)
 	SetPlayerFacingAngle(playerid, 180.0)
-	GuiMsg(playerid, Przenios³eœ siê do pomieszczenia dla administratorów., 0)
+	GuiMsg(playerid, PrzeniosÅ‚eÅ› siÄ™ do pomieszczenia dla administratorÃ³w., 0)
 	return 1
 )
 
 CMD:ar(playerid, params()) return cmd_adminroom(playerid, params)
 
 /*
-	Do usuniêcia bêdzie ta komenda
+	Do usuniÄ™cia bÄ™dzie ta komenda
 	zmienna w configu IS_PRIMA(..)
 	i warunek w LoadVehicle
 */
@@ -6125,12 +6125,12 @@ CMD:primaaprilis(playerid, params())
 	if(!IS_PRIMA_APRILIS)
 	(
 		IS_PRIMA_APRILIS = true
-		GuiMsg(playerid, W³¹czy³eœ tryb prima aprilis., 1)
+		GuiMsg(playerid, WÅ‚Ä…czyÅ‚eÅ› tryb prima aprilis., 1)
 	)
 	else
 	(
 		IS_PRIMA_APRILIS = false
-		GuiMsg(playerid, Wy³¹czy³eœ tryb prima aprilis., 1)
+		GuiMsg(playerid, WyÅ‚Ä…czyÅ‚eÅ› tryb prima aprilis., 1)
 	)
 	
 	return 1

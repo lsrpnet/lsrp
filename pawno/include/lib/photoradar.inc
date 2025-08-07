@@ -21,7 +21,7 @@ public LoadPhotoRadars()
 	data(128), photoradar_id = 0
 	mysql_query(SELECT * FROM hrp_photoradars)
 
-	print((load) Rozpoczynam proces wczytywania wszystkich fotoradarów z bazy...)
+	print((load) Rozpoczynam proces wczytywania wszystkich fotoradarÃ³w z bazy...)
 
 	mysql_store_result()
 	while(mysql_fetch_row(data, |))
@@ -39,7 +39,7 @@ public LoadPhotoRadars()
 	)
 	mysql_free_result()
 
-	printf((load) Wczytano %d fotoradary/ów z bazy danych., photoradar_id)
+	printf((load) Wczytano %d fotoradary/Ã³w z bazy danych., photoradar_id)
 	return 1
 )
 

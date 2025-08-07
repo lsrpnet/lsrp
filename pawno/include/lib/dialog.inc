@@ -2,7 +2,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 (
 	if(dialogid != D_LOGIN && !Logged(playerid) && !PlayerCache(playerid)(pLauncherLogged))
 	(
-		SendClientMessage(playerid, COLOR_GREEN, Nie hackuj bo potem ja musze siedzieÊ przy kodzie zamiast na plaøy...  :/) 
+		SendClientMessage(playerid, COLOR_GREEN, Nie hackuj bo potem ja musze siedzieƒá przy kodzie zamiast na pla≈ºy...  :/) 
 		Kick(playerid)
 		return 1
 	)
@@ -17,7 +17,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		if(dialogid == D_LOGIN)
 		(
 			hrp_DialogLog((DIALOG WARNING) Gracz %s (uid: %d) | Prawidlowy dialog: %d | Aktualny dialog: %d | Response: %s | Listitem: %s | inputtext: %s, PlayerName(playerid), PlayerCache(playerid)(pUID), PlayerCache(playerid)(pDialog), dialogid, response, listitem, *****)
-			SendClientMessage(playerid, COLOR_GREEN, Nie hackuj bo potem ja musze siedzieÊ przy kodzie zamiast na plaøy...  :/)
+			SendClientMessage(playerid, COLOR_GREEN, Nie hackuj bo potem ja musze siedzieƒá przy kodzie zamiast na pla≈ºy...  :/)
 			Kick(playerid)
 			return 1
 		)
@@ -47,7 +47,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			if(strlen(inputtext) )= 24 || strlen(inputtext) (= 0)
 			(
 				PlayerCache(playerid)(pLogTries) --
-				ShowPlayerDialog(playerid, D_LOGIN, DIALOG_STYLE_PASSWORD, Panel logowania, Witaj na serwerze SERVER_NAME.\nWprowadü has≥o do konta, aby mÛc rozpoczπÊ grÍ.\n\n(FF0000)* Podane has≥o jest nieprawid≥owe, sprÛbuj ponownie, Zaloguj, Wyjdü)
+				ShowPlayerDialog(playerid, D_LOGIN, DIALOG_STYLE_PASSWORD, Panel logowania, Witaj na serwerze SERVER_NAME.\nWprowad≈∫ has≈Ço do konta, aby m√≥c rozpoczƒÖƒá grƒô.\n\n(FF0000)* Podane has≈Ço jest nieprawid≈Çowe, spr√≥buj ponownie, Zaloguj, Wyjd≈∫)
 
 				AddPlayerLoginLog(playerid, false)
 				return 1
@@ -55,12 +55,12 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			mysql_real_escape_string(inputtext, password)
 			mysql_query_format(SELECT user_login, user_admin, user_premium, user_premium_time, user_gamepoints, user_color FROM live_users WHERE user_pass = MD5(%s) AND user_id = %d LIMIT 1, password, PlayerCache(playerid)(pGID))
 			
-   			print((log) Proces logowania rozpoczÍty...)
+   			print((log) Proces logowania rozpoczƒôty...)
 
 			mysql_store_result()
 			if(mysql_fetch_row(data, |))
 			(
-				printf((log) Logowanie gracza %s (UID: %d, GID: %d) przebieg≥o pomyúlnie., PlayerRealName(playerid), PlayerCache(playerid)(pUID), PlayerCache(playerid)(pGID))
+				printf((log) Logowanie gracza %s (UID: %d, GID: %d) przebieg≈Ço pomy≈õlnie., PlayerRealName(playerid), PlayerCache(playerid)(pUID), PlayerCache(playerid)(pGID))
 
 				sscanf(data, p(|)s(64)ddddd, PlayerCache(playerid)(pGlobalName), PlayerCache(playerid)(pAdmin), PlayerCache(playerid)(pPremium), PlayerCache(playerid)(pPremiumTime), PlayerCache(playerid)(pGamePoints), PlayerCache(playerid)(pUserColor))
 				AddPlayerLoginLog(playerid, true)
@@ -71,18 +71,18 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			(
 				if(PlayerCache(playerid)(pLogTries))
 				(
-					printf((log) Wprowadzono b≥Ídne has≥o dla gracza %s (UID: %d, GID: %d)., PlayerRealName(playerid), PlayerCache(playerid)(pUID), PlayerCache(playerid)(pGID))
+					printf((log) Wprowadzono b≈Çƒôdne has≈Ço dla gracza %s (UID: %d, GID: %d)., PlayerRealName(playerid), PlayerCache(playerid)(pUID), PlayerCache(playerid)(pGID))
 
 					PlayerCache(playerid)(pLogTries) --
-					ShowPlayerDialog(playerid, D_LOGIN, DIALOG_STYLE_PASSWORD, Panel logowania, Witaj na serwerze SERVER_NAME.\nWprowadü has≥o do konta, aby mÛc rozpoczπÊ grÍ.\n\n(FF0000)* Podane has≥o jest nieprawid≥owe, sprÛbuj ponownie, Zaloguj, Wyjdü)
+					ShowPlayerDialog(playerid, D_LOGIN, DIALOG_STYLE_PASSWORD, Panel logowania, Witaj na serwerze SERVER_NAME.\nWprowad≈∫ has≈Ço do konta, aby m√≥c rozpoczƒÖƒá grƒô.\n\n(FF0000)* Podane has≈Ço jest nieprawid≈Çowe, spr√≥buj ponownie, Zaloguj, Wyjd≈∫)
 
 					AddPlayerLoginLog(playerid, false)
 				)
 				else
 				(
-					printf((log) Gracz %s (UID: %d, GID: %d) przekroczy≥ limit prÛb logowania, zostaje wyrzucony z serwera., PlayerRealName(playerid), PlayerCache(playerid)(pUID), PlayerCache(playerid)(pGID))
+					printf((log) Gracz %s (UID: %d, GID: %d) przekroczy≈Ç limit pr√≥b logowania, zostaje wyrzucony z serwera., PlayerRealName(playerid), PlayerCache(playerid)(pUID), PlayerCache(playerid)(pGID))
 
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Przekroczy≥eú limit wykonywania prÛb logowania.\nZostajesz wyrzucony z serwera., Zamknij, )
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Przekroczy≈Çe≈õ limit wykonywania pr√≥b logowania.\nZostajesz wyrzucony z serwera., Zamknij, )
 					Kick(playerid)
 				)
 				done = false
@@ -97,7 +97,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		)
 		else
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Opuszczasz grÍ - zapraszamy ponownie.\n\n\t\t\tEkipa SERVER_NAME., Zamknij, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Opuszczasz grƒô - zapraszamy ponownie.\n\n\t\t\tEkipa SERVER_NAME., Zamknij, )
 			Kick(playerid)
 			return 1
 		)
@@ -118,7 +118,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				mysql_store_result()
 				if(mysql_num_rows() ) 0)
 				(
-					GuiMsg(playerid, Ten pojazd nie dotar≥ jeszcze do miasta., 1)
+					GuiMsg(playerid, Ten pojazd nie dotar≈Ç jeszcze do miasta., 1)
 					mysql_free_result()
 					return 1
 				)
@@ -157,7 +157,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					
 					if(!house)
 					(
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie moøesz zespawnowaÊ wiecej pojazdÛw nie majπc domu., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie mo≈ºesz zespawnowaƒá wiecej pojazd√≥w nie majƒÖc domu., OK, )
 						return 1
 					)
 				)
@@ -167,7 +167,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				(
 					if(PlayerCache(playerid)(pCarSpawned) )= STANDARD_VEHICLES)
 					(
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie moøesz zespawnowaÊ wiecej pojazdÛw niø 1.\nOdspawnuj jakiú pojazd.\n\nOsoby posiadajπce konto premium mogπ zespawnowaÊ ich 3., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie mo≈ºesz zespawnowaƒá wiecej pojazd√≥w ni≈º 1.\nOdspawnuj jaki≈õ pojazd.\n\nOsoby posiadajƒÖce konto premium mogƒÖ zespawnowaƒá ich 3., OK, )
 						return 1
 					)
 				)
@@ -175,7 +175,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				(
 					if(PlayerCache(playerid)(pCarSpawned) )= PREMIUM_VEHICLES)
 					(
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie moøesz zespawnowaÊ wiecej pojazdÛw niø 3.\nOdspawnuj jakiú pojazd., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie mo≈ºesz zespawnowaƒá wiecej pojazd√≥w ni≈º 3.\nOdspawnuj jaki≈õ pojazd., OK, )
 						return 1
 					)
 				)
@@ -183,7 +183,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				SpawnVehicle(vehuid)
 				PlayerCache(playerid)(pCarSpawned) ++
 				
-				format(string, sizeof(string), Pojazd %s (UID: %d) zosta≥ zespawnowany pomyúlnie., veh_name, vehuid)
+				format(string, sizeof(string), Pojazd %s (UID: %d) zosta≈Ç zespawnowany pomy≈õlnie., veh_name, vehuid)
 				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, string, OK, )
 			)
 			else
@@ -191,7 +191,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				UnspawnVehicle(vehuid)
 				PlayerCache(playerid)(pCarSpawned) --
 
-				format(string, sizeof(string), Pojazd %s (UID: %d) zosta≥ odspawnowany pomyúlnie., veh_name, vehuid)
+				format(string, sizeof(string), Pojazd %s (UID: %d) zosta≈Ç odspawnowany pomy≈õlnie., veh_name, vehuid)
 				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, string, OK, )
 			)
 			return 1
@@ -211,7 +211,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
    			SetPlayerCheckpoint(playerid, x, y, z, 5.0)
 			Checkpoint(playerid) = 1
 		   		
-   			format(string, sizeof(string), Namierzony zosta≥ pojazd \%s\ (SampID: %d, UID: %d).\nAby anulowaÊ namierzanie, wpisz komendÍ /v namierz., CarInfo(vehid)(cName), vehid, CarInfo(vehid)(cUID))
+   			format(string, sizeof(string), Namierzony zosta≈Ç pojazd \%s\ (SampID: %d, UID: %d).\nAby anulowaƒá namierzanie, wpisz komendƒô /v namierz., CarInfo(vehid)(cName), vehid, CarInfo(vehid)(cUID))
 			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, string, OK, )
 			return 1
 		)
@@ -231,8 +231,8 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			DestroyPickup(doorid)
 			CreatePickup(DoorData(doorid)(dPickupID), 2, DoorData(doorid)(dEnterX), DoorData(doorid)(dEnterY), DoorData(doorid)(dEnterZ), DoorData(doorid)(dEnterVW))
 
-			format(string, sizeof(string), Model pickupa dla drzwi %s (SampID: %d, UID: %d) zosta≥ pomyúlnie zmieniony., DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID))
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, Model pickupa drzwi zosta≥ pomyúlnie zmieniony., OK, )
+			format(string, sizeof(string), Model pickupa dla drzwi %s (SampID: %d, UID: %d) zosta≈Ç pomy≈õlnie zmieniony., DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID))
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, Model pickupa drzwi zosta≈Ç pomy≈õlnie zmieniony., OK, )
 			
 			ChangePickup(playerid) = -1
 			
@@ -267,11 +267,11 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			(
 				case 0:
 				(
-					ShowPlayerDialog(playerid, D_CHANGE_DOOR_NAME, DIALOG_STYLE_INPUT, Opcje drzwi ª ZmieÒ nazwÍ, Wprowadü nowπ nazwÍ dla tych drzwi.\nOwa nazwa bÍdzie wyúwietlana po wejúciu w pickup przed budynkiem.\n\nPoniøej wypisane sπ znaczniki, zmieniajπce kolor tekstu:\n\n(r) - czerwony\n(g) - zielony\n(p) - rÛøowy\n(b) - niebieski\n(w) - bia≥y\n(h) - rozjaúnia kolor, ZmieÒ, Anuluj)
+					ShowPlayerDialog(playerid, D_CHANGE_DOOR_NAME, DIALOG_STYLE_INPUT, Opcje drzwi ¬ª Zmie≈Ñ nazwƒô, Wprowad≈∫ nowƒÖ nazwƒô dla tych drzwi.\nOwa nazwa bƒôdzie wy≈õwietlana po wej≈õciu w pickup przed budynkiem.\n\nPoni≈ºej wypisane sƒÖ znaczniki, zmieniajƒÖce kolor tekstu:\n\n(r) - czerwony\n(g) - zielony\n(p) - r√≥≈ºowy\n(b) - niebieski\n(w) - bia≈Çy\n(h) - rozja≈õnia kolor, Zmie≈Ñ, Anuluj)
 				)
 				case 1:
 				(
-					ShowPlayerDialog(playerid, D_CHANGE_ENTER_PRICE, DIALOG_STYLE_INPUT, Opcje drzwi ª Koszt wstÍpu, Wprowadü koszt wstÍpu do budynku.\nPieniπdze bÍdπ przelewane bezpoúrednio na konto w≥aúciciela budynku., ZmieÒ, Anuluj)
+					ShowPlayerDialog(playerid, D_CHANGE_ENTER_PRICE, DIALOG_STYLE_INPUT, Opcje drzwi ¬ª Koszt wstƒôpu, Wprowad≈∫ koszt wstƒôpu do budynku.\nPieniƒÖdze bƒôdƒÖ przelewane bezpo≈õrednio na konto w≈Ça≈õciciela budynku., Zmie≈Ñ, Anuluj)
 				)
 				case 2:
 				(
@@ -286,23 +286,23 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 							format(list_groups, sizeof(list_groups), %s\n%d\t%s (%d), list_groups, slot + 1, GroupData(group_id_fix)(gName), GroupData(group_id_fix)(gUID))
 			 			)
 					)
-					ShowPlayerDialog(playerid, D_ASSIGN_DOOR, DIALOG_STYLE_LIST, Opcje drzwi ª Przypisz pod grupÍ, list_groups, Wybierz, Anuluj)
+					ShowPlayerDialog(playerid, D_ASSIGN_DOOR, DIALOG_STYLE_LIST, Opcje drzwi ¬ª Przypisz pod grupƒô, list_groups, Wybierz, Anuluj)
 				)
 				case 3:
 				(
 					doorid = GetPlayerDoorID(playerid)
 					if(doorid == INVALID_DOOR_ID)
 					(
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie znajdujesz siÍ w budynku., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie znajdujesz siƒô w budynku., OK, )
 						return 1
 					)
 					if(!strlen(DoorData(doorid)(dAudioURL)))
 					(
-						ShowPlayerDialog(playerid, D_CHANGE_DOOR_AUDIO, DIALOG_STYLE_INPUT, Opcje drzwi ª Muzyka spoza gry, Wprowadü link do muzyki lub radia, ktÛre us≥yszπ wszyscy przebywajπcy w tym budynku.\nLink nie moøe przekroczyÊ 128 znakÛw.\n\nUpewnij siÍ, øe link jest poprawny w innym wypadku muzyka moøe nie byÊ s≥yszalna., Graj, Anuluj)
+						ShowPlayerDialog(playerid, D_CHANGE_DOOR_AUDIO, DIALOG_STYLE_INPUT, Opcje drzwi ¬ª Muzyka spoza gry, Wprowad≈∫ link do muzyki lub radia, kt√≥re us≈ÇyszƒÖ wszyscy przebywajƒÖcy w tym budynku.\nLink nie mo≈ºe przekroczyƒá 128 znak√≥w.\n\nUpewnij siƒô, ≈ºe link jest poprawny w innym wypadku muzyka mo≈ºe nie byƒá s≈Çyszalna., Graj, Anuluj)
 					)
 					else
 					(
-						// Wy≥πcz muze wszystkim, ktÛrzy sπ w pomieszczeniu
+						// Wy≈ÇƒÖcz muze wszystkim, kt√≥rzy sƒÖ w pomieszczeniu
 						foreach(Player, i)
 						(
 							if(Logged(i) && Spawned(i))
@@ -322,7 +322,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 						strmid(DoorData(doorid)(dAudioURL), , 0, 0)
 						SaveDoor(doorid, SAVE_DOOR_AUDIO)
 						
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Muzyka spoza gry dla tego budynku zosta≥a wy≥πczona.\nAby w≥πczyÊ muzykÍ spoza gry, wybierz tÍ opcjÍ ponownie., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Muzyka spoza gry dla tego budynku zosta≈Ça wy≈ÇƒÖczona.\nAby w≈ÇƒÖczyƒá muzykƒô spoza gry, wybierz tƒô opcjƒô ponownie., OK, )
 					)
 				)
 				case 4:
@@ -330,11 +330,11 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					doorid = GetPlayerDoorID(playerid)
 					if(doorid == INVALID_DOOR_ID)
 					(
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie znajdujesz siÍ w budynku., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie znajdujesz siƒô w budynku., OK, )
 						return 1
 					)
 					
- 		  			// UsuÒ stare obiekty z tego VW (jeúli sπ)
+ 		  			// Usu≈Ñ stare obiekty z tego VW (je≈õli sƒÖ)
 					for (object_id = 0 object_id (= MAX_OBJECTS object_id++)
 					(
 						if(IsValidDynamicObject(object_id))
@@ -375,11 +375,11 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					)
 					else
 					(
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Obiekty dla tych drzwi nie zosta≥y wgrane., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Obiekty dla tych drzwi nie zosta≈Çy wgrane., OK, )
 					)
 					mysql_free_result()
 					
-					// za≥πduj materia≥y
+					// za≈ÇƒÖduj materia≈Çy
 					for(objectid = 0  objectid ( MAX_OBJECTS objectid++)
 					(
 						if(IsValidDynamicObject(objectid))
@@ -394,7 +394,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					
 					LoadDoor(doorid, DoorData(doorid)(dUID))
 					
-					format(string, sizeof(string), Obiekty do drzwi %s (SampID: %d, UID: %d) zosta≥y pomyúlnie wczytane., DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID))
+					format(string, sizeof(string), Obiekty do drzwi %s (SampID: %d, UID: %d) zosta≈Çy pomy≈õlnie wczytane., DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID))
 					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 				)
 				case 5:
@@ -409,14 +409,14 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 						DoorData(doorid)(dGarage) = true
 						SaveDoor(doorid, SAVE_DOOR_THINGS)
 						
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Opcje drzwi ª MolioúÊ przejazdu, MoøliwoúÊ przejazdu samochodem przez drzwi zosta≥a w≥πczona.\n\nOd tej pory bÍdziesz mÛg≥ wjechaÊ dowolnym pojazdem do budynku.\nAby wjechaÊ pojazdem do budynku skorzystaj z komendy /przejazd., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Opcje drzwi ¬ª Molio≈õƒá przejazdu, Mo≈ºliwo≈õƒá przejazdu samochodem przez drzwi zosta≈Ça w≈ÇƒÖczona.\n\nOd tej pory bƒôdziesz m√≥g≈Ç wjechaƒá dowolnym pojazdem do budynku.\nAby wjechaƒá pojazdem do budynku skorzystaj z komendy /przejazd., OK, )
 					)
 					else
 					(
 						DoorData(doorid)(dGarage) = false
 						SaveDoor(doorid, SAVE_DOOR_THINGS)
 						
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Opcje drzwi ª MolioúÊ przejazdu, MoøliwoúÊ przejazdu samochodem przez drzwi zosta≥a wy≥πczona., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Opcje drzwi ¬ª Molio≈õƒá przejazdu, Mo≈ºliwo≈õƒá przejazdu samochodem przez drzwi zosta≈Ça wy≈ÇƒÖczona., OK, )
 					)
 				)
 				case 7:
@@ -424,34 +424,34 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					doorid = GetPlayerDoorID(playerid)
 					if(DoorData(doorid)(dOwnerType) != OWNER_GROUP)
 					(
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Drzwi cywilne nie majπ moøliwoúci za≥oøenia dzwonka., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Drzwi cywilne nie majƒÖ mo≈ºliwo≈õci za≈Ço≈ºenia dzwonka., OK, )
 						return 1
 					)
 					if(!GroupTypeInfo(DoorData(doorid)(dOwner))(gBell))
 					(
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Grupa, ktÛra jest w≥aúcicielem tych drzwi nie moøe posiadaÊ dzwonka., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Grupa, kt√≥ra jest w≈Ça≈õcicielem tych drzwi nie mo≈ºe posiadaƒá dzwonka., OK, )
 						return 1
 					)
 					if(DoorData(doorid)(dBell))
 					(
 						DoorData(doorid)(dBell) = false
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Opcje drzwi ª Dzwonek do drzwi, Dzwonek zosta≥y wy≥πczony dla tych drzwi., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Opcje drzwi ¬ª Dzwonek do drzwi, Dzwonek zosta≈Çy wy≈ÇƒÖczony dla tych drzwi., OK, )
 						return 1
 					)
 					else
 					(
 						DoorData(doorid)(dBell) = true
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Opcje drzwi ª Dzwonek do drzwi, Dzwonek zosta≥y w≥πczony dla tych drzwi., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Opcje drzwi ¬ª Dzwonek do drzwi, Dzwonek zosta≈Çy w≈ÇƒÖczony dla tych drzwi., OK, )
 						return 1
 					)
 				)
 				case 8:
 				(
-					ShowPlayerDialog(playerid,D_DOOR_SET_TIME,DIALOG_STYLE_INPUT,Opcje drzwi ª Ustalanie godziny interioru,Wpisz poniøej godzinÍ, jaka ma panowaÊ wewnπtrz interioru.,Gotowe,Anuluj)
+					ShowPlayerDialog(playerid,D_DOOR_SET_TIME,DIALOG_STYLE_INPUT,Opcje drzwi ¬ª Ustalanie godziny interioru,Wpisz poni≈ºej godzinƒô, jaka ma panowaƒá wewnƒÖtrz interioru.,Gotowe,Anuluj)
 				)
 				case 9:
 				(
-					// usuwanie obiektÛw
+					// usuwanie obiekt√≥w
 					cap1 = random(sizeof(Captcha)),
 					cap2 = random(sizeof(Captcha)),
 					cap3 = random(sizeof(Captcha)),
@@ -465,9 +465,9 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					
 					dialMsg(256)
 					format(PlayerCache(playerid)(pCaptcha), 16, %s%s%s%s%s%s%s%s%s%s, Captcha(cap1), Captcha(cap2), Captcha(cap3), Captcha(cap4), Captcha(cap5), Captcha(cap6), Captcha(cap7), Captcha(cap8), Captcha(cap9), Captcha(cap10))
-					format(dialMsg, sizeof(dialMsg), Przepisz kod captcha, jeúli jesteú pewien, øe chcesz usunπÊ obiekty w tych drzwiach.\n\nKod: (00AA00)%s, PlayerCache(playerid)(pCaptcha))
+					format(dialMsg, sizeof(dialMsg), Przepisz kod captcha, je≈õli jeste≈õ pewien, ≈ºe chcesz usunƒÖƒá obiekty w tych drzwiach.\n\nKod: (00AA00)%s, PlayerCache(playerid)(pCaptcha))
 					
-					ShowPlayerDialog(playerid, D_OBJECTS_DELETE, DIALOG_STYLE_INPUT, Usuwanie obiektÛw, dialMsg, Tak, Nie)
+					ShowPlayerDialog(playerid, D_OBJECTS_DELETE, DIALOG_STYLE_INPUT, Usuwanie obiekt√≥w, dialMsg, Tak, Nie)
 				)
 			)
 			return 1
@@ -484,16 +484,16 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			doorid = GetPlayerDoorID(playerid), string(256), door_name(32), esc_door_name(32)
 			if(doorid == INVALID_DOOR_ID)
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie znajdujesz siÍ w budynku, ktÛrym chcesz zmieniÊ nazwÍ., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie znajdujesz siƒô w budynku, kt√≥rym chcesz zmieniƒá nazwƒô., OK, )
 				return 1
 			)
 			if(strlen(inputtext) ) 32)
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Podana nazwa jest za d≥uga.\nNazwa drzwi nie zosta≥a zmieniona., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Podana nazwa jest za d≈Çuga.\nNazwa drzwi nie zosta≈Ça zmieniona., OK, )
 				return 1
 			)
 	   		strmid(door_name, FormatTextDrawColors(inputtext), 0, strlen(inputtext))
-			format(string, sizeof(string), Nazwa drzwi %s (SampID: %d, UID: %d) zosta≥a zmieniona pomyúlnie.\nNowa nazwa drzwi: %s., DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID), door_name)
+			format(string, sizeof(string), Nazwa drzwi %s (SampID: %d, UID: %d) zosta≈Ça zmieniona pomy≈õlnie.\nNowa nazwa drzwi: %s., DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID), door_name)
 			
 			mysql_real_escape_string(door_name, esc_door_name)
 			strmid(DoorData(doorid)(dName), esc_door_name, 0, strlen(esc_door_name), 32)
@@ -514,17 +514,17 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			doorid = GetPlayerDoorID(playerid), price = strval(inputtext), string(128)
 			if(doorid == INVALID_DOOR_ID)
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie znajdujesz siÍ w budynku, ktÛrym chcesz zmieniÊ koszt wstÍpu., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie znajdujesz siƒô w budynku, kt√≥rym chcesz zmieniƒá koszt wstƒôpu., OK, )
 				return 1
 			)
 			if(strlen(inputtext) ) 6)
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Wprowadzono nieprawid≥owπ kwotÍ., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Wprowadzono nieprawid≈ÇowƒÖ kwotƒô., OK, )
 				return 1
 			)
 			if(price ( 0)
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Wprowadzono nieprawid≥owπ kwotÍ., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Wprowadzono nieprawid≈ÇowƒÖ kwotƒô., OK, )
 				return 1
 			)
 			DoorData(doorid)(dEnterPay) = price
@@ -533,12 +533,12 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			
 			if(DoorData(doorid)(dEnterPay))
 			(
-				format(string, sizeof(string), Koszt wstÍpu do budynku zosta≥ zmieniony.\nOp≥ata $%d bÍdzie pobierana po wejúciu do úrodka., DoorData(doorid)(dEnterPay))
+				format(string, sizeof(string), Koszt wstƒôpu do budynku zosta≈Ç zmieniony.\nOp≈Çata $%d bƒôdzie pobierana po wej≈õciu do ≈õrodka., DoorData(doorid)(dEnterPay))
 				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 			)
 			else
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Op≥ata za wstÍp do budynku zosta≥a wy≥πczona., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Op≈Çata za wstƒôp do budynku zosta≈Ça wy≈ÇƒÖczona., OK, )
 			)
 			return 1
 		)
@@ -554,19 +554,19 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			doorid = GetPlayerDoorID(playerid), audio_url(128)
 			if(doorid == INVALID_DOOR_ID)
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie znajdujesz siÍ w budynku, ktÛrym chcesz w≥πczyÊ audio., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie znajdujesz siƒô w budynku, kt√≥rym chcesz w≈ÇƒÖczyƒá audio., OK, )
 				return 1
 			)
 			strmid(audio_url, inputtext, 0, strlen(inputtext), 128)
 			
 			if(strfind(audio_url, http://, true))
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Wprowadzony link nie jest poprawny.\nLink powinien rozpoczynaÊ siÍ od \http://\., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Wprowadzony link nie jest poprawny.\nLink powinien rozpoczynaƒá siƒô od \http://\., OK, )
 				return 1
 			)
 			if(strlen(audio_url) ) 128)
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Wprowadzono za d≥ugi link do muzyki., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Wprowadzono za d≈Çugi link do muzyki., OK, )
 				return 1
 			)
 			
@@ -576,7 +576,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			
 			SaveDoor(doorid, SAVE_DOOR_AUDIO)
 
-			// Za≥πcz muze dla wszystkich, ktÛrzy sπ w pomieszczeniu
+			// Za≈ÇƒÖcz muze dla wszystkich, kt√≥rzy sƒÖ w pomieszczeniu
 			foreach(Player, i)
 			(
 				if(Logged(i) && Spawned(i))
@@ -596,7 +596,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				)
 			)
 			
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Link do audio zosta≥ pomyúlnie wprowadzony.\nMuzyka powinna byÊ od teraz s≥yszalna - jeúli nie jest, oznacza to øe link nie jest poprawny., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Link do audio zosta≈Ç pomy≈õlnie wprowadzony.\nMuzyka powinna byƒá od teraz s≈Çyszalna - je≈õli nie jest, oznacza to ≈ºe link nie jest poprawny., OK, )
 			return 1
 		)
 		else
@@ -611,7 +611,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			group_slot = strval(inputtext) - 1, doorid = GetPlayerDoorID(playerid), string(256)
 			if(doorid == INVALID_DOOR_ID)
   			(
-  				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie znajdujesz siÍ w budynku, ktÛry chcesz przypisaÊ., OK, )
+  				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie znajdujesz siƒô w budynku, kt√≥ry chcesz przypisaƒá., OK, )
    				return 1
 			)
 			if(group_slot ( 0)
@@ -621,14 +621,14 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			)
 			if(!IsPlayerPermissedGroup(playerid, PlayerGroup(playerid)(group_slot)(gUID), PERM_LEADER))
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie posiadasz odpowiednich uprawnieÒ dla tej grupy., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie posiadasz odpowiednich uprawnie≈Ñ dla tej grupy., OK, )
 				return 1
 			)
 			group_id_fix = PlayerGroup(playerid)(group_slot)(gID)
 			MainPlayerTable(playerid) = group_id_fix
 			
-			format(string, sizeof(string), Czy chcesz przypisaÊ budynek %s (SampID: %d, UID: %d) pod grupÍ %s (UID: %d)?, DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID), GroupData(group_id_fix)(gName), GroupData(group_id_fix)(gUID))
-			ShowPlayerDialog(playerid, D_ASSIGN_DOOR_ACCEPT, DIALOG_STYLE_MSGBOX, Opcje drzwi ª Przypisz pod grupÍ, string, Tak, Nie)
+			format(string, sizeof(string), Czy chcesz przypisaƒá budynek %s (SampID: %d, UID: %d) pod grupƒô %s (UID: %d)?, DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID), GroupData(group_id_fix)(gName), GroupData(group_id_fix)(gUID))
+			ShowPlayerDialog(playerid, D_ASSIGN_DOOR_ACCEPT, DIALOG_STYLE_MSGBOX, Opcje drzwi ¬ª Przypisz pod grupƒô, string, Tak, Nie)
 			return 1
 		)
 		else
@@ -644,7 +644,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			doorid = GetPlayerDoorID(playerid), string(128)
 	  		if(doorid == INVALID_DOOR_ID)
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie znajdujesz siÍ w budynku, ktÛry chcesz przypisaÊ., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie znajdujesz siƒô w budynku, kt√≥ry chcesz przypisaƒá., OK, )
 				return 1
 			)
 			group_id_fix = MainPlayerTable(playerid)
@@ -670,7 +670,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 
 			SaveDoor(doorid, SAVE_DOOR_THINGS)
 
-			format(string, sizeof(string), Budynek %s (SampID: %d, UID: %d) zosta≥ pomyúlnie przypisany pod grupÍ.\nBudynek przypisano dla grupy %s (UID: %d)., DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID), GroupData(group_id_fix)(gName), GroupData(group_id_fix)(gUID))
+			format(string, sizeof(string), Budynek %s (SampID: %d, UID: %d) zosta≈Ç pomy≈õlnie przypisany pod grupƒô.\nBudynek przypisano dla grupy %s (UID: %d)., DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID), GroupData(group_id_fix)(gName), GroupData(group_id_fix)(gUID))
 			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 			return 1
 		)
@@ -701,7 +701,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			(
 				if(PlayerCache(playerid)(pBankNumber) && Offer(customerid)(oPayType) == PAYTYPE_NONE)
 				(
-					ShowPlayerDialog(playerid, D_OFFER_PAYTYPE, DIALOG_STYLE_MSGBOX, Oferta, Wybierz rodzaj p≥atnoúci za danπ ofertÍ., GotÛwka, Karta)
+					ShowPlayerDialog(playerid, D_OFFER_PAYTYPE, DIALOG_STYLE_MSGBOX, Oferta, Wybierz rodzaj p≈Çatno≈õci za danƒÖ ofertƒô., Got√≥wka, Karta)
 				)
 				else
 				(
@@ -767,7 +767,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		if(response)
 		(
 			offer_name(24)
-			sscanf(inputtext, ªs(24), offer_name)
+			sscanf(inputtext, ¬ªs(24), offer_name)
 			
 			cmd_oferuj(playerid, offer_name)
 			return 1
@@ -784,7 +784,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			itemid = PlayerCache(playerid)(pManageItem), item_uid = strval(inputtext), weaponid = GetItemID(item_uid), string(128), add_ammo = 0
 			if(ItemInfo(weaponid)(iUsed))
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Aby za≥adowaÊ broÒ, nie moøe byÊ ona w uøyciu., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Aby za≈Çadowaƒá bro≈Ñ, nie mo≈ºe byƒá ona w u≈ºyciu., OK, )
 				return 1
 			)
 			
@@ -792,7 +792,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			(
 				if(strfind(ItemInfo(weaponid)(iName), (PB), true))
 				(
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie moøesz za≥adowaÊ kulek paintballowych do broni., OK, )
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie mo≈ºesz za≈Çadowaƒá kulek paintballowych do broni., OK, )
 					return 1
 				)
 			)
@@ -807,7 +807,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				mysql_query_format(UPDATE hrp_items SET item_value2 = %d WHERE item_uid = %d LIMIT 1, ItemInfo(weaponid)(iValue2), ItemInfo(weaponid)(iUID))
 				mysql_query_format(UPDATE hrp_items SET item_value2 = %d WHERE item_uid = %d LIMIT 1, ItemInfo(itemid)(iValue2), ItemInfo(itemid)(iUID))
 				
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Sukces !, Za≥adowaliúmy maksymalnπ iloúÊ amunicji do twojej broni a reszta pozosta≥a w magazynku., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Sukces !, Za≈Çadowali≈õmy maksymalnƒÖ ilo≈õƒá amunicji do twojej broni a reszta pozosta≈Ça w magazynku., OK, )
 			)
 			else
 			(
@@ -819,7 +819,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				DeleteItem(ItemInfo(itemid)(iUID))
 			)
 
-			format(string, sizeof(string), * %s prze≥adowuje %s., PlayerName(playerid), ItemInfo(weaponid)(iName))
+			format(string, sizeof(string), * %s prze≈Çadowuje %s., PlayerName(playerid), ItemInfo(weaponid)(iName))
 			FlashMe(playerid, string) //ProxDetector(10.0, playerid, string, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, true)
 			
 			printf((ammo) Gracz %s (UID: %d) zaladowal bron %s (UID: %d) Stan amunicji przed: %d, stan amunicji po: %d, PlayerName(playerid), PlayerCache(playerid)(pUID), ItemInfo(weaponid)(iName), item_uid, before_load, ItemInfo(weaponid)(iValue2))
@@ -864,7 +864,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			
 			if(GetItemTypeWeight(ProductInfo(product_id)(pType)) ) GetPlayerEqSpace(playerid))
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie posiadasz wystarczajπco miejsca w swoim ekwipunku., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie posiadasz wystarczajƒÖco miejsca w swoim ekwipunku., OK, )
 				return 1
 			)
 			
@@ -875,7 +875,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			BuyProduct(playerid)(pProductUID) = product_uid
 			BuyProduct(playerid)(pProductPrice) = product_price
 			
-			ShowPlayerDialog(playerid, D_BUY_PAYTYPE, DIALOG_STYLE_MSGBOX, Zakup produktu, Wybierz rodzaj p≥atnoúci za dany produkt., GotÛwka, Karta)
+			ShowPlayerDialog(playerid, D_BUY_PAYTYPE, DIALOG_STYLE_MSGBOX, Zakup produktu, Wybierz rodzaj p≈Çatno≈õci za dany produkt., Got√≥wka, Karta)
 			return 1
 		)
 		else
@@ -889,14 +889,14 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		product_id = GetProductID(BuyProduct(playerid)(pProductUID))
 		doorid = MainPlayerTable(playerid)
 		
-		if(response)	// gotÛwka
+		if(response)	// got√≥wka
 		(
 			if(PlayerCache(playerid)(pCash) ( BuyProduct(playerid)(pProductPrice))
 			(
 				BuyProduct(playerid)(pProductUID) = 0
 				BuyProduct(playerid)(pProductPrice) = 0
 				MainPlayerTable(playerid) = 0
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie posiadasz odpowiedniej iloúci gotÛwki., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie posiadasz odpowiedniej ilo≈õci got√≥wki., OK, )
 				return 1
 			)
 			hrp_GivePlayerMoney(playerid, -BuyProduct(playerid)(pProductPrice))
@@ -909,7 +909,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				BuyProduct(playerid)(pProductUID) = 0
 				BuyProduct(playerid)(pProductPrice) = 0
 				MainPlayerTable(playerid) = 0
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie posiadasz odpowiedniej iloúci pieniÍdzy na karcie., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie posiadasz odpowiedniej ilo≈õci pieniƒôdzy na karcie., OK, )
 				return 1
 			)
 			PlayerCache(playerid)(pBankCash) -= BuyProduct(playerid)(pProductPrice)
@@ -934,7 +934,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		)
 		
 		string(256)
-		format(string, sizeof(string), Zakupiono produkt %s.\nKoszt: $%d.\n\nPrzedmiot zosta≥ dodany do Twojego ekwipunku.\nSkorzystaj z komendy /p, by wyúwietliÊ posiadane przedmioty., ProductInfo(product_id)(pName), BuyProduct(playerid)(pProductPrice))
+		format(string, sizeof(string), Zakupiono produkt %s.\nKoszt: $%d.\n\nPrzedmiot zosta≈Ç dodany do Twojego ekwipunku.\nSkorzystaj z komendy /p, by wy≈õwietliƒá posiadane przedmioty., ProductInfo(product_id)(pName), BuyProduct(playerid)(pProductPrice))
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 		
 		BuyProduct(playerid)(pProductUID) = 0
@@ -957,7 +957,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				return 1
 			)
 			MainPlayerTable(playerid) = strval(inputtext)
-			ShowPlayerDialog(playerid, D_OPTION_CONTACT, DIALOG_STYLE_LIST, Opcje kontaktu, 1. Po≥πcz\n2. Wyúlij SMS\n3. UsuÒ kontakt, Wybierz, Anuluj)
+			ShowPlayerDialog(playerid, D_OPTION_CONTACT, DIALOG_STYLE_LIST, Opcje kontaktu, 1. Po≈ÇƒÖcz\n2. Wy≈õlij SMS\n3. Usu≈Ñ kontakt, Wybierz, Anuluj)
 			return 1
 		)
 		else
@@ -979,12 +979,12 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				)
 				case 1:
 				(
-					format(string, sizeof(string), Wprowadü treúÊ wiadomoúci SMS, ktÛrπ chcesz wys≥aÊ na numer %d., number)
-					ShowPlayerDialog(playerid, D_INSERT_TEXT_SMS, DIALOG_STYLE_INPUT, Wyúlij SMS, string, Wyúlij, Anuluj)
+					format(string, sizeof(string), Wprowad≈∫ tre≈õƒá wiadomo≈õci SMS, kt√≥rƒÖ chcesz wys≈Çaƒá na numer %d., number)
+					ShowPlayerDialog(playerid, D_INSERT_TEXT_SMS, DIALOG_STYLE_INPUT, Wy≈õlij SMS, string, Wy≈õlij, Anuluj)
 				)
 				case 2:
 				(
-					ShowPlayerDialog(playerid, D_DELETE_CONTACT, DIALOG_STYLE_MSGBOX, Informacja, Jesteú pewien, øe chcesz usunπÊ kontakt %d?\nKontakt zostanie ca≥kowicie usuniÍty z listy., Tak, Nie)
+					ShowPlayerDialog(playerid, D_DELETE_CONTACT, DIALOG_STYLE_MSGBOX, Informacja, Jeste≈õ pewien, ≈ºe chcesz usunƒÖƒá kontakt %d?\nKontakt zostanie ca≈Çkowicie usuniƒôty z listy., Tak, Nie)
 				)
 			)
 			return 1
@@ -1002,7 +1002,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			number = MainPlayerTable(playerid), string(128)
 			mysql_query_format(DELETE FROM hrp_contacts WHERE contact_number = %d AND contact_ownernumb = %d LIMIT 1, number, PlayerCache(playerid)(pPhoneNumber))
 			
-			format(string, sizeof(string), Numer %d zosta≥ usuniÍty z listy kontaktÛw., number)
+			format(string, sizeof(string), Numer %d zosta≈Ç usuniƒôty z listy kontakt√≥w., number)
 			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 
 			MainPlayerTable(playerid) = 0
@@ -1021,7 +1021,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			giveplayer_id = strval(inputtext)
 			if(!PlayerCache(giveplayer_id)(pPhoneNumber))
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Ten gracz nie posiada telefonu w uøyciu., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Ten gracz nie posiada telefonu w u≈ºyciu., OK, )
 				return 1
 			)
 			OnPlayerSendOffer(playerid, giveplayer_id, OFFER_VCARD, vCard, PlayerCache(playerid)(pPhoneNumber), 0)
@@ -1039,18 +1039,18 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			price = strval(inputtext), string(128)
 			if(price ( 0 || strlen(inputtext) ) 11 || price ) 100)
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Wprowadzono nieprawid≥owπ kwotÍ., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Wprowadzono nieprawid≈ÇowƒÖ kwotƒô., OK, )
 				return 1
 			)
 			doorid = GetPlayerDoorID(playerid)
 			if(doorid == INVALID_DOOR_ID)
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Musisz znajdowaÊ siÍ w budynku grupy., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Musisz znajdowaƒá siƒô w budynku grupy., OK, )
 				return 1
 			)
 			if(DoorData(doorid)(dOwnerType) != OWNER_GROUP || !IsPlayerPermissedGroup(playerid, DoorData(doorid)(dOwner), PERM_LEADER))
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie posiadasz odpowiednich uprawnieÒ do uøycia tej funkcji., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie posiadasz odpowiednich uprawnie≈Ñ do u≈ºycia tej funkcji., OK, )
 				return 1
 			)
 			group_id_fix = GetGroupID(DoorData(doorid)(dOwner))
@@ -1058,7 +1058,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			GroupData(group_id_fix)(gValue1) = price
 			SaveGroup(group_id_fix)
 			
-			format(string, sizeof(string), Koszt wynajmu pokoju zosta≥ pomyúlnie zmieniony.\nNowy koszt za wynajem pokoju wynosi: $%d., GroupData(group_id_fix)(gValue1))
+			format(string, sizeof(string), Koszt wynajmu pokoju zosta≈Ç pomy≈õlnie zmieniony.\nNowy koszt za wynajem pokoju wynosi: $%d., GroupData(group_id_fix)(gValue1))
 			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 			return 1
 		)
@@ -1075,12 +1075,12 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			(
 				case 0:
 				(
-					ShowPlayerDialog(playerid, D_INSERT_NUMBER_CALL, DIALOG_STYLE_INPUT, ZadzwoÒ, Wprowadü numer telefonu komÛrkowego, na ktÛry chcesz zadzwoniÊ., Po≥πcz, Anuluj)
+					ShowPlayerDialog(playerid, D_INSERT_NUMBER_CALL, DIALOG_STYLE_INPUT, Zadzwo≈Ñ, Wprowad≈∫ numer telefonu kom√≥rkowego, na kt√≥ry chcesz zadzwoniƒá., Po≈ÇƒÖcz, Anuluj)
 				)
 				case 1:
 				(
-					ShowPlayerDialog(playerid, D_INSERT_NUMBER_SMS, DIALOG_STYLE_INPUT, Wyúlij SMS, Wprowadü numer telefonu, na ktÛry chcesz wys≥aÊ wiadomoúÊ SMS., Dalej, Anuluj)
-					// JEØELI TO ODKOMENTUJESZ TO NIE ZAPOMNIJ PRZESTAWI∆ CASE”W!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+					ShowPlayerDialog(playerid, D_INSERT_NUMBER_SMS, DIALOG_STYLE_INPUT, Wy≈õlij SMS, Wprowad≈∫ numer telefonu, na kt√≥ry chcesz wys≈Çaƒá wiadomo≈õƒá SMS., Dalej, Anuluj)
+					// JE≈ªELI TO ODKOMENTUJESZ TO NIE ZAPOMNIJ PRZESTAWIƒÜ CASE√ìW!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 					// OK PRZESTAWILEM
 				)
 				case 2:
@@ -1104,9 +1104,9 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					)
 					if(!strlen(list_players))
 					(
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie znaleziono øadnych graczy w pobliøu., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie znaleziono ≈ºadnych graczy w pobli≈ºu., OK, )
 					)
-					ShowPlayerDialog(playerid, D_SEND_VCARD, DIALOG_STYLE_LIST, Wyúlij vCard do:, list_players, Wybierz, Anuluj)
+					ShowPlayerDialog(playerid, D_SEND_VCARD, DIALOG_STYLE_LIST, Wy≈õlij vCard do:, list_players, Wybierz, Anuluj)
 				)
 				case 3:
 				(
@@ -1131,12 +1131,12 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					)
 					else
 					(
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie znaleziono øadnych kontaktÛw w telefonie., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie znaleziono ≈ºadnych kontakt√≥w w telefonie., OK, )
 					)
 				)
 				case 4:
 				(
-					ShowPlayerDialog(playerid, D_TEL_ADDNUM, DIALOG_STYLE_INPUT, Zapisz numer, Wprowadü numer, ktÛry chcesz dodaÊ do kontaktÛw., Dodaj, Anuluj)
+					ShowPlayerDialog(playerid, D_TEL_ADDNUM, DIALOG_STYLE_INPUT, Zapisz numer, Wprowad≈∫ numer, kt√≥ry chcesz dodaƒá do kontakt√≥w., Dodaj, Anuluj)
 				)
 				case 5:
 				(
@@ -1180,23 +1180,23 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				number
 				if(sscanf(inputtext, d, number) || strlen(inputtext) ( 4 || strlen(inputtext) ) 7)
 				(
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Wprowadzono nieprawid≥owy numer telefonu., OK, )
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Wprowadzono nieprawid≈Çowy numer telefonu., OK, )
 					return 1
 				)
 				
 				if(number == 333 || number == 112 || number == 911 || number == 777 || number == 444 || number == 981 || number == 961 || number == 955)
 				(
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Wprowadzono nieprawid≥owy numer telefonu., OK, )
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Wprowadzono nieprawid≈Çowy numer telefonu., OK, )
 					return 1
 				)
 				
 				MainPlayerTable(playerid) = number
-				ShowPlayerDialog(playerid, D_TEL_ADDNAME, DIALOG_STYLE_INPUT, Zapisz numer, Wprowadü nazwÍ kontaktu - maksymalnie 24 znaki., OK, )
+				ShowPlayerDialog(playerid, D_TEL_ADDNAME, DIALOG_STYLE_INPUT, Zapisz numer, Wprowad≈∫ nazwƒô kontaktu - maksymalnie 24 znaki., OK, )
 				return 1
 			)
 			else
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Musisz wprowadziÊ numer telefonu jeøeli chcesz dodaÊ kontakt., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Musisz wprowadziƒá numer telefonu je≈ºeli chcesz dodaƒá kontakt., OK, )
 				return 1
 			)
 		)
@@ -1212,12 +1212,12 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			name(24)
 			if(sscanf(inputtext, s(24), name))
 			(
-   				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Wprowadzono nieprawid≥owπ nazwÍ kontaktu., OK, )
+   				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Wprowadzono nieprawid≈ÇowƒÖ nazwƒô kontaktu., OK, )
 			)
 			
 			mysql_query_format(INSERT INTO hrp_contacts (contact_number, contact_name, contact_ownernumb) VALUES (%d, %s, %d), MainPlayerTable(playerid), inputtext, PlayerCache(playerid)(pPhoneNumber))
 
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Zapisz numer, Nowy kontakt zosta≥ dodany do listy. Uøyj /tel, by sprawdziÊ listÍ kontaktÛw., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Zapisz numer, Nowy kontakt zosta≈Ç dodany do listy. U≈ºyj /tel, by sprawdziƒá listƒô kontakt√≥w., OK, )
 			return 1
 		)
 		else
@@ -1232,7 +1232,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			string(12)
 			if(strval(inputtext) (= 0 || strlen(inputtext) ) 7)
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Wprowadzono nieprawid≥owy numer telefonu., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Wprowadzono nieprawid≈Çowy numer telefonu., OK, )
 				return 1
 			)
 			format(string, sizeof(string), %d, strval(inputtext))
@@ -1251,20 +1251,20 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			number = strval(inputtext), string(128)
 			if(strval(inputtext) (= 0 || strlen(inputtext) ) 7)
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Wprowadzono nieprawid≥owy numer telefonu., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Wprowadzono nieprawid≈Çowy numer telefonu., OK, )
 				return 1
 			)
 			
 			if(number ) 999999 || number ( 100000)
 			(
-				GuiMsg(playerid, Wiadomoúci tekstowe moøesz wysy≥aÊ wy≥πcznie na telefony komÛrkowe.\nSprawdü czy wpisa≥eú dobry numer., 1)
+				GuiMsg(playerid, Wiadomo≈õci tekstowe mo≈ºesz wysy≈Çaƒá wy≈ÇƒÖcznie na telefony kom√≥rkowe.\nSprawd≈∫ czy wpisa≈Çe≈õ dobry numer., 1)
 				return 1
 			)
 			
 			MainPlayerTable(playerid) = number
 			
-   			format(string, sizeof(string), Wprowadü treúÊ wiadomoúci SMS, ktÛrπ chcesz wys≥aÊ na numer %d., number)
-	 		ShowPlayerDialog(playerid, D_INSERT_TEXT_SMS, DIALOG_STYLE_INPUT, Wyúlij SMS, string, Wyúlij, Anuluj)
+   			format(string, sizeof(string), Wprowad≈∫ tre≈õƒá wiadomo≈õci SMS, kt√≥rƒÖ chcesz wys≈Çaƒá na numer %d., number)
+	 		ShowPlayerDialog(playerid, D_INSERT_TEXT_SMS, DIALOG_STYLE_INPUT, Wy≈õlij SMS, string, Wy≈õlij, Anuluj)
 			return 1
 		)
 		else
@@ -1298,7 +1298,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			(
 				if(!PlayerCache(playerid)(pTrainTime))
 				(
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Musisz wykupiÊ pozwolenie na uøywanie obiektÛw u pracownika., OK, )
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Musisz wykupiƒá pozwolenie na u≈ºywanie obiekt√≥w u pracownika., OK, )
 					return 1
 				)
 			)
@@ -1307,7 +1307,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 
 			if(strength (= 10 && weight )= 80 || strength (= 30 && weight )= 140 || strength (= 50 && weight )= 180 || strength (= 70 && weight )= 220)
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Twoja postaÊ jest zbyt s≥aba na unoszenie takich ciÍøarÛw., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Twoja postaƒá jest zbyt s≈Çaba na unoszenie takich ciƒô≈ºar√≥w., OK, )
 				return 1
 			)
 
@@ -1327,7 +1327,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					(
 						if(PlayerCache(i)(pGymObject) == object_id)
 						(
-							ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Ktoú aktualnie korzysta z tego obiektu., OK, )
+							ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Kto≈õ aktualnie korzysta z tego obiektu., OK, )
 							return 1
 						)
 					)
@@ -1354,7 +1354,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				PlayerCache(playerid)(pTrainTime) = 600
 			)
 			
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Trening rozpoczÍty, Rozpoczπ≥eú trening na ≥awce wyciskanej, przeczytaj instrukcjÍ zanim zaczniesz wyciskaÊ!\n\nUøywaj klawiszy G”RA oraz D”£ aby unosiÊ oraz opuszczaÊ sztangÍ.\nAby zakoÒczyÊ trening, wciúnij klawisz ENTER.\n\nAby trening przebieg≥ poprawnie i bez skutkÛw ubocznych, staraj siÍ regularnie unosiÊ i opuszczaÊ sztangÍ., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Trening rozpoczƒôty, RozpoczƒÖ≈Çe≈õ trening na ≈Çawce wyciskanej, przeczytaj instrukcjƒô zanim zaczniesz wyciskaƒá!\n\nU≈ºywaj klawiszy G√ìRA oraz D√ì≈Å aby unosiƒá oraz opuszczaƒá sztangƒô.\nAby zako≈Ñczyƒá trening, wci≈õnij klawisz ENTER.\n\nAby trening przebieg≈Ç poprawnie i bez skutk√≥w ubocznych, staraj siƒô regularnie unosiƒá i opuszczaƒá sztangƒô., OK, )
 			return 1
 		)
 		else
@@ -1369,7 +1369,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		(
    			if(!PlayerCache(playerid)(pTrainTime))
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Musisz wykupiÊ pozwolenie na uøywanie obiektÛw u pracownika., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Musisz wykupiƒá pozwolenie na u≈ºywanie obiekt√≥w u pracownika., OK, )
 				return 1
 			)
 			weight = strval(inputtext), object_id = PlayerCache(playerid)(pGymObject),
@@ -1377,7 +1377,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 
 			if(strength (= 30 && weight )= 80 || strength (= 70 && weight )= 120 || strength (= 90 && weight )= 140)
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Twoja postaÊ jest zbyt s≥aba na unoszenie takich ciÍøarÛw., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Twoja postaƒá jest zbyt s≈Çaba na unoszenie takich ciƒô≈ºar√≥w., OK, )
 				return 1
 			)
 
@@ -1392,7 +1392,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					(
 						if(PlayerCache(i)(pGymObject) == object_id)
 						(
-							ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Ktoú aktualnie korzysta z tego obiektu., OK, )
+							ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Kto≈õ aktualnie korzysta z tego obiektu., OK, )
 							return 1
 						)
 					)
@@ -1433,7 +1433,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		(
 			if(!PlayerCache(playerid)(pTrainTime))
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Musisz wykupiÊ pozwolenie na uøywanie obiektÛw u pracownika., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Musisz wykupiƒá pozwolenie na u≈ºywanie obiekt√≥w u pracownika., OK, )
 				return 1
 			)
 			
@@ -1450,7 +1450,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					)
 					else
 					(
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Si≥a Twojej postaci jest zbyt ma≥a aby trenowaÊ Boxing., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Si≈Ça Twojej postaci jest zbyt ma≈Ça aby trenowaƒá Boxing., OK, )
 						return 1
 					)
 				)
@@ -1463,7 +1463,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					)
 					else
 					(
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Si≥a Twojej postaci jest zbyt ma≥a aby trenowaÊ Kung Fu., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Si≈Ça Twojej postaci jest zbyt ma≈Ça aby trenowaƒá Kung Fu., OK, )
 						return 1
 					)
 				)
@@ -1476,7 +1476,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					)
 					else
 					(
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, \W tych butach nie wejdziesz. Nie ma wjazdu dla dresiarzy.\ ~ Roman Bugaj (SzczÍka), OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, \W tych butach nie wejdziesz. Nie ma wjazdu dla dresiarzy.\ ~ Roman Bugaj (Szczƒôka), OK, )
 						return 1
 					)
 				)
@@ -1485,7 +1485,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			PlayerCache(playerid)(pGymType) = TRAIN_PUNCH_BAG
 			OnPlayerGymTrainStarted(playerid)
 			
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Uderzaj w worek treningowy, by nauczyÊ siÍ nowego stylu.\n\nJeøeli nie zmieúcisz siÍ w czasie, styl walki nie zapisze siÍ,\na trening bÍdziesz musia≥ rozpoczπÊ na nowo.\n\nBπdü ca≥y czas skierowany w stronÍ worka treningowego,\nw przeciwnym wypadku, trafienia nie bÍdπ naliczaÊ siÍ., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Uderzaj w worek treningowy, by nauczyƒá siƒô nowego stylu.\n\nJe≈ºeli nie zmie≈õcisz siƒô w czasie, styl walki nie zapisze siƒô,\na trening bƒôdziesz musia≈Ç rozpoczƒÖƒá na nowo.\n\nBƒÖd≈∫ ca≈Çy czas skierowany w stronƒô worka treningowego,\nw przeciwnym wypadku, trafienia nie bƒôdƒÖ naliczaƒá siƒô., OK, )
 			return 1
 		)
 		else
@@ -1503,13 +1503,13 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				
 			if(strlen(inputtext) (= 0)
 			(
-		 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Pole tekstowe nie moøe byÊ puste!, OK, )
+		 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Pole tekstowe nie mo≈ºe byƒá puste!, OK, )
 				PlayerCache(playerid)(pManageItem) = 0
 				return 1
 			)
 			if(strlen(inputtext) ) 64)
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Tekst nie moøe przekroczyÊ ciπgu 64 znakÛw., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Tekst nie mo≈ºe przekroczyƒá ciƒÖgu 64 znak√≥w., OK, )
 				PlayerCache(playerid)(pManageItem) = 0
 				return 1
 			)
@@ -1532,10 +1532,10 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				DeleteItem(ItemInfo(itemid)(iUID))
 			)
 			
-			format(string, sizeof(string), * %s wyrywa karteczkÍ z notesu., PlayerName(playerid))
+			format(string, sizeof(string), * %s wyrywa karteczkƒô z notesu., PlayerName(playerid))
 			FlashMe(playerid, string) //ProxDetector(10.0, playerid, string, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, false)
 			
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, TreúÊ zosta≥a pomyúlnie zapisana na karteczce.\nKarteczka pojawi≥a siÍ w Twoim ekwipunku., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Tre≈õƒá zosta≈Ça pomy≈õlnie zapisana na karteczce.\nKarteczka pojawi≈Ça siƒô w Twoim ekwipunku., OK, )
 			return 1
 		)
 		else
@@ -1557,7 +1557,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			
 			hrp_RemoveVehicleComponent(vehid, componentid)
 			
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, CzÍúÊ zosta≥a odmontowana pomyúlnie.\nOdmontowanπ czÍúÊ znajdziesz w swoim ekwipunku., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Czƒô≈õƒá zosta≈Ça odmontowana pomy≈õlnie.\nOdmontowanƒÖ czƒô≈õƒá znajdziesz w swoim ekwipunku., OK, )
 			return 1
 		)
 		else
@@ -1572,7 +1572,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			bank_number = 100000000 + random(999999999), string(128)
 			PlayerCache(playerid)(pBankNumber) = bank_number
 			
-			format(string, sizeof(string), Konto bankowe zosta≥o za≥oøone pomyúlnie.\nTwÛj nowy numer konta: %d., PlayerCache(playerid)(pBankNumber))
+			format(string, sizeof(string), Konto bankowe zosta≈Ço za≈Ço≈ºone pomy≈õlnie.\nTw√≥j nowy numer konta: %d., PlayerCache(playerid)(pBankNumber))
 			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 			return 1
 		)
@@ -1597,16 +1597,16 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				(
 					if(PlayerCache(playerid)(pBankLastTransaction) + (60*15) ( gettime())
 					(
-						ShowPlayerDialog(playerid, D_WITHDRAW_CASH, DIALOG_STYLE_INPUT, Konto bankowe ª Wyp≥aÊ gotÛwkÍ, Wprowadü kwotÍ jakπ chcesz wyp≥aciÊ z konta bankowego., Wyp≥aÊ, Anuluj)
+						ShowPlayerDialog(playerid, D_WITHDRAW_CASH, DIALOG_STYLE_INPUT, Konto bankowe ¬ª Wyp≈Çaƒá got√≥wkƒô, Wprowad≈∫ kwotƒô jakƒÖ chcesz wyp≈Çaciƒá z konta bankowego., Wyp≈Çaƒá, Anuluj)
 					)
 					else
 					(
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Bank pozwala na wyp≥atÍ bankomatowπ raz na 15 minut., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Bank pozwala na wyp≈Çatƒô bankomatowƒÖ raz na 15 minut., OK, )
 					)
 				)
 				case 2:
 				(
-					ShowPlayerDialog(playerid, D_DEPOSIT_CASH, DIALOG_STYLE_INPUT, Konto bankowe ª Wp≥aÊ gotÛwkÍ, Wprowadü kwotÍ jakπ chcesz wp≥aciÊ na swoje konto bankowe., Wp≥aÊ, Anuluj)
+					ShowPlayerDialog(playerid, D_DEPOSIT_CASH, DIALOG_STYLE_INPUT, Konto bankowe ¬ª Wp≈Çaƒá got√≥wkƒô, Wprowad≈∫ kwotƒô jakƒÖ chcesz wp≈Çaciƒá na swoje konto bankowe., Wp≈Çaƒá, Anuluj)
 				)
 				case 3:
 				(
@@ -1621,10 +1621,10 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					)*/
 					if(PlayerCache(playerid)(pGamePoints) ( 100)
 					(
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie moøesz dokonywaÊ przelewÛw, nie majac 100GS., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie mo≈ºesz dokonywaƒá przelew√≥w, nie majac 100GS., OK, )
 						return 1
 					)
-					ShowPlayerDialog(playerid, D_TRANSFER_NUMBER, DIALOG_STYLE_INPUT, Konto bankowe ª Dokonaj przelewu, Wprowadü numer konta bankowego, na ktÛry chcesz przelaÊ gotÛwkÍ., Dalej, Anuluj)
+					ShowPlayerDialog(playerid, D_TRANSFER_NUMBER, DIALOG_STYLE_INPUT, Konto bankowe ¬ª Dokonaj przelewu, Wprowad≈∫ numer konta bankowego, na kt√≥ry chcesz przelaƒá got√≥wkƒô., Dalej, Anuluj)
 				)
 			)
 			ApplyAnimation(playerid,INT_SHOP,shop_cashier,4.0,0,0,0,0,0,0)
@@ -1642,7 +1642,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			deposit_cash = strval(inputtext), string(128)
 			if(strlen(inputtext) ) 11 || deposit_cash (= 0 || deposit_cash ) PlayerCache(playerid)(pCash))
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Wprowadzono nieprawid≥owπ kwotÍ., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Wprowadzono nieprawid≈ÇowƒÖ kwotƒô., OK, )
 				return 1
 			)
    			hrp_GivePlayerMoney(playerid, -deposit_cash)
@@ -1650,7 +1650,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			
 			SavePlayerStats(playerid, SAVE_PLAYER_BASIC)
 			
-			format(string, sizeof(string), Na konto bankowe wp≥acono kwotÍ $%d.\nNowy stan konta: $%d, deposit_cash, PlayerCache(playerid)(pBankCash))
+			format(string, sizeof(string), Na konto bankowe wp≈Çacono kwotƒô $%d.\nNowy stan konta: $%d, deposit_cash, PlayerCache(playerid)(pBankCash))
 			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 
 			hrp_MoneyActionLog(%s (UID: %d) wplacil $%d na swoje konto bankowe (bank: $%d, portfel: $%d)., PlayerRealName(playerid), PlayerCache(playerid)(pUID), deposit_cash, PlayerCache(playerid)(pBankCash), PlayerCache(playerid)(pCash))
@@ -1668,7 +1668,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			withdraw_cash = strval(inputtext), string(128)
 			if(strlen(inputtext) ) 11 || withdraw_cash (= 0 || withdraw_cash ) PlayerCache(playerid)(pBankCash))
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Wprowadzono nieprawid≥owπ kwotÍ., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Wprowadzono nieprawid≈ÇowƒÖ kwotƒô., OK, )
 				return 1
 			)
 			PlayerCache(playerid)(pBankCash) -= withdraw_cash
@@ -1676,7 +1676,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			
 			SavePlayerStats(playerid, SAVE_PLAYER_BASIC)
 			
-			format(string, sizeof(string), Z konta bankowego wyp≥acono kwotÍ $%d.\nNowy stan konta: $%d, withdraw_cash, PlayerCache(playerid)(pBankCash))
+			format(string, sizeof(string), Z konta bankowego wyp≈Çacono kwotƒô $%d.\nNowy stan konta: $%d, withdraw_cash, PlayerCache(playerid)(pBankCash))
 			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 
 			PlayerCache(playerid)(pBankLastTransaction) = gettime()
@@ -1700,7 +1700,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				
 			if(!passed)
 			(
-				GuiMsg(playerid, Musisz chwilÍ odczekaÊ nim bÍdziesz mÛg≥ przelaÊ pieniπdze., 0)
+				GuiMsg(playerid, Musisz chwilƒô odczekaƒá nim bƒôdziesz m√≥g≈Ç przelaƒá pieniƒÖdze., 0)
 				return 1
 			)
 			
@@ -1709,7 +1709,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				
 			if(strlen(inputtext) ) 10 || strlen(inputtext) ( 9)
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Wprowadzono nieprawid≥owy numer konta bankowego., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Wprowadzono nieprawid≈Çowy numer konta bankowego., OK, )
 				return 1
 			)
 			mysql_query_format(SELECT char_uid, char_gid FROM hrp_characters WHERE char_banknumb = %d LIMIT 1, bank_number)
@@ -1728,24 +1728,24 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			
 			if(char_uid == -1 || char_gid == -1)
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥ad, Wprowadzono nieprawid≥owy numer konta bankowego., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈Çad, Wprowadzono nieprawid≈Çowy numer konta bankowego., OK, )
 				return 1
 			)
 			if(char_uid == PlayerCache(playerid)(pUID))
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie moøesz przelewaÊ pieniÍdzy na w≥asne konto bankowe., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie mo≈ºesz przelewaƒá pieniƒôdzy na w≈Çasne konto bankowe., OK, )
 				return 1
 			)
 			if(char_gid == PlayerCache(playerid)(pGID))
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie moøesz przelewaÊ pieniÍdzy miÍdzy w≥asnymi postaciami!, OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie mo≈ºesz przelewaƒá pieniƒôdzy miƒôdzy w≈Çasnymi postaciami!, OK, )
 				return 1
 			)
 			MainPlayerTable(playerid) = char_uid
 			SecondPlayerTable(playerid) = bank_number
 			
 			printf((CROTOLOLO) Gracz %s (uid: %d) wpisal numer %d nalezacy do gracza uid %d do przelewu., PlayerName(playerid), PlayerCache(playerid)(pUID), bank_number, char_uid)
-			ShowPlayerDialog(playerid, D_TRANSFER_CASH, DIALOG_STYLE_INPUT, Wprowadü kwotÍ, Wprowadü kwotÍ, jakπ chcesz przelaÊ na wybrane konto bankowe.\n\nUWAGA!\nGotÛwka jest pobierana bezpoúrednio ze stanu konta bankowego, nie z portfela!, Przelej, Anuluj)
+			ShowPlayerDialog(playerid, D_TRANSFER_CASH, DIALOG_STYLE_INPUT, Wprowad≈∫ kwotƒô, Wprowad≈∫ kwotƒô, jakƒÖ chcesz przelaƒá na wybrane konto bankowe.\n\nUWAGA!\nGot√≥wka jest pobierana bezpo≈õrednio ze stanu konta bankowego, nie z portfela!, Przelej, Anuluj)
 			return 1
 		)
 		else
@@ -1760,18 +1760,18 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			transfer_cash = strval(inputtext), char_uid = MainPlayerTable(playerid), account = SecondPlayerTable(playerid), giveplayer_id = GetPlayerID(char_uid), string(128)
 			if(strlen(inputtext) ) 11 || transfer_cash (= 0 || transfer_cash ) PlayerCache(playerid)(pBankCash) || transfer_cash (= 0)
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Wprowadzono nieprawid≥owπ kwotÍ., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Wprowadzono nieprawid≈ÇowƒÖ kwotƒô., OK, )
 				return 1
 			)
 			if(giveplayer_id != INVALID_PLAYER_ID && Logged(giveplayer_id) && Spawned(giveplayer_id))
 			(
 				PlayerCache(giveplayer_id)(pBankCash) += transfer_cash
-				format(string, sizeof(string), Na twoje konto bankowe wp≥ynÍ≥a w≥aúnie kwota $%d., transfer_cash)
+				format(string, sizeof(string), Na twoje konto bankowe wp≈Çynƒô≈Ça w≈Ça≈õnie kwota $%d., transfer_cash)
 				SendClientMessage(giveplayer_id, 0xFFD700CC, string)
 			)
 			else
 			(
-				format(string, sizeof(string), otrzyma≥eú przelew w wysokoúci $%d!, transfer_cash)
+				format(string, sizeof(string), otrzyma≈Çe≈õ przelew w wysoko≈õci $%d!, transfer_cash)
 				AddPlayerOfflineMessage(char_uid, string)
 				
    				mysql_query_format(UPDATE hrp_characters SET char_bankcash = char_bankcash + %d WHERE char_uid = %d LIMIT 1, transfer_cash, char_uid)
@@ -1785,7 +1785,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			
 			SavePlayerStats(playerid, SAVE_PLAYER_BASIC)
 			
-			format(string, sizeof(string), Pieniπdze zosta≥y pomyúlnie przelane na konto %d.\nPrzelana iloúÊ gotÛwki: %d\n\nGotÛwka zosta≥a pobrana z Twojego konta bankowego., account, transfer_cash)
+			format(string, sizeof(string), PieniƒÖdze zosta≈Çy pomy≈õlnie przelane na konto %d.\nPrzelana ilo≈õƒá got√≥wki: %d\n\nGot√≥wka zosta≈Ça pobrana z Twojego konta bankowego., account, transfer_cash)
 			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 
 			hrp_MoneyActionLog(%s (UID: %d) przelal $%d dla gracza (UID: %d) (bank: $%d, portfel: $%d), PlayerRealName(playerid), PlayerCache(playerid)(pUID), transfer_cash, char_uid, PlayerCache(playerid)(pBankCash), PlayerCache(playerid)(pCash))
@@ -1807,7 +1807,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			itemid = PlayerCache(playerid)(pManageItem), check_price = strval(inputtext), string(128), item_name(32)
 			if(strlen(inputtext) ) 11 || check_price (= 0 || check_price ) PlayerCache(playerid)(pBankCash) || check_price (= 0)
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Wprowadzono nieprawid≥owπ kwotÍ., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Wprowadzono nieprawid≈ÇowƒÖ kwotƒô., OK, )
 				return 1
 			)
 			PlayerCache(playerid)(pBankCash) -= check_price
@@ -1831,7 +1831,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
  			format(string, sizeof(string), * %s wypisuje czek na $%d., PlayerName(playerid), check_price)
 			FlashMe(playerid, string) //ProxDetector(10.0, playerid, string, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, false)
 			
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Czek zosta≥ wypisany pomyúlnie.\nPieniπdze zosta≥y pobrane z Twojego konta bankowego i wypisane na czeku., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Czek zosta≈Ç wypisany pomy≈õlnie.\nPieniƒÖdze zosta≈Çy pobrane z Twojego konta bankowego i wypisane na czeku., OK, )
 			return 1
 		)
 		else
@@ -1896,8 +1896,8 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			string(128)
 			sscanf(inputtext, d$ds(32), OrderProductUID(playerid), OrderProductPrice(playerid), OrderProductName(playerid))
 
-			format(string, sizeof(string), Wprowadü ile produktÛw tego typu chcesz zamÛwiÊ.\n\nWybrano produkt: %s\nKoszt za sztukÍ: $%d, OrderProductName(playerid), OrderProductPrice(playerid))
-			ShowPlayerDialog(playerid, D_PRODUCT_NUMBER, DIALOG_STYLE_INPUT, IloúÊ sztuk, string, Dalej, Anuluj)
+			format(string, sizeof(string), Wprowad≈∫ ile produkt√≥w tego typu chcesz zam√≥wiƒá.\n\nWybrano produkt: %s\nKoszt za sztukƒô: $%d, OrderProductName(playerid), OrderProductPrice(playerid))
+			ShowPlayerDialog(playerid, D_PRODUCT_NUMBER, DIALOG_STYLE_INPUT, Ilo≈õƒá sztuk, string, Dalej, Anuluj)
 			return 1
 		)
 		else
@@ -1914,25 +1914,25 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		if(response)
 		(
 	 		product_number = strval(inputtext), string(128)
-			// tutaj zamiast 11 to 5 øeby lepiej by≥o, bo sie bugowalo do miliardÛw ...
+			// tutaj zamiast 11 to 5 ≈ºeby lepiej by≈Ço, bo sie bugowalo do miliard√≥w ...
 			if(strlen(inputtext) ) 5 || product_number (= 0)
 			(
-				format(string, sizeof(string), Wprowadü ile produktÛw tego typu chcesz zamÛwiÊ.\n\nWybrano produkt: %s\nKoszt za sztukÍ: $%d, OrderProductName(playerid), OrderProductPrice(playerid))
-				ShowPlayerDialog(playerid, D_PRODUCT_NUMBER, DIALOG_STYLE_INPUT, IloúÊ sztuk, string, Dalej, Anuluj)
+				format(string, sizeof(string), Wprowad≈∫ ile produkt√≥w tego typu chcesz zam√≥wiƒá.\n\nWybrano produkt: %s\nKoszt za sztukƒô: $%d, OrderProductName(playerid), OrderProductPrice(playerid))
+				ShowPlayerDialog(playerid, D_PRODUCT_NUMBER, DIALOG_STYLE_INPUT, Ilo≈õƒá sztuk, string, Dalej, Anuluj)
 				
 				GameTextForPlayer(playerid, ~n~~n~~n~~n~~n~~n~~n~~r~Nieprawidlowa liczba, 3000, 3)
 				return 1
 			)
 			if(PlayerCache(playerid)(pCash) ( OrderProductPrice(playerid) * product_number)
 			(
-				format(string, sizeof(string), Wprowadü ile produktÛw tego typu chcesz zamÛwiÊ.\n\nWybrano produkt: %s\nKoszt za sztukÍ: $%d, OrderProductName(playerid), OrderProductPrice(playerid))
-				ShowPlayerDialog(playerid, D_PRODUCT_NUMBER, DIALOG_STYLE_INPUT, IloúÊ sztuk, string, Dalej, Anuluj)
+				format(string, sizeof(string), Wprowad≈∫ ile produkt√≥w tego typu chcesz zam√≥wiƒá.\n\nWybrano produkt: %s\nKoszt za sztukƒô: $%d, OrderProductName(playerid), OrderProductPrice(playerid))
+				ShowPlayerDialog(playerid, D_PRODUCT_NUMBER, DIALOG_STYLE_INPUT, Ilo≈õƒá sztuk, string, Dalej, Anuluj)
 
 				GameTextForPlayer(playerid, ~n~~n~~n~~n~~n~~n~~n~~r~Nie posiadasz tyle gotowki, 3000, 3)
 				return 1
 			)
 			OrderProductNumber(playerid) = product_number
-			ShowPlayerDialog(playerid, D_PRODUCT_PRICE, DIALOG_STYLE_INPUT, Koszt produktu, Wprowadü oferowanπ cenÍ produktu.\nCena jakπ wprowadzisz bÍdzie pobierana za zakup produktu w Twojej instytucji.\n\nCena powinna byÊ wyøsza niø hurtowa, byú mia≥ profit z wyprzedanych produktÛw.\nKoszt danego przedmiotu moøesz w kaødej chwili zmieniÊ dziÍki komendzie /drzwi opcje., ZamÛw, Anuluj)
+			ShowPlayerDialog(playerid, D_PRODUCT_PRICE, DIALOG_STYLE_INPUT, Koszt produktu, Wprowad≈∫ oferowanƒÖ cenƒô produktu.\nCena jakƒÖ wprowadzisz bƒôdzie pobierana za zakup produktu w Twojej instytucji.\n\nCena powinna byƒá wy≈ºsza ni≈º hurtowa, by≈õ mia≈Ç profit z wyprzedanych produkt√≥w.\nKoszt danego przedmiotu mo≈ºesz w ka≈ºdej chwili zmieniƒá dziƒôki komendzie /drzwi opcje., Zam√≥w, Anuluj)
 			return 1
 		)
 		else
@@ -1951,14 +1951,14 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			price = strval(inputtext), doorid = MainPlayerTable(playerid)
 			if(price (= 0 || strlen(inputtext) )= 10)
 			(
-				ShowPlayerDialog(playerid, D_PRODUCT_PRICE, DIALOG_STYLE_INPUT, Koszt produktu, Wprowadü oferowanπ cenÍ produktu.\nCena jakπ wprowadzisz bÍdzie pobierana za zakup produktu w Twojej instytucji.\n\nCena powinna byÊ wyøsza niø hurtowa, byú mia≥ profit z wyprzedanych produktÛw.\nKoszt danego przedmiotu moøesz w kaødej chwili zmieniÊ dziÍki komendzie /drzwi opcje., ZamÛw, Anuluj)
+				ShowPlayerDialog(playerid, D_PRODUCT_PRICE, DIALOG_STYLE_INPUT, Koszt produktu, Wprowad≈∫ oferowanƒÖ cenƒô produktu.\nCena jakƒÖ wprowadzisz bƒôdzie pobierana za zakup produktu w Twojej instytucji.\n\nCena powinna byƒá wy≈ºsza ni≈º hurtowa, by≈õ mia≈Ç profit z wyprzedanych produkt√≥w.\nKoszt danego przedmiotu mo≈ºesz w ka≈ºdej chwili zmieniƒá dziƒôki komendzie /drzwi opcje., Zam√≥w, Anuluj)
 				GameTextForPlayer(playerid, ~n~~n~~n~~n~~n~~n~~n~~r~Nie posiadasz tyle gotowki, 3000, 3)
 				return 1
 			)
   			data(24), order_price = OrderProductPrice(playerid) * OrderProductNumber(playerid),
 				order_itemtype, order_itemvalue1, order_itemvalue2, order_secured, order_limited
 
-			// Jednak weümiemy mu o 40% mniej gotÛwki, niech zarobi
+			// Jednak we≈∫miemy mu o 40% mniej got√≥wki, niech zarobi
 			if(OrderProductNumber(playerid) )= 20)
 			(
 				order_price = floatround(order_price * 0.6)
@@ -1986,7 +1986,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 							(
 								if(PackageInfo(package_id)(pDoorUID) == DoorData(doorid)(dUID))
 								(
-									SendClientMessage(playerid, COLOR_DO, * Nie moøna po≥πczyÊ siÍ z wybranym numerem...) // SELER
+									SendClientMessage(playerid, COLOR_DO, * Nie mo≈ºna po≈ÇƒÖczyƒá siƒô z wybranym numerem...) // SELER
 								
 				 					MainPlayerTable(playerid) = 0
 
@@ -2016,7 +2016,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 						calc_orders = weaporders_now + order_amount
 						if(calc_orders )= 11)
 						(
-							SendClientMessage(playerid, COLOR_DO, * Nie moøna po≥πczyÊ siÍ z wybranym numerem...) // SELER	
+							SendClientMessage(playerid, COLOR_DO, * Nie mo≈ºna po≈ÇƒÖczyƒá siƒô z wybranym numerem...) // SELER	
 
 							MainPlayerTable(playerid) = 0
 
@@ -2030,7 +2030,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 						calc_orders = ammoorders_now + order_amount
 						if(calc_orders )= 26)
 						(
-							SendClientMessage(playerid, COLOR_DO, * Nie moøna po≥πczyÊ siÍ z wybranym numerem...) // SELER	
+							SendClientMessage(playerid, COLOR_DO, * Nie mo≈ºna po≈ÇƒÖczyƒá siƒô z wybranym numerem...) // SELER	
 
 							MainPlayerTable(playerid) = 0
 
@@ -2049,7 +2049,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 							(
 								if(LimitedPackageInfo(limitedpackage_id)(pDoorUID) == DoorData(doorid)(dUID))
 								(
-									SendClientMessage(playerid, COLOR_DO, * Nie moøna po≥πczyÊ siÍ z wybranym numerem...) // SELER
+									SendClientMessage(playerid, COLOR_DO, * Nie mo≈ºna po≈ÇƒÖczyƒá siƒô z wybranym numerem...) // SELER
 								
 				 					MainPlayerTable(playerid) = 0
 
@@ -2062,9 +2062,9 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					)
 					// seler
 					CreateLimitedPackage(DoorData(doorid)(dUID), playerid, PlayerCache(playerid)(pUID), OrderProductName(playerid), order_itemtype, order_itemvalue1, order_itemvalue2, OrderProductNumber(playerid), price, order_secured)
-					SendClientMessage(playerid, COLOR_YELLOW, (Telefon) (G≥os mÍski): Spotkajmy siÍ, skontaktuj siÍ z moim poúrednikiem jak bÍdziesz na miejscu.) // SELER
-					SendClientMessage(playerid, COLOR_YELLOW, Rozmowa zosta≥a zakonczoÒa.)
-					SendClientMessage(playerid, COLOR_YELLOW, (SMS) 27103: ZadzwoÒ pod ten numer jak bÍdziesz na miejscu.)
+					SendClientMessage(playerid, COLOR_YELLOW, (Telefon) (G≈Ços mƒôski): Spotkajmy siƒô, skontaktuj siƒô z moim po≈õrednikiem jak bƒôdziesz na miejscu.) // SELER
+					SendClientMessage(playerid, COLOR_YELLOW, Rozmowa zosta≈Ça zakonczo≈Ña.)
+					SendClientMessage(playerid, COLOR_YELLOW, (SMS) 27103: Zadzwo≈Ñ pod ten numer jak bƒôdziesz na miejscu.)
 					if(order_itemtype == 6) // bronie
 					(
 						mysql_query_format(UPDATE hrp_groups SET weap_orders = weap_orders + %i WHERE group_uid = %i LIMIT 1, order_amount, group_id_fix)
@@ -2076,14 +2076,14 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				)
 				else
 				(
-					SendClientMessage(playerid, COLOR_YELLOW, (Telefon) (G≥os mÍski): Okej, nied≥ugo Wam to przywiozÍ.) // SELER
-					SendClientMessage(playerid, COLOR_YELLOW, Rozmowa zosta≥a zakoÒczona.)
+					SendClientMessage(playerid, COLOR_YELLOW, (Telefon) (G≈Ços mƒôski): Okej, nied≈Çugo Wam to przywiozƒô.) // SELER
+					SendClientMessage(playerid, COLOR_YELLOW, Rozmowa zosta≈Ça zako≈Ñczona.)
 					CreatePackage(DoorData(doorid)(dUID), OrderProductName(playerid), order_itemtype, order_itemvalue1, order_itemvalue2, OrderProductNumber(playerid), price, order_secured)
 				)
 			)
 			else
 			(
-				SendClientMessage(playerid, COLOR_YELLOW, Sekretarka: Dziekujemy za z≥oøenie zamÛwienia, paczka zaczeka u nas w hurtowni.)
+				SendClientMessage(playerid, COLOR_YELLOW, Sekretarka: Dziekujemy za z≈Ço≈ºenie zam√≥wienia, paczka zaczeka u nas w hurtowni.)
 				CreatePackage(DoorData(doorid)(dUID), OrderProductName(playerid), order_itemtype, order_itemvalue1, order_itemvalue2, OrderProductNumber(playerid), price, order_secured)
 			)
 			
@@ -2109,40 +2109,40 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		if(response)
 		(
 			help_type(32)
-			sscanf(inputtext, ªs(32), help_type)
+			sscanf(inputtext, ¬ªs(32), help_type)
 			
 			if(!strcmp(help_type, Wprowadzenie, true))
 			(
-			 	ShowPlayerDialog(playerid, D_INTRODUCTION, DIALOG_STYLE_MSGBOX, Wprowadzenie (1/2), Witaj na serwerze SERVER_NAME.\n\nPojawi≥eú siÍ w metrze Los Santos, na mieúcie znajdziesz wiele rÛønego rodzaju\ninstytucji, dziÍki ktÛrym bÍdziesz mÛg≥ przyjπÊ siÍ do pracy\na takøe skorzystaÊ z ich us≥ug np. kupiÊ telefon, bπdü zjeúÊ obiad.\n\nNa pierwszy etat udaj siÍ do urzÍdu miasta, by wyrobiÊ dokumenty niezbÍdne do gry., Dalej, Zamknij)
-			  	// ShowPlayerDialog(playerid, D_INTRODUCTION, DIALOG_STYLE_MSGBOX, Wprowadzenie (1/2), Witaj na serwerze SERVER_NAME.\n\nPojawi≥eú siÍ w metrze Los Santos, znajdziesz tutaj wiele rÛønego rodzaju\ninstytucji, dziÍki ktÛrym bÍdziesz mÛg≥ przyjπÊ siÍ do pracy\na takøe skorzystaÊ z ich us≥ug np. kupiÊ telefon, bπdü zjeúÊ obiad.\n\nNa pierwszy etat udaj siÍ do urzÍdu miasta, by wyrobiÊ dokumenty niezbÍdne do gry., Dalej, Zamknij)
+			 	ShowPlayerDialog(playerid, D_INTRODUCTION, DIALOG_STYLE_MSGBOX, Wprowadzenie (1/2), Witaj na serwerze SERVER_NAME.\n\nPojawi≈Çe≈õ siƒô w metrze Los Santos, na mie≈õcie znajdziesz wiele r√≥≈ºnego rodzaju\ninstytucji, dziƒôki kt√≥rym bƒôdziesz m√≥g≈Ç przyjƒÖƒá siƒô do pracy\na tak≈ºe skorzystaƒá z ich us≈Çug np. kupiƒá telefon, bƒÖd≈∫ zje≈õƒá obiad.\n\nNa pierwszy etat udaj siƒô do urzƒôdu miasta, by wyrobiƒá dokumenty niezbƒôdne do gry., Dalej, Zamknij)
+			  	// ShowPlayerDialog(playerid, D_INTRODUCTION, DIALOG_STYLE_MSGBOX, Wprowadzenie (1/2), Witaj na serwerze SERVER_NAME.\n\nPojawi≈Çe≈õ siƒô w metrze Los Santos, znajdziesz tutaj wiele r√≥≈ºnego rodzaju\ninstytucji, dziƒôki kt√≥rym bƒôdziesz m√≥g≈Ç przyjƒÖƒá siƒô do pracy\na tak≈ºe skorzystaƒá z ich us≈Çug np. kupiƒá telefon, bƒÖd≈∫ zje≈õƒá obiad.\n\nNa pierwszy etat udaj siƒô do urzƒôdu miasta, by wyrobiƒá dokumenty niezbƒôdne do gry., Dalej, Zamknij)
 				return 1
 			)
-			if(!strcmp(help_type, Komendy g≥Ûwne, true))
+			if(!strcmp(help_type, Komendy g≈Ç√≥wne, true))
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Pomoc ª Komendy g≥Ûwne, (/p)rzedmiot, (/o)feruj, (/tel)efon, (/od)bierz, (/z)akoncz, /sms\n/stats, (/a)dmins, /kup, /pokoj, /opis, /bank, /id, /pokaz, /tog\n/pay, (/anim)acje, /wyrzuc, /report, /tankuj, /qs, /przebierz, /bus\n\nRodzaje czatÛw:\n(/k)rzycz, /l, /b, /me, /do, /w, /re, /m, OK, Zamknij)
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Pomoc ¬ª Komendy g≈Ç√≥wne, (/p)rzedmiot, (/o)feruj, (/tel)efon, (/od)bierz, (/z)akoncz, /sms\n/stats, (/a)dmins, /kup, /pokoj, /opis, /bank, /id, /pokaz, /tog\n/pay, (/anim)acje, /wyrzuc, /report, /tankuj, /qs, /przebierz, /bus\n\nRodzaje czat√≥w:\n(/k)rzycz, /l, /b, /me, /do, /w, /re, /m, OK, Zamknij)
 				return 1
 			)
 			if(!strcmp(help_type, Pojazd, true))
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Pomoc ª Pojazd, W≥asne cztery kÛ≥ka moøesz nabyÊ w salonach samochodowych,\nmusisz tylko porozmawiaÊ z ich pracownikiem i odegraÊ krÛtkπ interakcjÍ.\n\nPo zaakceptowaniu oferty z≥oøonej przez pracownika, pojazd\npowinien pojawiÊ siÍ w magazynie, a na mapie bÍdziesz widzia≥ jego po≥oøenie.\n\nKomendy dla pojazdu:\n/pojazd (lista, namierz, zaparkuj, tuning, przypisz, zamknij, info), OK, Zamknij)
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Pomoc ¬ª Pojazd, W≈Çasne cztery k√≥≈Çka mo≈ºesz nabyƒá w salonach samochodowych,\nmusisz tylko porozmawiaƒá z ich pracownikiem i odegraƒá kr√≥tkƒÖ interakcjƒô.\n\nPo zaakceptowaniu oferty z≈Ço≈ºonej przez pracownika, pojazd\npowinien pojawiƒá siƒô w magazynie, a na mapie bƒôdziesz widzia≈Ç jego po≈Ço≈ºenie.\n\nKomendy dla pojazdu:\n/pojazd (lista, namierz, zaparkuj, tuning, przypisz, zamknij, info), OK, Zamknij)
 				return 1
 			)
 			if(!strcmp(help_type, Przedmioty, true))
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Pomoc ª Przedmioty, Aby zarzπdzaÊ swoimi przedmiotami w ekwipunku, uzyj komendy /p.\nPo wybraniu dowolnego z przedmiotÛw, ujrzysz listÍ dosepnych akcji dla wybranego przedmiotu.\n\nJeøeli jednak pragniesz szybko uøyÊ przedmiotu, uøyj komendy /u\na nastÍpnie wybierz przedmiot, ktÛry chcesz uøyÊ. Moøesz rÛwnieø\nskorzystaÊ ze skrÛtu: /u (UID przedmiotu) (Dodatkowe parametry)\n\nPrzyk≥ad:\n/u 1998 z kabury., OK, Zamknij)
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Pomoc ¬ª Przedmioty, Aby zarzƒÖdzaƒá swoimi przedmiotami w ekwipunku, uzyj komendy /p.\nPo wybraniu dowolnego z przedmiot√≥w, ujrzysz listƒô dosepnych akcji dla wybranego przedmiotu.\n\nJe≈ºeli jednak pragniesz szybko u≈ºyƒá przedmiotu, u≈ºyj komendy /u\na nastƒôpnie wybierz przedmiot, kt√≥ry chcesz u≈ºyƒá. Mo≈ºesz r√≥wnie≈º\nskorzystaƒá ze skr√≥tu: /u (UID przedmiotu) (Dodatkowe parametry)\n\nPrzyk≈Çad:\n/u 1998 z kabury., OK, Zamknij)
 				return 1
 			)
 			if(!strcmp(help_type, Praca, true))
 			(
 				string(1024)
-				format(string, sizeof(string), Praca, dziÍki ktÛrej bÍdziesz mÛg≥ zarobiÊ trochÍ pieniÍdzy jest zaleøna od Twojej wyobraüni,\naby jednak znaleüÊ pracÍ musisz pochodziÊ po instytucjach w celu poznania konkretnych szczegÛ≥Ûw.\n\nMoøesz pracowaÊ jednoczeúnie w biznesie, frakcji oraz organizacji,\n)
-				format(string, sizeof(string), %s jakby tego by≥o ma≥o, moøesz teø posiadaÊ pracÍ dorywczπ, ktÛrπ znajdziesz w urzÍdzie miasta.\n\n/paczka - odbieranie paczki z hurtowni/dostarczanie paczki do biznesu.\n/paczka anuluj - anulowanie dostarczania paczki.\n/sprzatacz - uruchomienie pracy sprzπtacza ulic (musisz byÊ w Sweeprze).\n/o montaz - montowanie czÍúci tuningowych.\n/o naprawe - oferowanie naprawy pojazdu.\n/o hotdog - oferowanie hotdoga (musisz znajdowaÊ siÍ przy budce z hotdogami)., string)
-			 	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Pomoc ª Praca, string, OK, Zamknij)
+				format(string, sizeof(string), Praca, dziƒôki kt√≥rej bƒôdziesz m√≥g≈Ç zarobiƒá trochƒô pieniƒôdzy jest zale≈ºna od Twojej wyobra≈∫ni,\naby jednak znale≈∫ƒá pracƒô musisz pochodziƒá po instytucjach w celu poznania konkretnych szczeg√≥≈Ç√≥w.\n\nMo≈ºesz pracowaƒá jednocze≈õnie w biznesie, frakcji oraz organizacji,\n)
+				format(string, sizeof(string), %s jakby tego by≈Ço ma≈Ço, mo≈ºesz te≈º posiadaƒá pracƒô dorywczƒÖ, kt√≥rƒÖ znajdziesz w urzƒôdzie miasta.\n\n/paczka - odbieranie paczki z hurtowni/dostarczanie paczki do biznesu.\n/paczka anuluj - anulowanie dostarczania paczki.\n/sprzatacz - uruchomienie pracy sprzƒÖtacza ulic (musisz byƒá w Sweeprze).\n/o montaz - montowanie czƒô≈õci tuningowych.\n/o naprawe - oferowanie naprawy pojazdu.\n/o hotdog - oferowanie hotdoga (musisz znajdowaƒá siƒô przy budce z hotdogami)., string)
+			 	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Pomoc ¬ª Praca, string, OK, Zamknij)
 				return 1
 			)
 			if(!strcmp(help_type, Grupy, true))
 			(
-				// ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Pomoc ª Grupy, Jako przeciÍtny gracz, masz piÍÊ slotÛw przeznaczonych dla grup
+				// ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Pomoc ¬ª Grupy, Jako przeciƒôtny gracz, masz piƒôƒá slot√≥w przeznaczonych dla grup
 				return 1
 			)
 			if(!strcmp(help_type, Administracja, true))
@@ -2232,7 +2232,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					if(PlayerCache(i)(pPackageUID) == package_uid)
 					(
 						format(string, sizeof(string), Ta paczka jest aktualnie dostarczana przez %s., PlayerName(i))
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, string, OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, string, OK, )
 						return 1
 					)
 				)
@@ -2245,7 +2245,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			DisablePlayerCheckpoint(playerid)
 			SetPlayerCheckpoint(playerid, DoorData(doorid)(dEnterX), DoorData(doorid)(dEnterY), DoorData(doorid)(dEnterZ), 2.0)
 
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Wziπ≥eú paczkÍ, dostarcz jπ w wyznaczone miejsce.\nKiedy znajdziesz siÍ w wyznaczonym miejscu uøyj komendy /paczka., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, WziƒÖ≈Çe≈õ paczkƒô, dostarcz jƒÖ w wyznaczone miejsce.\nKiedy znajdziesz siƒô w wyznaczonym miejscu u≈ºyj komendy /paczka., OK, )
 			return 1
 		)
 		else
@@ -2261,31 +2261,31 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			(
 				case 0:
 				(
-					ShowPlayerDialog(playerid, D_SELECT_COURIER, DIALOG_STYLE_MSGBOX, Praca kuriera, Praca kuriera polega na rozwoøeniu paczek do poszczegÛlnych\ninstytucji. Za kaødπ paczkÍ otrzymasz odpowiedniπ sumÍ gotÛwki.\n\nKurier otrzymuje dostÍp do specjalnej komendy,\ndziÍki ktÛrej moøe odebraÊ paczkÍ z hurtowni i przewieüÊ jπ do\nmagazynu okreúlonej instytucji.\n\nCzy jesteú pewien øe chcesz podjπÊ siÍ pracy kuriera?, Tak, Nie)
+					ShowPlayerDialog(playerid, D_SELECT_COURIER, DIALOG_STYLE_MSGBOX, Praca kuriera, Praca kuriera polega na rozwo≈ºeniu paczek do poszczeg√≥lnych\ninstytucji. Za ka≈ºdƒÖ paczkƒô otrzymasz odpowiedniƒÖ sumƒô got√≥wki.\n\nKurier otrzymuje dostƒôp do specjalnej komendy,\ndziƒôki kt√≥rej mo≈ºe odebraƒá paczkƒô z hurtowni i przewie≈∫ƒá jƒÖ do\nmagazynu okre≈õlonej instytucji.\n\nCzy jeste≈õ pewien ≈ºe chcesz podjƒÖƒá siƒô pracy kuriera?, Tak, Nie)
 				)
 				case 1:
 				(
-					ShowPlayerDialog(playerid, D_SELECT_FISHER, DIALOG_STYLE_MSGBOX, Praca rybaka, Praca rybaka polega na ≥owieniu ryb, ktÛre pÛüniej moøna\nsprzedaÊ za okreúlonπ cenÍ, bπdü po prostu naleøycie zjeúÊ.\n\nJednak trzeba pamiÍtaÊ, øe do ≥owienia ryb\npotrzebna bÍdzie wÍdka, ktÛrπ moøesz zakupiÊ\nw jednym ze sklepÛw ca≥odobowych.\n\nCzy jesteú pewien øe chcesz podjπÊ siÍ pracy rybaka?, Tak, Nie)
+					ShowPlayerDialog(playerid, D_SELECT_FISHER, DIALOG_STYLE_MSGBOX, Praca rybaka, Praca rybaka polega na ≈Çowieniu ryb, kt√≥re p√≥≈∫niej mo≈ºna\nsprzedaƒá za okre≈õlonƒÖ cenƒô, bƒÖd≈∫ po prostu nale≈ºycie zje≈õƒá.\n\nJednak trzeba pamiƒôtaƒá, ≈ºe do ≈Çowienia ryb\npotrzebna bƒôdzie wƒôdka, kt√≥rƒÖ mo≈ºesz zakupiƒá\nw jednym ze sklep√≥w ca≈Çodobowych.\n\nCzy jeste≈õ pewien ≈ºe chcesz podjƒÖƒá siƒô pracy rybaka?, Tak, Nie)
 				)
 				/*case 2:
 				(
-					ShowPlayerDialog(playerid, D_SELECT_MECHANIC, DIALOG_STYLE_MSGBOX, Praca mechanika, Praca mechanika polega na naprawianiu, lakierowaniu, bπdü tankowaniu\npojazdÛw. Za kaødπ zaoferowanπ us≥ugÍ zarabiasz konkretny procent.\n\nJest to praca dla mi≥oúnikÛw motoryzacji, aby mÛc przelakierowaÊ\nkomuú pojazd, potrzebowa≥ bÍdziesz do tego lakieru, ktÛry zakupiÊ moøesz w jakimú warsztacie.\n\nCzy jesteú pewien øe chcesz podjπÊ siÍ pracy mechanika?, Tak, Nie)
+					ShowPlayerDialog(playerid, D_SELECT_MECHANIC, DIALOG_STYLE_MSGBOX, Praca mechanika, Praca mechanika polega na naprawianiu, lakierowaniu, bƒÖd≈∫ tankowaniu\npojazd√≥w. Za ka≈ºdƒÖ zaoferowanƒÖ us≈Çugƒô zarabiasz konkretny procent.\n\nJest to praca dla mi≈Ço≈õnik√≥w motoryzacji, aby m√≥c przelakierowaƒá\nkomu≈õ pojazd, potrzebowa≈Ç bƒôdziesz do tego lakieru, kt√≥ry zakupiƒá mo≈ºesz w jakim≈õ warsztacie.\n\nCzy jeste≈õ pewien ≈ºe chcesz podjƒÖƒá siƒô pracy mechanika?, Tak, Nie)
 				)*/
 				case 2:
 				(
-					ShowPlayerDialog(playerid, D_SELECT_SWEEPER, DIALOG_STYLE_MSGBOX, Praca sprzπtacza, Praca sprzπtacza polega na przemieszaniu siÍ specjalnym pojazdem w celu czyszczenia\nulic Los Santos. Za kaødy kurs zarabiasz wyp≥atÍ ustalonπ wczeúniej przez urzπd miasta,\n ktÛry sponsoruje projekt.\n\nCzy jesteú pewien øe chcesz podjπÊ siÍ pracy sprzπtacza ulic?, Tak, Nie)
+					ShowPlayerDialog(playerid, D_SELECT_SWEEPER, DIALOG_STYLE_MSGBOX, Praca sprzƒÖtacza, Praca sprzƒÖtacza polega na przemieszaniu siƒô specjalnym pojazdem w celu czyszczenia\nulic Los Santos. Za ka≈ºdy kurs zarabiasz wyp≈Çatƒô ustalonƒÖ wcze≈õniej przez urzƒÖd miasta,\n kt√≥ry sponsoruje projekt.\n\nCzy jeste≈õ pewien ≈ºe chcesz podjƒÖƒá siƒô pracy sprzƒÖtacza ulic?, Tak, Nie)
 				)
 				/*case 3:
 				(
-					ShowPlayerDialog(playerid, D_SELECT_HOTDOG, DIALOG_STYLE_MSGBOX, Praca sprzedawcy hotdogÛw, Praca sprzedawcy hotdogÛw umoøliwia Ci handlowanie hotdogami w budkach rozmieszczonych na mieúcie.\n\nCzy jesteú pewien øe chcesz podjπÊ siÍ pracy sprzπtacza ulic?, Tak, Nie)
+					ShowPlayerDialog(playerid, D_SELECT_HOTDOG, DIALOG_STYLE_MSGBOX, Praca sprzedawcy hotdog√≥w, Praca sprzedawcy hotdog√≥w umo≈ºliwia Ci handlowanie hotdogami w budkach rozmieszczonych na mie≈õcie.\n\nCzy jeste≈õ pewien ≈ºe chcesz podjƒÖƒá siƒô pracy sprzƒÖtacza ulic?, Tak, Nie)
 				)*/
 				/*case 4:
 				(
-					ShowPlayerDialog(playerid, D_SELECT_PRESSER, DIALOG_STYLE_MSGBOX, Praca roznosiciela gazet, Praca polega na roznoszeniu gazet do pojemnikÛw porozstawianych w ca≥ym mieúcie. \n\nCzy chcesz podjπÊ siÍ tej pracy?, Tak, Nie)
+					ShowPlayerDialog(playerid, D_SELECT_PRESSER, DIALOG_STYLE_MSGBOX, Praca roznosiciela gazet, Praca polega na roznoszeniu gazet do pojemnik√≥w porozstawianych w ca≈Çym mie≈õcie. \n\nCzy chcesz podjƒÖƒá siƒô tej pracy?, Tak, Nie)
 				)*/
 				/*case 5:
 				(
-					ShowPlayerDialog(playerid, D_SELECT_SCOURER, DIALOG_STYLE_MSGBOX, Praca czyúciciela tagÛw, Praca polega na usuwaniu tagÛw ze úcian, automatycznie zostanie Ci wrÍczona farba, dziÍki ktÛrej to zrobisz. \n\nCzy chcesz podjπÊ siÍ tej pracy?, Tak, Nie)
+					ShowPlayerDialog(playerid, D_SELECT_SCOURER, DIALOG_STYLE_MSGBOX, Praca czy≈õciciela tag√≥w, Praca polega na usuwaniu tag√≥w ze ≈õcian, automatycznie zostanie Ci wrƒôczona farba, dziƒôki kt√≥rej to zrobisz. \n\nCzy chcesz podjƒÖƒá siƒô tej pracy?, Tak, Nie)
 				)*/
 			)
 			return 1
@@ -2300,7 +2300,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		if(response)
 		(
 			PlayerCache(playerid)(pJob) = JOB_COURIER
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Przyja≥eú pracÍ kuriera.\n\nPracÍ moøesz zaczπÊ od zaraz, skorzystaj z\nkomendy /pomoc w celu ujrzenia nowych opcji., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Przyja≈Çe≈õ pracƒô kuriera.\n\nPracƒô mo≈ºesz zaczƒÖƒá od zaraz, skorzystaj z\nkomendy /pomoc w celu ujrzenia nowych opcji., OK, )
 			return 1
 		)
 		else
@@ -2313,7 +2313,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		if(response)
 		(
 			PlayerCache(playerid)(pJob) = JOB_FISHER
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Przyjπ≥eú pracÍ rybaka.\n\nPracÍ moøesz zaczπÊ od zaraz, skorzystaj z\nkomendy /pomoc w celu ujrzenia nowych opcji., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, PrzyjƒÖ≈Çe≈õ pracƒô rybaka.\n\nPracƒô mo≈ºesz zaczƒÖƒá od zaraz, skorzystaj z\nkomendy /pomoc w celu ujrzenia nowych opcji., OK, )
 			return 1
 		)
 		else
@@ -2326,7 +2326,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		if(response)
 		(
 	 		PlayerCache(playerid)(pJob) = JOB_MECHANIC
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Przyjπ≥eú pracÍ mechanika.\n\nPracÍ moøesz zaczπÊ od zaraz, skorzystaj z\nkomendy /pomoc w celu ujrzenia nowych opcji., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, PrzyjƒÖ≈Çe≈õ pracƒô mechanika.\n\nPracƒô mo≈ºesz zaczƒÖƒá od zaraz, skorzystaj z\nkomendy /pomoc w celu ujrzenia nowych opcji., OK, )
 			return 1
 		)
 		else
@@ -2339,7 +2339,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		if(response)
 		(
 	 		PlayerCache(playerid)(pJob) = JOB_SWEEPER
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Przyjπ≥eú pracÍ sprzπtacza ulic.\n\nPracÍ moøesz zaczπÊ od zaraz, skorzystaj z\nkomendy /pomoc w celu ujrzenia nowych opcji., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, PrzyjƒÖ≈Çe≈õ pracƒô sprzƒÖtacza ulic.\n\nPracƒô mo≈ºesz zaczƒÖƒá od zaraz, skorzystaj z\nkomendy /pomoc w celu ujrzenia nowych opcji., OK, )
 			return 1
 		)
 		else
@@ -2352,7 +2352,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		if(response)
 		(
 	 		PlayerCache(playerid)(pJob) = JOB_HOTDOG
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Przyjπ≥eú pracÍ sprzedawcy hotdogÛw.\n\nPracÍ moøesz zaczπÊ od zaraz, skorzystaj z\nkomendy /pomoc w celu ujrzenia nowych opcji., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, PrzyjƒÖ≈Çe≈õ pracƒô sprzedawcy hotdog√≥w.\n\nPracƒô mo≈ºesz zaczƒÖƒá od zaraz, skorzystaj z\nkomendy /pomoc w celu ujrzenia nowych opcji., OK, )
 			return 1
 		)
 		else
@@ -2365,7 +2365,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		if(response)
 		(
 			PlayerCache(playerid)(pJob) = JOB_PRESSER
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Przyjπ≥eú pracÍ dorywczπ roznosiciela gazet., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, PrzyjƒÖ≈Çe≈õ pracƒô dorywczƒÖ roznosiciela gazet., OK, )
 			return 1
 		)
 		else
@@ -2386,7 +2386,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			
 			if(GetItemWeightByUID(item_uid) ) GetPlayerEqSpace(playerid))
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie masz wystarczajπco miejsca w swoim ekwipunku aby wyciπgnπÊ ten przedmiot., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie masz wystarczajƒÖco miejsca w swoim ekwipunku aby wyciƒÖgnƒÖƒá ten przedmiot., OK, )
 				return 1
 			)
 			
@@ -2394,7 +2394,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			
 			LoadItem(item_uid)
 			
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Przedmiot zosta≥ wyjÍty.\nPojawi≥ siÍ on w Twoim ekwipunku., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Przedmiot zosta≈Ç wyjƒôty.\nPojawi≈Ç siƒô on w Twoim ekwipunku., OK, )
 			return 1
 		)
 		else
@@ -2411,7 +2411,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			
 			if(GetBagEqSpace(bagid) ( ItemInfo(itemid)(iWeight))
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, W tej torbie nie ma wystarczajπco miejsca aby w≥oøyÊ ten przedmiot., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, W tej torbie nie ma wystarczajƒÖco miejsca aby w≈Ço≈ºyƒá ten przedmiot., OK, )
 				return 1	
 			)
 			
@@ -2433,7 +2433,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			Itter_Remove(Items, itemid)
 			PlayerCache(playerid)(pManageItem) = 0
 			
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Przedmiot zosta≥ w≥oøony.\nAby wyjπÊ, uøyj przedmiotu, do ktÛrego go w≥oøy≥eú., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Przedmiot zosta≈Ç w≈Ço≈ºony.\nAby wyjƒÖƒá, u≈ºyj przedmiotu, do kt√≥rego go w≈Ço≈ºy≈Çe≈õ., OK, )
 			return 1
 		)
 		else
@@ -2492,24 +2492,24 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				(
 					if(!CarInfo(vehid)(cRegister))
 					(
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Ten pojazd nie zosta≥ zarejestrowany w urzÍdzie miasta., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Ten pojazd nie zosta≈Ç zarejestrowany w urzƒôdzie miasta., OK, )
 						return 1
 					)
 					if(!PlayerCache(playerid)(pPremium))
 					(
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Ta funkcja jest dostÍpna tylko dla graczy posiadajπcych aktywne konto premium., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Ta funkcja jest dostƒôpna tylko dla graczy posiadajƒÖcych aktywne konto premium., OK, )
 						return 1
 					)
-				 	ShowPlayerDialog(playerid, D_EDIT_REGISTER, DIALOG_STYLE_INPUT, W≥asna rejestracja, Wprowadü poniøej treúÊ w≥asnej rejestracji.\nNapis na rejestracji zostanie zmieniony zgodnie z podana treúciπ.\n\nIloúÊ znakÛw w rejestracji nie moøe przekroczyÊ 12., ZmieÒ, Anuluj)
+				 	ShowPlayerDialog(playerid, D_EDIT_REGISTER, DIALOG_STYLE_INPUT, W≈Çasna rejestracja, Wprowad≈∫ poni≈ºej tre≈õƒá w≈Çasnej rejestracji.\nNapis na rejestracji zostanie zmieniony zgodnie z podana tre≈õciƒÖ.\n\nIlo≈õƒá znak√≥w w rejestracji nie mo≈ºe przekroczyƒá 12., Zmie≈Ñ, Anuluj)
 				)
 				case 4:
 				(
 					if(!(CarInfo(vehid)(cAccess) & VEH_ACCESS_RADIO))
 					(
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, W tym pojeüdzie nie zosta≥o zamontowane CB radio., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, W tym poje≈∫dzie nie zosta≈Ço zamontowane CB radio., OK, )
 						return 1
 					)
-					ShowPlayerDialog(playerid, D_RADIO_OPTIONS, DIALOG_STYLE_LIST, CB radio, 1. Ustaw kana≥\n2. Wykup kana≥ na w≥asnoúÊ\n3. Ustaw has≥o dla kana≥u\n4. Definitywnie usuÒ kana≥\n5. Przypisz kana≥ pod grupÍ, Wybierz, Anuluj)
+					ShowPlayerDialog(playerid, D_RADIO_OPTIONS, DIALOG_STYLE_LIST, CB radio, 1. Ustaw kana≈Ç\n2. Wykup kana≈Ç na w≈Çasno≈õƒá\n3. Ustaw has≈Ço dla kana≈Çu\n4. Definitywnie usu≈Ñ kana≈Ç\n5. Przypisz kana≈Ç pod grupƒô, Wybierz, Anuluj)
 				)
 			)
 			return 1
@@ -2528,29 +2528,29 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				case 0:
 				(
 					PlayerCache(playerid)(pAlarmCall) = 955
-					ShowPlayerDialog(playerid, D_ALARM_CALL, DIALOG_STYLE_INPUT, Los Santos Police Department, Witam, z tej strony dyspozytor Los Santos Police Department, co siÍ sta≥o?\nProszÍ szczegÛ≥owo opisaÊ sytuacje oraz podaÊ miejsce po≥oøenia., Dalej, Anuluj)
+					ShowPlayerDialog(playerid, D_ALARM_CALL, DIALOG_STYLE_INPUT, Los Santos Police Department, Witam, z tej strony dyspozytor Los Santos Police Department, co siƒô sta≈Ço?\nProszƒô szczeg√≥≈Çowo opisaƒá sytuacje oraz podaƒá miejsce po≈Ço≈ºenia., Dalej, Anuluj)
 				)
 				case 1:
 				(
 					PlayerCache(playerid)(pAlarmCall) = 961
-					ShowPlayerDialog(playerid, D_ALARM_CALL, DIALOG_STYLE_INPUT, Los Santos Emergency Medical Service, Witam, z tej strony dyspozytor Los Santos Medical Center, co siÍ sta≥o?\nProszÍ szczegÛ≥owo opisaÊ sytuacje oraz podaÊ miejsce po≥oøenia., Dalej, Anuluj)
+					ShowPlayerDialog(playerid, D_ALARM_CALL, DIALOG_STYLE_INPUT, Los Santos Emergency Medical Service, Witam, z tej strony dyspozytor Los Santos Medical Center, co siƒô sta≈Ço?\nProszƒô szczeg√≥≈Çowo opisaƒá sytuacje oraz podaƒá miejsce po≈Ço≈ºenia., Dalej, Anuluj)
 				)
 				case 2:
 				(
 					PlayerCache(playerid)(pAlarmCall) = 981
-					ShowPlayerDialog(playerid, D_ALARM_CALL, DIALOG_STYLE_INPUT, Los Santos Fire Department, Witam, z tej strony dyspozytor Los Santos Fire Department, co siÍ sta≥o?\nProszÍ szczegÛ≥owo opisaÊ sytuacje oraz podaÊ miejsce po≥oøenia., Dalej, Anuluj)
+					ShowPlayerDialog(playerid, D_ALARM_CALL, DIALOG_STYLE_INPUT, Los Santos Fire Department, Witam, z tej strony dyspozytor Los Santos Fire Department, co siƒô sta≈Ço?\nProszƒô szczeg√≥≈Çowo opisaƒá sytuacje oraz podaƒá miejsce po≈Ço≈ºenia., Dalej, Anuluj)
 				)
 				case 3:
 				(
-					//mati - zmieniÊ
+					//mati - zmieniƒá
 					PlayerCache(playerid)(pAlarmCall) = 555
-					ShowPlayerDialog(playerid, D_ALARM_CALL, DIALOG_STYLE_INPUT, Department Of Sanitation Electricity, Witam, z tej strony dyspozytor Department Of Sanitation Electricity, co siÍ sta≥o?\nProszÍ szczegÛ≥owo opisaÊ sytuacje oraz podaÊ miejsce po≥oøenia., Dalej, Anuluj)
+					ShowPlayerDialog(playerid, D_ALARM_CALL, DIALOG_STYLE_INPUT, Department Of Sanitation Electricity, Witam, z tej strony dyspozytor Department Of Sanitation Electricity, co siƒô sta≈Ço?\nProszƒô szczeg√≥≈Çowo opisaƒá sytuacje oraz podaƒá miejsce po≈Ço≈ºenia., Dalej, Anuluj)
 				)
 				case 4:
 				(
 					// fbi
 					PlayerCache(playerid)(pAlarmCall) = 556
-					ShowPlayerDialog(playerid, D_ALARM_CALL, DIALOG_STYLE_INPUT, Federal Bureau of Investigation, Witam, z tej strony dyspozytor Federal Bureau of Investigation, co siÍ sta≥o?\nProszÍ szczegÛ≥owo opisaÊ sytuacje oraz podaÊ miejsce po≥oøenia., Dalej, Anuluj)
+					ShowPlayerDialog(playerid, D_ALARM_CALL, DIALOG_STYLE_INPUT, Federal Bureau of Investigation, Witam, z tej strony dyspozytor Federal Bureau of Investigation, co siƒô sta≈Ço?\nProszƒô szczeg√≥≈Çowo opisaƒá sytuacje oraz podaƒá miejsce po≈Ço≈ºenia., Dalej, Anuluj)
 				)
 			)
 			return 1
@@ -2573,7 +2573,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			if(alarm_number == 556)
 			(
 				//FBI
-				format(string, sizeof(string), Zg≥aszajπcy: %d, treúÊ: %s, PlayerCache(playerid)(pSerivceNumberAs), inputtext)
+				format(string, sizeof(string), Zg≈ÇaszajƒÖcy: %d, tre≈õƒá: %s, PlayerCache(playerid)(pSerivceNumberAs), inputtext)
 				foreach(Player,i)
 				(
 					if(Logged(i) && Spawned(i))
@@ -2584,7 +2584,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 							if(GroupData(group_id_fix)(gType) == GROUP_FBI)
 							(
 								counter++
-								SendClientMessage(i, COLOR_GREEN, Centrala: Do wszystkich jednostek, otrzymaliúmy zg≥oszenie:)
+								SendClientMessage(i, COLOR_GREEN, Centrala: Do wszystkich jednostek, otrzymali≈õmy zg≈Çoszenie:)
 								SendClientMessage(i, COLOR_GREEN, string)
 							)
 						)
@@ -2595,7 +2595,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			if(alarm_number == 555)
 			(
 				//Department Of Sanitation Electricity na skrypcie CGH
-				format(string, sizeof(string), Zg≥aszajπcy: %d, treúÊ: %s, PlayerCache(playerid)(pSerivceNumberAs), inputtext)
+				format(string, sizeof(string), Zg≈ÇaszajƒÖcy: %d, tre≈õƒá: %s, PlayerCache(playerid)(pSerivceNumberAs), inputtext)
 				foreach(Player,i)
 				(
 					if(Logged(i) && Spawned(i))
@@ -2606,7 +2606,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 							if(GroupData(group_id_fix)(gType) == GROUP_MEDICAL)
 							(
 								counter++
-								SendClientMessage(i, COLOR_GREEN, Centrala: Do wszystkich jednostek, otrzymaliúmy zg≥oszenie:)
+								SendClientMessage(i, COLOR_GREEN, Centrala: Do wszystkich jednostek, otrzymali≈õmy zg≈Çoszenie:)
 								SendClientMessage(i, COLOR_GREEN, string)
 							)
 						)
@@ -2615,7 +2615,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			)
 			if(alarm_number == 955)
 			(
-				format(string, sizeof(string), Zg≥aszajπcy: %d, treúÊ: %s, PlayerCache(playerid)(pSerivceNumberAs), inputtext)
+				format(string, sizeof(string), Zg≈ÇaszajƒÖcy: %d, tre≈õƒá: %s, PlayerCache(playerid)(pSerivceNumberAs), inputtext)
 				foreach(Player, i)
 				(
 					if(Logged(i) && Spawned(i))
@@ -2626,7 +2626,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 							if(GroupData(group_id_fix)(gType) == GROUP_POLICE)
 							(
 								counter++
-								SendClientMessage(i, COLOR_GREEN, Centrala: Do wszystkich jednostek, otrzymaliúmy zg≥oszenie:)
+								SendClientMessage(i, COLOR_GREEN, Centrala: Do wszystkich jednostek, otrzymali≈õmy zg≈Çoszenie:)
 								SendClientMessage(i, COLOR_GREEN, string)
 							)
 						)
@@ -2635,7 +2635,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			)
 			else if(alarm_number == 961)
 			(
-				format(string, sizeof(string), Zg≥aszajπcy: %d, treúÊ: %s, PlayerCache(playerid)(pSerivceNumberAs), inputtext)
+				format(string, sizeof(string), Zg≈ÇaszajƒÖcy: %d, tre≈õƒá: %s, PlayerCache(playerid)(pSerivceNumberAs), inputtext)
 				foreach(Player, i)
 				(
 					if(Logged(i) && Spawned(i))
@@ -2646,7 +2646,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 							if(GroupData(group_id_fix)(gType) == GROUP_MEDICAL || GroupData(group_id_fix)(gType) == GROUP_FIREDEPT)
 							(
 								counter++
-								SendClientMessage(i, COLOR_GREEN, Centrala: Do wszystkich jednostek, otrzymaliúmy zg≥oszenie:)
+								SendClientMessage(i, COLOR_GREEN, Centrala: Do wszystkich jednostek, otrzymali≈õmy zg≈Çoszenie:)
 								SendClientMessage(i, COLOR_GREEN, string)
 							)
 						)
@@ -2655,7 +2655,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			)
 			else if(alarm_number == 981)
 			(
-				format(string, sizeof(string), Zg≥aszajπcy: %d, treúÊ: %s, PlayerCache(playerid)(pSerivceNumberAs), inputtext)
+				format(string, sizeof(string), Zg≈ÇaszajƒÖcy: %d, tre≈õƒá: %s, PlayerCache(playerid)(pSerivceNumberAs), inputtext)
 				foreach(Player, i)
 				(
 					if(Logged(i) && Spawned(i))
@@ -2666,7 +2666,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 							if(GroupData(group_id_fix)(gType) == GROUP_FIREDEPT)
 							(
 								counter++
-								SendClientMessage(i, COLOR_GREEN, Centrala: Do wszystkich jednostek, otrzymaliúmy zg≥oszenie:)
+								SendClientMessage(i, COLOR_GREEN, Centrala: Do wszystkich jednostek, otrzymali≈õmy zg≈Çoszenie:)
 								SendClientMessage(i, COLOR_GREEN, string)
 							)
 						)
@@ -2731,13 +2731,13 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			mysql_free_result()
 			if(strlen(list_vehicles))
 			(
-				ShowPlayerDialog(playerid, D_SALON_OFFER_VEH, DIALOG_STYLE_LIST, Oferuj pojazd, list_vehicles, Oferuj, WrÛÊ)
+				ShowPlayerDialog(playerid, D_SALON_OFFER_VEH, DIALOG_STYLE_LIST, Oferuj pojazd, list_vehicles, Oferuj, Wr√≥ƒá)
 			)
 			else
 			(
 				GameTextForPlayer(playerid, ~n~~n~~n~~n~~n~~n~~n~~n~~n~~r~Brak pojazdow, 3000, 3)
-				ShowPlayerDialog(playerid, D_SALON_OFFER_CAT, DIALOG_STYLE_LIST, Wybierz kategoriÍ, 1. Jednoúlady\n2. Trzydrzwiowe\n3. PiÍciodrzwiowe\n4. Furgonetki i ciÍøarÛwki\n5.Sportowe\n6. Lowridery \n7  Pickupy\n8  Latajπce\n9  P≥ywajπce\n10  Pozosta≥e , Wybierz, Anuluj)
-				//ShowPlayerDialog(playerid, D_SALON_OFFER_CAT, DIALOG_STYLE_LIST, Wybierz kategoriÍ, 1. Jednoúlady\n2. Trzydrzwiowe\n3. PiÍciodrzwiowe\n4. Furgonetki i ciÍøarÛwki\n5. Pozosta≥e, Wybierz, Anuluj)
+				ShowPlayerDialog(playerid, D_SALON_OFFER_CAT, DIALOG_STYLE_LIST, Wybierz kategoriƒô, 1. Jedno≈õlady\n2. Trzydrzwiowe\n3. Piƒôciodrzwiowe\n4. Furgonetki i ciƒô≈ºar√≥wki\n5.Sportowe\n6. Lowridery \n7  Pickupy\n8  LatajƒÖce\n9  P≈ÇywajƒÖce\n10  Pozosta≈Çe , Wybierz, Anuluj)
+				//ShowPlayerDialog(playerid, D_SALON_OFFER_CAT, DIALOG_STYLE_LIST, Wybierz kategoriƒô, 1. Jedno≈õlady\n2. Trzydrzwiowe\n3. Piƒôciodrzwiowe\n4. Furgonetki i ciƒô≈ºar√≥wki\n5. Pozosta≈Çe, Wybierz, Anuluj)
 			)
 			return 1
 		)
@@ -2767,7 +2767,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				)
 			)
 			
-			// Nowe komisy, wiÍc zwiÍkszamy ceny
+			// Nowe komisy, wiƒôc zwiƒôkszamy ceny
 			better_price = salonveh_price + floatround(salonveh_price * 0.10)
 
 			if(has_house)
@@ -2777,7 +2777,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			)
 			else
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Ten gracz nie posiada jeszcze domu w zwi±zku z czym nie moøe kupiÊ pojazdu., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Ten gracz nie posiada jeszcze domu w zwi¬±zku z czym nie mo≈ºe kupiƒá pojazdu., OK, )
 			)
 
 			MainPlayerTable(playerid) = 0
@@ -2785,8 +2785,8 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		)
 		else
 		(
-			ShowPlayerDialog(playerid, D_SALON_OFFER_CAT, DIALOG_STYLE_LIST, Wybierz kategoriÍ, 1. Jednoúlady\n2. Trzydrzwiowe\n3. PiÍciodrzwiowe\n4. Furgonetki i ciÍøarÛwki\n5.Sportowe\n6. Lowridery \n7  Pickupy\n8  Latajπce\n9  P≥ywajπce\n10  Pozosta≥e , Wybierz, Anuluj)
-			//ShowPlayerDialog(playerid, D_SALON_OFFER_CAT, DIALOG_STYLE_LIST, Wybierz kategoriÍ, 1. Jednoúlady\n2. Trzydrzwiowe\n3. PiÍciodrzwiowe\n4. Furgonetki i ciÍøarÛwki\n5. Pozosta≥e, Wybierz, Anuluj)
+			ShowPlayerDialog(playerid, D_SALON_OFFER_CAT, DIALOG_STYLE_LIST, Wybierz kategoriƒô, 1. Jedno≈õlady\n2. Trzydrzwiowe\n3. Piƒôciodrzwiowe\n4. Furgonetki i ciƒô≈ºar√≥wki\n5.Sportowe\n6. Lowridery \n7  Pickupy\n8  LatajƒÖce\n9  P≈ÇywajƒÖce\n10  Pozosta≈Çe , Wybierz, Anuluj)
+			//ShowPlayerDialog(playerid, D_SALON_OFFER_CAT, DIALOG_STYLE_LIST, Wybierz kategoriƒô, 1. Jedno≈õlady\n2. Trzydrzwiowe\n3. Piƒôciodrzwiowe\n4. Furgonetki i ciƒô≈ºar√≥wki\n5. Pozosta≈Çe, Wybierz, Anuluj)
 			return 1
 		)
 	)
@@ -2797,7 +2797,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			price = strval(inputtext), vehid = MainPlayerTable(playerid), string(256)
 			if(strlen(inputtext) ) 6 || price (= 0 || price ) 25000)
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Wprowadzono nieprawid≥owπ kwotÍ., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Wprowadzono nieprawid≈ÇowƒÖ kwotƒô., OK, )
 				return 1
 			)
 			CarInfo(vehid)(cWheelBlock) = price
@@ -2813,7 +2813,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			
 			MainPlayerTable(playerid) = 0
 			
-			format(string, sizeof(string), Blokada na ko≥o zosta≥a za≥oøona.\n\nZablokowany pojazd: %s\nKoszt zdjÍcia blokady: $%d\n\nPojazd zosta≥ automatycznie zaparkowany w tym miejscu., CarInfo(vehid)(cName), price)
+			format(string, sizeof(string), Blokada na ko≈Ço zosta≈Ça za≈Ço≈ºona.\n\nZablokowany pojazd: %s\nKoszt zdjƒôcia blokady: $%d\n\nPojazd zosta≈Ç automatycznie zaparkowany w tym miejscu., CarInfo(vehid)(cName), price)
 			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 			return 1
 		)
@@ -2828,7 +2828,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		if(response)
 		(
 			string(256), group_id_fix = PlayerCache(playerid)(pAlarmCall)
-			format(string, sizeof(string), Wzywajπcy: %d, treúÊ: %s, PlayerCache(playerid)(pSerivceNumberAs), inputtext)
+			format(string, sizeof(string), WzywajƒÖcy: %d, tre≈õƒá: %s, PlayerCache(playerid)(pSerivceNumberAs), inputtext)
 
 			foreach(Player, i)
 			(
@@ -2836,7 +2836,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				(
 					if(PlayerCache(i)(pGroupDuty) == GroupData(group_id_fix)(gUID))
 					(
-						SendClientMessage(i, COLOR_GREEN, Centrala: Do wszystkich jednostek, otrzymaliúmy wezwanie:)
+						SendClientMessage(i, COLOR_GREEN, Centrala: Do wszystkich jednostek, otrzymali≈õmy wezwanie:)
  						SendClientMessage(i, COLOR_GREEN, string)
 					)
 				)
@@ -2850,7 +2850,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			SetPlayerSpecialAction(playerid, SPECIAL_ACTION_STOPUSECELLPHONE)
 			RemovePlayerAttachedObject(playerid, SLOT_PHONE)
 
-			SendClientMessage(playerid, COLOR_YELLOW, Sekretarka: Zg≥oszenie zosta≥o przyjÍte do realizacji, juø wysy≥amy tam jednostkÍ.)
+			SendClientMessage(playerid, COLOR_YELLOW, Sekretarka: Zg≈Çoszenie zosta≈Ço przyjƒôte do realizacji, ju≈º wysy≈Çamy tam jednostkƒô.)
 			return 1
 		)
 		else
@@ -2868,8 +2868,8 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		if(response)
 		(
   			string(256), header(128), text(256)
-			format(header, sizeof(header), Nowe zg≥oszenie od numeru %d (%s):, PlayerCache(playerid)(pSerivceNumberAs), PlayerName(playerid))
-			format(text, sizeof(text), TreúÊ zg≥oszenia: %s, inputtext)
+			format(header, sizeof(header), Nowe zg≈Çoszenie od numeru %d (%s):, PlayerCache(playerid)(pSerivceNumberAs), PlayerName(playerid))
+			format(text, sizeof(text), Tre≈õƒá zg≈Çoszenia: %s, inputtext)
 
 			group_id_fix
 			foreach(Player, i)
@@ -2897,7 +2897,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			SetPlayerSpecialAction(playerid, SPECIAL_ACTION_STOPUSECELLPHONE)
 			RemovePlayerAttachedObject(playerid, SLOT_PHONE)
 
-			SendClientMessage(playerid, COLOR_YELLOW, Sekretarka: DziÍkujemy za wys≥ane zg≥oszenie, z pewnoúciπ bÍdzie ono przydatne!)
+			SendClientMessage(playerid, COLOR_YELLOW, Sekretarka: Dziƒôkujemy za wys≈Çane zg≈Çoszenie, z pewno≈õciƒÖ bƒôdzie ono przydatne!)
 			return 1
 		)
 		else
@@ -2917,7 +2917,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			product_uid = strval(inputtext), product_id = GetProductID(product_uid), string(128)
 			
 			format(string, sizeof(string), %s (%d, %d) %d szt., ProductInfo(product_id)(pName), ProductInfo(product_id)(pValue1), ProductInfo(product_id)(pValue2), ProductInfo(product_id)(pNumber))
-			ShowPlayerDialog(playerid, D_PRODUCT_OPTION, DIALOG_STYLE_LIST, string, 1. Wyjmij produkt\n2. ZmieÒ cenÍ\n3. UsuÒ z magazynu, Wybierz, Anuluj)
+			ShowPlayerDialog(playerid, D_PRODUCT_OPTION, DIALOG_STYLE_LIST, string, 1. Wyjmij produkt\n2. Zmie≈Ñ cenƒô\n3. Usu≈Ñ z magazynu, Wybierz, Anuluj)
 			
 			MainPlayerTable(playerid) = product_id
 			return 1
@@ -2942,7 +2942,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 						if(ProductInfo(product_id)(pType) == ITEM_DRUG)
 						(
 						   	CreatePlayerItem(playerid, ProductInfo(product_id)(pName), ProductInfo(product_id)(pType), ProductInfo(product_id)(pValue1), ProductInfo(product_id)(pValue2) * out_num)
-	   						format(string, sizeof(string), Wyjπ≥eú produkty z magazynu.\nProdukty pojawi≥y siÍ w Twoim ekwipunku.)
+	   						format(string, sizeof(string), WyjƒÖ≈Çe≈õ produkty z magazynu.\nProdukty pojawi≈Çy siƒô w Twoim ekwipunku.)
 							ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 						)
 						else
@@ -2951,13 +2951,13 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 							(
 								CreatePlayerItem(playerid, ProductInfo(product_id)(pName), ProductInfo(product_id)(pType), ProductInfo(product_id)(pValue1), ProductInfo(product_id)(pValue2))
 							)
-	   						format(string, sizeof(string), Wyjπ≥eú produkt z magazynu.\nProdukt pojawi≥ siÍ w Twoim ekwipunku.)
+	   						format(string, sizeof(string), WyjƒÖ≈Çe≈õ produkt z magazynu.\nProdukt pojawi≈Ç siƒô w Twoim ekwipunku.)
 							ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 						)
 					)
 					else
 					(
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Nie posiadasz tyle produktÛw., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Nie posiadasz tyle produkt√≥w., OK, )
 					)
 
 					if(ProductInfo(product_id)(pNumber) ( 1)
@@ -2971,7 +2971,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				)
 				else
 				(
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Podana liczba musi byÊ pozytywna., OK, )
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Podana liczba musi byƒá pozytywna., OK, )
 				)
 			)
 			else
@@ -2996,8 +2996,8 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				(
 					if(ProductInfo(product_id)(pNumber) ) 1)
 					(
-						format(string, sizeof(string), Wpisz liczbÍ produktÛw do wyciπgniÍcia. (max. %d), ProductInfo(product_id)(pNumber))
-						ShowPlayerDialog(playerid, D_PRODUCT_GETNUM, DIALOG_STYLE_INPUT, Wyjmij produkt, string, Wyciπgnij, Anuluj)
+						format(string, sizeof(string), Wpisz liczbƒô produkt√≥w do wyciƒÖgniƒôcia. (max. %d), ProductInfo(product_id)(pNumber))
+						ShowPlayerDialog(playerid, D_PRODUCT_GETNUM, DIALOG_STYLE_INPUT, Wyjmij produkt, string, WyciƒÖgnij, Anuluj)
 					)
 					else
 					(
@@ -3006,19 +3006,19 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 						ProductInfo(product_id)(pNumber) --
 						DeleteProduct(product_id)
 					
-						format(string, sizeof(string), Wyjπ≥eú produkt z magazynu.\nNazwa produktu: %s (%d, %d)\n\nProdukt pojawi≥ siÍ w Twoim ekwipunku., ProductInfo(product_id)(pName), ProductInfo(product_id)(pValue1), ProductInfo(product_id)(pValue2))
+						format(string, sizeof(string), WyjƒÖ≈Çe≈õ produkt z magazynu.\nNazwa produktu: %s (%d, %d)\n\nProdukt pojawi≈Ç siƒô w Twoim ekwipunku., ProductInfo(product_id)(pName), ProductInfo(product_id)(pValue1), ProductInfo(product_id)(pValue2))
 						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 					)
 				)
 				case 1:
 				(
-					format(string, sizeof(string), Wprowadü nowπ cenÍ, ktÛra bÍdzie pobierana za kupno produktu.\n\nWybra≥eú produkt: %s\nCena produktu: $%d, ProductInfo(product_id)(pName), ProductInfo(product_id)(pPrice))
-					ShowPlayerDialog(playerid, D_PRODUCT_COSTS, DIALOG_STYLE_INPUT, ZmieÒ cenÍ produktu, string, ZmieÒ, Anuluj)
+					format(string, sizeof(string), Wprowad≈∫ nowƒÖ cenƒô, kt√≥ra bƒôdzie pobierana za kupno produktu.\n\nWybra≈Çe≈õ produkt: %s\nCena produktu: $%d, ProductInfo(product_id)(pName), ProductInfo(product_id)(pPrice))
+					ShowPlayerDialog(playerid, D_PRODUCT_COSTS, DIALOG_STYLE_INPUT, Zmie≈Ñ cenƒô produktu, string, Zmie≈Ñ, Anuluj)
 				)
 				case 2:
 				(
-					format(string, sizeof(string), Czy jesteú pewien, øe chcesz usunπÊ produkt?\n\nNazwa produktu: %s\nUID: %d, ProductInfo(product_id)(pName), ProductInfo(product_id)(pUID))
-					ShowPlayerDialog(playerid, D_PRODUCT_DELETE, DIALOG_STYLE_MSGBOX, UsuÒ produkt z magazynu, string, UsuÒ, Anuluj)
+					format(string, sizeof(string), Czy jeste≈õ pewien, ≈ºe chcesz usunƒÖƒá produkt?\n\nNazwa produktu: %s\nUID: %d, ProductInfo(product_id)(pName), ProductInfo(product_id)(pUID))
+					ShowPlayerDialog(playerid, D_PRODUCT_DELETE, DIALOG_STYLE_MSGBOX, Usu≈Ñ produkt z magazynu, string, Usu≈Ñ, Anuluj)
 				)
 			)
 			return 1
@@ -3036,7 +3036,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			price = strval(inputtext), product_id = MainPlayerTable(playerid), string(128)
 			if(price ( 0 || strlen(inputtext) ) 6)
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Wprowadzono nieprawid≥owπ kwotÍ., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Wprowadzono nieprawid≈ÇowƒÖ kwotƒô., OK, )
 				return 1
 			)
 			ProductInfo(product_id)(pPrice) = price
@@ -3059,7 +3059,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			product_id = MainPlayerTable(playerid)
 			DeleteProduct(product_id)
 			
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Produkt zosta≥ ca≥kowicie usuniÍty z magazynu., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Produkt zosta≈Ç ca≈Çkowicie usuniƒôty z magazynu., OK, )
 			return 1
 		)
 		else
@@ -3087,7 +3087,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			if(PlayerCache(playerid)(pGamePoints) ( 100)
 			(
 				PlayerCache(playerid)(pBusPrice) = 0
-				format(string, sizeof(string), Przejazd: %s -) %s.\n\nCzas trwania jazdy: %ds\nKoszt przejazdu: $%d (mniej niø 100GS)\n\nCzy jesteú pewien øe chcesz siÍ tam udaÊ?, BusStopData(busstop_id)(bName), BusStopData(busstop_id2)(bName), PlayerCache(playerid)(pBusTime), PlayerCache(playerid)(pBusPrice))
+				format(string, sizeof(string), Przejazd: %s -) %s.\n\nCzas trwania jazdy: %ds\nKoszt przejazdu: $%d (mniej ni≈º 100GS)\n\nCzy jeste≈õ pewien ≈ºe chcesz siƒô tam udaƒá?, BusStopData(busstop_id)(bName), BusStopData(busstop_id2)(bName), PlayerCache(playerid)(pBusTime), PlayerCache(playerid)(pBusPrice))
 			)
 			else
 			(
@@ -3119,10 +3119,10 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				(
 					PlayerCache(playerid)(pBusPrice) = floatround(distance, floatround_floor) / 75
 				)
-				format(string, sizeof(string), Przejazd: %s -) %s.\n\nCzas trwania jazdy: %ds\nKoszt przejazdu: $%d\n\nCzy jesteú pewien øe chcesz siÍ tam udaÊ?, BusStopData(busstop_id)(bName), BusStopData(busstop_id2)(bName), PlayerCache(playerid)(pBusTime), PlayerCache(playerid)(pBusPrice))
+				format(string, sizeof(string), Przejazd: %s -) %s.\n\nCzas trwania jazdy: %ds\nKoszt przejazdu: $%d\n\nCzy jeste≈õ pewien ≈ºe chcesz siƒô tam udaƒá?, BusStopData(busstop_id)(bName), BusStopData(busstop_id2)(bName), PlayerCache(playerid)(pBusTime), PlayerCache(playerid)(pBusPrice))
 			)
 
-			ShowPlayerDialog(playerid, D_ACCEPT_TRAVEL, DIALOG_STYLE_MSGBOX, Przejazd autobusem, string, Jedü, Anuluj)
+			ShowPlayerDialog(playerid, D_ACCEPT_TRAVEL, DIALOG_STYLE_MSGBOX, Przejazd autobusem, string, Jed≈∫, Anuluj)
 			return 1
 		)
 		else
@@ -3138,7 +3138,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
   			price = PlayerCache(playerid)(pBusPrice), busstop_id = PlayerCache(playerid)(pBusStart), busstop_id2 = PlayerCache(playerid)(pBusTravel)
 			if(PlayerCache(playerid)(pCash) ( price)
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie posiadasz odpowiedniej iloúci gotÛwki., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie posiadasz odpowiedniej ilo≈õci got√≥wki., OK, )
 				return 1
 			)
 			hrp_GivePlayerMoney(playerid, -price)
@@ -3193,13 +3193,13 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			mysql_free_result()
 			if(strlen(list_vehicles))
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_LIST, Cennik pojazdÛw, list_vehicles, OK, Zamknij)
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_LIST, Cennik pojazd√≥w, list_vehicles, OK, Zamknij)
 			)
 			else
 			(
 				GameTextForPlayer(playerid, ~n~~n~~n~~n~~n~~n~~n~~n~~n~~r~Brak pojazdow, 3000, 3)
-				ShowPlayerDialog(playerid, D_SALON_OFFER_CAT, DIALOG_STYLE_LIST, Wybierz kategoriÍ, 1. Jednoúlady\n2. Trzydrzwiowe\n3. PiÍciodrzwiowe\n4. Furgonetki i ciÍøarÛwki\n5.Sportowe\n6. Lowridery \n7  Pickupy\n8  Latajπce\n9  P≥ywajπce\n10  Pozosta≥e , Wybierz, Anuluj)
-				//ShowPlayerDialog(playerid, D_SALON_OFFER_CAT, DIALOG_STYLE_LIST, Wybierz kategoriÍ, 1. Jednoúlady\n2. Trzydrzwiowe\n3. PiÍciodrzwiowe\n4. Furgonetki i ciÍøarÛwki\n5. Pozosta≥e, Wybierz, Anuluj)
+				ShowPlayerDialog(playerid, D_SALON_OFFER_CAT, DIALOG_STYLE_LIST, Wybierz kategoriƒô, 1. Jedno≈õlady\n2. Trzydrzwiowe\n3. Piƒôciodrzwiowe\n4. Furgonetki i ciƒô≈ºar√≥wki\n5.Sportowe\n6. Lowridery \n7  Pickupy\n8  LatajƒÖce\n9  P≈ÇywajƒÖce\n10  Pozosta≈Çe , Wybierz, Anuluj)
+				//ShowPlayerDialog(playerid, D_SALON_OFFER_CAT, DIALOG_STYLE_LIST, Wybierz kategoriƒô, 1. Jedno≈õlady\n2. Trzydrzwiowe\n3. Piƒôciodrzwiowe\n4. Furgonetki i ciƒô≈ºar√≥wki\n5. Pozosta≈Çe, Wybierz, Anuluj)
 			)
 			return 1
 		)
@@ -3212,7 +3212,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 	(
 		if(response)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wprowadzenie (2/2), Moøesz úmia≥o poruszaÊ siÍ po mieúcie, korzystajπc z przystanku autobusowego (/bus)\nbπdü dzwoniπc po taksÛwkÍ na numer 777 (wymagany telefon).\n\nZatrudnij siÍ w jakiejú instytucji, by zaczπÊ zarabiaÊ pieniπdze na dom, samochÛd i inne ciekawe rzeczy,\nale nie rÛb tego stojπc pod urzÍdem, sam pochodü po mieúcie rozglπdajπc siÍ za ofertami pracy.\n\nMi≥ej gry, øyczy ekipa SERVER_NAME!, OK, Zamknij)
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wprowadzenie (2/2), Mo≈ºesz ≈õmia≈Ço poruszaƒá siƒô po mie≈õcie, korzystajƒÖc z przystanku autobusowego (/bus)\nbƒÖd≈∫ dzwoniƒÖc po taks√≥wkƒô na numer 777 (wymagany telefon).\n\nZatrudnij siƒô w jakiej≈õ instytucji, by zaczƒÖƒá zarabiaƒá pieniƒÖdze na dom, samoch√≥d i inne ciekawe rzeczy,\nale nie r√≥b tego stojƒÖc pod urzƒôdem, sam pochod≈∫ po mie≈õcie rozglƒÖdajƒÖc siƒô za ofertami pracy.\n\nMi≈Çej gry, ≈ºyczy ekipa SERVER_NAME!, OK, Zamknij)
 			return 1
 		)
 		else
@@ -3242,7 +3242,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				ItemInfo(itemid)(iValue1) += 1
 				mysql_query_format(UPDATE hrp_items SET item_value1 = %d WHERE item_uid = %d LIMIT 1, ItemInfo(itemid)(iValue1), ItemInfo(itemid)(iUID))
 				
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Wykorzysta≥eú 1g marihuany do uøycia w bongosie.\nOd tej pory moøesz juø uøyÊ bongosa., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Wykorzysta≈Çe≈õ 1g marihuany do u≈ºycia w bongosie.\nOd tej pory mo≈ºesz ju≈º u≈ºyƒá bongosa., OK, )
 			)
 			else
 			(
@@ -3258,7 +3258,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			
 				CreatePlayerItem(playerid, Joint, ITEM_JOINT, 0, 0)
 				
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, SkrÍci≥eú Jointa z 1g marihuany.\nPrzedmiot znajdziesz w swoim ekwipunku., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Skrƒôci≈Çe≈õ Jointa z 1g marihuany.\nPrzedmiot znajdziesz w swoim ekwipunku., OK, )
 			)
 			itemid = MainPlayerTable(playerid)
 
@@ -3290,7 +3290,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			
 			MainPlayerTable(playerid) = 0
 			
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Twoja postaÊ czuje siÍ bardziej pobudzona.\n\nPrzez jakiú czas bÍdziesz zadawaÊ wiÍksze obraøenia., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Twoja postaƒá czuje siƒô bardziej pobudzona.\n\nPrzez jaki≈õ czas bƒôdziesz zadawaƒá wiƒôksze obra≈ºenia., OK, )
 			
 			DeleteItem(ItemInfo(itemid)(iUID))
 			
@@ -3316,7 +3316,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 						PlayerCache(playerid)(pDependence) += 8.3
 					)
 
-					format(string, sizeof(string), * %s zaøywa %s palπc., PlayerName(playerid), ItemInfo(itemid)(iName))
+					format(string, sizeof(string), * %s za≈ºywa %s palƒÖc., PlayerName(playerid), ItemInfo(itemid)(iName))
 					FlashMe(playerid, string) //ProxDetector(10.0, playerid, string, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, false)
 				)
 				//Wziewnie do nosa
@@ -3336,10 +3336,10 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 						PlayerCache(playerid)(pDependence) += 10.3
 					)
 
-					format(string, sizeof(string), * %s zaøywa %s wciπgajπc przez nos., PlayerName(playerid), ItemInfo(itemid)(iName))
+					format(string, sizeof(string), * %s za≈ºywa %s wciƒÖgajƒÖc przez nos., PlayerName(playerid), ItemInfo(itemid)(iName))
 					FlashMe(playerid, string) //ProxDetector(10.0, playerid, string, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, false)
 				)
-				//Doøylnie
+				//Do≈ºylnie
 				case 2:
 				(
 					PlayerCache(playerid)(pRageDrugUse) = DRUG_USE_INJECT
@@ -3356,7 +3356,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 						PlayerCache(playerid)(pDependence) += 12.3
 					)
 
-					format(string, sizeof(string), * %s zaøywa %s doøylnie., PlayerName(playerid), ItemInfo(itemid)(iName))
+					format(string, sizeof(string), * %s za≈ºywa %s do≈ºylnie., PlayerName(playerid), ItemInfo(itemid)(iName))
 					FlashMe(playerid, string) //ProxDetector(10.0, playerid, string, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, false)
 				)
 			)
@@ -3379,7 +3379,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			
 			MainPlayerTable(playerid) = 0
 			
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Twoja postaÊ zaczyna czuÊ efekty dzia≥ania narkotyku.\nInformacje o dzia≥aniu konkretnego narkotyku znajdziesz na naszym forum., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Twoja postaƒá zaczyna czuƒá efekty dzia≈Çania narkotyku.\nInformacje o dzia≈Çaniu konkretnego narkotyku znajdziesz na naszym forum., OK, )
 			
 			DeleteItem(ItemInfo(itemid)(iUID))
 			
@@ -3389,22 +3389,22 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 
 			switch(listitem)
 			(
-				//Papierek pod jÍzyk
+				//Papierek pod jƒôzyk
 				case 0:
 				(
 					PlayerCache(playerid)(pRageTime) = 1800
 					PlayerCache(playerid)(pRageDrunkLevel) = 2100
 
-					format(string, sizeof(string), * %s zaøywa %s poprzez papierek pod jÍzykiem., PlayerName(playerid), ItemInfo(itemid)(iName))
+					format(string, sizeof(string), * %s za≈ºywa %s poprzez papierek pod jƒôzykiem., PlayerName(playerid), ItemInfo(itemid)(iName))
 					FlashMe(playerid, string) //ProxDetector(10.0, playerid, string, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, false)
 				)
-				//RoztwÛr
+				//Roztw√≥r
 				case 1:
 				(
 					PlayerCache(playerid)(pRageTime) = 1600
 					PlayerCache(playerid)(pRageDrunkLevel) = 2500
 
-					format(string, sizeof(string), * %s zaøywa %s poprzez roztwÛr., PlayerName(playerid), ItemInfo(itemid)(iName))
+					format(string, sizeof(string), * %s za≈ºywa %s poprzez roztw√≥r., PlayerName(playerid), ItemInfo(itemid)(iName))
 					FlashMe(playerid, string) //ProxDetector(10.0, playerid, string, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, false)
 				)
 			)
@@ -3428,7 +3428,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			
 			MainPlayerTable(playerid) = 0
 			
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Twoja postaÊ czuje siÍ bardziej pobudzona.\n\nPrzez jakiú czas bÍdziesz zadawaÊ wiÍksze obraøenia., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Twoja postaƒá czuje siƒô bardziej pobudzona.\n\nPrzez jaki≈õ czas bƒôdziesz zadawaƒá wiƒôksze obra≈ºenia., OK, )
 			
 			DeleteItem(ItemInfo(itemid)(iUID))
 			
@@ -3457,7 +3457,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 
 					SetPlayerWeather(playerid, -66)
 					
-					format(string, sizeof(string), * %s zaøywa %s palπc., PlayerName(playerid), ItemInfo(itemid)(iName))
+					format(string, sizeof(string), * %s za≈ºywa %s palƒÖc., PlayerName(playerid), ItemInfo(itemid)(iName))
 					FlashMe(playerid, string) //ProxDetector(10.0, playerid, string, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, false)
 				)
 				//Wziewanie do nosa
@@ -3477,10 +3477,10 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 						PlayerCache(playerid)(pDependence) += 16.3
 					)
 
-					format(string, sizeof(string), * %s zaøywa %s wziewajπc do nosa., PlayerName(playerid), ItemInfo(itemid)(iName))
+					format(string, sizeof(string), * %s za≈ºywa %s wziewajƒÖc do nosa., PlayerName(playerid), ItemInfo(itemid)(iName))
 					FlashMe(playerid, string) //ProxDetector(10.0, playerid, string, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, false)
 				)
-				//Doøylnie
+				//Do≈ºylnie
 				case 2:
 				(
 					PlayerCache(playerid)(pRageDrugUse) = DRUG_USE_INJECT
@@ -3497,7 +3497,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 						PlayerCache(playerid)(pDependence) += 32.3
 					)
 
-					format(string, sizeof(string), * %s zaøywa %s doøylnie., PlayerName(playerid), ItemInfo(itemid)(iName))
+					format(string, sizeof(string), * %s za≈ºywa %s do≈ºylnie., PlayerName(playerid), ItemInfo(itemid)(iName))
 					FlashMe(playerid, string) //ProxDetector(10.0, playerid, string, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, false)
 				)
 			)
@@ -3520,7 +3520,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			
 			MainPlayerTable(playerid) = 0
 			
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Twoja postaÊ zaczyna czuÊ efekty dzia≥ania narkotyku.\nInformacje o dzia≥aniu konkretnego narkotyku znajdziesz na naszym forum., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Twoja postaƒá zaczyna czuƒá efekty dzia≈Çania narkotyku.\nInformacje o dzia≈Çaniu konkretnego narkotyku znajdziesz na naszym forum., OK, )
 			
 			DeleteItem(ItemInfo(itemid)(iUID))
 			
@@ -3529,7 +3529,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 
 			switch(listitem)
 			(
-				// Wciπganie
+				// WciƒÖganie
 				case 0:
 				(
 					PlayerCache(playerid)(pRageDrugUse) = DRUG_USE_SNORT
@@ -3545,7 +3545,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 						PlayerCache(playerid)(pDependence) += 13.3
 					)
 
-					format(string, sizeof(string), * %s zaøywa %s wciπgajπc., PlayerName(playerid), ItemInfo(itemid)(iName))
+					format(string, sizeof(string), * %s za≈ºywa %s wciƒÖgajƒÖc., PlayerName(playerid), ItemInfo(itemid)(iName))
 					FlashMe(playerid, string) //ProxDetector(10.0, playerid, string, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, false)
 				)
 				//Palenie
@@ -3564,10 +3564,10 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 						PlayerCache(playerid)(pDependence) += 8.3
 					)
 
-					format(string, sizeof(string), * %s zaøywa %s palπc., PlayerName(playerid), ItemInfo(itemid)(iName))
+					format(string, sizeof(string), * %s za≈ºywa %s palƒÖc., PlayerName(playerid), ItemInfo(itemid)(iName))
 					FlashMe(playerid, string) //ProxDetector(10.0, playerid, string, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, false)					
 				)
-				//Doøylnie
+				//Do≈ºylnie
 				case 2:
 				(
 					PlayerCache(playerid)(pRageDrugUse) = DRUG_USE_INJECT
@@ -3585,7 +3585,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 						PlayerCache(playerid)(pDependence) += 13.3
 					)
 
-					format(string, sizeof(string), * %s zaøywa %s doøylnie., PlayerName(playerid), ItemInfo(itemid)(iName))
+					format(string, sizeof(string), * %s za≈ºywa %s do≈ºylnie., PlayerName(playerid), ItemInfo(itemid)(iName))
 					FlashMe(playerid, string) //ProxDetector(10.0, playerid, string, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, false)									
 				)
 			)
@@ -3608,7 +3608,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			
 			MainPlayerTable(playerid) = 0
 			
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Twoja postaÊ czuje siÍ bardziej pobudzona.\n\nPrzez jakiú czas bÍdziesz zadawaÊ wiÍksze obraøenia., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Twoja postaƒá czuje siƒô bardziej pobudzona.\n\nPrzez jaki≈õ czas bƒôdziesz zadawaƒá wiƒôksze obra≈ºenia., OK, )
 			
 			DeleteItem(ItemInfo(itemid)(iUID))
 			
@@ -3617,7 +3617,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 
 			switch(listitem)
 			(
-				// Wcieranie w dziπsla
+				// Wcieranie w dziƒÖsla
 				case 0:
 				(
 					PlayerCache(playerid)(pRageDrugUse) = DRUG_USE_GUMS
@@ -3634,7 +3634,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 						PlayerCache(playerid)(pDependence) += 10.3
 					)
 
-					format(string, sizeof(string), * %s zaøywa %s wcierajπc w dziπs≥a., PlayerName(playerid), ItemInfo(itemid)(iName))
+					format(string, sizeof(string), * %s za≈ºywa %s wcierajƒÖc w dziƒÖs≈Ça., PlayerName(playerid), ItemInfo(itemid)(iName))
 					FlashMe(playerid, string) //ProxDetector(10.0, playerid, string, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, false)
 				)
 				//Wziewanie do nosa
@@ -3654,10 +3654,10 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 						PlayerCache(playerid)(pDependence) += 8.3
 					)
 
-					format(string, sizeof(string), * %s zaøywa %s wziewajπc do nosa., PlayerName(playerid), ItemInfo(itemid)(iName))
+					format(string, sizeof(string), * %s za≈ºywa %s wziewajƒÖc do nosa., PlayerName(playerid), ItemInfo(itemid)(iName))
 					FlashMe(playerid, string) //ProxDetector(10.0, playerid, string, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, false)					
 				)
-				//Øucie
+				//≈ªucie
 				case 2:
 				(
 					PlayerCache(playerid)(pRageDrugUse) = DRUG_USE_GUMS
@@ -3674,7 +3674,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 						PlayerCache(playerid)(pDependence) += 4.3
 					)
 
-					format(string, sizeof(string), * %s zaøywa %s øujπc., PlayerName(playerid), ItemInfo(itemid)(iName))
+					format(string, sizeof(string), * %s za≈ºywa %s ≈ºujƒÖc., PlayerName(playerid), ItemInfo(itemid)(iName))
 					FlashMe(playerid, string) //ProxDetector(10.0, playerid, string, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, false)									
 				)
 			)
@@ -3696,7 +3696,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			group_slot = strval(inputtext) - 1, vehid = GetPlayerVehicleID(playerid), string(256)
 			if(vehid == INVALID_VEHICLE_ID)
   			(
-  				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie znajdujesz siÍ w pojeüdzie, ktÛry chcesz przypisaÊ., OK, )
+  				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie znajdujesz siƒô w poje≈∫dzie, kt√≥ry chcesz przypisaƒá., OK, )
    				return 1
 			)
 			if(group_slot ( 0)
@@ -3706,14 +3706,14 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			)
 			if(!IsPlayerPermissedGroup(playerid, PlayerGroup(playerid)(group_slot)(gUID), PERM_LEADER))
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie posiadasz odpowiednich uprawnieÒ dla tej grupy., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie posiadasz odpowiednich uprawnie≈Ñ dla tej grupy., OK, )
 				return 1
 			)
 			group_id_fix = PlayerGroup(playerid)(group_slot)(gID)
 			MainPlayerTable(playerid) = group_id_fix
 			
-			format(string, sizeof(string), Czy chcesz przypisaÊ pojazd %s (SampID: %d, UID: %d) pod grupÍ %s (UID: %d)?, CarInfo(vehid)(cName), vehid, CarInfo(vehid)(cUID), GroupData(group_id_fix)(gName), GroupData(group_id_fix)(gUID))
-			ShowPlayerDialog(playerid, D_ASSIGN_VEH_ACCEPT, DIALOG_STYLE_MSGBOX, Pojazd ª Przypisz pod grupÍ, string, Tak, Nie)
+			format(string, sizeof(string), Czy chcesz przypisaƒá pojazd %s (SampID: %d, UID: %d) pod grupƒô %s (UID: %d)?, CarInfo(vehid)(cName), vehid, CarInfo(vehid)(cUID), GroupData(group_id_fix)(gName), GroupData(group_id_fix)(gUID))
+			ShowPlayerDialog(playerid, D_ASSIGN_VEH_ACCEPT, DIALOG_STYLE_MSGBOX, Pojazd ¬ª Przypisz pod grupƒô, string, Tak, Nie)
 			return 1
 		)
 		else
@@ -3729,7 +3729,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			vehid = GetPlayerVehicleID(playerid), string(128)
 	  		if(vehid == INVALID_VEHICLE_ID)
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie znajdujesz siÍ w pojeüdzie, ktÛry chcesz przypisaÊ., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie znajdujesz siƒô w poje≈∫dzie, kt√≥ry chcesz przypisaƒá., OK, )
 				return 1
 			)
 			group_id_fix = MainPlayerTable(playerid)
@@ -3740,7 +3740,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			SaveVehicle(vehid, SAVE_VEH_THINGS)
 			PlayerCache(playerid)(pCarSpawned) --
 
-			format(string, sizeof(string), Pojazd %s (SampID: %d, UID: %d) zosta≥ pomyúlnie przypisany pod grupyÍ.\nPojazd przypisano dla grupy %s (UID: %d)., CarInfo(vehid)(cName), vehid, CarInfo(vehid)(cUID), GroupData(group_id_fix)(gName), GroupData(group_id_fix)(gUID))
+			format(string, sizeof(string), Pojazd %s (SampID: %d, UID: %d) zosta≈Ç pomy≈õlnie przypisany pod grupyƒô.\nPojazd przypisano dla grupy %s (UID: %d)., CarInfo(vehid)(cName), vehid, CarInfo(vehid)(cUID), GroupData(group_id_fix)(gName), GroupData(group_id_fix)(gUID))
 			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, string, OK, )
 
 			hrp_VehicleActionLog(%s (UID: %d) przypisal pojazd %s (UID: %d) pod grupe %s (UID: %d)., PlayerRealName(playerid), PlayerCache(playerid)(pUID), CarInfo(vehid)(cName), CarInfo(vehid)(cUID), GroupData(group_id_fix)(gName), GroupData(group_id_fix)(gUID))
@@ -3797,17 +3797,17 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 
 			if(strfind(inputtext, http://, true))
 			(
-				ShowPlayerDialog(playerid, D_RECORD_DISC, DIALOG_STYLE_INPUT, Nagrywanie p≥yty, To jest czysta p≥yta, na ktÛrej moøesz nagraÊ dowolny kawa≥ek.\nWklej w pole tekstowe poniøej link do muzyki, ktÛra ma byÊ odtwarzana poprzez urzπdzenia.\n\nUpewnij siÍ, øe link jest poprawny w innym wypadku muzyka moøe nie byÊ s≥yszalna.\n\nD≥ugoúÊ linku nie moøe przekroczyÊ 64 znakÛw.\n\n(FF0000)* Link musi rozpoczynaÊ siÍ na \http://\., Nagraj, Anuluj)
+				ShowPlayerDialog(playerid, D_RECORD_DISC, DIALOG_STYLE_INPUT, Nagrywanie p≈Çyty, To jest czysta p≈Çyta, na kt√≥rej mo≈ºesz nagraƒá dowolny kawa≈Çek.\nWklej w pole tekstowe poni≈ºej link do muzyki, kt√≥ra ma byƒá odtwarzana poprzez urzƒÖdzenia.\n\nUpewnij siƒô, ≈ºe link jest poprawny w innym wypadku muzyka mo≈ºe nie byƒá s≈Çyszalna.\n\nD≈Çugo≈õƒá linku nie mo≈ºe przekroczyƒá 64 znak√≥w.\n\n(FF0000)* Link musi rozpoczynaƒá siƒô na \http://\., Nagraj, Anuluj)
 				return 1
 			)
 			if(strlen(inputtext) (= 0)
 			(
-				ShowPlayerDialog(playerid, D_RECORD_DISC, DIALOG_STYLE_INPUT, Nagrywanie p≥yty, To jest czysta p≥yta, na ktÛrej moøesz nagraÊ dowolny kawa≥ek.\nWklej w pole tekstowe poniøej link do muzyki, ktÛra ma byÊ odtwarzana poprzez urzπdzenia.\n\nUpewnij siÍ, øe link jest poprawny w innym wypadku muzyka moøe nie byÊ s≥yszalna.\n\nD≥ugoúÊ linku nie moøe przekroczyÊ 64 znakÛw.\n\n(FF0000)* Te pole nie moøe byÊ puste!, Nagraj, Anuluj)
+				ShowPlayerDialog(playerid, D_RECORD_DISC, DIALOG_STYLE_INPUT, Nagrywanie p≈Çyty, To jest czysta p≈Çyta, na kt√≥rej mo≈ºesz nagraƒá dowolny kawa≈Çek.\nWklej w pole tekstowe poni≈ºej link do muzyki, kt√≥ra ma byƒá odtwarzana poprzez urzƒÖdzenia.\n\nUpewnij siƒô, ≈ºe link jest poprawny w innym wypadku muzyka mo≈ºe nie byƒá s≈Çyszalna.\n\nD≈Çugo≈õƒá linku nie mo≈ºe przekroczyƒá 64 znak√≥w.\n\n(FF0000)* Te pole nie mo≈ºe byƒá puste!, Nagraj, Anuluj)
 				return 1
 			)
 			if(strlen(inputtext) ) 64)
 			(
-				ShowPlayerDialog(playerid, D_RECORD_DISC, DIALOG_STYLE_INPUT, Nagrywanie p≥yty, To jest czysta p≥yta, na ktÛrej moøesz nagraÊ dowolny kawa≥ek.\nWklej w pole tekstowe poniøej link do muzyki, ktÛra ma byÊ odtwarzana poprzez urzπdzenia.\n\nUpewnij siÍ, øe link jest poprawny w innym wypadku muzyka moøe nie byÊ s≥yszalna.\n\nD≥ugoúÊ linku nie moøe przekroczyÊ 64 znakÛw.\n\n(FF0000)* Link nie moøe przekroczyÊ 64 znakÛw!, Nagraj, Anuluj)
+				ShowPlayerDialog(playerid, D_RECORD_DISC, DIALOG_STYLE_INPUT, Nagrywanie p≈Çyty, To jest czysta p≈Çyta, na kt√≥rej mo≈ºesz nagraƒá dowolny kawa≈Çek.\nWklej w pole tekstowe poni≈ºej link do muzyki, kt√≥ra ma byƒá odtwarzana poprzez urzƒÖdzenia.\n\nUpewnij siƒô, ≈ºe link jest poprawny w innym wypadku muzyka mo≈ºe nie byƒá s≈Çyszalna.\n\nD≈Çugo≈õƒá linku nie mo≈ºe przekroczyƒá 64 znak√≥w.\n\n(FF0000)* Link nie mo≈ºe przekroczyƒá 64 znak√≥w!, Nagraj, Anuluj)
 				return 1
 			)
 			mysql_real_escape_string(inputtext, audio_url)
@@ -3819,7 +3819,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			ItemInfo(itemid)(iValue1) = audio_uid
 			mysql_query_format(UPDATE hrp_items SET item_value1 = %d WHERE item_uid = %d LIMIT 1, ItemInfo(itemid)(iValue1), ItemInfo(itemid)(iUID))
 			
-			ShowPlayerDialog(playerid, D_RECORD_DISC_NAME, DIALOG_STYLE_INPUT, Nagrywanie p≥yty ª Nazwa, Wprowadø w pole poniøej nazwÍ Twojej p≥yty, ktÛra bÍdzie rozpoznawana w ekwipunku.\n\nNazwa nie moøe przekroczyÊ 12 znakÛw., Nagraj, PomiÒ)
+			ShowPlayerDialog(playerid, D_RECORD_DISC_NAME, DIALOG_STYLE_INPUT, Nagrywanie p≈Çyty ¬ª Nazwa, Wprowad≈º w pole poni≈ºej nazwƒô Twojej p≈Çyty, kt√≥ra bƒôdzie rozpoznawana w ekwipunku.\n\nNazwa nie mo≈ºe przekroczyƒá 12 znak√≥w., Nagraj, Pomi≈Ñ)
 			return 1
 		)
 		else
@@ -3837,12 +3837,12 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			
 	  		if(strlen(inputtext) (= 0)
 			(
-				ShowPlayerDialog(playerid, D_RECORD_DISC_NAME, DIALOG_STYLE_INPUT, Nagrywanie p≥yty ª Nazwa, Wprowadø w pole poniøej nazwÍ Twojej p≥yty, ktÛra bÍdzie rozpoznawana w ekwipunku.\n\nNazwa nie moøe przekroczyÊ 12 znakÛw.\n\n(FF0000)* Te pole nie moøe byÊ puste!, Nagraj, PomiÒ)
+				ShowPlayerDialog(playerid, D_RECORD_DISC_NAME, DIALOG_STYLE_INPUT, Nagrywanie p≈Çyty ¬ª Nazwa, Wprowad≈º w pole poni≈ºej nazwƒô Twojej p≈Çyty, kt√≥ra bƒôdzie rozpoznawana w ekwipunku.\n\nNazwa nie mo≈ºe przekroczyƒá 12 znak√≥w.\n\n(FF0000)* Te pole nie mo≈ºe byƒá puste!, Nagraj, Pomi≈Ñ)
 				return 1
 			)
 			if(strlen(inputtext) )= 12)
 			(
-				ShowPlayerDialog(playerid, D_RECORD_DISC_NAME, DIALOG_STYLE_INPUT, Nagrywanie p≥yty ª Nazwa, Wprowadø w pole poniøej nazwÍ Twojej p≥yty, ktÛra bÍdzie rozpoznawana w ekwipunku.\n\nNazwa nie moøe przekroczyÊ 12 znakÛw.\n\n(FF0000)* Nazwa nie moøe przekroczyÊ wiÍcej niø 12 znakÛw!, Nagraj, PomiÒ)
+				ShowPlayerDialog(playerid, D_RECORD_DISC_NAME, DIALOG_STYLE_INPUT, Nagrywanie p≈Çyty ¬ª Nazwa, Wprowad≈º w pole poni≈ºej nazwƒô Twojej p≈Çyty, kt√≥ra bƒôdzie rozpoznawana w ekwipunku.\n\nNazwa nie mo≈ºe przekroczyƒá 12 znak√≥w.\n\n(FF0000)* Nazwa nie mo≈ºe przekroczyƒá wiƒôcej ni≈º 12 znak√≥w!, Nagraj, Pomi≈Ñ)
 				return 1
 			)
 			mysql_real_escape_string(inputtext, item_name)
@@ -3855,13 +3855,13 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			
 			mysql_query_format(UPDATE hrp_items SET item_name = %s WHERE item_uid = %d LIMIT 1, item_name, ItemInfo(itemid)(iUID))
 			
-			format(string, sizeof(string), P≥yta zosta≥a pomyúlnie nagrana.\nP≥ytÍ nazwa≥eú nastÍpujπco: %s.\n\nP≥yty tej moøesz ods≥uchaÊ w discmanie albo w radiu w pojeüdzie., ItemInfo(itemid)(iName))
+			format(string, sizeof(string), P≈Çyta zosta≈Ça pomy≈õlnie nagrana.\nP≈Çytƒô nazwa≈Çe≈õ nastƒôpujƒÖco: %s.\n\nP≈Çyty tej mo≈ºesz ods≈Çuchaƒá w discmanie albo w radiu w poje≈∫dzie., ItemInfo(itemid)(iName))
 			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 			return 1
 		)
 		else
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Zmiana nazwy p≥yty zosta≥a pominiÍta.\nNazwa nie zosta≥a zmieniona., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Zmiana nazwy p≈Çyty zosta≈Ça pominiƒôta.\nNazwa nie zosta≈Ça zmieniona., OK, )
 			PlayerCache(playerid)(pManageItem) = 0
 			return 1
 		)
@@ -3889,10 +3889,10 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				ItemInfo(itemid2)(iUsed) = 0
 			)
 			
-			format(string, sizeof(string), * %s umieszcza p≥ytÍ w odtwarzaczu., PlayerName(playerid))
+			format(string, sizeof(string), * %s umieszcza p≈Çytƒô w odtwarzaczu., PlayerName(playerid))
 			FlashMe(playerid, string) //ProxDetector(10.0, playerid, string, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, false)
 
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, P≥yta zosta≥a umieszczona w odtwarzaczu.\nUøyj odtwarzacza, by rozpoczπÊ s≥uchanie muzyki., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, P≈Çyta zosta≈Ça umieszczona w odtwarzaczu.\nU≈ºyj odtwarzacza, by rozpoczƒÖƒá s≈Çuchanie muzyki., OK, )
 			return 1
 		)
 		else
@@ -3913,7 +3913,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			
 			if(GetItemWeightByUID(item_uid) ) GetPlayerEqSpace(playerid))
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie masz wystarczajπco miejsca w swoim ekwipunku aby wyciπgnπÊ ten przedmiot., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie masz wystarczajƒÖco miejsca w swoim ekwipunku aby wyciƒÖgnƒÖƒá ten przedmiot., OK, )
 				return 1
 			)
 			
@@ -3921,7 +3921,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 
 			LoadItem(item_uid)
 
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Przedmiot zosta≥ wyjÍty.\nPojawi≥ siÍ on w Twoim ekwipunku., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Przedmiot zosta≈Ç wyjƒôty.\nPojawi≈Ç siƒô on w Twoim ekwipunku., OK, )
 			return 1
 		)
 		else
@@ -3949,8 +3949,8 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			pos = strfind(directory_owner, _, true)
 			if(pos != -1)	(	directory_owner(pos) =  	)
 			
-			format(string, sizeof(string), Identyfikator wpisu: %d\nW≥aúciciel: %s\nPunkty karne: %d\n\nAutor wpisu: %s\nTreúÊ:\n\n%s, directory_uid, directory_owner, char_pdp, directory_author, directory_reason)
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, SzczegÛ≥y, string, OK, )
+			format(string, sizeof(string), Identyfikator wpisu: %d\nW≈Ça≈õciciel: %s\nPunkty karne: %d\n\nAutor wpisu: %s\nTre≈õƒá:\n\n%s, directory_uid, directory_owner, char_pdp, directory_author, directory_reason)
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Szczeg√≥≈Çy, string, OK, )
 			return 1
 		)
 		else
@@ -3964,12 +3964,12 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		(
 			if(strlen(inputtext) ) 12)
 			(
-				ShowPlayerDialog(playerid, D_EDIT_REGISTER, DIALOG_STYLE_INPUT, W≥asna rejestracja, Wprowadü poniøej treúÊ w≥asnej rejestracji.\nNapis na rejestracji zostanie zmieniony zgodnie z podana treúciπ.\n\nIloúÊ znakÛw w rejestracji nie moøe przekroczyÊ 12.\n\n(FF0000)* Podana treúÊ nie moøe przekroczyÊ liczby 12 znakÛw, ZmieÒ, Anuluj)
+				ShowPlayerDialog(playerid, D_EDIT_REGISTER, DIALOG_STYLE_INPUT, W≈Çasna rejestracja, Wprowad≈∫ poni≈ºej tre≈õƒá w≈Çasnej rejestracji.\nNapis na rejestracji zostanie zmieniony zgodnie z podana tre≈õciƒÖ.\n\nIlo≈õƒá znak√≥w w rejestracji nie mo≈ºe przekroczyƒá 12.\n\n(FF0000)* Podana tre≈õƒá nie mo≈ºe przekroczyƒá liczby 12 znak√≥w, Zmie≈Ñ, Anuluj)
 				return 1
 			)
 			if(!strfind(inputtext, LS, true))
 			(
-				ShowPlayerDialog(playerid, D_EDIT_REGISTER, DIALOG_STYLE_INPUT, W≥asna rejestracja, Wprowadü poniøej treúÊ w≥asnej rejestracji.\nNapis na rejestracji zostanie zmieniony zgodnie z podana treúciπ.\n\nIloúÊ znakÛw w rejestracji nie moøe przekroczyÊ 12.\n\n(FF0000)* Nie moøesz wpisaÊ tej treúci w rejestracji, ZmieÒ, Anuluj)
+				ShowPlayerDialog(playerid, D_EDIT_REGISTER, DIALOG_STYLE_INPUT, W≈Çasna rejestracja, Wprowad≈∫ poni≈ºej tre≈õƒá w≈Çasnej rejestracji.\nNapis na rejestracji zostanie zmieniony zgodnie z podana tre≈õciƒÖ.\n\nIlo≈õƒá znak√≥w w rejestracji nie mo≈ºe przekroczyƒá 12.\n\n(FF0000)* Nie mo≈ºesz wpisaƒá tej tre≈õci w rejestracji, Zmie≈Ñ, Anuluj)
 				return 1
 			)
 			vehid = GetPlayerVehicleID(playerid), register_desc(32)
@@ -3977,7 +3977,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			strmid(register_desc, inputtext, 0, strlen(inputtext), 12)
 		 	SetVehicleNumberPlate(vehid, register_desc)
 		 	
-		 	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, TreúÊ rejestracji zosta≥a pomyúlnie zmodyfikowana.\nTablice powinny ulec zmianie, jeúli nie teraz, to po jakimú czasie., OK, )
+		 	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Tre≈õƒá rejestracji zosta≈Ça pomy≈õlnie zmodyfikowana.\nTablice powinny ulec zmianie, je≈õli nie teraz, to po jakim≈õ czasie., OK, )
 			return 1
 		)
 		else
@@ -3994,7 +3994,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			
 			if(shop_type == 0)
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Wystπpi≥ niespodziewany b≥πd., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, WystƒÖpi≈Ç niespodziewany b≈ÇƒÖd., OK, )
 				return 1
 			)
 			
@@ -4030,9 +4030,9 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					//TextDrawShowForPlayer(playerid, Text:TextDrawMainInfo(playerid))
 					
 					string(256)
-					sendClientPoop(playerid, ª Uøywaj strza≥ek do poruszania siÍ miÍdzy akcesoriami.)
+					sendClientPoop(playerid, ¬ª U≈ºywaj strza≈Çek do poruszania siƒô miƒôdzy akcesoriami.)
 					
-					format(string, sizeof(string), ª ~k~~PED_JUMPING~ aby anulowaÊ i ~k~~VEHICLE_ENTER_EXIT~ by kupiÊ.)
+					format(string, sizeof(string), ¬ª ~k~~PED_JUMPING~ aby anulowaƒá i ~k~~VEHICLE_ENTER_EXIT~ by kupiƒá.)
 					sendClientPoop(playerid, string)
 					
 					SetPlayerCameraLookAt(playerid, PosX, PosY, PosZ + 0.5)
@@ -4080,12 +4080,12 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		(
 			if(IsPlayerInAnyVehicle(playerid))
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystapi≥ b≥πd, Nie moøesz edytowaÊ akcesoria podczas, gdy siedzisz w pojeüdzie., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystapi≈Ç b≈ÇƒÖd, Nie mo≈ºesz edytowaƒá akcesoria podczas, gdy siedzisz w poje≈∫dzie., OK, )
 				return 1
 			)
 			if(PlayerCache(playerid)(pBlock) & BLOCK_OBJ)
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystapi≥ b≥πd, MoøliwoúÊ edycji akcesorii zosta≥a dla Ciebie zablokowana., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystapi≈Ç b≈ÇƒÖd, Mo≈ºliwo≈õƒá edycji akcesorii zosta≈Ça dla Ciebie zablokowana., OK, )
 				return 1
 			)
   			//Float:PosX, Float:PosY, Float:PosZ
@@ -4126,23 +4126,23 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			(
 				case 0:
 				(
-					ShowPlayerDialog(playerid, D_RADIO_SET_CANAL, DIALOG_STYLE_INPUT, CB radio ª Ustaw kana≥, Wprowadü numer kana≥u, z ktÛrym pragniesz siÍ po≥πczyÊ:, Dalej, Anuluj)
+					ShowPlayerDialog(playerid, D_RADIO_SET_CANAL, DIALOG_STYLE_INPUT, CB radio ¬ª Ustaw kana≈Ç, Wprowad≈∫ numer kana≈Çu, z kt√≥rym pragniesz siƒô po≈ÇƒÖczyƒá:, Dalej, Anuluj)
 				)
 				case 1:
 				(
-					ShowPlayerDialog(playerid, D_RADIO_BUY_CANAL, DIALOG_STYLE_INPUT, CB radio ª Wykup kana≥ na w≥asnoúÊ, Wprowadü numer kana≥u, jaki zamierzasz zakupiÊ na w≥asnoúÊ:, Dalej, Anuluj)
+					ShowPlayerDialog(playerid, D_RADIO_BUY_CANAL, DIALOG_STYLE_INPUT, CB radio ¬ª Wykup kana≈Ç na w≈Çasno≈õƒá, Wprowad≈∫ numer kana≈Çu, jaki zamierzasz zakupiƒá na w≈Çasno≈õƒá:, Dalej, Anuluj)
 				)
 				case 2:
 				(
-					ShowPlayerDialog(playerid, D_RADIO_CANAL_PASSWORD, DIALOG_STYLE_INPUT, CB radio ª Ustaw has≥o dla kana≥u, Wprowadü numer kana≥u, dla ktÛrego chcesz zmieniÊ has≥o:, Dalej, Anuluj)
+					ShowPlayerDialog(playerid, D_RADIO_CANAL_PASSWORD, DIALOG_STYLE_INPUT, CB radio ¬ª Ustaw has≈Ço dla kana≈Çu, Wprowad≈∫ numer kana≈Çu, dla kt√≥rego chcesz zmieniƒá has≈Ço:, Dalej, Anuluj)
 				)
 				case 3:
 				(
-					ShowPlayerDialog(playerid, D_RADIO_DELETE_CANAL, DIALOG_STYLE_INPUT, CB radio ª Definitywnie usuÒ kana≥, Wprowadü numer kana≥u, ktÛry chcesz usunπÊ:, Dalej, Anuluj)
+					ShowPlayerDialog(playerid, D_RADIO_DELETE_CANAL, DIALOG_STYLE_INPUT, CB radio ¬ª Definitywnie usu≈Ñ kana≈Ç, Wprowad≈∫ numer kana≈Çu, kt√≥ry chcesz usunƒÖƒá:, Dalej, Anuluj)
 				)
 				case 4:
 				(
-					ShowPlayerDialog(playerid, D_RADIO_ASSIGN_CANAL, DIALOG_STYLE_INPUT, CB radio ª Przypisz kana≥ pod grupÍ, Wprowadü numer kana≥u, ktÛry chcesz przypisaÊ:, Dalej, Anuluj)
+					ShowPlayerDialog(playerid, D_RADIO_ASSIGN_CANAL, DIALOG_STYLE_INPUT, CB radio ¬ª Przypisz kana≈Ç pod grupƒô, Wprowad≈∫ numer kana≈Çu, kt√≥ry chcesz przypisaƒá:, Dalej, Anuluj)
 				)
 			)
 			return 1
@@ -4158,7 +4158,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		(
 			if(strlen(inputtext) ) 11 || strval(inputtext) (= 0)
 			(
-			 	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystapi≥ b≥πd, Wprowadzono b≥Ídny numer kana≥u., OK, )
+			 	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystapi≈Ç b≈ÇƒÖd, Wprowadzono b≈Çƒôdny numer kana≈Çu., OK, )
 				return 1
 			)
 			vehid = GetPlayerVehicleID(playerid), radio_canal = strval(inputtext), data(64), string(128),
@@ -4177,27 +4177,27 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					(
 						MainPlayerTable(playerid) = radio_canal
 					
-						format(string, sizeof(string), Wprowadü poniøej has≥o dostÍpu dla kana≥u %d:, radio_canal)
-						ShowPlayerDialog(playerid, D_RADIO_PASSWORD, DIALOG_STYLE_INPUT, Wprowadü has≥o, Wprowadü poniøej has≥o dostÍpu dla tego kana≥u:, Po≥πcz, Anuluj)
+						format(string, sizeof(string), Wprowad≈∫ poni≈ºej has≈Ço dostƒôpu dla kana≈Çu %d:, radio_canal)
+						ShowPlayerDialog(playerid, D_RADIO_PASSWORD, DIALOG_STYLE_INPUT, Wprowad≈∫ has≈Ço, Wprowad≈∫ poni≈ºej has≈Ço dostƒôpu dla tego kana≈Çu:, Po≈ÇƒÖcz, Anuluj)
 					)
 					else
 					(
 						CarInfo(vehid)(cRadioCanal) = radio_canal
 					
-	 					format(string, sizeof(string), Pomyúlnie po≥πczy≥eú siÍ z kana≥em %d.\nUøyj komendy /cb, by porozumiewaÊ siÍ na kanale z innymi., radio_canal)
+	 					format(string, sizeof(string), Pomy≈õlnie po≈ÇƒÖczy≈Çe≈õ siƒô z kana≈Çem %d.\nU≈ºyj komendy /cb, by porozumiewaƒá siƒô na kanale z innymi., radio_canal)
 						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 					)
 				)
 				else
 				(
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystapi≥ b≥πd, Nie posiadasz odpowiednich uprawnieÒ, by mÛc po≥πczyÊ siÍ z tym kana≥em., OK, )
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystapi≈Ç b≈ÇƒÖd, Nie posiadasz odpowiednich uprawnie≈Ñ, by m√≥c po≈ÇƒÖczyƒá siƒô z tym kana≈Çem., OK, )
 				)
 			)
 			else
 			(
 				CarInfo(vehid)(cRadioCanal) = radio_canal
 				
-				format(string, sizeof(string), Pomyúlnie po≥πczy≥eú siÍ z kana≥em %d.\nUøyj komendy /cb, by porozumiewaÊ siÍ na kanale z innymi., radio_canal)
+				format(string, sizeof(string), Pomy≈õlnie po≈ÇƒÖczy≈Çe≈õ siƒô z kana≈Çem %d.\nU≈ºyj komendy /cb, by porozumiewaƒá siƒô na kanale z innymi., radio_canal)
 				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 			)
 			mysql_free_result()
@@ -4214,7 +4214,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		(
 			if(strlen(inputtext) )= 32 || strlen(inputtext) (= 0)
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Wprowadzone has≥o jest nieprawid≥owe., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Wprowadzone has≈Ço jest nieprawid≈Çowe., OK, )
 				return 1
 			)
 			vehid = GetPlayerVehicleID(playerid), radio_canal = MainPlayerTable(playerid), channel_password(128), string(128)
@@ -4227,12 +4227,12 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			(
 				CarInfo(vehid)(cRadioCanal) = radio_canal
 			
-   				format(string, sizeof(string), Pomyúlnie po≥πczy≥eú siÍ z kana≥em %d.\nUøyj komendy /cb, by porozumiewaÊ siÍ na kanale z innymi., radio_canal)
+   				format(string, sizeof(string), Pomy≈õlnie po≈ÇƒÖczy≈Çe≈õ siƒô z kana≈Çem %d.\nU≈ºyj komendy /cb, by porozumiewaƒá siƒô na kanale z innymi., radio_canal)
 				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 			)
 			else
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Wprowadzone has≥o jest nieprawid≥owe., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Wprowadzone has≈Ço jest nieprawid≈Çowe., OK, )
 			)
 			mysql_free_result()
 			return 1
@@ -4248,7 +4248,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		(
 	 		if(strlen(inputtext) ) 11 || strval(inputtext) (= 0)
 			(
-			 	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystapi≥ b≥πd, Wprowadzono b≥Ídny numer kana≥u., OK, )
+			 	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystapi≈Ç b≈ÇƒÖd, Wprowadzono b≈Çƒôdny numer kana≈Çu., OK, )
 				return 1
 			)
 			radio_canal = strval(inputtext), string(128)
@@ -4257,14 +4257,14 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			mysql_store_result()
 			if(mysql_num_rows() != 0)
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Ten kana≥ jest niedostÍpny., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Ten kana≈Ç jest niedostƒôpny., OK, )
 			)
 			else
 			(
 				MainPlayerTable(playerid) = radio_canal
 			
-				format(string, sizeof(string), Czy jesteú pewien, øe chcesz kupiÊ kana≥ %d na w≥asnoúÊ? Koszt: $250., radio_canal)
-				ShowPlayerDialog(playerid, D_RADIO_ACCEPT_CANAL, DIALOG_STYLE_MSGBOX, CB radio ª Wykup kana≥ na w≥asnoúÊ, string, Tak, Nie)
+				format(string, sizeof(string), Czy jeste≈õ pewien, ≈ºe chcesz kupiƒá kana≈Ç %d na w≈Çasno≈õƒá? Koszt: $250., radio_canal)
+				ShowPlayerDialog(playerid, D_RADIO_ACCEPT_CANAL, DIALOG_STYLE_MSGBOX, CB radio ¬ª Wykup kana≈Ç na w≈Çasno≈õƒá, string, Tak, Nie)
 			)
 			mysql_free_result()
 			return 1
@@ -4280,7 +4280,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		(
 			if(PlayerCache(playerid)(pCash) ( 250)
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystapi≥ b≥πd, Nie posiadasz takiej iloúci gotÛwki., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystapi≈Ç b≈ÇƒÖd, Nie posiadasz takiej ilo≈õci got√≥wki., OK, )
 				return 1
 			)
 			radio_canal = MainPlayerTable(playerid), string(128)
@@ -4288,7 +4288,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 
 			hrp_GivePlayerMoney(playerid, -250)
 			
-			format(string, sizeof(string), Wykupi≥eú kana≥ %d na w≥asnoúÊ. W opcjach CB radio moøesz nim zarzπdzaÊ., radio_canal)
+			format(string, sizeof(string), Wykupi≈Çe≈õ kana≈Ç %d na w≈Çasno≈õƒá. W opcjach CB radio mo≈ºesz nim zarzƒÖdzaƒá., radio_canal)
 			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 			return 1
 		)
@@ -4303,7 +4303,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		(
    			if(strlen(inputtext) ) 11 || strval(inputtext) (= 0)
 			(
-			 	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystapi≥ b≥πd, Wprowadzono b≥Ídny numer kana≥u., OK, )
+			 	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystapi≈Ç b≈ÇƒÖd, Wprowadzono b≈Çƒôdny numer kana≈Çu., OK, )
 				return 1
 			)
 			radio_canal = strval(inputtext), data(32), string(256),
@@ -4320,17 +4320,17 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				(
 					MainPlayerTable(playerid) = radio_canal
 				
-					format(string, sizeof(string), Wprowadü poniøej has≥o, jakie chcesz ustawiÊ dla kana≥u %d.\nPuste pole ca≥kowicie zdejmuje has≥o dla kana≥u.\n\nHas≥o nie moøe przekroczyÊ 32 znakÛw., radio_canal)
-					ShowPlayerDialog(playerid, D_RADIO_SET_PASSWORD, DIALOG_STYLE_INPUT, CB radio ª Ustaw has≥o dla kana≥u, string, Ustaw, Anuluj)
+					format(string, sizeof(string), Wprowad≈∫ poni≈ºej has≈Ço, jakie chcesz ustawiƒá dla kana≈Çu %d.\nPuste pole ca≈Çkowicie zdejmuje has≈Ço dla kana≈Çu.\n\nHas≈Ço nie mo≈ºe przekroczyƒá 32 znak√≥w., radio_canal)
+					ShowPlayerDialog(playerid, D_RADIO_SET_PASSWORD, DIALOG_STYLE_INPUT, CB radio ¬ª Ustaw has≈Ço dla kana≈Çu, string, Ustaw, Anuluj)
 				)
 				else
 				(
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie masz odpowiednich uprawnieÒ, by mÛc zmieniÊ has≥o dla tego kana≥u., OK, )
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie masz odpowiednich uprawnie≈Ñ, by m√≥c zmieniƒá has≈Ço dla tego kana≈Çu., OK, )
 				)
 			)
 			else
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie masz odpowiednich uprawnieÒ, by mÛc zmieniÊ has≥o dla tego kana≥u., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie masz odpowiednich uprawnie≈Ñ, by m√≥c zmieniƒá has≈Ço dla tego kana≈Çu., OK, )
 			)
 			mysql_free_result()
 			return 1
@@ -4346,7 +4346,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		(
   			if(strlen(inputtext) )= 32)
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Podane has≥o jest za d≥ugie., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Podane has≈Ço jest za d≈Çugie., OK, )
 				return 1
 			)
 			radio_canal = MainPlayerTable(playerid), string(128)
@@ -4358,14 +4358,14 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			
 				mysql_query_format(UPDATE hrp_radio_channels SET channel_password = %s WHERE channel_canal = %d LIMIT 1, channel_password, radio_canal)
 
-				format(string, sizeof(string), Has≥o dla kana≥u %d zosta≥o pomyúlnie zmienione.\nNowe has≥o to: %s, radio_canal, channel_password)
+				format(string, sizeof(string), Has≈Ço dla kana≈Çu %d zosta≈Ço pomy≈õlnie zmienione.\nNowe has≈Ço to: %s, radio_canal, channel_password)
 				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 			)
 			else
 			(
 				mysql_query_format(UPDATE hrp_radio_channels SET channel_password =  WHERE channel_canal = %d LIMIT 1, radio_canal)
 			
-				format(string, sizeof(string), Has≥o dla kana≥u %d zosta≥o pomyúlnie zdjÍte., radio_canal)
+				format(string, sizeof(string), Has≈Ço dla kana≈Çu %d zosta≈Ço pomy≈õlnie zdjƒôte., radio_canal)
 				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 			)
 			return 1
@@ -4381,7 +4381,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		(
 			if(strlen(inputtext) ) 11 || strval(inputtext) (= 0)
 			(
-			 	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystapi≥ b≥πd, Wprowadzono b≥Ídny numer kana≥u., OK, )
+			 	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystapi≈Ç b≈ÇƒÖd, Wprowadzono b≈Çƒôdny numer kana≈Çu., OK, )
 				return 1
 			)
 			radio_canal = strval(inputtext), data(32), string(128),
@@ -4398,17 +4398,17 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				(
 					MainPlayerTable(playerid) = radio_canal
 				
-					format(string, sizeof(string), Czy jesteú pewien, øe chcesz definitywnie usunπÊ kana≥ %d?, radio_canal)
-					ShowPlayerDialog(playerid, D_RADIO_DELETE_ACCEPT, DIALOG_STYLE_MSGBOX, CB radio ª Definitywnie usuÒ kana≥, string, Tak, Nie)
+					format(string, sizeof(string), Czy jeste≈õ pewien, ≈ºe chcesz definitywnie usunƒÖƒá kana≈Ç %d?, radio_canal)
+					ShowPlayerDialog(playerid, D_RADIO_DELETE_ACCEPT, DIALOG_STYLE_MSGBOX, CB radio ¬ª Definitywnie usu≈Ñ kana≈Ç, string, Tak, Nie)
 				)
 				else
 				(
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie posiadasz odpowiednich uprawnieÒ, by mÛc usunπÊ ten kana≥., OK, )
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie posiadasz odpowiednich uprawnie≈Ñ, by m√≥c usunƒÖƒá ten kana≈Ç., OK, )
 				)
 			)
 			else
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie posiadasz odpowiednich uprawnieÒ, by mÛc usunπÊ ten kana≥., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie posiadasz odpowiednich uprawnie≈Ñ, by m√≥c usunƒÖƒá ten kana≈Ç., OK, )
 			)
 			mysql_free_result()
 			return 1
@@ -4425,7 +4425,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			radio_canal = MainPlayerTable(playerid), string(64)
 			mysql_query_format(DELETE FROM hrp_radio_channels WHERE channel_canal = %d LIMIT 1, radio_canal)
 
-			format(string, sizeof(string), Kana≥ %d zosta≥ definitywnie usuniÍty., radio_canal)
+			format(string, sizeof(string), Kana≈Ç %d zosta≈Ç definitywnie usuniƒôty., radio_canal)
 			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 			return 1
 		)
@@ -4440,7 +4440,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		(
   			if(strlen(inputtext) ) 11 || strval(inputtext) (= 0)
 			(
-			 	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystapi≥ b≥πd, Wprowadzono b≥Ídny numer kana≥u., OK, )
+			 	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystapi≈Ç b≈ÇƒÖd, Wprowadzono b≈Çƒôdny numer kana≈Çu., OK, )
 				return 1
 			)
 			radio_canal = strval(inputtext), data(32),
@@ -4468,16 +4468,16 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 							format(list_groups, sizeof(list_groups), %s\n%d\t%s (%d), list_groups, slot + 1, GroupData(group_id_fix)(gName), GroupData(group_id_fix)(gUID))
 			 			)
 					)
-					ShowPlayerDialog(playerid, D_RADIO_ASSIGN_ACCEPT, DIALOG_STYLE_LIST, CB radio ª Przypisz kana≥ pod grupÍ, list_groups, Wybierz, Anuluj)
+					ShowPlayerDialog(playerid, D_RADIO_ASSIGN_ACCEPT, DIALOG_STYLE_LIST, CB radio ¬ª Przypisz kana≈Ç pod grupƒô, list_groups, Wybierz, Anuluj)
 				)
 				else
 				(
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie posiadasz odpowiednich uprawnieÒ, by mÛc przypisaÊ ten kana≥., OK, )
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie posiadasz odpowiednich uprawnie≈Ñ, by m√≥c przypisaƒá ten kana≈Ç., OK, )
 				)
 			)
 			else
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie posiadasz odpowiednich uprawnieÒ, by mÛc przypisaÊ ten kana≥., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie posiadasz odpowiednich uprawnie≈Ñ, by m√≥c przypisaƒá ten kana≈Ç., OK, )
 			)
 			mysql_free_result()
 			return 1
@@ -4500,12 +4500,12 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			group_id_fix = PlayerGroup(playerid)(group_slot)(gID)
 			if(!IsPlayerPermissedGroup(playerid, GroupData(group_id_fix)(gUID), PERM_LEADER))
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie posiadasz odpowiednich uprawnieÒ dla tej grupy., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie posiadasz odpowiednich uprawnie≈Ñ dla tej grupy., OK, )
 				return 1
 			)
 			mysql_query_format(UPDATE hrp_radio_channels SET channel_ownertype = %d, channel_owner = %d WHERE channel_canal = %d LIMIT 1, OWNER_GROUP, GroupData(group_id_fix)(gUID), radio_canal)
 
-			format(string, sizeof(string), Kana≥ %d zosta≥ pomyúlnie przypisany pod grupÍ.\nKana≥ przypisano dla grupy %s (UID: %d)., radio_canal, GroupData(group_id_fix)(gName), GroupData(group_id_fix)(gUID))
+			format(string, sizeof(string), Kana≈Ç %d zosta≈Ç pomy≈õlnie przypisany pod grupƒô.\nKana≈Ç przypisano dla grupy %s (UID: %d)., radio_canal, GroupData(group_id_fix)(gName), GroupData(group_id_fix)(gUID))
 			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, string, OK, )
 			return 1
 		)
@@ -4525,7 +4525,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			group_id_fix = strval(inputtext), string(256)
 			PlayerCache(playerid)(pAlarmCall) = group_id_fix
 			
-			format(string, sizeof(string), Dodzwoni≥eú siÍ do %s znajdujacego siÍ w Los Santos.\nPodaj szczegÛ≥owo miejsce po≥oøenia w jakim siÍ znajdujesz, a my wyúlemy do Ciebie taksÛwkÍ., GroupData(group_id_fix)(gName))
+			format(string, sizeof(string), Dodzwoni≈Çe≈õ siƒô do %s znajdujacego siƒô w Los Santos.\nPodaj szczeg√≥≈Çowo miejsce po≈Ço≈ºenia w jakim siƒô znajdujesz, a my wy≈õlemy do Ciebie taks√≥wkƒô., GroupData(group_id_fix)(gName))
 			ShowPlayerDialog(playerid, D_TAXI_CALL, DIALOG_STYLE_INPUT, Taxi, string, Dalej, Anuluj)
 			return 1
 		)
@@ -4566,7 +4566,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				)
 				else
 				(
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie znaleziono øadnych animacji., OK, )
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie znaleziono ≈ºadnych animacji., OK, )
 				)
 				return 1
 			)
@@ -4635,18 +4635,18 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			item_uid = strval(inputtext), itemid = GetItemID(item_uid), title(64), list_manage(256)
 			PlayerCache(playerid)(pManageItem) = itemid
 
-			format(title, sizeof(title), Zarzπdzaj przedmiotem ª %s (UID: %d), ItemInfo(itemid)(iName), ItemInfo(itemid)(iUID))
+			format(title, sizeof(title), ZarzƒÖdzaj przedmiotem ¬ª %s (UID: %d), ItemInfo(itemid)(iName), ItemInfo(itemid)(iUID))
 
 			if(ItemInfo(itemid)(iUsed))
 			(
-				format(list_manage, sizeof(list_manage), 1. PrzestaÒ uøywaÊ tego przedmiotu\n2. (FF3D3D)Od≥Ûø przedmiot w pobliøu(FFFFFF)\n3. (FF3D3D)Sprzedaj innemu graczowi(93A818)\n4. Pokaø informacje(FFFFFF)\n5. (FF3D3D)W≥Ûø do innego przedmiotu(FFFFFF)\n6. (FF3D3D)Wsadü przedmiot do schowka(FFFFFF)\n7. (FF3D3D)Rozbij przedmiot\n8. ZmieÒ opis przedmiotu\n9. Pokaø przedmiot graczowi)
+				format(list_manage, sizeof(list_manage), 1. Przesta≈Ñ u≈ºywaƒá tego przedmiotu\n2. (FF3D3D)Od≈Ç√≥≈º przedmiot w pobli≈ºu(FFFFFF)\n3. (FF3D3D)Sprzedaj innemu graczowi(93A818)\n4. Poka≈º informacje(FFFFFF)\n5. (FF3D3D)W≈Ç√≥≈º do innego przedmiotu(FFFFFF)\n6. (FF3D3D)Wsad≈∫ przedmiot do schowka(FFFFFF)\n7. (FF3D3D)Rozbij przedmiot\n8. Zmie≈Ñ opis przedmiotu\n9. Poka≈º przedmiot graczowi)
 			)
 			else
 			(
-				format(list_manage, sizeof(list_manage), (FFFFFF)1. Uøyj tego przedmiotu\n2. Od≥Ûø przedmiot w pobliøu\n3. Sprzedaj innemu graczowi\n(93A818)4. Pokaø informacje(FFFFFF)\n5. W≥Ûø do innego przedmiotu\n6. Wsadü przedmiot do schowka\n7. Rozbij przedmiot\n8. ZmieÒ opis przedmiotu\n9. Pokaø przedmiot graczowi)
+				format(list_manage, sizeof(list_manage), (FFFFFF)1. U≈ºyj tego przedmiotu\n2. Od≈Ç√≥≈º przedmiot w pobli≈ºu\n3. Sprzedaj innemu graczowi\n(93A818)4. Poka≈º informacje(FFFFFF)\n5. W≈Ç√≥≈º do innego przedmiotu\n6. Wsad≈∫ przedmiot do schowka\n7. Rozbij przedmiot\n8. Zmie≈Ñ opis przedmiotu\n9. Poka≈º przedmiot graczowi)
 			)
 
-			ShowPlayerDialog(playerid, D_MANAGE_ITEM, DIALOG_STYLE_LIST, title, list_manage, Wybierz, WrÛÊ)
+			ShowPlayerDialog(playerid, D_MANAGE_ITEM, DIALOG_STYLE_LIST, title, list_manage, Wybierz, Wr√≥ƒá)
 			return 1
 		)
 		else
@@ -4670,7 +4670,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			(
 				if(ItemInfo(itemid)(iUsed))
 				(
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie moøesz od≥oøyÊ tego przedmiotu., OK, )
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie mo≈ºesz od≈Ço≈ºyƒá tego przedmiotu., OK, )
 					return 1
 				)
 				OnPlayerDropItem(playerid, itemid, false)
@@ -4681,7 +4681,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			(
 				if(ItemInfo(itemid)(iUsed))
 				(
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie moøesz sprzedaÊ tego przedmiotu., OK, )
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie mo≈ºesz sprzedaƒá tego przedmiotu., OK, )
 					return 1
 				)
 
@@ -4701,7 +4701,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			   	)
 		   		if(!strlen(list_players))
 				(
-	  				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie znaleziono øadnych graczy w pobliøu., OK, )
+	  				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie znaleziono ≈ºadnych graczy w pobli≈ºu., OK, )
 				)
 				ShowPlayerDialog(playerid, D_OFFER_ITEM_PLAYER, DIALOG_STYLE_LIST, Sprzedaj przedmiot:, list_players, Oferuj, Anuluj)
 				return 1
@@ -4717,7 +4717,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			(
 				if(ItemInfo(itemid)(iUsed) || ItemInfo(itemid)(iType) == ITEM_BAG)
 				(
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie moøesz w≥oøyÊ tego przedmiotu., OK, )
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie mo≈ºesz w≈Ço≈ºyƒá tego przedmiotu., OK, )
 					return 1
 				)
 
@@ -4735,11 +4735,11 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				mysql_free_result()
 				if(strlen(list_items))
 				(
-					ShowPlayerDialog(playerid, D_PUT_ITEM_BAG, DIALOG_STYLE_LIST, W≥Ûø przedmiot:, list_items, Wybierz, Anuluj)
+					ShowPlayerDialog(playerid, D_PUT_ITEM_BAG, DIALOG_STYLE_LIST, W≈Ç√≥≈º przedmiot:, list_items, Wybierz, Anuluj)
 				)
 				else
 				(
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie posiadasz przedmiotu, do ktÛrego moøesz coú w≥oøyÊ., OK, )
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie posiadasz przedmiotu, do kt√≥rego mo≈ºesz co≈õ w≈Ço≈ºyƒá., OK, )
 				)
 				return 1
 			)
@@ -4748,30 +4748,30 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			(
    				if(ItemInfo(itemid)(iUsed))
 				(
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie moøesz wsadziÊ tego przedmiotu do schowka., OK, )
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie mo≈ºesz wsadziƒá tego przedmiotu do schowka., OK, )
 					return 1
 				)
 				doorid = GetPlayerDoorID(playerid)
 		 		if(doorid == -1)
 				(
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Musisz znajdowaÊ siÍ w budynku, aby mÛc schowaÊ przedmiot., OK, )
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Musisz znajdowaƒá siƒô w budynku, aby m√≥c schowaƒá przedmiot., OK, )
 					return 0
 				)
 		   		if(DoorData(doorid)(dOwnerType) == OWNER_NONE)
 				(
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie jesteú w≥aúcicielem tego budynku., OK, )
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie jeste≈õ w≈Ça≈õcicielem tego budynku., OK, )
 					return 0
 				)
 				if(DoorData(doorid)(dOwnerType) == OWNER_PLAYER && DoorData(doorid)(dOwner) != PlayerCache(playerid)(pUID))
 				(
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie jesteú w≥aúcicielem tego budynku., OK, )
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie jeste≈õ w≈Ça≈õcicielem tego budynku., OK, )
 					return 0
 				)
 				if(DoorData(doorid)(dOwnerType) == OWNER_GROUP)
 				(
 					if(!IsPlayerPermissedGroup(playerid, DoorData(doorid)(dOwner), PERM_LEADER))
 					(
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie jesteú w≥aúcicielem tego budynku., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie jeste≈õ w≈Ça≈õcicielem tego budynku., OK, )
 						return 1
 					)
 				)
@@ -4792,7 +4792,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				ItemInfo(itemid)(iChecked) = false
 				
 				Itter_Remove(Items, itemid)
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Przedmiot zosta≥ schowany w schowku.\nAby wyjπÊ, wpisz /drzwi schowek w budynku., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Przedmiot zosta≈Ç schowany w schowku.\nAby wyjƒÖƒá, wpisz /drzwi schowek w budynku., OK, )
 				return 1
 			)
 			
@@ -4800,18 +4800,18 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			(
 				if(ItemInfo(itemid)(iType) != ITEM_CIGGY && ItemInfo(itemid)(iType) != ITEM_DRUG)
 				(
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Ten przedmiot nie moøe zostaÊ podzielony., OK, )
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Ten przedmiot nie mo≈ºe zostaƒá podzielony., OK, )
 					return 1
 				)
 				MainPlayerTable(playerid) = itemid
 				
 				if(ItemInfo(itemid)(iType) == ITEM_CIGGY)
 				(
-					ShowPlayerDialog(playerid, D_DIVIDE_ITEM, DIALOG_STYLE_INPUT, Rozdzielanie przedmiotu, Wpisz liczbÍ sztuk do oddzielenia, OK, Anuluj)
+					ShowPlayerDialog(playerid, D_DIVIDE_ITEM, DIALOG_STYLE_INPUT, Rozdzielanie przedmiotu, Wpisz liczbƒô sztuk do oddzielenia, OK, Anuluj)
 				)
 				else if(ItemInfo(itemid)(iType) == ITEM_DRUG)
 				(
-					ShowPlayerDialog(playerid, D_DIVIDE_ITEM, DIALOG_STYLE_INPUT, Rozdzielanie przedmiotu, Wpisz liczbÍ gram do oddzielenia, OK, Anuluj)
+					ShowPlayerDialog(playerid, D_DIVIDE_ITEM, DIALOG_STYLE_INPUT, Rozdzielanie przedmiotu, Wpisz liczbƒô gram do oddzielenia, OK, Anuluj)
 				)
 				return 1
 			)
@@ -4820,10 +4820,10 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			(
 				if(ItemInfo(itemid)(iType) == ITEM_CORPSE)
 				(
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie moøesz zmieniÊ opisu tego przedmiotu., OK, Anuluj)
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie mo≈ºesz zmieniƒá opisu tego przedmiotu., OK, Anuluj)
 					return 1
 				)
-				ShowPlayerDialog(playerid, D_ADD_ITEM_DESC, DIALOG_STYLE_INPUT, Opis przedmiotu, Wpisz opis przedmiotu (max. 128 znakÛw)., OK, Anuluj)
+				ShowPlayerDialog(playerid, D_ADD_ITEM_DESC, DIALOG_STYLE_INPUT, Opis przedmiotu, Wpisz opis przedmiotu (max. 128 znak√≥w)., OK, Anuluj)
 				return 1
 			)
 			
@@ -4842,11 +4842,11 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				)
 				if(strlen(list_players))
 				(
-					ShowPlayerDialog(playerid, D_SHOW_ITEM_INFO_TO, DIALOG_STYLE_LIST, Gracze znajdujπcy siÍ w pobliøu:, list_players, PW, Zamknij)
+					ShowPlayerDialog(playerid, D_SHOW_ITEM_INFO_TO, DIALOG_STYLE_LIST, Gracze znajdujƒÖcy siƒô w pobli≈ºu:, list_players, PW, Zamknij)
 				)
 				else
 				(
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_INPUT, Wystπpi≥ b≥πd, W pobliøu Ciebie nie ma øadnego gracza, ktÛremu moøesz pokazaÊ przedmiot., OK, Anuluj)
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_INPUT, WystƒÖpi≈Ç b≈ÇƒÖd, W pobli≈ºu Ciebie nie ma ≈ºadnego gracza, kt√≥remu mo≈ºesz pokazaƒá przedmiot., OK, Anuluj)
 					return 1
 				)
 			)
@@ -4864,7 +4864,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				)
 				case INTERFACE_TYPE_GRAPHIC:
 				(
-					// trzeba dodaÊ odúwieøanie kursora, jednoczeúnie nie psujπc ca≥ego efektu
+					// trzeba dodaƒá od≈õwie≈ºanie kursora, jednocze≈õnie nie psujƒÖc ca≈Çego efektu
 					SelectTextDraw(playerid, 0x8C8C8CFF)
 					//
 					bGUI_ListPlayerItems(playerid,PlayerCache(playerid)(pItemPage))
@@ -4900,7 +4900,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				MagicQuotes(inputtext)
 				mysql_query_format(UPDATE hrp_items SET item_desc = %s WHERE item_uid = %d, inputtext, ItemInfo(itemid)(iUID))
 				
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, Opis przedmiotu uleg≥ zmianie., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, Opis przedmiotu uleg≈Ç zmianie., OK, )
 				return 1
 			)
 			else
@@ -4918,7 +4918,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		if(response)
 		(
 			MainPlayerTable(playerid) = strval(inputtext)
-			ShowPlayerDialog(playerid, D_OFFER_ITEM_PRICE, DIALOG_STYLE_INPUT, Sprzedaj przedmiot ª Cena, Wprowadü poniøej cenÍ, jakπ oczekujesz w zamian za przedmiot:, Oferuj, Anuluj)
+			ShowPlayerDialog(playerid, D_OFFER_ITEM_PRICE, DIALOG_STYLE_INPUT, Sprzedaj przedmiot ¬ª Cena, Wprowad≈∫ poni≈ºej cenƒô, jakƒÖ oczekujesz w zamian za przedmiot:, Oferuj, Anuluj)
 			return 1
 		)
 		else
@@ -4933,7 +4933,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			price = strval(inputtext), itemid = PlayerCache(playerid)(pManageItem), giveplayer_id = MainPlayerTable(playerid)
 			if(price ( 0 || strlen(inputtext) ) 11)
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Wprowadzono nieprawid≥owπ kwotÍ., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Wprowadzono nieprawid≈ÇowƒÖ kwotƒô., OK, )
 				return 1
 			)
 			OnPlayerSendOffer(playerid, giveplayer_id, OFFER_ITEM, ItemInfo(itemid)(iName), ItemInfo(itemid)(iUID), price)
@@ -5015,7 +5015,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					)
 					else
 					(
-						format(string, sizeof(string), * %s coú odk≥ada., PlayerName(playerid))
+						format(string, sizeof(string), * %s co≈õ odk≈Çada., PlayerName(playerid))
 						ProxDetector(10.0, playerid, string, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, true)
 
 						ApplyAnimation(playerid,BOMBER,BOM_Plant,4.1,0,0,0,0,0,1)
@@ -5065,7 +5065,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					)
 					else
 					(
-						format(string, sizeof(string), * %s odk≥ada coú w pojeüdzie., PlayerName(playerid))
+						format(string, sizeof(string), * %s odk≈Çada co≈õ w poje≈∫dzie., PlayerName(playerid))
 						FlashMe(playerid, string) //ProxDetector(10.0, playerid, string, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, true)
 
 						ApplyAnimation(playerid,BOMBER,BOM_Plant,4.1,0,0,0,0,0,1)
@@ -5079,24 +5079,24 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				doorid = GetPlayerDoorID(playerid), item_next
 		 		if(doorid == -1)
 				(
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Musisz znajdowaÊ siÍ w budynku, aby mÛc schowaÊ przedmiot., OK, )
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Musisz znajdowaƒá siƒô w budynku, aby m√≥c schowaƒá przedmiot., OK, )
 					return 1
 				)
 		   		if(DoorData(doorid)(dOwnerType) == OWNER_NONE)
 				(
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie jesteú w≥aúcicielem tego budynku., OK, )
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie jeste≈õ w≈Ça≈õcicielem tego budynku., OK, )
 					return 1
 				)
 				if(DoorData(doorid)(dOwnerType) == OWNER_PLAYER && DoorData(doorid)(dOwner) != PlayerCache(playerid)(pUID))
 				(
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie jesteú w≥aúcicielem tego budynku., OK, )
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie jeste≈õ w≈Ça≈õcicielem tego budynku., OK, )
 					return 1
 				)
 				if(DoorData(doorid)(dOwnerType) == OWNER_GROUP)
 				(
 					if(!IsPlayerPermissedGroup(playerid, DoorData(doorid)(dOwner), PERM_LEADER))
 					(
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie jesteú w≥aúcicielem tego budynku., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie jeste≈õ w≈Ça≈õcicielem tego budynku., OK, )
 						return 1
 					)
 				)
@@ -5133,7 +5133,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 						)
 					)
 				)
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Wybrane przedmioty zosta≥y schowane w schowku.\nAby ujrzeÊ listÍ przedmotÛw w schowku, skorzystaj z komendy /drzwi schowek., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Wybrane przedmioty zosta≈Çy schowane w schowku.\nAby ujrzeƒá listƒô przedmot√≥w w schowku, skorzystaj z komendy /drzwi schowek., OK, )
 				return 1
 			)
 
@@ -5239,7 +5239,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			GroupData(group_id_fix)(gType) = group_type
 			SaveGroup(group_id_fix)
 			
-			format(string, sizeof(string), Typ grupy %s (SampID: %d, UID: %d) zosta≥ pomyúlnie zmieniony na %s., GroupData(group_id_fix)(gName), group_id_fix, GroupData(group_id_fix)(gUID), GroupTypeInfo(GroupData(group_id_fix)(gType))(gTypeName))
+			format(string, sizeof(string), Typ grupy %s (SampID: %d, UID: %d) zosta≈Ç pomy≈õlnie zmieniony na %s., GroupData(group_id_fix)(gName), group_id_fix, GroupData(group_id_fix)(gUID), GroupTypeInfo(GroupData(group_id_fix)(gType))(gTypeName))
 			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Powodzenie, string, OK, )
 			return 1
 		)
@@ -5261,21 +5261,21 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 
 			group_id_fix = PlayerGroup(playerid)(group_slot)(gID)
 
-			format(string, sizeof(string), Zarzπdzaj grupπ ª %s (UID: %d), GroupData(group_id_fix)(gName), GroupData(group_id_fix)(gUID))
+			format(string, sizeof(string), ZarzƒÖdzaj grupƒÖ ¬ª %s (UID: %d), GroupData(group_id_fix)(gName), GroupData(group_id_fix)(gUID))
 
-			strcat(list_manage, 1. Pokaø informacje\n)
-			strcat(list_manage, 2. OpuúÊ grupÍ\n)
-			strcat(list_manage, 3. Cz≥onkowie online\n)
+			strcat(list_manage, 1. Poka≈º informacje\n)
+			strcat(list_manage, 2. Opu≈õƒá grupƒô\n)
+			strcat(list_manage, 3. Cz≈Çonkowie online\n)
 			strcat(list_manage, 4. Ubranie grupowe\n)
-			strcat(list_manage, 5. Og≥oszenia\n)
+			strcat(list_manage, 5. Og≈Çoszenia\n)
 			
 			if(PlayerGroup(playerid)(group_slot)(gPerm) & PERM_LEADER)
 			(
 				if(!GroupData(group_id_fix)(gOwner))
 				(
-					strcat(list_manage, 6. StwÛrz podgrupÍ\n)
-					strcat(list_manage, 7. Lista grup podrzÍdnych\n)
-					strcat(list_manage, 8. Dodaj og≥oszenie\n)
+					strcat(list_manage, 6. Stw√≥rz podgrupƒô\n)
+					strcat(list_manage, 7. Lista grup podrzƒôdnych\n)
+					strcat(list_manage, 8. Dodaj og≈Çoszenie\n)
 				)
 			)
 			ShowPlayerDialog(playerid, D_GROUP_OPTIONS, DIALOG_STYLE_LIST, string, list_manage, Wybierz, Anuluj)
@@ -5301,8 +5301,8 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				)
 				case 1:
 				(
-					format(string, sizeof(string), Czy jesteú pewien øe chcesz opuúciÊ grupÍ %s (UID: %d)?, GroupData(group_id_fix)(gName), GroupData(group_id_fix)(gUID))
-					ShowPlayerDialog(playerid, D_LEAVE_GROUP, DIALOG_STYLE_MSGBOX, OpuúÊ grupÍ, string, Tak, Nie)
+					format(string, sizeof(string), Czy jeste≈õ pewien ≈ºe chcesz opu≈õciƒá grupƒô %s (UID: %d)?, GroupData(group_id_fix)(gName), GroupData(group_id_fix)(gUID))
+					ShowPlayerDialog(playerid, D_LEAVE_GROUP, DIALOG_STYLE_MSGBOX, Opu≈õƒá grupƒô, string, Tak, Nie)
 				)
 				case 2:
 				(
@@ -5317,7 +5317,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 						return 1
 					)
 					SetPlayerSkin(playerid, PlayerGroup(playerid)(group_slot)(gSkin))
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Przebra≥eú siÍ w strÛj s≥uøbowy.\nAby powrÛciÊ do starego ubrania skorzystaj z /przebierz., OK, )
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Przebra≈Çe≈õ siƒô w str√≥j s≈Çu≈ºbowy.\nAby powr√≥ciƒá do starego ubrania skorzystaj z /przebierz., OK, )
 				)
 				case 4:
 				(
@@ -5339,11 +5339,11 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					)
 					if(subgroups_count )= 5)
 					(
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Limit podgrup tej grupy zosta≥ wyczerpany (maksymalnie 5)., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Limit podgrup tej grupy zosta≈Ç wyczerpany (maksymalnie 5)., OK, )
 						return 1
 					)
-					format(string, sizeof(string), %s (UID: %d) ª Dodaj podgrupÍ, GroupData(group_id_fix)(gName), GroupData(group_id_fix)(gUID))
-					ShowPlayerDialog(playerid, D_ADD_SUBGROUP, DIALOG_STYLE_INPUT, string, Wprowadü nazwÍ nowej podgrupy.\nNazwa nie moøe przekroczyÊ 32 znakÛw., Dodaj, Anuluj)
+					format(string, sizeof(string), %s (UID: %d) ¬ª Dodaj podgrupƒô, GroupData(group_id_fix)(gName), GroupData(group_id_fix)(gUID))
+					ShowPlayerDialog(playerid, D_ADD_SUBGROUP, DIALOG_STYLE_INPUT, string, Wprowad≈∫ nazwƒô nowej podgrupy.\nNazwa nie mo≈ºe przekroczyƒá 32 znak√≥w., Dodaj, Anuluj)
 	   			)
 				case 6:
 				(
@@ -5360,16 +5360,16 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					)
 					if(!strlen(list_groups))
 					(
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie znaleziono øadnych podgrup dla tej grupy., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie znaleziono ≈ºadnych podgrup dla tej grupy., OK, )
 						return 1
 					)
-					format(string, sizeof(string), %s (UID: %d) ª Lista grup podrzÍdnych, GroupData(group_id_fix)(gName), GroupData(group_id_fix)(gUID))
+					format(string, sizeof(string), %s (UID: %d) ¬ª Lista grup podrzƒôdnych, GroupData(group_id_fix)(gName), GroupData(group_id_fix)(gUID))
 					ShowPlayerDialog(playerid, D_SUBGROUP_LIST, DIALOG_STYLE_LIST, string, list_groups, Info, Zamknij)
 				)
 				case 7:
 				(
 					MainPlayerTable(playerid) = PlayerGroup(playerid)(group_slot)(gID)
-					ShowPlayerDialog(playerid, D_ADD_GROUP_ANN, DIALOG_STYLE_INPUT, Dodaj og≥oszenie, Wprowadü treúÊ og≥oszenia widzialnego przez wszystkich cz≥onkÛw grupy.\nPamiÍtaj, øe dodajπc kolejne og≥oszenie, poprzednie bÍdπ widoczne tylko w panelu., OK, Anuluj)
+					ShowPlayerDialog(playerid, D_ADD_GROUP_ANN, DIALOG_STYLE_INPUT, Dodaj og≈Çoszenie, Wprowad≈∫ tre≈õƒá og≈Çoszenia widzialnego przez wszystkich cz≈Çonk√≥w grupy.\nPamiƒôtaj, ≈ºe dodajƒÖc kolejne og≈Çoszenie, poprzednie bƒôdƒÖ widoczne tylko w panelu., OK, Anuluj)
 				)
 			)
 			return 1
@@ -5394,7 +5394,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			PlayerGroup(playerid)(group_slot)(gPayment) = 0
 			mysql_query_format(DELETE FROM hrp_char_groups WHERE char_uid = %d AND group_uid = %d, PlayerCache(playerid)(pUID), GroupData(group_id_fix)(gUID))
 
-			format(string, sizeof(string), Opuúci≥eú grupÍ. Slot %d jest teraz wolny., group_slot + 1)
+			format(string, sizeof(string), Opu≈õci≈Çe≈õ grupƒô. Slot %d jest teraz wolny., group_slot + 1)
 			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 
 			hrp_GroupActionLog(%s (UID: %d) opuscil dobrowolnie grupe %s (UID: %d)., PlayerRealName(playerid), PlayerCache(playerid)(pUID), GroupData(group_id_fix)(gName), GroupData(group_id_fix)(gUID))
@@ -5411,7 +5411,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		(
 	 		if(strlen(inputtext) )= 32 || strlen(inputtext) (= 0)
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Podana nazwa dla grupy jest nieprawid≥owa., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Podana nazwa dla grupy jest nieprawid≈Çowa., OK, )
 				return 1
 			)
 			group_slot = MainPlayerTable(playerid), group_id_fix = PlayerGroup(playerid)(group_slot)(gID),
@@ -5424,7 +5424,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			
 			SaveGroup(created_group_id_fix)
 			
-			format(string, sizeof(string), Pomyúlnie dodano nowπ podgrupÍ dla %s (UID: %d).\n\nNazwa podgrupy: %s\nIdentyfikator (UID): %d\n\nAby zarzπdzaÊ podgrupπ wejdü do panelu grupowego., GroupData(group_id_fix)(gName), GroupData(group_id_fix)(gUID), GroupData(created_group_id_fix)(gName), GroupData(created_group_id_fix)(gUID))
+			format(string, sizeof(string), Pomy≈õlnie dodano nowƒÖ podgrupƒô dla %s (UID: %d).\n\nNazwa podgrupy: %s\nIdentyfikator (UID): %d\n\nAby zarzƒÖdzaƒá podgrupƒÖ wejd≈∫ do panelu grupowego., GroupData(group_id_fix)(gName), GroupData(group_id_fix)(gUID), GroupData(created_group_id_fix)(gName), GroupData(created_group_id_fix)(gUID))
 			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 
 			hrp_GroupActionLog(%s (UID: %d) utworzyl podgrupe %s (UID: %d) dla grupy %s (UID: %d)., PlayerRealName(playerid), PlayerCache(playerid)(pUID), GroupData(created_group_id_fix)(gName), GroupData(created_group_id_fix)(gUID), GroupData(group_id_fix)(gName), GroupData(group_id_fix)(gUID))
@@ -5450,7 +5450,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 	)
 	if(dialogid == D_BOOTH_NUMBER)
 	(
-		// WAØNE !!! phoneid = ID BUDKI Z KT”REJ DZWONISZ ... phone = ID Z BUDKI NA KT”R° DZWONISZ!!!
+		// WA≈ªNE !!! phoneid = ID BUDKI Z KT√ìREJ DZWONISZ ... phone = ID Z BUDKI NA KT√ìRÀá DZWONISZ!!!
 		if(response)
 		(
 			phoneid = MainPlayerTable(playerid)
@@ -5459,7 +5459,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			string(128)
 			if(strlen(inputtext) ) 7 || strlen(inputtext) (= 0)
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Podany numer jest nieprawid≥owy., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Podany numer jest nieprawid≈Çowy., OK, )
 				return 1
 			)
 
@@ -5467,7 +5467,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 
 			if(Phones(phoneid)(phoneNumber) == number)
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Podany numer jest nieprawid≥owy., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Podany numer jest nieprawid≈Çowy., OK, )
 				return 1	
 			)
 
@@ -5477,7 +5477,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			(
 				if(PlayerCache(playerid)(pCash) ( 10)
 				(
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie masz wystarczajπce iloúci gotÛwki. Kosz uøycia budki to $10., OK, )
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie masz wystarczajƒÖce ilo≈õci got√≥wki. Kosz u≈ºycia budki to $10., OK, )
 					return 1
 				)
 				// Dzwoni do budki
@@ -5529,10 +5529,10 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 							(
 								if(ItemInfo(itemid)(iOwner) == PlayerCache(i)(pUID))
 								(
-									format(string, sizeof(string), ** TwÛj pager pokaza≥ na ekranie numer %d. **, Phones(phoneid)(phoneNumber))
+									format(string, sizeof(string), ** Tw√≥j pager pokaza≈Ç na ekranie numer %d. **, Phones(phoneid)(phoneNumber))
 									SendClientMessage(i, COLOR_LIGHTRED, string)
 
-									SendClientMessage(playerid, COLOR_DO, ** W s≥uchawce s≥ychaÊ dºwiÍk potwierdzenia po≥±czenia. **)
+									SendClientMessage(playerid, COLOR_DO, ** W s≈Çuchawce s≈Çychaƒá dƒΩwiƒôk potwierdzenia po≈Ç¬±czenia. **)
 									return 1
 								)
 							)
@@ -5567,7 +5567,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 								)
 								if(workers)
 								(
-									format(list_taxi_corp, sizeof(list_taxi_corp), %s\n%d\t(na s≥uøbie %d)\t%s, list_taxi_corp, group_id_fix, workers, GroupData(group_id_fix)(gName))
+									format(list_taxi_corp, sizeof(list_taxi_corp), %s\n%d\t(na s≈Çu≈ºbie %d)\t%s, list_taxi_corp, group_id_fix, workers, GroupData(group_id_fix)(gName))
 								)
 							)
 						)
@@ -5578,11 +5578,11 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 						//SetPlayerSpecialAction(playerid, SPECIAL_ACTION_USECELLPHONE)
 						attachPlayerPhone(playerid)
 					
-						ShowPlayerDialog(playerid, D_SELECT_TAXI_CORP, DIALOG_STYLE_LIST, Korporacje taksÛwkarskie, list_taxi_corp, Dalej, Anuluj)
+						ShowPlayerDialog(playerid, D_SELECT_TAXI_CORP, DIALOG_STYLE_LIST, Korporacje taks√≥wkarskie, list_taxi_corp, Dalej, Anuluj)
 					)
 					else
 					(
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, W chwili obecnej nie ma øadnej taksÛwki na s≥uøbie., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, W chwili obecnej nie ma ≈ºadnej taks√≥wki na s≈Çu≈ºbie., OK, )
 					)
 					return 1
 				)
@@ -5592,8 +5592,8 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					//SetPlayerSpecialAction(playerid, SPECIAL_ACTION_USECELLPHONE)
 					attachPlayerPhone(playerid)
 					
-					SendClientMessage(playerid, COLOR_YELLOW, Sekretarka: Witaj, po≥πczy≥eú siÍ z numerem alarmowym centrali Los Santos, z kim po≥πczyÊ?)
-					ShowPlayerDialog(playerid, D_ALARM_NUMBER, DIALOG_STYLE_LIST, Z kim chcesz siÍ po≥πczyÊ?, Los Santos Police Department\nLos Santos Medical Center\nLos Santos Fire Department\nDepartment Of Sanitation Electricity, Wybierz, Anuluj)
+					SendClientMessage(playerid, COLOR_YELLOW, Sekretarka: Witaj, po≈ÇƒÖczy≈Çe≈õ siƒô z numerem alarmowym centrali Los Santos, z kim po≈ÇƒÖczyƒá?)
+					ShowPlayerDialog(playerid, D_ALARM_NUMBER, DIALOG_STYLE_LIST, Z kim chcesz siƒô po≈ÇƒÖczyƒá?, Los Santos Police Department\nLos Santos Medical Center\nLos Santos Fire Department\nDepartment Of Sanitation Electricity, Wybierz, Anuluj)
 					return 1
 				)
 				if(number == 444)
@@ -5602,7 +5602,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					//SetPlayerSpecialAction(playerid, SPECIAL_ACTION_USECELLPHONE)
 					attachPlayerPhone(playerid)
 
-					ShowPlayerDialog(playerid, D_SN_CALL, DIALOG_STYLE_INPUT, Los Santos News, Dodzwoni≥eú siÍ do radiostacji w Los Santos.\nPowiedz nam po krÛtce w czym rzecz., Dalej, Anuluj)
+					ShowPlayerDialog(playerid, D_SN_CALL, DIALOG_STYLE_INPUT, Los Santos News, Dodzwoni≈Çe≈õ siƒô do radiostacji w Los Santos.\nPowiedz nam po kr√≥tce w czym rzecz., Dalej, Anuluj)
 					return 1
 				)
 			)
@@ -5610,10 +5610,10 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			(
 				if(PlayerCache(playerid)(pCash) ( 10)
 				(
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie masz wystarczajπce iloúci gotÛwki. Kosz uøycia budki to $10., OK, )
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie masz wystarczajƒÖce ilo≈õci got√≥wki. Kosz u≈ºycia budki to $10., OK, )
 					return 1
 				)
-				// Dzwoni na komÛrkÍ
+				// Dzwoni na kom√≥rkƒô
 				foreach(Player, i)
 				(
 					if(Logged(i) && Spawned(i))
@@ -5622,7 +5622,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 						(
 							if(PlayerCache(i)(pCall) != -1)
 							(
-								SendClientMessage(playerid, COLOR_DO, ** S≥ychaÊ sygna≥ zajÍtoúci... **)
+								SendClientMessage(playerid, COLOR_DO, ** S≈Çychaƒá sygna≈Ç zajƒôto≈õci... **)
 							)
 							else
 							(
@@ -5644,7 +5644,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			(
 				if(Phones(phoneid)(phoneBusy))
 				(
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst±pi≥ b≥±d, Kto∂ juø uøywa tej budki., OK, )
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¬±pi≈Ç b≈Ç¬±d, Kto¬∂ ju≈º u≈ºywa tej budki., OK, )
 					EndCall(callid)
 					return 0
 				)
@@ -5661,7 +5661,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					(
 						if(CanPlayerHearHomephone(i, Call(callid)(calledDevID)))
 						(
-							SendClientMessage(i, COLOR_DO, ** S≥ychaÊ düwiÍk dzwoniπcego telefonu domowego. **)
+							SendClientMessage(i, COLOR_DO, ** S≈Çychaƒá d≈∫wiƒôk dzwoniƒÖcego telefonu domowego. **)
 							PlayerPlaySound(i, 20600, 0.0, 0.0, 0.0)
 						)
 					)
@@ -5674,7 +5674,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					(
 						if(CanPlayerHearPhone(i, Call(callid)(calledDevID)))
 						(
-							SendClientMessage(i, COLOR_DO, ** S≥yszysz düwiÍk telefonu w pobliøu. Brzmi jak budka telefoniczna. **)
+							SendClientMessage(i, COLOR_DO, ** S≈Çyszysz d≈∫wiƒôk telefonu w pobli≈ºu. Brzmi jak budka telefoniczna. **)
 							PlayerPlaySound(i, 20600, 0.0, 0.0, 0.0)
 						)
 					)
@@ -5682,8 +5682,8 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				)
 				else if(Call(callid)(calledDevice) == DEVICE_CELL)
 				(
-					// Dzwonek komÛrki dla gracza
-					format(string, sizeof(string), * S≥ychaÊ düwiÍk dzwoniπcego telefonu. (( %s )), PlayerName(Call(callid)(called)))
+					// Dzwonek kom√≥rki dla gracza
+					format(string, sizeof(string), * S≈Çychaƒá d≈∫wiƒôk dzwoniƒÖcego telefonu. (( %s )), PlayerName(Call(callid)(called)))
 					ProxDetector(10.0, Call(callid)(called), string, COLOR_DO, COLOR_DO, COLOR_DO, COLOR_DO, COLOR_DO, false)
 
 					// Audio dzwonka
@@ -5696,7 +5696,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 						(
 							if(IsPlayerInRangeOfPoint(player, 10.0, PosX, PosY, PosZ))
 							(
-								// Miejsce na düwiÍk dzwonienia
+								// Miejsce na d≈∫wiƒôk dzwonienia
 								//audio = Audio_Play(player, AUDIO_CALLING)
 								//Audio_Set3DPosition(player, audio, PosX, PosY, PosZ, 10.0)
 							)
@@ -5710,9 +5710,9 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 
 				Phones(phoneid)(phoneBusy) = true
 
-				SendClientMessage(playerid, COLOR_DO, * S≥ychaÊ sygna≥ prÛby po≥πczenia siÍ... *)
+				SendClientMessage(playerid, COLOR_DO, * S≈Çychaƒá sygna≈Ç pr√≥by po≈ÇƒÖczenia siƒô... *)
 
-				format(string, sizeof(string), Po≥πczenie przychodzπce od %d, uøyj /odbierz, by odebraÊ rozmowÍ., Phones(phoneid)(phoneNumber))
+				format(string, sizeof(string), Po≈ÇƒÖczenie przychodzƒÖce od %d, u≈ºyj /odbierz, by odebraƒá rozmowƒô., Phones(phoneid)(phoneNumber))
 				SendClientMessage(Call(callid)(called), COLOR_YELLOW, string)
 				
 				PlayerCache(playerid)(pUsingBooth) = true
@@ -5723,7 +5723,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				return 1
 			)
 
-			SendClientMessage(playerid, COLOR_DO, * Nie moøna po≥πczyÊ siÍ z wybranym numerem...)
+			SendClientMessage(playerid, COLOR_DO, * Nie mo≈ºna po≈ÇƒÖczyƒá siƒô z wybranym numerem...)
 			return 1
 
 		)
@@ -5765,12 +5765,12 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					
 					if(strlen(string) ) 0)
 					(
-						ShowPlayerDialog(playerid, D_DESC_LIST, DIALOG_STYLE_LIST, Lista opisÛw, string, Wybierz, Zamknij)
+						ShowPlayerDialog(playerid, D_DESC_LIST, DIALOG_STYLE_LIST, Lista opis√≥w, string, Wybierz, Zamknij)
 						return 1
 					)
 					else
 					(
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie posiadasz jeszcze øadnych opisÛw., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie posiadasz jeszcze ≈ºadnych opis√≥w., OK, )
 						return 1
 					)
 				)
@@ -5790,17 +5790,17 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					(
 						if(desc_count )= 10)
 						(
-							ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Posiadasz juø 10 opisÛw. UsuÒ jeden aby dodaÊ kolejny., OK, )
+							ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Posiadasz ju≈º 10 opis√≥w. Usu≈Ñ jeden aby dodaƒá kolejny., OK, )
 						)
 					)
 					else
 					(
 						if(desc_count )= 3)
 						(
-							ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Posiadasz juø 3 opisy. UsuÒ jeden aby dodaÊ kolejny lub wykup konto premium ale zwiÍkszyÊ limit do 10 opisÛw., OK, )
+							ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Posiadasz ju≈º 3 opisy. Usu≈Ñ jeden aby dodaƒá kolejny lub wykup konto premium ale zwiƒôkszyƒá limit do 10 opis√≥w., OK, )
 						)
 					)
-					ShowPlayerDialog(playerid, D_DESC_ADD, DIALOG_STYLE_INPUT, Dodaj opis, Wprowadü tekst opisu do dodania., Dodaj, Anuluj)
+					ShowPlayerDialog(playerid, D_DESC_ADD, DIALOG_STYLE_INPUT, Dodaj opis, Wprowad≈∫ tekst opisu do dodania., Dodaj, Anuluj)
 				)
 				case 2:
 				(
@@ -5810,7 +5810,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				case 3:
 				(
 			  		format(PlayerCache(playerid)(pDescTagText), 128,  )
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Opis zosta≥ pomyúlnie usuniÍty., OK, )
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Opis zosta≈Ç pomy≈õlnie usuniƒôty., OK, )
 					return 1
 				)
 			)
@@ -5828,7 +5828,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			if(strlen(inputtext) ) 0)
 			(
 				format(MainPlayerStringTable(playerid), 512, %s, inputtext)
-				ShowPlayerDialog(playerid, D_DESC_ADDNAME, DIALOG_STYLE_INPUT, Dodaj nazwÍ opisu, Wprowadü nazwÍ opisu do dodania., Dodaj, Anuluj)
+				ShowPlayerDialog(playerid, D_DESC_ADDNAME, DIALOG_STYLE_INPUT, Dodaj nazwƒô opisu, Wprowad≈∫ nazwƒô opisu do dodania., Dodaj, Anuluj)
 				return 1
 			)
 			else
@@ -5850,7 +5850,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				mysql_real_escape_string(MainPlayerStringTable(playerid), descContent)
 				
 				mysql_query_format(INSERT INTO hrp_abouts (about_content, about_name, about_owner) VALUES(%s, %s, %d), descContent, descEscaped, PlayerCache(playerid)(pUID))
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Opis zosta≥ pomyúlnie dodany., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Opis zosta≈Ç pomy≈õlnie dodany., OK, )
 			)
 			else
 			(
@@ -5867,7 +5867,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		if(response)
 		(
 			MainPlayerTable(playerid) = strval(inputtext)
-			ShowPlayerDialog(playerid, D_DESC_ACTIONS, DIALOG_STYLE_LIST, Edytor opisÛw ª Akcja, 1. Ustaw\n2. Zobacz\n3. UsuÒ, Wybierz, Anuluj)
+			ShowPlayerDialog(playerid, D_DESC_ACTIONS, DIALOG_STYLE_LIST, Edytor opis√≥w ¬ª Akcja, 1. Ustaw\n2. Zobacz\n3. Usu≈Ñ, Wybierz, Anuluj)
 			return 1
 		)
 		else
@@ -5903,7 +5903,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				case 2:
 				(
 					mysql_query_format(DELETE FROM hrp_abouts WHERE about_uid = %d LIMIT 1, MainPlayerTable(playerid))
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Opis zosta≥ poprawnie usuniÍty., OK, )
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Opis zosta≈Ç poprawnie usuniƒôty., OK, )
 					return 1
 				)
 			)
@@ -5918,7 +5918,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 	(
 		if(response)
 		(
-			ShowPlayerDialog(playerid, D_DESC_ACTIONS, DIALOG_STYLE_LIST, Edytor opisÛw ª Akcja, 1. Ustaw\n2. Zobacz\n3. UsuÒ, Wybierz, Anuluj)
+			ShowPlayerDialog(playerid, D_DESC_ACTIONS, DIALOG_STYLE_LIST, Edytor opis√≥w ¬ª Akcja, 1. Ustaw\n2. Zobacz\n3. Usu≈Ñ, Wybierz, Anuluj)
 			return 1
 		)
 		else
@@ -5936,7 +5936,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				(
 					SetPlayerFightingStyle(playerid, FIGHT_STYLE_NORMAL)
 					PlayerCache(playerid)(pFightingStyle) = FIGHT_STYLE_NORMAL
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Twoim stylem walki sta≥ siÍ styl podstawowy., OK, )
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Twoim stylem walki sta≈Ç siƒô styl podstawowy., OK, )
 				)
 				case 1:
 				(
@@ -5944,11 +5944,11 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					(
 						SetPlayerFightingStyle(playerid, FIGHT_STYLE_BOXING)
 						PlayerCache(playerid)(pFightingStyle) = FIGHT_STYLE_BOXING
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Twoim stylem walki sta≥ siÍ box., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Twoim stylem walki sta≈Ç siƒô box., OK, )
 					)
 					else
 					(
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Nie umiesz jeszcze tego stylu. Udaj siÍ na si≥ownie aby siÍ go nauczyÊ., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Nie umiesz jeszcze tego stylu. Udaj siƒô na si≈Çownie aby siƒô go nauczyƒá., OK, )
 					)
 				)
 				case 2:
@@ -5957,11 +5957,11 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					(
 						SetPlayerFightingStyle(playerid, FIGHT_STYLE_KUNGFU)
 						PlayerCache(playerid)(pFightingStyle) = FIGHT_STYLE_KUNGFU
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Twoim stylem walki sta≥o siÍ Kung Fu., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Twoim stylem walki sta≈Ço siƒô Kung Fu., OK, )
 					)
 					else
 					(
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Nie umiesz jeszcze tego stylu. Udaj siÍ na si≥ownie aby siÍ go nauczyÊ., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Nie umiesz jeszcze tego stylu. Udaj siƒô na si≈Çownie aby siƒô go nauczyƒá., OK, )
 					)
 				)
 				case 3:
@@ -5970,11 +5970,11 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					(
 						SetPlayerFightingStyle(playerid, FIGHT_STYLE_KNEEHEAD)
 						PlayerCache(playerid)(pFightingStyle) = FIGHT_STYLE_KNEEHEAD
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Twoim stylem walki sta≥ siÍ Kickboxing., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Twoim stylem walki sta≈Ç siƒô Kickboxing., OK, )
 					)
 					else
 					(
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Nie umiesz jeszcze tego stylu. Udaj siÍ na si≥ownie aby siÍ go nauczyÊ., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Nie umiesz jeszcze tego stylu. Udaj siƒô na si≈Çownie aby siƒô go nauczyƒá., OK, )
 					)
 				)
 				case 4:
@@ -5983,11 +5983,11 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					(
 						SetPlayerFightingStyle(playerid, FIGHT_STYLE_GRABKICK)
 						PlayerCache(playerid)(pFightingStyle) = FIGHT_STYLE_GRABKICK
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Twoim stylem walki sta≥ siÍ styl uliczny, OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Twoim stylem walki sta≈Ç siƒô styl uliczny, OK, )
 					)
 					else
 					(
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Nie umiesz jeszcze tego stylu. Udaj siÍ na si≥ownie aby siÍ go nauczyÊ., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Nie umiesz jeszcze tego stylu. Udaj siƒô na si≈Çownie aby siƒô go nauczyƒá., OK, )
 					)
 				)
 			)
@@ -6024,7 +6024,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			PlayerCache(playerid)(pSweep) = true
 			SetPlayerRaceCheckpoint(playerid, 0, rX(0), rY(0), rZ(0), rX(1), rY(1), rZ(1), 5.0)
 			
-			format(data, sizeof(data), Podjales sie pracy sprzatacza ulic. Udaj siÍ do punktu ~r~%s ~w~i podazaj za intrukcjami. Niech ulice beda z Toba., rPointName(0))
+			format(data, sizeof(data), Podjales sie pracy sprzatacza ulic. Udaj siƒô do punktu ~r~%s ~w~i podazaj za intrukcjami. Niech ulice beda z Toba., rPointName(0))
 			TextDrawSetString(Text:TextDrawMainInfo(playerid), data)
 			TextDrawShowForPlayer(playerid, Text:TextDrawMainInfo(playerid))
 			PlayerCache(playerid)(pShowInfoText) = 7
@@ -6032,7 +6032,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		else
 		(
 			RemovePlayerFromVehicle(playerid)
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, W zwiπzku z odrzucenie przez Ciebie pracy sprzπtacza ulic, urzπd nie pozwala Ci na wynajem ich wozÛw., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, W zwiƒÖzku z odrzucenie przez Ciebie pracy sprzƒÖtacza ulic, urzƒÖd nie pozwala Ci na wynajem ich woz√≥w., OK, )
 		)
 		return 1
 	)
@@ -6043,20 +6043,20 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			itemid = MainPlayerTable(playerid), portion = strval(inputtext), string(128)
 			if(portion (= 0)
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Stary taka porcja nie przejdzie. Odstaw to bo üle na Ciebie wp≥ywa., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Stary taka porcja nie przejdzie. Odstaw to bo ≈∫le na Ciebie wp≈Çywa., OK, )
 				return 1
 			)
 			SecondPlayerTable(playerid) = portion
 			
 			if(ItemInfo(itemid)(iType) == ITEM_CIGGY)
 			(
-				format(string, sizeof(string), Wpisz liczbÍ porcji zawierajπcych %d sztuk., portion)
+				format(string, sizeof(string), Wpisz liczbƒô porcji zawierajƒÖcych %d sztuk., portion)
 			)
 			else if(ItemInfo(itemid)(iType) == ITEM_DRUG)
 			(
-				format(string, sizeof(string), Wpisz liczbÍ porcji zawierajπcych %d gram., portion)
+				format(string, sizeof(string), Wpisz liczbƒô porcji zawierajƒÖcych %d gram., portion)
 			)
-			ShowPlayerDialog(playerid, D_DIVIDE_ITEM_FINAL, DIALOG_STYLE_INPUT, Dzielenie przedmiotÛw, string, OK, )
+			ShowPlayerDialog(playerid, D_DIVIDE_ITEM_FINAL, DIALOG_STYLE_INPUT, Dzielenie przedmiot√≥w, string, OK, )
 			return 1
 		)
 		else
@@ -6072,7 +6072,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			itemid = MainPlayerTable(playerid), portion = SecondPlayerTable(playerid), portions = strval(inputtext)
 			if(portions (= 0)
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Stary taka porcja nie przejdzie. Odstaw to bo üle na Ciebie wp≥ywa., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Stary taka porcja nie przejdzie. Odstaw to bo ≈∫le na Ciebie wp≈Çywa., OK, )
 			)
 			if(ItemInfo(itemid)(iUID))
 			(
@@ -6090,11 +6090,11 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 							DeleteItem(ItemInfo(itemid)(iUID))
 						)
 						mysql_query_format(UPDATE hrp_items SET item_value1 = %d WHERE item_uid = %d LIMIT 1, ItemInfo(itemid)(iValue1), ItemInfo(itemid)(iUID))
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Sukces, Podzia≥ przedmiotu uda≥ siÍ., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Sukces, Podzia≈Ç przedmiotu uda≈Ç siƒô., OK, )
 					)
 					else
 					(
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Stary taka porcja nie przejdzie. Odstaw to bo üle na Ciebie wp≥ywa., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Stary taka porcja nie przejdzie. Odstaw to bo ≈∫le na Ciebie wp≈Çywa., OK, )
 						return 1
 					)
 				)
@@ -6121,14 +6121,14 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 							GenerateDrugNameByItemid(itemid)
 						)
 						
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Sukces, Podzia≥ przedmiotu uda≥ siÍ., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Sukces, Podzia≈Ç przedmiotu uda≈Ç siƒô., OK, )
 						MainPlayerTable(playerid) = 0
 						SecondPlayerTable(playerid) = 0
 						return 1
 					)
 					else
 					(
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Stary taka porcja nie przejdzie. Odstaw to bo üle na Ciebie wp≥ywa., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Stary taka porcja nie przejdzie. Odstaw to bo ≈∫le na Ciebie wp≈Çywa., OK, )
 						MainPlayerTable(playerid) = 0
 						SecondPlayerTable(playerid) = 0
 						return 1
@@ -6162,17 +6162,17 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					(
 						if(IsPlayerPermissedGroup(i, GroupData(group_id_fix)(gUID), PERM_CHAT))
 						(
-							format(string, sizeof(string), Gracz %s (ID: %d) doda≥ w≥aúnie og≥oszenie w Twojej grupie:, PlayerName(playerid), playerid)
+							format(string, sizeof(string), Gracz %s (ID: %d) doda≈Ç w≈Ça≈õnie og≈Çoszenie w Twojej grupie:, PlayerName(playerid), playerid)
 							SendClientMessage(i, COLOR_RED, string)
 							SendClientMessage(i, COLOR_ORANGE, inputtext)
 						)
 					)
 					
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Sukces, Og≥oszenie zosta≥o dodane poprawnie.\nMoøesz je zobaczyÊ pod /g (slot) ogloszenie., OK, )
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Sukces, Og≈Çoszenie zosta≈Ço dodane poprawnie.\nMo≈ºesz je zobaczyƒá pod /g (slot) ogloszenie., OK, )
 				)
 				else
 				(
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Wystπpi≥ b≥πd przy dodawaniu Twojego og≥oszenia.\nSkontaktuj siÍ z Administratorem., OK, )
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, WystƒÖpi≈Ç b≈ÇƒÖd przy dodawaniu Twojego og≈Çoszenia.\nSkontaktuj siƒô z Administratorem., OK, )
 				)
 				MainPlayerTable(playerid) = 0
 			)
@@ -6193,7 +6193,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		if(response)
 		(
 			PlayerCache(playerid)(pTaggingFont) = listitem
-			ShowPlayerDialog(playerid, D_SPRAY_FONT_SIZE, DIALOG_STYLE_LIST, Wybierz czcionkÍ dla tego tagu, 0 - 10px\n1 - 11px\n2 - 12px\n3 - 13px\n4 - 14px\n5 - 15px\n6 - 16px\n7 - 17px\n8 - 18px\n9 - 19px\n10 - 20px\n11 - 21px\n12 - 22px\n13 - 23px\n14 - 24px\n15 - 25px\n16 - 26px\n17 - 27px\n18 - 28px\n19 - 29px\n20 - 30px, Maluj, Anuluj)
+			ShowPlayerDialog(playerid, D_SPRAY_FONT_SIZE, DIALOG_STYLE_LIST, Wybierz czcionkƒô dla tego tagu, 0 - 10px\n1 - 11px\n2 - 12px\n3 - 13px\n4 - 14px\n5 - 15px\n6 - 16px\n7 - 17px\n8 - 18px\n9 - 19px\n10 - 20px\n11 - 21px\n12 - 22px\n13 - 23px\n14 - 24px\n15 - 25px\n16 - 26px\n17 - 27px\n18 - 28px\n19 - 29px\n20 - 30px, Maluj, Anuluj)
 		)
 		return 1
 	)
@@ -6202,7 +6202,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		if(response)
 		(
 			PlayerCache(playerid)(pTaggingSize) = listitem
-			ShowPlayerDialog(playerid, D_SPRAY, DIALOG_STYLE_INPUT, Tworzenie tagu, Wpisz treúÊ tagu, ktÛry chcesz namalowaÊ na úcanie., Maluj, Anuluj)
+			ShowPlayerDialog(playerid, D_SPRAY, DIALOG_STYLE_INPUT, Tworzenie tagu, Wpisz tre≈õƒá tagu, kt√≥ry chcesz namalowaƒá na ≈õcanie., Maluj, Anuluj)
 		)
 		return 1
 	)
@@ -6338,7 +6338,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 	(
 		if(response)
 		(
-			ShowPlayerDialog(playerid, D_FCK_REASON, DIALOG_STYLE_INPUT, FCK, Opisz okolicznoúci úmierci w max. 128 znakach, OK, Anuluj)
+			ShowPlayerDialog(playerid, D_FCK_REASON, DIALOG_STYLE_INPUT, FCK, Opisz okoliczno≈õci ≈õmierci w max. 128 znakach, OK, Anuluj)
 			return 1
 		)
 		else
@@ -6360,11 +6360,11 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			DropAllPlayerItems(giveplayer_id)
 			item_uid = CreatePlayerCorpse(giveplayer_id, killer_uid, weapon_uid)
 			
-			ShowPlayerDialog(giveplayer_id, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Twoja postaÊ zosta≥a uúmiercona.\nOd tej pory postaÊ, ktÛra zosta≥a uúmiercona jest juø nieaktywna.\n\nZostajesz wyrzucony z serwera., OK, )
+			ShowPlayerDialog(giveplayer_id, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Twoja postaƒá zosta≈Ça u≈õmiercona.\nOd tej pory postaƒá, kt√≥ra zosta≈Ça u≈õmiercona jest ju≈º nieaktywna.\n\nZostajesz wyrzucony z serwera., OK, )
 			hrp_Block(giveplayer_id, playerid, Dynamiczne FCK, BLOCK_CHAR, 0, true)
 			Kick(giveplayer_id)
 			
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, GnÛj dosta≥ FCK. Dobra robota mÛj panie., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Gn√≥j dosta≈Ç FCK. Dobra robota m√≥j panie., OK, )
 			MainPlayerTable(playerid) = 0
 			
 			SetItemDesc(item_uid, inputtext)
@@ -6391,7 +6391,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				
 				SetItemDesc(item_uid, inputtext)
 				
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Twoja postaÊ zosta≥a uúmiercona.\nOd tej pory postaÊ, ktÛra zosta≥a uúmiercona jest juø nieaktywna.\n\nZostajesz wyrzucony z serwera., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Twoja postaƒá zosta≈Ça u≈õmiercona.\nOd tej pory postaƒá, kt√≥ra zosta≈Ça u≈õmiercona jest ju≈º nieaktywna.\n\nZostajesz wyrzucony z serwera., OK, )
 				hrp_Block(playerid, -1, CK, BLOCK_CHAR, 0, true)
 				Kick(playerid)
 				return 1
@@ -6409,7 +6409,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			hrp_GivePlayerMoney(playerid, sell_price)
 			DeleteVehicle(vehid)
 			
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Pojazd zosta≥ zez≥omowany., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Pojazd zosta≈Ç zez≈Çomowany., OK, )
 		
 			MainPlayerTable(playerid) = 0
 			SecondPlayerTable(playerid) = 0
@@ -6419,7 +6419,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		(
 			MainPlayerTable(playerid) = 0
 			SecondPlayerTable(playerid) = 0
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, WrÛÊ kiedy zmienisz zdanie., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Wr√≥ƒá kiedy zmienisz zdanie., OK, )
 			return 1
 		)
 	)
@@ -6431,7 +6431,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			(
 				if(strlen(inputtext) ) 32)
 				(
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Zbyt d≥ugi tekst., OK, )
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Zbyt d≈Çugi tekst., OK, )
 					return 1
 				)
 				if(!strcmp(inputtext, dodaj, true))
@@ -6503,13 +6503,13 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				)
 				else
 				(
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Wystπpi≥ nieznany b≥πd. Pisz do Sim00na i zanotuj czas dodania., OK, )
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, WystƒÖpi≈Ç nieznany b≈ÇƒÖd. Pisz do Sim00na i zanotuj czas dodania., OK, )
 					return 1
 				)
 			)
 			else
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Wpis musi mieÊ minimum 3 znaki i maximum 32 znaki., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Wpis musi mieƒá minimum 3 znaki i maximum 32 znaki., OK, )
 				return 1
 			)
 		)
@@ -6525,7 +6525,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			option = strval(inputtext)
 			if(option == 0)
 			(
-				ShowPlayerDialog(playerid, D_PD_C_ADD_FIELD, DIALOG_STYLE_INPUT, LSPD )) Kartoteka )) Dodaj, Wpisz nazwÍ nowego pola., Dodaj, Anuluj)
+				ShowPlayerDialog(playerid, D_PD_C_ADD_FIELD, DIALOG_STYLE_INPUT, LSPD )) Kartoteka )) Dodaj, Wpisz nazwƒô nowego pola., Dodaj, Anuluj)
 				return 1
 			)
 			else
@@ -6536,7 +6536,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		)
 		else
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Wszystkie zmiany zosta≥y zapisane., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Wszystkie zmiany zosta≈Çy zapisane., OK, )
 			return 1
 		)
 	)
@@ -6555,13 +6555,13 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				SecondPlayerTable(playerid) = new_id
 				
 				string(128)
-				format(string, sizeof(string), Wpisz dane poasujπce do pola %s, inputtext)
+				format(string, sizeof(string), Wpisz dane poasujƒÖce do pola %s, inputtext)
 				ShowPlayerDialog(playerid, D_PD_C_ADD_DATA, DIALOG_STYLE_INPUT, LSPD )) Kartoteka )) Dodaj, string, Dodaj, Anuluj)
 				return 1
 			)
 			else
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Wpis musi mieÊ minimum 3 znaki i maximum 32 znaki., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Wpis musi mieƒá minimum 3 znaki i maximum 32 znaki., OK, )
 				return 1
 			)
 		)
@@ -6582,7 +6582,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			)
 			else
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Wpis musi mieÊ minimum 3 znaki i maximum 32 znaki., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Wpis musi mieƒá minimum 3 znaki i maximum 32 znaki., OK, )
 				return 1
 			)
 		)
@@ -6632,7 +6632,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			)
 			else
 			(
-				ShowPlayerDialog(playerid, D_LSPAD_PASSWORD, DIALOG_STYLE_PASSWORD, ItemInfo(itemid)(iName), Wpisz kod do odblokowania urzadzenia., Odblokuj, Wyjdzü)
+				ShowPlayerDialog(playerid, D_LSPAD_PASSWORD, DIALOG_STYLE_PASSWORD, ItemInfo(itemid)(iName), Wpisz kod do odblokowania urzadzenia., Odblokuj, Wyjdz≈∫)
 				return 1
 			)
 		)
@@ -6648,7 +6648,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			if(code == 0)
 			(
 				ItemInfo(itemid)(iValue2) = 0
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Has≥o zosta≥o usuniete., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Has≈Ço zosta≈Ço usuniete., OK, )
 
 				format(ncode, sizeof(ncode), %s, Brak)
 				PlayerTextDrawSetString(playerid, LSPad_SettingsCode, ncode)
@@ -6661,7 +6661,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			)
 			else
 			(
-				ShowPlayerDialog(playerid, D_LSPAD_NEWPASSWORD, DIALOG_STYLE_INPUT, ItemInfo(itemid)(iName), Haslo niepoprawne!\n\nWpisz nowe 4-cyfrowe has≥o lub 0 aby usunaÊ has≥o z urz±dzenia., Ustaw, Wyjdzü)
+				ShowPlayerDialog(playerid, D_LSPAD_NEWPASSWORD, DIALOG_STYLE_INPUT, ItemInfo(itemid)(iName), Haslo niepoprawne!\n\nWpisz nowe 4-cyfrowe has≈Ço lub 0 aby usunaƒá has≈Ço z urz¬±dzenia., Ustaw, Wyjdz≈∫)
 				return 1
 			)
 
@@ -6685,12 +6685,12 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				c_item_id = GetItemID(item_uid)
 				GenerateDrugNameByItemid(c_item_id)
 
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Trzymaj stary, tylko nie daj siÍ z≥apaÊ psiarni!, OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Trzymaj stary, tylko nie daj siƒô z≈Çapaƒá psiarni!, OK, )
 				return 1
 			)
 			else
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst±pi≥ b≥±d, Tyle nie dostaniesz. Nie sp≥aci≥e∂ jeszcze ostatniej partii!, OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¬±pi≈Ç b≈Ç¬±d, Tyle nie dostaniesz. Nie sp≈Çaci≈Çe¬∂ jeszcze ostatniej partii!, OK, )
 				return 1	
 			)
 		)
@@ -6712,12 +6712,12 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				c_item_id = GetItemID(item_uid)
 				GenerateDrugNameByItemid(c_item_id)
 
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Trzymaj stary, tylko nie daj siÍ z≥apaÊ psiarni!, OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Trzymaj stary, tylko nie daj siƒô z≈Çapaƒá psiarni!, OK, )
 				return 1
 			)
 			else
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst±pi≥ b≥±d, Tyle nie dostaniesz. Nie sp≥aci≥e∂ jeszcze ostatniej partii!, OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¬±pi≈Ç b≈Ç¬±d, Tyle nie dostaniesz. Nie sp≈Çaci≈Çe¬∂ jeszcze ostatniej partii!, OK, )
 				return 1	
 			)
 		)
@@ -6739,12 +6739,12 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				c_item_id = GetItemID(item_uid)
 				GenerateDrugNameByItemid(c_item_id)
 
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Trzymaj stary, tylko nie daj siÍ z≥apaÊ psiarni!, OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Trzymaj stary, tylko nie daj siƒô z≈Çapaƒá psiarni!, OK, )
 				return 1
 			)
 			else
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst±pi≥ b≥±d, Tyle nie dostaniesz. Nie sp≥aci≥e∂ jeszcze ostatniej partii!, OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¬±pi≈Ç b≈Ç¬±d, Tyle nie dostaniesz. Nie sp≈Çaci≈Çe¬∂ jeszcze ostatniej partii!, OK, )
 				return 1	
 			)
 		)
@@ -6767,7 +6767,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 						printf((casino) %d nie ma bw, kajdanek, kajdanek still, clickedplayerid)
 						if(!IsPlayerInAnyVehicle(clickedplayerid))
 						(
-							printf((casino) %d nie w pojeºdzie, clickedplayerid)
+							printf((casino) %d nie w pojeƒΩdzie, clickedplayerid)
 							BJInviteToGame(playerid, clickedplayerid)
 							return 1
 						)
@@ -6775,7 +6775,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				)
 			)
 
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst±pi≥ b≥±d, Nie moøesz teraz zaprosiÊ tego gracza. Gracz nie moøe:\n\nByÊ niepod≥±czony, nie zalogowany lub nie zespawnowany\nNie moøe mieÊ BW lub byÊ skutym\nNie moøe byÊ w pojeºdzie, OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¬±pi≈Ç b≈Ç¬±d, Nie mo≈ºesz teraz zaprosiƒá tego gracza. Gracz nie mo≈ºe:\n\nByƒá niepod≈Ç¬±czony, nie zalogowany lub nie zespawnowany\nNie mo≈ºe mieƒá BW lub byƒá skutym\nNie mo≈ºe byƒá w pojeƒΩdzie, OK, )
 			return 1
 		)
 		else
@@ -6793,7 +6793,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			if(stime + 10 ( gettime()) (
 				MainPlayerTable(playerid) = 0
 				SecondPlayerTable(playerid) = 0
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst±pi≥ b≥±d, To zaporszenie straci≥o juø swoj± waøno∂Ê., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¬±pi≈Ç b≈Ç¬±d, To zaporszenie straci≈Ço ju≈º swoj¬± wa≈ºno¬∂ƒá., OK, )
 				return 1
 			)
 			else
@@ -6826,14 +6826,14 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 
 					if(a_group_id_fix == INVALID_GROUP_ID)
 					(
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Musisz byÊ na duty gangu aby zaatakowaÊ teren., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Musisz byƒá na duty gangu aby zaatakowaƒá teren., OK, )
 						return 1
 					)
 					if(d_group_id_fix == INVALID_GROUP_ID)
 					(
 						GangZoneInfo(gangzone_id)(gOwner) = a_group_id_fix
 						SaveGangZone(gangzone_id, SAVE_GZ_OWNER)
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Ten teren nie naleøy do nikogo dlatego sta≥es sie jego w≥aúcicielem., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Ten teren nie nale≈ºy do nikogo dlatego sta≈Çes sie jego w≈Ça≈õcicielem., OK, )
 						return 1
 					)
 
@@ -6858,7 +6858,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 
 					if(a_count * 2 ) d_count || a_count ( 3 || d_count ( 3)
 					(
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie ma wystarczajπco graczy do walki lub atakujacych jest 2 raz wiecej niø broniacych., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie ma wystarczajƒÖco graczy do walki lub atakujacych jest 2 raz wiecej ni≈º broniacych., OK, )
 						return 1
 					)
 
@@ -6866,12 +6866,12 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					(
 						if(Gangbang(gbid)(gbAttackingGroup) == a_group_id_fix)
 						(
-							ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Twoja grupa jest juø w walce!, OK, )
+							ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Twoja grupa jest ju≈º w walce!, OK, )
 							return 1
 						)
 						if(Gangbang(gbid)(gbDefendingGroup) == d_group_id_fix)
 						(
-							ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Ta grupa jest juø w walce!, OK, )
+							ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Ta grupa jest ju≈º w walce!, OK, )
 							return 1
 						)
 					)
@@ -6909,12 +6909,12 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				)
 				if(strlen(list_players))
 				(
-					ShowPlayerDialog(playerid, D_GZ_OFFER, DIALOG_STYLE_LIST, Gracze znajdujπcy siÍ w pobliøu:, list_players, Oferuj, Zamknij)
+					ShowPlayerDialog(playerid, D_GZ_OFFER, DIALOG_STYLE_LIST, Gracze znajdujƒÖcy siƒô w pobli≈ºu:, list_players, Oferuj, Zamknij)
 					return 1
 				)
 				else
 				(
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie znaleziono graczy w pobliøu., OK, )
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie znaleziono graczy w pobli≈ºu., OK, )
 					return 1
 				)
 			)
@@ -6922,14 +6922,14 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			(
 				// Poddaj terytorium
 				cmd_strefy(playerid, show)
-				ShowPlayerDialog(playerid, D_GZ_SURRENDER, DIALOG_STYLE_MSGBOX, Zarzπdzanie terenem, Czy jesteú pewny, øe chcesz pozbyÊ siÍ tego terenu?\nTa akcja jest nieodwracalna!, Tak, Nie)
+				ShowPlayerDialog(playerid, D_GZ_SURRENDER, DIALOG_STYLE_MSGBOX, ZarzƒÖdzanie terenem, Czy jeste≈õ pewny, ≈ºe chcesz pozbyƒá siƒô tego terenu?\nTa akcja jest nieodwracalna!, Tak, Nie)
 				return 1
 			)
 			else if(option == 4)
 			(
-				// Wydaj og≥oszenie
+				// Wydaj og≈Çoszenie
 				cmd_strefy(playerid, show)
-				ShowPlayerDialog(playerid, D_GZ_MSG, DIALOG_STYLE_INPUT, Zarzπdzanie terenem, Wpisz wiadomoúÊ do wys≥ania, OK, Anuluj)
+				ShowPlayerDialog(playerid, D_GZ_MSG, DIALOG_STYLE_INPUT, ZarzƒÖdzanie terenem, Wpisz wiadomo≈õƒá do wys≈Çania, OK, Anuluj)
 				return 1
 			)
 		)
@@ -6958,7 +6958,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			(
 				GangZoneInfo(gangzone_id)(gOwner) = 0
 				SaveGangZone(gangzone_id, SAVE_GZ_OWNER)
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Teren zosta≥ poddany., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Teren zosta≈Ç poddany., OK, )
 			)
 			else
 			(
@@ -6968,7 +6968,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		)
 		else
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Postanowi≥eπ anulowaÊ akcje., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Postanowi≈ÇeƒÖ anulowaƒá akcje., OK, )
 			return 1
 		)
 		return 1
@@ -6988,14 +6988,14 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 						(
 							if(IsPlayerInGangZone(i, gangzone_id))
 							(
-								SendClientMessage(i, COLOR_DO, ** Na miescie rozesz≥a siÍ nastÍpujπca plotka: **)
+								SendClientMessage(i, COLOR_DO, ** Na miescie rozesz≈Ça siƒô nastƒôpujƒÖca plotka: **)
 								SendClientMessage(i, COLOR_DO, inputtext)
 							)
 						)
 					)
 					else
 					(
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informajca, Nie masz uprawnieÒ do tej akcji., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informajca, Nie masz uprawnie≈Ñ do tej akcji., OK, )
 					)
 				)
 			)
@@ -7009,7 +7009,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 	(
 		if(response)
 		(
-			GuiMsg(playerid,Nie moøesz wymontowaÊ tego akcesorium z budynku.,1)
+			GuiMsg(playerid,Nie mo≈ºesz wymontowaƒá tego akcesorium z budynku.,1)
 		)
 		else
 		(
@@ -7030,7 +7030,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			
 			ReloadHomephones()
 			
-			GuiMsg(playerid,Zamontowa≥eú telefon stacjonarny w pomieszczeniu.,0)
+			GuiMsg(playerid,Zamontowa≈Çe≈õ telefon stacjonarny w pomieszczeniu.,0)
 		)
 		else
 		(
@@ -7046,7 +7046,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			string(128)
 			if(strlen(inputtext) ) 7 || strlen(inputtext) (= 0)
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Podany numer jest nieprawid≥owy., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Podany numer jest nieprawid≈Çowy., OK, )
 				return 1
 			)
 
@@ -7054,7 +7054,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 
 			if(HomePhones(phoneid)(hPhoneNumber) == number)
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Podany numer jest nieprawid≥owy., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Podany numer jest nieprawid≈Çowy., OK, )
 				return 1	
 			)
 
@@ -7107,19 +7107,19 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					doorid = GetPlayerDoorID(playerid)
 					if(doorid == INVALID_DOOR_ID)
 					(
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Aby skontaktowaÊ siÍ z hurtowniπ, musisz znajdowaÊ siÍ w budynku., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Aby skontaktowaƒá siƒô z hurtowniƒÖ, musisz znajdowaƒá siƒô w budynku., OK, )
 						return 1
 					)
 					if(DoorData(doorid)(dOwnerType) == OWNER_PLAYER && DoorData(doorid)(dOwner) != PlayerCache(playerid)(pUID))
 					(
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie jesteú wlaúcicielem tego budynku., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie jeste≈õ wla≈õcicielem tego budynku., OK, )
 						return 1
 					)
 					if(DoorData(doorid)(dOwnerType) == OWNER_GROUP)
 					(
 						if(!IsPlayerPermissedGroup(playerid, DoorData(doorid)(dOwner), PERM_ORDER))
 						(
-							ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie posiadasz odpowiednich uprawnieÒ do zamawiania produktÛw., OK, )
+							ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie posiadasz odpowiednich uprawnie≈Ñ do zamawiania produkt√≥w., OK, )
 							return 1
 						)
 					)
@@ -7143,11 +7143,11 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					mysql_free_result()
 					if(strlen(list_cat))
 					(
-						ShowPlayerDialog(playerid, D_PRODUCT_TYPE, DIALOG_STYLE_LIST, Wybierz kategoriÍ Ci odpowiadajπcπ:, list_cat, Wybierz, Anuluj)
+						ShowPlayerDialog(playerid, D_PRODUCT_TYPE, DIALOG_STYLE_LIST, Wybierz kategoriƒô Ci odpowiadajƒÖcƒÖ:, list_cat, Wybierz, Anuluj)
 					)
 					else
 					(
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie znaleziono øadnych kategorii., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie znaleziono ≈ºadnych kategorii., OK, )
 					)
 					return 1
 				)
@@ -7173,7 +7173,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 								)
 								if(workers)
 								(
-									format(list_taxi_corp, sizeof(list_taxi_corp), %s\n%d\t(na s≥uøbie %d)\t%s, list_taxi_corp, group_id_fix, workers, GroupData(group_id_fix)(gName))
+									format(list_taxi_corp, sizeof(list_taxi_corp), %s\n%d\t(na s≈Çu≈ºbie %d)\t%s, list_taxi_corp, group_id_fix, workers, GroupData(group_id_fix)(gName))
 								)
 							)
 						)
@@ -7184,11 +7184,11 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 						//SetPlayerSpecialAction(playerid, SPECIAL_ACTION_USECELLPHONE)
 						attachPlayerPhone(playerid)
 					
-						ShowPlayerDialog(playerid, D_SELECT_TAXI_CORP, DIALOG_STYLE_LIST, Korporacje taksÛwkarskie, list_taxi_corp, Dalej, Anuluj)
+						ShowPlayerDialog(playerid, D_SELECT_TAXI_CORP, DIALOG_STYLE_LIST, Korporacje taks√≥wkarskie, list_taxi_corp, Dalej, Anuluj)
 					)
 					else
 					(
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, W chwili obecnej nie ma øadnej taksÛwki na s≥uøbie., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, W chwili obecnej nie ma ≈ºadnej taks√≥wki na s≈Çu≈ºbie., OK, )
 					)
 					return 1
 				)
@@ -7198,8 +7198,8 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					//SetPlayerSpecialAction(playerid, SPECIAL_ACTION_USECELLPHONE)
 					attachPlayerPhone(playerid)
 					
-					SendClientMessage(playerid, COLOR_YELLOW, Sekretarka: Witaj, po≥πczy≥eú siÍ z numerem alarmowym centrali Los Santos, z kim po≥πczyÊ?)
-					ShowPlayerDialog(playerid, D_ALARM_NUMBER, DIALOG_STYLE_LIST, Z kim chcesz siÍ po≥πczyÊ?, Los Santos Police Department\nLos Santos Medical Center\nLos Santos Fire Department\nDepartment Of Sanitation Electricity, Wybierz, Anuluj)
+					SendClientMessage(playerid, COLOR_YELLOW, Sekretarka: Witaj, po≈ÇƒÖczy≈Çe≈õ siƒô z numerem alarmowym centrali Los Santos, z kim po≈ÇƒÖczyƒá?)
+					ShowPlayerDialog(playerid, D_ALARM_NUMBER, DIALOG_STYLE_LIST, Z kim chcesz siƒô po≈ÇƒÖczyƒá?, Los Santos Police Department\nLos Santos Medical Center\nLos Santos Fire Department\nDepartment Of Sanitation Electricity, Wybierz, Anuluj)
 					return 1
 				)
 				if(number == 444)
@@ -7208,13 +7208,13 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					//SetPlayerSpecialAction(playerid, SPECIAL_ACTION_USECELLPHONE)
 					attachPlayerPhone(playerid)
 
-					ShowPlayerDialog(playerid, D_SN_CALL, DIALOG_STYLE_INPUT, Los Santos News, Dodzwoni≥eú siÍ do radiostacji w Los Santos.\nPowiedz nam po krÛtce w czym rzecz., Dalej, Anuluj)
+					ShowPlayerDialog(playerid, D_SN_CALL, DIALOG_STYLE_INPUT, Los Santos News, Dodzwoni≈Çe≈õ siƒô do radiostacji w Los Santos.\nPowiedz nam po kr√≥tce w czym rzecz., Dalej, Anuluj)
 					return 1
 				)
 			)
 			else if(number ) 99999 && number (= 999999)
 			(
-				// Dzwoni na komÛrkÍ
+				// Dzwoni na kom√≥rkƒô
 				foreach(Player, i)
 				(
 					if(Logged(i) && Spawned(i))
@@ -7223,7 +7223,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 						(
 							if(PlayerCache(i)(pCall) != -1)
 							(
-								SendClientMessage(playerid, COLOR_DO, ** S≥ychaÊ sygna≥ zajÍtoúci... **)
+								SendClientMessage(playerid, COLOR_DO, ** S≈Çychaƒá sygna≈Ç zajƒôto≈õci... **)
 							)
 							else
 							(
@@ -7242,7 +7242,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			(
 				if(HomePhones(phoneid)(hphoneBusy))
 				(
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, B≥πd, Ktoú juø uøywa tego telefonu., OK, )
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, B≈ÇƒÖd, Kto≈õ ju≈º u≈ºywa tego telefonu., OK, )
 					EndCall(callid)
 					return 0
 				)
@@ -7258,7 +7258,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					(
 						if(CanPlayerHearHomephone(i, Call(callid)(calledDevID)))
 						(
-							SendClientMessage(i, COLOR_DO, ** S≥ychaÊ düwiÍk dzwoniπcego telefonu domowego. **)
+							SendClientMessage(i, COLOR_DO, ** S≈Çychaƒá d≈∫wiƒôk dzwoniƒÖcego telefonu domowego. **)
 							PlayerPlaySound(i, 20600, 0.0, 0.0, 0.0)
 						)
 					)
@@ -7271,7 +7271,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					(
 						if(CanPlayerHearPhone(i, Call(callid)(calledDevID)))
 						(
-							SendClientMessage(i, COLOR_DO, ** S≥yszysz dºwiÍk telefonu w pobliøu. Brzmi jak budka telefoniczna. **)
+							SendClientMessage(i, COLOR_DO, ** S≈Çyszysz dƒΩwiƒôk telefonu w pobli≈ºu. Brzmi jak budka telefoniczna. **)
 							PlayerPlaySound(i, 20600, 0.0, 0.0, 0.0)
 						)
 					)
@@ -7279,8 +7279,8 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				)
 				else if(Call(callid)(calledDevice) == DEVICE_CELL)
 				(
-					// Dzwonek komÛrki dla gracza
-					format(string, sizeof(string), * S≥ychaÊ düwiÍk dzwoniπcego telefonu. (( %s )), PlayerName(Call(callid)(called)))
+					// Dzwonek kom√≥rki dla gracza
+					format(string, sizeof(string), * S≈Çychaƒá d≈∫wiƒôk dzwoniƒÖcego telefonu. (( %s )), PlayerName(Call(callid)(called)))
 					ProxDetector(10.0, Call(callid)(called), string, COLOR_DO, COLOR_DO, COLOR_DO, COLOR_DO, COLOR_DO, false)
 
 					// Audio dzwonka
@@ -7293,7 +7293,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 						(
 							if(IsPlayerInRangeOfPoint(player, 10.0, PosX, PosY, PosZ))
 							(
-								// Miejsce na düwiÍk dzwonienia telefonu
+								// Miejsce na d≈∫wiƒôk dzwonienia telefonu
 								//audio = Audio_Play(player, AUDIO_CALLING)
 								//Audio_Set3DPosition(player, audio, PosX, PosY, PosZ, 10.0)
 							)
@@ -7307,9 +7307,9 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 
 				HomePhones(phoneid)(hphoneBusy) = true
 
-				SendClientMessage(playerid, COLOR_DO, * S≥ychaÊ sygna≥ prÛby po≥πczenia siÍ... *)
+				SendClientMessage(playerid, COLOR_DO, * S≈Çychaƒá sygna≈Ç pr√≥by po≈ÇƒÖczenia siƒô... *)
 
-				format(string, sizeof(string), Po≥πczenie przychodzπce od %d, uøyj /odbierz, by odebraÊ rozmowÍ., HomePhones(phoneid)(hPhoneNumber))
+				format(string, sizeof(string), Po≈ÇƒÖczenie przychodzƒÖce od %d, u≈ºyj /odbierz, by odebraƒá rozmowƒô., HomePhones(phoneid)(hPhoneNumber))
 				SendClientMessage(Call(callid)(called), COLOR_YELLOW, string)
 				
 				PlayerCache(playerid)(pCall) = callid
@@ -7318,7 +7318,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				return 1
 			)
 
-			SendClientMessage(playerid, COLOR_DO, * Nie moøna po≥πczyÊ siÍ z wybranym numerem...)
+			SendClientMessage(playerid, COLOR_DO, * Nie mo≈ºna po≈ÇƒÖczyƒá siƒô z wybranym numerem...)
 			
 		)
 		else
@@ -7331,7 +7331,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		if(response)
 		(
 			vehicle = GetPlayerVehicleID(playerid)
-			//dodaj moøliwoúÊ wyciπgania dodatkÛw do EQ.
+			//dodaj mo≈ºliwo≈õƒá wyciƒÖgania dodatk√≥w do EQ.
 			//listitem
 			buffer(256)
 			format(buffer,sizeof(buffer),SELECT item_uid,item_name FROM hrp_items WHERE item_vehuid=%i AND item_type=%i,CarInfo(vehicle)(cUID),ITEM_TUNEPART)
@@ -7348,9 +7348,9 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					MainPlayerTable(playerid) = uid
 					
 					msg(128)
-					format(msg,sizeof(msg),Czy na pewno chcesz wyciπgnπÊ %s z tego pojazdu?,name)
+					format(msg,sizeof(msg),Czy na pewno chcesz wyciƒÖgnƒÖƒá %s z tego pojazdu?,name)
 					
-					ShowPlayerDialog(playerid,D_VEH_ADDON_DISMOUNT,DIALOG_STYLE_MSGBOX,Demontaø,msg,Tak,Nie)
+					ShowPlayerDialog(playerid,D_VEH_ADDON_DISMOUNT,DIALOG_STYLE_MSGBOX,Demonta≈º,msg,Tak,Nie)
 					break
 				)
 				else
@@ -7380,7 +7380,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			
 			LoadVehicleTune(GetPlayerVehicleID(playerid))	
 			
-			GuiMsg(playerid,Wyciπgnπ≥eú wskazane akcesorium z pojazdu.,0)
+			GuiMsg(playerid,WyciƒÖgnƒÖ≈Çe≈õ wskazane akcesorium z pojazdu.,0)
 		)
 		else
 		(
@@ -7409,7 +7409,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		(
 			//tworz
 			PlayerCache(playerid)(pPressStage) = 1
-			ShowPlayerDialog(playerid,D_WBC_WRITE,DIALOG_STYLE_INPUT,Redakcja: akapit 1,Wprowadü poniøej treúÊ pierwszego akapitu, maksymalnie moøna utworzyÊ osiem akapitÛw.,Gotowe,Anuluj)
+			ShowPlayerDialog(playerid,D_WBC_WRITE,DIALOG_STYLE_INPUT,Redakcja: akapit 1,Wprowad≈∫ poni≈ºej tre≈õƒá pierwszego akapitu, maksymalnie mo≈ºna utworzyƒá osiem akapit√≥w.,Gotowe,Anuluj)
 		)
 		else
 		(
@@ -7422,7 +7422,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		(
 			if(PlayerCache(playerid)(pPressStage) ) 8)
 			(
-				ShowPlayerDialog(playerid,D_WBC_TITLE,DIALOG_STYLE_INPUT,Redakcja: finalizacja,ZakoÒcz pisanie artyku≥u poprzez wpisanie jego tytu≥u.,Gotowe,Anuluj)
+				ShowPlayerDialog(playerid,D_WBC_TITLE,DIALOG_STYLE_INPUT,Redakcja: finalizacja,Zako≈Ñcz pisanie artyku≈Çu poprzez wpisanie jego tytu≈Çu.,Gotowe,Anuluj)
 				return 1
 			)
 			
@@ -7441,7 +7441,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				)
 				case 9:
 				(
-					ShowPlayerDialog(playerid,D_WBC_TITLE,DIALOG_STYLE_INPUT,Redakcja: finalizacja,ZakoÒcz pisanie artyku≥u poprzez wpisanie jego tytu≥u.,Gotowe,Anuluj)
+					ShowPlayerDialog(playerid,D_WBC_TITLE,DIALOG_STYLE_INPUT,Redakcja: finalizacja,Zako≈Ñcz pisanie artyku≈Çu poprzez wpisanie jego tytu≈Çu.,Gotowe,Anuluj)
 				)
 			)
 			
@@ -7450,11 +7450,11 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			title(32)
 			format(title,sizeof(title),Redakcja %i/8,PlayerCache(playerid)(pPressStage))
 			
-			ShowPlayerDialog(playerid,D_WBC_WRITE,DIALOG_STYLE_INPUT,title,Wprowadü poniøej treúÊ nastÍpnego akapitu.,Gotowe,Anuluj)
+			ShowPlayerDialog(playerid,D_WBC_WRITE,DIALOG_STYLE_INPUT,title,Wprowad≈∫ poni≈ºej tre≈õƒá nastƒôpnego akapitu.,Gotowe,Anuluj)
 		)
 		else
 		(
-			ShowPlayerDialog(playerid,D_WBC_TITLE,DIALOG_STYLE_INPUT,Redakcja: finalizacja,ZakoÒcz pisanie artyku≥u poprzez wpisanie jego tytu≥u.,Gotowe,Anuluj)
+			ShowPlayerDialog(playerid,D_WBC_TITLE,DIALOG_STYLE_INPUT,Redakcja: finalizacja,Zako≈Ñcz pisanie artyku≈Çu poprzez wpisanie jego tytu≈Çu.,Gotowe,Anuluj)
 		)
 	)
 	if(dialogid == D_WBC_TITLE)
@@ -7463,7 +7463,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		(
 			if(strlen(WBCpress) (= 1)
 			(
-				GuiMsg(playerid,Tekst, ktÛry utworzy≥eú jest zdecydowanie za krÛtki by go opublikowaÊ.,0)
+				GuiMsg(playerid,Tekst, kt√≥ry utworzy≈Çe≈õ jest zdecydowanie za kr√≥tki by go opublikowaƒá.,0)
 				return 1
 			)
 			
@@ -7475,11 +7475,11 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			
 			InsertNews(playerid,toTitle)
 			
-			GuiMsg(playerid,ZakoÒczy≥eú proces redagowania kolejnej czÍúci Los Santos Times.,0)
+			GuiMsg(playerid,Zako≈Ñczy≈Çe≈õ proces redagowania kolejnej czƒô≈õci Los Santos Times.,0)
 		)
 		else
 		(
-			GuiMsg(playerid,Przerwa≥eú redagowanie kolejnego wydania Los Santos Times.,0)
+			GuiMsg(playerid,Przerwa≈Çe≈õ redagowanie kolejnego wydania Los Santos Times.,0)
 			return 1
 		)
 	)
@@ -7489,7 +7489,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		(
 			if(PlayerCache(playerid)(pCash) ( 3)
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie posiadasz takiej iloúci gotÛwki., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie posiadasz takiej ilo≈õci got√≥wki., OK, )
 				return 1
 			)
 			
@@ -7542,7 +7542,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				GroupData(group_id_fix)(gCash) += 3
 			)
 			
-			GuiMsg(playerid,Kupi≥eú gazetÍ, powinna pojawiÊ siÍ w Twoim ekwipunku.,0)
+			GuiMsg(playerid,Kupi≈Çe≈õ gazetƒô, powinna pojawiƒá siƒô w Twoim ekwipunku.,0)
 		)
 		else
 		(
@@ -7557,7 +7557,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			(
 				if( PlayerCache(playerid)(pSpreadTime) ) 0 )
 				(
-					GuiMsg(playerid,Musisz chwilÍ odczekaÊ zanim rozwieziesz kolejnπ paczkÍ.,1)
+					GuiMsg(playerid,Musisz chwilƒô odczekaƒá zanim rozwieziesz kolejnƒÖ paczkƒô.,1)
 					return 1
 				)
 				
@@ -7573,7 +7573,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				PlayerCache(playerid)(pSpread) = true
 				PlayerCache(playerid)(pSpreadTime) = 60
 				
-				GuiMsg(playerid,Rozpoczπ≥eú w≥asnie rozwoøenie gazet, udaj siÍ do wskazanego punktu by dostarczyÊ gazety do pojemnika\n\nGdy dojedziesz na miejsce uøyj komendy (FF0000)/gazety,0)
+				GuiMsg(playerid,RozpoczƒÖ≈Çe≈õ w≈Çasnie rozwo≈ºenie gazet, udaj siƒô do wskazanego punktu by dostarczyƒá gazety do pojemnika\n\nGdy dojedziesz na miejsce u≈ºyj komendy (FF0000)/gazety,0)
 			)
 		)
 		else
@@ -7599,7 +7599,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				if(new_name(i) ==  ) new_name(i) = _
 			)
 			
-			//dodaj do logÛw info o zmianie nicku
+			//dodaj do log√≥w info o zmianie nicku
 			log(256)
 			format(log,sizeof(log),(info) (fakepapers) Gracz %s (UID: %i) zmienil swoj nick na %s ,PlayerName(playerid),PlayerCache(playerid)(pUID),new_name)
 			print(log)
@@ -7609,7 +7609,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			
 			SetPlayerName(playerid,new_name)
 			
-			GuiMsg(playerid,Zmieni≥es swoje personalia.,1)
+			GuiMsg(playerid,Zmieni≈Çes swoje personalia.,1)
 		)
 		else
 		(
@@ -7623,7 +7623,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			hour = strval(inputtext)
 			if(hour ) 24 || hour ( 0)
 			(
-				GuiMsg(playerid,Wprowadzono b≥Ídnπ godzinÍ, nie moøe byÊ ona mniejsza od 0 i wiÍksza od 24,1)
+				GuiMsg(playerid,Wprowadzono b≈ÇƒôdnƒÖ godzinƒô, nie mo≈ºe byƒá ona mniejsza od 0 i wiƒôksza od 24,1)
 				return 1
 			)
 			
@@ -7665,13 +7665,13 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			group_id_fix = GetPlayerDutyGroupID(playerid)
 			if(group_id_fix == INVALID_GROUP_ID)
 			(
-				GuiMsg(playerid, Musisz byÊ na duty grupy, ktÛr± chcesz wydaÊ kartÍ.,1)
+				GuiMsg(playerid, Musisz byƒá na duty grupy, kt√≥r¬± chcesz wydaƒá kartƒô.,1)
 				return 1
 			)
 
 			if(!IsPlayerPermissedGroup(playerid, GroupData(group_id_fix)(gUID), PERM_LEADER))
 			(
-				GuiMsg(playerid, Nie jeste∂ liderem tej grupy!,1)
+				GuiMsg(playerid, Nie jeste¬∂ liderem tej grupy!,1)
 				return 1
 			)
 
@@ -7680,7 +7680,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			ItemInfo(itemid)(iValue1) = cardid
 
 			mysql_query_format(UPDATE hrp_items SET item_value1 = %d WHERE item_uid = %d LIMIT 1, ItemInfo(itemid)(iValue1), ItemInfo(itemid)(iUID))
-			GuiMsg(playerid, Twoja karta zosta≥a poprawnie stworzona, 1)
+			GuiMsg(playerid, Twoja karta zosta≈Ça poprawnie stworzona, 1)
 
 			MainPlayerTable(playerid) = 0
 			return 1
@@ -7715,15 +7715,15 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			
 			if(!strcmp(charName, PlayerCache(playerid)(pName), true))
 			(
-				GuiMsg(playerid,Przecieø wlaúnie jesteú zalogowany na tej postaci.,1)
+				GuiMsg(playerid,Przecie≈º wla≈õnie jeste≈õ zalogowany na tej postaci.,1)
 				return 1
 			)
 			
 			string(256)
-			format(string,sizeof(string),(( Gracz %s prze≥πcza siÍ w≥aúnie miÍdzy postaciami )),PlayerName(playerid))
+			format(string,sizeof(string),(( Gracz %s prze≈ÇƒÖcza siƒô w≈Ça≈õnie miƒôdzy postaciami )),PlayerName(playerid))
 			ProxDetector(50, playerid, string, COLOR_GREY, COLOR_GREY, COLOR_FADE3, COLOR_FADE4, COLOR_FADE5, true)
 			
-			GuiMsg(playerid,Poczekaj chwilÍ, proces przejúcia miÍdzy postaciπ trwa chwilÍ...,0)
+			GuiMsg(playerid,Poczekaj chwilƒô, proces przej≈õcia miƒôdzy postaciƒÖ trwa chwilƒô...,0)
 			SetPlayerName(playerid,charName)
 			SetTimerEx(SetPlayerToChangeChar,100,false,i,playerid)
 		)
@@ -7751,7 +7751,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			
 			if(checkedid == INVALID_PLAYER_ID)
 			(
-				GuiMsg(playerid,Brak wynikÛw dla podanych personaliÛw.,1)
+				GuiMsg(playerid,Brak wynik√≥w dla podanych personali√≥w.,1)
 				return 1
 			)
 			
@@ -7785,11 +7785,11 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			
 			if(PlayerCache(playerid)(pInterface) == INTERFACE_TYPE_GRAPHIC)
 			(
-				GuiMsg(playerid,Zmieni≥eú typ swojego interfejsu na graficzny.,0)
+				GuiMsg(playerid,Zmieni≈Çe≈õ typ swojego interfejsu na graficzny.,0)
 			)
 			else
 			(
-				GuiMsg(playerid,Zmieni≥eú typ swojego interfejsu na tekstowy.,0)
+				GuiMsg(playerid,Zmieni≈Çe≈õ typ swojego interfejsu na tekstowy.,0)
 			)
 		)
 		else
@@ -7810,17 +7810,17 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			zone = GetPlayerZoneID(playerid)
 			if(!IsPlayerInGroup(playerid, ZoneInfo(zone)(zOwner)))
 			(
-				GuiMsg(playerid, Nie jesteú cz≥onkiem organizacji, do ktÛrej naleøy ten teren., 1)
+				GuiMsg(playerid, Nie jeste≈õ cz≈Çonkiem organizacji, do kt√≥rej nale≈ºy ten teren., 1)
 				return 1
 			)
 			if(!IsPlayerPermissedGroup(playerid, ZoneInfo(zone)(zOwner), PERM_LEADER))
 			(
-				GuiMsg(playerid, Musisz posiadaÊ uprawnienia lidera, by mÛc zarzπdzaÊ terenem., 1)
+				GuiMsg(playerid, Musisz posiadaƒá uprawnienia lidera, by m√≥c zarzƒÖdzaƒá terenem., 1)
 				return 1
 			)
 			if(ZoneInfo(zone)(zType) == ZONE_TYPE_MAIN)
 			(
-				GuiMsg(playerid, Nie moøesz zarzπdzaÊ strefπ, ktÛra jest sercem Twojej organizacji., 1)
+				GuiMsg(playerid, Nie mo≈ºesz zarzƒÖdzaƒá strefƒÖ, kt√≥ra jest sercem Twojej organizacji., 1)
 				return 1
 			)
 
@@ -7865,11 +7865,11 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					
 					if(!strlen(personList))
 					(
-						GuiMsg(playerid, Nie znaleziono øadnej pasujπcej osoby w pobliøu., 1)
+						GuiMsg(playerid, Nie znaleziono ≈ºadnej pasujƒÖcej osoby w pobli≈ºu., 1)
 					)
 					else
 					(
-						ShowPlayerDialog(playerid, D_ZONE_OFFER, DIALOG_STYLE_LIST, Oddaj strefÍ, personList, Wybierz, Anuluj)
+						ShowPlayerDialog(playerid, D_ZONE_OFFER, DIALOG_STYLE_LIST, Oddaj strefƒô, personList, Wybierz, Anuluj)
 					)
 				)
 				// Jesli to odkomentowuejsz to pamietaj o zmianie numeracji i zmianie wszystkich wywolan D_ZONE_MENU
@@ -7880,7 +7880,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					ZoneInfo(zoneid)(zOwner) = 0
 					ZoneInfo(zoneid)(zType) = 0
 					
-					GuiMsg(playerid, Twoja organizacja opuúci≥a teren, na ktÛrym aktualnie jesteú., 1)
+					GuiMsg(playerid, Twoja organizacja opu≈õci≈Ça teren, na kt√≥rym aktualnie jeste≈õ., 1)
 					
 					ReloadZones() // na koniec
 				)*/
@@ -7890,7 +7890,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					zoneid = GetPlayerZoneID(playerid)
 					if(!ZoneInfo(zoneid)(zPackage))
 					(
-						GuiMsg(playerid, Odebrano juø paczkÍ z tej strefy., 1)
+						GuiMsg(playerid, Odebrano ju≈º paczkƒô z tej strefy., 1)
 						return 1
 					)
 					
@@ -7898,7 +7898,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					(
 						case ZONE_TYPE_NONE:
 						(
-							GuiMsg(playerid, Ten teren nie posiada øadnego bonusa., 1)
+							GuiMsg(playerid, Ten teren nie posiada ≈ºadnego bonusa., 1)
 							return 1
 						)
 						case ZONE_TYPE_MONEY:
@@ -7910,7 +7910,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 								goto loss
 							)
 							
-							GuiMsg(playerid, Odpakowa≥eú paczkÍ, wewnπtrz znajduje siÍ trochÍ kasy., 1)
+							GuiMsg(playerid, Odpakowa≈Çe≈õ paczkƒô, wewnƒÖtrz znajduje siƒô trochƒô kasy., 1)
 							
 							hrp_GivePlayerMoney(playerid, rand)
 							ZoneInfo(zoneid)(zPackage) = false
@@ -7959,7 +7959,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 										)
 										case 55..56:
 										(
-											CreatePlayerItem(playerid, T≥umik, 74, 0, 0)
+											CreatePlayerItem(playerid, T≈Çumik, 74, 0, 0)
 										)
 										case 57..65:
 										(
@@ -7999,7 +7999,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 										)
 										case 55..56:
 										(
-											CreatePlayerItem(playerid, T≥umik, 74, 0, 0)
+											CreatePlayerItem(playerid, T≈Çumik, 74, 0, 0)
 										)
 										case 57..65:
 										(
@@ -8015,11 +8015,11 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 							
 							if(!isEmpty)
 							(
-								GuiMsg(playerid, Odpakowa≥eú paczkÍ, wewnπtrz znalaz≥eú broÒ.\nTeraz znajduje siÍ w Twoim ekwipunku., 0)
+								GuiMsg(playerid, Odpakowa≈Çe≈õ paczkƒô, wewnƒÖtrz znalaz≈Çe≈õ bro≈Ñ.\nTeraz znajduje siƒô w Twoim ekwipunku., 0)
 							)
 							else
 							(
-								GuiMsg(playerid, Odpakowa≥eú paczkÍ, okaza≥o siÍ, øe jest pusta!, 0)
+								GuiMsg(playerid, Odpakowa≈Çe≈õ paczkƒô, okaza≈Ço siƒô, ≈ºe jest pusta!, 0)
 							)
 							
 							ZoneInfo(zoneid)(zPackage) = false
@@ -8047,7 +8047,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 								)
 								case 46..51:		// heroina 4
 								(
-									CreatePlayerItem(playerid, Brπzowa heroina (4g),25,3,4)
+									CreatePlayerItem(playerid, BrƒÖzowa heroina (4g),25,3,4)
 								)
 								case 52..63:		//amfetamina 2g
 								(
@@ -8067,12 +8067,12 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 								)
 							)
 						
-							GuiMsg(playerid, Otworzy≥eú paczkÍ, wewnπtrz by≥o trochÍ narkotyku.\nPojawi≥ siÍ on w Twoim ekwipunku., 1)
+							GuiMsg(playerid, Otworzy≈Çe≈õ paczkƒô, wewnƒÖtrz by≈Ço trochƒô narkotyku.\nPojawi≈Ç siƒô on w Twoim ekwipunku., 1)
 							ZoneInfo(zoneid)(zPackage) = false
 						)
 						case ZONE_TYPE_MAIN:
 						(
-							GuiMsg(playerid, Ten teren nie generuje øadnych paczek., 1)
+							GuiMsg(playerid, Ten teren nie generuje ≈ºadnych paczek., 1)
 							return 1
 						)
 					)
@@ -8121,10 +8121,10 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				MainPlayerTable(offeredto) = playerid
 				
 				message(128)
-				format(message, sizeof(message), Zaoferowa≥eú graczowi %s strefÍ, na ktÛrej aktualnie jesteú, poczekaj na jego odpowiedü., PlayerName(offeredto))
+				format(message, sizeof(message), Zaoferowa≈Çe≈õ graczowi %s strefƒô, na kt√≥rej aktualnie jeste≈õ, poczekaj na jego odpowied≈∫., PlayerName(offeredto))
 				SendClientMessage(playerid, COLOR_KREM, message)
 				
-				format(message, sizeof(message), Gracz %s zaoferowa≥ Ci teren na ktÛrym teraz stoisz, czy chcesz go przejπÊ?, PlayerName(playerid))
+				format(message, sizeof(message), Gracz %s zaoferowa≈Ç Ci teren na kt√≥rym teraz stoisz, czy chcesz go przejƒÖƒá?, PlayerName(playerid))
 				ShowPlayerDialog(offeredto, D_ZONE_GIVE, DIALOG_STYLE_MSGBOX, Oferta, message, Tak, Nie)
 			)
 		)
@@ -8140,10 +8140,10 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		if(response)
 		(
 			message(128)
-			format(message, sizeof(message), Gracz %s akceptowa≥ ofertÍ przejÍcia terenu., PlayerName(playerid))
+			format(message, sizeof(message), Gracz %s akceptowa≈Ç ofertƒô przejƒôcia terenu., PlayerName(playerid))
 			SendClientMessage(offerer, COLOR_KREM, message)
 			
-			GuiMsg(playerid, Akceptowa≥eú ofertÍ, od teraz dzielnica naleøy do Ciebie., 0)
+			GuiMsg(playerid, Akceptowa≈Çe≈õ ofertƒô, od teraz dzielnica nale≈ºy do Ciebie., 0)
 			
 			group_id_fix, gSlot = 0
 			for (slot = 0 slot ( MAX_GROUP_SLOTS slot++)
@@ -8166,10 +8166,10 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		else
 		(
 			message(128)
-			format(message, sizeof(message), Gracz %s odrzuci≥ ofertÍ przejÍcia terenu., PlayerName(playerid))
+			format(message, sizeof(message), Gracz %s odrzuci≈Ç ofertƒô przejƒôcia terenu., PlayerName(playerid))
 			
 			SendClientMessage(offerer, COLOR_KREM, message)
-			GuiMsg(playerid, Odrzuci≥eú ofertÍ., 0)
+			GuiMsg(playerid, Odrzuci≈Çe≈õ ofertƒô., 0)
 			return 1
 		)
 	)
@@ -8181,7 +8181,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			
 			if(ItemInfo(item_id)(iUsed))
 			(
-				GuiMsg(playerid, Nie moøesz za≥oøyÊ t≥umika podczas, gdy uøywasz tej broni., 1)
+				GuiMsg(playerid, Nie mo≈ºesz za≈Ço≈ºyƒá t≈Çumika podczas, gdy u≈ºywasz tej broni., 1)
 				return 1
 			)
 			
@@ -8220,7 +8220,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				)
 			)
 			
-			GuiMsg(playerid, Za≥oøy≥eú t≥umik na wskazanπ broÒ., 0)
+			GuiMsg(playerid, Za≈Ço≈ºy≈Çe≈õ t≈Çumik na wskazanƒÖ bro≈Ñ., 0)
 		)
 		else
 		(
@@ -8235,36 +8235,36 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			
 			if(ItemInfo(item_id)(iUsed))
 			(
-				GuiMsg(playerid, Nie moøesz zdjπÊ t≥umika z uøywanej broni., 1)
+				GuiMsg(playerid, Nie mo≈ºesz zdjƒÖƒá t≈Çumika z u≈ºywanej broni., 1)
 				return 1
 			)
 			
 			if(!strfind(ItemInfo(item_id)(iName), (F), true))
 			(
 				CreatePlayerItem(playerid, (F) Pistolet, ITEM_WEAPON, 22, ItemInfo(item_id)(iValue2))
-				CreatePlayerItem(playerid, T≥umik, ITEM_SILENCER, 0, 0)
+				CreatePlayerItem(playerid, T≈Çumik, ITEM_SILENCER, 0, 0)
 			)
 			else if(!strfind(ItemInfo(item_id)(iName), (G), true))
 			(
 				CreatePlayerItem(playerid, (G) Pistolet, ITEM_WEAPON, 22, ItemInfo(item_id)(iValue2))
-				CreatePlayerItem(playerid, T≥umik, ITEM_SILENCER, 0, 0)
+				CreatePlayerItem(playerid, T≈Çumik, ITEM_SILENCER, 0, 0)
 			)
 			else if(!strfind(ItemInfo(item_id)(iName), (H), true))
 			(
 				CreatePlayerItem(playerid, (H) Pistolet, ITEM_WEAPON, 22, ItemInfo(item_id)(iValue2))
-				CreatePlayerItem(playerid, T≥umik, ITEM_SILENCER, 0, 0)
+				CreatePlayerItem(playerid, T≈Çumik, ITEM_SILENCER, 0, 0)
 			)
 			else
 			(
 				CreatePlayerItem(playerid, Pistolet, ITEM_WEAPON, 22, ItemInfo(item_id)(iValue2))
-				CreatePlayerItem(playerid, T≥umik, ITEM_SILENCER, 0, 0)
+				CreatePlayerItem(playerid, T≈Çumik, ITEM_SILENCER, 0, 0)
 			)
 			
 			//CreatePlayerItem(playerid, Pistolet, ITEM_WEAPON, 22, ItemInfo(item_id)(iValue2))
-			//CreatePlayerItem(playerid, T≥umik, ITEM_SILENCER, 0, 0)
+			//CreatePlayerItem(playerid, T≈Çumik, ITEM_SILENCER, 0, 0)
 			DeleteItem(item_uid)
 			
-			GuiMsg(playerid, Zdjπ≥eú t≥umik ze wskazanej broni., 0)
+			GuiMsg(playerid, ZdjƒÖ≈Çe≈õ t≈Çumik ze wskazanej broni., 0)
 		)
 		else
 		(
@@ -8309,7 +8309,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			)
 			
 			PlayerCache(playerid)(pEMatSize) = matsize
-			ShowPlayerDialog(playerid, D_TEXT_FONTFACE, DIALOG_STYLE_LIST, Wybierz czcionkÍ, 1. Arial\n2. Tahoma\n3. Times New Roman\n4. Diploma\n5. Beckett\n6. Impact, Wybierz, Anuluj)
+			ShowPlayerDialog(playerid, D_TEXT_FONTFACE, DIALOG_STYLE_LIST, Wybierz czcionkƒô, 1. Arial\n2. Tahoma\n3. Times New Roman\n4. Diploma\n5. Beckett\n6. Impact, Wybierz, Anuluj)
 		)
 		else
 		(
@@ -8372,7 +8372,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			)
 			
 			// dialog
-			ShowPlayerDialog(playerid, D_TEXT_FONTSIZE, DIALOG_STYLE_LIST, WielkoúÊ tekstu, 12 px\n18 px\n24px\n32 px\n40 px\n50 px\n55 px\n62 px\n67 px\n72 px, Wybierz, Anuluj)
+			ShowPlayerDialog(playerid, D_TEXT_FONTSIZE, DIALOG_STYLE_LIST, Wielko≈õƒá tekstu, 12 px\n18 px\n24px\n32 px\n40 px\n50 px\n55 px\n62 px\n67 px\n72 px, Wybierz, Anuluj)
 		)
 		else
 		(
@@ -8386,7 +8386,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			textsize = strval(inputtext)
 			PlayerCache(playerid)(pEMatFontSize) = textsize
 			//dialog
-			ShowPlayerDialog(playerid, D_TEXT_TEXT, DIALOG_STYLE_INPUT, Wpisz tekst, Poniøej wprowadü ciπg znakÛw, ktÛry ma siÍ pojawiÊ na edytowanym obiekcie., Gotowe, Anuluj)
+			ShowPlayerDialog(playerid, D_TEXT_TEXT, DIALOG_STYLE_INPUT, Wpisz tekst, Poni≈ºej wprowad≈∫ ciƒÖg znak√≥w, kt√≥ry ma siƒô pojawiƒá na edytowanym obiekcie., Gotowe, Anuluj)
 		)
 		else
 		(
@@ -8400,7 +8400,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			// Sprawdzenie tekstu - bo crashe
 			if(strlen(inputtext) ) 32)
 			(
-				GuiMsg(playerid, Wprowadzony ciπg znakÛw jest za d≥ugi!, 1)
+				GuiMsg(playerid, Wprowadzony ciƒÖg znak√≥w jest za d≈Çugi!, 1)
 				return 1
 			)
 			
@@ -8471,11 +8471,11 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			
 			if(itemcount == 0)
 			(
-				GuiMsg(playerid, Nie posiadasz øadnej ryby w swoim ekwipunku., 1)
+				GuiMsg(playerid, Nie posiadasz ≈ºadnej ryby w swoim ekwipunku., 1)
 				return 1
 			)
 			
-			ShowPlayerDialog(playerid, D_FISH_MARKET, DIALOG_STYLE_LIST, Handlarz ª sprzedaj, itemlist, Wybierz, Anuluj)
+			ShowPlayerDialog(playerid, D_FISH_MARKET, DIALOG_STYLE_LIST, Handlarz ¬ª sprzedaj, itemlist, Wybierz, Anuluj)
 		)
 		else
 		(
@@ -8500,7 +8500,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			)
 			
 			msg(128)
-			format(msg, sizeof(msg), Sprzeda≥es rybÍ!\nZarobi≥eú w≥aúnie $%d, brawo., fish_price)
+			format(msg, sizeof(msg), Sprzeda≈Çes rybƒô!\nZarobi≈Çe≈õ w≈Ça≈õnie $%d, brawo., fish_price)
 			GuiMsg(playerid, msg, 0)
 			
 			DeleteItem(fish_uid)
@@ -8523,7 +8523,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		if(response)
 		(
 			PlayerCache(playerid)(pJob) = JOB_SCOURER
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Przyjπ≥eú pracÍ dorywczπ czyúciciela tagÛw, uøywaj komendy /czysc, OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, PrzyjƒÖ≈Çe≈õ pracƒô dorywczƒÖ czy≈õciciela tag√≥w, u≈ºywaj komendy /czysc, OK, )
 		)
 		else
 		(
@@ -8538,21 +8538,21 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			(
 				case 0:
 				(
-					// podejdü do egzaminu
+					// podejd≈∫ do egzaminu
 					if(!(PlayerCache(playerid)(pDocuments) & DOC_DRIVER))
 					(
-						ShowPlayerDialog(playerid, D_HALL_START_RIDE, DIALOG_STYLE_MSGBOX, Urzπd ª start egzaminu, W≥aúnie chcesz rozpoczπÊ kurs prawa jazdy, polega on na przejechaniu trasy.\nKoszt egzaminu wynosi $400., Akceptuj, Zamknij)
+						ShowPlayerDialog(playerid, D_HALL_START_RIDE, DIALOG_STYLE_MSGBOX, UrzƒÖd ¬ª start egzaminu, W≈Ça≈õnie chcesz rozpoczƒÖƒá kurs prawa jazdy, polega on na przejechaniu trasy.\nKoszt egzaminu wynosi $400., Akceptuj, Zamknij)
 					)
 					else
 					(
-						GuiMsg(playerid, Posiadasz juø ten dokument., 1)
+						GuiMsg(playerid, Posiadasz ju≈º ten dokument., 1)
 					)
 				)
 				case 1:
 				(
-					// wyrÛb dowÛd
+					// wyr√≥b dow√≥d
 					// prawko tylko rzecz jasna
-					ShowPlayerDialog(playerid, D_HALL_REGISTER, DIALOG_STYLE_INPUT, Urzπd ª rejestracja, Wpisz poniøej ID pojazdu, ktÛry chcesz zarejestrowaÊ.\nPamiÍtaj, øe wartoúÊ nie moøe byÊ mniejsza od 1 ani wiÍksza od 1000.\nWejdü do pojazdu i wpisz /v info by zobaczyÊ jego ID.\n\n, Gotowe, Anuluj)
+					ShowPlayerDialog(playerid, D_HALL_REGISTER, DIALOG_STYLE_INPUT, UrzƒÖd ¬ª rejestracja, Wpisz poni≈ºej ID pojazdu, kt√≥ry chcesz zarejestrowaƒá.\nPamiƒôtaj, ≈ºe warto≈õƒá nie mo≈ºe byƒá mniejsza od 1 ani wiƒôksza od 1000.\nWejd≈∫ do pojazdu i wpisz /v info by zobaczyƒá jego ID.\n\n, Gotowe, Anuluj)
 				)
 			)
 		)
@@ -8568,13 +8568,13 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			vehID = strval(inputtext)
 			if(vehID ( 1 || vehID ) 1000)
 			(
-				GuiMsg(playerid, Wprowadzono b≥Ídne ID pojazdu., 1)
+				GuiMsg(playerid, Wprowadzono b≈Çƒôdne ID pojazdu., 1)
 				return 1
 			)
 			
 			if(PlayerCache(playerid)(pCash) ( 150)
 			(
-				GuiMsg(playerid, Nie posiadasz wystarczajπcej iloúci gotÛwki., 1)
+				GuiMsg(playerid, Nie posiadasz wystarczajƒÖcej ilo≈õci got√≥wki., 1)
 				return 1
 			)
 			
@@ -8586,13 +8586,13 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			
 			if(CarInfo(vehID)(cRegister))
 			(
-				GuiMsg(playerid, Ten pojazd jest juø zarejestrowany., 1)
+				GuiMsg(playerid, Ten pojazd jest ju≈º zarejestrowany., 1)
 				return 1
 			)
 			
 			if(CarInfo(vehID)(cOwnerType) == OWNER_PLAYER && CarInfo(vehID)(cOwner) != PlayerCache(playerid)(pUID))
 			(
-				GuiMsg(playerid, Ten pojazd nie naleøy do Ciebie., 1)
+				GuiMsg(playerid, Ten pojazd nie nale≈ºy do Ciebie., 1)
 				return 1
 			)
 			
@@ -8603,13 +8603,13 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				
 				if(!IsPlayerInGroup(playerid, owner_group))
 				(
-					GuiMsg(playerid, Ten pojazd nie naleøy do Ciebie., 1)
+					GuiMsg(playerid, Ten pojazd nie nale≈ºy do Ciebie., 1)
 					return 1
 				)
 				
 				if(!IsPlayerPermissedGroup(playerid, owner_group, PERM_CARS))
 				(
-					GuiMsg(playerid, Nie masz uprawnieÒ do kontroli nad pojazdami w swojej grupie., 1)
+					GuiMsg(playerid, Nie masz uprawnie≈Ñ do kontroli nad pojazdami w swojej grupie., 1)
 					return 1
 				)
 			)
@@ -8627,7 +8627,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			blint_SaveCash(safeUID, playerid)
 			SavePlayerStats(playerid, SAVE_PLAYER_BASIC)
 			
-			GuiMsg(playerid, Pojazd zosta≥ zarejestrowany, od teraz posiada tablice rejestracyjne!, 0)
+			GuiMsg(playerid, Pojazd zosta≈Ç zarejestrowany, od teraz posiada tablice rejestracyjne!, 0)
 			
 		)
 		else
@@ -8647,7 +8647,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				blint_SaveCash(safeUID, playerid)
 				SavePlayerStats(playerid, SAVE_PLAYER_BASIC)
 				
-				GuiMsg(playerid, Wykupi≥eú w≥aúnie kurs, wyjdü na zewnπtrz i wsiπdü do urzÍdowego auta.\nTam otrzymasz kolejne instrukcje., 0)
+				GuiMsg(playerid, Wykupi≈Çe≈õ w≈Ça≈õnie kurs, wyjd≈∫ na zewnƒÖtrz i wsiƒÖd≈∫ do urzƒôdowego auta.\nTam otrzymasz kolejne instrukcje., 0)
 				
 				PlayerCache(playerid)(pCourse) = true
 				PlayerCache(playerid)(pCourseMS) = 0.0
@@ -8656,7 +8656,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			)
 			else
 			(
-				GuiMsg(playerid, Nie posiadasz tyle gotÛwki!, 1)
+				GuiMsg(playerid, Nie posiadasz tyle got√≥wki!, 1)
 				return 1
 			)
 		)
@@ -8675,7 +8675,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			
 			if(DoorData(doorid)(dOwnerType) != OWNER_NONE)
 			(
-				GuiMsg(playerid, Wystπpi≥ b≥πd, uøyj komendy jeszcze raz., 1)
+				GuiMsg(playerid, WystƒÖpi≈Ç b≈ÇƒÖd, u≈ºyj komendy jeszcze raz., 1)
 				return 1
 			)
 			
@@ -8705,7 +8705,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			PlayerCache(playerid)(pBuyCount) = 10
 			
 			// ---------------------------------------------
-			// -----        ma≥y eksperyment         -----
+			// -----        ma≈Çy eksperyment         -----
 			// ---------------------------------------------
 			Float:doorEnterX, Float:doorEnterY, Float:doorEnterZ, Float:doorAngle
 			doorEnterX = DoorData(doorid)(dEnterX)
@@ -8750,19 +8750,19 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					
 					if(PlayerCache(playerid)(pBleeding) (= 0)
 					(
-						GuiMsg(playerid, Twoja postaÊ nie krwawi, nie potrzebujesz uøywaÊ tego przedmiotu., 1)
+						GuiMsg(playerid, Twoja postaƒá nie krwawi, nie potrzebujesz u≈ºywaƒá tego przedmiotu., 1)
 						return 1
 					)
 					
 					if(PlayerCache(playerid)(pStrength) ( 30.0)
 					(
-						GuiMsg(playerid, Jesteú za s≥aby, by samodzielnie siÍ opatrzeÊ., 1)
+						GuiMsg(playerid, Jeste≈õ za s≈Çaby, by samodzielnie siƒô opatrzeƒá., 1)
 						return 1
 					)
 					
 					// Startuj 
 					string(256), Float:health GetPlayerHealth(playerid, health)
-					format(string, sizeof(string), * %s owija postrzelone miejsce bandaøem., PlayerName(playerid))
+					format(string, sizeof(string), * %s owija postrzelone miejsce banda≈ºem., PlayerName(playerid))
 					
 					if(health ) 50.0)
 						PlayerCache(playerid)(pBleeding) = 0
@@ -8770,12 +8770,12 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					DeleteItem(ItemInfo(MainPlayerTable(playerid))(iUID))
 					MainPlayerTable(playerid) = 0
 
-					SendClientMessage(playerid, COLOR_DO, ** Opatrzy≥eú siÍ. **)
+					SendClientMessage(playerid, COLOR_DO, ** Opatrzy≈Çe≈õ siƒô. **)
 					FlashMe(playerid, string) //ProxDetector(10.0, playerid, string, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, true)
 				)
 				case 1:
 				(
-					// Lecz kogoú
+					// Lecz kogo≈õ
 					list_players(512), Float:Pos(3)
 					GetPlayerPos(playerid, Pos(0), Pos(1), Pos(2))
 					
@@ -8798,7 +8798,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					
 					if(!strlen(list_players))
 					(
-						GuiMsg(playerid, W pobliøu nie ma øadnego rannego gracza., 1)
+						GuiMsg(playerid, W pobli≈ºu nie ma ≈ºadnego rannego gracza., 1)
 						return 1
 					)
 					
@@ -8824,13 +8824,13 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				return 1
 			)
 			
-			// upewnimy siÍ, øe nadal sa w pobliøu siebie, bo przecieø nie musia≥ od razu klikaÊ tego ID
+			// upewnimy siƒô, ≈ºe nadal sa w pobli≈ºu siebie, bo przecie≈º nie musia≈Ç od razu klikaƒá tego ID
 			Float:PosX, Float:PosY, Float:PosZ
 			GetPlayerPos(selected_id, PosX, PosY, PosZ)
 			
 			if(GetPlayerVirtualWorld(playerid) != GetPlayerVirtualWorld(selected_id) || !IsPlayerInRangeOfPoint(playerid, 5.0, PosX, PosY, PosZ))
 			(
-				GuiMsg(playerid, Ten gracz nie jest w Twoim pobliøu., 1)
+				GuiMsg(playerid, Ten gracz nie jest w Twoim pobli≈ºu., 1)
 				return 1
 			)			
 			
@@ -8841,10 +8841,10 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			DeleteItem(ItemInfo(MainPlayerTable(playerid))(iUID))
 			MainPlayerTable(playerid) = 0
 
-			SendClientMessage(selected_id, COLOR_DO, ** Opatrzono CiÍ. **)
+			SendClientMessage(selected_id, COLOR_DO, ** Opatrzono Ciƒô. **)
 			
 			string(256)
-			format(string, sizeof(string), * %s siÍga po bandaø i owija nim postrzelone miejsce na ciele %s., PlayerName(playerid), PlayerName(selected_id))
+			format(string, sizeof(string), * %s siƒôga po banda≈º i owija nim postrzelone miejsce na ciele %s., PlayerName(playerid), PlayerName(selected_id))
 			FlashMe(playerid, string) //ProxDetector(10.0, playerid, string, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, true)
 		)
 		else
@@ -8861,7 +8861,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			station = strval(inputtext)
 			PlayerCache(playerid)(pStation) = station
 
-			GuiMsg(playerid, Ustawi≥eú nowπ stacjÍ radiowπ!, 0)
+			GuiMsg(playerid, Ustawi≈Çe≈õ nowƒÖ stacjƒô radiowƒÖ!, 0)
 			
 			TextDrawHideForPlayer(playerid, Text:TextDrawSanNews)
 			TextDrawShowForPlayer(playerid, Text:TextDrawRadio(station))
@@ -8881,14 +8881,14 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			
 			if (!strcmp(inputtext,  ))
 			(
-				GuiMsg(playerid, B≥Ídnie wprowadzi≥eú kod., 1)
+				GuiMsg(playerid, B≈Çƒôdnie wprowadzi≈Çe≈õ kod., 1)
 				MainPlayerTable(playerid) = 0
 				return 1
 			)
 			
 			if(strlen(inputtext) != strlen(PlayerCache(playerid)(pCaptcha)))
 			(
-				GuiMsg(playerid, B≥Ídnie wprowadzi≥eú kod., 1)
+				GuiMsg(playerid, B≈Çƒôdnie wprowadzi≈Çe≈õ kod., 1)
 				MainPlayerTable(playerid) = 0
 				return 1
 			)
@@ -8904,7 +8904,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				
 				if(strlen(sending) ( 78)
 				(
-					format(string, sizeof(string), (( ª %s (%d): %s )), PlayerGlobalName(admin_id, COLOR_SEND_PW), admin_id, sending)
+					format(string, sizeof(string), (( ¬ª %s (%d): %s )), PlayerGlobalName(admin_id, COLOR_SEND_PW), admin_id, sending)
 					SendClientMessage(playerid, COLOR_SEND_PW, string)
 					
 					format(string, sizeof(string), (( %s (%d): %s )), PlayerGlobalName(playerid, COLOR_GOT_PW), playerid, sending)
@@ -8920,14 +8920,14 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 						strmid(text2, sending, pos, strlen(sending))
 						strdel(sending, pos, strlen(sending))
 
-						format(string, sizeof(string), (( ª %s (%d): %s )), PlayerGlobalName(admin_id, COLOR_SEND_PW), admin_id, sending)
+						format(string, sizeof(string), (( ¬ª %s (%d): %s )), PlayerGlobalName(admin_id, COLOR_SEND_PW), admin_id, sending)
 						SendClientMessage(playerid, COLOR_SEND_PW, string)
 						
 						format(string, sizeof(string), (( %s (%d): %s )), PlayerGlobalName(playerid, COLOR_GOT_PW), playerid, sending)
 						SendClientMessage(admin_id, COLOR_GOT_PW, string)
 						
 						
-						format(string, sizeof(string), (( ª %s (%d): %s )), PlayerGlobalName(admin_id, COLOR_SEND_PW), admin_id, text2)
+						format(string, sizeof(string), (( ¬ª %s (%d): %s )), PlayerGlobalName(admin_id, COLOR_SEND_PW), admin_id, text2)
 						SendClientMessage(playerid, COLOR_SEND_PW, string)
 						
 						format(string, sizeof(string), (( %s (%d): %s )), PlayerGlobalName(playerid, COLOR_GOT_PW), playerid, text2)
@@ -8937,14 +8937,14 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			)
 			else
 			(
-				GuiMsg(playerid, B≥Ídnie wprowadzi≥eú kod., 1)
+				GuiMsg(playerid, B≈Çƒôdnie wprowadzi≈Çe≈õ kod., 1)
 				MainPlayerTable(playerid) = 0
 				return 1
 			)
 		)
 		else
 		(
-			GuiMsg(playerid, B≥Ídnie wprowadzi≥eú kod., 1)
+			GuiMsg(playerid, B≈Çƒôdnie wprowadzi≈Çe≈õ kod., 1)
 			MainPlayerTable(playerid) = 0
 			return 1
 		)
@@ -8958,9 +8958,9 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			MainPlayerTable(playerid) = selected_id
 			
 			info(512)
-			format(info, sizeof(info), Czy na pewno chcesz kupiÊ %s za $%d?, UsedCars(selected_id)(uName), UsedCars(selected_id)(uCost))
+			format(info, sizeof(info), Czy na pewno chcesz kupiƒá %s za $%d?, UsedCars(selected_id)(uName), UsedCars(selected_id)(uCost))
 			
-			ShowPlayerDialog(playerid, D_USED_CONFIRM, DIALOG_STYLE_MSGBOX, Komis aut ª potwierdzenie, info, Zatwierdü, Anuluj)
+			ShowPlayerDialog(playerid, D_USED_CONFIRM, DIALOG_STYLE_MSGBOX, Komis aut ¬ª potwierdzenie, info, Zatwierd≈∫, Anuluj)
 		)
 		else
 		(
@@ -8976,11 +8976,11 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			MainPlayerTable(playerid) = 0
 			if(PlayerCache(playerid)(pCash) ( UsedCars(selected_id)(uCost))
 			(
-				GuiMsg(playerid, W komisie moøna p≥aciÊ wy≥πcznie gotÛwkπ, nie masz jej wystarczajπco duøo przy sobie., 1)
+				GuiMsg(playerid, W komisie mo≈ºna p≈Çaciƒá wy≈ÇƒÖcznie got√≥wkƒÖ, nie masz jej wystarczajƒÖco du≈ºo przy sobie., 1)
 				return 1
 			)
 			
-			// tworzenie zniszczeÒ wizualnych
+			// tworzenie zniszcze≈Ñ wizualnych
 			isDoor, isBonnet, isBoot
 			isDoor = random(2)
 			if(isDoor != 1)
@@ -9015,7 +9015,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			getVehicleRemoves(car_id)
 			
 			hrp_VehicleActionLog((komis) Pojazd (UID: %d) zostal kupiony przez %s (UID: %d) za cene $%d, CarInfo(car_id)(cUID), PlayerName(playerid), PlayerCache(playerid)(pUID), UsedCars(selected_id)(uCost))
-			GuiMsg(playerid, Wybrany pojazd zosta≥ kupiony, powinien pojawiÊ siÍ na placu., 0)
+			GuiMsg(playerid, Wybrany pojazd zosta≈Ç kupiony, powinien pojawiƒá siƒô na placu., 0)
 		)
 		else
 			return 1
@@ -9030,7 +9030,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				case 0:		// olej
 				(
 					stringg(256)
-					format(stringg, sizeof(stringg), ** Klient odszed≥ od %s kiwajπc g≥owπ na boki., PlayerName(playerid))
+					format(stringg, sizeof(stringg), ** Klient odszed≈Ç od %s kiwajƒÖc g≈ÇowƒÖ na boki., PlayerName(playerid))
 					ProxDetector(10.0, playerid, stringg, COLOR_DO, COLOR_DO, COLOR_DO, COLOR_DO, COLOR_DO, true)
 					PlayerCache(playerid)(pSelling) = false
 				)
@@ -9053,19 +9053,19 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					
 					if(!strlen(drug_list))
 					(
-						GuiMsg(playerid, Nie posiadasz øadnej samarki z jednym gramem narkotyku., 0)
+						GuiMsg(playerid, Nie posiadasz ≈ºadnej samarki z jednym gramem narkotyku., 0)
 						PlayerCache(playerid)(pSelling) = false
 						return 1
 					)
 					
-					ShowPlayerDialog(playerid, D_DRUG_DEALING_CONTINUE, DIALOG_STYLE_LIST, Co chcesz sprzedaÊ?, drug_list, Wybierz, Anuluj)
+					ShowPlayerDialog(playerid, D_DRUG_DEALING_CONTINUE, DIALOG_STYLE_LIST, Co chcesz sprzedaƒá?, drug_list, Wybierz, Anuluj)
 				)
 			)
 		)
 		else
 		(
 			stringg(256)
-			format(stringg, sizeof(stringg), ** Klient odszed≥ od %s kiwajπc g≥owπ na boki., PlayerName(playerid))
+			format(stringg, sizeof(stringg), ** Klient odszed≈Ç od %s kiwajƒÖc g≈ÇowƒÖ na boki., PlayerName(playerid))
 			ProxDetector(10.0, playerid, stringg, COLOR_DO, COLOR_DO, COLOR_DO, COLOR_DO, COLOR_DO, true)
 			PlayerCache(playerid)(pSelling) = false
 			return 1
@@ -9082,12 +9082,12 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				sold_uid = strval(inputtext)
 				MainPlayerTable(playerid) = sold_uid
 				
-				ShowPlayerDialog(playerid, D_DRUG_SELL, DIALOG_STYLE_LIST, Handel ª akcja, 1. Sprzedaj towar tanio\n2. Sprzedaj towar drogo, Wybierz, Anuluj)
+				ShowPlayerDialog(playerid, D_DRUG_SELL, DIALOG_STYLE_LIST, Handel ¬ª akcja, 1. Sprzedaj towar tanio\n2. Sprzedaj towar drogo, Wybierz, Anuluj)
 			)
 			else
 			(
 				stringg(256)
-				format(stringg, sizeof(stringg), ** Cz≥owiek rozmawiajπcy z %s krzyknπ≥ coú do niego, po czym odwrÛci≥ siÍ i odszed≥., PlayerName(playerid))
+				format(stringg, sizeof(stringg), ** Cz≈Çowiek rozmawiajƒÖcy z %s krzyknƒÖ≈Ç co≈õ do niego, po czym odwr√≥ci≈Ç siƒô i odszed≈Ç., PlayerName(playerid))
 				ProxDetector(10.0, playerid, stringg, COLOR_DO, COLOR_DO, COLOR_DO, COLOR_DO, COLOR_DO, true)
 				PlayerCache(playerid)(pSelling) = false
 			)
@@ -9095,7 +9095,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		else
 		(
 			stringg(256)
-			format(stringg, sizeof(stringg), ** Klient odszed≥ od %s kiwajπc g≥owπ na boki., PlayerName(playerid))
+			format(stringg, sizeof(stringg), ** Klient odszed≈Ç od %s kiwajƒÖc g≈ÇowƒÖ na boki., PlayerName(playerid))
 			ProxDetector(10.0, playerid, stringg, COLOR_DO, COLOR_DO, COLOR_DO, COLOR_DO, COLOR_DO, true)
 			PlayerCache(playerid)(pSelling) = false
 			return 1
@@ -9117,12 +9117,12 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					hrp_GivePlayerMoney(playerid, s_cost)
 					
 					stringg(256)
-					format(stringg, sizeof(stringg), ** Cz≥owiek stojπcy przy %s odebra≥ od niego jakiú przedmiot, zaraz poda≥ mu do rÍki kilka banknotÛw., PlayerName(playerid))
+					format(stringg, sizeof(stringg), ** Cz≈Çowiek stojƒÖcy przy %s odebra≈Ç od niego jaki≈õ przedmiot, zaraz poda≈Ç mu do rƒôki kilka banknot√≥w., PlayerName(playerid))
 					ProxDetector(10.0, playerid, stringg, COLOR_DO, COLOR_DO, COLOR_DO, COLOR_DO, COLOR_DO, true)
 					PlayerCache(playerid)(pSelling) = false
 					DeleteItem(sold_uid)
 					
-					format(stringg, sizeof(stringg), ) Sprzeda≥eú towar za $%d!, s_cost)
+					format(stringg, sizeof(stringg), ) Sprzeda≈Çe≈õ towar za $%d!, s_cost)
 					SendClientMessage(playerid, COLOR_ADMIN, stringg)
 					
 					PlayerCache(playerid)(pDailyDrugs) += 1
@@ -9139,12 +9139,12 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 						hrp_GivePlayerMoney(playerid, floatround(money))
 						
 						stringg(256)
-						format(stringg, sizeof(stringg), ** Cz≥owiek stojπcy przy %s odebra≥ od niego jakiú przedmiot, zaraz poda≥ mu do rÍki kilka banknotÛw., PlayerName(playerid))
+						format(stringg, sizeof(stringg), ** Cz≈Çowiek stojƒÖcy przy %s odebra≈Ç od niego jaki≈õ przedmiot, zaraz poda≈Ç mu do rƒôki kilka banknot√≥w., PlayerName(playerid))
 						ProxDetector(10.0, playerid, stringg, COLOR_DO, COLOR_DO, COLOR_DO, COLOR_DO, COLOR_DO, true)
 						PlayerCache(playerid)(pSelling) = false
 						DeleteItem(sold_uid)
 						
-						format(stringg, sizeof(stringg), ) Sprzeda≥eú towar za $%d!, floatround(money))
+						format(stringg, sizeof(stringg), ) Sprzeda≈Çe≈õ towar za $%d!, floatround(money))
 						SendClientMessage(playerid, COLOR_ADMIN, stringg)
 						
 						PlayerCache(playerid)(pDailyDrugs) += 1
@@ -9153,7 +9153,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					else
 					(
 						stringg(256)
-						format(stringg, sizeof(stringg), ** GoúÊ odszed≥ od %s rzucajπc jakieú kπúliwe uwagi w jego stronÍ., PlayerName(playerid))
+						format(stringg, sizeof(stringg), ** Go≈õƒá odszed≈Ç od %s rzucajƒÖc jakie≈õ kƒÖ≈õliwe uwagi w jego stronƒô., PlayerName(playerid))
 						ProxDetector(10.0, playerid, stringg, COLOR_DO, COLOR_DO, COLOR_DO, COLOR_DO, COLOR_DO, true)
 						PlayerCache(playerid)(pSelling) = false
 					)
@@ -9163,7 +9163,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		else
 		(
 			stringg(256)
-			format(stringg, sizeof(stringg), ** Klient odszed≥ od %s kiwajπc g≥owπ na boki., PlayerName(playerid))
+			format(stringg, sizeof(stringg), ** Klient odszed≈Ç od %s kiwajƒÖc g≈ÇowƒÖ na boki., PlayerName(playerid))
 			ProxDetector(10.0, playerid, stringg, COLOR_DO, COLOR_DO, COLOR_DO, COLOR_DO, COLOR_DO, true)
 			PlayerCache(playerid)(pSelling) = false
 			return 1
@@ -9181,15 +9181,15 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			PlayerCache(inviter_id)(pSparing) = playerid
 			
 			msg(128)
-			format(msg, sizeof(msg), Gracz %s akceptowa≥ zaproszenie do sparingu., PlayerName(playerid))
+			format(msg, sizeof(msg), Gracz %s akceptowa≈Ç zaproszenie do sparingu., PlayerName(playerid))
 			SendClientMessage(inviter_id, COLOR_INFO, msg)
 			
-			format(msg, sizeof(msg), Akceptowa≥eú zaproszenie do sparingu od gracza %s., PlayerName(inviter_id))
+			format(msg, sizeof(msg), Akceptowa≈Çe≈õ zaproszenie do sparingu od gracza %s., PlayerName(inviter_id))
 			SendClientMessage(playerid, COLOR_INFO, msg)
 		)
-		else					// Odrzuci≥
+		else					// Odrzuci≈Ç
 		(
-			SendClientMessage(inviter_id, COLOR_INFO, Gracz odrzuci≥ zaproszenie do sparingu.)
+			SendClientMessage(inviter_id, COLOR_INFO, Gracz odrzuci≈Ç zaproszenie do sparingu.)
 			return 1
 		)
 	)
@@ -9206,13 +9206,13 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			
 			if(!jp2gmd)
 			(
-				GuiMsg(playerid, Te drzwi nie naleøπ do Ciebie., 1)
+				GuiMsg(playerid, Te drzwi nie nale≈ºƒÖ do Ciebie., 1)
 				return 1
 			)
 			
 			if(strlen(inputtext) != strlen(PlayerCache(playerid)(pCaptcha)))
 			(
-				GuiMsg(playerid, B≥Ídnie wprowadzi≥eú kod., 1)
+				GuiMsg(playerid, B≈Çƒôdnie wprowadzi≈Çe≈õ kod., 1)
 				return 1
 			)
 			
@@ -9232,11 +9232,11 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			)
 			else
 			(
-				GuiMsg(playerid, B≥Ídnie wprowadzi≥eú kod., 1)
+				GuiMsg(playerid, B≈Çƒôdnie wprowadzi≈Çe≈õ kod., 1)
 				return 1
 			)
 			
-			GuiMsg(playerid, Usunπ≥eú wszystkie obiekty w tych drzwiach., 1)
+			GuiMsg(playerid, UsunƒÖ≈Çe≈õ wszystkie obiekty w tych drzwiach., 1)
 		)
 		else
 		(
@@ -9248,7 +9248,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 	(
 		if(response)
 		(
-			// Dialog na has≥o do telefonu
+			// Dialog na has≈Ço do telefonu
 			password = strval(inputtext), buffer(256)
 			format(buffer, sizeof(buffer), SELECT * FROM hrp_phoneset WHERE set_password = %d AND set_phone = %d, password, PlayerCache(playerid)(pPhoneNumber))
 			mysql_query(buffer)
@@ -9261,7 +9261,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			else
 			(
 				mysql_free_result()
-				GuiMsg(playerid, B≥Ídnie wprowadzony kod., 1)
+				GuiMsg(playerid, B≈Çƒôdnie wprowadzony kod., 1)
 				return 1
 			)
 			
@@ -9280,12 +9280,12 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			(
 				case 0:
 				(
-					ShowPlayerDialog(playerid, D_PHONE_PASS_INPUT, DIALOG_STYLE_INPUT, Wprowadü has≥o, Poniøej wpisz nowy kod, ktÛry chcesz mieÊ w telefonie - pamiÍtaj, øe moøe mieÊ tylko 8 znakÛw.\n Przyk≥ad: 12345678, OK, Anuluj)
+					ShowPlayerDialog(playerid, D_PHONE_PASS_INPUT, DIALOG_STYLE_INPUT, Wprowad≈∫ has≈Ço, Poni≈ºej wpisz nowy kod, kt√≥ry chcesz mieƒá w telefonie - pamiƒôtaj, ≈ºe mo≈ºe mieƒá tylko 8 znak√≥w.\n Przyk≈Çad: 12345678, OK, Anuluj)
 				)
 				case 1:
 				(
 					mysql_query_format(UPDATE hrp_phoneset SET set_password = 0 WHERE set_phone = %d, PlayerCache(playerid)(pPhoneNumber))
-					GuiMsg(playerid, Has≥o zosta≥o usuniÍte! Od tej pory nie bÍdzie potrzeby wpisywania go na nowo., 0)
+					GuiMsg(playerid, Has≈Ço zosta≈Ço usuniƒôte! Od tej pory nie bƒôdzie potrzeby wpisywania go na nowo., 0)
 				)
 			)
 		)
@@ -9302,12 +9302,12 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			password = strval(inputtext)
 			if(password ( 0 || password ) 99999999)
 			(
-				GuiMsg(playerid, Z≥y format has≥a., 1)
+				GuiMsg(playerid, Z≈Çy format has≈Ça., 1)
 				return 1
 			)
 			
 			mysql_query_format(UPDATE hrp_phoneset SET set_password = %d WHERE set_phone = %d, password, PlayerCache(playerid)(pPhoneNumber))
-			GuiMsg(playerid, Has≥o pomyúlnie zmienione, od tej pory uøywaj go w≥πczajπc telefon., 0)
+			GuiMsg(playerid, Has≈Ço pomy≈õlnie zmienione, od tej pory u≈ºywaj go w≈ÇƒÖczajƒÖc telefon., 0)
 		)
 		else
 		(
@@ -9333,7 +9333,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					mysql_query_format(UPDATE hrp_phoneset SET set_wallpaper = 4 WHERE set_phone = %d, PlayerCache(playerid)(pPhoneNumber))
 			)
 			
-			GuiMsg(playerid, Zmieniono tapetÍ w telefonie!, 0)
+			GuiMsg(playerid, Zmieniono tapetƒô w telefonie!, 0)
 		)
 		else
 		(
@@ -9351,7 +9351,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			data(256)
 			mysql_query_format(SELECT char_uid, char_gid FROM hrp_characters WHERE BINARY char_name LIKE %s LIMIT 1, PlayerOriginalName(playerid))
 			
-			printf((mysql) Zaczynam sprawdzaÊ gracza %s w bazie danych..., PlayerRealName(playerid))
+			printf((mysql) Zaczynam sprawdzaƒá gracza %s w bazie danych..., PlayerRealName(playerid))
 
 			mysql_store_result()
 			if(mysql_fetch_row(data, |))
@@ -9361,23 +9361,23 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			)
 			else
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystöpi≥ b≥öd, Nie posiadasz u nas konta, za≥Ûø je na WEB_URL., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst≈°pi≈Ç b≈Ç≈°d, Nie posiadasz u nas konta, za≈Ç√≥≈º je na WEB_URL., OK, )
 
-				printf((mysql) Gracz %s nie zosta≥ odnaleziony w bazie danych - zostaje wyrzucony z serwera., PlayerRealName(playerid))
+				printf((mysql) Gracz %s nie zosta≈Ç odnaleziony w bazie danych - zostaje wyrzucony z serwera., PlayerRealName(playerid))
 				Kick(playerid)
 			)
 			mysql_free_result()
 			
 			if(!IsGlobalLogged(PlayerCache(playerid)(pGID)))
 			(	
-				printf((mysql) Gracz %s (UID: %d, GID: %d) zosta≥ odnaleziony w bazie danych - zalogowany launcherem., PlayerRealName(playerid), PlayerCache(playerid)(pUID), PlayerCache(playerid)(pGID))
+				printf((mysql) Gracz %s (UID: %d, GID: %d) zosta≈Ç odnaleziony w bazie danych - zalogowany launcherem., PlayerRealName(playerid), PlayerCache(playerid)(pUID), PlayerCache(playerid)(pGID))
 				
-				// Dodajemy pobranie adina, gsÛw itp.
+				// Dodajemy pobranie adina, gs√≥w itp.
 				mysql_query_format(SELECT user_login, user_admin, user_premium, user_premium_time, user_gamepoints, user_color FROM live_users WHERE user_id = %d LIMIT 1, PlayerCache(playerid)(pGID))
 				mysql_store_result()
 				if(mysql_fetch_row(data, |))
 				(
-					printf((log) Logowanie gracza %s (UID: %d, GID: %d) przebieg≥o pomy?lnie., PlayerRealName(playerid), PlayerCache(playerid)(pUID), PlayerCache(playerid)(pGID))
+					printf((log) Logowanie gracza %s (UID: %d, GID: %d) przebieg≈Ço pomy?lnie., PlayerRealName(playerid), PlayerCache(playerid)(pUID), PlayerCache(playerid)(pGID))
 
 					sscanf(data, p(|)s(64)ddddd, PlayerCache(playerid)(pGlobalName), PlayerCache(playerid)(pAdmin), PlayerCache(playerid)(pPremium), PlayerCache(playerid)(pPremiumTime), PlayerCache(playerid)(pGamePoints), PlayerCache(playerid)(pUserColor))
 					AddPlayerLoginLog(playerid, true)
@@ -9390,7 +9390,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			)
 			else
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystöpi≥ b≥öd, Obecnie na serwerze zalogowana jest juø jaka? postaÊ z tego konta globalnego., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst≈°pi≈Ç b≈Ç≈°d, Obecnie na serwerze zalogowana jest ju≈º jaka? postaƒá z tego konta globalnego., OK, )
 				Kick(playerid)
 			)
 		)
@@ -9418,7 +9418,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					// 50 KG
 					if(PlayerCache(playerid)(pStrength) ( 30.0)
 					(
-						GuiMsg(playerid, Nie masz wystarczajπco si≥y!, 1)
+						GuiMsg(playerid, Nie masz wystarczajƒÖco si≈Çy!, 1)
 						return 1
 					)
 					
@@ -9429,7 +9429,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					// 85 KG
 					if(PlayerCache(playerid)(pStrength) ( 65.0)
 					(
-						GuiMsg(playerid, Nie masz wystarczajπco si≥y!, 1)
+						GuiMsg(playerid, Nie masz wystarczajƒÖco si≈Çy!, 1)
 						return 1
 					)
 					
@@ -9437,7 +9437,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				)
 			)
 			
-			// Nosimy w tym momencie juø.
+			// Nosimy w tym momencie ju≈º.
 			PlayerCache(playerid)(pCarryBoxPhase) = BOX_PHASE_CARRY
 			SetPlayerPortAnimations(playerid)
 			ShowPlayerTextDrawInfo(playerid, ~w~Uzyj klawisza ~r~~k~~CONVERSATION_NO~ ~w~by anulowac roznoszenie towarow w porcie. Aby odniesc paczke na miejsce udaj sie do markera i kliknij ~r~LPM)
@@ -9457,7 +9457,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 	(
 		if(response)
 		(
-			// Sprawdü wpisany kod
+			// Sprawd≈∫ wpisany kod
 			ga_code = strval(inputtext), get_string(256)
 			
 			format(get_string, sizeof(get_string), SELECT members.member_id FROM members INNER JOIN live_users ON live_users.user_id = members.member_gid WHERE live_users.user_id=%d LIMIT 1, PlayerCache(playerid)(pGID))
@@ -9474,7 +9474,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		)
 		else
 		(
-			ShowPlayerDialog(playerid, D_VERIFICATE, DIALOG_STYLE_INPUT, Weryfikacja dwuetapowa, Wypisz poniøej kod wygenerowany przez aplikacjÍ Google Authenticator., Gotowe, Anuluj)
+			ShowPlayerDialog(playerid, D_VERIFICATE, DIALOG_STYLE_INPUT, Weryfikacja dwuetapowa, Wypisz poni≈ºej kod wygenerowany przez aplikacjƒô Google Authenticator., Gotowe, Anuluj)
 			return 1
 		)
 	)
@@ -9490,7 +9490,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				return 1
 			)
 			
-			// Sprawdzanie wpisanego ciπgu.
+			// Sprawdzanie wpisanego ciƒÖgu.
 			switch(PlayerCache(playerid)(pCorpType))
 			(
 				case CORP_TYPE_TEXT:
@@ -9559,7 +9559,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 					)
 					
 					/*
-						Koniec losowania nastÍpnego pytania.
+						Koniec losowania nastƒôpnego pytania.
 					*/
 					
 					if(strcmp(inputtext, PlayerCache(playerid)(pCorpAnswer), true) == 0 && strlen(inputtext) ) 0)
@@ -9569,23 +9569,23 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 						format(PlayerCache(playerid)(pCorpAnswer), 24, originalstring)
 						
 						message(256)
-						format(message, sizeof(message), Odpowiedzia≥eú poprawnie, sprÛbuj jeszcze raz!\nU≥Ûø s≥owo z podanych liter: %s, scrambledstring)
-						ShowPlayerDialog(playerid, D_CORPO, DIALOG_STYLE_INPUT, Korporacja, message, SprÛbuj, Anuluj)
+						format(message, sizeof(message), Odpowiedzia≈Çe≈õ poprawnie, spr√≥buj jeszcze raz!\nU≈Ç√≥≈º s≈Çowo z podanych liter: %s, scrambledstring)
+						ShowPlayerDialog(playerid, D_CORPO, DIALOG_STYLE_INPUT, Korporacja, message, Spr√≥buj, Anuluj)
 					)
 					else
 					(
 						// Uncorrect
 						format(PlayerCache(playerid)(pCorpAnswer), 24, originalstring)
 						message(256)
-						format(message, sizeof(message), Odpowiedzia≥eú b≥Ídnie, sprÛbuj jeszcze raz!\nU≥Ûø s≥owo z podanych liter: %s, scrambledstring)
-						ShowPlayerDialog(playerid, D_CORPO, DIALOG_STYLE_INPUT, Korporacja, message, SprÛbuj, Anuluj)
+						format(message, sizeof(message), Odpowiedzia≈Çe≈õ b≈Çƒôdnie, spr√≥buj jeszcze raz!\nU≈Ç√≥≈º s≈Çowo z podanych liter: %s, scrambledstring)
+						ShowPlayerDialog(playerid, D_CORPO, DIALOG_STYLE_INPUT, Korporacja, message, Spr√≥buj, Anuluj)
 					)
 				)
 			)
 		)
 		else
 		(
-			// Przerwij robotÍ.
+			// Przerwij robotƒô.
 			cmd_korporacja(playerid, )
 			return 1
 		)
@@ -9752,7 +9752,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		)
 	)
 	
-	// gotowanie narkotykÛw cooking.inc
+	// gotowanie narkotyk√≥w cooking.inc
 	if(dialogid == D_COOK_SELECT)
 	(
 		cookid = PlayerCache(playerid)(pCookID)
@@ -9791,7 +9791,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			ingredient = CookData(cookid)(cIngredients), item_uid = strval(inputtext), item_id = GetItemID(item_uid), string(128)
 			if(ingredient )= MAX_INGREDIENTS)
 			(
-				GuiMsg(playerid, Nie moøesz dodaÊ juø wiÍcej sk≥adnikÛw., 1)
+				GuiMsg(playerid, Nie mo≈ºesz dodaƒá ju≈º wiƒôcej sk≈Çadnik√≥w., 1)
 				return 1
 			)
 			
@@ -9823,7 +9823,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		if(response)
 		(
 			PlayerCache(playerid)(pManageItem) = strval(inputtext)
-			ShowPlayerDialog(playerid, D_DASHBOARD_ITEM_PRICE, DIALOG_STYLE_INPUT, Sprzedaj przedmiot ª Cena, Wprowadü poniøej cenÍ, jakπ oczekujesz w zamian za przedmiot:, Oferuj, Anuluj)
+			ShowPlayerDialog(playerid, D_DASHBOARD_ITEM_PRICE, DIALOG_STYLE_INPUT, Sprzedaj przedmiot ¬ª Cena, Wprowad≈∫ poni≈ºej cenƒô, jakƒÖ oczekujesz w zamian za przedmiot:, Oferuj, Anuluj)
 		)
 		else
 		(
@@ -9892,7 +9892,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 				
 			SetItemDesc(item_uid, inputtext)
 				
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Twoja postaÊ zosta≥a uúmiercona.\nOd tej pory postaÊ, ktÛra zosta≥a uúmiercona jest juø nieaktywna.\n\nZostajesz wyrzucony z serwera., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Twoja postaƒá zosta≈Ça u≈õmiercona.\nOd tej pory postaƒá, kt√≥ra zosta≈Ça u≈õmiercona jest ju≈º nieaktywna.\n\nZostajesz wyrzucony z serwera., OK, )
 			hrp_Block(playerid, -1, FCK, BLOCK_CHAR, 0, true)
 			Kick(playerid)
 			return 1
@@ -9900,7 +9900,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 		else
 		(
 			printf((FCK) Gracz %s powinien dostac FCK ale anulowal. Obczaj go., PlayerName(playerid))
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Na skutek otrzymanych obraøeÒ, straci≥eú przytomnoúÊ.\nPoczekaj do czasu gdy siÍ ockniesz, lub przyjedzie karetka., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Na skutek otrzymanych obra≈ºe≈Ñ, straci≈Çe≈õ przytomno≈õƒá.\nPoczekaj do czasu gdy siƒô ockniesz, lub przyjedzie karetka., OK, )
 			return 1
 		)
 	)
@@ -9912,7 +9912,7 @@ stock GuiMsg(playerid, text(), isError)
 (
 	if(isError == 1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, text, OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, text, OK, )
 	)
 	else
 	(

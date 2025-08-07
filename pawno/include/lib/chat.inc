@@ -6,12 +6,12 @@ public OnPlayerText(playerid, text())
 	)
 	if(PlayerCache(playerid)(pBW))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Podczas stanu nieprzytomnoœci nie mo¿esz siê odzywaæ., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Podczas stanu nieprzytomnoÅ›ci nie moÅ¼esz siÄ™ odzywaÄ‡., OK, )
 		return 0
 	)
 	if(PlayerCache(playerid)(pAJ))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie mo¿esz siê tutaj odezwaæ., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie moÅ¼esz siÄ™ tutaj odezwaÄ‡., OK, )
 		return 0
 	)
 	if(isnull(text))
@@ -34,8 +34,8 @@ public OnPlayerText(playerid, text())
 
 			if(isnull(chat_title))
 			(
-				SendClientMessage(playerid, COLOR_GREY, Aby pos³ugiwaæ siê czatem OOC podgrupy, poprzedŸ numer slotu znakami @@ a nastêpnie wpisz treœæ wiadomoœci.)
-				SendClientMessage(playerid, COLOR_GREY, Przyk³ad: @@1 Witam! Skrypt automatycznie pobiera slot ostatnio u¿ywanego czatu, wiêc dalej nie musisz go definiowaæ.)
+				SendClientMessage(playerid, COLOR_GREY, Aby posÅ‚ugiwaÄ‡ siÄ™ czatem OOC podgrupy, poprzedÅº numer slotu znakami @@ a nastÄ™pnie wpisz treÅ›Ä‡ wiadomoÅ›ci.)
+				SendClientMessage(playerid, COLOR_GREY, PrzykÅ‚ad: @@1 Witam! Skrypt automatycznie pobiera slot ostatnio uÅ¼ywanego czatu, wiÄ™c dalej nie musisz go definiowaÄ‡.)
 				return 0
 			)
 
@@ -60,7 +60,7 @@ public OnPlayerText(playerid, text())
 			group_id_fix = PlayerGroup(playerid)(group_slot)(gID)
 			if(GroupData(group_id_fix)(gType) == GROUP_FAMILY)
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Ta grupa nie ma dostêpu do czatu OOC., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Ta grupa nie ma dostÄ™pu do czatu OOC., OK, )
 				return 1
 			)
 			if(GroupData(group_id_fix)(gToggleChat))
@@ -116,8 +116,8 @@ public OnPlayerText(playerid, text())
 
 			if(isnull(chat_title))
 			(
-				SendClientMessage(playerid, COLOR_GREY, Aby pos³ugiwaæ siê czatem OOC grupy, poprzedŸ numer slotu znakiem @ a nastêpnie wpisz treœæ wiadomoœci.)
-				SendClientMessage(playerid, COLOR_GREY, Przyk³ad: @1 Witam! Skrypt automatycznie pobiera slot ostatnio u¿ywanego czatu, wiêc dalej nie musisz go definiowaæ.)
+				SendClientMessage(playerid, COLOR_GREY, Aby posÅ‚ugiwaÄ‡ siÄ™ czatem OOC grupy, poprzedÅº numer slotu znakiem @ a nastÄ™pnie wpisz treÅ›Ä‡ wiadomoÅ›ci.)
+				SendClientMessage(playerid, COLOR_GREY, PrzykÅ‚ad: @1 Witam! Skrypt automatycznie pobiera slot ostatnio uÅ¼ywanego czatu, wiÄ™c dalej nie musisz go definiowaÄ‡.)
 				return 0
 			)
 
@@ -181,8 +181,8 @@ public OnPlayerText(playerid, text())
 
 			if(isnull(chat_title))
 			(
-				SendClientMessage(playerid, COLOR_GREY, Aby pos³ugiwaæ siê czatem IC podgrupy, poprzedŸ numer slotu znakami !! a nastêpnie wpisz treœæ wiadomoœci.)
-				SendClientMessage(playerid, COLOR_GREY, Przyk³ad: !!1 Zg³aszam siê. Skrypt automatycznie pobiera slot ostatnio u¿ywanego czatu, wiêc dalej nie musisz go definiowaæ.)
+				SendClientMessage(playerid, COLOR_GREY, Aby posÅ‚ugiwaÄ‡ siÄ™ czatem IC podgrupy, poprzedÅº numer slotu znakami !! a nastÄ™pnie wpisz treÅ›Ä‡ wiadomoÅ›ci.)
+				SendClientMessage(playerid, COLOR_GREY, PrzykÅ‚ad: !!1 ZgÅ‚aszam siÄ™. Skrypt automatycznie pobiera slot ostatnio uÅ¼ywanego czatu, wiÄ™c dalej nie musisz go definiowaÄ‡.)
 				return 0
 			)
 
@@ -249,7 +249,7 @@ public OnPlayerText(playerid, text())
 					)
 				)
 			)
-			format(string, sizeof(string), %s mówi (radio): %s, PlayerName(playerid), chat_title)
+			format(string, sizeof(string), %s mÃ³wi (radio): %s, PlayerName(playerid), chat_title)
 			ProxDetector(10.0, playerid, string, COLOR_FADE1, COLOR_FADE2, COLOR_FADE3, COLOR_FADE4, COLOR_FADE5, false)
 		)
 		else
@@ -259,8 +259,8 @@ public OnPlayerText(playerid, text())
 
 			if(isnull(chat_title))
 			(
-				SendClientMessage(playerid, COLOR_GREY, Aby pos³ugiwaæ siê czatem IC grupy, poprzedŸ numer slotu znakiem ! a nastêpnie wpisz treœæ wiadomoœci.)
-				SendClientMessage(playerid, COLOR_GREY, Przyk³ad: !1 Zg³aszam siê. Skrypt automatycznie pobiera slot ostatnio u¿ywanego czatu, wiêc dalej nie musisz go definiowaæ.)
+				SendClientMessage(playerid, COLOR_GREY, Aby posÅ‚ugiwaÄ‡ siÄ™ czatem IC grupy, poprzedÅº numer slotu znakiem ! a nastÄ™pnie wpisz treÅ›Ä‡ wiadomoÅ›ci.)
+				SendClientMessage(playerid, COLOR_GREY, PrzykÅ‚ad: !1 ZgÅ‚aszam siÄ™. Skrypt automatycznie pobiera slot ostatnio uÅ¼ywanego czatu, wiÄ™c dalej nie musisz go definiowaÄ‡.)
 				return 0
 			)
 
@@ -311,7 +311,7 @@ public OnPlayerText(playerid, text())
 					)
 				)
 			)
-			format(string, sizeof(string), %s mówi (radio): %s, PlayerName(playerid), chat_title)
+			format(string, sizeof(string), %s mÃ³wi (radio): %s, PlayerName(playerid), chat_title)
 			ProxDetector(10.0, playerid, string, COLOR_FADE1, COLOR_FADE2, COLOR_FADE3, COLOR_FADE4, COLOR_FADE5, false)
 		)
 		return 0
@@ -375,13 +375,13 @@ public OnPlayerText(playerid, text())
 				
 				if(PlayerCache(playerid)(pSex) == 2)
 				(
-					// Przez telefon mówi kobieta
-					format(string, sizeof(string), (Telefon) (G³os damski): %s, text)
+					// Przez telefon mÃ³wi kobieta
+					format(string, sizeof(string), (Telefon) (GÅ‚os damski): %s, text)
 				)
 				else
 				(
-					// Przez telefon mówi facet
-					format(string, sizeof(string), (Telefon) (G³os mêski): %s, text)
+					// Przez telefon mÃ³wi facet
+					format(string, sizeof(string), (Telefon) (GÅ‚os mÄ™ski): %s, text)
 				)
 				SendClientMessage(otherid, COLOR_YELLOW, string)
 				
@@ -394,14 +394,14 @@ public OnPlayerText(playerid, text())
 	
 	if(PlayerCache(playerid)(pGagged) != INVALID_PLAYER_ID)
 	(
-		GuiMsg(playerid,Nie mo¿esz nic mówiæ maj¹c knebel w ustach.,1)
+		GuiMsg(playerid,Nie moÅ¼esz nic mÃ³wiÄ‡ majÄ…c knebel w ustach.,1)
 		if(PlayerCache(playerid)(pSex) == 1)
 		(
-			format(string, sizeof(string), * %s próbuje coœ wykrztusiæ przez knebel wciœniêty w jego usta., PlayerName(playerid))
+			format(string, sizeof(string), * %s prÃ³buje coÅ› wykrztusiÄ‡ przez knebel wciÅ›niÄ™ty w jego usta., PlayerName(playerid))
 		)
 		else
 		(
-			format(string, sizeof(string), * %s próbuje coœ wykrztusiæ przez knebel wciœniêty w jej usta., PlayerName(playerid))
+			format(string, sizeof(string), * %s prÃ³buje coÅ› wykrztusiÄ‡ przez knebel wciÅ›niÄ™ty w jej usta., PlayerName(playerid))
 		)
 		
 		ProxDetector(10.0, playerid, string, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, false)
@@ -470,37 +470,37 @@ public OnPlayerText(playerid, text())
 	
 	if(!strcmp(text, :D, true) || !strcmp(text,  :D, true) || !strcmp(text, :D , true))
 	(
-		format(string, sizeof(string), * %s œmieje siê., PlayerName(playerid))
+		format(string, sizeof(string), * %s Å›mieje siÄ™., PlayerName(playerid))
 		FlashMe(playerid, string) //ProxDetector(10.0, playerid, string, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, true)
 		return 0
 	)
 	if(!strcmp(text, :), true) || !strcmp(text,  :), true) || !strcmp(text, :) , true))
 	(
-		format(string, sizeof(string), * %s uœmiecha siê., PlayerName(playerid))
+		format(string, sizeof(string), * %s uÅ›miecha siÄ™., PlayerName(playerid))
 		FlashMe(playerid, string) //ProxDetector(10.0, playerid, string, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, true)
 		return 0
 	)
 	if(!strcmp(text, :/, true) || !strcmp(text,  :/, true) || !strcmp(text, :/ , true))
 	(
-		format(string, sizeof(string), * %s krzywi siê., PlayerName(playerid))
+		format(string, sizeof(string), * %s krzywi siÄ™., PlayerName(playerid))
 		FlashMe(playerid, string) //ProxDetector(10.0, playerid, string, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, true)
 		return 0
 	)
 	if(!strcmp(text, :O, true) || !strcmp(text,  :O, true) || !strcmp(text, :O , true))
 	(
-		format(string, sizeof(string), * %s robi zdziwion¹ minê., PlayerName(playerid))
+		format(string, sizeof(string), * %s robi zdziwionÄ… minÄ™., PlayerName(playerid))
 		FlashMe(playerid, string) //ProxDetector(10.0, playerid, string, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, true)
 		return 0
 	)
 	if(!strcmp(text, :(, true) || !strcmp(text,  :(, true) || !strcmp(text, :( , true))
 	(
-		format(string, sizeof(string), * %s robi smutn¹ minê., PlayerName(playerid))
+		format(string, sizeof(string), * %s robi smutnÄ… minÄ™., PlayerName(playerid))
 		FlashMe(playerid, string) //ProxDetector(10.0, playerid, string, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, true)
 		return 0
 	)
 	if(!strcmp(text, :P, true) || !strcmp(text,  :P, true) || !strcmp(text, :P , true))
 	(
-		format(string, sizeof(string), * %s wystawia jêzyk., PlayerName(playerid))
+		format(string, sizeof(string), * %s wystawia jÄ™zyk., PlayerName(playerid))
 		FlashMe(playerid, string) //ProxDetector(10.0, playerid, string, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, true)
 		return 0
 	)
@@ -514,9 +514,9 @@ public OnPlayerText(playerid, text())
 	if(strlen(text) ( 78)
 	(
 		
-		//format(string, sizeof(string), %s mówi: %s, PlayerName(playerid), text)
+		//format(string, sizeof(string), %s mÃ³wi: %s, PlayerName(playerid), text)
 		
-		format(string, sizeof(string), %s mówi: %s, PlayerName(playerid), text)
+		format(string, sizeof(string), %s mÃ³wi: %s, PlayerName(playerid), text)
 		ProxDetector(10.0, playerid, string, COLOR_FADE1, COLOR_FADE2, COLOR_FADE3, COLOR_FADE4, COLOR_FADE5, false)
  	)
 	else
@@ -529,7 +529,7 @@ public OnPlayerText(playerid, text())
   			strmid(text2, text, pos + 1, strlen(text))
 			strdel(text, pos, strlen(text))
 
-			format(string, sizeof(string), %s mówi: %s..., PlayerName(playerid), text)
+			format(string, sizeof(string), %s mÃ³wi: %s..., PlayerName(playerid), text)
 	  		ProxDetector(10.0, playerid, string, COLOR_FADE1, COLOR_FADE2, COLOR_FADE3, COLOR_FADE4, COLOR_FADE5, false)
 
 			format(string, sizeof(string), ...%s, text2)
@@ -537,7 +537,7 @@ public OnPlayerText(playerid, text())
 		)
 	)
 	
-	// Tutaj boty mo¿na dodaæ.
+	// Tutaj boty moÅ¼na dodaÄ‡.
 	botTextHandler(playerid, text)
 	
 	if(PlayerCache(playerid)(pGymType) || PlayerCache(playerid)(pFish) || PlayerCache(playerid)(pPlayAnim))

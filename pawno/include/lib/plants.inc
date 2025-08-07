@@ -197,7 +197,7 @@ stock Create3DTextsAOForPlants()
 	count = 0, string(128)
 	foreach(Plants, plant)
 	(
-		format(string, sizeof(string), Krzak (%s)\nNawodnienie: (E85405)%d(FFFFFF)\nNaúwietlenie: (E85405)%d(FFFFFF)\nJakoúÊ: (E85405)%d(FFFFFF), Plants(plant)(plantName), Plants(plant)(plantWater), Plants(plant)(plantSun), Plants(plant)(plantQuality))
+		format(string, sizeof(string), Krzak (%s)\nNawodnienie: (E85405)%d(FFFFFF)\nNa≈õwietlenie: (E85405)%d(FFFFFF)\nJako≈õƒá: (E85405)%d(FFFFFF), Plants(plant)(plantName), Plants(plant)(plantWater), Plants(plant)(plantSun), Plants(plant)(plantQuality))
 		Text3D:label_id = CreateDynamic3DTextLabel(string, COLOR_DESC, Plants(plant)(plantPosX), Plants(plant)(plantPosY), Plants(plant)(plantPosZ), 5.0, INVALID_PLAYER_ID, INVALID_VEHICLE_ID, 0, Plants(plant)(plantVW), Plants(plant)(plantInt), -1, 10.0)
 		Streamer_SetIntData(STREAMER_TYPE_3D_TEXT_LABEL, label_id, E_STREAMER_EXTRA_ID, Plants(plant)(plantUID))
 		Plants(plant)(plantLabel) = label_id
@@ -213,7 +213,7 @@ stock Create3DTextsAOForPlants()
 stock Create3DTextAOForPlant(plant)
 (
 	string(128)
-	format(string, sizeof(string), Krzak (%s)\nNawodnienie: (E85405)%d(FFFFFF)\nNaúwietlenie: (E85405)%d(FFFFFF)\nJakoúÊ: (E85405)%d(FFFFFF), Plants(plant)(plantName), Plants(plant)(plantWater), Plants(plant)(plantSun), Plants(plant)(plantQuality))
+	format(string, sizeof(string), Krzak (%s)\nNawodnienie: (E85405)%d(FFFFFF)\nNa≈õwietlenie: (E85405)%d(FFFFFF)\nJako≈õƒá: (E85405)%d(FFFFFF), Plants(plant)(plantName), Plants(plant)(plantWater), Plants(plant)(plantSun), Plants(plant)(plantQuality))
 	Text3D:label_id = CreateDynamic3DTextLabel(string, COLOR_DESC, Plants(plant)(plantPosX), Plants(plant)(plantPosY), Plants(plant)(plantPosZ), 5.0, INVALID_PLAYER_ID, INVALID_VEHICLE_ID, 0, Plants(plant)(plantVW), Plants(plant)(plantInt), -1, 10.0)
 	Streamer_SetIntData(STREAMER_TYPE_3D_TEXT_LABEL, label_id, E_STREAMER_EXTRA_ID, Plants(plant)(plantUID))
 	Plants(plant)(plantLabel) = label_id
@@ -246,7 +246,7 @@ stock Delete3DTextForPlant(plant)
 stock Update3DTextForPlant(plant)
 (
 	string(128)
-	format(string, sizeof(string), Krzak (%s)\nNawodnienie: (E85405)%d(FFFFFF)\nNaúwietlenie: (E85405)%d(FFFFFF)\nJakoúÊ: (E85405)%d(FFFFFF), Plants(plant)(plantName), Plants(plant)(plantWater), Plants(plant)(plantSun), Plants(plant)(plantQuality))
+	format(string, sizeof(string), Krzak (%s)\nNawodnienie: (E85405)%d(FFFFFF)\nNa≈õwietlenie: (E85405)%d(FFFFFF)\nJako≈õƒá: (E85405)%d(FFFFFF), Plants(plant)(plantName), Plants(plant)(plantWater), Plants(plant)(plantSun), Plants(plant)(plantQuality))
 
 	for (label_id = 0 label_id (= CountDynamic3DTextLabels() label_id++)
 	(
@@ -297,7 +297,7 @@ stock WaterPlant(playerid, plantid)
 
 		if(Plants(plantid)(plantWater) ) 150)
 		(
-			SendClientMessage(playerid, COLOR_DO, Zala≥eú swÛj krzak zbyt duøπ iloúciπ wody w efekciego czego zgni≥.)
+			SendClientMessage(playerid, COLOR_DO, Zala≈Çe≈õ sw√≥j krzak zbyt du≈ºƒÖ ilo≈õciƒÖ wody w efekciego czego zgni≈Ç.)
 			DeletePlant(plantid)
 			return 1
 		)
@@ -311,7 +311,7 @@ stock WaterPlant(playerid, plantid)
 
 		if(Plants(plantid)(plantWater) ) 100)
 		(
-			SendClientMessage(playerid, COLOR_DO, Zala≥eú swÛj krzak zbyt duøπ iloúciπ wody w efekciego czego zgni≥.)
+			SendClientMessage(playerid, COLOR_DO, Zala≈Çe≈õ sw√≥j krzak zbyt du≈ºƒÖ ilo≈õciƒÖ wody w efekciego czego zgni≈Ç.)
 			DeletePlant(plantid)
 			return 1
 		)
@@ -325,7 +325,7 @@ stock WaterPlant(playerid, plantid)
 
 		if(Plants(plantid)(plantWater) ) 70)
 		(
-			SendClientMessage(playerid, COLOR_DO, Zala≥eú swÛj krzak zbyt duøπ iloúciπ wody w efekciego czego zgni≥.)
+			SendClientMessage(playerid, COLOR_DO, Zala≈Çe≈õ sw√≥j krzak zbyt du≈ºƒÖ ilo≈õciƒÖ wody w efekciego czego zgni≈Ç.)
 			DeletePlant(plantid)
 			return 1
 		)
@@ -339,7 +339,7 @@ stock WaterPlant(playerid, plantid)
 
 		if(Plants(plantid)(plantWater) ) 30)
 		(
-			SendClientMessage(playerid, COLOR_DO, Zala≥eú swÛj krzak zbyt duøπ iloúciπ wody w efekciego czego zgni≥.)
+			SendClientMessage(playerid, COLOR_DO, Zala≈Çe≈õ sw√≥j krzak zbyt du≈ºƒÖ ilo≈õciƒÖ wody w efekciego czego zgni≈Ç.)
 			DeletePlant(plantid)
 			return 1
 		)
@@ -349,7 +349,7 @@ stock WaterPlant(playerid, plantid)
 
 		if(Plants(plantid)(plantWater) ) 10)
 		(
-			SendClientMessage(playerid, COLOR_DO, Zala≥eú swÛj krzak zbyt duøπ iloúciπ wody w efekciego czego zgni≥.)
+			SendClientMessage(playerid, COLOR_DO, Zala≈Çe≈õ sw√≥j krzak zbyt du≈ºƒÖ ilo≈õciƒÖ wody w efekciego czego zgni≈Ç.)
 			DeletePlant(plantid)
 			return 1
 		)
@@ -357,9 +357,9 @@ stock WaterPlant(playerid, plantid)
 
 	Update3DTextForPlant(plantid)
 
-	SendClientMessage(playerid, COLOR_DO, Krzak zosta≥ podlany.)
+	SendClientMessage(playerid, COLOR_DO, Krzak zosta≈Ç podlany.)
 	string(64)
-	format(string, sizeof(string), ** %s podla≥ krzak marihuany. **, PlayerName(playerid))
+	format(string, sizeof(string), ** %s podla≈Ç krzak marihuany. **, PlayerName(playerid))
 	
 	ProxDetector(10.0, playerid, string, COLOR_DO, COLOR_DO, COLOR_DO, COLOR_DO, COLOR_DO, false)
 	return 1
@@ -367,7 +367,7 @@ stock WaterPlant(playerid, plantid)
 
 stock CollectPlant(playerid, plantid)
 (
-	// Aktualnie plantujemy tylko zio≥o wiÍc nie bawie siÍ w sprawdzanie typu do zbioru, etc.
+	// Aktualnie plantujemy tylko zio≈Ço wiƒôc nie bawie siƒô w sprawdzanie typu do zbioru, etc.
 
 	if(Plants(plantid)(plantUID))
 	(
@@ -375,7 +375,7 @@ stock CollectPlant(playerid, plantid)
 
 		if(Plants(plantid)(plantTicks) ) 24 * 10)
 		(
-			SendClientMessage(playerid, COLOR_DO, Twoja roúlinka jest kompletnie bezuøyteczna. Zbyt d≥ugo trzyma≥eú jπ w ziemi.)
+			SendClientMessage(playerid, COLOR_DO, Twoja ro≈õlinka jest kompletnie bezu≈ºyteczna. Zbyt d≈Çugo trzyma≈Çe≈õ jƒÖ w ziemi.)
 			DeletePlant(plantid)
 			return 1
 		)
@@ -391,7 +391,7 @@ stock CollectPlant(playerid, plantid)
 		)
 		else
 		(
-			SendClientMessage(playerid, COLOR_DO, Twoja roúlinka jest kompletnie bezuøyteczna. Zbyt d≥ugo trzyma≥eú jπ w ziemi.)
+			SendClientMessage(playerid, COLOR_DO, Twoja ro≈õlinka jest kompletnie bezu≈ºyteczna. Zbyt d≈Çugo trzyma≈Çe≈õ jƒÖ w ziemi.)
 			DeletePlant(plantid)
 			return 1	
 		)
@@ -401,7 +401,7 @@ stock CollectPlant(playerid, plantid)
 		format(string, sizeof(string), Marihuana (%d g.), grams)
 		CreatePlayerItem(playerid, string, ITEM_DRUG, DRUG_MARIHUANA, grams)
 
-		format(string, sizeof(string), Po zebraniu i obrobieniu liúci uda≥o Ci siÍ odzyskaÊ %d gram marihuany, grams)
+		format(string, sizeof(string), Po zebraniu i obrobieniu li≈õci uda≈Ço Ci siƒô odzyskaƒá %d gram marihuany, grams)
 		SendClientMessage(playerid, COLOR_DO, string)
 
 		DeletePlant(plantid)

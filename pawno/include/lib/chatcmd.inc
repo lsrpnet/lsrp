@@ -3,12 +3,12 @@ CMD:sz(playerid, params())
 	giveplayer_id, text(128), string(256)
 	if(PlayerCache(playerid)(pBW))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Podczas stanu nieprzytomnoœci nie mo¿esz szeptaæ., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Podczas stanu nieprzytomnoÅ›ci nie moÅ¼esz szeptaÄ‡., OK, )
 		return 1
 	)
 	if(PlayerCache(playerid)(pGagged) != INVALID_PLAYER_ID)
 	(
-		GuiMsg(playerid,Nie mo¿esz mówiæ bêd¹c zakneblowanym.,1)
+		GuiMsg(playerid,Nie moÅ¼esz mÃ³wiÄ‡ bÄ™dÄ…c zakneblowanym.,1)
 		return 1
 	)
 	if(sscanf(params, ds(128), giveplayer_id, text))
@@ -18,17 +18,17 @@ CMD:sz(playerid, params())
 	)
 	if(giveplayer_id == playerid)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie mo¿esz szeptaæ do siebie., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie moÅ¼esz szeptaÄ‡ do siebie., OK, )
 		return 1
 	)
 	if(giveplayer_id == INVALID_PLAYER_ID)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Podano b³êdne ID gracza., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Podano bÅ‚Ä™dne ID gracza., OK, )
 		return 1
 	)
 	if(!Logged(giveplayer_id))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Gracz o podanym ID nie jest zalogowany., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Gracz o podanym ID nie jest zalogowany., OK, )
  		return 1
 	)
 	
@@ -36,11 +36,11 @@ CMD:sz(playerid, params())
 
 	if(!PlayerToPlayer(0.8, playerid, giveplayer_id) || GetPlayerVirtualWorld(playerid) != GetPlayerVirtualWorld(giveplayer_id))
 	(
-		GuiMsg(playerid, Szept mo¿esz wysy³aæ tylko na okreœlon¹ odleg³oœæ.\nOsoba, do której chcesz szeptaæ nie jest obok Ciebie., 1)
+		GuiMsg(playerid, Szept moÅ¼esz wysyÅ‚aÄ‡ tylko na okreÅ›lonÄ… odlegÅ‚oÅ›Ä‡.\nOsoba, do ktÃ³rej chcesz szeptaÄ‡ nie jest obok Ciebie., 1)
 		return 1
 	)
 	
-	format(string, sizeof(string), * %s szepcze coœ na ucho do %s., PlayerName(playerid), PlayerName(giveplayer_id))
+	format(string, sizeof(string), * %s szepcze coÅ› na ucho do %s., PlayerName(playerid), PlayerName(giveplayer_id))
 	FlashMe(playerid, string)
 	
 	if(strlen(params) ( 78)
@@ -85,12 +85,12 @@ CMD:c(playerid, params())
 (
 	if(PlayerCache(playerid)(pBW))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie mo¿esz skorzystaæ teraz z tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie moÅ¼esz skorzystaÄ‡ teraz z tej komendy., OK, )
 		return 1
 	)
 	if(PlayerCache(playerid)(pGagged) != INVALID_PLAYER_ID)
 	(
-		GuiMsg(playerid,Nie mo¿esz mówiæ bêd¹c zakneblowanym.,1)
+		GuiMsg(playerid,Nie moÅ¼esz mÃ³wiÄ‡ bÄ™dÄ…c zakneblowanym.,1)
 		return 1
 	)
 	if(isnull(params))
@@ -102,7 +102,7 @@ CMD:c(playerid, params())
 	params(0) = chrtoupper(params(0))
 	
 	/*
-	// Szukanie gwiazdek do me nad g³ow¹
+	// Szukanie gwiazdek do me nad gÅ‚owÄ…
 	firstAstr, secondAstr, mestr(128), newstr1(128), newstr2(128)
 	firstAstr = strfind(params, *, false, 0)
 	if(firstAstr != -1)
@@ -156,12 +156,12 @@ CMD:k(playerid, params())
 (
 	if(PlayerCache(playerid)(pBW))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie mo¿esz skorzystaæ teraz z tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie moÅ¼esz skorzystaÄ‡ teraz z tej komendy., OK, )
 		return 1
 	)
 	if(PlayerCache(playerid)(pGagged) != INVALID_PLAYER_ID)
 	(
-		GuiMsg(playerid,Nie mo¿esz mówiæ bêd¹c zakneblowanym.,1)
+		GuiMsg(playerid,Nie moÅ¼esz mÃ³wiÄ‡ bÄ™dÄ…c zakneblowanym.,1)
 		return 1
 	)
 	if(isnull(params))
@@ -204,12 +204,12 @@ CMD:dk(playerid, params())
 (
 	if(PlayerCache(playerid)(pBW))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie mo¿esz skorzystaæ teraz z tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie moÅ¼esz skorzystaÄ‡ teraz z tej komendy., OK, )
 		return 1
 	)
 	if(PlayerCache(playerid)(pGagged) != INVALID_PLAYER_ID)
 	(
-		GuiMsg(playerid,Nie mo¿esz mówiæ bêd¹c zakneblowanym.,1)
+		GuiMsg(playerid,Nie moÅ¼esz mÃ³wiÄ‡ bÄ™dÄ…c zakneblowanym.,1)
 		return 1
 	)
 	if(isnull(params))
@@ -272,12 +272,12 @@ CMD:l(playerid, params())
 (
 	if(PlayerCache(playerid)(pBW))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie mo¿esz skorzystaæ teraz z tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie moÅ¼esz skorzystaÄ‡ teraz z tej komendy., OK, )
 		return 1
 	)
 	if(PlayerCache(playerid)(pGagged) != INVALID_PLAYER_ID)
 	(
-		GuiMsg(playerid,Nie mo¿esz mówiæ bêd¹c zakneblowanym.,1)
+		GuiMsg(playerid,Nie moÅ¼esz mÃ³wiÄ‡ bÄ™dÄ…c zakneblowanym.,1)
 		return 1
 	)
 	if(isnull(params))
@@ -289,7 +289,7 @@ CMD:l(playerid, params())
 	params(0) = chrtoupper(params(0))
 	
 	/*
-	// Szukanie gwiazdek do me nad g³ow¹
+	// Szukanie gwiazdek do me nad gÅ‚owÄ…
 	firstAstr, secondAstr, mestr(128), newstr1(128), newstr2(128)
 	firstAstr = strfind(params, *, false, 0)
 	if(firstAstr != -1)
@@ -316,7 +316,7 @@ CMD:l(playerid, params())
 	
 	if(strlen(params) ( 78)
 	(
-		format(string, sizeof(string), %s mówi: %s, PlayerName(playerid), params)
+		format(string, sizeof(string), %s mÃ³wi: %s, PlayerName(playerid), params)
 		ProxDetector(10.0, playerid, string, COLOR_FADE1, COLOR_FADE2, COLOR_FADE3, COLOR_FADE4, COLOR_FADE5, false)
 	)
 	else
@@ -329,7 +329,7 @@ CMD:l(playerid, params())
   			strmid(text, params, pos + 1, strlen(params))
 			strdel(params, pos, strlen(params))
 
-			format(string, sizeof(string), %s mówi: %s..., PlayerName(playerid), params)
+			format(string, sizeof(string), %s mÃ³wi: %s..., PlayerName(playerid), params)
 			ProxDetector(10.0, playerid, string, COLOR_FADE1, COLOR_FADE2, COLOR_FADE3, COLOR_FADE4, COLOR_FADE5, false)
 
 			format(string, sizeof(string), ...%s, text)
@@ -343,7 +343,7 @@ CMD:b(playerid, params())
 (
 	if(PlayerCache(playerid)(pBlock) & BLOCK_OOC)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Twoja postaæ ma na³o¿on¹ blokadê czatu OOC., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Twoja postaÄ‡ ma naÅ‚oÅ¼onÄ… blokadÄ™ czatu OOC., OK, )
 		return 1
 	)
 	if(isnull(params))
@@ -510,37 +510,37 @@ CMD:w(playerid, params())
 	)
 	if(giveplayer_id == playerid)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie mo¿esz wysy³aæ prywatnej wiadomoœci do siebie., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie moÅ¼esz wysyÅ‚aÄ‡ prywatnej wiadomoÅ›ci do siebie., OK, )
 		return 1
 	)
 	if(giveplayer_id == INVALID_PLAYER_ID)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Podano b³êdne ID gracza., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Podano bÅ‚Ä™dne ID gracza., OK, )
 		return 1
 	)
 	if(!Logged(giveplayer_id))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Gracz o podanym ID nie jest zalogowany., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Gracz o podanym ID nie jest zalogowany., OK, )
  		return 1
 	)
 	if((PlayerCache(playerid)(pBlock) & BLOCK_OOC) && PlayerCache(giveplayer_id)(pAdmin) == 0)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Twoja postaæ ma na³o¿on¹ blokadê czatu OOC., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Twoja postaÄ‡ ma naÅ‚oÅ¼onÄ… blokadÄ™ czatu OOC., OK, )
 		return 1
 	)
 	if(PlayerCache(giveplayer_id)(pTogW) && PlayerCache(playerid)(pAdmin) == 0)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Ten gracz ma wy³¹czone otrzymywanie prywatnych wiadomoœci., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Ten gracz ma wyÅ‚Ä…czone otrzymywanie prywatnych wiadomoÅ›ci., OK, )
 		return 1
 	)
 	if(PlayerCache(playerid)(pBW) && !PlayerToPlayer(25.0, playerid, giveplayer_id) && PlayerCache(giveplayer_id)(pAdmin) == 0)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Podczas stanu nieprzytomnoœci, wiadomoœci prywatne mo¿esz wysy³aæ na okreœlon¹ odleg³oœæ., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Podczas stanu nieprzytomnoÅ›ci, wiadomoÅ›ci prywatne moÅ¼esz wysyÅ‚aÄ‡ na okreÅ›lonÄ… odlegÅ‚oÅ›Ä‡., OK, )
 		return 1
 	)
 	if(PlayerCache(giveplayer_id)(pPlayerIgnored)(playerid))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Ten gracz ignoruje wiadomoœci przychodz¹ce od Ciebie., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Ten gracz ignoruje wiadomoÅ›ci przychodzÄ…ce od Ciebie., OK, )
 		return 1
 	)
 	text(0) = chrtoupper(text(0))
@@ -558,7 +558,7 @@ CMD:w(playerid, params())
 	(
 		if(PlayerCache(giveplayer_id)(pAdmin) != 0 && PlayerCache(giveplayer_id)(pFocusedID) != INVALID_PLAYER_ID && PlayerCache(giveplayer_id)(pFocusedID) != playerid)
 		(
-			GuiMsg(playerid, Ten administrator pomaga w³aœnie innemu graczowi\nnapisz do niego za chwilê., 1)
+			GuiMsg(playerid, Ten administrator pomaga wÅ‚aÅ›nie innemu graczowi\nnapisz do niego za chwilÄ™., 1)
 			return 1
 		)
 	)
@@ -567,7 +567,7 @@ CMD:w(playerid, params())
 	(
 		if(PlayerCache(giveplayer_id)(pAdmin) ) 0 || PlayerCache(giveplayer_id)(pAdmin) ( 0)
 		(
-			// tego warunku nie by³o
+			// tego warunku nie byÅ‚o
 			if(PlayerCache(giveplayer_id)(pAdmin) != -1)
 			(
 				cap1 = random(sizeof(Captcha)),
@@ -586,7 +586,7 @@ CMD:w(playerid, params())
 				MainPlayerTable(playerid) = giveplayer_id
 				
 				msg(512)
-				format(msg, sizeof(msg), Przepisz poni¿szy kod by wys³aæ wiadomoœæ do administratora.\nTo ograniczenie zosta³o stworzone po to by administratorzy mogli nad¹¿aæ za proœbami graczy.\n\nKod: (00FF00)%s, PlayerCache(playerid)(pCaptcha))
+				format(msg, sizeof(msg), Przepisz poniÅ¼szy kod by wysÅ‚aÄ‡ wiadomoÅ›Ä‡ do administratora.\nTo ograniczenie zostaÅ‚o stworzone po to by administratorzy mogli nadÄ…Å¼aÄ‡ za proÅ›bami graczy.\n\nKod: (00FF00)%s, PlayerCache(playerid)(pCaptcha))
 				ShowPlayerDialog(playerid, D_CAPTCHA, DIALOG_STYLE_INPUT, Captcha, msg, Gotowe, Anuluj)
 				
 				return 1
@@ -600,7 +600,7 @@ CMD:w(playerid, params())
 		
 	if(strlen(params) ( 78)
 	(
-		format(string, sizeof(string), (( » %s (%d): %s )), PlayerGlobalName(giveplayer_id, COLOR_SEND_PW), giveplayer_id, text)
+		format(string, sizeof(string), (( Â» %s (%d): %s )), PlayerGlobalName(giveplayer_id, COLOR_SEND_PW), giveplayer_id, text)
 		SendClientMessage(playerid, COLOR_SEND_PW, string)
 		
 		format(string, sizeof(string), (( %s (%d): %s )), PlayerGlobalName(playerid, COLOR_GOT_PW), playerid, text)
@@ -616,14 +616,14 @@ CMD:w(playerid, params())
 			strmid(text2, text, pos, strlen(text))
 			strdel(text, pos, strlen(text))
 
-			format(string, sizeof(string), (( » %s (%d): %s )), PlayerGlobalName(giveplayer_id, COLOR_SEND_PW), giveplayer_id, text)
+			format(string, sizeof(string), (( Â» %s (%d): %s )), PlayerGlobalName(giveplayer_id, COLOR_SEND_PW), giveplayer_id, text)
 			SendClientMessage(playerid, COLOR_SEND_PW, string)
 			
 			format(string, sizeof(string), (( %s (%d): %s )), PlayerGlobalName(playerid, COLOR_GOT_PW), playerid, text)
 			SendClientMessage(giveplayer_id, COLOR_GOT_PW, string)
 			
 			
-			format(string, sizeof(string), (( » %s (%d): %s )), PlayerGlobalName(giveplayer_id, COLOR_SEND_PW), giveplayer_id, text2)
+			format(string, sizeof(string), (( Â» %s (%d): %s )), PlayerGlobalName(giveplayer_id, COLOR_SEND_PW), giveplayer_id, text2)
 			SendClientMessage(playerid, COLOR_SEND_PW, string)
 			
 			format(string, sizeof(string), (( %s (%d): %s )), PlayerGlobalName(playerid, COLOR_GOT_PW), playerid, text2)
@@ -658,7 +658,7 @@ CMD:re(playerid, params())
 (
 	if(PlayerCache(playerid)(pLastW) == INVALID_PLAYER_ID)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Z nikim nie pisa³eœ przez ostatni czas., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Z nikim nie pisaÅ‚eÅ› przez ostatni czas., OK, )
 		return 1
 	)
 	if(isnull(params))
@@ -677,7 +677,7 @@ CMD:wr(playerid, params())
 (
 	if(PlayerCache(playerid)(pLastWTo) == INVALID_PLAYER_ID)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Z nikim nie pisa³eœ przez ostatni czas., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Z nikim nie pisaÅ‚eÅ› przez ostatni czas., OK, )
 		return 1
 	)
 	if(isnull(params))
@@ -696,12 +696,12 @@ CMD:mic(playerid, params())
 (
 	if(PlayerCache(playerid)(pBW))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie mo¿esz skorzystaæ teraz z tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie moÅ¼esz skorzystaÄ‡ teraz z tej komendy., OK, )
 		return 1
 	)
 	if(PlayerCache(playerid)(pGagged) != INVALID_PLAYER_ID)
 	(
-		GuiMsg(playerid,Nie mo¿esz mówiæ bêd¹c zakneblowanym.,1)
+		GuiMsg(playerid,Nie moÅ¼esz mÃ³wiÄ‡ bÄ™dÄ…c zakneblowanym.,1)
 		return 1
 	)
 	if(isnull(params))
@@ -712,7 +712,7 @@ CMD:mic(playerid, params())
 	object_id = GetClosestObject(playerid)
 	if(object_id == INVALID_OBJECT_ID || GetObjectModel(object_id) != OBJECT_MICROPHONE)
 	(
-		GuiMsg(playerid,W pobli¿u nie ma ¿adnego mikrofonu.,1)
+		GuiMsg(playerid,W pobliÅ¼u nie ma Å¼adnego mikrofonu.,1)
 		return 1
 	)
 	string(256)
@@ -747,12 +747,12 @@ CMD:m(playerid, params())
 (
 	if(PlayerCache(playerid)(pBW))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie mo¿esz skorzystaæ teraz z tej komendy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie moÅ¼esz skorzystaÄ‡ teraz z tej komendy., OK, )
 		return 1
 	)
 	if(PlayerCache(playerid)(pGagged) != INVALID_PLAYER_ID)
 	(
-		GuiMsg(playerid,Nie mo¿esz mówiæ bêd¹c zakneblowanym.,1)
+		GuiMsg(playerid,Nie moÅ¼esz mÃ³wiÄ‡ bÄ™dÄ…c zakneblowanym.,1)
 		return 1
 	)
 	if(isnull(params))
@@ -762,7 +762,7 @@ CMD:m(playerid, params())
 	)
 	if(!PlayerHaveItem(playerid, ITEM_MEGAPHONE))
 	(
-		 ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiedniego przedmiotu w swoim ekwipunku., OK, )
+		 ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiedniego przedmiotu w swoim ekwipunku., OK, )
 		 return 1
 	)
 	string(256)

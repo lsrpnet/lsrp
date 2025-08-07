@@ -1,3 +1,3 @@
 /*
-	jeszcze nic tu nie ma, nie zabiera³em siê za to
+	jeszcze nic tu nie ma, nie zabieraÅ‚em siÄ™ za to
 */

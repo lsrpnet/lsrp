@@ -1,5 +1,5 @@
 /*
-	Bilard w fazie testów
+	Bilard w fazie testÃ³w
 
 	LS-RP.net seler
 */

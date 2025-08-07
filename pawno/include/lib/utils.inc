@@ -506,7 +506,7 @@ stock CreateAltQuitLabel(playerid)
 	)
 	else
 	(
-		format(string, sizeof(string), (( %s - powÛd nieznany )), PlayerName(playerid))
+		format(string, sizeof(string), (( %s - pow√≥d nieznany )), PlayerName(playerid))
 	)
 
 	if(reason == QUIT_SWITCHING)
@@ -547,7 +547,7 @@ stock CreateQuitLabel(playerid)
 	)
 	else
 	(
-		format(string, sizeof(string), (( %s - powÛd nieznany )), PlayerName(playerid))
+		format(string, sizeof(string), (( %s - pow√≥d nieznany )), PlayerName(playerid))
 	)
 	
 	label_id = CreateDynamic3DTextLabel(LabelWrap(string), COLOR_GREY, PosX, PosY, PosZ, 100.0, INVALID_PLAYER_ID, INVALID_VEHICLE_ID, 1, world, interior, -1, 80.0)
@@ -789,24 +789,24 @@ stock EscapePL(name())
 (
 	for(i = 0 name(i) != 0 i++)
 	(
-		if(name(i) == ú) name(i) = s
-		else if(name(i) == Í) name(i) = e
-		else if(name(i) == Û) name(i) = o
-		else if(name(i) == π) name(i) = a
-		else if(name(i) == ≥) name(i) = l
-		else if(name(i) == ø) name(i) = z
-		else if(name(i) == ü) name(i) = z
-		else if(name(i) == Ê) name(i) = c
-		else if(name(i) == Ò) name(i) = n
-		else if(name(i) == å) name(i) = S
-		else if(name(i) ==  ) name(i) = E
-		else if(name(i) == ”) name(i) = O
-		else if(name(i) == •) name(i) = A
-		else if(name(i) == £) name(i) = L
-		else if(name(i) == Ø) name(i) = Z
-		else if(name(i) == è) name(i) = Z
-		else if(name(i) == ∆) name(i) = C
-		else if(name(i) == —) name(i) = N
+		if(name(i) == ≈õ) name(i) = s
+		else if(name(i) == ƒô) name(i) = e
+		else if(name(i) == √≥) name(i) = o
+		else if(name(i) == ƒÖ) name(i) = a
+		else if(name(i) == ≈Ç) name(i) = l
+		else if(name(i) == ≈º) name(i) = z
+		else if(name(i) == ≈∫) name(i) = z
+		else if(name(i) == ƒá) name(i) = c
+		else if(name(i) == ≈Ñ) name(i) = n
+		else if(name(i) == ≈ö) name(i) = S
+		else if(name(i) == ƒò) name(i) = E
+		else if(name(i) == √ì) name(i) = O
+		else if(name(i) == ƒÑ) name(i) = A
+		else if(name(i) == ≈Å) name(i) = L
+		else if(name(i) == ≈ª) name(i) = Z
+		else if(name(i) == ≈π) name(i) = Z
+		else if(name(i) == ƒÜ) name(i) = C
+		else if(name(i) == ≈É) name(i) = N
 		else if(name(i) ==  ) name(i) = _
 	)
 )
@@ -1203,7 +1203,7 @@ ClearCache(playerid, switching = false)
 	PlayerCache(playerid)(pSexReps)			= 0
 	PlayerCache(playerid)(pSexTime)			= 0
 		
-	// Nowe efekty dragÛw
+	// Nowe efekty drag√≥w
 	PlayerCache(playerid)(pRage)				= false
 	PlayerCache(playerid)(pRageTime)			= 0
 	PlayerCache(playerid)(pRageDrug)			= 0
@@ -1223,7 +1223,7 @@ ClearCache(playerid, switching = false)
 	PlayerCache(playerid)(pOPumpItem)		= 0
 	PlayerCache(playerid)(pOPumpTime)		= 0
 	
-	// Nowe/me nad g≥owπ
+	// Nowe/me nad g≈ÇowƒÖ
 	//PlayerCache(playerid)(pMeTime)			= 0
 	
 	PlayerCache(playerid)(pOselLimit)		= 0
@@ -1409,7 +1409,7 @@ ClearCache(playerid, switching = false)
 		WeaponCache(playerid)(i)(pShot) = false
 	)
 	
-	// WyczyúÊ sloty grup
+	// Wyczy≈õƒá sloty grup
 	for (slot = 0 slot ( MAX_GROUP_SLOTS slot++)
 	(
 		PlayerGroup(playerid)(slot)(gUID) 			= 0
@@ -1514,7 +1514,7 @@ CheckBans(playerid)
 	if(banned)
 	(
 		string(128)
-		format(string, sizeof(string), Zosta≥es zbanowany.\nTwÛj adres IP: %s\nPowÛd: %s\nApeluj na: %s, IP, ban_reason, WEB_URL)
+		format(string, sizeof(string), Zosta≈Çes zbanowany.\nTw√≥j adres IP: %s\nPow√≥d: %s\nApeluj na: %s, IP, ban_reason, WEB_URL)
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 		Kick(playerid)
 		return 1
@@ -1736,9 +1736,9 @@ stock EndCall(callid)
 		)
 
 		if(PlayerCache(eccalled)(pCall) != callid)
-			SendClientMessage(eccaller, COLOR_YELLOW, Po≥πczenie zosta≥o przerwane.)
+			SendClientMessage(eccaller, COLOR_YELLOW, Po≈ÇƒÖczenie zosta≈Ço przerwane.)
 		else
-			SendClientMessage(eccaller, COLOR_YELLOW, Rozmowa zosta≥a zakoÒczona.)
+			SendClientMessage(eccaller, COLOR_YELLOW, Rozmowa zosta≈Ça zako≈Ñczona.)
 	)
 	if(eccalled != INVALID_PLAYER_ID && IsPlayerConnected(eccalled))
 	(
@@ -1752,9 +1752,9 @@ stock EndCall(callid)
 		)
 
 		if(PlayerCache(eccalled)(pCall) != callid)
-			SendClientMessage(eccalled, COLOR_YELLOW, Po≥πczenie zosta≥o przerwane.)
+			SendClientMessage(eccalled, COLOR_YELLOW, Po≈ÇƒÖczenie zosta≈Ço przerwane.)
 		else
-			SendClientMessage(eccalled, COLOR_YELLOW, Rozmowa zosta≥a zakoÒczona.)
+			SendClientMessage(eccalled, COLOR_YELLOW, Rozmowa zosta≈Ça zako≈Ñczona.)
 	)
 
 	if(Call(callid)(callerDevice) == DEVICE_BOX)
@@ -2094,7 +2094,7 @@ stock LoadTextDraws()
 	TextDrawSetSelectable(TextDrawAExit, 1)
 */
 
-	DashboardBG(0) = TextDrawCreate(239.082873, 123.666664, hud:radardisc) // gÛra lewo
+	DashboardBG(0) = TextDrawCreate(239.082873, 123.666664, hud:radardisc) // g√≥ra lewo
 	TextDrawLetterSize(DashboardBG(0), 0.000000, 0.000000)
 	TextDrawTextSize(DashboardBG(0), 79.180084, 97.416824)
 	TextDrawAlignment(DashboardBG(0), 1)
@@ -2104,7 +2104,7 @@ stock LoadTextDraws()
 	TextDrawFont(DashboardBG(0), 4)
 	TextDrawSetProportional(DashboardBG(0), 1)
 
-	DashboardBG(1) = TextDrawCreate(239.382873, 319.033221, hud:radardisc) // dÛ≥ lewo
+	DashboardBG(1) = TextDrawCreate(239.382873, 319.033221, hud:radardisc) // d√≥≈Ç lewo
 	TextDrawLetterSize(DashboardBG(1), 0.000000, 0.000000)
 	TextDrawTextSize(DashboardBG(1), 77.774520, -97.999885)
 	TextDrawAlignment(DashboardBG(1), 1)
@@ -2113,7 +2113,7 @@ stock LoadTextDraws()
 	TextDrawSetOutline(DashboardBG(1), 0)
 	TextDrawFont(DashboardBG(1), 4)
 
-	DashboardBG(2) = TextDrawCreate(392.541339, 318.166847, hud:radardisc) // dÛ≥ prawo
+	DashboardBG(2) = TextDrawCreate(392.541339, 318.166847, hud:radardisc) // d√≥≈Ç prawo
 	TextDrawLetterSize(DashboardBG(2), 0.000000, 0.000000)
 	TextDrawTextSize(DashboardBG(2), -78.243026, -97.999839)
 	TextDrawAlignment(DashboardBG(2), 1)
@@ -2122,7 +2122,7 @@ stock LoadTextDraws()
 	TextDrawSetOutline(DashboardBG(2), 0)
 	TextDrawFont(DashboardBG(2), 4)
 
-	DashboardBG(3) = TextDrawCreate(392.341339, 123.949847, hud:radardisc) // gÛra prawo
+	DashboardBG(3) = TextDrawCreate(392.341339, 123.949847, hud:radardisc) // g√≥ra prawo
 	TextDrawLetterSize(DashboardBG(3), 0.000000, 0.000000)
 	TextDrawTextSize(DashboardBG(3), -74.026344, 96.250259)
 	TextDrawAlignment(DashboardBG(3), 1)
@@ -2326,7 +2326,7 @@ stock LoadTextDraws()
 	
 	InitializeLSPadTextDraws()
 
-	// Gracze (pÍtla)
+	// Gracze (pƒôtla)
 	for (i = 0 i ( MAX_PLAYERS i++)
  	(
 		/*
@@ -2446,7 +2446,7 @@ stock LoadTextDraws()
 		*/
 		
 		
-		//czerwony ekran po uderzeniu w pojeüdzie
+		//czerwony ekran po uderzeniu w poje≈∫dzie
 		TextDrawHitscreen(i) = TextDrawCreate(-20.000000,2.000000,|)
         TextDrawUseBox(TextDrawHitscreen(i) ,1)
         TextDrawBoxColor(TextDrawHitscreen(i) ,0xFF0000aa)
@@ -2460,7 +2460,7 @@ stock LoadTextDraws()
         TextDrawSetProportional(TextDrawHitscreen(i) ,1)
         TextDrawSetShadow(TextDrawHitscreen(i) ,1)
 		
-		//worek na g≥owie, ktÛry bÍdzie zas≥ania≥ leb
+		//worek na g≈Çowie, kt√≥ry bƒôdzie zas≈Çania≈Ç leb
 		TextDrawHeadbag(i) = TextDrawCreate(-20.000000,2.000000,|)
         TextDrawUseBox(TextDrawHeadbag(i) ,1)
         TextDrawBoxColor(TextDrawHeadbag(i) ,0x000000f)
@@ -2474,7 +2474,7 @@ stock LoadTextDraws()
         TextDrawSetProportional(TextDrawHeadbag(i) ,1)
         TextDrawSetShadow(TextDrawHeadbag(i) ,1)
 		
-		// TextDraw z g≥Ûwnym info dla gracza
+		// TextDraw z g≈Ç√≥wnym info dla gracza
 		//TextDrawMainInfo(i) = TextDrawCreate(430.000000, 113.000000, _)
 		TextDrawMainInfo(i) = TextDrawCreate(430.000000, 145.000000, _)
 		TextDrawBackgroundColor(TextDrawMainInfo(i), 255)
@@ -2487,7 +2487,7 @@ stock LoadTextDraws()
 		TextDrawBoxColor(TextDrawMainInfo(i), 68)
 		TextDrawTextSize(TextDrawMainInfo(i), 608.000000, 10.000000)
 
-		// TextDraw z ofertπ
+		// TextDraw z ofertƒÖ
 		TextDrawOfferTitle(i) = TextDrawCreate(191.000000, 324.000000, _)
 		TextDrawBackgroundColor(TextDrawOfferTitle(i), 255)
 		TextDrawFont(TextDrawOfferTitle(i), 1)
@@ -2505,7 +2505,7 @@ stock LoadTextDraws()
 		PlayerTextDrawSetOutline(i, TextDrawFuelContent(i), 1)
 		PlayerTextDrawSetProportional(i, TextDrawFuelContent(i), 1)
 		
-  		// TextDraw z informacjπ o drzwiach
+  		// TextDraw z informacjƒÖ o drzwiach
 		/*TextDrawDoorInfo(i) = TextDrawCreate(326.000000, 330.000000, _)
 		TextDrawAlignment(TextDrawDoorInfo(i), 2)
 		TextDrawBackgroundColor(TextDrawDoorInfo(i), 255)
@@ -2644,7 +2644,7 @@ public SetPlayerToChangeChar(playerid)
 	return 1
 )
 
-stock RemoveAttachedShit(playerid)	// usuwanie wszystkich przyczepionych itemÛw
+stock RemoveAttachedShit(playerid)	// usuwanie wszystkich przyczepionych item√≥w
 (
 	for(i = 0  i ( 9  i ++)
 	(
@@ -2732,7 +2732,7 @@ stock IsPointInRangeOfPoint(Float:x, Float:y, Float:z, Float:x2, Float:y2, Float
 
 stock blint_SaveCash(safetyUID, playerid)
 (
-	// dodajmy, tak na przysz≥oúÊ
+	// dodajmy, tak na przysz≈Ço≈õƒá
 	buffer(256)
 	format(buffer,sizeof(buffer),UPDATE hrp_characters SET char_cash = %i WHERE char_uid = %i, PlayerCache(playerid)(pCash), safetyUID)
 	mysql_query(buffer)
@@ -2809,7 +2809,7 @@ stock SelectRandomCorner(playerid)
 	return 0
 )
 
-// Przypisywanie w≥aúciciela (UID grupy) dla corneru, seler
+// Przypisywanie w≈Ça≈õciciela (UID grupy) dla corneru, seler
 stock LoadCornersOwner()
 (
 	count = 0
@@ -2846,8 +2846,8 @@ stock stopSparing(playerid)
 	PlayerCache(playerid)(pSparing) = INVALID_PLAYER_ID
 	PlayerCache(enemy)(pSparing) = INVALID_PLAYER_ID
 	
-	SendClientMessage(enemy, COLOR_INFO, ) Sparing zosta≥ przerwany.)
-	SendClientMessage(playerid, COLOR_INFO, ) Sparing zosta≥ przerwany.)
+	SendClientMessage(enemy, COLOR_INFO, ) Sparing zosta≈Ç przerwany.)
+	SendClientMessage(playerid, COLOR_INFO, ) Sparing zosta≈Ç przerwany.)
 	
 	return 1
 )
@@ -2878,7 +2878,7 @@ stock LaunchLottery()
 				mysql_query_format(UPDATE hrp_characters SET char_bankcash = char_bankcash + %d WHERE char_uid = %d, rows * 10, owner)
 				
 				message(128)
-				format(message, sizeof(message), wygra≥eú na loterii $%d!, rows * 10)
+				format(message, sizeof(message), wygra≈Çe≈õ na loterii $%d!, rows * 10)
 				AddPlayerOfflineMessage(owner, message)
 				break
 			)
@@ -2906,7 +2906,7 @@ stock blint_CashBugFixer(playerid)
 	
 	if(!checkbug)
 	(
-		GuiMsg(playerid, Musisz chwilÍ odczekaÊ nim uøyjesz tej komendy., 0)
+		GuiMsg(playerid, Musisz chwilƒô odczekaƒá nim u≈ºyjesz tej komendy., 0)
 		return 1
 	)
 	

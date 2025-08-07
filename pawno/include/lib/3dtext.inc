@@ -37,7 +37,7 @@ public Load3DTextLabels()
 	)
 	mysql_free_result()
 	
-	printf((load) Wczytano %d 3D teksty/ów., labels)
+	printf((load) Wczytano %d 3D teksty/Ã³w., labels)
 	return 1
 )
 

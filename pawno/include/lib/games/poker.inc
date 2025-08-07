@@ -2,13 +2,13 @@
 #define MAX_POKERGAMES 					200
 #define INVALID_POKER_GAME_ID 			(-1)
 #define INVALID_POKER_SLOT_ID			(-1)
-#define POKER_NEEDED_PLAYERS			2 // Zmieniæ na 3
+#define POKER_NEEDED_PLAYERS			2 // ZmieniÄ‡ na 3
 #define POKER_MAX_PLAYERS				6
 
-// Stó³ do pokera
+// StÃ³Å‚ do pokera
 #define OBJECT_POKER_TABLE				2188
 
-// Typy ticków
+// Typy tickÃ³w
 #define POKER_TICK_RAISE				1			// podbicie
 #define POKER_TICK_BED					2			// sprawdzenie
 #define POKER_TICK_FOLD					3			// pas
@@ -38,15 +38,15 @@ enum pokerPars
 	pkSlot(6),
 	
 	pkBlind,				// Aktualne stawki
-	pkNeed,					// Ile kasy trzeba wrzuciæ by kontynuowaæ
-	pkActivePlayers,		// Iloœæ aktywnych graczy
+	pkNeed,					// Ile kasy trzeba wrzuciÄ‡ by kontynuowaÄ‡
+	pkActivePlayers,		// IloÅ›Ä‡ aktywnych graczy
 	pkTimer,				// Czas akcji gracza
 	pkMoney,				// Kasa w stole
 	
 	pkActivePlayerSlot,		// Aktualny gracz
 
 	
-	pkTicks,				// Iloœæ ruchów
+	pkTicks,				// IloÅ›Ä‡ ruchÃ³w
 )
 PokerGames(MAX_POKERGAMES)(pokerPars)
 
@@ -200,12 +200,12 @@ hook OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			gameid = PlayerCache(playerid)(pPokerID)
 			PokerGames(gameid)(pkActivePlayers)++
 			PokerGames(gameid)(pkSlot)(GetFreeSlotInPoker(gameid)) = playerid
-			format(string, sizeof(string), %s zaakceptowa³ zaproszenie. (S: %d), PlayerName(playerid), GetFreeSlotInPoker(gameid))
+			format(string, sizeof(string), %s zaakceptowaÅ‚ zaproszenie. (S: %d), PlayerName(playerid), GetFreeSlotInPoker(gameid))
 			pkMessageToAll(PlayerCache(playerid)(pPokerID), string)
 		)
 		else
 		(
-			format(string, sizeof(string), %s odrzuci³ zaproszenie., PlayerName(playerid))
+			format(string, sizeof(string), %s odrzuciÅ‚ zaproszenie., PlayerName(playerid))
 			pkMessageToAll(PlayerCache(playerid)(pPokerID), string)
 			PlayerCache(playerid)(pPokerID) = INVALID_POKER_GAME_ID
 		)
@@ -231,20 +231,20 @@ CMD:poker(playerid,params())
 		objectid = GetClosestObject(playerid), string(256)
 		if(objectid == INVALID_OBJECT_ID || GetObjectModel(objectid) != OBJECT_POKER_TABLE)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie znaleziono sto³u do pokera w pobli¿u., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie znaleziono stoÅ‚u do pokera w pobliÅ¼u., OK, )
 			return 1
 		)
 		if(PlayerCache(playerid)(pPokerID) != INVALID_POKER_GAME_ID)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Obecnie posiadasz ju¿ za³o¿ony stó³ do gry., OK, )
-			format(string, sizeof(string), ID sto³u: %d, PlayerCache(playerid)(pPokerID))
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Obecnie posiadasz juÅ¼ zaÅ‚oÅ¼ony stÃ³Å‚ do gry., OK, )
+			format(string, sizeof(string), ID stoÅ‚u: %d, PlayerCache(playerid)(pPokerID))
 			pkMessage(playerid, string)
 			return 1
 		)
 		gameid = GetFreePokerID()
 		if(gameid == INVALID_POKER_GAME_ID)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie mo¿na utworzyæ gry., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie moÅ¼na utworzyÄ‡ gry., OK, )
 			return 1
 		)
 		PokerGames(gameid)(pkActive) = true
@@ -252,7 +252,7 @@ CMD:poker(playerid,params())
 		PokerGames(gameid)(pkActivePlayers)++
 		PokerGames(gameid)(pkSlot)(0) = playerid
 		PlayerCache(playerid)(pPokerID) = gameid
-		format(string, sizeof(string), Utworzono stó³. ID: %d, gameid)
+		format(string, sizeof(string), Utworzono stÃ³Å‚. ID: %d, gameid)
 		pkMessage(playerid, string)
 		return 1
 	)
@@ -272,43 +272,43 @@ CMD:poker(playerid,params())
 		)
 		if(PlayerCache(playerid)(pPokerID) == INVALID_POKER_GAME_ID)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie jesteœ w³aœcicielem sto³u.\nAby za³o¿yæ, u¿yj /poker zaloz., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie jesteÅ› wÅ‚aÅ›cicielem stoÅ‚u.\nAby zaÅ‚oÅ¼yÄ‡, uÅ¼yj /poker zaloz., OK, )
 			return 1
 		)
 		if(targetid == INVALID_PLAYER_ID)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID gracza., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID gracza., OK, )
 			return 1
 		)
 		if(!Logged(targetid))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Gracz o podanym ID nie jest zalogowany., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Gracz o podanym ID nie jest zalogowany., OK, )
 			return 1
 		)
 		if(targetid == playerid)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie mo¿esz zaprosiæ siebie samego do gry w pokera., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie moÅ¼esz zaprosiÄ‡ siebie samego do gry w pokera., OK, )
 			return 1
 		)
 		if(PlayerCache(targetid)(pPokerID) != INVALID_POKER_GAME_ID)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wybrany gracz jest ju¿ zapisany do sto³u., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wybrany gracz jest juÅ¼ zapisany do stoÅ‚u., OK, )
 			return 1
 		)
 		gameid = PlayerCache(playerid)(pPokerID), slotid = GetFreeSlotInPoker(gameid)
 		if(slotid == INVALID_POKER_SLOT_ID)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie mo¿esz zaprosiæ ju¿ wiêcej graczy do sto³u., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie moÅ¼esz zaprosiÄ‡ juÅ¼ wiÄ™cej graczy do stoÅ‚u., OK, )
 			return 1
 		)
 		if(!PlayerToPlayer(5.0, playerid, targetid))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Ten gracz nie jest blisko Ciebie., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Ten gracz nie jest blisko Ciebie., OK, )
 			return 1
 		)
 		PlayerCache(targetid)(pPokerID) = gameid
-		ShowPlayerDialog(targetid, D_POKER_INVITE, DIALOG_STYLE_MSGBOX, Poker, Czy akceptujesz zaproszenie gracza do sto³u pokerowego?, Tak, Nie)
-		pkMessage(playerid, Zaprosi³eœ gracza.)
+		ShowPlayerDialog(targetid, D_POKER_INVITE, DIALOG_STYLE_MSGBOX, Poker, Czy akceptujesz zaproszenie gracza do stoÅ‚u pokerowego?, Tak, Nie)
+		pkMessage(playerid, ZaprosiÅ‚eÅ› gracza.)
 		return 1
 	)
 	
@@ -316,16 +316,16 @@ CMD:poker(playerid,params())
 	(
 		if(PlayerCache(playerid)(pPokerID) == INVALID_POKER_GAME_ID)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie jesteœ zaproszony do ¿adnego sto³u., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie jesteÅ› zaproszony do Å¼adnego stoÅ‚u., OK, )
 			return 1
 		)
 		gameid = PlayerCache(playerid)(pPokerID), slotid = GetPlayerSlotInPoker(gameid, playerid), string(256)
-		format(string, sizeof(string), %s opuœci³ stó³. (S: %d), PlayerName(playerid), slotid)
+		format(string, sizeof(string), %s opuÅ›ciÅ‚ stÃ³Å‚. (S: %d), PlayerName(playerid), slotid)
 		pkMessageToAll(PlayerCache(playerid)(pPokerID), string)
 		PokerGames(gameid)(pkActivePlayers)--
 		PokerGames(gameid)(pkSlot)(slotid) = INVALID_PLAYER_ID
 		PlayerCache(playerid)(pPokerID) = INVALID_POKER_GAME_ID
-		pkMessage(playerid, Opuœci³eœ stó³.)
+		pkMessage(playerid, OpuÅ›ciÅ‚eÅ› stÃ³Å‚.)
 		return 1
 	)
 	
@@ -334,15 +334,15 @@ CMD:poker(playerid,params())
 		gameid = PlayerCache(playerid)(pPokerID), string(256)
 		if(gameid == INVALID_POKER_GAME_ID)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie jesteœ w³aœcicielem sto³u.\nAby za³o¿yæ, u¿yj /poker zaloz., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie jesteÅ› wÅ‚aÅ›cicielem stoÅ‚u.\nAby zaÅ‚oÅ¼yÄ‡, uÅ¼yj /poker zaloz., OK, )
 			return 1
 		)
 		if(PokerGames(gameid)(pkActivePlayers) ( POKER_NEEDED_PLAYERS || PokerGames(gameid)(pkActivePlayers) ) POKER_MAX_PLAYERS)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Aby wystartowaæ grê, przy stole musi usi¹œæ przynajmniej 3 graczy., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Aby wystartowaÄ‡ grÄ™, przy stole musi usiÄ…Å›Ä‡ przynajmniej 3 graczy., OK, )
 			return 1
 		)
-		format(string, sizeof(string), %s rozpocz¹³ grê., PlayerName(playerid))
+		format(string, sizeof(string), %s rozpoczÄ…Å‚ grÄ™., PlayerName(playerid))
 		pkMessageToAll(PlayerCache(playerid)(pPokerID), string)
 		StartPoker(gameid)
 		return 1
@@ -351,7 +351,7 @@ CMD:poker(playerid,params())
 
 
 /*
-	Ogólne funkcje
+	OgÃ³lne funkcje
 */
 
 // Komunikaty pokerowe
@@ -364,7 +364,7 @@ stock pkMessage(playerid, givenString())
 	return 1
 )
 
-// Komunikat pokerowy dla ka¿dego przy stole
+// Komunikat pokerowy dla kaÅ¼dego przy stole
 stock pkMessageToAll(gameid, givenString())
 (
 	string(256)
@@ -418,7 +418,7 @@ stock GetPlayerSlotInPoker(gameid, playerid)
 	return INVALID_POKER_SLOT_ID
 )
 
-// Rozpoczêcie gry
+// RozpoczÄ™cie gry
 stock StartPoker(gameid)
 (
 	for(i = 0  i ( 5 i++)
@@ -621,7 +621,7 @@ stock poker_LoadTextDraws(playerid)
 	PlayerTextDrawSetProportional(playerid,TextDrawTableCash(playerid), 1)
 	PlayerTextDrawSetShadow(playerid,TextDrawTableCash(playerid), 1)
 	
-	//akcja - sprawdŸ
+	//akcja - sprawdÅº
 	TextDrawActionCheck(playerid) = CreatePlayerTextDraw(playerid,470.000000, 174.000000, Sprawdz)
 	PlayerTextDrawAlignment(playerid,TextDrawActionCheck(playerid), 2)
 	PlayerTextDrawBackgroundColor(playerid,TextDrawActionCheck(playerid), 255)

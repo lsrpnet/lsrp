@@ -1,17 +1,17 @@
 public OnPlayerSendOffer(playerid, customerid, type, offer_name(), value, price)
 (
-	// Zobaczymy czy to pomo¿e.
+	// Zobaczymy czy to pomoÅ¼e.
 	PlayerCache(playerid)(pOfferedUID) = PlayerCache(customerid)(pUID)
 	
 	if(IsPlayerNPC(playerid) || IsPlayerNPC(customerid))
 	(
-		GuiMsg(playerid, Nie mo¿esz handlowaæ z botem., 1)
+		GuiMsg(playerid, Nie moÅ¼esz handlowaÄ‡ z botem., 1)
 		return 1
 	)
 	
 	if(Offer(playerid)(oCustomerID) != INVALID_PLAYER_ID)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie mo¿esz wys³aæ kilku ofert jednoczeœnie., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie moÅ¼esz wysÅ‚aÄ‡ kilku ofert jednoczeÅ›nie., OK, )
 		return 1
 	)
 	
@@ -21,7 +21,7 @@ public OnPlayerSendOffer(playerid, customerid, type, offer_name(), value, price)
 		
 	if(!checkbug)
 	(
-		GuiMsg(playerid, Musisz chwilê odczekaæ nim wyœlesz ofertê do tego gracza., 0)
+		GuiMsg(playerid, Musisz chwilÄ™ odczekaÄ‡ nim wyÅ›lesz ofertÄ™ do tego gracza., 0)
 		return 1
 	)
 	
@@ -29,12 +29,12 @@ public OnPlayerSendOffer(playerid, customerid, type, offer_name(), value, price)
 	(
 		if(PlayerCache(customerid)(pGamePoints) ( 100)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie mo¿esz nic oferowaæ temu graczowi, dopóki ten nie zdobedzie 100GS., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie moÅ¼esz nic oferowaÄ‡ temu graczowi, dopÃ³ki ten nie zdobedzie 100GS., OK, )
 			return 1
 		)
 		if(PlayerCache(playerid)(pGamePoints) ( 100)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie mo¿esz nic oferowaæ, dopóki nie zdobedziesz 100GS., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie moÅ¼esz nic oferowaÄ‡, dopÃ³ki nie zdobedziesz 100GS., OK, )
 			return 1
 		)
 	)
@@ -49,9 +49,9 @@ public OnPlayerSendOffer(playerid, customerid, type, offer_name(), value, price)
 		
 		TextDrawShowForPlayer(customerid, Text:TextDrawOfferBack)
 		TextDrawShowForPlayer(customerid, Text:TextDrawOfferTitle(customerid))
-		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertê tego gracza?, Tak, Nie)
+		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertÄ™ tego gracza?, Tak, Nie)
 		
-		SendClientMessage(playerid, COLOR_INFO, Oferta zosta³a wys³ana. Odczekaj chwilê, by przekonaæ siê, czy gracz zaakceptuje Twoj¹ ofertê.)
+		SendClientMessage(playerid, COLOR_INFO, Oferta zostaÅ‚a wysÅ‚ana. Odczekaj chwilÄ™, by przekonaÄ‡ siÄ™, czy gracz zaakceptuje TwojÄ… ofertÄ™.)
 		
    		Offer(playerid)(oCustomerID) = customerid
 		Offer(playerid)(oType) = type
@@ -68,9 +68,9 @@ public OnPlayerSendOffer(playerid, customerid, type, offer_name(), value, price)
 		
 		TextDrawShowForPlayer(customerid, Text:TextDrawOfferBack)
 		TextDrawShowForPlayer(customerid, Text:TextDrawOfferTitle(customerid))
-		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertê tego gracza?, Tak, Nie)
+		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertÄ™ tego gracza?, Tak, Nie)
 		
-		SendClientMessage(playerid, COLOR_INFO, Oferta zosta³a wys³ana. Odczekaj chwilê, by przekonaæ siê, czy gracz zaakceptuje Twoj¹ ofertê.)
+		SendClientMessage(playerid, COLOR_INFO, Oferta zostaÅ‚a wysÅ‚ana. Odczekaj chwilÄ™, by przekonaÄ‡ siÄ™, czy gracz zaakceptuje TwojÄ… ofertÄ™.)
 		
    		Offer(playerid)(oCustomerID) = customerid
 		Offer(playerid)(oType) = type
@@ -90,9 +90,9 @@ public OnPlayerSendOffer(playerid, customerid, type, offer_name(), value, price)
 
 		TextDrawShowForPlayer(customerid, Text:TextDrawOfferBack)
   		TextDrawShowForPlayer(customerid, Text:TextDrawOfferTitle(customerid))
-		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertê tego gracza?, Tak, Nie)
+		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertÄ™ tego gracza?, Tak, Nie)
 
-		SendClientMessage(playerid, COLOR_INFO, Oferta zosta³a wys³ana. Odczekaj chwilê, by przekonaæ siê, czy gracz zaakceptuje Twoj¹ ofertê.)
+		SendClientMessage(playerid, COLOR_INFO, Oferta zostaÅ‚a wysÅ‚ana. Odczekaj chwilÄ™, by przekonaÄ‡ siÄ™, czy gracz zaakceptuje TwojÄ… ofertÄ™.)
 
    		Offer(playerid)(oCustomerID) = customerid
 		Offer(playerid)(oType) = type
@@ -110,7 +110,7 @@ public OnPlayerSendOffer(playerid, customerid, type, offer_name(), value, price)
 		
 		if(weight ) GetPlayerEqSpace(customerid))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Gracz, któremu wysy³asz ofertê nie ma wystarczaj¹co miejsca w swoim ekwipunku., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Gracz, ktÃ³remu wysyÅ‚asz ofertÄ™ nie ma wystarczajÄ…co miejsca w swoim ekwipunku., OK, )
 			return 0
 		)
 	
@@ -119,9 +119,9 @@ public OnPlayerSendOffer(playerid, customerid, type, offer_name(), value, price)
 
 		TextDrawShowForPlayer(customerid, Text:TextDrawOfferBack)
   		TextDrawShowForPlayer(customerid, Text:TextDrawOfferTitle(customerid))
-		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertê tego gracza?, Tak, Nie)
+		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertÄ™ tego gracza?, Tak, Nie)
 
-		SendClientMessage(playerid, COLOR_INFO, Oferta zosta³a wys³ana. Odczekaj chwilê, by przekonaæ siê, czy gracz zaakceptuje Twoj¹ ofertê.)
+		SendClientMessage(playerid, COLOR_INFO, Oferta zostaÅ‚a wysÅ‚ana. Odczekaj chwilÄ™, by przekonaÄ‡ siÄ™, czy gracz zaakceptuje TwojÄ… ofertÄ™.)
 	
 		Offer(playerid)(oCustomerID) = customerid
 		Offer(playerid)(oType) = type
@@ -139,9 +139,9 @@ public OnPlayerSendOffer(playerid, customerid, type, offer_name(), value, price)
 
 		TextDrawShowForPlayer(customerid, Text:TextDrawOfferBack)
   		TextDrawShowForPlayer(customerid, Text:TextDrawOfferTitle(customerid))
-		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertê tego gracza?, Tak, Nie)
+		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertÄ™ tego gracza?, Tak, Nie)
 
-		SendClientMessage(playerid, COLOR_INFO, Oferta zosta³a wys³ana. Odczekaj chwilê, by przekonaæ siê, czy gracz zaakceptuje Twoj¹ ofertê.)
+		SendClientMessage(playerid, COLOR_INFO, Oferta zostaÅ‚a wysÅ‚ana. Odczekaj chwilÄ™, by przekonaÄ‡ siÄ™, czy gracz zaakceptuje TwojÄ… ofertÄ™.)
 
 		Offer(playerid)(oCustomerID) = customerid
 		Offer(playerid)(oType) = type
@@ -156,7 +156,7 @@ public OnPlayerSendOffer(playerid, customerid, type, offer_name(), value, price)
 	(
 		if(price ) 10)
 		(
-			GuiMsg(playerid, Wprowadzono nieprawid³ow¹ kwotê., 1)
+			GuiMsg(playerid, Wprowadzono nieprawidÅ‚owÄ… kwotÄ™., 1)
 			return 0
 		)
 		
@@ -165,9 +165,9 @@ public OnPlayerSendOffer(playerid, customerid, type, offer_name(), value, price)
 
 		TextDrawShowForPlayer(customerid, Text:TextDrawOfferBack)
   		TextDrawShowForPlayer(customerid, Text:TextDrawOfferTitle(customerid))
-		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertê tego gracza?, Tak, Nie)
+		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertÄ™ tego gracza?, Tak, Nie)
 
-		SendClientMessage(playerid, COLOR_INFO, Oferta zosta³a wys³ana. Odczekaj chwilê, by przekonaæ siê, czy gracz zaakceptuje Twoj¹ ofertê.)
+		SendClientMessage(playerid, COLOR_INFO, Oferta zostaÅ‚a wysÅ‚ana. Odczekaj chwilÄ™, by przekonaÄ‡ siÄ™, czy gracz zaakceptuje TwojÄ… ofertÄ™.)
 
 		Offer(playerid)(oCustomerID) = customerid
 		Offer(playerid)(oType) = type
@@ -185,9 +185,9 @@ public OnPlayerSendOffer(playerid, customerid, type, offer_name(), value, price)
 
 		TextDrawShowForPlayer(customerid, Text:TextDrawOfferBack)
   		TextDrawShowForPlayer(customerid, Text:TextDrawOfferTitle(customerid))
-		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertê tego gracza?, Tak, Nie)
+		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertÄ™ tego gracza?, Tak, Nie)
 
-		SendClientMessage(playerid, COLOR_INFO, Oferta zosta³a wys³ana. Odczekaj chwilê, by przekonaæ siê, czy gracz zaakceptuje Twoj¹ ofertê.)
+		SendClientMessage(playerid, COLOR_INFO, Oferta zostaÅ‚a wysÅ‚ana. Odczekaj chwilÄ™, by przekonaÄ‡ siÄ™, czy gracz zaakceptuje TwojÄ… ofertÄ™.)
 
 		Offer(playerid)(oCustomerID) = customerid
 		Offer(playerid)(oType) = type
@@ -205,9 +205,9 @@ public OnPlayerSendOffer(playerid, customerid, type, offer_name(), value, price)
 
 		TextDrawShowForPlayer(customerid, Text:TextDrawOfferBack)
   		TextDrawShowForPlayer(customerid, Text:TextDrawOfferTitle(customerid))
-		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertê tego gracza?, Tak, Nie)
+		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertÄ™ tego gracza?, Tak, Nie)
 
-		SendClientMessage(playerid, COLOR_INFO, Oferta zosta³a wys³ana. Odczekaj chwilê, by przekonaæ siê, czy gracz zaakceptuje Twoj¹ ofertê.)
+		SendClientMessage(playerid, COLOR_INFO, Oferta zostaÅ‚a wysÅ‚ana. Odczekaj chwilÄ™, by przekonaÄ‡ siÄ™, czy gracz zaakceptuje TwojÄ… ofertÄ™.)
 
 		Offer(playerid)(oCustomerID) = customerid
 		Offer(playerid)(oType) = type
@@ -225,9 +225,9 @@ public OnPlayerSendOffer(playerid, customerid, type, offer_name(), value, price)
 
 		TextDrawShowForPlayer(customerid, Text:TextDrawOfferBack)
   		TextDrawShowForPlayer(customerid, Text:TextDrawOfferTitle(customerid))
-		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertê tego gracza?, Tak, Nie)
+		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertÄ™ tego gracza?, Tak, Nie)
 
-		SendClientMessage(playerid, COLOR_INFO, Oferta zosta³a wys³ana. Odczekaj chwilê, by przekonaæ siê, czy gracz zaakceptuje Twoj¹ ofertê.)
+		SendClientMessage(playerid, COLOR_INFO, Oferta zostaÅ‚a wysÅ‚ana. Odczekaj chwilÄ™, by przekonaÄ‡ siÄ™, czy gracz zaakceptuje TwojÄ… ofertÄ™.)
 
 		Offer(playerid)(oCustomerID) = customerid
 		Offer(playerid)(oType) = type
@@ -245,9 +245,9 @@ public OnPlayerSendOffer(playerid, customerid, type, offer_name(), value, price)
 
 		TextDrawShowForPlayer(customerid, Text:TextDrawOfferBack)
   		TextDrawShowForPlayer(customerid, Text:TextDrawOfferTitle(customerid))
-		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertê tego gracza?, Tak, Nie)
+		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertÄ™ tego gracza?, Tak, Nie)
 
-		SendClientMessage(playerid, COLOR_INFO, Oferta zosta³a wys³ana. Odczekaj chwilê, by przekonaæ siê, czy gracz zaakceptuje Twoj¹ ofertê.)
+		SendClientMessage(playerid, COLOR_INFO, Oferta zostaÅ‚a wysÅ‚ana. Odczekaj chwilÄ™, by przekonaÄ‡ siÄ™, czy gracz zaakceptuje TwojÄ… ofertÄ™.)
 
 		Offer(playerid)(oCustomerID) = customerid
 		Offer(playerid)(oType) = type
@@ -265,9 +265,9 @@ public OnPlayerSendOffer(playerid, customerid, type, offer_name(), value, price)
 
 		TextDrawShowForPlayer(customerid, Text:TextDrawOfferBack)
   		TextDrawShowForPlayer(customerid, Text:TextDrawOfferTitle(customerid))
-		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertê tego gracza?, Tak, Nie)
+		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertÄ™ tego gracza?, Tak, Nie)
 
-		SendClientMessage(playerid, COLOR_INFO, Oferta zosta³a wys³ana. Odczekaj chwilê, by przekonaæ siê, czy gracz zaakceptuje Twoj¹ ofertê.)
+		SendClientMessage(playerid, COLOR_INFO, Oferta zostaÅ‚a wysÅ‚ana. Odczekaj chwilÄ™, by przekonaÄ‡ siÄ™, czy gracz zaakceptuje TwojÄ… ofertÄ™.)
 
 		Offer(playerid)(oCustomerID) = customerid
 		Offer(playerid)(oType) = type
@@ -285,9 +285,9 @@ public OnPlayerSendOffer(playerid, customerid, type, offer_name(), value, price)
 
 		TextDrawShowForPlayer(customerid, Text:TextDrawOfferBack)
   		TextDrawShowForPlayer(customerid, Text:TextDrawOfferTitle(customerid))
-		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertê tego gracza?, Tak, Nie)
+		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertÄ™ tego gracza?, Tak, Nie)
 
-		SendClientMessage(playerid, COLOR_INFO, Oferta zosta³a wys³ana. Odczekaj chwilê, by przekonaæ siê, czy gracz zaakceptuje Twoj¹ ofertê.)
+		SendClientMessage(playerid, COLOR_INFO, Oferta zostaÅ‚a wysÅ‚ana. Odczekaj chwilÄ™, by przekonaÄ‡ siÄ™, czy gracz zaakceptuje TwojÄ… ofertÄ™.)
 
 		Offer(playerid)(oCustomerID) = customerid
 		Offer(playerid)(oType) = type
@@ -305,9 +305,9 @@ public OnPlayerSendOffer(playerid, customerid, type, offer_name(), value, price)
 
 		TextDrawShowForPlayer(customerid, Text:TextDrawOfferBack)
   		TextDrawShowForPlayer(customerid, Text:TextDrawOfferTitle(customerid))
-		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertê tego gracza?, Tak, Nie)
+		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertÄ™ tego gracza?, Tak, Nie)
 
-		SendClientMessage(playerid, COLOR_INFO, Oferta zosta³a wys³ana. Odczekaj chwilê, by przekonaæ siê, czy gracz zaakceptuje Twoj¹ ofertê.)
+		SendClientMessage(playerid, COLOR_INFO, Oferta zostaÅ‚a wysÅ‚ana. Odczekaj chwilÄ™, by przekonaÄ‡ siÄ™, czy gracz zaakceptuje TwojÄ… ofertÄ™.)
 
 		Offer(playerid)(oCustomerID) = customerid
 		Offer(playerid)(oType) = type
@@ -325,9 +325,9 @@ public OnPlayerSendOffer(playerid, customerid, type, offer_name(), value, price)
 
 		TextDrawShowForPlayer(customerid, Text:TextDrawOfferBack)
   		TextDrawShowForPlayer(customerid, Text:TextDrawOfferTitle(customerid))
-		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertê tego gracza?, Tak, Nie)
+		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertÄ™ tego gracza?, Tak, Nie)
 
-		SendClientMessage(playerid, COLOR_INFO, Oferta zosta³a wys³ana. Odczekaj chwilê, by przekonaæ siê, czy gracz zaakceptuje Twoj¹ ofertê.)
+		SendClientMessage(playerid, COLOR_INFO, Oferta zostaÅ‚a wysÅ‚ana. Odczekaj chwilÄ™, by przekonaÄ‡ siÄ™, czy gracz zaakceptuje TwojÄ… ofertÄ™.)
 
 		Offer(playerid)(oCustomerID) = customerid
 		Offer(playerid)(oType) = type
@@ -345,9 +345,9 @@ public OnPlayerSendOffer(playerid, customerid, type, offer_name(), value, price)
 
 		TextDrawShowForPlayer(customerid, Text:TextDrawOfferBack)
   		TextDrawShowForPlayer(customerid, Text:TextDrawOfferTitle(customerid))
-		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertê tego gracza?, Tak, Nie)
+		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertÄ™ tego gracza?, Tak, Nie)
 
-		SendClientMessage(playerid, COLOR_INFO, Oferta zosta³a wys³ana. Odczekaj chwilê, by przekonaæ siê, czy gracz zaakceptuje Twoj¹ ofertê.)
+		SendClientMessage(playerid, COLOR_INFO, Oferta zostaÅ‚a wysÅ‚ana. Odczekaj chwilÄ™, by przekonaÄ‡ siÄ™, czy gracz zaakceptuje TwojÄ… ofertÄ™.)
 
 		Offer(playerid)(oCustomerID) = customerid
 		Offer(playerid)(oType) = type
@@ -365,9 +365,9 @@ public OnPlayerSendOffer(playerid, customerid, type, offer_name(), value, price)
 
 		TextDrawShowForPlayer(customerid, Text:TextDrawOfferBack)
   		TextDrawShowForPlayer(customerid, Text:TextDrawOfferTitle(customerid))
-		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertê tego gracza?, Tak, Nie)
+		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertÄ™ tego gracza?, Tak, Nie)
 
-		SendClientMessage(playerid, COLOR_INFO, Oferta zosta³a wys³ana. Odczekaj chwilê, by przekonaæ siê, czy gracz zaakceptuje Twoj¹ ofertê.)
+		SendClientMessage(playerid, COLOR_INFO, Oferta zostaÅ‚a wysÅ‚ana. Odczekaj chwilÄ™, by przekonaÄ‡ siÄ™, czy gracz zaakceptuje TwojÄ… ofertÄ™.)
 
 		Offer(playerid)(oCustomerID) = customerid
 		Offer(playerid)(oType) = type
@@ -385,9 +385,9 @@ public OnPlayerSendOffer(playerid, customerid, type, offer_name(), value, price)
 
 		TextDrawShowForPlayer(customerid, Text:TextDrawOfferBack)
   		TextDrawShowForPlayer(customerid, Text:TextDrawOfferTitle(customerid))
-		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertê tego gracza?, Tak, Nie)
+		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertÄ™ tego gracza?, Tak, Nie)
 
-		SendClientMessage(playerid, COLOR_INFO, Oferta zosta³a wys³ana. Odczekaj chwilê, by przekonaæ siê, czy gracz zaakceptuje Twoj¹ ofertê.)
+		SendClientMessage(playerid, COLOR_INFO, Oferta zostaÅ‚a wysÅ‚ana. Odczekaj chwilÄ™, by przekonaÄ‡ siÄ™, czy gracz zaakceptuje TwojÄ… ofertÄ™.)
 
 		Offer(playerid)(oCustomerID) = customerid
 		Offer(playerid)(oType) = type
@@ -405,9 +405,9 @@ public OnPlayerSendOffer(playerid, customerid, type, offer_name(), value, price)
 
 		TextDrawShowForPlayer(customerid, Text:TextDrawOfferBack)
   		TextDrawShowForPlayer(customerid, Text:TextDrawOfferTitle(customerid))
-		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertê tego gracza?, Tak, Nie)
+		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertÄ™ tego gracza?, Tak, Nie)
 
-		SendClientMessage(playerid, COLOR_INFO, Oferta zosta³a wys³ana. Odczekaj chwilê, by przekonaæ siê, czy gracz zaakceptuje Twoj¹ ofertê.)
+		SendClientMessage(playerid, COLOR_INFO, Oferta zostaÅ‚a wysÅ‚ana. Odczekaj chwilÄ™, by przekonaÄ‡ siÄ™, czy gracz zaakceptuje TwojÄ… ofertÄ™.)
 
 		Offer(playerid)(oCustomerID) = customerid
 		Offer(playerid)(oType) = type
@@ -425,9 +425,9 @@ public OnPlayerSendOffer(playerid, customerid, type, offer_name(), value, price)
 
 		TextDrawShowForPlayer(customerid, Text:TextDrawOfferBack)
   		TextDrawShowForPlayer(customerid, Text:TextDrawOfferTitle(customerid))
-		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertê tego gracza?, Tak, Nie)
+		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertÄ™ tego gracza?, Tak, Nie)
 
-		SendClientMessage(playerid, COLOR_INFO, Oferta zosta³a wys³ana. Odczekaj chwilê, by przekonaæ siê, czy gracz zaakceptuje Twoj¹ ofertê.)
+		SendClientMessage(playerid, COLOR_INFO, Oferta zostaÅ‚a wysÅ‚ana. Odczekaj chwilÄ™, by przekonaÄ‡ siÄ™, czy gracz zaakceptuje TwojÄ… ofertÄ™.)
 
 		Offer(playerid)(oCustomerID) = customerid
 		Offer(playerid)(oType) = type
@@ -445,9 +445,9 @@ public OnPlayerSendOffer(playerid, customerid, type, offer_name(), value, price)
 
 		TextDrawShowForPlayer(customerid, Text:TextDrawOfferBack)
   		TextDrawShowForPlayer(customerid, Text:TextDrawOfferTitle(customerid))
-		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertê tego gracza?, Tak, Nie)
+		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertÄ™ tego gracza?, Tak, Nie)
 
-		SendClientMessage(playerid, COLOR_INFO, Oferta zosta³a wys³ana. Odczekaj chwilê, by przekonaæ siê, czy gracz zaakceptuje Twoj¹ ofertê.)
+		SendClientMessage(playerid, COLOR_INFO, Oferta zostaÅ‚a wysÅ‚ana. Odczekaj chwilÄ™, by przekonaÄ‡ siÄ™, czy gracz zaakceptuje TwojÄ… ofertÄ™.)
 
 		Offer(playerid)(oCustomerID) = customerid
 		Offer(playerid)(oType) = type
@@ -465,9 +465,9 @@ public OnPlayerSendOffer(playerid, customerid, type, offer_name(), value, price)
 
 		TextDrawShowForPlayer(customerid, Text:TextDrawOfferBack)
   		TextDrawShowForPlayer(customerid, Text:TextDrawOfferTitle(customerid))
-		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertê tego gracza?, Tak, Nie)
+		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertÄ™ tego gracza?, Tak, Nie)
 
-		SendClientMessage(playerid, COLOR_INFO, Oferta zosta³a wys³ana. Odczekaj chwilê, by przekonaæ siê, czy gracz zaakceptuje Twoj¹ ofertê.)
+		SendClientMessage(playerid, COLOR_INFO, Oferta zostaÅ‚a wysÅ‚ana. Odczekaj chwilÄ™, by przekonaÄ‡ siÄ™, czy gracz zaakceptuje TwojÄ… ofertÄ™.)
 
 		Offer(playerid)(oCustomerID) = customerid
 		Offer(playerid)(oType) = type
@@ -485,9 +485,9 @@ public OnPlayerSendOffer(playerid, customerid, type, offer_name(), value, price)
 
 		TextDrawShowForPlayer(customerid, Text:TextDrawOfferBack)
   		TextDrawShowForPlayer(customerid, Text:TextDrawOfferTitle(customerid))
-		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertê tego gracza?, Tak, Nie)
+		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertÄ™ tego gracza?, Tak, Nie)
 
-		SendClientMessage(playerid, COLOR_INFO, Oferta zosta³a wys³ana. Odczekaj chwilê, by przekonaæ siê, czy gracz zaakceptuje Twoj¹ ofertê.)
+		SendClientMessage(playerid, COLOR_INFO, Oferta zostaÅ‚a wysÅ‚ana. Odczekaj chwilÄ™, by przekonaÄ‡ siÄ™, czy gracz zaakceptuje TwojÄ… ofertÄ™.)
 
 		Offer(playerid)(oCustomerID) = customerid
 		Offer(playerid)(oType) = type
@@ -505,9 +505,9 @@ public OnPlayerSendOffer(playerid, customerid, type, offer_name(), value, price)
 
 		TextDrawShowForPlayer(customerid, Text:TextDrawOfferBack)
   		TextDrawShowForPlayer(customerid, Text:TextDrawOfferTitle(customerid))
-		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertê tego gracza?, Tak, Nie)
+		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertÄ™ tego gracza?, Tak, Nie)
 
-		SendClientMessage(playerid, COLOR_INFO, Oferta zosta³a wys³ana. Odczekaj chwilê, by przekonaæ siê, czy gracz zaakceptuje Twoj¹ ofertê.)
+		SendClientMessage(playerid, COLOR_INFO, Oferta zostaÅ‚a wysÅ‚ana. Odczekaj chwilÄ™, by przekonaÄ‡ siÄ™, czy gracz zaakceptuje TwojÄ… ofertÄ™.)
 
 		Offer(playerid)(oCustomerID) = customerid
 		Offer(playerid)(oType) = type
@@ -525,9 +525,9 @@ public OnPlayerSendOffer(playerid, customerid, type, offer_name(), value, price)
 
 		TextDrawShowForPlayer(customerid, Text:TextDrawOfferBack)
 		TextDrawShowForPlayer(customerid, Text:TextDrawOfferTitle(customerid))
-		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertê tego gracza?, Tak, Nie)
+		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertÄ™ tego gracza?, Tak, Nie)
 
-		SendClientMessage(playerid, COLOR_INFO, Oferta zosta³a wys³ana. Odczekaj chwilê, by przekonaæ siê, czy gracz zaakceptuje Twoj¹ ofertê.)
+		SendClientMessage(playerid, COLOR_INFO, Oferta zostaÅ‚a wysÅ‚ana. Odczekaj chwilÄ™, by przekonaÄ‡ siÄ™, czy gracz zaakceptuje TwojÄ… ofertÄ™.)
 
 		Offer(playerid)(oCustomerID) = customerid
 		Offer(playerid)(oType) = type
@@ -540,13 +540,13 @@ public OnPlayerSendOffer(playerid, customerid, type, offer_name(), value, price)
 	)
 	if(type == OFFER_LIFE)
 	(
-		format(string, sizeof(string), ~b~~h~Oferta ~)~ ~w~Ubezpieczenie~n~~n~Oferujacy: ~r~~h~%s~n~Koszt: ~g~~h~%d$~n~Czas: ~y~~h~%s na tydzieñ, PlayerName(playerid), price, offer_name)
+		format(string, sizeof(string), ~b~~h~Oferta ~)~ ~w~Ubezpieczenie~n~~n~Oferujacy: ~r~~h~%s~n~Koszt: ~g~~h~%d$~n~Czas: ~y~~h~%s na tydzieÅ„, PlayerName(playerid), price, offer_name)
   		TextDrawSetString(Text:TextDrawOfferTitle(customerid), string)
 		TextDrawShowForPlayer(customerid, Text:TextDrawOfferBack)
   		TextDrawShowForPlayer(customerid, Text:TextDrawOfferTitle(customerid))
-		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertê tego gracza?, Tak, Nie)
+		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertÄ™ tego gracza?, Tak, Nie)
 
-		SendClientMessage(playerid, COLOR_INFO, Oferta zosta³a wys³ana. Odczekaj chwilê, by przekonaæ siê, czy gracz zaakceptuje Twoj¹ ofertê.)
+		SendClientMessage(playerid, COLOR_INFO, Oferta zostaÅ‚a wysÅ‚ana. Odczekaj chwilÄ™, by przekonaÄ‡ siÄ™, czy gracz zaakceptuje TwojÄ… ofertÄ™.)
 
 		Offer(playerid)(oCustomerID) = customerid
 		Offer(playerid)(oType) = type
@@ -564,9 +564,9 @@ public OnPlayerSendOffer(playerid, customerid, type, offer_name(), value, price)
 
 		TextDrawShowForPlayer(customerid, Text:TextDrawOfferBack)
   		TextDrawShowForPlayer(customerid, Text:TextDrawOfferTitle(customerid))
-		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertê tego gracza?, Tak, Nie)
+		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertÄ™ tego gracza?, Tak, Nie)
 
-		SendClientMessage(playerid, COLOR_INFO, Oferta zosta³a wys³ana. Odczekaj chwilê, by przekonaæ siê, czy gracz zaakceptuje Twoj¹ ofertê.)
+		SendClientMessage(playerid, COLOR_INFO, Oferta zostaÅ‚a wysÅ‚ana. Odczekaj chwilÄ™, by przekonaÄ‡ siÄ™, czy gracz zaakceptuje TwojÄ… ofertÄ™.)
 
 		Offer(playerid)(oCustomerID) = customerid
 		Offer(playerid)(oType) = type
@@ -584,9 +584,9 @@ public OnPlayerSendOffer(playerid, customerid, type, offer_name(), value, price)
 
 		TextDrawShowForPlayer(customerid, Text:TextDrawOfferBack)
   		TextDrawShowForPlayer(customerid, Text:TextDrawOfferTitle(customerid))
-		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertê tego gracza?, Tak, Nie)
+		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertÄ™ tego gracza?, Tak, Nie)
 
-		SendClientMessage(playerid, COLOR_INFO, Oferta zosta³a wys³ana. Odczekaj chwilê, by przekonaæ siê, czy gracz zaakceptuje Twoj¹ ofertê.)
+		SendClientMessage(playerid, COLOR_INFO, Oferta zostaÅ‚a wysÅ‚ana. Odczekaj chwilÄ™, by przekonaÄ‡ siÄ™, czy gracz zaakceptuje TwojÄ… ofertÄ™.)
 
 		Offer(playerid)(oCustomerID) = customerid
 		Offer(playerid)(oType) = type
@@ -604,9 +604,9 @@ public OnPlayerSendOffer(playerid, customerid, type, offer_name(), value, price)
 
 		TextDrawShowForPlayer(customerid, Text:TextDrawOfferBack)
 		TextDrawShowForPlayer(customerid, Text:TextDrawOfferTitle(customerid))
-		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertê tego gracza?, Tak, Nie)
+		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertÄ™ tego gracza?, Tak, Nie)
 
-		SendClientMessage(playerid, COLOR_INFO, Oferta zosta³a wys³ana. Odczekaj chwilê, by przekonaæ siê, czy gracz zaakceptuje Twoj¹ ofertê.)
+		SendClientMessage(playerid, COLOR_INFO, Oferta zostaÅ‚a wysÅ‚ana. Odczekaj chwilÄ™, by przekonaÄ‡ siÄ™, czy gracz zaakceptuje TwojÄ… ofertÄ™.)
 
 		Offer(playerid)(oCustomerID) = customerid
 		Offer(playerid)(oType) = type
@@ -624,9 +624,9 @@ public OnPlayerSendOffer(playerid, customerid, type, offer_name(), value, price)
 
 		TextDrawShowForPlayer(customerid, Text:TextDrawOfferBack)
 		TextDrawShowForPlayer(customerid, Text:TextDrawOfferTitle(customerid))
-		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertê tego gracza?, Tak, Nie)
+		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertÄ™ tego gracza?, Tak, Nie)
 
-		SendClientMessage(playerid, COLOR_INFO, Oferta zosta³a wys³ana. Odczekaj chwilê, by przekonaæ siê, czy gracz zaakceptuje Twoj¹ ofertê.)
+		SendClientMessage(playerid, COLOR_INFO, Oferta zostaÅ‚a wysÅ‚ana. Odczekaj chwilÄ™, by przekonaÄ‡ siÄ™, czy gracz zaakceptuje TwojÄ… ofertÄ™.)
 
 		Offer(playerid)(oCustomerID) = customerid
 		Offer(playerid)(oType) = type
@@ -644,9 +644,9 @@ public OnPlayerSendOffer(playerid, customerid, type, offer_name(), value, price)
 
 		TextDrawShowForPlayer(customerid, Text:TextDrawOfferBack)
   		TextDrawShowForPlayer(customerid, Text:TextDrawOfferTitle(customerid))
-		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertê tego gracza?, Tak, Nie)
+		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertÄ™ tego gracza?, Tak, Nie)
 
-		SendClientMessage(playerid, COLOR_INFO, Oferta zosta³a wys³ana. Odczekaj chwilê, by przekonaæ siê, czy gracz zaakceptuje Twoj¹ ofertê.)
+		SendClientMessage(playerid, COLOR_INFO, Oferta zostaÅ‚a wysÅ‚ana. Odczekaj chwilÄ™, by przekonaÄ‡ siÄ™, czy gracz zaakceptuje TwojÄ… ofertÄ™.)
 
 		Offer(playerid)(oCustomerID) = customerid
 		Offer(playerid)(oType) = type
@@ -664,9 +664,9 @@ public OnPlayerSendOffer(playerid, customerid, type, offer_name(), value, price)
 
 		TextDrawShowForPlayer(customerid, Text:TextDrawOfferBack)
   		TextDrawShowForPlayer(customerid, Text:TextDrawOfferTitle(customerid))
-		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertê tego gracza?, Tak, Nie)
+		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertÄ™ tego gracza?, Tak, Nie)
 
-		SendClientMessage(playerid, COLOR_INFO, Oferta zosta³a wys³ana. Odczekaj chwilê, by przekonaæ siê, czy gracz zaakceptuje Twoj¹ ofertê.)
+		SendClientMessage(playerid, COLOR_INFO, Oferta zostaÅ‚a wysÅ‚ana. Odczekaj chwilÄ™, by przekonaÄ‡ siÄ™, czy gracz zaakceptuje TwojÄ… ofertÄ™.)
 
 		Offer(playerid)(oCustomerID) = customerid
 		Offer(playerid)(oType) = type
@@ -684,9 +684,9 @@ public OnPlayerSendOffer(playerid, customerid, type, offer_name(), value, price)
 
 		TextDrawShowForPlayer(customerid, Text:TextDrawOfferBack)
   		TextDrawShowForPlayer(customerid, Text:TextDrawOfferTitle(customerid))
-		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertê tego gracza?, Tak, Nie)
+		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertÄ™ tego gracza?, Tak, Nie)
 
-		SendClientMessage(playerid, COLOR_INFO, Oferta zosta³a wys³ana. Odczekaj chwilê, by przekonaæ siê, czy gracz zaakceptuje Twoj¹ ofertê.)
+		SendClientMessage(playerid, COLOR_INFO, Oferta zostaÅ‚a wysÅ‚ana. Odczekaj chwilÄ™, by przekonaÄ‡ siÄ™, czy gracz zaakceptuje TwojÄ… ofertÄ™.)
 
 		Offer(playerid)(oCustomerID) = customerid
 		Offer(playerid)(oType) = type
@@ -704,9 +704,9 @@ public OnPlayerSendOffer(playerid, customerid, type, offer_name(), value, price)
 
 		TextDrawShowForPlayer(customerid, Text:TextDrawOfferBack)
   		TextDrawShowForPlayer(customerid, Text:TextDrawOfferTitle(customerid))
-		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertê tego gracza?, Tak, Nie)
+		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertÄ™ tego gracza?, Tak, Nie)
 
-		SendClientMessage(playerid, COLOR_INFO, Oferta zosta³a wys³ana. Odczekaj chwilê, by przekonaæ siê, czy gracz zaakceptuje Twoj¹ ofertê.)
+		SendClientMessage(playerid, COLOR_INFO, Oferta zostaÅ‚a wysÅ‚ana. Odczekaj chwilÄ™, by przekonaÄ‡ siÄ™, czy gracz zaakceptuje TwojÄ… ofertÄ™.)
 
 		Offer(playerid)(oCustomerID) = customerid
 		Offer(playerid)(oType) = type
@@ -724,9 +724,9 @@ public OnPlayerSendOffer(playerid, customerid, type, offer_name(), value, price)
 
 		TextDrawShowForPlayer(customerid, Text:TextDrawOfferBack)
   		TextDrawShowForPlayer(customerid, Text:TextDrawOfferTitle(customerid))
-		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertê tego gracza?, Tak, Nie)
+		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertÄ™ tego gracza?, Tak, Nie)
 
-		SendClientMessage(playerid, COLOR_INFO, Oferta zosta³a wys³ana. Odczekaj chwilê, by przekonaæ siê, czy gracz zaakceptuje Twoj¹ ofertê.)
+		SendClientMessage(playerid, COLOR_INFO, Oferta zostaÅ‚a wysÅ‚ana. Odczekaj chwilÄ™, by przekonaÄ‡ siÄ™, czy gracz zaakceptuje TwojÄ… ofertÄ™.)
 
 		Offer(playerid)(oCustomerID) = customerid
 		Offer(playerid)(oType) = type
@@ -744,9 +744,9 @@ public OnPlayerSendOffer(playerid, customerid, type, offer_name(), value, price)
 
 		TextDrawShowForPlayer(customerid, Text:TextDrawOfferBack)
   		TextDrawShowForPlayer(customerid, Text:TextDrawOfferTitle(customerid))
-		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertê tego gracza?, Tak, Nie)
+		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertÄ™ tego gracza?, Tak, Nie)
 
-		SendClientMessage(playerid, COLOR_INFO, Oferta zosta³a wys³ana. Odczekaj chwilê, by przekonaæ siê, czy gracz zaakceptuje Twoj¹ ofertê.)
+		SendClientMessage(playerid, COLOR_INFO, Oferta zostaÅ‚a wysÅ‚ana. Odczekaj chwilÄ™, by przekonaÄ‡ siÄ™, czy gracz zaakceptuje TwojÄ… ofertÄ™.)
 
 		Offer(playerid)(oCustomerID) = customerid
 		Offer(playerid)(oType) = type
@@ -764,9 +764,9 @@ public OnPlayerSendOffer(playerid, customerid, type, offer_name(), value, price)
 
 		TextDrawShowForPlayer(customerid, Text:TextDrawOfferBack)
   		TextDrawShowForPlayer(customerid, Text:TextDrawOfferTitle(customerid))
-		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertê tego gracza?, Tak, Nie)
+		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertÄ™ tego gracza?, Tak, Nie)
 
-		SendClientMessage(playerid, COLOR_INFO, Oferta zosta³a wys³ana. Odczekaj chwilê, by przekonaæ siê, czy gracz zaakceptuje Twoj¹ ofertê.)
+		SendClientMessage(playerid, COLOR_INFO, Oferta zostaÅ‚a wysÅ‚ana. Odczekaj chwilÄ™, by przekonaÄ‡ siÄ™, czy gracz zaakceptuje TwojÄ… ofertÄ™.)
 
 		Offer(playerid)(oCustomerID) = customerid
 		Offer(playerid)(oType) = type
@@ -784,9 +784,9 @@ public OnPlayerSendOffer(playerid, customerid, type, offer_name(), value, price)
 
 		TextDrawShowForPlayer(customerid, Text:TextDrawOfferBack)
   		TextDrawShowForPlayer(customerid, Text:TextDrawOfferTitle(customerid))
-		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertê tego gracza?, Tak, Jestem za mlody)
+		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertÄ™ tego gracza?, Tak, Jestem za mlody)
 
-		SendClientMessage(playerid, COLOR_INFO, Oferta zosta³a wys³ana. Odczekaj chwilê, by przekonaæ siê, czy gracz zaakceptuje Twoj¹ ofertê.)
+		SendClientMessage(playerid, COLOR_INFO, Oferta zostaÅ‚a wysÅ‚ana. Odczekaj chwilÄ™, by przekonaÄ‡ siÄ™, czy gracz zaakceptuje TwojÄ… ofertÄ™.)
 
 		Offer(playerid)(oCustomerID) = customerid
 		Offer(playerid)(oType) = type
@@ -804,9 +804,9 @@ public OnPlayerSendOffer(playerid, customerid, type, offer_name(), value, price)
 
 		TextDrawShowForPlayer(customerid, Text:TextDrawOfferBack)
   		TextDrawShowForPlayer(customerid, Text:TextDrawOfferTitle(customerid))
-		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertê tego gracza?, Tak, Nie)
+		ShowPlayerDialog(customerid, D_OFFER, DIALOG_STYLE_MSGBOX, Oferta, Czy akceptujesz ofertÄ™ tego gracza?, Tak, Nie)
 
-		SendClientMessage(playerid, COLOR_INFO, Oferta zosta³a wys³ana. Odczekaj chwilê, by przekonaæ siê, czy gracz zaakceptuje Twoj¹ ofertê.)
+		SendClientMessage(playerid, COLOR_INFO, Oferta zostaÅ‚a wysÅ‚ana. Odczekaj chwilÄ™, by przekonaÄ‡ siÄ™, czy gracz zaakceptuje TwojÄ… ofertÄ™.)
 
 		Offer(playerid)(oCustomerID) = customerid
 		Offer(playerid)(oType) = type
@@ -831,7 +831,7 @@ public OnPlayerAcceptOffer(playerid, offererid)
 	
 	if(!PlayerToPlayer(5.0, playerid, offererid))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Gracz znajduje siê zbyt daleko od Ciebie., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Gracz znajduje siÄ™ zbyt daleko od Ciebie., OK, )
 		OnPlayerRejectOffer(playerid, offererid)
 		return 1
 	)
@@ -840,7 +840,7 @@ public OnPlayerAcceptOffer(playerid, offererid)
 	(
 		if(Offer(offererid)(oPrice) ) PlayerCache(playerid)(pCash))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiedniej iloœci gotówki., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiedniej iloÅ›ci gotÃ³wki., OK, )
 		 	OnPlayerRejectOffer(playerid, offererid)
 			return 1
 		)
@@ -850,7 +850,7 @@ public OnPlayerAcceptOffer(playerid, offererid)
 	(
 		if(Offer(offererid)(oPrice) ) PlayerCache(playerid)(pBankCash))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiedniej iloœci pieniêdzy na karcie., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiedniej iloÅ›ci pieniÄ™dzy na karcie., OK, )
 		 	OnPlayerRejectOffer(playerid, offererid)
 			return 1
 		)
@@ -861,7 +861,7 @@ public OnPlayerAcceptOffer(playerid, offererid)
 		cardid = GetCardID(PlayerCache(playerid)(pBusinessCard))
 		if(!IsCardValid(cardid, Offer(offererid)(oPrice)))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz odpowiedniej iloœci piniêdzy na firmowej karcie., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz odpowiedniej iloÅ›ci piniÄ™dzy na firmowej karcie., OK, )
 		 	OnPlayerRejectOffer(playerid, offererid)
 			return 1
 		)	
@@ -890,7 +890,7 @@ public OnPlayerAcceptOffer(playerid, offererid)
 			GroupData(group_id_fix)(gCash) += group_cash
 			SaveGroup(group_id_fix)
 
-			format(string, sizeof(string), Otrzyma³eœ premiê w wysokoœci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
+			format(string, sizeof(string), OtrzymaÅ‚eÅ› premiÄ™ w wysokoÅ›ci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
 			ShowPlayerDialog(offererid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 
 			AddGroupEvent(GroupData(group_id_fix)(gUID), PlayerCache(offererid)(pUID), PlayerCache(playerid)(pUID), price, group_cash, Wypozyczenie)
@@ -1004,7 +1004,7 @@ public OnPlayerAcceptOffer(playerid, offererid)
 	  			PlayerCache(playerid)(pCarSpawned) ++
 			)
 		)
-		format(string, sizeof(string), Pojazd %s (SampID: %d, UID: %d) kupiony.\nU¿yj komendy /pomoc aby poznaæ szczegó³y dotycz¹ce pojazdów., CarInfo(vehid)(cName), vehid, CarInfo(vehid)(cUID))
+		format(string, sizeof(string), Pojazd %s (SampID: %d, UID: %d) kupiony.\nUÅ¼yj komendy /pomoc aby poznaÄ‡ szczegÃ³Å‚y dotyczÄ…ce pojazdÃ³w., CarInfo(vehid)(cName), vehid, CarInfo(vehid)(cUID))
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 
 		hrp_VehicleActionLog(Wlasciciel pojazdu %s (UID: %d) zmienil sie. Stary wlasciciel %s (UID: %d). Nowy wlasciciel %s (UID: %d). Kwota sprzedazy: $%d, CarInfo(vehid)(cName), CarInfo(vehid)(cUID), PlayerRealName(offererid), PlayerCache(offererid)(pUID), PlayerRealName(playerid), PlayerCache(playerid)(pUID), price)
@@ -1042,7 +1042,7 @@ public OnPlayerAcceptOffer(playerid, offererid)
 			GroupData(group_id_fix)(gCash) += group_cash
 			SaveGroup(group_id_fix)
 			
-			format(string, sizeof(string), Otrzyma³eœ premiê w wysokoœci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
+			format(string, sizeof(string), OtrzymaÅ‚eÅ› premiÄ™ w wysokoÅ›ci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
 			ShowPlayerDialog(offererid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 
 			AddGroupEvent(GroupData(group_id_fix)(gUID), PlayerCache(offererid)(pUID), PlayerCache(playerid)(pUID), price, group_cash, Sprzedaz produktu)
@@ -1068,11 +1068,11 @@ public OnPlayerAcceptOffer(playerid, offererid)
 	)
 	if(Offer(offererid)(oType) == OFFER_VCARD)
 	(
-		format(string, sizeof(string), * %s wysy³a wizytówkê %s., PlayerName(offererid), PlayerName(playerid))
+		format(string, sizeof(string), * %s wysyÅ‚a wizytÃ³wkÄ™ %s., PlayerName(offererid), PlayerName(playerid))
 		FlashMe(playerid, string) //ProxDetector(10.0, offererid, string, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, false)
 
 		MainPlayerTable(playerid) = Offer(offererid)(oValue)
-		ShowPlayerDialog(playerid, D_TEL_ADDNAME, DIALOG_STYLE_INPUT, Dodawanie kontaktu, Wpisz nazwê kontaktu, który dodajesz., OK, Anuluj)
+		ShowPlayerDialog(playerid, D_TEL_ADDNAME, DIALOG_STYLE_INPUT, Dodawanie kontaktu, Wpisz nazwÄ™ kontaktu, ktÃ³ry dodajesz., OK, Anuluj)
 	)
 	if(Offer(offererid)(oType) == OFFER_PASSAGE)
 	(
@@ -1081,7 +1081,7 @@ public OnPlayerAcceptOffer(playerid, offererid)
 		PlayerCache(playerid)(pTaxiVeh) = Offer(offererid)(oValue)
 		PlayerCache(playerid)(pTaxiPrice) = Offer(offererid)(oPrice)
 		
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Od teraz skrypt naliczy ka¿de przejechane 100 metrów.\nSkrypt automatycznie zabierze Ci pieni¹dze po opuszczeniu pojazdu., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Od teraz skrypt naliczy kaÅ¼de przejechane 100 metrÃ³w.\nSkrypt automatycznie zabierze Ci pieniÄ…dze po opuszczeniu pojazdu., OK, )
 	)
 	if(Offer(offererid)(oType) == OFFER_PAINT)
 	(
@@ -1127,7 +1127,7 @@ public OnPlayerAcceptOffer(playerid, offererid)
 			AddGroupEvent(GroupData(group_id_fix)(gUID), PlayerCache(offererid)(pUID), PlayerCache(playerid)(pUID), price, 0, Lakierowanie pojazdu)
 		)
 
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Zaakceptowa³eœ us³ugê lakierowania pojazdu.\nTeraz odczekaj a¿ mechanik skoñczy lakierowaæ pojazd., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, ZaakceptowaÅ‚eÅ› usÅ‚ugÄ™ lakierowania pojazdu.\nTeraz odczekaj aÅ¼ mechanik skoÅ„czy lakierowaÄ‡ pojazd., OK, )
 
 
 	)
@@ -1168,7 +1168,7 @@ public OnPlayerAcceptOffer(playerid, offererid)
 					GroupData(group_id_fix)(gCash) += group_cash
 					SaveGroup(group_id_fix)
 					
-	   				format(string, sizeof(string), Otrzyma³eœ premiê w wysokoœci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
+	   				format(string, sizeof(string), OtrzymaÅ‚eÅ› premiÄ™ w wysokoÅ›ci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
 					ShowPlayerDialog(offererid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 
 					AddGroupEvent(GroupData(group_id_fix)(gUID), PlayerCache(offererid)(pUID), PlayerCache(playerid)(pUID), price, group_cash, Naprawa silnika)
@@ -1218,7 +1218,7 @@ public OnPlayerAcceptOffer(playerid, offererid)
 					GroupData(group_id_fix)(gCash) += group_cash
 					SaveGroup(group_id_fix)
 					
-	   				format(string, sizeof(string), Otrzyma³eœ premiê w wysokoœci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
+	   				format(string, sizeof(string), OtrzymaÅ‚eÅ› premiÄ™ w wysokoÅ›ci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
 					ShowPlayerDialog(offererid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 
 					AddGroupEvent(GroupData(group_id_fix)(gUID), PlayerCache(offererid)(pUID), PlayerCache(playerid)(pUID), price, group_cash, Rekonstrukcja silnika)
@@ -1268,7 +1268,7 @@ public OnPlayerAcceptOffer(playerid, offererid)
 					GroupData(group_id_fix)(gCash) += group_cash
 					SaveGroup(group_id_fix)
 					
-	   				format(string, sizeof(string), Otrzyma³eœ premiê w wysokoœci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
+	   				format(string, sizeof(string), OtrzymaÅ‚eÅ› premiÄ™ w wysokoÅ›ci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
 					ShowPlayerDialog(offererid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 
 					AddGroupEvent(GroupData(group_id_fix)(gUID), PlayerCache(offererid)(pUID), PlayerCache(playerid)(pUID), price, group_cash, Naprawa karoserii)
@@ -1318,7 +1318,7 @@ public OnPlayerAcceptOffer(playerid, offererid)
 					GroupData(group_id_fix)(gCash) += group_cash
 					SaveGroup(group_id_fix)
 					
-	   				format(string, sizeof(string), Otrzyma³eœ premiê w wysokoœci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
+	   				format(string, sizeof(string), OtrzymaÅ‚eÅ› premiÄ™ w wysokoÅ›ci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
 					ShowPlayerDialog(offererid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 
 					AddGroupEvent(GroupData(group_id_fix)(gUID), PlayerCache(offererid)(pUID), PlayerCache(playerid)(pUID), price, group_cash, Wymiana plynow w wozie)
@@ -1368,7 +1368,7 @@ public OnPlayerAcceptOffer(playerid, offererid)
 					GroupData(group_id_fix)(gCash) += group_cash
 					SaveGroup(group_id_fix)
 					
-	   				format(string, sizeof(string), Otrzyma³eœ premiê w wysokoœci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
+	   				format(string, sizeof(string), OtrzymaÅ‚eÅ› premiÄ™ w wysokoÅ›ci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
 					ShowPlayerDialog(offererid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 
 					AddGroupEvent(GroupData(group_id_fix)(gUID), PlayerCache(offererid)(pUID), PlayerCache(playerid)(pUID), price, group_cash, Wymiana filtra w wozie)
@@ -1418,7 +1418,7 @@ public OnPlayerAcceptOffer(playerid, offererid)
 					GroupData(group_id_fix)(gCash) += group_cash
 					SaveGroup(group_id_fix)
 					
-	   				format(string, sizeof(string), Otrzyma³eœ premiê w wysokoœci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
+	   				format(string, sizeof(string), OtrzymaÅ‚eÅ› premiÄ™ w wysokoÅ›ci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
 					ShowPlayerDialog(offererid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 
 					AddGroupEvent(GroupData(group_id_fix)(gUID), PlayerCache(offererid)(pUID), PlayerCache(playerid)(pUID), price, group_cash, Wymiana chlodnicy)
@@ -1471,7 +1471,7 @@ public OnPlayerAcceptOffer(playerid, offererid)
 		
 		SaveDoor(doorid, SAVE_DOOR_THINGS)
 		
-		format(string, sizeof(string), Gratulacje, zakupi³eœ now¹ nieruchomoœæ %s (SampID: %d, UID: %d).\nNieruchomoœci¹ mo¿esz zarz¹dzaæ poprzez komendê /drzwi., DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID))
+		format(string, sizeof(string), Gratulacje, zakupiÅ‚eÅ› nowÄ… nieruchomoÅ›Ä‡ %s (SampID: %d, UID: %d).\nNieruchomoÅ›ciÄ… moÅ¼esz zarzÄ…dzaÄ‡ poprzez komendÄ™ /drzwi., DoorData(doorid)(dName), doorid, DoorData(doorid)(dUID))
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 	)
 	if(Offer(offererid)(oType) == OFFER_MANDATE)
@@ -1507,7 +1507,7 @@ public OnPlayerAcceptOffer(playerid, offererid)
 			GroupData(group_id_fix)(gCash) += group_cash
 			SaveGroup(group_id_fix)
 
-			format(string, sizeof(string), Otrzyma³eœ premiê w wysokoœci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
+			format(string, sizeof(string), OtrzymaÅ‚eÅ› premiÄ™ w wysokoÅ›ci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
 			ShowPlayerDialog(offererid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 
 			AddGroupEvent(GroupData(group_id_fix)(gUID), PlayerCache(offererid)(pUID), PlayerCache(playerid)(pUID), price, group_cash, Mandat)
@@ -1528,7 +1528,7 @@ public OnPlayerAcceptOffer(playerid, offererid)
 	(
 		if(!IsPlayerInAnyVehicle(offererid))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Gracz, który zaoferowa³ Ci holowanie, musi siedzieæ w pojeŸdzie., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Gracz, ktÃ³ry zaoferowaÅ‚ Ci holowanie, musi siedzieÄ‡ w pojeÅºdzie., OK, )
 			OnPlayerRejectOffer(playerid, offererid)
 			return 1
 		)
@@ -1582,7 +1582,7 @@ public OnPlayerAcceptOffer(playerid, offererid)
 			GroupData(group_id_fix)(gCash) += group_cash
 			SaveGroup(group_id_fix)
 
-			format(string, sizeof(string), Otrzyma³eœ premiê w wysokoœci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
+			format(string, sizeof(string), OtrzymaÅ‚eÅ› premiÄ™ w wysokoÅ›ci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
 			ShowPlayerDialog(offererid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 
 			AddGroupEvent(GroupData(group_id_fix)(gUID), PlayerCache(offererid)(pUID), PlayerCache(playerid)(pUID), price, group_cash, Leczenie)
@@ -1591,10 +1591,10 @@ public OnPlayerAcceptOffer(playerid, offererid)
 		PlayerCache(playerid)(pBleeding) = 0
 		PlayerCache(offererid)(pHealing) = playerid
 		
-		format(string, sizeof(string), Postanowi³eœ uleczyæ gracza %s.\nProces leczenia potrwa chwile, nie oddalaj siê od pacjenta., PlayerName(playerid))
+		format(string, sizeof(string), PostanowiÅ‚eÅ› uleczyÄ‡ gracza %s.\nProces leczenia potrwa chwile, nie oddalaj siÄ™ od pacjenta., PlayerName(playerid))
 		ShowPlayerDialog(offererid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 
-		format(string, sizeof(string), Gracz %s postanowi³ Ciê uleczyæ.\nProces leczenia potrwa chwile, nie oddalaj siê od medyka., PlayerName(offererid))
+		format(string, sizeof(string), Gracz %s postanowiÅ‚ CiÄ™ uleczyÄ‡.\nProces leczenia potrwa chwile, nie oddalaj siÄ™ od medyka., PlayerName(offererid))
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 	)
 	if(Offer(offererid)(oType) == OFFER_AD)
@@ -1621,7 +1621,7 @@ public OnPlayerAcceptOffer(playerid, offererid)
 			GroupData(group_id_fix)(gCash) += group_cash
 			SaveGroup(group_id_fix)
 
-			format(string, sizeof(string), Otrzyma³eœ premiê w wysokoœci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
+			format(string, sizeof(string), OtrzymaÅ‚eÅ› premiÄ™ w wysokoÅ›ci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
 			ShowPlayerDialog(offererid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 
 			AddGroupEvent(GroupData(group_id_fix)(gUID), PlayerCache(offererid)(pUID), PlayerCache(playerid)(pUID), price, group_cash, Reklama WN)
@@ -1714,13 +1714,13 @@ public OnPlayerAcceptOffer(playerid, offererid)
 			GroupData(group_id_fix)(gCash) += group_cash
 			SaveGroup(group_id_fix)
 
-			format(string, sizeof(string), Otrzyma³eœ premiê w wysokoœci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
+			format(string, sizeof(string), OtrzymaÅ‚eÅ› premiÄ™ w wysokoÅ›ci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
 			ShowPlayerDialog(offererid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 
 			AddGroupEvent(GroupData(group_id_fix)(gUID), PlayerCache(offererid)(pUID), PlayerCache(playerid)(pUID), price, group_cash, Dokument w urzedzie)
 		)
 		PlayerCache(playerid)(pDocuments) += Offer(offererid)(oValue)
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Zakupi³eœ nowy dokument.\nU¿yj komendy /pokaz, aby zarz¹dzaæ dokumentami., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, ZakupiÅ‚eÅ› nowy dokument.\nUÅ¼yj komendy /pokaz, aby zarzÄ…dzaÄ‡ dokumentami., OK, )
 	)
 	if(Offer(offererid)(oType) == OFFER_REFUEL)
 	(
@@ -1759,7 +1759,7 @@ public OnPlayerAcceptOffer(playerid, offererid)
 					GroupData(group_id_fix)(gCash) += group_cash
 					SaveGroup(group_id_fix)
 					
-					format(string, sizeof(string), Otrzyma³eœ premiê w wysokoœci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
+					format(string, sizeof(string), OtrzymaÅ‚eÅ› premiÄ™ w wysokoÅ›ci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
 					ShowPlayerDialog(offererid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 				)
 			)
@@ -1769,15 +1769,15 @@ public OnPlayerAcceptOffer(playerid, offererid)
 		CarInfo(vehid)(cFuel) = floatadd(CarInfo(vehid)(cFuel), value)
 		SaveVehicle(vehid, SAVE_VEH_COUNT)
 
-		format(string, sizeof(string), Zap³aci³eœ $%d za %d litrów paliwa., price, value)
+		format(string, sizeof(string), ZapÅ‚aciÅ‚eÅ› $%d za %d litrÃ³w paliwa., price, value)
 		SendClientMessage(playerid, COLOR_LIGHTBLUE, string)
 
 		ApplyAnimation(offererid, INT_HOUSE, wash_up,4.1, 0, 0, 0, 0, 0, 1)
 
-		format(string, sizeof(string), * %s wk³ada w¹¿ do baku., PlayerName(offererid))
+		format(string, sizeof(string), * %s wkÅ‚ada wÄ…Å¼ do baku., PlayerName(offererid))
 		FlashMe(playerid, string) //ProxDetector(10.0, offererid, string, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, true)
 
-		format(string, sizeof(string), * Pojazd %s zosta³ pomyœlnie zatankowany (( %s )), CarInfo(vehid)(cName), PlayerName(offererid))
+		format(string, sizeof(string), * Pojazd %s zostaÅ‚ pomyÅ›lnie zatankowany (( %s )), CarInfo(vehid)(cName), PlayerName(offererid))
   		ProxDetector(10.0, offererid, string, COLOR_DO, COLOR_DO, COLOR_DO, COLOR_DO, COLOR_DO, true)
 	)
 	if(Offer(offererid)(oType) == OFFER_SALON)
@@ -1806,7 +1806,7 @@ public OnPlayerAcceptOffer(playerid, offererid)
 
 			AddGroupEvent(GroupData(group_id_fix)(gUID), PlayerCache(offererid)(pUID), PlayerCache(playerid)(pUID), price, group_cash, Sprzedaz pojazdu)
 
-			//format(string, sizeof(string), Otrzyma³eœ premiê w wysokoœci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
+			//format(string, sizeof(string), OtrzymaÅ‚eÅ› premiÄ™ w wysokoÅ›ci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
 			//ShowPlayerDialog(offererid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 		)		
 		salonveh_model = Offer(offererid)(oValue), spawn_point, vehid
@@ -1836,14 +1836,14 @@ public OnPlayerAcceptOffer(playerid, offererid)
 		mysql_query_format(UPDATE hrp_cars SET car_timeleft = %d WHERE car_uid = %d, gettime() + 3600, CarInfo(vehid)(cUID))
 		UnspawnVehicle(CarInfo(vehid)(cUID))
 		
-		GuiMsg(playerid, Gratulacje! Zakupi³eœ nowy pojazd.\nMusisz poczekaæ kilka dni a¿ zostanie on dostarczony do miasta., 0)
+		GuiMsg(playerid, Gratulacje! ZakupiÅ‚eÅ› nowy pojazd.\nMusisz poczekaÄ‡ kilka dni aÅ¼ zostanie on dostarczony do miasta., 0)
 		
 		/*if(!PlayerCache(playerid)(pPremium))
 		(
 			if(PlayerCache(playerid)(pCarSpawned) )= STANDARD_VEHICLES)
 			(
 				UnspawnVehicle(CarInfo(vehid)(cUID))
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Gratulacje, zakupi³eœ nowy pojazd.\n\nMasz ju¿ pe³ne prawa dotycz¹ce pojazdu.\n\nPoniewa¿ masz ju¿ zespawnowan¹ maksymaln¹ liczbê pojazdów, pojazd zosta³ odspawnowany.\nU¿yj /v lista, by zespawnowaæ pojazd., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Gratulacje, zakupiÅ‚eÅ› nowy pojazd.\n\nMasz juÅ¼ peÅ‚ne prawa dotyczÄ…ce pojazdu.\n\nPoniewaÅ¼ masz juÅ¼ zespawnowanÄ… maksymalnÄ… liczbÄ™ pojazdÃ³w, pojazd zostaÅ‚ odspawnowany.\nUÅ¼yj /v lista, by zespawnowaÄ‡ pojazd., OK, )
 			)
 			else
 			(
@@ -1852,7 +1852,7 @@ public OnPlayerAcceptOffer(playerid, offererid)
 				SetPlayerCheckpoint(playerid, SalonVehSpawnPos(spawn_point)(0), SalonVehSpawnPos(spawn_point)(1), SalonVehSpawnPos(spawn_point)(2), 5.0)
 				Checkpoint(playerid) = 1
 
-	  			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Gratulacje, zakupi³eœ nowy pojazd.\n\nTwój pojazd pojawi³ siê w hurtowni, mo¿esz go stamt¹d odebraæ.\nMasz ju¿ pe³ne prawa dotycz¹ce pojazdu.\n\nMarker na mapie wska¿e Ci drogê., OK, )
+	  			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Gratulacje, zakupiÅ‚eÅ› nowy pojazd.\n\nTwÃ³j pojazd pojawiÅ‚ siÄ™ w hurtowni, moÅ¼esz go stamtÄ…d odebraÄ‡.\nMasz juÅ¼ peÅ‚ne prawa dotyczÄ…ce pojazdu.\n\nMarker na mapie wskaÅ¼e Ci drogÄ™., OK, )
 			)
 		)
 		else
@@ -1860,7 +1860,7 @@ public OnPlayerAcceptOffer(playerid, offererid)
 			if(PlayerCache(playerid)(pCarSpawned) )= PREMIUM_VEHICLES)
 			(
 				UnspawnVehicle(CarInfo(vehid)(cUID))
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Gratulacje, zakupi³eœ nowy pojazd.\n\nMasz ju¿ pe³ne prawa dotycz¹ce pojazdu.\n\nPoniewa¿ masz ju¿ zespawnowan¹ maksymaln¹ liczbê pojazdów, pojazd zosta³ odspawnowany.\nU¿yj /v lista, by zespawnowaæ pojazd., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Gratulacje, zakupiÅ‚eÅ› nowy pojazd.\n\nMasz juÅ¼ peÅ‚ne prawa dotyczÄ…ce pojazdu.\n\nPoniewaÅ¼ masz juÅ¼ zespawnowanÄ… maksymalnÄ… liczbÄ™ pojazdÃ³w, pojazd zostaÅ‚ odspawnowany.\nUÅ¼yj /v lista, by zespawnowaÄ‡ pojazd., OK, )
 			)
 			else
 			(
@@ -1869,7 +1869,7 @@ public OnPlayerAcceptOffer(playerid, offererid)
 				SetPlayerCheckpoint(playerid, SalonVehSpawnPos(spawn_point)(0), SalonVehSpawnPos(spawn_point)(1), SalonVehSpawnPos(spawn_point)(2), 5.0)
 				Checkpoint(playerid) = 1
 
-	  			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Gratulacje, zakupi³eœ nowy pojazd.\n\nTwój pojazd pojawi³ siê w hurtowni, mo¿esz go stamt¹d odebraæ.\nMasz ju¿ pe³ne prawa dotycz¹ce pojazdu.\n\nMarker na mapie wska¿e Ci drogê., OK, )
+	  			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Gratulacje, zakupiÅ‚eÅ› nowy pojazd.\n\nTwÃ³j pojazd pojawiÅ‚ siÄ™ w hurtowni, moÅ¼esz go stamtÄ…d odebraÄ‡.\nMasz juÅ¼ peÅ‚ne prawa dotyczÄ…ce pojazdu.\n\nMarker na mapie wskaÅ¼e Ci drogÄ™., OK, )
 			)
 		)*/
 	)
@@ -1897,7 +1897,7 @@ public OnPlayerAcceptOffer(playerid, offererid)
 			GroupData(group_id_fix)(gCash) += group_cash
 			SaveGroup(group_id_fix)
 
-			format(string, sizeof(string), Otrzyma³eœ premiê w wysokoœci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
+			format(string, sizeof(string), OtrzymaÅ‚eÅ› premiÄ™ w wysokoÅ›ci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
 			ShowPlayerDialog(offererid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 
 			AddGroupEvent(GroupData(group_id_fix)(gUID), PlayerCache(offererid)(pUID), PlayerCache(playerid)(pUID), price, group_cash, Lekcja)
@@ -1930,14 +1930,14 @@ public OnPlayerAcceptOffer(playerid, offererid)
 			GroupData(group_id_fix)(gCash) += group_cash
 			SaveGroup(group_id_fix)
 		
-			format(string, sizeof(string), Otrzyma³eœ premiê w wysokoœci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
+			format(string, sizeof(string), OtrzymaÅ‚eÅ› premiÄ™ w wysokoÅ›ci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
 			ShowPlayerDialog(offererid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 		)
 		format(string, sizeof(string), UPDATE hrp_characters SET char_insurance = %d, char_insurancecomp = %d, char_insurancecount = 0 WHERE char_uid = %d LIMIT 1, gettime() + 604800, GroupData(group_id_fix)(gUID), PlayerCache(playerid)(pUID))
 		mysql_query(string)
 		PlayerCache(playerid)(pInsurance) = gettime() + 604800
 		PlayerCache(playerid)(pInsuranceCompany) = GroupData(group_id_fix)(gUID)
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Zakupi³eœ ubezpieczenie. Bêdzie ono aktywne przez równy tydzieñ., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, ZakupiÅ‚eÅ› ubezpieczenie. BÄ™dzie ono aktywne przez rÃ³wny tydzieÅ„., OK, )
 
 	)
 	if(Offer(offererid)(oType) == OFFER_TRAIN)
@@ -1965,7 +1965,7 @@ public OnPlayerAcceptOffer(playerid, offererid)
 			GroupData(group_id_fix)(gCash) += group_cash
 			SaveGroup(group_id_fix)
 
-			format(string, sizeof(string), Otrzyma³eœ premiê w wysokoœci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
+			format(string, sizeof(string), OtrzymaÅ‚eÅ› premiÄ™ w wysokoÅ›ci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
 			ShowPlayerDialog(offererid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 
 			AddGroupEvent(GroupData(group_id_fix)(gUID), PlayerCache(offererid)(pUID), PlayerCache(playerid)(pUID), price, group_cash, Karnet)
@@ -1975,7 +1975,7 @@ public OnPlayerAcceptOffer(playerid, offererid)
 		name(64)
 		format(name, sizeof(name), Kartnet - %s, GroupData(group_id_fix)(gName))
 		CreatePlayerItem(playerid, name, ITEM_PASS, train_time, PlayerCache(offererid)(pGroupDuty))
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Zakupi³eœ karnet. Przedmiot znajdziesz w swoim ekwipunku.\nAby u¿yæ przedmiotu skorzystaj z komendy /u., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, ZakupiÅ‚eÅ› karnet. Przedmiot znajdziesz w swoim ekwipunku.\nAby uÅ¼yÄ‡ przedmiotu skorzystaj z komendy /u., OK, )
 
 	)
 	if(Offer(offererid)(oType) == OFFER_PAINTBALL)
@@ -2003,7 +2003,7 @@ public OnPlayerAcceptOffer(playerid, offererid)
 			GroupData(group_id_fix)(gCash) += group_cash
 			SaveGroup(group_id_fix)
 
-			format(string, sizeof(string), Otrzyma³eœ premiê w wysokoœci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
+			format(string, sizeof(string), OtrzymaÅ‚eÅ› premiÄ™ w wysokoÅ›ci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
 			ShowPlayerDialog(offererid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 
 			AddGroupEvent(GroupData(group_id_fix)(gUID), PlayerCache(offererid)(pUID), PlayerCache(playerid)(pUID), price, group_cash, Wejsciowka Paintball)
@@ -2011,9 +2011,9 @@ public OnPlayerAcceptOffer(playerid, offererid)
 		paintball_time = Offer(offererid)(oValue)
 		
 		name(64)
-		format(name, sizeof(name), Wejœciówka Paintball - %s, GroupData(group_id_fix)(gName))
+		format(name, sizeof(name), WejÅ›ciÃ³wka Paintball - %s, GroupData(group_id_fix)(gName))
 		CreatePlayerItem(playerid, name, ITEM_PBENTRY, paintball_time, PlayerCache(offererid)(pGroupDuty))
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Zakupi³eœ wejœciówka. Przedmiot znajdziesz w swoim ekwipunku.\nAby u¿yæ przedmiotu skorzystaj z komendy /u., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, ZakupiÅ‚eÅ› wejÅ›ciÃ³wka. Przedmiot znajdziesz w swoim ekwipunku.\nAby uÅ¼yÄ‡ przedmiotu skorzystaj z komendy /u., OK, )
 
 	)
 	if(Offer(offererid)(oType) == OFFER_UNBLOCK)
@@ -2040,7 +2040,7 @@ public OnPlayerAcceptOffer(playerid, offererid)
 			GroupData(group_id_fix)(gCash) += group_cash
 			SaveGroup(group_id_fix)
 
-			format(string, sizeof(string), Otrzyma³eœ premiê w wysokoœci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
+			format(string, sizeof(string), OtrzymaÅ‚eÅ› premiÄ™ w wysokoÅ›ci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
 			ShowPlayerDialog(offererid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 
 			AddGroupEvent(GroupData(group_id_fix)(gUID), PlayerCache(offererid)(pUID), PlayerCache(playerid)(pUID), price, group_cash, Odblokowanie pojazdu)
@@ -2050,7 +2050,7 @@ public OnPlayerAcceptOffer(playerid, offererid)
 		CarInfo(vehid)(cWheelBlock) = 0
 		SaveVehicle(vehid, SAVE_VEH_ACCESS)
 		
-		format(string, sizeof(string), Blokada zosta³a zdjêta z ko³a %s (SampID: %d, UID: %d).\nNastêpnym razem uwa¿aj gdzie parkujesz., CarInfo(vehid)(cName), vehid, CarInfo(vehid)(cUID))
+		format(string, sizeof(string), Blokada zostaÅ‚a zdjÄ™ta z koÅ‚a %s (SampID: %d, UID: %d).\nNastÄ™pnym razem uwaÅ¼aj gdzie parkujesz., CarInfo(vehid)(cName), vehid, CarInfo(vehid)(cUID))
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 	)
 	if(Offer(offererid)(oType) == OFFER_KEYS)
@@ -2077,7 +2077,7 @@ public OnPlayerAcceptOffer(playerid, offererid)
 			GroupData(group_id_fix)(gCash) += group_cash
 			SaveGroup(group_id_fix)
 
-			format(string, sizeof(string), Otrzyma³eœ premiê w wysokoœci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
+			format(string, sizeof(string), OtrzymaÅ‚eÅ› premiÄ™ w wysokoÅ›ci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
 			ShowPlayerDialog(offererid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 
 			AddGroupEvent(GroupData(group_id_fix)(gUID), PlayerCache(offererid)(pUID), PlayerCache(playerid)(pUID), price, group_cash, Kluczyki)
@@ -2087,7 +2087,7 @@ public OnPlayerAcceptOffer(playerid, offererid)
 		format(string, sizeof(string), Kluczyki do %s, CarInfo(vehid)(cName))
 		CreatePlayerItem(playerid, string, ITEM_KEYS, CarInfo(vehid)(cUID), 0)
 
-		format(string, sizeof(string), Kluczyki do pojazdu %s zosta³y pomyœlnie wyrobione.\nPrzedmiot pojawi³ siê w Twoim ekwipunku., CarInfo(vehid)(cName))
+		format(string, sizeof(string), Kluczyki do pojazdu %s zostaÅ‚y pomyÅ›lnie wyrobione.\nPrzedmiot pojawiÅ‚ siÄ™ w Twoim ekwipunku., CarInfo(vehid)(cName))
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 	)
 	if(Offer(offererid)(oType) == OFFER_INTERIOR)
@@ -2114,7 +2114,7 @@ public OnPlayerAcceptOffer(playerid, offererid)
 			GroupData(group_id_fix)(gCash) += group_cash
 			SaveGroup(group_id_fix)
 
-			format(string, sizeof(string), Otrzyma³eœ premiê w wysokoœci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
+			format(string, sizeof(string), OtrzymaÅ‚eÅ› premiÄ™ w wysokoÅ›ci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
 			ShowPlayerDialog(offererid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 
 			AddGroupEvent(GroupData(group_id_fix)(gUID), PlayerCache(offererid)(pUID), PlayerCache(playerid)(pUID), price, group_cash, Interior)
@@ -2130,7 +2130,7 @@ public OnPlayerAcceptOffer(playerid, offererid)
 		DoorData(doorid)(dExitVW) = DoorData(doorid)(dUID)
 		
 		SaveDoor(doorid, SAVE_DOOR_EXIT)
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Gratulacje, zakupi³eœ wnêtrze do swojego budynku!\nOd teraz po wejœciu do œrodka ujrzysz swoje nowo zakupione wnêtrze., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Gratulacje, zakupiÅ‚eÅ› wnÄ™trze do swojego budynku!\nOd teraz po wejÅ›ciu do Å›rodka ujrzysz swoje nowo zakupione wnÄ™trze., OK, )
 	)
 	if(Offer(offererid)(oType) == OFFER_PREVIEW)
 	(
@@ -2248,7 +2248,7 @@ public OnPlayerAcceptOffer(playerid, offererid)
 		GangZoneInfo(gangzone_id)(gOwner) = GroupData(group_id_fix)(gUID)
 		SaveGangZone(gangzone_id, SAVE_GZ_OWNER)
 		
-		// Zmieñ kolorek dla wszystkich
+		// ZmieÅ„ kolorek dla wszystkich
 		foreach(Player, i)
 		(
 			if(Logged(i) && Spawned(i))
@@ -2261,7 +2261,7 @@ public OnPlayerAcceptOffer(playerid, offererid)
 			)
 		)
 		
-		format(string, sizeof(string), Teren, na którym siê znajdujesz nale¿y teraz do %s., GroupData(group_id_fix)(gName))
+		format(string, sizeof(string), Teren, na ktÃ³rym siÄ™ znajdujesz naleÅ¼y teraz do %s., GroupData(group_id_fix)(gName))
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 	)
 	if(Offer(offererid)(oType) == OFFER_REGISTER)
@@ -2288,7 +2288,7 @@ public OnPlayerAcceptOffer(playerid, offererid)
 			GroupData(group_id_fix)(gCash) += group_cash
 			SaveGroup(group_id_fix)
 
-			format(string, sizeof(string), Otrzyma³eœ premiê w wysokoœci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
+			format(string, sizeof(string), OtrzymaÅ‚eÅ› premiÄ™ w wysokoÅ›ci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
 			ShowPlayerDialog(offererid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 
 			AddGroupEvent(GroupData(group_id_fix)(gUID), PlayerCache(offererid)(pUID), PlayerCache(playerid)(pUID), price, group_cash, Rejestracja pojazdu)
@@ -2301,7 +2301,7 @@ public OnPlayerAcceptOffer(playerid, offererid)
 		format(string, sizeof(string), LS%d, CarInfo(vehid)(cUID))
 		SetVehicleNumberPlate(vehid, string)
 		
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Pojazd zosta³ pomyœlnie zarejestrowany.\nTablice rejestracyjne zmieni³y siê automatycznie., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Pojazd zostaÅ‚ pomyÅ›lnie zarejestrowany.\nTablice rejestracyjne zmieniÅ‚y siÄ™ automatycznie., OK, )
 	)
 	if(Offer(offererid)(oType) == OFFER_FEE)
 	(
@@ -2327,10 +2327,10 @@ public OnPlayerAcceptOffer(playerid, offererid)
 			GroupData(group_id_fix)(gCash) += group_cash
 			SaveGroup(group_id_fix)
 
-			format(string, sizeof(string), Otrzyma³eœ premiê w wysokoœci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
+			format(string, sizeof(string), OtrzymaÅ‚eÅ› premiÄ™ w wysokoÅ›ci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
 			ShowPlayerDialog(offererid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 		)
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Zaakceptowa³eœ ofertê, op³ata zosta³a pobrana., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, ZaakceptowaÅ‚eÅ› ofertÄ™, opÅ‚ata zostaÅ‚a pobrana., OK, )
 	)
 	if(Offer(offererid)(oType) == OFFER_SEX)
 	(

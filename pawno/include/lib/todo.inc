@@ -1,5 +1,5 @@
 To-do:
-	- dodaæ 3 nowe sloty do balon shopu i na serwer (p³acisz x kasy per slot)
+	- dodaÄ‡ 3 nowe sloty do balon shopu i na serwer (pÅ‚acisz x kasy per slot)
 	
 	
 	

@@ -206,7 +206,7 @@ public BJDestroyGame(gameid) (
 public BJInviteToGame(inviter, invited) (
 
 	invite(256)
-	format(invite, sizeof(invite), Gracz %s (%d) zaprasza Ciê do gry w Blackjacka.\nCzy chcesz zaakceptowaæ ofertê?, PlayerName(inviter), inviter)
+	format(invite, sizeof(invite), Gracz %s (%d) zaprasza CiÄ™ do gry w Blackjacka.\nCzy chcesz zaakceptowaÄ‡ ofertÄ™?, PlayerName(inviter), inviter)
 	
 	MainPlayerTable(invited) = inviter
 	SecondPlayerTable(invited) = gettime()
@@ -247,12 +247,12 @@ public BJTextDrawClickListener(playerid, Text:clickedid) (
 				)
 				if(strlen(list_players))
 				(
-					ShowPlayerDialog(playerid, D_BLACKJACK_INVITE, DIALOG_STYLE_LIST, Gracze znajduj±cy siê w pobli¿u:, list_players, Zapros, Zamknij)
+					ShowPlayerDialog(playerid, D_BLACKJACK_INVITE, DIALOG_STYLE_LIST, Gracze znajdujÂ±cy siÄ™ w pobliÅ¼u:, list_players, Zapros, Zamknij)
 					return 1
 				)
 				else
 				(
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_LIST, Wyst±pi³ b³±d., W pobli¿u nie ma ¿adnych graczy., OK, )
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_LIST, WystÂ±piÅ‚ bÅ‚Â±d., W pobliÅ¼u nie ma Å¼adnych graczy., OK, )
 					return 1
 				)
 

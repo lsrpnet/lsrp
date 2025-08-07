@@ -2,7 +2,7 @@ CMD:loadtime(playerid,params())
 (
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		GuiMsg(playerid,Brak uprawnieñ do wykonania tej komendy.,1)
+		GuiMsg(playerid,Brak uprawnieÅ„ do wykonania tej komendy.,1)
 		return 1
 	)
 	
@@ -29,26 +29,26 @@ CMD:zlecenie(playerid,params())
 	
 	if(!PlayerCache(playerid)(pGroupDuty))
 	(
-		GuiMsg(playerid,Musisz byæ na s³u¿bie grupy przewozowej.,1)
+		GuiMsg(playerid,Musisz byÄ‡ na sÅ‚uÅ¼bie grupy przewozowej.,1)
 		return 1
 	)
 	
 	group_id_fix = GetPlayerDutyGroupID(playerid)
 	if(GroupData(group_id_fix)(gType) != GROUP_TRUCKERS)
 	(
-		GuiMsg(playerid,Musisz byæ na s³u¿bie grupy przewozowej.,1)
+		GuiMsg(playerid,Musisz byÄ‡ na sÅ‚uÅ¼bie grupy przewozowej.,1)
 		return 1
 	)
 	
 	if(!IsPlayerInAnyVehicle(playerid))
 	(
-		GuiMsg(playerid,Musisz siedzieæ w pojeŸdzie by aktywowaæ jakiekolwiek ze zleceñ.,1)
+		GuiMsg(playerid,Musisz siedzieÄ‡ w pojeÅºdzie by aktywowaÄ‡ jakiekolwiek ze zleceÅ„.,1)
 		return 1
 	)
 	
 	if(GetPlayerVehicleSeat(playerid) != 0)
 	(
-		GuiMsg(playerid,Musisz byæ kierowc¹ tego pojazdu by móc u¿yæ tej komendy.,1)
+		GuiMsg(playerid,Musisz byÄ‡ kierowcÄ… tego pojazdu by mÃ³c uÅ¼yÄ‡ tej komendy.,1)
 		return 1
 	)
 	
@@ -57,7 +57,7 @@ CMD:zlecenie(playerid,params())
 	//if(model != 403 && model != 514 && model != 515) 413
 	if(model != 403 && model != 514 && model != 515 && model != 413 && model != 440 && model != 456 && model != 482 && model != 498 && model != 499)
 	(
-		GuiMsg(playerid,Tej komendy mo¿esz u¿ywaæ tylko w pojazdach ciê¿arowych.,1)
+		GuiMsg(playerid,Tej komendy moÅ¼esz uÅ¼ywaÄ‡ tylko w pojazdach ciÄ™Å¼arowych.,1)
 		return 1
 	)
 	
@@ -65,7 +65,7 @@ CMD:zlecenie(playerid,params())
 	(
 		if(PlayerCache(playerid)(pTrucking))
 		(
-			GuiMsg(playerid,Jedno zlecenie jest ju¿ aktywne.,1)
+			GuiMsg(playerid,Jedno zlecenie jest juÅ¼ aktywne.,1)
 			return 1
 		)
 		
@@ -77,12 +77,12 @@ CMD:zlecenie(playerid,params())
 	(
 		if(!PlayerCache(playerid)(pTrucking))
 		(
-			GuiMsg(playerid,Nie jesteœ w trakcie realizacji ¿adnego zlecenia.,1)
+			GuiMsg(playerid,Nie jesteÅ› w trakcie realizacji Å¼adnego zlecenia.,1)
 			return 1
 		)
 		
 		DestroyPlayerTrack(playerid)
-		GuiMsg(playerid,Anulowa³eœ zlecenie.,1)
+		GuiMsg(playerid,AnulowaÅ‚eÅ› zlecenie.,1)
 	)
 	
 	return 1
@@ -92,13 +92,13 @@ CMD:wyladuj(playerid,params())
 (
 	if(!PlayerCache(playerid)(pTrucking))
 	(
-		GuiMsg(playerid,Nie jesteœ w trakcie realizacji ¿adnego zlecenia.,1)
+		GuiMsg(playerid,Nie jesteÅ› w trakcie realizacji Å¼adnego zlecenia.,1)
 		return 1
 	)
 	
 	if(PlayerCache(playerid)(pPackingPhase) != TRUCK_PHASE_LOADED)
 	(
-		GuiMsg(playerid,Nie mo¿esz jeszcze wy³adowaæ ¿adnego ³adunku.,1)
+		GuiMsg(playerid,Nie moÅ¼esz jeszcze wyÅ‚adowaÄ‡ Å¼adnego Å‚adunku.,1)
 		return 1
 	)
 	
@@ -109,7 +109,7 @@ CMD:wyladuj(playerid,params())
 	
 	if(!PlayerCache(playerid)(pGroupDuty))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Aby skorzystaæ z tej komendy, musisz byæ na s³u¿bie grupy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Aby skorzystaÄ‡ z tej komendy, musisz byÄ‡ na sÅ‚uÅ¼bie grupy., OK, )
 		return 1
 	)
 	
@@ -136,7 +136,7 @@ CMD:wyladuj(playerid,params())
 	
 	if(!IsPlayerInRangeOfPoint(playerid,8.0,Pos(0),Pos(1),Pos(2)))
 	(
-		GuiMsg(playerid,Musisz byæ w pobli¿u magazynu by móc pobraæ towar.,1)
+		GuiMsg(playerid,Musisz byÄ‡ w pobliÅ¼u magazynu by mÃ³c pobraÄ‡ towar.,1)
 		return 1
 	)
 	
@@ -151,7 +151,7 @@ CMD:zaladuj(playerid,params())
 (
 	if(!PlayerCache(playerid)(pTrucking))
 	(
-		GuiMsg(playerid,Nie jesteœ w trakcie realizacji ¿adnego zlecenia.,1)
+		GuiMsg(playerid,Nie jesteÅ› w trakcie realizacji Å¼adnego zlecenia.,1)
 		return 1
 	)
 	
@@ -167,7 +167,7 @@ CMD:zaladuj(playerid,params())
 	
 	if(!PlayerCache(playerid)(pGroupDuty))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Aby skorzystaæ z tej komendy, musisz byæ na s³u¿bie grupy., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Aby skorzystaÄ‡ z tej komendy, musisz byÄ‡ na sÅ‚uÅ¼bie grupy., OK, )
 		return 1
 	)
 	
@@ -192,7 +192,7 @@ CMD:zaladuj(playerid,params())
 	
 	if(!IsPlayerInRangeOfPoint(playerid,8.0,Pos(0),Pos(1),Pos(2)))
 	(
-		GuiMsg(playerid,Musisz byæ w pobli¿u magazynu by móc pobraæ towar.,1)
+		GuiMsg(playerid,Musisz byÄ‡ w pobliÅ¼u magazynu by mÃ³c pobraÄ‡ towar.,1)
 		return 1
 	)
 	
@@ -207,7 +207,7 @@ stock CreatePlayerTrack(playerid)
 	vehicleid = GetPlayerVehicleID(playerid), model = GetVehicleModel(GetPlayerVehicleID(playerid))
 	if(!IsTrailerAttachedToVehicle(vehicleid) && model != 413 && model != 440 && model != 456 && model != 482 && model != 498 && model != 499)
 	(
-		GuiMsg(playerid,Nie posiadasz naczepy, wiêc nie mo¿esz pobraæ ¿adnego zlecenia.,1)
+		GuiMsg(playerid,Nie posiadasz naczepy, wiÄ™c nie moÅ¼esz pobraÄ‡ Å¼adnego zlecenia.,1)
 		return 1
 	)
 	
@@ -252,7 +252,7 @@ stock CreatePlayerTrack(playerid)
 	mysql_free_result()
 	
 	string(256)
-	format(string,sizeof(string),(CCCCCC)Przyj¹³eœ zlecenie od firmy (C4B100)%s\n(CCCCCC)Miejsce docelowe: (C4B100)%s\n\n(CCCCCC)Powodzenia! Musisz udaæ siê we wskazane miejsce by za³adowaæ towar.,
+	format(string,sizeof(string),(CCCCCC)PrzyjÄ…Å‚eÅ› zlecenie od firmy (C4B100)%s\n(CCCCCC)Miejsce docelowe: (C4B100)%s\n\n(CCCCCC)Powodzenia! Musisz udaÄ‡ siÄ™ we wskazane miejsce by zaÅ‚adowaÄ‡ towar.,
 	company,town)
 	GuiMsg(playerid,string,0)
 	

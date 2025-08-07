@@ -31,12 +31,12 @@ public OnPlayerClickTextDraw(playerid, Text:clickedid)
 		else if(clickedid == Text:DashboardOption(1))	// powitanie
 		(
 			PlayerCache(playerid)(pPlayerIDOffer) = target
-			ShowPlayerDialog(playerid, D_DASHBOARD_YO, DIALOG_STYLE_LIST, Wybierz animacjê powitania, 1\n2\n3\n4\n5\n6, Oferuj, Anuluj)
+			ShowPlayerDialog(playerid, D_DASHBOARD_YO, DIALOG_STYLE_LIST, Wybierz animacjÄ™ powitania, 1\n2\n3\n4\n5\n6, Oferuj, Anuluj)
 		)
-		else if(clickedid == Text:DashboardOption(2))	// poca³unek
+		else if(clickedid == Text:DashboardOption(2))	// pocaÅ‚unek
 		(
 			PlayerCache(playerid)(pPlayerIDOffer) = target
-			ShowPlayerDialog(playerid, D_DASHBOARD_KISS, DIALOG_STYLE_LIST, Wybierz animacjê poca³unku, 1\n2\n3, Oferuj, Anuluj)
+			ShowPlayerDialog(playerid, D_DASHBOARD_KISS, DIALOG_STYLE_LIST, Wybierz animacjÄ™ pocaÅ‚unku, 1\n2\n3, Oferuj, Anuluj)
 		)
 		else if(clickedid == Text:DashboardOption(3))	// przedmiot
 		(
@@ -48,12 +48,12 @@ public OnPlayerClickTextDraw(playerid, Text:clickedid)
 			format(string, sizeof(string), vcard %d, target)
 			cmd_oferuj(playerid, string)
 		)
-		else if(clickedid == Text:DashboardOption(5))	// gotówka
+		else if(clickedid == Text:DashboardOption(5))	// gotÃ³wka
 		(
 			PlayerCache(playerid)(pPlayerIDOffer) = target
-			ShowPlayerDialog(playerid, D_DASHBOARD_PAY, DIALOG_STYLE_INPUT, Zap³aæ gotówkê, WprowadŸ w poni¿sze pole kwotê, któr¹ chcesz podarowaæ drugiej osobie., P³aæ, Anuluj)
+			ShowPlayerDialog(playerid, D_DASHBOARD_PAY, DIALOG_STYLE_INPUT, ZapÅ‚aÄ‡ gotÃ³wkÄ™, WprowadÅº w poniÅ¼sze pole kwotÄ™, ktÃ³rÄ… chcesz podarowaÄ‡ drugiej osobie., PÅ‚aÄ‡, Anuluj)
 		)
-		else if(clickedid == Text:DashboardOption(6))	// hamulec rêczny
+		else if(clickedid == Text:DashboardOption(6))	// hamulec rÄ™czny
 		(
 			cmd_reczny(playerid, )
 		)
@@ -65,14 +65,14 @@ public OnPlayerClickTextDraw(playerid, Text:clickedid)
 		(
 			if(!(CarInfo(target)(cAccess) & VEH_ACCESS_RADIO))
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, W tym pojeŸdzie nie zosta³o zamontowane CB radio., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, W tym pojeÅºdzie nie zostaÅ‚o zamontowane CB radio., OK, )
 			)
 			else
 			(
-				ShowPlayerDialog(playerid, D_RADIO_OPTIONS, DIALOG_STYLE_LIST, CB radio, 1. Ustaw kana³\n2. Wykup kana³ na w³asnoœæ\n3. Ustaw has³o dla kana³u\n4. Definitywnie usuñ kana³\n5. Przypisz kana³ pod grupê, Wybierz, Anuluj)
+				ShowPlayerDialog(playerid, D_RADIO_OPTIONS, DIALOG_STYLE_LIST, CB radio, 1. Ustaw kanaÅ‚\n2. Wykup kanaÅ‚ na wÅ‚asnoÅ›Ä‡\n3. Ustaw hasÅ‚o dla kanaÅ‚u\n4. Definitywnie usuÅ„ kanaÅ‚\n5. Przypisz kanaÅ‚ pod grupÄ™, Wybierz, Anuluj)
 			)
 		)
-		else if(clickedid == Text:DashboardOption(9))	// baga¿nik
+		else if(clickedid == Text:DashboardOption(9))	// bagaÅ¼nik
 		(
 			cmd_bagaznik(playerid, _)
 		)
@@ -182,7 +182,7 @@ public OnPlayerClickTextDraw(playerid, Text:clickedid)
 public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
 (
 	/*
-		u¿ywanie przedmiotów
+		uÅ¼ywanie przedmiotÃ³w
 	*/
 	if(!LSPad_PlayerTDListener(playerid, playertextid))
 	(
@@ -230,9 +230,9 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
 			)
 			if(!strlen(list_players))
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie znaleziono ¿adnych graczy w pobli¿u., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie znaleziono Å¼adnych graczy w pobliÅ¼u., OK, )
 			)
-			ShowPlayerDialog(playerid, D_SEND_VCARD, DIALOG_STYLE_LIST, Wyœlij vCard do:, list_players, Wybierz, Anuluj)
+			ShowPlayerDialog(playerid, D_SEND_VCARD, DIALOG_STYLE_LIST, WyÅ›lij vCard do:, list_players, Wybierz, Anuluj)
 			
 			phone_hideTexts(playerid)
 			return 1
@@ -245,12 +245,12 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
 				// Haslo
 				if(getPhoneSettings(playerid, GET_PHONE_PASSWORD) ) 0)
 				(
-					ShowPlayerDialog(playerid, D_PHONE_PASS_CHANGE, DIALOG_STYLE_LIST, Ustawienia has³a, 1. Zmieñ has³o\n2. Usuñ has³o, OK, Anuluj)
+					ShowPlayerDialog(playerid, D_PHONE_PASS_CHANGE, DIALOG_STYLE_LIST, Ustawienia hasÅ‚a, 1. ZmieÅ„ hasÅ‚o\n2. UsuÅ„ hasÅ‚o, OK, Anuluj)
 					phone_hideTexts(playerid)
 				)
 				else
 				(
-					ShowPlayerDialog(playerid, D_PHONE_PASS_CHANGE, DIALOG_STYLE_LIST, Ustawienia has³a, 1. Zmieñ has³o, OK, Anuluj)
+					ShowPlayerDialog(playerid, D_PHONE_PASS_CHANGE, DIALOG_STYLE_LIST, Ustawienia hasÅ‚a, 1. ZmieÅ„ hasÅ‚o, OK, Anuluj)
 					phone_hideTexts(playerid)
 				)
 				
@@ -259,7 +259,7 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
 				return 1
 			)
 			
-			ShowPlayerDialog(playerid, D_INSERT_NUMBER_CALL, DIALOG_STYLE_INPUT, Zadzwoñ, WprowadŸ numer telefonu komórkowego, na który chcesz zadzwoniæ., Po³¹cz, Anuluj)
+			ShowPlayerDialog(playerid, D_INSERT_NUMBER_CALL, DIALOG_STYLE_INPUT, ZadzwoÅ„, WprowadÅº numer telefonu komÃ³rkowego, na ktÃ³ry chcesz zadzwoniÄ‡., PoÅ‚Ä…cz, Anuluj)
 			phone_hideTexts(playerid)
 			return 1
 		)
@@ -269,7 +269,7 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
 			if(PlayerCache(playerid)(pPhoneAction) == PHONE_ACTION_SETTINGS)
 			(
 				// Tapeta
-				ShowPlayerDialog(playerid, D_PHONE_SELECT_WALLPAPER, DIALOG_STYLE_LIST, Wybierz now¹ tapetê, 1. Brunetka\n2. Ciemna tapeta\n3. Blondynka\n4. Gangster\n5. Savanna, OK, Anuluj)
+				ShowPlayerDialog(playerid, D_PHONE_SELECT_WALLPAPER, DIALOG_STYLE_LIST, Wybierz nowÄ… tapetÄ™, 1. Brunetka\n2. Ciemna tapeta\n3. Blondynka\n4. Gangster\n5. Savanna, OK, Anuluj)
 				phone_hideTexts(playerid)
 				
 				PlayerTextDrawSetString(playerid, TextPhoneBtnCall(playerid), Zadzwon)
@@ -277,7 +277,7 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
 				return 1
 			)
 			
-			ShowPlayerDialog(playerid, D_INSERT_NUMBER_SMS, DIALOG_STYLE_INPUT, Wyœlij SMS, WprowadŸ numer telefonu, na który chcesz wys³aæ wiadomoœæ SMS., Dalej, Anuluj)
+			ShowPlayerDialog(playerid, D_INSERT_NUMBER_SMS, DIALOG_STYLE_INPUT, WyÅ›lij SMS, WprowadÅº numer telefonu, na ktÃ³ry chcesz wysÅ‚aÄ‡ wiadomoÅ›Ä‡ SMS., Dalej, Anuluj)
 			phone_hideTexts(playerid)
 			return 1
 		)
@@ -326,7 +326,7 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
 			)
 			else
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie znaleziono ¿adnych kontaktów w telefonie., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie znaleziono Å¼adnych kontaktÃ³w w telefonie., OK, )
 			)
 					
 			phone_hideTexts(playerid)
@@ -335,7 +335,7 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
 		
 		if(playertextid == TextPhoneBtnAdd(playerid))
 		(
-			ShowPlayerDialog(playerid, D_TEL_ADDNUM, DIALOG_STYLE_INPUT, Zapisz numer, WprowadŸ numer, który chcesz dodaæ do kontaktów., Dodaj, Anuluj)
+			ShowPlayerDialog(playerid, D_TEL_ADDNUM, DIALOG_STYLE_INPUT, Zapisz numer, WprowadÅº numer, ktÃ³ry chcesz dodaÄ‡ do kontaktÃ³w., Dodaj, Anuluj)
 			phone_hideTexts(playerid)
 			return 1
 		)
@@ -353,14 +353,14 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
 			phone_hideTexts(playerid)
 			return 1
 		)
-		// koniec telefonów
+		// koniec telefonÃ³w
 		
 		if(playertextid == TextDrawItem(playerid)(0))
 		(
 			CancelSelectTextDraw(playerid)
 			
 			pageid = PlayerCache(playerid)(pItemPage)
-			pageid = pageid * 10		//dla pewnoœci
+			pageid = pageid * 10		//dla pewnoÅ›ci
 			itemSel = 0
 			
 			helped = 0		//taka tam pomocniczna
@@ -387,18 +387,18 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
 			title(64), list_manage(256)
 			PlayerCache(playerid)(pSelectItem) = itemSel
 			PlayerCache(playerid)(pManageItem) = itemSel
-			format(title, sizeof(title), Zarz¹dzaj przedmiotem » %s (UID: %d), ItemInfo(itemSel)(iName), ItemInfo(itemSel)(iUID))
+			format(title, sizeof(title), ZarzÄ…dzaj przedmiotem Â» %s (UID: %d), ItemInfo(itemSel)(iName), ItemInfo(itemSel)(iUID))
 
 			if(ItemInfo(itemSel)(iUsed))
 			(
-				format(list_manage, sizeof(list_manage), 1. Przestañ u¿ywaæ tego przedmiotu\n2. (FF3D3D)Od³ó¿ przedmiot w pobli¿u(FFFFFF)\n3. (FF3D3D)Sprzedaj innemu graczowi(93A818)\n4. Poka¿ informacje(FFFFFF)\n5. (FF3D3D)W³ó¿ do innego przedmiotu(FFFFFF)\n6. (FF3D3D)WsadŸ przedmiot do schowka(FFFFFF)\n7. (FF3D3D)Rozbij przedmiot\n8. Zmieñ opis przedmiotu\n9. Poka¿ przedmiot graczowi)
+				format(list_manage, sizeof(list_manage), 1. PrzestaÅ„ uÅ¼ywaÄ‡ tego przedmiotu\n2. (FF3D3D)OdÅ‚Ã³Å¼ przedmiot w pobliÅ¼u(FFFFFF)\n3. (FF3D3D)Sprzedaj innemu graczowi(93A818)\n4. PokaÅ¼ informacje(FFFFFF)\n5. (FF3D3D)WÅ‚Ã³Å¼ do innego przedmiotu(FFFFFF)\n6. (FF3D3D)WsadÅº przedmiot do schowka(FFFFFF)\n7. (FF3D3D)Rozbij przedmiot\n8. ZmieÅ„ opis przedmiotu\n9. PokaÅ¼ przedmiot graczowi)
 			)
 			else
 			(
-				format(list_manage, sizeof(list_manage), (FFFFFF)1. U¿yj tego przedmiotu\n2. Od³ó¿ przedmiot w pobli¿u\n3. Sprzedaj innemu graczowi\n(93A818)4. Poka¿ informacje(FFFFFF)\n5. W³ó¿ do innego przedmiotu\n6. WsadŸ przedmiot do schowka\n7. Rozbij przedmiot\n8. Zmieñ opis przedmiotu\n9. Poka¿ przedmiot graczowi)
+				format(list_manage, sizeof(list_manage), (FFFFFF)1. UÅ¼yj tego przedmiotu\n2. OdÅ‚Ã³Å¼ przedmiot w pobliÅ¼u\n3. Sprzedaj innemu graczowi\n(93A818)4. PokaÅ¼ informacje(FFFFFF)\n5. WÅ‚Ã³Å¼ do innego przedmiotu\n6. WsadÅº przedmiot do schowka\n7. Rozbij przedmiot\n8. ZmieÅ„ opis przedmiotu\n9. PokaÅ¼ przedmiot graczowi)
 			)
 
-			ShowPlayerDialog(playerid, D_MANAGE_ITEM, DIALOG_STYLE_LIST, title, list_manage, Wybierz, Wróæ)
+			ShowPlayerDialog(playerid, D_MANAGE_ITEM, DIALOG_STYLE_LIST, title, list_manage, Wybierz, WrÃ³Ä‡)
 			
 		)
 		if(playertextid == TextDrawItem(playerid)(1))
@@ -406,7 +406,7 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
 			CancelSelectTextDraw(playerid)
 			
 			pageid = PlayerCache(playerid)(pItemPage)
-			pageid = pageid * 10		//dla pewnoœci
+			pageid = pageid * 10		//dla pewnoÅ›ci
 			itemSel = 0
 			
 			helped = 0		//taka tam pomocniczna
@@ -440,25 +440,25 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
 			title(64), list_manage(256)
 			PlayerCache(playerid)(pSelectItem) = itemSel
 			PlayerCache(playerid)(pManageItem) = itemSel
-			format(title, sizeof(title), Zarz¹dzaj przedmiotem » %s (UID: %d), ItemInfo(itemSel)(iName), ItemInfo(itemSel)(iUID))
+			format(title, sizeof(title), ZarzÄ…dzaj przedmiotem Â» %s (UID: %d), ItemInfo(itemSel)(iName), ItemInfo(itemSel)(iUID))
 
 			if(ItemInfo(itemSel)(iUsed))
 			(
-				format(list_manage, sizeof(list_manage), 1. Przestañ u¿ywaæ tego przedmiotu\n2. (FF3D3D)Od³ó¿ przedmiot w pobli¿u(FFFFFF)\n3. (FF3D3D)Sprzedaj innemu graczowi(93A818)\n4. Poka¿ informacje(FFFFFF)\n5. (FF3D3D)W³ó¿ do innego przedmiotu(FFFFFF)\n6. (FF3D3D)WsadŸ przedmiot do schowka(FFFFFF)\n7. (FF3D3D)Rozbij przedmiot\n8. Zmieñ opis przedmiotu\n9. Poka¿ przedmiot graczowi)
+				format(list_manage, sizeof(list_manage), 1. PrzestaÅ„ uÅ¼ywaÄ‡ tego przedmiotu\n2. (FF3D3D)OdÅ‚Ã³Å¼ przedmiot w pobliÅ¼u(FFFFFF)\n3. (FF3D3D)Sprzedaj innemu graczowi(93A818)\n4. PokaÅ¼ informacje(FFFFFF)\n5. (FF3D3D)WÅ‚Ã³Å¼ do innego przedmiotu(FFFFFF)\n6. (FF3D3D)WsadÅº przedmiot do schowka(FFFFFF)\n7. (FF3D3D)Rozbij przedmiot\n8. ZmieÅ„ opis przedmiotu\n9. PokaÅ¼ przedmiot graczowi)
 			)
 			else
 			(
-				format(list_manage, sizeof(list_manage), (FFFFFF)1. U¿yj tego przedmiotu\n2. Od³ó¿ przedmiot w pobli¿u\n3. Sprzedaj innemu graczowi\n(93A818)4. Poka¿ informacje(FFFFFF)\n5. W³ó¿ do innego przedmiotu\n6. WsadŸ przedmiot do schowka\n7. Rozbij przedmiot\n8. Zmieñ opis przedmiotu\n9. Poka¿ przedmiot graczowi)
+				format(list_manage, sizeof(list_manage), (FFFFFF)1. UÅ¼yj tego przedmiotu\n2. OdÅ‚Ã³Å¼ przedmiot w pobliÅ¼u\n3. Sprzedaj innemu graczowi\n(93A818)4. PokaÅ¼ informacje(FFFFFF)\n5. WÅ‚Ã³Å¼ do innego przedmiotu\n6. WsadÅº przedmiot do schowka\n7. Rozbij przedmiot\n8. ZmieÅ„ opis przedmiotu\n9. PokaÅ¼ przedmiot graczowi)
 			)
 
-			ShowPlayerDialog(playerid, D_MANAGE_ITEM, DIALOG_STYLE_LIST, title, list_manage, Wybierz, Wróæ)
+			ShowPlayerDialog(playerid, D_MANAGE_ITEM, DIALOG_STYLE_LIST, title, list_manage, Wybierz, WrÃ³Ä‡)
 		)
 		if(playertextid == TextDrawItem(playerid)(2))
 		(
 			CancelSelectTextDraw(playerid)
 			
 			pageid = PlayerCache(playerid)(pItemPage)
-			pageid = pageid * 10		//dla pewnoœci
+			pageid = pageid * 10		//dla pewnoÅ›ci
 			itemSel = 0
 			
 			helped = 0		//taka tam pomocniczna
@@ -492,25 +492,25 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
 			title(64), list_manage(256)
 			PlayerCache(playerid)(pSelectItem) = itemSel
 			PlayerCache(playerid)(pManageItem) = itemSel
-			format(title, sizeof(title), Zarz¹dzaj przedmiotem » %s (UID: %d), ItemInfo(itemSel)(iName), ItemInfo(itemSel)(iUID))
+			format(title, sizeof(title), ZarzÄ…dzaj przedmiotem Â» %s (UID: %d), ItemInfo(itemSel)(iName), ItemInfo(itemSel)(iUID))
 
 			if(ItemInfo(itemSel)(iUsed))
 			(
-				format(list_manage, sizeof(list_manage), 1. Przestañ u¿ywaæ tego przedmiotu\n2. (FF3D3D)Od³ó¿ przedmiot w pobli¿u(FFFFFF)\n3. (FF3D3D)Sprzedaj innemu graczowi(93A818)\n4. Poka¿ informacje(FFFFFF)\n5. (FF3D3D)W³ó¿ do innego przedmiotu(FFFFFF)\n6. (FF3D3D)WsadŸ przedmiot do schowka(FFFFFF)\n7. (FF3D3D)Rozbij przedmiot\n8. Zmieñ opis przedmiotu\n9. Poka¿ przedmiot graczowi)
+				format(list_manage, sizeof(list_manage), 1. PrzestaÅ„ uÅ¼ywaÄ‡ tego przedmiotu\n2. (FF3D3D)OdÅ‚Ã³Å¼ przedmiot w pobliÅ¼u(FFFFFF)\n3. (FF3D3D)Sprzedaj innemu graczowi(93A818)\n4. PokaÅ¼ informacje(FFFFFF)\n5. (FF3D3D)WÅ‚Ã³Å¼ do innego przedmiotu(FFFFFF)\n6. (FF3D3D)WsadÅº przedmiot do schowka(FFFFFF)\n7. (FF3D3D)Rozbij przedmiot\n8. ZmieÅ„ opis przedmiotu\n9. PokaÅ¼ przedmiot graczowi)
 			)
 			else
 			(
-				format(list_manage, sizeof(list_manage), (FFFFFF)1. U¿yj tego przedmiotu\n2. Od³ó¿ przedmiot w pobli¿u\n3. Sprzedaj innemu graczowi\n(93A818)4. Poka¿ informacje(FFFFFF)\n5. W³ó¿ do innego przedmiotu\n6. WsadŸ przedmiot do schowka\n7. Rozbij przedmiot\n8. Zmieñ opis przedmiotu\n9. Poka¿ przedmiot graczowi)
+				format(list_manage, sizeof(list_manage), (FFFFFF)1. UÅ¼yj tego przedmiotu\n2. OdÅ‚Ã³Å¼ przedmiot w pobliÅ¼u\n3. Sprzedaj innemu graczowi\n(93A818)4. PokaÅ¼ informacje(FFFFFF)\n5. WÅ‚Ã³Å¼ do innego przedmiotu\n6. WsadÅº przedmiot do schowka\n7. Rozbij przedmiot\n8. ZmieÅ„ opis przedmiotu\n9. PokaÅ¼ przedmiot graczowi)
 			)
 
-			ShowPlayerDialog(playerid, D_MANAGE_ITEM, DIALOG_STYLE_LIST, title, list_manage, Wybierz, Wróæ)
+			ShowPlayerDialog(playerid, D_MANAGE_ITEM, DIALOG_STYLE_LIST, title, list_manage, Wybierz, WrÃ³Ä‡)
 		)
 		if(playertextid == TextDrawItem(playerid)(3))
 		(
 			CancelSelectTextDraw(playerid)
 			
 			pageid = PlayerCache(playerid)(pItemPage)
-			pageid = pageid * 10		//dla pewnoœci
+			pageid = pageid * 10		//dla pewnoÅ›ci
 			itemSel = 0
 			
 			helped = 0		//taka tam pomocniczna
@@ -544,25 +544,25 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
 			title(64), list_manage(256)
 			PlayerCache(playerid)(pSelectItem) = itemSel
 			PlayerCache(playerid)(pManageItem) = itemSel
-			format(title, sizeof(title), Zarz¹dzaj przedmiotem » %s (UID: %d), ItemInfo(itemSel)(iName), ItemInfo(itemSel)(iUID))
+			format(title, sizeof(title), ZarzÄ…dzaj przedmiotem Â» %s (UID: %d), ItemInfo(itemSel)(iName), ItemInfo(itemSel)(iUID))
 
 			if(ItemInfo(itemSel)(iUsed))
 			(
-				format(list_manage, sizeof(list_manage), 1. Przestañ u¿ywaæ tego przedmiotu\n2. (FF3D3D)Od³ó¿ przedmiot w pobli¿u(FFFFFF)\n3. (FF3D3D)Sprzedaj innemu graczowi(93A818)\n4. Poka¿ informacje(FFFFFF)\n5. (FF3D3D)W³ó¿ do innego przedmiotu(FFFFFF)\n6. (FF3D3D)WsadŸ przedmiot do schowka(FFFFFF)\n7. (FF3D3D)Rozbij przedmiot\n8. Zmieñ opis przedmiotu\n9. Poka¿ przedmiot graczowi)
+				format(list_manage, sizeof(list_manage), 1. PrzestaÅ„ uÅ¼ywaÄ‡ tego przedmiotu\n2. (FF3D3D)OdÅ‚Ã³Å¼ przedmiot w pobliÅ¼u(FFFFFF)\n3. (FF3D3D)Sprzedaj innemu graczowi(93A818)\n4. PokaÅ¼ informacje(FFFFFF)\n5. (FF3D3D)WÅ‚Ã³Å¼ do innego przedmiotu(FFFFFF)\n6. (FF3D3D)WsadÅº przedmiot do schowka(FFFFFF)\n7. (FF3D3D)Rozbij przedmiot\n8. ZmieÅ„ opis przedmiotu\n9. PokaÅ¼ przedmiot graczowi)
 			)
 			else
 			(
-				format(list_manage, sizeof(list_manage), (FFFFFF)1. U¿yj tego przedmiotu\n2. Od³ó¿ przedmiot w pobli¿u\n3. Sprzedaj innemu graczowi\n(93A818)4. Poka¿ informacje(FFFFFF)\n5. W³ó¿ do innego przedmiotu\n6. WsadŸ przedmiot do schowka\n7. Rozbij przedmiot\n8. Zmieñ opis przedmiotu\n9. Poka¿ przedmiot graczowi)
+				format(list_manage, sizeof(list_manage), (FFFFFF)1. UÅ¼yj tego przedmiotu\n2. OdÅ‚Ã³Å¼ przedmiot w pobliÅ¼u\n3. Sprzedaj innemu graczowi\n(93A818)4. PokaÅ¼ informacje(FFFFFF)\n5. WÅ‚Ã³Å¼ do innego przedmiotu\n6. WsadÅº przedmiot do schowka\n7. Rozbij przedmiot\n8. ZmieÅ„ opis przedmiotu\n9. PokaÅ¼ przedmiot graczowi)
 			)
 
-			ShowPlayerDialog(playerid, D_MANAGE_ITEM, DIALOG_STYLE_LIST, title, list_manage, Wybierz, Wróæ)
+			ShowPlayerDialog(playerid, D_MANAGE_ITEM, DIALOG_STYLE_LIST, title, list_manage, Wybierz, WrÃ³Ä‡)
 		)
 		if(playertextid == TextDrawItem(playerid)(4))
 		(
 			CancelSelectTextDraw(playerid)
 			
 			pageid = PlayerCache(playerid)(pItemPage)
-			pageid = pageid * 10		//dla pewnoœci
+			pageid = pageid * 10		//dla pewnoÅ›ci
 			itemSel = 0
 			
 			helped = 0		//taka tam pomocniczna
@@ -596,25 +596,25 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
 			title(64), list_manage(256)
 			PlayerCache(playerid)(pSelectItem) = itemSel
 			PlayerCache(playerid)(pManageItem) = itemSel
-			format(title, sizeof(title), Zarz¹dzaj przedmiotem » %s (UID: %d), ItemInfo(itemSel)(iName), ItemInfo(itemSel)(iUID))
+			format(title, sizeof(title), ZarzÄ…dzaj przedmiotem Â» %s (UID: %d), ItemInfo(itemSel)(iName), ItemInfo(itemSel)(iUID))
 
 			if(ItemInfo(itemSel)(iUsed))
 			(
-				format(list_manage, sizeof(list_manage), 1. Przestañ u¿ywaæ tego przedmiotu\n2. (FF3D3D)Od³ó¿ przedmiot w pobli¿u(FFFFFF)\n3. (FF3D3D)Sprzedaj innemu graczowi(93A818)\n4. Poka¿ informacje(FFFFFF)\n5. (FF3D3D)W³ó¿ do innego przedmiotu(FFFFFF)\n6. (FF3D3D)WsadŸ przedmiot do schowka(FFFFFF)\n7. (FF3D3D)Rozbij przedmiot\n8. Zmieñ opis przedmiotu\n9. Poka¿ przedmiot graczowi)
+				format(list_manage, sizeof(list_manage), 1. PrzestaÅ„ uÅ¼ywaÄ‡ tego przedmiotu\n2. (FF3D3D)OdÅ‚Ã³Å¼ przedmiot w pobliÅ¼u(FFFFFF)\n3. (FF3D3D)Sprzedaj innemu graczowi(93A818)\n4. PokaÅ¼ informacje(FFFFFF)\n5. (FF3D3D)WÅ‚Ã³Å¼ do innego przedmiotu(FFFFFF)\n6. (FF3D3D)WsadÅº przedmiot do schowka(FFFFFF)\n7. (FF3D3D)Rozbij przedmiot\n8. ZmieÅ„ opis przedmiotu\n9. PokaÅ¼ przedmiot graczowi)
 			)
 			else
 			(
-				format(list_manage, sizeof(list_manage), (FFFFFF)1. U¿yj tego przedmiotu\n2. Od³ó¿ przedmiot w pobli¿u\n3. Sprzedaj innemu graczowi\n(93A818)4. Poka¿ informacje(FFFFFF)\n5. W³ó¿ do innego przedmiotu\n6. WsadŸ przedmiot do schowka\n7. Rozbij przedmiot\n8. Zmieñ opis przedmiotu\n9. Poka¿ przedmiot graczowi)
+				format(list_manage, sizeof(list_manage), (FFFFFF)1. UÅ¼yj tego przedmiotu\n2. OdÅ‚Ã³Å¼ przedmiot w pobliÅ¼u\n3. Sprzedaj innemu graczowi\n(93A818)4. PokaÅ¼ informacje(FFFFFF)\n5. WÅ‚Ã³Å¼ do innego przedmiotu\n6. WsadÅº przedmiot do schowka\n7. Rozbij przedmiot\n8. ZmieÅ„ opis przedmiotu\n9. PokaÅ¼ przedmiot graczowi)
 			)
 
-			ShowPlayerDialog(playerid, D_MANAGE_ITEM, DIALOG_STYLE_LIST, title, list_manage, Wybierz, Wróæ)
+			ShowPlayerDialog(playerid, D_MANAGE_ITEM, DIALOG_STYLE_LIST, title, list_manage, Wybierz, WrÃ³Ä‡)
 		)
 		if(playertextid == TextDrawItem(playerid)(5))
 		(
 			CancelSelectTextDraw(playerid)
 			
 			pageid = PlayerCache(playerid)(pItemPage)
-			pageid = pageid * 10		//dla pewnoœci
+			pageid = pageid * 10		//dla pewnoÅ›ci
 			itemSel = 0
 			
 			helped = 0		//taka tam pomocniczna
@@ -648,25 +648,25 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
 			title(64), list_manage(256)
 			PlayerCache(playerid)(pSelectItem) = itemSel
 			PlayerCache(playerid)(pManageItem) = itemSel
-			format(title, sizeof(title), Zarz¹dzaj przedmiotem » %s (UID: %d), ItemInfo(itemSel)(iName), ItemInfo(itemSel)(iUID))
+			format(title, sizeof(title), ZarzÄ…dzaj przedmiotem Â» %s (UID: %d), ItemInfo(itemSel)(iName), ItemInfo(itemSel)(iUID))
 
 			if(ItemInfo(itemSel)(iUsed))
 			(
-				format(list_manage, sizeof(list_manage), 1. Przestañ u¿ywaæ tego przedmiotu\n2. (FF3D3D)Od³ó¿ przedmiot w pobli¿u(FFFFFF)\n3. (FF3D3D)Sprzedaj innemu graczowi(93A818)\n4. Poka¿ informacje(FFFFFF)\n5. (FF3D3D)W³ó¿ do innego przedmiotu(FFFFFF)\n6. (FF3D3D)WsadŸ przedmiot do schowka(FFFFFF)\n7. (FF3D3D)Rozbij przedmiot\n8. Zmieñ opis przedmiotu\n9. Poka¿ przedmiot graczowi)
+				format(list_manage, sizeof(list_manage), 1. PrzestaÅ„ uÅ¼ywaÄ‡ tego przedmiotu\n2. (FF3D3D)OdÅ‚Ã³Å¼ przedmiot w pobliÅ¼u(FFFFFF)\n3. (FF3D3D)Sprzedaj innemu graczowi(93A818)\n4. PokaÅ¼ informacje(FFFFFF)\n5. (FF3D3D)WÅ‚Ã³Å¼ do innego przedmiotu(FFFFFF)\n6. (FF3D3D)WsadÅº przedmiot do schowka(FFFFFF)\n7. (FF3D3D)Rozbij przedmiot\n8. ZmieÅ„ opis przedmiotu\n9. PokaÅ¼ przedmiot graczowi)
 			)
 			else
 			(
-				format(list_manage, sizeof(list_manage), (FFFFFF)1. U¿yj tego przedmiotu\n2. Od³ó¿ przedmiot w pobli¿u\n3. Sprzedaj innemu graczowi\n(93A818)4. Poka¿ informacje(FFFFFF)\n5. W³ó¿ do innego przedmiotu\n6. WsadŸ przedmiot do schowka\n7. Rozbij przedmiot\n8. Zmieñ opis przedmiotu\n9. Poka¿ przedmiot graczowi)
+				format(list_manage, sizeof(list_manage), (FFFFFF)1. UÅ¼yj tego przedmiotu\n2. OdÅ‚Ã³Å¼ przedmiot w pobliÅ¼u\n3. Sprzedaj innemu graczowi\n(93A818)4. PokaÅ¼ informacje(FFFFFF)\n5. WÅ‚Ã³Å¼ do innego przedmiotu\n6. WsadÅº przedmiot do schowka\n7. Rozbij przedmiot\n8. ZmieÅ„ opis przedmiotu\n9. PokaÅ¼ przedmiot graczowi)
 			)
 
-			ShowPlayerDialog(playerid, D_MANAGE_ITEM, DIALOG_STYLE_LIST, title, list_manage, Wybierz, Wróæ)
+			ShowPlayerDialog(playerid, D_MANAGE_ITEM, DIALOG_STYLE_LIST, title, list_manage, Wybierz, WrÃ³Ä‡)
 		)
 		if(playertextid == TextDrawItem(playerid)(6))
 		(
 			CancelSelectTextDraw(playerid)
 			
 			pageid = PlayerCache(playerid)(pItemPage)
-			pageid = pageid * 10		//dla pewnoœci
+			pageid = pageid * 10		//dla pewnoÅ›ci
 			itemSel = 0
 			
 			helped = 0		//taka tam pomocniczna
@@ -700,25 +700,25 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
 			title(64), list_manage(256)
 			PlayerCache(playerid)(pSelectItem) = itemSel
 			PlayerCache(playerid)(pManageItem) = itemSel
-			format(title, sizeof(title), Zarz¹dzaj przedmiotem » %s (UID: %d), ItemInfo(itemSel)(iName), ItemInfo(itemSel)(iUID))
+			format(title, sizeof(title), ZarzÄ…dzaj przedmiotem Â» %s (UID: %d), ItemInfo(itemSel)(iName), ItemInfo(itemSel)(iUID))
 
 			if(ItemInfo(itemSel)(iUsed))
 			(
-				format(list_manage, sizeof(list_manage), 1. Przestañ u¿ywaæ tego przedmiotu\n2. (FF3D3D)Od³ó¿ przedmiot w pobli¿u(FFFFFF)\n3. (FF3D3D)Sprzedaj innemu graczowi(93A818)\n4. Poka¿ informacje(FFFFFF)\n5. (FF3D3D)W³ó¿ do innego przedmiotu(FFFFFF)\n6. (FF3D3D)WsadŸ przedmiot do schowka(FFFFFF)\n7. (FF3D3D)Rozbij przedmiot\n8. Zmieñ opis przedmiotu\n9. Poka¿ przedmiot graczowi)
+				format(list_manage, sizeof(list_manage), 1. PrzestaÅ„ uÅ¼ywaÄ‡ tego przedmiotu\n2. (FF3D3D)OdÅ‚Ã³Å¼ przedmiot w pobliÅ¼u(FFFFFF)\n3. (FF3D3D)Sprzedaj innemu graczowi(93A818)\n4. PokaÅ¼ informacje(FFFFFF)\n5. (FF3D3D)WÅ‚Ã³Å¼ do innego przedmiotu(FFFFFF)\n6. (FF3D3D)WsadÅº przedmiot do schowka(FFFFFF)\n7. (FF3D3D)Rozbij przedmiot\n8. ZmieÅ„ opis przedmiotu\n9. PokaÅ¼ przedmiot graczowi)
 			)
 			else
 			(
-				format(list_manage, sizeof(list_manage), (FFFFFF)1. U¿yj tego przedmiotu\n2. Od³ó¿ przedmiot w pobli¿u\n3. Sprzedaj innemu graczowi\n(93A818)4. Poka¿ informacje(FFFFFF)\n5. W³ó¿ do innego przedmiotu\n6. WsadŸ przedmiot do schowka\n7. Rozbij przedmiot\n8. Zmieñ opis przedmiotu\n9. Poka¿ przedmiot graczowi)
+				format(list_manage, sizeof(list_manage), (FFFFFF)1. UÅ¼yj tego przedmiotu\n2. OdÅ‚Ã³Å¼ przedmiot w pobliÅ¼u\n3. Sprzedaj innemu graczowi\n(93A818)4. PokaÅ¼ informacje(FFFFFF)\n5. WÅ‚Ã³Å¼ do innego przedmiotu\n6. WsadÅº przedmiot do schowka\n7. Rozbij przedmiot\n8. ZmieÅ„ opis przedmiotu\n9. PokaÅ¼ przedmiot graczowi)
 			)
 
-			ShowPlayerDialog(playerid, D_MANAGE_ITEM, DIALOG_STYLE_LIST, title, list_manage, Wybierz, Wróæ)
+			ShowPlayerDialog(playerid, D_MANAGE_ITEM, DIALOG_STYLE_LIST, title, list_manage, Wybierz, WrÃ³Ä‡)
 		)
 		if(playertextid == TextDrawItem(playerid)(7))
 		(
 			CancelSelectTextDraw(playerid)
 			
 			pageid = PlayerCache(playerid)(pItemPage)
-			pageid = pageid * 10		//dla pewnoœci
+			pageid = pageid * 10		//dla pewnoÅ›ci
 			itemSel = 0
 			
 			helped = 0		//taka tam pomocniczna
@@ -751,25 +751,25 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
 			title(64), list_manage(256)
 			PlayerCache(playerid)(pSelectItem) = itemSel
 			PlayerCache(playerid)(pManageItem) = itemSel
-			format(title, sizeof(title), Zarz¹dzaj przedmiotem » %s (UID: %d), ItemInfo(itemSel)(iName), ItemInfo(itemSel)(iUID))
+			format(title, sizeof(title), ZarzÄ…dzaj przedmiotem Â» %s (UID: %d), ItemInfo(itemSel)(iName), ItemInfo(itemSel)(iUID))
 
 			if(ItemInfo(itemSel)(iUsed))
 			(
-				format(list_manage, sizeof(list_manage), 1. Przestañ u¿ywaæ tego przedmiotu\n2. (FF3D3D)Od³ó¿ przedmiot w pobli¿u(FFFFFF)\n3. (FF3D3D)Sprzedaj innemu graczowi(93A818)\n4. Poka¿ informacje(FFFFFF)\n5. (FF3D3D)W³ó¿ do innego przedmiotu(FFFFFF)\n6. (FF3D3D)WsadŸ przedmiot do schowka(FFFFFF)\n7. (FF3D3D)Rozbij przedmiot\n8. Zmieñ opis przedmiotu\n9. Poka¿ przedmiot graczowi)
+				format(list_manage, sizeof(list_manage), 1. PrzestaÅ„ uÅ¼ywaÄ‡ tego przedmiotu\n2. (FF3D3D)OdÅ‚Ã³Å¼ przedmiot w pobliÅ¼u(FFFFFF)\n3. (FF3D3D)Sprzedaj innemu graczowi(93A818)\n4. PokaÅ¼ informacje(FFFFFF)\n5. (FF3D3D)WÅ‚Ã³Å¼ do innego przedmiotu(FFFFFF)\n6. (FF3D3D)WsadÅº przedmiot do schowka(FFFFFF)\n7. (FF3D3D)Rozbij przedmiot\n8. ZmieÅ„ opis przedmiotu\n9. PokaÅ¼ przedmiot graczowi)
 			)
 			else
 			(
-				format(list_manage, sizeof(list_manage), (FFFFFF)1. U¿yj tego przedmiotu\n2. Od³ó¿ przedmiot w pobli¿u\n3. Sprzedaj innemu graczowi\n(93A818)4. Poka¿ informacje(FFFFFF)\n5. W³ó¿ do innego przedmiotu\n6. WsadŸ przedmiot do schowka\n7. Rozbij przedmiot\n8. Zmieñ opis przedmiotu\n9. Poka¿ przedmiot graczowi)
+				format(list_manage, sizeof(list_manage), (FFFFFF)1. UÅ¼yj tego przedmiotu\n2. OdÅ‚Ã³Å¼ przedmiot w pobliÅ¼u\n3. Sprzedaj innemu graczowi\n(93A818)4. PokaÅ¼ informacje(FFFFFF)\n5. WÅ‚Ã³Å¼ do innego przedmiotu\n6. WsadÅº przedmiot do schowka\n7. Rozbij przedmiot\n8. ZmieÅ„ opis przedmiotu\n9. PokaÅ¼ przedmiot graczowi)
 			)
 
-			ShowPlayerDialog(playerid, D_MANAGE_ITEM, DIALOG_STYLE_LIST, title, list_manage, Wybierz, Wróæ)
+			ShowPlayerDialog(playerid, D_MANAGE_ITEM, DIALOG_STYLE_LIST, title, list_manage, Wybierz, WrÃ³Ä‡)
 		)
 		if(playertextid == TextDrawItem(playerid)(8))
 		(
 			CancelSelectTextDraw(playerid)
 			
 			pageid = PlayerCache(playerid)(pItemPage)
-			pageid = pageid * 10		//dla pewnoœci
+			pageid = pageid * 10		//dla pewnoÅ›ci
 			itemSel = 0
 			
 			helped = 0		//taka tam pomocniczna
@@ -802,25 +802,25 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
 			title(64), list_manage(256)
 			PlayerCache(playerid)(pSelectItem) = itemSel
 			PlayerCache(playerid)(pManageItem) = itemSel
-			format(title, sizeof(title), Zarz¹dzaj przedmiotem » %s (UID: %d), ItemInfo(itemSel)(iName), ItemInfo(itemSel)(iUID))
+			format(title, sizeof(title), ZarzÄ…dzaj przedmiotem Â» %s (UID: %d), ItemInfo(itemSel)(iName), ItemInfo(itemSel)(iUID))
 
 			if(ItemInfo(itemSel)(iUsed))
 			(
-				format(list_manage, sizeof(list_manage), 1. Przestañ u¿ywaæ tego przedmiotu\n2. (FF3D3D)Od³ó¿ przedmiot w pobli¿u(FFFFFF)\n3. (FF3D3D)Sprzedaj innemu graczowi(93A818)\n4. Poka¿ informacje(FFFFFF)\n5. (FF3D3D)W³ó¿ do innego przedmiotu(FFFFFF)\n6. (FF3D3D)WsadŸ przedmiot do schowka(FFFFFF)\n7. (FF3D3D)Rozbij przedmiot\n8. Zmieñ opis przedmiotu\n9. Poka¿ przedmiot graczowi)
+				format(list_manage, sizeof(list_manage), 1. PrzestaÅ„ uÅ¼ywaÄ‡ tego przedmiotu\n2. (FF3D3D)OdÅ‚Ã³Å¼ przedmiot w pobliÅ¼u(FFFFFF)\n3. (FF3D3D)Sprzedaj innemu graczowi(93A818)\n4. PokaÅ¼ informacje(FFFFFF)\n5. (FF3D3D)WÅ‚Ã³Å¼ do innego przedmiotu(FFFFFF)\n6. (FF3D3D)WsadÅº przedmiot do schowka(FFFFFF)\n7. (FF3D3D)Rozbij przedmiot\n8. ZmieÅ„ opis przedmiotu\n9. PokaÅ¼ przedmiot graczowi)
 			)
 			else
 			(
-				format(list_manage, sizeof(list_manage), (FFFFFF)1. U¿yj tego przedmiotu\n2. Od³ó¿ przedmiot w pobli¿u\n3. Sprzedaj innemu graczowi\n(93A818)4. Poka¿ informacje(FFFFFF)\n5. W³ó¿ do innego przedmiotu\n6. WsadŸ przedmiot do schowka\n7. Rozbij przedmiot\n8. Zmieñ opis przedmiotu\n9. Poka¿ przedmiot graczowi)
+				format(list_manage, sizeof(list_manage), (FFFFFF)1. UÅ¼yj tego przedmiotu\n2. OdÅ‚Ã³Å¼ przedmiot w pobliÅ¼u\n3. Sprzedaj innemu graczowi\n(93A818)4. PokaÅ¼ informacje(FFFFFF)\n5. WÅ‚Ã³Å¼ do innego przedmiotu\n6. WsadÅº przedmiot do schowka\n7. Rozbij przedmiot\n8. ZmieÅ„ opis przedmiotu\n9. PokaÅ¼ przedmiot graczowi)
 			)
 
-			ShowPlayerDialog(playerid, D_MANAGE_ITEM, DIALOG_STYLE_LIST, title, list_manage, Wybierz, Wróæ)
+			ShowPlayerDialog(playerid, D_MANAGE_ITEM, DIALOG_STYLE_LIST, title, list_manage, Wybierz, WrÃ³Ä‡)
 		)
 		if(playertextid == TextDrawItem(playerid)(9))
 		(
 			CancelSelectTextDraw(playerid)
 			
 			pageid = PlayerCache(playerid)(pItemPage)
-			pageid = pageid * 10		//dla pewnoœci
+			pageid = pageid * 10		//dla pewnoÅ›ci
 			itemSel = 0
 			
 			helped = 0		//taka tam pomocniczna
@@ -854,27 +854,27 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
 			title(64), list_manage(256)
 			PlayerCache(playerid)(pSelectItem) = itemSel
 			PlayerCache(playerid)(pManageItem) = itemSel
-			format(title, sizeof(title), Zarz¹dzaj przedmiotem » %s (UID: %d), ItemInfo(itemSel)(iName), ItemInfo(itemSel)(iUID))
+			format(title, sizeof(title), ZarzÄ…dzaj przedmiotem Â» %s (UID: %d), ItemInfo(itemSel)(iName), ItemInfo(itemSel)(iUID))
 
 			if(ItemInfo(itemSel)(iUsed))
 			(
-				format(list_manage, sizeof(list_manage), 1. Przestañ u¿ywaæ tego przedmiotu\n2. (FF3D3D)Od³ó¿ przedmiot w pobli¿u(FFFFFF)\n3. (FF3D3D)Sprzedaj innemu graczowi(93A818)\n4. Poka¿ informacje(FFFFFF)\n5. (FF3D3D)W³ó¿ do innego przedmiotu(FFFFFF)\n6. (FF3D3D)WsadŸ przedmiot do schowka(FFFFFF)\n7. (FF3D3D)Rozbij przedmiot\n8. Zmieñ opis przedmiotu\n9. Poka¿ przedmiot graczowi)
+				format(list_manage, sizeof(list_manage), 1. PrzestaÅ„ uÅ¼ywaÄ‡ tego przedmiotu\n2. (FF3D3D)OdÅ‚Ã³Å¼ przedmiot w pobliÅ¼u(FFFFFF)\n3. (FF3D3D)Sprzedaj innemu graczowi(93A818)\n4. PokaÅ¼ informacje(FFFFFF)\n5. (FF3D3D)WÅ‚Ã³Å¼ do innego przedmiotu(FFFFFF)\n6. (FF3D3D)WsadÅº przedmiot do schowka(FFFFFF)\n7. (FF3D3D)Rozbij przedmiot\n8. ZmieÅ„ opis przedmiotu\n9. PokaÅ¼ przedmiot graczowi)
 			)
 			else
 			(
-				format(list_manage, sizeof(list_manage), (FFFFFF)1. U¿yj tego przedmiotu\n2. Od³ó¿ przedmiot w pobli¿u\n3. Sprzedaj innemu graczowi\n(93A818)4. Poka¿ informacje(FFFFFF)\n5. W³ó¿ do innego przedmiotu\n6. WsadŸ przedmiot do schowka\n7. Rozbij przedmiot\n8. Zmieñ opis przedmiotu\n9. Poka¿ przedmiot graczowi)
+				format(list_manage, sizeof(list_manage), (FFFFFF)1. UÅ¼yj tego przedmiotu\n2. OdÅ‚Ã³Å¼ przedmiot w pobliÅ¼u\n3. Sprzedaj innemu graczowi\n(93A818)4. PokaÅ¼ informacje(FFFFFF)\n5. WÅ‚Ã³Å¼ do innego przedmiotu\n6. WsadÅº przedmiot do schowka\n7. Rozbij przedmiot\n8. ZmieÅ„ opis przedmiotu\n9. PokaÅ¼ przedmiot graczowi)
 			)
 
-			ShowPlayerDialog(playerid, D_MANAGE_ITEM, DIALOG_STYLE_LIST, title, list_manage, Wybierz, Wróæ)
+			ShowPlayerDialog(playerid, D_MANAGE_ITEM, DIALOG_STYLE_LIST, title, list_manage, Wybierz, WrÃ³Ä‡)
 		)
 		/*
-			koniec u¿ywania przedmiotów
+			koniec uÅ¼ywania przedmiotÃ³w
 		*/
 		if(playertextid == TextDrawItemNext(playerid))
 		(
 			if(bGUI_ListPlayerItems(playerid,PlayerCache(playerid)(pItemPage)+1) (= 0)
 			(
-				GuiMsg(playerid,Nie posiadasz wiêcej przedmiotów.,1)
+				GuiMsg(playerid,Nie posiadasz wiÄ™cej przedmiotÃ³w.,1)
 			)
 			else
 			(
@@ -908,7 +908,7 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
 			gameid = PlayerCache(playerid)(pPoker)
 			if(PokerGames(gameid)(pkActivePlayerSlot) != poker_GetPlayerPokerSlot(playerid))
 			(
-				GuiMsg(playerid,Aktualnie inny gracz wykonuje ruch, poczekaj na swoj¹ kolej!,1)
+				GuiMsg(playerid,Aktualnie inny gracz wykonuje ruch, poczekaj na swojÄ… kolej!,1)
 				return 1
 			)
 			
@@ -930,7 +930,7 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
 			gameid = PlayerCache(playerid)(pPoker)
 			if(PokerGames(gameid)(pkActivePlayerSlot) != poker_GetPlayerPokerSlot(playerid))
 			(
-				GuiMsg(playerid,Aktualnie inny gracz wykonuje ruch, poczekaj na swoj¹ kolej!,1)
+				GuiMsg(playerid,Aktualnie inny gracz wykonuje ruch, poczekaj na swojÄ… kolej!,1)
 				return 1
 			)
 			
@@ -941,7 +941,7 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
 			)
 			else
 			(
-				GuiMsg(playerid,Nie masz wystarczaj¹co pieniêdzy, by podbiæ stawkê.,1)
+				GuiMsg(playerid,Nie masz wystarczajÄ…co pieniÄ™dzy, by podbiÄ‡ stawkÄ™.,1)
 				return 1
 			)
 			
@@ -952,7 +952,7 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
 			gameid = PlayerCache(playerid)(pPoker)
 			if(PokerGames(gameid)(pkActivePlayerSlot) != poker_GetPlayerPokerSlot(playerid))
 			(
-				GuiMsg(playerid,Aktualnie inny gracz wykonuje ruch, poczekaj na swoj¹ kolej!,1)
+				GuiMsg(playerid,Aktualnie inny gracz wykonuje ruch, poczekaj na swojÄ… kolej!,1)
 				return 1
 			)
 			
@@ -988,7 +988,7 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
 		(
 			if(PlayerCache(playerid)(pPDMenu) == PDM_START)
 			(
-				ShowPlayerDialog(playerid,D_MANDAT_PD_INPUT_NAME,DIALOG_STYLE_INPUT,LSPD ) informacje o mandatach,WprowadŸ imiê i nazwisko osoby, której listê mandatów chcesz sprawdziæ.\n\n (( Imie_Nazwisko)),Gotowe,Anuluj)
+				ShowPlayerDialog(playerid,D_MANDAT_PD_INPUT_NAME,DIALOG_STYLE_INPUT,LSPD ) informacje o mandatach,WprowadÅº imiÄ™ i nazwisko osoby, ktÃ³rej listÄ™ mandatÃ³w chcesz sprawdziÄ‡.\n\n (( Imie_Nazwisko)),Gotowe,Anuluj)
 			)
 		)
 		else if(playertextid == PDT_6(playerid))
@@ -1081,7 +1081,7 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
 		)
 	)
 	
-	// craftowanie narkotyków cooking.inc
+	// craftowanie narkotykÃ³w cooking.inc
 	if(playertextid == ActionClose(playerid))
 	(
 		ClearCooking(playerid)
@@ -1103,11 +1103,11 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
 		
 		if(strlen(list_items))
 		(
-			ShowPlayerDialog(playerid, D_COOK_ADD, DIALOG_STYLE_LIST, Dostêpne sk³adniki, list_items, Dodaj, Anuluj)
+			ShowPlayerDialog(playerid, D_COOK_ADD, DIALOG_STYLE_LIST, DostÄ™pne skÅ‚adniki, list_items, Dodaj, Anuluj)
 		)
 		else
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie posiadasz ¿adnego sk³adnika, którego mo¿esz u¿yæ w procesie gotowania., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie posiadasz Å¼adnego skÅ‚adnika, ktÃ³rego moÅ¼esz uÅ¼yÄ‡ w procesie gotowania., OK, )
 		)
 		return 1
 	)
@@ -1117,7 +1117,7 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
 		
 		if(CookData(cookid)(cIngredients) ( 2)
 		(
-			GuiMsg(playerid, Aby gotowaæ musisz u¿yæ przynajmniej 2 sk³adników., 1)
+			GuiMsg(playerid, Aby gotowaÄ‡ musisz uÅ¼yÄ‡ przynajmniej 2 skÅ‚adnikÃ³w., 1)
 			return 1
 		)
 		
@@ -1125,7 +1125,7 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
 		CookData(cookid)(cTime) = gettime()+RecipesData(CookData(cookid)(cDrug))(rTime)
 		
 		timeleft = (RecipesData(CookData(cookid)(cDrug))(rTime) / 60), string(256)
-		format(string, sizeof(string), Sukces! Teraz rozpocznie siê proces tworzenia.\nWywar bêdzie gotowy do odebrania za: %d minut/y., timeleft)
+		format(string, sizeof(string), Sukces! Teraz rozpocznie siÄ™ proces tworzenia.\nWywar bÄ™dzie gotowy do odebrania za: %d minut/y., timeleft)
 		GuiMsg(playerid, string, 0)
 		
 		CloseCookingBox(playerid)
@@ -1327,7 +1327,7 @@ stock PD_Hide(playerid, bool:fully = false)
 
 stock PD_ShowPersonalSearch(playerid)
 (
-	ShowPlayerDialog(playerid, D_PD_NAME_INPUT, DIALOG_STYLE_INPUT, LSPD )) Szukaj, Wpisz \Imie_Nazwisko\ szukanej osoby.\n\nMo¿esz tak¿e u¿yæ polecenie \dodaj\ aby dodaæ nowy wpis., Szukaj, Anuluj)
+	ShowPlayerDialog(playerid, D_PD_NAME_INPUT, DIALOG_STYLE_INPUT, LSPD )) Szukaj, Wpisz \Imie_Nazwisko\ szukanej osoby.\n\nMoÅ¼esz takÅ¼e uÅ¼yÄ‡ polecenie \dodaj\ aby dodaÄ‡ nowy wpis., Szukaj, Anuluj)
 	return 1
 )
 
@@ -1391,7 +1391,7 @@ stock PD_ShowPersonalOffenses(playerid)
 
 stock PD_ShowCarSearch(playerid)
 (
-	ShowPlayerDialog(playerid, D_PD_CAR_NAME_INPUT, DIALOG_STYLE_INPUT, LSPD )) Szukaj, Wpisz rejestracjê szukanego pojazdu., Szukaj, Anuluj)
+	ShowPlayerDialog(playerid, D_PD_CAR_NAME_INPUT, DIALOG_STYLE_INPUT, LSPD )) Szukaj, Wpisz rejestracjÄ™ szukanego pojazdu., Szukaj, Anuluj)
 	return 1
 )
 

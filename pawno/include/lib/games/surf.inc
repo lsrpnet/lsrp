@@ -1,6 +1,6 @@
 stock surf_LoadSurfboards()
 (
-	//dodaj kilka surfboardÛw
+	//dodaj kilka surfboard√≥w
 	surf_CreateBoard(2404,331.2454,-1905.8453,0.0911,270.0,0,180.0)
 	surf_CreateBoard(2404,296.2121,-1903.0786,0.0911,270.0,0,180.0)
 	return 1
@@ -131,7 +131,7 @@ stock surf_StopBoard(gameid)
 (
 	if(PlayerCache(playerid)(pSkateboardID) != -1 && Skateboard(PlayerCache(playerid)(pSkateboardID))(skatePlayerID) == playerid)
 	(
-		GuiMsg(playerid,Jesteú juø na jakieú desce.,1)
+		GuiMsg(playerid,Jeste≈õ ju≈º na jakie≈õ desce.,1)
 		return 1
 	)
 	else
@@ -156,14 +156,14 @@ stock surf_StopBoard(gameid)
 			)
 			else
 			(
-				GuiMsg(playerid,Nie moøesz jeüdziÊ wewnπtrz budynku.,1)
+				GuiMsg(playerid,Nie mo≈ºesz je≈∫dziƒá wewnƒÖtrz budynku.,1)
 				return 1
 			)
 		)
 		
 		if(skateid == INVALID_SURFBOARD_ID)
 		(
-			GuiMsg(playerid,Nie jesteú w pobliøu øadnej z desek.,1)
+			GuiMsg(playerid,Nie jeste≈õ w pobli≈ºu ≈ºadnej z desek.,1)
 			return 1
 		)
 		
@@ -183,7 +183,7 @@ CMD:surfuj(playerid,params())
 (
 	if(PlayerCache(playerid)(pSurfID) != INVALID_SURFBOARD_ID && Surfboard(PlayerCache(playerid)(pSurfID))(surfPlayerID) == playerid)
 	(
-		GuiMsg(playerid,Jesteú juø na jakieú desce.,1)
+		GuiMsg(playerid,Jeste≈õ ju≈º na jakie≈õ desce.,1)
 		return 1
 	)
 	else
@@ -209,14 +209,14 @@ CMD:surfuj(playerid,params())
 			)
 			else
 			(
-				GuiMsg(playerid,Nie moøesz surfowaÊ wewnπtrz budynku.,1)
+				GuiMsg(playerid,Nie mo≈ºesz surfowaƒá wewnƒÖtrz budynku.,1)
 				return 1
 			)
 		)
 		
 		if(surfid == INVALID_SURFBOARD_ID)
 		(
-			GuiMsg(playerid,Nie jesteú w pobliøu øadnej z desek.,1)
+			GuiMsg(playerid,Nie jeste≈õ w pobli≈ºu ≈ºadnej z desek.,1)
 			return 1
 		)
 		

@@ -1,5 +1,5 @@
 /*
-	Customowe modele telefonów
+	Customowe modele telefonÃ³w
 	19856 - Blackberry
 	19855 - Samsung
 	19854 - HTC One
@@ -155,7 +155,7 @@ stock ReloadHomephones()
 	
 	LoadHomephones()
 	
-	print((reload) telefony stacjonarne prze³adowane)
+	print((reload) telefony stacjonarne przeÅ‚adowane)
 	
 	return 1
 )
@@ -192,9 +192,9 @@ stock getPlayerOfflineMessages(playerid)
 		return 0
 
 	if(PlayerCache(playerid)(pSex) == 1) 
-		format(buffer, sizeof(buffer), * %s otrzyma³ SMS-a., PlayerName(playerid))
+		format(buffer, sizeof(buffer), * %s otrzymaÅ‚ SMS-a., PlayerName(playerid))
 	else
-		format(buffer, sizeof(buffer), * %s otrzyma³a SMS-a., PlayerName(playerid))
+		format(buffer, sizeof(buffer), * %s otrzymaÅ‚a SMS-a., PlayerName(playerid))
 		
 	ProxDetector(10.0, playerid, buffer, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, false)
 	mysql_query_format(DELETE FROM hrp_offlinesms WHERE sms_target = %d, PlayerCache(playerid)(pPhoneNumber))
@@ -221,9 +221,9 @@ stock getPlayerOfflineMessages(playerid)
 		return 1
 
 	if(PlayerCache(playerid)(pSex) == 1) 
-		format(buffer, sizeof(buffer), * %s otrzyma³ SMS-a., PlayerName(playerid))
+		format(buffer, sizeof(buffer), * %s otrzymaÅ‚ SMS-a., PlayerName(playerid))
 	else
-		format(buffer, sizeof(buffer), * %s otrzyma³a SMS-a., PlayerName(playerid))
+		format(buffer, sizeof(buffer), * %s otrzymaÅ‚a SMS-a., PlayerName(playerid))
 		
 	ProxDetector(10.0, playerid, buffer, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, false)
 	mysql_query_format(DELETE FROM hrp_offlinesms WHERE sms_target = %d, PlayerCache(playerid)(pPhoneNumber))
@@ -286,11 +286,11 @@ stock attachPlayerPhone(playerid)
 	return 1
 )
 
-// Nowe GUI telefonów
+// Nowe GUI telefonÃ³w
 /*
-	1. dodaæ pobieranie godziny
-	2. dodaæ pobieranie daty
-	3. ustawienia rozwin¹æ
+	1. dodaÄ‡ pobieranie godziny
+	2. dodaÄ‡ pobieranie daty
+	3. ustawienia rozwinÄ…Ä‡
 */
 stock setPhoneWallpaper(playerid, wallpaper)
 (
@@ -386,7 +386,7 @@ stock phone_showTexts(playerid)
 	PlayerCache(playerid)(pUseGUI) = true
 	SelectTextDraw(playerid, 0x8C8C8CFF)
 	
-	// co by ³adniej wygl¹da³o
+	// co by Å‚adniej wyglÄ…daÅ‚o
 	attachPlayerPhone(playerid)
 	SetPlayerSpecialAction(playerid, SPECIAL_ACTION_STOPUSECELLPHONE)
 	ApplyAnimation(playerid, CARRY, crry_prtial, 4.1, 0, 0, 0, 0, 0)
@@ -639,7 +639,7 @@ stock phone_loadTextdraws(playerid)
 	PlayerTextDrawSetProportional(playerid, TextPhoneBattery2(playerid),  1)
 	PlayerTextDrawSetShadow(playerid, TextPhoneBattery2(playerid),  0)
 
-	// Ma³a edycja guzików
+	// MaÅ‚a edycja guzikÃ³w
 	TextPhoneBtnCall(playerid) = CreatePlayerTextDraw(playerid, 91.000000, 166.000000, Zadzwon)
 	PlayerTextDrawAlignment(playerid, TextPhoneBtnCall(playerid),  2)
 	PlayerTextDrawBackgroundColor(playerid, TextPhoneBtnCall(playerid),  255)

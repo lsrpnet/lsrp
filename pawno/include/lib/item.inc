@@ -113,7 +113,7 @@ public LoadItem(itemuid)
 	)
 	mysql_free_result()
 	
-	printf((load) Wczytano statystyki przedmiotu %s (SampID: %d, UID: %d) pomyœlnie., ItemInfo(itemid)(iName), itemid, ItemInfo(itemid)(iUID))
+	printf((load) Wczytano statystyki przedmiotu %s (SampID: %d, UID: %d) pomyÅ›lnie., ItemInfo(itemid)(iName), itemid, ItemInfo(itemid)(iUID))
 	return 1
 )
 
@@ -122,7 +122,7 @@ public LoadPlayerItems(playerid)
 	data(128), itemid, item, tick_count = GetTickCount()
 	mysql_query_format(SELECT item_uid, item_name, item_value1, item_value2, item_type, item_place, item_owner, item_used, item_weight FROM hrp_items WHERE item_place = %d AND item_owner = %d , PLACE_PLAYER, PlayerCache(playerid)(pUID))
 	
- 	printf((load) Rozpoczynam proces wczytywania przedmiotów gracza %s (ID: %d, UID %d)..., PlayerName(playerid), playerid, PlayerCache(playerid)(pUID))
+ 	printf((load) Rozpoczynam proces wczytywania przedmiotÃ³w gracza %s (ID: %d, UID %d)..., PlayerName(playerid), playerid, PlayerCache(playerid)(pUID))
 
 	mysql_store_result()
 	while(mysql_fetch_row(data, |))
@@ -148,7 +148,7 @@ public LoadPlayerItems(playerid)
    			PlayerCache(playerid)(pPhoneNumber) = ItemInfo(itemid)(iValue1)
 		)
 		
-		// Rêkawiczki
+		// RÄ™kawiczki
 		if(ItemInfo(itemid)(iType) == ITEM_GLOVES && ItemInfo(itemid)(iUsed))
 		(
 			PlayerCache(playerid)(pGloves) = true
@@ -169,14 +169,14 @@ public LoadPlayerItems(playerid)
 	)
 	mysql_free_result()
 
-	printf((load) Wczytano %d przedmioty/ów (czas trwania: %d ms)., item, GetTickCount() - tick_count)
+	printf((load) Wczytano %d przedmioty/Ã³w (czas trwania: %d ms)., item, GetTickCount() - tick_count)
 	return 1
 )
 
 public UnloadPlayerItems(playerid)
 (
 	item, item_next
-	printf((load) Rozpoczynam proces od³adowywania przedmiotów gacza %s (ID: %d, UID:%d)..., PlayerName(playerid), playerid, PlayerCache(playerid)(pUID))
+	printf((load) Rozpoczynam proces odÅ‚adowywania przedmiotÃ³w gacza %s (ID: %d, UID:%d)..., PlayerName(playerid), playerid, PlayerCache(playerid)(pUID))
 
 	foreach(Items, itemid)
 	(
@@ -205,7 +205,7 @@ public UnloadPlayerItems(playerid)
 		)
 	)
 
-	printf((load) Od³adowano %d przedmioty/ów., item)
+	printf((load) OdÅ‚adowano %d przedmioty/Ã³w., item)
 	return 1
 )
 
@@ -214,7 +214,7 @@ public ListPlayerItems(playerid, manage_type)
 	list_items(2048), item_count
 	if(manage_type != MANAGE_TYPE_DASHBOARD_OFFER)
 	(
-		format(list_items, sizeof(list_items), Poka¿ pobliskie przedmioty\nFunkcja zaznaczania przedmiotów\n----------\t\t----------)
+		format(list_items, sizeof(list_items), PokaÅ¼ pobliskie przedmioty\nFunkcja zaznaczania przedmiotÃ³w\n----------\t\t----------)
 	)
 
 	foreach(Items, itemid)
@@ -254,7 +254,7 @@ public ListPlayerItems(playerid, manage_type)
 	)
 	if(!item_count)
 	(
-		format(list_items, sizeof(list_items), %s\n(FF3D3D)#\t\tBrak przedmiotów, list_items)
+		format(list_items, sizeof(list_items), %s\n(FF3D3D)#\t\tBrak przedmiotÃ³w, list_items)
 	)
 	
 	switch(manage_type)
@@ -262,23 +262,23 @@ public ListPlayerItems(playerid, manage_type)
 		case MANAGE_TYPE_ALL:
 		(
 			title(64)
-			format(title, sizeof(title), Znaleziono przedmioty » UdŸwig: %.2f/%.2f, GetPlayerEqWeight(playerid), GetPlayerCapacity(playerid))
+			format(title, sizeof(title), Znaleziono przedmioty Â» UdÅºwig: %.2f/%.2f, GetPlayerEqWeight(playerid), GetPlayerCapacity(playerid))
   			ShowPlayerDialog(playerid, D_LIST_ITEMS, DIALOG_STYLE_LIST, title, list_items, Wybierz, Zamknij)
 		)
 		case MANAGE_TYPE_USE:
 		(
 			title(64)
-			format(title, sizeof(title), Szybkie u¿ywanie przedmiotu » UdŸwig: %.2f/%.2f, GetPlayerEqWeight(playerid), GetPlayerCapacity(playerid))
-			ShowPlayerDialog(playerid, D_LIST_ITEMS_USE, DIALOG_STYLE_LIST, title, list_items, U¿yj, Zamknij)
+			format(title, sizeof(title), Szybkie uÅ¼ywanie przedmiotu Â» UdÅºwig: %.2f/%.2f, GetPlayerEqWeight(playerid), GetPlayerCapacity(playerid))
+			ShowPlayerDialog(playerid, D_LIST_ITEMS_USE, DIALOG_STYLE_LIST, title, list_items, UÅ¼yj, Zamknij)
 		)
 		case MANAGE_TYPE_DROP:
 		(
-			ShowPlayerDialog(playerid, D_LIST_ITEMS_DROP, DIALOG_STYLE_LIST, Od³ó¿ przedmiot, list_items, Od³ó¿, Zamknij)
+			ShowPlayerDialog(playerid, D_LIST_ITEMS_DROP, DIALOG_STYLE_LIST, OdÅ‚Ã³Å¼ przedmiot, list_items, OdÅ‚Ã³Å¼, Zamknij)
 		)
 		case MANAGE_TYPE_DASHBOARD_OFFER:
 		(
 			title(64)
-			format(title, sizeof(title), Oferuj przedmiot » %s, GetPlayerEqWeight(playerid), PlayerName(PlayerCache(playerid)(pPlayerIDOffer)))
+			format(title, sizeof(title), Oferuj przedmiot Â» %s, GetPlayerEqWeight(playerid), PlayerName(PlayerCache(playerid)(pPlayerIDOffer)))
 			ShowPlayerDialog(playerid, D_DASHBOARD_ITEM, DIALOG_STYLE_LIST, title, list_items, Dalej, Anuluj)
 		)
 	)
@@ -313,14 +313,14 @@ public ListPlayerNearItems(playerid)
 		(
 			if(CarInfo(vehid)(cOwnerType) == OWNER_PLAYER && CarInfo(vehid)(cOwner) != PlayerCache(playerid)(pUID))
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie mo¿esz podnosiæ przedmiotów z tego pojazdu., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie moÅ¼esz podnosiÄ‡ przedmiotÃ³w z tego pojazdu., OK, )
 				return 1
 			)
 			if(CarInfo(vehid)(cOwnerType) == OWNER_GROUP)
 			(
 				if(!IsPlayerPermissedGroup(playerid, CarInfo(vehid)(cOwner), PERM_CARS))
 				(
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie mo¿esz podnosiæ przedmiotów z tego pojazdu., OK, )
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie moÅ¼esz podnosiÄ‡ przedmiotÃ³w z tego pojazdu., OK, )
 					return 1
 				)
 			)
@@ -340,19 +340,19 @@ public ListPlayerNearItems(playerid)
   	mysql_free_result()
   	if(!strlen(list_items))
   	(
-	 	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie znaleziono ¿adnych przedmiotów w pobli¿u., OK, )
+	 	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie znaleziono Å¼adnych przedmiotÃ³w w pobliÅ¼u., OK, )
 	 	return 1
 	)
 	if(IsPlayerInAnyVehicle(playerid))
 	(
 		vehid = GetPlayerVehicleID(playerid)
 		title(64)
-		format(title, sizeof(title), Pobliskie przedmioty » %.2f/%.2f, GetVehicleEqWeight(CarInfo(vehid)(cUID)), GetVehicleCapacity(GetVehicleModel(vehid)))
-		ShowPlayerDialog(playerid, D_RAISE_ITEM, DIALOG_STYLE_LIST, title, list_items, Podnieœ, Anuluj)
+		format(title, sizeof(title), Pobliskie przedmioty Â» %.2f/%.2f, GetVehicleEqWeight(CarInfo(vehid)(cUID)), GetVehicleCapacity(GetVehicleModel(vehid)))
+		ShowPlayerDialog(playerid, D_RAISE_ITEM, DIALOG_STYLE_LIST, title, list_items, PodnieÅ›, Anuluj)
 	)
 	else
 	(
-		ShowPlayerDialog(playerid, D_RAISE_ITEM, DIALOG_STYLE_LIST, Pobliskie przedmioty, list_items, Podnieœ, Anuluj)
+		ShowPlayerDialog(playerid, D_RAISE_ITEM, DIALOG_STYLE_LIST, Pobliskie przedmioty, list_items, PodnieÅ›, Anuluj)
 	)
 	PlayerCache(playerid)(pFlood) = 5
 	return 1
@@ -361,7 +361,7 @@ public ListPlayerNearItems(playerid)
 public ListPlayerCheckedItems(playerid)
 (
 	list_items(2048), item_count
-	format(list_items, sizeof(list_items), Od³ó¿ przedmioty w pobli¿u\nSchowaj zaznaczone do schowka\n----------\t\t----------)
+	format(list_items, sizeof(list_items), OdÅ‚Ã³Å¼ przedmioty w pobliÅ¼u\nSchowaj zaznaczone do schowka\n----------\t\t----------)
 	
 	foreach(Items, itemid)
 	(
@@ -386,10 +386,10 @@ public ListPlayerCheckedItems(playerid)
 	)
 	if(!item_count)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie znaleziono ¿adnych przedmiotów, które móg³byœ zaznaczyæ., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie znaleziono Å¼adnych przedmiotÃ³w, ktÃ³re mÃ³gÅ‚byÅ› zaznaczyÄ‡., OK, )
 		return 1
 	)
-	ShowPlayerDialog(playerid, D_CHECK_ITEM, DIALOG_STYLE_LIST, Funkcja zaznaczania przedmiotów, list_items, Zaznacz, Wróæ)
+	ShowPlayerDialog(playerid, D_CHECK_ITEM, DIALOG_STYLE_LIST, Funkcja zaznaczania przedmiotÃ³w, list_items, Zaznacz, WrÃ³Ä‡)
 	return 1
 )
 
@@ -411,11 +411,11 @@ public ListPlayerItemsForPlayer(playerid, giveplayer_id)
 	)
 	if(!item_count)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie znaleziono ¿adnych przedmiotów w ekwipunku., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie znaleziono Å¼adnych przedmiotÃ³w w ekwipunku., OK, )
 	)
 	
 	title(64)
-	format(title, sizeof(title), Znaleziono przedmioty » UdŸwig: %.2f/%.2f, GetPlayerEqWeight(giveplayer_id), GetPlayerCapacity(giveplayer_id))
+	format(title, sizeof(title), Znaleziono przedmioty Â» UdÅºwig: %.2f/%.2f, GetPlayerEqWeight(giveplayer_id), GetPlayerCapacity(giveplayer_id))
 	
   	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_LIST, title, list_items, Zamknij, )
 	return 1
@@ -437,10 +437,10 @@ public ListVehicleItemsForPlayer(playerid, vehicleid)
   	mysql_free_result()
   	if(!strlen(list_items))
   	(
-	 	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie znaleziono ¿adnych przedmiotów w pobli¿u., OK, )
+	 	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie znaleziono Å¼adnych przedmiotÃ³w w pobliÅ¼u., OK, )
 	 	return 1
 	)
-	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_LIST, Przedmioty znajduj¹ce siê w pojeŸdzie, list_items, Zamknij, )
+	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_LIST, Przedmioty znajdujÄ…ce siÄ™ w pojeÅºdzie, list_items, Zamknij, )
 	return 1
 )
 
@@ -450,7 +450,7 @@ public OnPlayerDropItem(playerid, itemid, bool:skip_anim)
 	(
 		if(Offer(playerid)(oValue) == itemid)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie mo¿esz od³o¿yæ przedmiotu, który oferujesz., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie moÅ¼esz odÅ‚oÅ¼yÄ‡ przedmiotu, ktÃ³ry oferujesz., OK, )
 			return 0
 		)
 	)
@@ -467,7 +467,7 @@ public OnPlayerDropItem(playerid, itemid, bool:skip_anim)
 		if(!skip_anim)
 		(
 			ApplyAnimation(playerid,BOMBER,BOM_Plant,4.1,0,0,0,0,0,1)
-			format(string, sizeof(string), * %s coœ odk³ada., PlayerName(playerid))
+			format(string, sizeof(string), * %s coÅ› odkÅ‚ada., PlayerName(playerid))
 			FlashMe(playerid, string) //ProxDetector(10.0, playerid, string, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, true)
 		)
 		
@@ -525,11 +525,11 @@ public OnPlayerDropItem(playerid, itemid, bool:skip_anim)
 		(
 			if(GetVehicleEqSpace(vehid) ( ItemInfo(itemid)(iWeight))
 			(
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, W tym pojeŸdzie jest ju¿ za du¿o przedmiotów., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, W tym pojeÅºdzie jest juÅ¼ za duÅ¼o przedmiotÃ³w., OK, )
 				return 1
 			)
 		
-			format(string, sizeof(string), * %s odk³ada coœ w pojeŸdzie., PlayerName(playerid))
+			format(string, sizeof(string), * %s odkÅ‚ada coÅ› w pojeÅºdzie., PlayerName(playerid))
 			FlashMe(playerid, string) //ProxDetector(10.0, playerid, string, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, true)
 
 			ApplyAnimation(playerid,BOMBER,BOM_Plant,4.1,0,0,0,0,0,1)
@@ -540,11 +540,11 @@ public OnPlayerDropItem(playerid, itemid, bool:skip_anim)
 		)
 		else
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, W tym pojeŸdzie znajduje siê ju¿ jedna opona., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, W tym pojeÅºdzie znajduje siÄ™ juÅ¼ jedna opona., OK, )
 			return 1
 		)
 	)
-	// Zwolnij miejsce dla czegoœ, co mo¿e byæ u¿yte
+	// Zwolnij miejsce dla czegoÅ›, co moÅ¼e byÄ‡ uÅ¼yte
 	ItemInfo(itemid)(iUID) = 0
 	ItemInfo(itemid)(iValue1) = 0
 	ItemInfo(itemid)(iValue2) = 0
@@ -607,15 +607,15 @@ public OnPlayerRaiseItem(playerid, itemuid)
 	
 	if(ItemPlace != PLACE_NONE && ItemPlace != PLACE_VEHICLE)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Tego przedmiotu nie ma w pobli¿u., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Tego przedmiotu nie ma w pobliÅ¼u., OK, )
 		return 1
 	)
 	if(GetPlayerEqSpace(playerid) ( ItemWeight)
 	(
 		infostring(256)
-		format(infostring, sizeof(infostring), Masz zbyt du¿o przedmiotów w swoim inwentarzu.\n\nDostêpne miejsce: %.2f/%.2f\nWaga przedmiotu: %.2f, GetPlayerEqWeight(playerid), GetPlayerCapacity(playerid), ItemWeight)
+		format(infostring, sizeof(infostring), Masz zbyt duÅ¼o przedmiotÃ³w w swoim inwentarzu.\n\nDostÄ™pne miejsce: %.2f/%.2f\nWaga przedmiotu: %.2f, GetPlayerEqWeight(playerid), GetPlayerCapacity(playerid), ItemWeight)
 	
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, infostring, OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, infostring, OK, )
 		return 1
 	)
 	
@@ -657,17 +657,17 @@ public ShowPlayerItemInfo(playerid, itemid)
 
 	if(ItemInfo(itemid)(iUsed))
 	(
-		format(list_info, sizeof(list_info), %sStatus:\t\t\tW u¿yciu\n\n, list_info)
+		format(list_info, sizeof(list_info), %sStatus:\t\t\tW uÅ¼yciu\n\n, list_info)
 	)
 	else
 	(
 		format(list_info, sizeof(list_info), %sStatus:\t\t\tNieaktywny\n\n, list_info)
 	)
 
-	format(list_info, sizeof(list_info), %sWartoœæ 1:\t\t%d\n, list_info, ItemInfo(itemid)(iValue1))
-	format(list_info, sizeof(list_info), %sWartoœæ 2:\t\t%d\n, list_info, ItemInfo(itemid)(iValue2))
+	format(list_info, sizeof(list_info), %sWartoÅ›Ä‡ 1:\t\t%d\n, list_info, ItemInfo(itemid)(iValue1))
+	format(list_info, sizeof(list_info), %sWartoÅ›Ä‡ 2:\t\t%d\n, list_info, ItemInfo(itemid)(iValue2))
 
-	format(title, sizeof(title), Informacje » %s, ItemInfo(itemid)(iName))
+	format(title, sizeof(title), Informacje Â» %s, ItemInfo(itemid)(iName))
 	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, title, list_info, OK, Zamknij)
 	return 1
 	*/
@@ -691,168 +691,168 @@ public ShowPlayerItemInfo(playerid, itemid)
 	switch(ItemInfo(itemid)(iType))
 	(
 		case ITEM_WATCH:
-			format(fdesc, sizeof(fdesc), Zwyczajny zegarek dla twojej postaci.\nU¿yj go, by sprawdziæ która godzina.\nMo¿esz równie¿ wykorzystaæ z komendy /time lub /czas.\n\nOpis przedmiotu:\n\t %s, desc)
+			format(fdesc, sizeof(fdesc), Zwyczajny zegarek dla twojej postaci.\nUÅ¼yj go, by sprawdziÄ‡ ktÃ³ra godzina.\nMoÅ¼esz rÃ³wnieÅ¼ wykorzystaÄ‡ z komendy /time lub /czas.\n\nOpis przedmiotu:\n\t %s, desc)
 		case ITEM_FOOD:
-			format(fdesc, sizeof(fdesc), Potrawa, któr¹ mo¿e spo¿yæ twoja postaæ.\nU¿yj jej, by to zrobiæ.\nJedzenie sprawia, ¿e twoja postaæ nie jest g³odna,\nprzez co jej HP ulega regeneracji.\n\nOpis przedmiotu:\n\t %s, desc)
+			format(fdesc, sizeof(fdesc), Potrawa, ktÃ³rÄ… moÅ¼e spoÅ¼yÄ‡ twoja postaÄ‡.\nUÅ¼yj jej, by to zrobiÄ‡.\nJedzenie sprawia, Å¼e twoja postaÄ‡ nie jest gÅ‚odna,\nprzez co jej HP ulega regeneracji.\n\nOpis przedmiotu:\n\t %s, desc)
 		case ITEM_CIGGY:
-			format(fdesc, sizeof(fdesc), Paczka fajek.\nU¿yj jej by sprawiæ, ¿e twoja postaæ odpali papierosa.\nPalenie nieznacznie obni¿a kondycjê postaci.\n\nIloœæ papierosów: %d\n\nOpis przedmiotu:\n\t %s, v1, desc)
+			format(fdesc, sizeof(fdesc), Paczka fajek.\nUÅ¼yj jej by sprawiÄ‡, Å¼e twoja postaÄ‡ odpali papierosa.\nPalenie nieznacznie obniÅ¼a kondycjÄ™ postaci.\n\nIloÅ›Ä‡ papierosÃ³w: %d\n\nOpis przedmiotu:\n\t %s, v1, desc)
 		case ITEM_CUBE:
-			format(fdesc, sizeof(fdesc), Szeœcioœcienna kostka do gry.\nU¿yj jej, by wylosowaæ liczbê od 1 do 6.\n\nOpis przedmiotu:\n\t %s, desc)
+			format(fdesc, sizeof(fdesc), SzeÅ›cioÅ›cienna kostka do gry.\nUÅ¼yj jej, by wylosowaÄ‡ liczbÄ™ od 1 do 6.\n\nOpis przedmiotu:\n\t %s, desc)
 		case ITEM_CLOTH:
-			format(fdesc, sizeof(fdesc), Komplet ubrañ dla twojej postaci.\nU¿yj go, by zmieniæ skin. Pamiêtaj o stosownej akcji RP.\n\nSkin: %d\n\nOpis przedmiotu:\n\t %s, v1, desc)
+			format(fdesc, sizeof(fdesc), Komplet ubraÅ„ dla twojej postaci.\nUÅ¼yj go, by zmieniÄ‡ skin. PamiÄ™taj o stosownej akcji RP.\n\nSkin: %d\n\nOpis przedmiotu:\n\t %s, v1, desc)
 		case ITEM_WEAPON:
-			format(fdesc, sizeof(fdesc), Broñ, której mo¿e u¿ywaæ twoja postaæ.\nU¿yj tego przedmiotu, by jej dobyæ. Mo¿esz równie¿ skorzystaæ z komendy w formie:\n/u (id broni) (sk¹d wyci¹ga)\n\nModel broni: %d\nIloœæ amunicji: %d\n\nOpis przedmiotu:\n\t %s, v1, v2, desc)
+			format(fdesc, sizeof(fdesc), BroÅ„, ktÃ³rej moÅ¼e uÅ¼ywaÄ‡ twoja postaÄ‡.\nUÅ¼yj tego przedmiotu, by jej dobyÄ‡. MoÅ¼esz rÃ³wnieÅ¼ skorzystaÄ‡ z komendy w formie:\n/u (id broni) (skÄ…d wyciÄ…ga)\n\nModel broni: %d\nIloÅ›Ä‡ amunicji: %d\n\nOpis przedmiotu:\n\t %s, v1, v2, desc)
 		case ITEM_AMMO:
-			format(fdesc, sizeof(fdesc), Amunicja, któr¹ mo¿na prze³adowaæ broñ.\nU¿yj tego przedmiotu, by to zrobiæ. Pamiêtaj o tym, ¿e broñ nie mo¿e byæ w u¿yciu.\n\nPasuj¹cy model broni: %d\nIloœæ amunicji: %d\n\nOpis przedmiotu:\n\t %s, v1, v2, desc)
+			format(fdesc, sizeof(fdesc), Amunicja, ktÃ³rÄ… moÅ¼na przeÅ‚adowaÄ‡ broÅ„.\nUÅ¼yj tego przedmiotu, by to zrobiÄ‡. PamiÄ™taj o tym, Å¼e broÅ„ nie moÅ¼e byÄ‡ w uÅ¼yciu.\n\nPasujÄ…cy model broni: %d\nIloÅ›Ä‡ amunicji: %d\n\nOpis przedmiotu:\n\t %s, v1, v2, desc)
 		case ITEM_PHONE:
-			format(fdesc, sizeof(fdesc), Zwyczajny telefon.\nU¿yj go, by otworzyæ intuicyjne menu kontekstowe telefonu.\n\nNumer tego aparatu: %d\n\nOpis przedmiotu:\n\t %s, v1, desc)
+			format(fdesc, sizeof(fdesc), Zwyczajny telefon.\nUÅ¼yj go, by otworzyÄ‡ intuicyjne menu kontekstowe telefonu.\n\nNumer tego aparatu: %d\n\nOpis przedmiotu:\n\t %s, v1, desc)
 		case ITEM_CANISTER:
-			format(fdesc, sizeof(fdesc), Kanister, s³u¿¹cy do przenoszenia paliwa i tankowania pojazdu.\nDoda paliwo do pojazdu, w którym go u¿yjesz.\n\nIloœæ paliwa: %d litrów\nTyp paliwa: %d\n\nOpis przedmiotu:\n\t %s, v1, v2, desc)
+			format(fdesc, sizeof(fdesc), Kanister, sÅ‚uÅ¼Ä…cy do przenoszenia paliwa i tankowania pojazdu.\nDoda paliwo do pojazdu, w ktÃ³rym go uÅ¼yjesz.\n\nIloÅ›Ä‡ paliwa: %d litrÃ³w\nTyp paliwa: %d\n\nOpis przedmiotu:\n\t %s, v1, v2, desc)
 		case ITEM_MASK:
-			format(fdesc, sizeof(fdesc), Maska, która ukryje to¿samoœæ twojej postaci.\nU¿yj jej, by j¹ za³o¿yæ lub zdj¹æ.\n\nOpis przedmiotu:\n\t %s, desc)
+			format(fdesc, sizeof(fdesc), Maska, ktÃ³ra ukryje toÅ¼samoÅ›Ä‡ twojej postaci.\nUÅ¼yj jej, by jÄ… zaÅ‚oÅ¼yÄ‡ lub zdjÄ…Ä‡.\n\nOpis przedmiotu:\n\t %s, desc)
 		case ITEM_INHIBITOR:
-			format(fdesc, sizeof(fdesc), Ten przedmiot zosta³ usuniêty.\nZg³oœ siê do moderacji serwera po nagrodê.\n\nOpis przedmiotu:\n\t %s, desc)
+			format(fdesc, sizeof(fdesc), Ten przedmiot zostaÅ‚ usuniÄ™ty.\nZgÅ‚oÅ› siÄ™ do moderacji serwera po nagrodÄ™.\n\nOpis przedmiotu:\n\t %s, desc)
 		case ITEM_PAINT:
-			format(fdesc, sizeof(fdesc), Lakier samochodowy zwyczajnej jakoœci.\nPo u¿yciu mo¿na go wykorzystaæ do lakierowania, komend¹ //o lakierowanie.\n\nIloœæ lakieru: %d ml.\n\nOpis przedmiotu:\n\t %s, v2, desc)
+			format(fdesc, sizeof(fdesc), Lakier samochodowy zwyczajnej jakoÅ›ci.\nPo uÅ¼yciu moÅ¼na go wykorzystaÄ‡ do lakierowania, komendÄ… //o lakierowanie.\n\nIloÅ›Ä‡ lakieru: %d ml.\n\nOpis przedmiotu:\n\t %s, v2, desc)
 		case ITEM_HANDCUFFS:
-			format(fdesc, sizeof(fdesc), Kajdanki, niezbêdne podczas aresztowañ.\nKomenda /skuj sprawia, ¿e prowadzisz podejrzanego za sob¹. Komenda /zakuj unieruchamia podejrzanego.\nAby kogoœ rozkuæ, wpisz /rozkuj.\n\nOpis przedmiotu:\n\t %s, desc)
+			format(fdesc, sizeof(fdesc), Kajdanki, niezbÄ™dne podczas aresztowaÅ„.\nKomenda /skuj sprawia, Å¼e prowadzisz podejrzanego za sobÄ…. Komenda /zakuj unieruchamia podejrzanego.\nAby kogoÅ› rozkuÄ‡, wpisz /rozkuj.\n\nOpis przedmiotu:\n\t %s, desc)
 		case ITEM_MEGAPHONE:
-			format(fdesc, sizeof(fdesc), Megafon wykorzystywany g³ównie przez s³u¿by porz¹dkowe i organizatorów imprez.\nUmo¿liwia korzystanie z czatu //m o du¿ym zasiêgu.\n\nOpis przedmiotu:\n\t %s, desc)
+			format(fdesc, sizeof(fdesc), Megafon wykorzystywany gÅ‚Ã³wnie przez sÅ‚uÅ¼by porzÄ…dkowe i organizatorÃ³w imprez.\nUmoÅ¼liwia korzystanie z czatu //m o duÅ¼ym zasiÄ™gu.\n\nOpis przedmiotu:\n\t %s, desc)
 		case ITEM_LINE:
-			format(fdesc, sizeof(fdesc), Linka holownicza dla twojego auta.\nUmo¿liwia korzystanie z komendy (TUTAJ TY NAPISZ JA NIE WIEM)\n\nOpis przedmiotu:\n\t %s, desc)
+			format(fdesc, sizeof(fdesc), Linka holownicza dla twojego auta.\nUmoÅ¼liwia korzystanie z komendy (TUTAJ TY NAPISZ JA NIE WIEM)\n\nOpis przedmiotu:\n\t %s, desc)
 		case ITEM_BEDBUG:
-			format(fdesc, sizeof(fdesc), Pluskwa, która nie dzia³a. Pewnie jakiœ robak, zamieszkuj¹cy wszelkiej maœci Hydraulikê.\n\nOpis przedmiotu:\n\t %s, desc)
+			format(fdesc, sizeof(fdesc), Pluskwa, ktÃ³ra nie dziaÅ‚a. Pewnie jakiÅ› robak, zamieszkujÄ…cy wszelkiej maÅ›ci HydraulikÄ™.\n\nOpis przedmiotu:\n\t %s, desc)
 		case ITEM_NOTEBOOK:
-			format(fdesc, sizeof(fdesc), Zwyczajny notes.\nPo u¿yciu utworzy kartkê, na której bêdziesz móg³ zanotowaæ co tylko chcesz.\n\nIloœæ stron: %d\n\nOpis przedmiotu:\n\t %s, v1, desc)
+			format(fdesc, sizeof(fdesc), Zwyczajny notes.\nPo uÅ¼yciu utworzy kartkÄ™, na ktÃ³rej bÄ™dziesz mÃ³gÅ‚ zanotowaÄ‡ co tylko chcesz.\n\nIloÅ›Ä‡ stron: %d\n\nOpis przedmiotu:\n\t %s, v1, desc)
 		case ITEM_CHIT:
-			format(fdesc, sizeof(fdesc), Karteczka, na której prawdopodobnie coœ zanotowano.\nU¿yj jej aby odczytaæ zapiski.\n\nOpis przedmiotu:\n\t %s, desc)
+			format(fdesc, sizeof(fdesc), Karteczka, na ktÃ³rej prawdopodobnie coÅ› zanotowano.\nUÅ¼yj jej aby odczytaÄ‡ zapiski.\n\nOpis przedmiotu:\n\t %s, desc)
 		case ITEM_TUNING:
-			format(fdesc, sizeof(fdesc), Komponent, którego mo¿esz u¿yæ, ¿eby odpicowaæ swoj¹ brykê.\nPracownicy warsztatów mog¹ je montowaæ, u¿ywaj¹c komendy /o montaz.\n\nSampID komponentu: %d\n\nOpis przedmiotu:\n\t %s, v1, desc)
+			format(fdesc, sizeof(fdesc), Komponent, ktÃ³rego moÅ¼esz uÅ¼yÄ‡, Å¼eby odpicowaÄ‡ swojÄ… brykÄ™.\nPracownicy warsztatÃ³w mogÄ… je montowaÄ‡, uÅ¼ywajÄ…c komendy /o montaz.\n\nSampID komponentu: %d\n\nOpis przedmiotu:\n\t %s, v1, desc)
 		case ITEM_CHECKBOOK:
-			format(fdesc, sizeof(fdesc), Ksi¹¿eczka czekowa, dziêki której mo¿na utworzyæ papiery wartoœciowe.\nPo u¿yciu utworzysz czek na okreœlon¹ sumê.\n\nIloœæ czeków: %d\n\nOpis przedmiotu:\n\t %s, v1, desc)
+			format(fdesc, sizeof(fdesc), KsiÄ…Å¼eczka czekowa, dziÄ™ki ktÃ³rej moÅ¼na utworzyÄ‡ papiery wartoÅ›ciowe.\nPo uÅ¼yciu utworzysz czek na okreÅ›lonÄ… sumÄ™.\n\nIloÅ›Ä‡ czekÃ³w: %d\n\nOpis przedmiotu:\n\t %s, v1, desc)
 		case ITEM_CHECK:
-			format(fdesc, sizeof(fdesc), Czek, wypisany przez pewn¹ osobê na sumê %d dolarów.\nUdaj siê do banku i go u¿yj, aby zrealizowaæ p³atnoœæ.\n\nOpis przedmiotu:\n\t %s, v1, desc)
+			format(fdesc, sizeof(fdesc), Czek, wypisany przez pewnÄ… osobÄ™ na sumÄ™ %d dolarÃ³w.\nUdaj siÄ™ do banku i go uÅ¼yj, aby zrealizowaÄ‡ pÅ‚atnoÅ›Ä‡.\n\nOpis przedmiotu:\n\t %s, v1, desc)
 		case ITEM_FISHING:
-			format(fdesc, sizeof(fdesc), Zwyczajna wêdka wykonana z tworzyw sztucznych i zaawansowanych technologicznie w³ókien.\nPo jej u¿yciu mo¿esz ³owiæ ryby.\n\nOpis przedmiotu:\n\t %s, desc)
+			format(fdesc, sizeof(fdesc), Zwyczajna wÄ™dka wykonana z tworzyw sztucznych i zaawansowanych technologicznie wÅ‚Ã³kien.\nPo jej uÅ¼yciu moÅ¼esz Å‚owiÄ‡ ryby.\n\nOpis przedmiotu:\n\t %s, desc)
 		case ITEM_BAG:
-			format(fdesc, sizeof(fdesc), Pojemnik, umo¿liwiaj¹cy posiadanie wiêkszej iloœci przedmiotów.\nU¿yj go, by coœ z niego wyci¹gn¹æ, lub skorzystaj z\nopcji odk³adania w torbie, by coœ do niego schowaæ.\n\nRozmiar: %d slotów\n\nOpis przedmiotu:\n\t %s, v1, desc)
+			format(fdesc, sizeof(fdesc), Pojemnik, umoÅ¼liwiajÄ…cy posiadanie wiÄ™kszej iloÅ›ci przedmiotÃ³w.\nUÅ¼yj go, by coÅ› z niego wyciÄ…gnÄ…Ä‡, lub skorzystaj z\nopcji odkÅ‚adania w torbie, by coÅ› do niego schowaÄ‡.\n\nRozmiar: %d slotÃ³w\n\nOpis przedmiotu:\n\t %s, v1, desc)
 		case ITEM_DRINK:
-			format(fdesc, sizeof(fdesc), Napój niekoniecznie bezalkoholowy.\nPo u¿yciu twoja postaæ zacznie spo¿ywaæ zawartoœæ, ulegaj¹c upojeniu.\nSprunk pomaga odnowiæ wytrzyma³oœæ.\n\nOpis przedmiotu:\n\t %s, desc)
+			format(fdesc, sizeof(fdesc), NapÃ³j niekoniecznie bezalkoholowy.\nPo uÅ¼yciu twoja postaÄ‡ zacznie spoÅ¼ywaÄ‡ zawartoÅ›Ä‡, ulegajÄ…c upojeniu.\nSprunk pomaga odnowiÄ‡ wytrzymaÅ‚oÅ›Ä‡.\n\nOpis przedmiotu:\n\t %s, desc)
 		case ITEM_DRUG:
-			format(fdesc, sizeof(fdesc), Substancja o dzia³aniu narkotycznym.\nPo u¿yciu tego przedmiotu twoja postaæ za¿yje %d gram narkotyku zawartych w torebce.\nBy zmniejszyæ dzia³kê u¿yj funkcji rozdzielania przedmiotów.\nPamiêtaj, ¿e u¿ycie niektórych substancji doprowadza do uzale¿nienia.\n\nTyp: %d\n\nOpis przedmiotu:\n\t %s, v2, v1, desc)
+			format(fdesc, sizeof(fdesc), Substancja o dziaÅ‚aniu narkotycznym.\nPo uÅ¼yciu tego przedmiotu twoja postaÄ‡ zaÅ¼yje %d gram narkotyku zawartych w torebce.\nBy zmniejszyÄ‡ dziaÅ‚kÄ™ uÅ¼yj funkcji rozdzielania przedmiotÃ³w.\nPamiÄ™taj, Å¼e uÅ¼ycie niektÃ³rych substancji doprowadza do uzaleÅ¼nienia.\n\nTyp: %d\n\nOpis przedmiotu:\n\t %s, v2, v1, desc)
 		case ITEM_JOINT:
-			format(fdesc, sizeof(fdesc), Ciasno skrêcony blunt, pachn¹cy marihuan¹.\nPo u¿yciu twoja postaæ odpali skrêta.\n\nOpis przedmiotu:\n\t %s, desc)
+			format(fdesc, sizeof(fdesc), Ciasno skrÄ™cony blunt, pachnÄ…cy marihuanÄ….\nPo uÅ¼yciu twoja postaÄ‡ odpali skrÄ™ta.\n\nOpis przedmiotu:\n\t %s, desc)
 		case ITEM_BLET:
-			format(fdesc, sizeof(fdesc), Bletki, niezbêdne przy skrêcaniu blantów.\n\nOpis przedmiotu:\n\t %s, desc)
+			format(fdesc, sizeof(fdesc), Bletki, niezbÄ™dne przy skrÄ™caniu blantÃ³w.\n\nOpis przedmiotu:\n\t %s, desc)
 		case ITEM_BONGOS:
-			format(fdesc, sizeof(fdesc), Bongo, którego mo¿na u¿yæ do palenia marihuany.\n\nOpis przedmiotu:\n\t %s, desc)
+			format(fdesc, sizeof(fdesc), Bongo, ktÃ³rego moÅ¼na uÅ¼yÄ‡ do palenia marihuany.\n\nOpis przedmiotu:\n\t %s, desc)
 		case ITEM_BARREL:
-			format(fdesc, sizeof(fdesc), Szklana lufka, dziêki której mo¿na wypaliæ marihuanê.\n\nOpis przedmiotu:\n\t %s, desc)
+			format(fdesc, sizeof(fdesc), Szklana lufka, dziÄ™ki ktÃ³rej moÅ¼na wypaliÄ‡ marihuanÄ™.\n\nOpis przedmiotu:\n\t %s, desc)
 		case ITEM_ATTACH:
-			format(fdesc, sizeof(fdesc), Obiekt, który mo¿na przyczepiæ do modelu postaci.\nPo u¿yciu mo¿na wybraæ edycjê lub za³o¿enie obiektu w oknie dialogowym.\n\nUID wpisu: %d\n\nOpis przedmiotu:\n\t %s, v1, desc)
+			format(fdesc, sizeof(fdesc), Obiekt, ktÃ³ry moÅ¼na przyczepiÄ‡ do modelu postaci.\nPo uÅ¼yciu moÅ¼na wybraÄ‡ edycjÄ™ lub zaÅ‚oÅ¼enie obiektu w oknie dialogowym.\n\nUID wpisu: %d\n\nOpis przedmiotu:\n\t %s, v1, desc)
 		case ITEM_ACCESS:
-			format(fdesc, sizeof(fdesc), Akcesorium, które mo¿na zamontowaæ do pojazdu.\nPracownicy warsztatów maj¹ mo¿liwoœæ zamontowania tej czêœci w twoim aucie.\nTyp akcesorium: %d\n\nOpis przedmiotu:\n\t %s, v1, desc)
+			format(fdesc, sizeof(fdesc), Akcesorium, ktÃ³re moÅ¼na zamontowaÄ‡ do pojazdu.\nPracownicy warsztatÃ³w majÄ… moÅ¼liwoÅ›Ä‡ zamontowania tej czÄ™Å›ci w twoim aucie.\nTyp akcesorium: %d\n\nOpis przedmiotu:\n\t %s, v1, desc)
 		case ITEM_PLATE:
-			format(fdesc, sizeof(fdesc), P³yta CD, której mo¿na u¿yæ w odtwarzaczach wszelkiego typu.\nPo u¿yciu w pojeŸdzie zostanie uruchomiona w CarAudio.\nBy u¿yæ jej w ekwipunku potrzeba odtwarzacza.\n\nOpis przedmiotu:\n\t %s, desc)
+			format(fdesc, sizeof(fdesc), PÅ‚yta CD, ktÃ³rej moÅ¼na uÅ¼yÄ‡ w odtwarzaczach wszelkiego typu.\nPo uÅ¼yciu w pojeÅºdzie zostanie uruchomiona w CarAudio.\nBy uÅ¼yÄ‡ jej w ekwipunku potrzeba odtwarzacza.\n\nOpis przedmiotu:\n\t %s, desc)
 		case ITEM_PLAYER:
-			format(fdesc, sizeof(fdesc), Odtwarzacz CD.\nU¿yj go, aby w³¹czyæ muzykê. Pamiêtaj, ¿e przed uruchomieniem nale¿y umieœciæ w nim p³ytê.\n\nOpis przedmiotu:\n\t %s, desc)
+			format(fdesc, sizeof(fdesc), Odtwarzacz CD.\nUÅ¼yj go, aby wÅ‚Ä…czyÄ‡ muzykÄ™. PamiÄ™taj, Å¼e przed uruchomieniem naleÅ¼y umieÅ›ciÄ‡ w nim pÅ‚ytÄ™.\n\nOpis przedmiotu:\n\t %s, desc)
 		case ITEM_KEYS:
-			format(fdesc, sizeof(fdesc), Kluczyki do samochodu zarejestrowanego na tablicê LS%d.\n\nOpis przedmiotu:\n\t %s, v1, desc)
+			format(fdesc, sizeof(fdesc), Kluczyki do samochodu zarejestrowanego na tablicÄ™ LS%d.\n\nOpis przedmiotu:\n\t %s, v1, desc)
 		case ITEM_ARMOUR:
 			format(fdesc, sizeof(fdesc), Kamizelka kuloodporna sprawna w %d/%.\n\nOpis przedmiotu:\n\t %s, v1, desc)
 		case ITEM_GLOVES:
-			format(fdesc, sizeof(fdesc), Rêkawiczki, ukrywaj¹ce odciski palców twojej postaci.\nU¿yj ich, by je za³o¿yæ.\n\nOpis przedmiotu:\n\t %s, desc)
+			format(fdesc, sizeof(fdesc), RÄ™kawiczki, ukrywajÄ…ce odciski palcÃ³w twojej postaci.\nUÅ¼yj ich, by je zaÅ‚oÅ¼yÄ‡.\n\nOpis przedmiotu:\n\t %s, desc)
 		case ITEM_CORPSE:
-			format(fdesc, sizeof(fdesc), Zw³oki.\n\nOpis œmierci: %s, desc)
+			format(fdesc, sizeof(fdesc), ZwÅ‚oki.\n\nOpis Å›mierci: %s, desc)
 		case ITEM_WINDGUN:
-			format(fdesc, sizeof(fdesc), Przedmiot nie jest u¿ywany. Zg³oœ siê do moderacji po ciastko.)
+			format(fdesc, sizeof(fdesc), Przedmiot nie jest uÅ¼ywany. ZgÅ‚oÅ› siÄ™ do moderacji po ciastko.)
 		case ITEM_ROLL:
-			format(fdesc, sizeof(fdesc), Rolki. U¿ycie przedmiotu w³¹czy animacjê jazdy na rolkach.\nPamiêtaj o adekwatnym skinie i stosownym odegraniu akcji.\n\nOpis przedmiotu:\n\t %s, desc)
+			format(fdesc, sizeof(fdesc), Rolki. UÅ¼ycie przedmiotu wÅ‚Ä…czy animacjÄ™ jazdy na rolkach.\nPamiÄ™taj o adekwatnym skinie i stosownym odegraniu akcji.\n\nOpis przedmiotu:\n\t %s, desc)
 		case ITEM_PASS:
-			format(fdesc, sizeof(fdesc), Karnet na si³owniê, wygasaj¹cy za %d minut.\n\nOpis przedmiotu:\n\t %s, v1, desc)
+			format(fdesc, sizeof(fdesc), Karnet na siÅ‚owniÄ™, wygasajÄ…cy za %d minut.\n\nOpis przedmiotu:\n\t %s, v1, desc)
 		case ITEM_PBENTRY:
-			format(fdesc, sizeof(fdesc), Wejœciówka na paintball, wygasaj¹ca za %d minut.\n\nOpis przedmiotu:\n\t %s, v1, desc)
+			format(fdesc, sizeof(fdesc), WejÅ›ciÃ³wka na paintball, wygasajÄ…ca za %d minut.\n\nOpis przedmiotu:\n\t %s, v1, desc)
 		case ITEM_MOLOTOV:
-			format(fdesc, sizeof(fdesc), Przedmiot, którego mo¿na u¿yæ do podpalenia budynku.\nPo wejœciu do interiora i u¿yciu przedmiotu wybuchnie w nim po¿ar.\nDo odegrania tego typu akcji wymagana jest odpowiednia iloœæ stra¿aków na duty.\nPamiêtaj, aby odegraæ odpowiedni¹ akcjê RP przed jego u¿yciem.\n\nOpis przedmiotu:\n\t %s, desc)
+			format(fdesc, sizeof(fdesc), Przedmiot, ktÃ³rego moÅ¼na uÅ¼yÄ‡ do podpalenia budynku.\nPo wejÅ›ciu do interiora i uÅ¼yciu przedmiotu wybuchnie w nim poÅ¼ar.\nDo odegrania tego typu akcji wymagana jest odpowiednia iloÅ›Ä‡ straÅ¼akÃ³w na duty.\nPamiÄ™taj, aby odegraÄ‡ odpowiedniÄ… akcjÄ™ RP przed jego uÅ¼yciem.\n\nOpis przedmiotu:\n\t %s, desc)
 		case ITEM_PICKLOCK:
-			format(fdesc, sizeof(fdesc), Paczka wytrychów, którym przy odrobinie szczêœcia otworzysz drzwi.\nSzansa na otwarcie drzwi: %d/%\n\nOpis przedmiotu:\n\t %s, v1, desc)
+			format(fdesc, sizeof(fdesc), Paczka wytrychÃ³w, ktÃ³rym przy odrobinie szczÄ™Å›cia otworzysz drzwi.\nSzansa na otwarcie drzwi: %d/%\n\nOpis przedmiotu:\n\t %s, v1, desc)
 		case ITEM_OPTIWAND:
-			format(fdesc, sizeof(fdesc), Kamera, której s³u¿by specjalne u¿ywaj¹ do sprawdzania naro¿ników oraz szczelin.\n\nOpis przedmiotu:\n\t %s, desc)
+			format(fdesc, sizeof(fdesc), Kamera, ktÃ³rej sÅ‚uÅ¼by specjalne uÅ¼ywajÄ… do sprawdzania naroÅ¼nikÃ³w oraz szczelin.\n\nOpis przedmiotu:\n\t %s, desc)
 		case ITEM_CRAFT:
-			format(fdesc, sizeof(fdesc), Przedmiot nie jest u¿ywany. Zg³oœ siê do moderacji po ciastko.)
+			format(fdesc, sizeof(fdesc), Przedmiot nie jest uÅ¼ywany. ZgÅ‚oÅ› siÄ™ do moderacji po ciastko.)
 		case ITEM_FLASHBANG:
-			format(fdesc, sizeof(fdesc), Granat hukowo-b³yskowy.\nPo u¿yciu w pickupie interiora wytworzy og³uszaj¹cy i oœlepiaj¹cy napastników efekt eksplozji.\n\nOpis przedmiotu:\n\t %s, desc)
+			format(fdesc, sizeof(fdesc), Granat hukowo-bÅ‚yskowy.\nPo uÅ¼yciu w pickupie interiora wytworzy ogÅ‚uszajÄ…cy i oÅ›lepiajÄ…cy napastnikÃ³w efekt eksplozji.\n\nOpis przedmiotu:\n\t %s, desc)
 		case ITEM_FLASHLIGHT:
-			format(fdesc, sizeof(fdesc), Latarka typowych rozmiarów, u¿ywana najczêœciej przez s³u¿by porz¹dkowe.\n\nOpis przedmiotu:\n\t %s, desc)
+			format(fdesc, sizeof(fdesc), Latarka typowych rozmiarÃ³w, uÅ¼ywana najczÄ™Å›ciej przez sÅ‚uÅ¼by porzÄ…dkowe.\n\nOpis przedmiotu:\n\t %s, desc)
 		case ITEM_WEAPON_AT:
-			format(fdesc, sizeof(fdesc), Przedmiot nie jest u¿ywany. Zg³oœ siê do moderacji po ciastko.)
+			format(fdesc, sizeof(fdesc), Przedmiot nie jest uÅ¼ywany. ZgÅ‚oÅ› siÄ™ do moderacji po ciastko.)
 		case ITEM_BLADE:
-			format(fdesc, sizeof(fdesc), Przedmiot nie jest u¿ywany. Zg³oœ siê do moderacji po ciastko.)
+			format(fdesc, sizeof(fdesc), Przedmiot nie jest uÅ¼ywany. ZgÅ‚oÅ› siÄ™ do moderacji po ciastko.)
 		case ITEM_AQUALUNG:
-			format(fdesc, sizeof(fdesc), Przedmiot nie jest u¿ywany. Zg³oœ siê do moderacji po ciastko.)
+			format(fdesc, sizeof(fdesc), Przedmiot nie jest uÅ¼ywany. ZgÅ‚oÅ› siÄ™ do moderacji po ciastko.)
 		case ITEM_TIRE:
-			format(fdesc, sizeof(fdesc), Opona, któr¹ zawsze warto mieæ w baga¿niku.\nPo u¿yciu w pojeŸdzie mo¿na wymieniæ flaka, je¿eli siê go z³apa³o.\n\nOpis przedmiotu:\n\t %s, desc)
+			format(fdesc, sizeof(fdesc), Opona, ktÃ³rÄ… zawsze warto mieÄ‡ w bagaÅ¼niku.\nPo uÅ¼yciu w pojeÅºdzie moÅ¼na wymieniÄ‡ flaka, jeÅ¼eli siÄ™ go zÅ‚apaÅ‚o.\n\nOpis przedmiotu:\n\t %s, desc)
 		case ITEM_NUTRIENT:
-			format(fdesc, sizeof(fdesc), Od¿ywki lub sterydy, u³atwiaj¹ce trening twojej postaci i przyspieszaj¹ce stopieñ, w jakim zdobywa siê si³ê.\nWystarcza na %d minut(y) treningu.\n\nOpis przedmiotu:\n\t %s, v2, desc)
+			format(fdesc, sizeof(fdesc), OdÅ¼ywki lub sterydy, uÅ‚atwiajÄ…ce trening twojej postaci i przyspieszajÄ…ce stopieÅ„, w jakim zdobywa siÄ™ siÅ‚Ä™.\nWystarcza na %d minut(y) treningu.\n\nOpis przedmiotu:\n\t %s, v2, desc)
 		case ITEM_TAGGER:
-			format(fdesc, sizeof(fdesc), Farba w sprayu u¿ywana do malowania wrzut na œcianach.\nIloœæ farby w puszce: %d ml.\n\nOpis przedmiotu:\n\t %s, v2, desc)
+			format(fdesc, sizeof(fdesc), Farba w sprayu uÅ¼ywana do malowania wrzut na Å›cianach.\nIloÅ›Ä‡ farby w puszce: %d ml.\n\nOpis przedmiotu:\n\t %s, v2, desc)
 		case ITEM_DECKOFCARDS:
-			format(fdesc, sizeof(fdesc), Karty do grania.\nPo u¿yciu bêdziesz móg³ zagraæ w Blackjacka z osobami wokó³ Ciebie.\nPodczas u¿ywania kart nie mo¿esz byæ w trakcie oferowania/przyjmowania oferty, hospitalizacji, malowania pojazdu, etc.\n\nOpis przedmiotu: %s, desc)
+			format(fdesc, sizeof(fdesc), Karty do grania.\nPo uÅ¼yciu bÄ™dziesz mÃ³gÅ‚ zagraÄ‡ w Blackjacka z osobami wokÃ³Å‚ Ciebie.\nPodczas uÅ¼ywania kart nie moÅ¼esz byÄ‡ w trakcie oferowania/przyjmowania oferty, hospitalizacji, malowania pojazdu, etc.\n\nOpis przedmiotu: %s, desc)
 		case ITEM_LSPAD:
-			format(fdesc, sizeof(fdesc), Urz±dzenie elektroniczne posiadaj±ce wiele funkcji, od pogody i kalendarza do zarz±dzania elektronicznymi zamkami i sprawdzania stanu konta bankowego.\nTapeta: %d\n\nOpis przedmiotu:\n\t %s, v1, desc)
+			format(fdesc, sizeof(fdesc), UrzÂ±dzenie elektroniczne posiadajÂ±ce wiele funkcji, od pogody i kalendarza do zarzÂ±dzania elektronicznymi zamkami i sprawdzania stanu konta bankowego.\nTapeta: %d\n\nOpis przedmiotu:\n\t %s, v1, desc)
 		case ITEM_ELOCK:
 			format(fdesc, sizeof(fdesc), Zamek Elektroniczny. Pozawala na zdalne kontrolowanie drzwi\npoprzez LSPad.\n\nOpis przedmiotu:\n\t %s, desc)
 		case ITEM_PAGER:
-			format(fdesc, sizeof(fdesc), Pager. Pozwala na odebranie wiadomo¶ci o chêci kontaktu z Tob± bez p³acenia za drogie po³aczenie telefoniczne.\nNumer: %d\n\nOpis przedmiotu:\n\t %s, v1, desc)
+			format(fdesc, sizeof(fdesc), Pager. Pozwala na odebranie wiadomoÂ¶ci o chÄ™ci kontaktu z TobÂ± bez pÅ‚acenia za drogie poÅ‚aczenie telefoniczne.\nNumer: %d\n\nOpis przedmiotu:\n\t %s, v1, desc)
 		case ITEM_ROPE:
-			format(fdesc, sizeof(fdesc), Zwyczajny zwój liny pozwalaj¹cy na unieruchomienie innej osoby, lub wykonanie prymitywnego stryczka.\n/lina (ID Gracza) \n\nOpis przedmiotu:\n\t %s, desc)
+			format(fdesc, sizeof(fdesc), Zwyczajny zwÃ³j liny pozwalajÄ…cy na unieruchomienie innej osoby, lub wykonanie prymitywnego stryczka.\n/lina (ID Gracza) \n\nOpis przedmiotu:\n\t %s, desc)
 		case ITEM_HEADBAG:
-			format(fdesc, sizeof(fdesc), Worek przypomiaj¹cy te do przechowywania zbo¿a - mo¿esz go za³o¿yæ na czyj¹œ g³owê. \n/worek (ID gracza)\n\nOpis przedmiotu:\n\t %s, desc)
+			format(fdesc, sizeof(fdesc), Worek przypomiajÄ…cy te do przechowywania zboÅ¼a - moÅ¼esz go zaÅ‚oÅ¼yÄ‡ na czyjÄ…Å› gÅ‚owÄ™. \n/worek (ID gracza)\n\nOpis przedmiotu:\n\t %s, desc)
 		case ITEM_GAG:
-			format(fdesc, sizeof(fdesc), Knebel, który mo¿esz w³o¿yæ komuœ do ust - mo¿esz go za³o¿yæ na czyj¹œ g³owê. \n/knebel (ID gracza)\n\nOpis przedmiotu:\n\t %s, desc)
+			format(fdesc, sizeof(fdesc), Knebel, ktÃ³ry moÅ¼esz wÅ‚oÅ¼yÄ‡ komuÅ› do ust - moÅ¼esz go zaÅ‚oÅ¼yÄ‡ na czyjÄ…Å› gÅ‚owÄ™. \n/knebel (ID gracza)\n\nOpis przedmiotu:\n\t %s, desc)
 		case ITEM_HOMEPHONESET:
-			format(fdesc, sizeof(fdesc), Nowy telefon stacjonarny, mo¿esz go u¿yæ we w³asnym domu aby móc dzwoniæ na inne telefony.\n\nOpis przedmiotu:\n\t %s, desc)
+			format(fdesc, sizeof(fdesc), Nowy telefon stacjonarny, moÅ¼esz go uÅ¼yÄ‡ we wÅ‚asnym domu aby mÃ³c dzwoniÄ‡ na inne telefony.\n\nOpis przedmiotu:\n\t %s, desc)
 		case ITEM_TUNEPART:
-			format(fdesc, sizeof(fdesc), Czêœæ tuningowa do pojazdu, która po zamontowaniu zwiêkszy nieco osi¹gi maszyny.\n\nOpis przedmiotu:\n\t %s, desc)
+			format(fdesc, sizeof(fdesc), CzÄ™Å›Ä‡ tuningowa do pojazdu, ktÃ³ra po zamontowaniu zwiÄ™kszy nieco osiÄ…gi maszyny.\n\nOpis przedmiotu:\n\t %s, desc)
 		case ITEM_ROULETTE:
-			format(fdesc, sizeof(fdesc), Ruletka która losuje liczbê z przedzia³u 0-36 (( /ruletka )).\n\nOpis przedmiotu:\n\t %s, desc)
+			format(fdesc, sizeof(fdesc), Ruletka ktÃ³ra losuje liczbÄ™ z przedziaÅ‚u 0-36 (( /ruletka )).\n\nOpis przedmiotu:\n\t %s, desc)
 		case ITEM_PUTABLE:
-			format(fdesc, sizeof(fdesc), Przedmiot, który po u¿yciu tworzy obiekt na œwiecie 0 mo¿liwy do edycji poprzez komendê \n/osel.\n\nOpis przedmiotu:\n\t %s, desc)
+			format(fdesc, sizeof(fdesc), Przedmiot, ktÃ³ry po uÅ¼yciu tworzy obiekt na Å›wiecie 0 moÅ¼liwy do edycji poprzez komendÄ™ \n/osel.\n\nOpis przedmiotu:\n\t %s, desc)
 		case ITEM_FAKEPAPERS:
-			format(fdesc, sizeof(fdesc), Przedmiot po u¿yciu którego zmieniaj¹ siê Twoje dane personalne.\n\nOpis przedmiotu:\n\t %s, desc)
+			format(fdesc, sizeof(fdesc), Przedmiot po uÅ¼yciu ktÃ³rego zmieniajÄ… siÄ™ Twoje dane personalne.\n\nOpis przedmiotu:\n\t %s, desc)
 		case ITEM_SEEDS:
-			format(fdesc, sizeof(fdesc), Nasiona umo¿liwiaj¹ce zasadzenie krzaka marihuany.\nAby zasadziæ krzak u¿yj go przy obiekcie doniczki.\n\nOpis przedmiotu:\n\t %s, desc)
+			format(fdesc, sizeof(fdesc), Nasiona umoÅ¼liwiajÄ…ce zasadzenie krzaka marihuany.\nAby zasadziÄ‡ krzak uÅ¼yj go przy obiekcie doniczki.\n\nOpis przedmiotu:\n\t %s, desc)
 		case ITEM_CARD:
-			format(fdesc, sizeof(fdesc), Karta p³atnicza z balansem firmowym.\n\nOpis przedmiotu:\n\t%s, desc)
+			format(fdesc, sizeof(fdesc), Karta pÅ‚atnicza z balansem firmowym.\n\nOpis przedmiotu:\n\t%s, desc)
 		case ITEM_OXYGEN:
-			format(fdesc, sizeof(fdesc), Butla tlenowa s³u¿¹ca do nurkowania.\n\nOpis przedmiotu:\n\t%s, desc)
+			format(fdesc, sizeof(fdesc), Butla tlenowa sÅ‚uÅ¼Ä…ca do nurkowania.\n\nOpis przedmiotu:\n\t%s, desc)
 		case ITEM_SURFBOARD:
-			format(fdesc, sizeof(fdesc), Deska surfingowa, u¿yj by postawiæ j¹ na wodzie.\n\nOpis przedmiotu:\n\t%s, desc)
+			format(fdesc, sizeof(fdesc), Deska surfingowa, uÅ¼yj by postawiÄ‡ jÄ… na wodzie.\n\nOpis przedmiotu:\n\t%s, desc)
 		case ITEM_BOMB:
-			format(fdesc, sizeof(fdesc), Bomba, któr¹ mo¿na zamontowaæ w pojeŸdzie, po odpaleniu silnika eksploduje.\n\nOpis przedmiotu:\n\t%s, desc)
+			format(fdesc, sizeof(fdesc), Bomba, ktÃ³rÄ… moÅ¼na zamontowaÄ‡ w pojeÅºdzie, po odpaleniu silnika eksploduje.\n\nOpis przedmiotu:\n\t%s, desc)
 		case ITEM_SILENCER:
-			format(fdesc, sizeof(fdesc), T³umik, który mo¿esz za³o¿yæ na dowoln¹ broñ kalibru 9mm.\n\nOpis przedmiotu:\n\t%s, desc)
+			format(fdesc, sizeof(fdesc), TÅ‚umik, ktÃ³ry moÅ¼esz zaÅ‚oÅ¼yÄ‡ na dowolnÄ… broÅ„ kalibru 9mm.\n\nOpis przedmiotu:\n\t%s, desc)
 		case ITEM_WORM:
-			format(fdesc, sizeof(fdesc), Robak, którego mo¿esz za³o¿yæ na wêdkê, by rozpocz¹æ ³owienie.\n\nOpis przedmiotu:\n\t%s, desc)
+			format(fdesc, sizeof(fdesc), Robak, ktÃ³rego moÅ¼esz zaÅ‚oÅ¼yÄ‡ na wÄ™dkÄ™, by rozpoczÄ…Ä‡ Å‚owienie.\n\nOpis przedmiotu:\n\t%s, desc)
 		case ITEM_BANDAGE:
-			format(fdesc, sizeof(fdesc), Banda¿, który po u¿yciu zatamuje krwawienie Twojej postaci.\n\nOpis przedmiotu:\n\t%s, desc)
+			format(fdesc, sizeof(fdesc), BandaÅ¼, ktÃ³ry po uÅ¼yciu zatamuje krwawienie Twojej postaci.\n\nOpis przedmiotu:\n\t%s, desc)
 		case ITEM_PLANT:
-			format(fdesc, sizeof(fdesc), Nasiono, które po u¿yciu pozwoli Ci zasadziæ w swoim pobli¿u jak¹œ roœlinê\nTyp roœliny: %d.\n\nOpis przedmiotu:\n\t%s, v1, desc)
+			format(fdesc, sizeof(fdesc), Nasiono, ktÃ³re po uÅ¼yciu pozwoli Ci zasadziÄ‡ w swoim pobliÅ¼u jakÄ…Å› roÅ›linÄ™\nTyp roÅ›liny: %d.\n\nOpis przedmiotu:\n\t%s, v1, desc)
 		case ITEM_SPECIAL:
-			format(fdesc, sizeof(fdesc), Przedmiot OOC, który dodaje pewne korzyœci.\n\nOpis przedmiotu:\n\t%s, desc)
+			format(fdesc, sizeof(fdesc), Przedmiot OOC, ktÃ³ry dodaje pewne korzyÅ›ci.\n\nOpis przedmiotu:\n\t%s, desc)
 		case ITEM_PRESENT:
 			format(fdesc, sizeof(fdesc), Upominek zapakowany w kolorowy papier.\n\nOpis przedmiotu:\n\t%s, desc)
 		case ITEM_SAFE:
 			format(fdesc, sizeof(fdesc), Bezpieczony schowek na pieniadze chroniony 5-cyfrowym kodem.\n\nOpis przedmiotu:\n\t%s, desc)
 		case ITEM_COOK_INGREDIENT:
-			format(fdesc, sizeof(fdesc), Sk³adnik do tworzenia narkotyków.\n\nOpis przedmiotu:\n\t%s, desc)
+			format(fdesc, sizeof(fdesc), SkÅ‚adnik do tworzenia narkotykÃ³w.\n\nOpis przedmiotu:\n\t%s, desc)
 		case ITEM_COOK_OBJECT:
-			format(fdesc, sizeof(fdesc), Kuchenka gazowa przeznaczona do gotowania narkotyków.\n\nOpis przedmiotu:\n\t%s, desc)
+			format(fdesc, sizeof(fdesc), Kuchenka gazowa przeznaczona do gotowania narkotykÃ³w.\n\nOpis przedmiotu:\n\t%s, desc)
  	
 	)
 	
 	mtitle(64)
-	format(mtitle, sizeof(mtitle), Informacje » %s, ItemInfo(itemid)(iName))
+	format(mtitle, sizeof(mtitle), Informacje Â» %s, ItemInfo(itemid)(iName))
 	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, mtitle, fdesc, OK, )
 	return 1
 )
@@ -905,7 +905,7 @@ DropAllPlayerItems(playerid)
 					vehid = GetPlayerVehicleID(playerid)
 					mysql_query_format(UPDATE hrp_items SET item_place = %d, item_owner = %d WHERE item_uid = %d LIMIT 1, PLACE_VEHICLE, CarInfo(vehid)(cUID), ItemInfo(itemid)(iUID))
 				)
-				// Zwolnij miejsce dla czegoœ, co mo¿e byæ u¿yte
+				// Zwolnij miejsce dla czegoÅ›, co moÅ¼e byÄ‡ uÅ¼yte
 				ItemInfo(itemid)(iUID) = 0
 				ItemInfo(itemid)(iValue1) = 0
 				ItemInfo(itemid)(iValue2) = 0
@@ -918,7 +918,7 @@ DropAllPlayerItems(playerid)
 				ItemInfo(itemid)(iChecked) = false
 
 				// Itter_Remove(Items, itemid)
-				// U¿yæ SafeRemove ¿eby usun¹æ iteracje w œrodku pêtli z t¹ iteracj¹.
+				// UÅ¼yÄ‡ SafeRemove Å¼eby usunÄ…Ä‡ iteracje w Å›rodku pÄ™tli z tÄ… iteracjÄ….
 				Iter_SafeRemove(Items, itemid, prevIter)
 				itemid = prevIter
 			)
@@ -938,14 +938,14 @@ stock ListPlayerTrunkItems(playerid, vehid)
 	
 	if(CarInfo(vehid)(cOwnerType) == OWNER_PLAYER && CarInfo(vehid)(cOwner) != PlayerCache(playerid)(pUID))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie mo¿esz podnosiæ przedmiotów z tego pojazdu., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie moÅ¼esz podnosiÄ‡ przedmiotÃ³w z tego pojazdu., OK, )
 		return 1
 	)
 	if(CarInfo(vehid)(cOwnerType) == OWNER_GROUP)
 	(
 		if(!IsPlayerPermissedGroup(playerid, CarInfo(vehid)(cOwner), PERM_CARS))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie mo¿esz podnosiæ przedmiotów z tego pojazdu., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie moÅ¼esz podnosiÄ‡ przedmiotÃ³w z tego pojazdu., OK, )
 			return 1
 		)
 	)
@@ -963,10 +963,10 @@ stock ListPlayerTrunkItems(playerid, vehid)
   	mysql_free_result()
   	if(!strlen(list_items))
   	(
-	 	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie znaleziono ¿adnych przedmiotów w baga¿niku., OK, )
+	 	ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie znaleziono Å¼adnych przedmiotÃ³w w bagaÅ¼niku., OK, )
 	 	return 1
 	)
-	ShowPlayerDialog(playerid, D_RAISE_ITEM, DIALOG_STYLE_LIST, Przedmioty w baga¿niku, list_items, Podnieœ, Anuluj)
+	ShowPlayerDialog(playerid, D_RAISE_ITEM, DIALOG_STYLE_LIST, Przedmioty w bagaÅ¼niku, list_items, PodnieÅ›, Anuluj)
 	return 1
 )
 
@@ -992,7 +992,7 @@ stock TrackPhone(playerid, number)
 					vehid = GetVehicleID(ItemInfo(itemid)(iOwner))
 					if(vehid == INVALID_VEHICLE_ID)
 					(
-						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Pojazd, w którym znajduje siê telefon jest aktualnie odspawnowany.\nNamierzanie bêdzie mo¿liwe kiedy pojazd pojawi siê na mapie., OK, )
+						ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Pojazd, w ktÃ³rym znajduje siÄ™ telefon jest aktualnie odspawnowany.\nNamierzanie bÄ™dzie moÅ¼liwe kiedy pojazd pojawi siÄ™ na mapie., OK, )
 						PlayerCache(playerid)(pTrackingNumber) = 0
 						Checkpoint(playerid) = 0
 						DisablePlayerCheckpoint(playerid)
@@ -1133,7 +1133,7 @@ stock GenerateDrugNameByItemid(itemid)
 stock items_LoadTextdraws(playerid)
 (
 	/*
-		Nowy interfejs przedmiotów, lepiej tutaj to upakowaæ, ni¿ zajebaæ póŸniej po³owê trafficu.
+		Nowy interfejs przedmiotÃ³w, lepiej tutaj to upakowaÄ‡, niÅ¼ zajebaÄ‡ pÃ³Åºniej poÅ‚owÄ™ trafficu.
 	*/
 	
 	pLicenseBall1(playerid) = CreatePlayerTextDraw(playerid,144.000000, 133.000000, ld_pool:ball)
@@ -1346,7 +1346,7 @@ stock items_LoadTextdraws(playerid)
 
 stock doc_gInterfaceShow(playerid, forplayerid)
 (
-	// Dodaj formatowanie poszczególnych textdrawów
+	// Dodaj formatowanie poszczegÃ³lnych textdrawÃ³w
 	
 	PlayerTextDrawShow(forplayerid, pLicenseLine(forplayerid))
 	//
@@ -1412,7 +1412,7 @@ public doc_AutoClose(playerid)
 
 stock isItemIsHaircut(item_id)
 (
-	// Spradzamy czy przedmiot jest w³osami ?
+	// Spradzamy czy przedmiot jest wÅ‚osami ?
 	bool:isHaircut = false, buffer(256)
 	format(buffer, sizeof(buffer), SELECT access_model FROM hrp_access WHERE access_uid = %d, ItemInfo(item_id)(iValue1))
 	mysql_query(buffer)

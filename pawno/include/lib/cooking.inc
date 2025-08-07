@@ -1,5 +1,5 @@
 /*
-	Gotowanie narkotykÛw,
+	Gotowanie narkotyk√≥w,
 	seler.
 
 */
@@ -18,7 +18,7 @@ CMD:gotuj(playerid, params())
 	
 	if(PlayerCache(playerid)(pCookID) != -1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Obecnie jesteú w trakcie gotowania., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Obecnie jeste≈õ w trakcie gotowania., OK, )
 		return 1
 	)
 	
@@ -27,30 +27,30 @@ CMD:gotuj(playerid, params())
 	
 	if(objectid == INVALID_OBJECT_ID || cookid == -1)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Nie znaleziono kuchenki do gotowania w pobliøu., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Nie znaleziono kuchenki do gotowania w pobli≈ºu., OK, )
 		return 1
 	)
 	if(CookData(cookid)(cIsOccupied))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystπpi≥ b≥πd, Obecnie ktoú korzysta z tej kuchenki., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystƒÖpi≈Ç b≈ÇƒÖd, Obecnie kto≈õ korzysta z tej kuchenki., OK, )
 		return 1
 	)
 	if(CookData(cookid)(cStatus) == COOK_STATUS_COOKING)
 	(
 		if(gettime() ( CookData(cookid)(cTime))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Obecnie w tej kuchence coú siÍ gotuje, sprÛbuj pÛüniej., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Obecnie w tej kuchence co≈õ siƒô gotuje, spr√≥buj p√≥≈∫niej., OK, )
 			return 1
 		)
 		
-		if(gettime() ) CookData(cookid)(cTime)+300)	// ma moøliwe 5 minut spÛünienia (300s)
+		if(gettime() ) CookData(cookid)(cTime)+300)	// ma mo≈ºliwe 5 minut sp√≥≈∫nienia (300s)
 		(
 			printf((cooking) Gracz %s (UID: %d) spoznil sie po odebranie wywaru., PlayerRealName(playerid), PlayerCache(playerid)(pUID))
 			PlayerCache(playerid)(pCookID) = cookid
 			ClearCookingData(playerid)
 			PlayerCache(playerid)(pCookID) = -1
 			CookData(cookid)(cStatus) = COOK_STATUS_FREE
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Produkt zbyt d≥ugo czeka≥ na Ciebie.\nSprÛbuj ponownie uøywajπc komendy /gotuj, tylko wyrÛb siÍ w wyznaczonym czasie!, OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Produkt zbyt d≈Çugo czeka≈Ç na Ciebie.\nSpr√≥buj ponownie u≈ºywajƒÖc komendy /gotuj, tylko wyr√≥b siƒô w wyznaczonym czasie!, OK, )
 			return 1
 		)
 		PlayerCache(playerid)(pCookID) = cookid
@@ -93,15 +93,15 @@ stock GetCookingProduct(playerid)
 				if(CookData(cookid)(cIngredient)(j) == IngredientsData(ingredient_list(i))(ingValue))
 				(
 					points +=  IngredientsData(ingredient_list(i))(ingPoints)
-					ingredient_list(i) = 0 // tutaj blokada, øe jeøeli powtÛrzy siÍ ten sam sk≥adnik to juø go nie zaliczy
+					ingredient_list(i) = 0 // tutaj blokada, ≈ºe je≈ºeli powt√≥rzy siƒô ten sam sk≈Çadnik to ju≈º go nie zaliczy
 				)
 			)
 		)
 	)
 	
-	if(points (= floatround(0.50 * RecipesData(CookData(cookid)(cDrug))(rMaxPoints)))	// ma mniej niø po≥owa maksymalnych punktÛw
+	if(points (= floatround(0.50 * RecipesData(CookData(cookid)(cDrug))(rMaxPoints)))	// ma mniej ni≈º po≈Çowa maksymalnych punkt√≥w
 	(
-		GuiMsg(playerid, Ooops!\nTwÛj produkt niestety nie powsta≥ prawid≥owo. Doda≥eú zbyt ma≥o sk≥adnikÛw, bπdü posiadasz b≥Ídnπ recepturÍ.\nSprÛbuj ponownie uøywajπc komendy /gotuj, jednakøe popraw swÛj przepis., 0)
+		GuiMsg(playerid, Ooops!\nTw√≥j produkt niestety nie powsta≈Ç prawid≈Çowo. Doda≈Çe≈õ zbyt ma≈Ço sk≈Çadnik√≥w, bƒÖd≈∫ posiadasz b≈ÇƒôdnƒÖ recepturƒô.\nSpr√≥buj ponownie u≈ºywajƒÖc komendy /gotuj, jednak≈ºe popraw sw√≥j przepis., 0)
 		return 1
 	)
 	
@@ -130,14 +130,14 @@ stock GetCookingProduct(playerid)
 		format(string, sizeof(string), %s %dg., RecipesData(CookData(cookid)(cDrug))(rName), grams)
 		CreatePlayerItem(playerid, string, RecipesData(CookData(cookid)(cDrug))(rItemType), RecipesData(CookData(cookid)(cDrug))(rDrugValue), grams)
 		
-		format(string, sizeof(string), Sukces!\nUda≥o Ci siÍ ugotowaÊ swÛj produkt. Uzyska≥eú go %d gram., grams)
+		format(string, sizeof(string), Sukces!\nUda≈Ço Ci siƒô ugotowaƒá sw√≥j produkt. Uzyska≈Çe≈õ go %d gram., grams)
 	)
 	else
 	(
 		format(string, sizeof(string), %s, RecipesData(CookData(cookid)(cDrug))(rName))
 		CreatePlayerItem(playerid, string, RecipesData(CookData(cookid)(cDrug))(rItemType), RecipesData(CookData(cookid)(cDrug))(rDrugValue), grams)
 		
-		format(string, sizeof(string), Sukces!\nUda≥o Ci siÍ ugotowaÊ swÛj produkt.)
+		format(string, sizeof(string), Sukces!\nUda≈Ço Ci siƒô ugotowaƒá sw√≥j produkt.)
 	)
 	
 	GuiMsg(playerid, string, 0)
@@ -333,7 +333,7 @@ stock initializeCookTextDraws(playerid)
 	PlayerTextDrawSetProportional(playerid,CookIngredients(playerid), 1)
 	PlayerTextDrawSetSelectable(playerid,CookIngredients(playerid), 0)
 
-	CookIngredient(0)(playerid) = CreatePlayerTextDraw(playerid,80.000000, 192.000000, _)	// 1 sk≥adnik
+	CookIngredient(0)(playerid) = CreatePlayerTextDraw(playerid,80.000000, 192.000000, _)	// 1 sk≈Çadnik
 	PlayerTextDrawAlignment(playerid,CookIngredient(0)(playerid), 1)
 	PlayerTextDrawBackgroundColor(playerid,CookIngredient(0)(playerid), 255)
 	PlayerTextDrawFont(playerid,CookIngredient(0)(playerid), 1)
@@ -373,7 +373,7 @@ stock initializeCookTextDraws(playerid)
 	PlayerTextDrawSetProportional(playerid,CookIngredient(3)(playerid), 1)
 	PlayerTextDrawSetSelectable(playerid,CookIngredient(3)(playerid), 0)
 	
-	CookIngredient(4)(playerid) = CreatePlayerTextDraw(playerid,80.000000, 268.000000, _) // 5 sk≥adnik
+	CookIngredient(4)(playerid) = CreatePlayerTextDraw(playerid,80.000000, 268.000000, _) // 5 sk≈Çadnik
 	PlayerTextDrawAlignment(playerid,CookIngredient(4)(playerid), 1)
 	PlayerTextDrawBackgroundColor(playerid,CookIngredient(4)(playerid), 255)
 	PlayerTextDrawFont(playerid,CookIngredient(4)(playerid), 1)
@@ -413,7 +413,7 @@ stock initializeCookTextDraws(playerid)
 	PlayerTextDrawSetProportional(playerid,CookIngredient(7)(playerid), 1)
 	PlayerTextDrawSetSelectable(playerid,CookIngredient(7)(playerid), 0)
 	
-	CookIngredient(8)(playerid) = CreatePlayerTextDraw(playerid,80.000000, 344.000000, _)	// 9 sk≥adnik
+	CookIngredient(8)(playerid) = CreatePlayerTextDraw(playerid,80.000000, 344.000000, _)	// 9 sk≈Çadnik
 	PlayerTextDrawAlignment(playerid,CookIngredient(8)(playerid), 1)
 	PlayerTextDrawBackgroundColor(playerid,CookIngredient(8)(playerid), 255)
 	PlayerTextDrawFont(playerid,CookIngredient(8)(playerid), 1)
@@ -423,7 +423,7 @@ stock initializeCookTextDraws(playerid)
 	PlayerTextDrawSetProportional(playerid,CookIngredient(8)(playerid), 1)
 	PlayerTextDrawSetSelectable(playerid,CookIngredient(8)(playerid), 0)
 	
-	CookIngredient(9)(playerid) = CreatePlayerTextDraw(playerid,240.000000, 192.000000, _)	// 10 sk≥adnik
+	CookIngredient(9)(playerid) = CreatePlayerTextDraw(playerid,240.000000, 192.000000, _)	// 10 sk≈Çadnik
 	PlayerTextDrawAlignment(playerid,CookIngredient(9)(playerid), 1)
 	PlayerTextDrawBackgroundColor(playerid,CookIngredient(9)(playerid), 255)
 	PlayerTextDrawFont(playerid,CookIngredient(9)(playerid), 1)
@@ -503,7 +503,7 @@ stock initializeCookTextDraws(playerid)
 	PlayerTextDrawSetProportional(playerid,CookIngredient(16)(playerid), 1)
 	PlayerTextDrawSetSelectable(playerid,CookIngredient(16)(playerid), 0)
 	
-	CookIngredient(17)(playerid) = CreatePlayerTextDraw(playerid,240.000000, 344.000000, _)	// 18 sk≥adnik
+	CookIngredient(17)(playerid) = CreatePlayerTextDraw(playerid,240.000000, 344.000000, _)	// 18 sk≈Çadnik
 	PlayerTextDrawAlignment(playerid,CookIngredient(17)(playerid), 1)
 	PlayerTextDrawBackgroundColor(playerid,CookIngredient(17)(playerid), 255)
 	PlayerTextDrawFont(playerid,CookIngredient(17)(playerid), 1)

@@ -1,6 +1,6 @@
 /* BlackJack
-Skrypt gry w blacjkacja wydaje siê dzia³aæ dobrze,
-by³ testowany kilkukrotnie przez wiele osób.
+Skrypt gry w blacjkacja wydaje siÄ™ dziaÅ‚aÄ‡ dobrze,
+byÅ‚ testowany kilkukrotnie przez wiele osÃ³b.
 
 Podpisano: Mateusz.
 */
@@ -12,7 +12,7 @@ Podpisano: Mateusz.
 #define BLACKJACK_MAX_PLAYERS				4
 #define BLACKJACK_MAX_PLAYER_CARDS			6
 
-// StÃ³Å‚ do blackjacka
+// StÄ‚Å‚Ä¹â€š do blackjacka
 #define OBJECT_BLACKJACK_TABLE				2188
 
 // Etapy
@@ -66,7 +66,7 @@ enum sBlackJack
 	
 	bool:BjCard(52),		// Karta na stole (true/false)
 	
-	bjActivePlayers,		// Iloœæ aktywnych graczy
+	bjActivePlayers,		// IloÅ›Ä‡ aktywnych graczy
 	bjTimer,				// Czas akcji gracza
 	bjMoney,				// Kasa w stole
 	
@@ -182,7 +182,7 @@ hook OnPlayerDisconnect(playerid)
 	if(BlackjackPlayer(playerid)(bjID) != INVALID_BLACKJACK_GAME_ID)
 	(
 		gameid = BlackjackPlayer(playerid)(bjID), slotid = BlackjackPlayer(playerid)(bjpSeat), string(256)
-		format(string, sizeof(string), %s opuœci³ stó³ (S: %d), PlayerName(playerid), slotid)
+		format(string, sizeof(string), %s opuÅ›ciÅ‚ stÃ³Å‚ (S: %d), PlayerName(playerid), slotid)
 		bjMessageToAll(gameid, string)
 		BlackJack(gameid)(bjActivePlayers)--
 		BlackJack(gameid)(bjSlot)(slotid) = INVALID_PLAYER_ID
@@ -203,13 +203,13 @@ hook OnDialogResponse(playerid, dialogid, response, listitem, inputtext())
 			slot = GetFreeSlotInBlackjack(gameid)
 			BlackJack(gameid)(bjSlot)(slot) = playerid
 			BlackjackPlayer(playerid)(bjpSeat) = slot
-			format(string, sizeof(string), %s zaakceptowa³ zaproszenie. (S: %d), PlayerName(playerid), slot)
+			format(string, sizeof(string), %s zaakceptowaÅ‚ zaproszenie. (S: %d), PlayerName(playerid), slot)
 			bjMessageToAll(gameid, string)
 		)
 		else
 		(
 			gameid = BlackjackPlayer(playerid)(bjID)
-			format(string, sizeof(string), %s odrzuci³ zaproszenie., PlayerName(playerid))
+			format(string, sizeof(string), %s odrzuciÅ‚ zaproszenie., PlayerName(playerid))
 			bjMessageToAll(gameid, string)
 			BlackjackPlayer(playerid)(bjID) = INVALID_BLACKJACK_GAME_ID
 		)
@@ -227,17 +227,17 @@ hook OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 			(
 				if(GetPlayerPoints(playerid) )= 21)
 				(
-					GuiMsg(playerid, Posiadasz wiêcej b¹dŸ 21 punktów w swoich kartach., 1)
+					GuiMsg(playerid, Posiadasz wiÄ™cej bÄ…dÅº 21 punktÃ³w w swoich kartach., 1)
 					return 1
 				)
 				if(BlackjackPlayer(playerid)(bjpFold))
 				(
-					GuiMsg(playerid, U¿y³eœ opcji pasowania, poczekaj na kolejn¹ rundê., 1)
+					GuiMsg(playerid, UÅ¼yÅ‚eÅ› opcji pasowania, poczekaj na kolejnÄ… rundÄ™., 1)
 					return 1
 				)
 				if(BlackJack(gameid)(bjActivePlayerSlot) != GetPlayerSlotInBlackjack(playerid))
 				(
-					GuiMsg(playerid, Obecnie jest ruch innego gracza, odczekaj na swoj¹ kolejkê., 1)
+					GuiMsg(playerid, Obecnie jest ruch innego gracza, odczekaj na swojÄ… kolejkÄ™., 1)
 					return 1
 				)
 				else
@@ -252,21 +252,21 @@ hook OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 			(
 				if(GetPlayerPoints(playerid) )= 21)
 				(
-					GuiMsg(playerid, Posiadasz wiêcej b¹dŸ 21 punktów w swoich kartach., 1)
+					GuiMsg(playerid, Posiadasz wiÄ™cej bÄ…dÅº 21 punktÃ³w w swoich kartach., 1)
 					return 1
 				)
 				if(BlackjackPlayer(playerid)(bjpFold))
 				(
-					GuiMsg(playerid, U¿y³eœ opcji pasowania, poczekaj na kolejn¹ rundê., 1)
+					GuiMsg(playerid, UÅ¼yÅ‚eÅ› opcji pasowania, poczekaj na kolejnÄ… rundÄ™., 1)
 					return 1			
 				)
 				if(BlackJack(gameid)(bjActivePlayerSlot) != GetPlayerSlotInBlackjack(playerid))
 				(
-					GuiMsg(playerid, Obecnie jest ruch innego gracza, odczekaj na swoj¹ kolejkê., 1)
+					GuiMsg(playerid, Obecnie jest ruch innego gracza, odczekaj na swojÄ… kolejkÄ™., 1)
 				)
 				else
 				(
-					GuiMsg(playerid, Pasujesz. Od tej pory nie bêdziesz móg³ dobraæ kart w tej rundzie., 1)
+					GuiMsg(playerid, Pasujesz. Od tej pory nie bÄ™dziesz mÃ³gÅ‚ dobraÄ‡ kart w tej rundzie., 1)
 					BlackjackPlayer(playerid)(bjpFold) = true
 					CheckGameStatus(gameid)
 				)
@@ -295,20 +295,20 @@ CMD:blackjack(playerid,params())
 		objectid = GetClosestObject(playerid)
 		if(objectid == INVALID_OBJECT_ID || GetObjectModel(objectid) != OBJECT_BLACKJACK_TABLE)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie znaleziono sto³u do blackjacka w pobli¿u., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie znaleziono stoÅ‚u do blackjacka w pobliÅ¼u., OK, )
 			return 1
 		)*/
 		if(BlackjackPlayer(playerid)(bjID) != INVALID_BLACKJACK_GAME_ID)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Obecnie posiadasz ju¿ za³o¿ony stó³ do gry., OK, )
-			format(string, sizeof(string), ID sto³u: %d, BlackjackPlayer(playerid)(bjID))
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Obecnie posiadasz juÅ¼ zaÅ‚oÅ¼ony stÃ³Å‚ do gry., OK, )
+			format(string, sizeof(string), ID stoÅ‚u: %d, BlackjackPlayer(playerid)(bjID))
 			bjMessage(playerid, string)
 			return 1
 		)
 		gameid = GetFreeBlackjackID()
 		if(gameid == INVALID_BLACKJACK_GAME_ID)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie mo¿na utworzyæ gry., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie moÅ¼na utworzyÄ‡ gry., OK, )
 			return 1
 		)
 		BlackJack(gameid)(bjActive) = true
@@ -319,7 +319,7 @@ CMD:blackjack(playerid,params())
 		BlackJack(gameid)(bjOwner) = playerid
 		BlackjackPlayer(playerid)(bjID) = gameid
 		BlackjackPlayer(playerid)(bjpSeat) = slot
-		format(string, sizeof(string), Utworzono stó³. ID: %d (S: %d)., gameid, slot)
+		format(string, sizeof(string), Utworzono stÃ³Å‚. ID: %d (S: %d)., gameid, slot)
 		bjMessage(playerid, string)
 		return 1
 	)
@@ -329,12 +329,12 @@ CMD:blackjack(playerid,params())
 		gameid = BlackjackPlayer(playerid)(bjID)
 		if(BlackJack(gameid)(bjOwner) != playerid)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie jesteœ w³aœcicielem sto³u.\nAby za³o¿yæ, u¿yj /blackjack zaloz., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie jesteÅ› wÅ‚aÅ›cicielem stoÅ‚u.\nAby zaÅ‚oÅ¼yÄ‡, uÅ¼yj /blackjack zaloz., OK, )
 			return 1
 		)
 		if(BlackJack(gameid)(bjPhase) != BLACKJACK_PHASE_MAKE)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie mo¿esz zakoñczyæ gry w trakcie rozgrywki.\nPoczekaj na koniec rundy., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie moÅ¼esz zakoÅ„czyÄ‡ gry w trakcie rozgrywki.\nPoczekaj na koniec rundy., OK, )
 			return 1
 		)
 		for(i = 0 i ( 4 i++)
@@ -347,7 +347,7 @@ CMD:blackjack(playerid,params())
 			)
 		)
 		string(256)
-		format(string, sizeof(string), %s zamkn¹³ stó³. (ID: %d), PlayerName(playerid), gameid)
+		format(string, sizeof(string), %s zamknÄ…Å‚ stÃ³Å‚. (ID: %d), PlayerName(playerid), gameid)
 		bjMessageToAll(gameid, string)
 		ClearBlackjack(gameid)
 		return 1
@@ -363,42 +363,42 @@ CMD:blackjack(playerid,params())
 		)
 		if(BlackJack(gameid)(bjOwner) != playerid)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie jesteœ w³aœcicielem sto³u.\nAby za³o¿yæ, u¿yj /blackjack zaloz., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie jesteÅ› wÅ‚aÅ›cicielem stoÅ‚u.\nAby zaÅ‚oÅ¼yÄ‡, uÅ¼yj /blackjack zaloz., OK, )
 			return 1
 		)
 		if(targetid == INVALID_PLAYER_ID)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wprowadzono b³êdne ID gracza., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wprowadzono bÅ‚Ä™dne ID gracza., OK, )
 			return 1
 		)
 		if(!Logged(targetid))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Gracz o podanym ID nie jest zalogowany., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Gracz o podanym ID nie jest zalogowany., OK, )
 			return 1
 		)
 		if(targetid == playerid)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie mo¿esz zaprosiæ siebie samego do gry w blackjacka., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie moÅ¼esz zaprosiÄ‡ siebie samego do gry w blackjacka., OK, )
 			return 1
 		)
 		if(BlackjackPlayer(targetid)(bjID) != INVALID_BLACKJACK_GAME_ID)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Wybrany gracz jest ju¿ zapisany do sto³u., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Wybrany gracz jest juÅ¼ zapisany do stoÅ‚u., OK, )
 			return 1
 		)
 		if(BlackJack(gameid)(bjActivePlayers) )= 4)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie mo¿esz zaprosiæ ju¿ wiêcej graczy do tego sto³u., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie moÅ¼esz zaprosiÄ‡ juÅ¼ wiÄ™cej graczy do tego stoÅ‚u., OK, )
 			return 1
 		)
 		if(!PlayerToPlayer(5.0, playerid, targetid))
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Ten gracz nie jest blisko Ciebie., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Ten gracz nie jest blisko Ciebie., OK, )
 			return 1
 		)
 		BlackjackPlayer(targetid)(bjID) = gameid
-		ShowPlayerDialog(targetid, D_BLACKJACK_INVITE, DIALOG_STYLE_MSGBOX, BlackJack, Czy akceptujesz zaproszenie gracza do sto³u blackjackowego?, Tak, Nie)
-		bjMessage(playerid, Zaprosi³eœ gracza.)
+		ShowPlayerDialog(targetid, D_BLACKJACK_INVITE, DIALOG_STYLE_MSGBOX, BlackJack, Czy akceptujesz zaproszenie gracza do stoÅ‚u blackjackowego?, Tak, Nie)
+		bjMessage(playerid, ZaprosiÅ‚eÅ› gracza.)
 		return 1
 	)
 	
@@ -406,11 +406,11 @@ CMD:blackjack(playerid,params())
 	(
 		if(BlackjackPlayer(playerid)(bjID) == INVALID_BLACKJACK_GAME_ID)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie jesteœ zaproszony do ¿adnego sto³u., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie jesteÅ› zaproszony do Å¼adnego stoÅ‚u., OK, )
 			return 1
 		)
 		gameid = BlackjackPlayer(playerid)(bjID), slotid = BlackjackPlayer(playerid)(bjpSeat), string(256)
-		format(string, sizeof(string), %s opuœci³ stó³ (S: %d), PlayerName(playerid), slotid)
+		format(string, sizeof(string), %s opuÅ›ciÅ‚ stÃ³Å‚ (S: %d), PlayerName(playerid), slotid)
 		bjMessageToAll(gameid, string)
 		BlackJack(gameid)(bjActivePlayers)--
 		if(BlackJack(gameid)(bjActivePlayers) == 0)
@@ -421,7 +421,7 @@ CMD:blackjack(playerid,params())
 		BlackJack(gameid)(bjSlot)(slotid) = INVALID_PLAYER_ID
 		BlackjackPlayer(playerid)(bjID) = INVALID_BLACKJACK_GAME_ID
 		hrp_TogglePlayerControllable(playerid, true)
-		bjMessage(playerid, Opuœci³eœ stó³.)
+		bjMessage(playerid, OpuÅ›ciÅ‚eÅ› stÃ³Å‚.)
 		return 1
 	)
 	
@@ -430,22 +430,22 @@ CMD:blackjack(playerid,params())
 		gameid = BlackjackPlayer(playerid)(bjID), string(256)
 		if(gameid == INVALID_BLACKJACK_GAME_ID)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie jesteœ w³aœcicielem sto³u.\nAby za³o¿yæ, u¿yj /blackjack zaloz., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie jesteÅ› wÅ‚aÅ›cicielem stoÅ‚u.\nAby zaÅ‚oÅ¼yÄ‡, uÅ¼yj /blackjack zaloz., OK, )
 			return 1
 		)
 		if(BlackJack(gameid)(bjOwner) != playerid)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie jesteœ w³aœcicielem tego sto³u., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Nie jesteÅ› wÅ‚aÅ›cicielem tego stoÅ‚u., OK, )
 			return 1
 		)
 		if(BlackJack(gameid)(bjActivePlayers) ( BLACKJACK_NEEDED_PLAYERS || BlackJack(gameid)(bjActivePlayers) ) BLACKJACK_MAX_PLAYERS)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Aby wystartowaæ grê przy stole musi usi¹œæ przynajmniej 2 graczy., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Aby wystartowaÄ‡ grÄ™ przy stole musi usiÄ…Å›Ä‡ przynajmniej 2 graczy., OK, )
 			return 1
 		)
 		if(BlackJack(gameid)(bjPhase) != BLACKJACK_PHASE_MAKE)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Aktualnie prowadzisz rozgrywkê., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Aktualnie prowadzisz rozgrywkÄ™., OK, )
 			return 1
 		)
 		money
@@ -456,7 +456,7 @@ CMD:blackjack(playerid,params())
 		)
 		if(money ( 1 || money ) 10000)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Kwota nie mo¿e byæ mniejsza ni¿ $1, ani wiêksza ni¿ $10000., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, WystÄ…piÅ‚ bÅ‚Ä…d, Kwota nie moÅ¼e byÄ‡ mniejsza niÅ¼ $1, ani wiÄ™ksza niÅ¼ $10000., OK, )
 			return 1
 		)
 		for(i = 0  i ( 4 i++)
@@ -465,7 +465,7 @@ CMD:blackjack(playerid,params())
 			(
 				if(PlayerCache(BlackJack(gameid)(bjSlot)(i))(pCash) ( money)
 				(
-					format(string, sizeof(string), Gracz %s nie posiada wystarczaj¹cej gotówki ($%d)., PlayerName(BlackJack(gameid)(bjSlot)(i)), money)
+					format(string, sizeof(string), Gracz %s nie posiada wystarczajÄ…cej gotÃ³wki ($%d)., PlayerName(BlackJack(gameid)(bjSlot)(i)), money)
 					bjMessageToAll(gameid, string)
 					return 1
 				)
@@ -479,7 +479,7 @@ CMD:blackjack(playerid,params())
 				hrp_GivePlayerMoney(BlackJack(gameid)(bjSlot)(i), -money)
 			)
 		)
-		format(string, sizeof(string), %s rozpocz¹³ grê., PlayerName(playerid))
+		format(string, sizeof(string), %s rozpoczÄ…Å‚ grÄ™., PlayerName(playerid))
 		bjMessageToAll(gameid, string)
 		StartBlackjack(gameid)
 		return 1
@@ -487,7 +487,7 @@ CMD:blackjack(playerid,params())
 	if(!strcmp(type, pomoc, true))
 	(
 		string(512)
-		format(string, sizeof(string), Instrukcja do gry w BlackJacka na LS-RP.net!\nAby dobraæ kartê, naciœnij (6e9aff)LEWY PRZYCISK MYSZKI(a4c0ff). Aby pasowaæ, wciœnij (6e9aff)PRAWY PRZYCISK MYSZKI(a4c0ff).\nMusisz uzyskaæ iloœæ punktów, która jest najbli¿ej 21 pkt.\nKa¿da karta od 2 do 9 ma wartoœæ równ¹ wartoœci karty.\nAs ma wartoœæ równ¹ 11.\nW Blackjacku u¿ywa siê kilku talii z³o¿onych z 52 kart z których u¿ywa siê od jednej a¿ do szeœciu.\nIm mniej, tym lepiej dla gracza.\nPowodzenia!)
+		format(string, sizeof(string), Instrukcja do gry w BlackJacka na LS-RP.net!\nAby dobraÄ‡ kartÄ™, naciÅ›nij (6e9aff)LEWY PRZYCISK MYSZKI(a4c0ff). Aby pasowaÄ‡, wciÅ›nij (6e9aff)PRAWY PRZYCISK MYSZKI(a4c0ff).\nMusisz uzyskaÄ‡ iloÅ›Ä‡ punktÃ³w, ktÃ³ra jest najbliÅ¼ej 21 pkt.\nKaÅ¼da karta od 2 do 9 ma wartoÅ›Ä‡ rÃ³wnÄ… wartoÅ›ci karty.\nAs ma wartoÅ›Ä‡ rÃ³wnÄ… 11.\nW Blackjacku uÅ¼ywa siÄ™ kilku talii zÅ‚oÅ¼onych z 52 kart z ktÃ³rych uÅ¼ywa siÄ™ od jednej aÅ¼ do szeÅ›ciu.\nIm mniej, tym lepiej dla gracza.\nPowodzenia!)
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, BlackJack: Instrukcja, string, OK, )
 		return 1
 	)
@@ -496,7 +496,7 @@ CMD:blackjack(playerid,params())
 
 
 /*
-	Ogólne funkcje
+	OgÃ³lne funkcje
 */
 
 // Czyszczenie tablic
@@ -522,7 +522,7 @@ stock bjMessage(playerid, givenString())
 	return 1
 )
 
-// Komunikat blackjackowy dla ka¿dego przy stole
+// Komunikat blackjackowy dla kaÅ¼dego przy stole
 stock bjMessageToAll(gameid, givenString())
 (
 	string(256)
@@ -577,7 +577,7 @@ stock GetPlayerSlotInBlackjack(playerid)
 	return INVALID_BLACKJACK_SLOT_ID
 )
 
-// Wybieranie nastêpnego aktywnego gracza
+// Wybieranie nastÄ™pnego aktywnego gracza
 stock SelectNextPlayer(gameid)
 (
 	if(BlackJack(gameid)(bjActivePlayerSlot) )= BlackJack(gameid)(bjActivePlayers)-1)
@@ -608,7 +608,7 @@ stock ClearPlayerCache(playerid)
 	hrp_TogglePlayerControllable(playerid, true)
 )
 
-// Koñczenie gry
+// KoÅ„czenie gry
 stock EndGame(gameid)
 (
 	string(256)
@@ -643,7 +643,7 @@ stock EndGame(gameid)
 				hrp_GivePlayerMoney(BlackJack(gameid)(bjSlot)(i), BlackJack(gameid)(bjMoney))
 			)
 		)
-		format(string, sizeof(string), (6e9aff)BlackJack(a4c0ff): Brak zwyciêzcy, zwrot gotówki dla ka¿dego.)
+		format(string, sizeof(string), (6e9aff)BlackJack(a4c0ff): Brak zwyciÄ™zcy, zwrot gotÃ³wki dla kaÅ¼dego.)
 		bjMessageToAll(gameid, string)
 	)
 	else
@@ -661,7 +661,7 @@ stock EndGame(gameid)
 		
 		money_in_game = BlackJack(gameid)(bjActivePlayers)*BlackJack(gameid)(bjMoney)
 		prize = 0		
-		if(count == 1) // jeden zwyciêzca
+		if(count == 1) // jeden zwyciÄ™zca
 		(
 			prize = money_in_game
 		)
@@ -694,7 +694,7 @@ stock EndGame(gameid)
 		(
 			hrp_GivePlayerMoney(BlackJack(gameid)(bjSlot)(3), prize)
 		)
-		format(string, sizeof(string), (6e9aff)BlackJack(a4c0ff): Koniec rozgrywki, gratulacje dla zwyciêzcy/ów!)
+		format(string, sizeof(string), (6e9aff)BlackJack(a4c0ff): Koniec rozgrywki, gratulacje dla zwyciÄ™zcy/Ã³w!)
 		bjMessageToAll(gameid, string)
 	)
 	
@@ -775,7 +775,7 @@ stock CheckGameStatus(gameid)
 	)
 )
 
-// Sprawdzanie punktów gracza
+// Sprawdzanie punktÃ³w gracza
 stock GetPlayerPoints(playerid)
 (
 	gameid = BlackjackPlayer(playerid)(bjID)
@@ -820,7 +820,7 @@ stock RandomCard(playerid)
 	return 1
 )
 
-// Rozpoczêcie gry
+// RozpoczÄ™cie gry
 stock StartBlackjack(gameid)
 (
 	BlackJack(gameid)(bjActivePlayerSlot) = 0
@@ -845,7 +845,7 @@ stock StartBlackjack(gameid)
 	return 1
 )
 
-// Odœwie¿anie tabelki
+// OdÅ›wieÅ¼anie tabelki
 stock BlackjackRefreshTable(gameid)
 (
 	for(i = 0 i ( 4)

@@ -1,5 +1,5 @@
 
-// Nie forwardowaæ, to nowa funkcja 0.3z - wiêc jak siê ma stary kompilator to wyrzuci b³¹d o braku forwarda - ZIGNOROWAÆ
+// Nie forwardować, to nowa funkcja 0.3z - więc jak się ma stary kompilator to wyrzuci błąd o braku forwarda - ZIGNOROWAĆ
 public OnIncomingConnection(playerid, ip_address(), port)
 (
 	SendRconCommand(reloadbans)
@@ -31,7 +31,7 @@ public OnPlayerConnect(playerid)
 		GetPlayerIp(playerid, ip, sizeof(ip))
 		if(strcmp(127.0.0.1, ip) != 0)
 		(
-			// Jakiœ bot spoza LS-RP
+			// Jakiś bot spoza LS-RP
 			Kick(playerid)
 			return 1
 		)
@@ -48,7 +48,7 @@ public OnPlayerConnect(playerid)
 		Logged(playerid) = true
 		return 1
 	)
-	// KONIEC BOTÓW W £¥CZENIU
+	// KONIEC BOTÓW W ŁĄCZENIU
 	
 	InitFly(playerid) 
 	InitDive(playerid)
@@ -75,11 +75,11 @@ public OnPlayerConnect(playerid)
 	)
 	
 	
-	// Sprawd?, czy konto istnieje w bazie
+	// Sprawdź, czy konto istnieje w bazie
 	data(32)
 	mysql_query_format(SELECT char_uid, char_gid FROM hrp_characters WHERE BINARY char_name LIKE %s LIMIT 1, PlayerOriginalName(playerid))
 	
-	printf((mysql) Zaczynam sprawdzaæ gracza %s w bazie danych..., PlayerRealName(playerid))
+	printf((mysql) Zaczynam sprawdzać gracza %s w bazie danych..., PlayerRealName(playerid))
 
 	mysql_store_result()
 	if(mysql_fetch_row(data, |))
@@ -89,9 +89,9 @@ public OnPlayerConnect(playerid)
 	)
  	else
   	(
-   		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystšpi³ b³šd, Nie posiadasz u nas konta, za³ó¿ je na WEB_URL., OK, )
+   		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystąpił błąd, Nie posiadasz u nas konta, załóż je na WEB_URL., OK, )
 
-		printf((mysql) Gracz %s nie zosta³ odnaleziony w bazie danych - zostaje wyrzucony z serwera., PlayerRealName(playerid))
+		printf((mysql) Gracz %s nie został odnaleziony w bazie danych - zostaje wyrzucony z serwera., PlayerRealName(playerid))
 		Kick(playerid)
 	)
 	mysql_free_result()
@@ -101,7 +101,7 @@ public OnPlayerConnect(playerid)
 	//redis_command(string)
 	CheckBans(playerid)
 	
-	// To miejsce dla odbanowanych za czity, ¿eby mogli wchodziæ wy³¹cznie przez launcher na serwer.
+	// To miejsce dla odbanowanych za czity, żeby mogli wchodzić wyłącznie przez launcher na serwer.
 /*	if(PlayerCache(playerid)(pGID) == 000000)
 	(
 		printf((kick)(cheater) wyrzucono GID: %d bo jest na blackliscie, PlayerCache(playerid)(pGID))
@@ -111,7 +111,7 @@ public OnPlayerConnect(playerid)
 	if(!IsGlobalLogged(PlayerCache(playerid)(pGID)))
 	(
 		TogglePlayerSpectating(playerid, true)	
-		printf((mysql) Gracz %s (UID: %d, GID: %d) zosta³ odnaleziony w bazie danych - przechodzê do logowania., PlayerRealName(playerid), PlayerCache(playerid)(pUID), PlayerCache(playerid)(pGID))
+		printf((mysql) Gracz %s (UID: %d, GID: %d) został odnaleziony w bazie danych - przechodzę do logowania., PlayerRealName(playerid), PlayerCache(playerid)(pUID), PlayerCache(playerid)(pGID))
 
 		passIP(16), bool:done
 		GetPlayerIp(playerid, passIP, sizeof(passIP))
@@ -120,7 +120,7 @@ public OnPlayerConnect(playerid)
 		mysql_store_result()
 		if(mysql_fetch_row(data, |))
 		(
-			printf((log) Logowanie gracza %s (UID: %d, GID: %d) przebieg³o pomy?lnie., PlayerRealName(playerid), PlayerCache(playerid)(pUID), PlayerCache(playerid)(pGID))
+			printf((log) Logowanie gracza %s (UID: %d, GID: %d) przebiegło pomyślnie., PlayerRealName(playerid), PlayerCache(playerid)(pUID), PlayerCache(playerid)(pGID))
 
 			sscanf(data, p(|)s(64)ddddd, PlayerCache(playerid)(pGlobalName), PlayerCache(playerid)(pAdmin), PlayerCache(playerid)(pPremium), PlayerCache(playerid)(pPremiumTime), PlayerCache(playerid)(pGamePoints), PlayerCache(playerid)(pUserColor))
 			AddPlayerLoginLog(playerid, true)
@@ -135,11 +135,11 @@ public OnPlayerConnect(playerid)
 		mysql_free_result()
 		
 		if(done) OnPlayerLogin(playerid)
-		else ShowPlayerDialog(playerid, D_LOGIN, DIALOG_STYLE_PASSWORD, Panel logowania, Witaj na serwerze SERVER_NAME.\nWprowadz haslo do konta, aby moc rozpoczac gre., Zaloguj, WyjdŸ)
+		else ShowPlayerDialog(playerid, D_LOGIN, DIALOG_STYLE_PASSWORD, Panel logowania, Witaj na serwerze SERVER_NAME.\nWprowadz haslo do konta, aby moc rozpoczac gre., Zaloguj, WyjdĹ¸)
 	)
 	else
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystšpi³ b³šd, Obecnie na serwerze zalogowana jest ju¿ jaka? postaæ z tego konta globalnego., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystąpił błąd, Obecnie na serwerze zalogowana jest już jakaś postać z tego konta globalnego., OK, )
 		Kick(playerid)
 	)
 	
@@ -162,7 +162,7 @@ public OnPlayerLogin(playerid)
 	
 	if(Uid(PlayerCache(playerid)(pUID)) + 20 ) gettime())
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystšpi³ b³šd, Nie czaruj mi tu ..., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystąpił błąd, Nie czaruj mi tu ..., OK, )
 		SendClientMessage(playerid, COLOR_WHITE, Nie czaruj mi tu ...)
 		Kick(playerid)
 		return 0
@@ -279,13 +279,13 @@ public OnPlayerLogin(playerid)
 	
 	LoadPlayerPunish(playerid)
 
-	printf((load) Proces wczytywania statystyk gracza %s (UID: %d, GID: %d) zosta³ zakoñczony (czas trwania: %d ms)., PlayerName(playerid), PlayerCache(playerid)(pUID), PlayerCache(playerid)(pGID), GetTickCount() - tick_count)
+	printf((load) Proces wczytywania statystyk gracza %s (UID: %d, GID: %d) został zakończony (czas trwania: %d ms)., PlayerName(playerid), PlayerCache(playerid)(pUID), PlayerCache(playerid)(pGID), GetTickCount() - tick_count)
 	mysql_query_format(UPDATE hrp_characters, members SET member_online = 1, char_online = 1 WHERE member_gid = %d AND char_uid = %d, PlayerCache(playerid)(pGID), PlayerCache(playerid)(pUID))
 
 	mysql_query_format(INSERT INTO hrp_ingame (uid, gid, tin) VALUES(%d, %d, %d), PlayerCache(playerid)(pUID), PlayerCache(playerid)(pUID), gettime())
 	PlayerCache(playerid)(pIGDBID) = mysql_insert_id()
 	
-	// Czas spêdzony w grze
+	// Czas spędzony w grze
 	mysql_query_format(INSERT INTO hrp_ingame VALUES(NULL, %d, %d, %d, 0, 0), PlayerCache(playerid)(pUID), PlayerCache(playerid)(pGID), gettime())
 	result_id = mysql_insert_id()
 	PlayerCache(playerid)(pIGDBID) = result_id
@@ -325,10 +325,10 @@ public OnPlayerLogin(playerid)
 		hrp_SetPlayerHealth(playerid, 20)
 	)
 	
-	// Je?li zablokowane konto
+	// Jeśli zablokowane konto
 	if(PlayerCache(playerid)(pBlock) & BLOCK_CHAR)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Twoja postaæ zosta³a zablokowana, powód znajdziesz w panelu na stronie.\nZa³ó¿ nowš lub ubiegaj siê o odblokowanie poprzedniej., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Twoja postać została zablokowana, powód znajdziesz w panelu na stronie.\nZałóż nową lub ubiegaj się o odblokowanie poprzedniej., OK, )
 		Kick(playerid)
 		return 1
 	)
@@ -381,7 +381,7 @@ public OnPlayerLogin(playerid)
 	Logged(playerid) = true
 	
 	SetSpawnInfo(playerid, TEAM_DEFAULT, PlayerCache(playerid)(pSkin), SettingData(MainSpawnPos)(0), SettingData(MainSpawnPos)(1), SettingData(MainSpawnPos)(2), SettingData(MainSpawnPos)(3), 0, 0, 0, 0, 0, 0)
-	SendClientFormatMessage(playerid, 0xF5DEB3FF, Witaj, (FFFFFF)%s(F5DEB3). Zalogowaleœ siê na postaæ (FFFFFF)%s(F5DEB3). Milej gry!, PlayerCache(playerid)(pGlobalName), PlayerName(playerid))
+	SendClientFormatMessage(playerid, 0xF5DEB3FF, Witaj, (FFFFFF)%s(F5DEB3). Zalogowaleś się na postać (FFFFFF)%s(F5DEB3). Milej gry!, PlayerCache(playerid)(pGlobalName), PlayerName(playerid))
 
 	if(PlayerCache(playerid)(pAdmin) ) 0)
 	(
@@ -409,17 +409,17 @@ public OnPlayerLogin(playerid)
 	
 	hrp_SerialLog(Gracz %s (UID: %d) zalogowal sie z GPCI: %s, PlayerName(playerid), PlayerCache(playerid)(pUID), getPlayerSerial(playerid))
 	
-	PrintPlayerOfflineMessages(playerid)		// wiadomoœci offline
+	PrintPlayerOfflineMessages(playerid)		// wiadomości offline
 	
 	GetPlayerFameStatus(playerid)
 	
-	// Sprawdzanie przekrêtów z kasš
+	// Sprawdzanie przekrętów z kasą
 	if(CheckSumCheck)
 	(
 		if(PlayerCache(playerid)(pChecksum) != (((((PlayerCache(playerid)(pCash) + PlayerCache(playerid)(pBankCash)) + 31) * 3) + PlayerCache(playerid)(pUID)) + 3))
 		(
 			/*info(256)
-			format(info, sizeof(info), Zostajesz zabnowany poniewa¿ istnieje powa¿ne prawdopodobnieñstwo pozasystemowej manipulacji\nstatystykami Twojej postaci. Zrób zrzut ekranu z tej informacji i za³šcz do apelacji.\n\n#aod: %d\n#dle: %d\n#oem: %d, (((PlayerCache(playerid)(pCash) + 6) * 6) * 4), (((PlayerCache(playerid)(pBankCash) + 3) * 2) * 5), (((PlayerCache(playerid)(pChecksum) + 133) * -3) * 3))
+			format(info, sizeof(info), Zostajesz zabnowany ponieważ istnieje poważne prawdopodobnieństwo pozasystemowej manipulacji\nstatystykami Twojej postaci. Zrób zrzut ekranu z tej informacji i załącz do apelacji.\n\n#aod: %d\n#dle: %d\n#oem: %d, (((PlayerCache(playerid)(pCash) + 6) * 6) * 4), (((PlayerCache(playerid)(pBankCash) + 3) * 2) * 5), (((PlayerCache(playerid)(pChecksum) + 133) * -3) * 3))
 		
 			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, info, OK, )
 			hrp_Ban(playerid, -1, Pozasystemowa manipulacja statystykami., 0)*/
@@ -453,7 +453,7 @@ public OnPlayerDisconnect(playerid, reason)
 		SetVehicleHealth(courseveh, CarInfo(courseveh)(cHealth))
 	)
 	
-	// Zamknij okno speca, jeœli ktoœ go specuje
+	// Zamknij okno speca, jeśli ktoś go specuje
 	for(i = 0  i ( MAX_PLAYERS i++)
 	(
 		if(PlayerCache(i)(pSpectate) == playerid)
@@ -464,7 +464,7 @@ public OnPlayerDisconnect(playerid, reason)
 		)
 	)
 	
-	// dodaj tutaj zapis g³odu i dailyincome i dailydrugs
+	// dodaj tutaj zapis głodu i dailyincome i dailydrugs
 	mysql_query_format(UPDATE hrp_characters SET char_dailyincome = %d, char_dailydrugs = %d WHERE char_uid = %d, PlayerCache(playerid)(pDailyIncome), PlayerCache(playerid)(pDailyDrugs), PlayerCache(playerid)(pUID))
 	
 	Uid(PlayerCache(playerid)(pUID)) = gettime()
@@ -630,7 +630,7 @@ public OnPlayerDisconnect(playerid, reason)
 		)
 	)
 	
-	// Je?li na s³u¿bie grupy
+	// Jeśli na służbie grupy
 	if(PlayerCache(playerid)(pGroupDuty))
 	(
 		group_id_fix = GetPlayerDutyGroupID(playerid),
@@ -654,12 +654,12 @@ public OnPlayerDisconnect(playerid, reason)
 		OnPlayerDutyStop(playerid)
 	)
 
-	// Je?li by³ w poje?dzie
+	// Jeśli był w pojeździe
 	if(PlayerCache(playerid)(pLastVeh) != INVALID_VEHICLE_ID)
 	(
 		vehid = PlayerCache(playerid)(pLastVeh)
 
-		// W³šczony GPS
+		// Włączony GPS
 		if(CarInfo(vehid)(cGPS))
 		(
   			for (i = 0 i (= CountDynamicMapIcons() i++)
@@ -703,14 +703,14 @@ public OnPlayerDisconnect(playerid, reason)
 		mysql_query_format(UPDATE hrp_items SET item_used = 0, item_value2 = %d WHERE item_uid = %d LIMIT 1, ItemInfo(itemid)(iValue2), ItemInfo(itemid)(iUID))
 	)
 	
-	// Je?li ma kamizelkê w u¿yciu
+	// Jeśli ma kamizelkę w użyciu
 	if(PlayerCache(playerid)(pArmour))
 	(
 		itemid = GetPlayerUsingArmourID(playerid)
   		mysql_query_format(UPDATE hrp_items SET item_value1 = %d, item_used = 0 WHERE item_uid = %d LIMIT 1, floatround(PlayerCache(playerid)(pArmour)), ItemInfo(itemid)(iUID))
 	)
 	
-	// Je?li u¿ywa karnetu
+	// Jeśli używa karnetu
 	if(PlayerCache(playerid)(pGymPass))
 	(
  		itemid = PlayerCache(playerid)(pGymPass)
@@ -721,7 +721,7 @@ public OnPlayerDisconnect(playerid, reason)
 		mysql_query_format(UPDATE hrp_items SET item_used = %d, item_value1 = %d WHERE item_uid = %d LIMIT 1, ItemInfo(itemid)(iUsed), ItemInfo(itemid)(iValue1), ItemInfo(itemid)(iUID))
 	)
 	
-	// Je?li u¿ywa wejsciowki na paintball
+	// Jeśli używa wejsciowki na paintball
 	if(PlayerCache(playerid)(pPaintballPass))
 	(
  		itemid = PlayerCache(playerid)(pPaintballPass)
@@ -734,7 +734,7 @@ public OnPlayerDisconnect(playerid, reason)
 	
 	mysql_query_format(UPDATE hrp_characters, members SET member_online = 0, char_online = 0 WHERE member_gid = %d AND char_uid = %d, PlayerCache(playerid)(pGID), PlayerCache(playerid)(pUID))
 	
-	// Zabierz kasê za przejechany kurs taksówkš
+	// Zabierz kasę za przejechany kurs taksówką
 	if(PlayerCache(playerid)(pTaxiVeh) != INVALID_VEHICLE_ID)
  	(
   		driverid = GetVehicleDriver(PlayerCache(playerid)(pTaxiVeh)), price = PlayerCache(playerid)(pTaxiPay)
@@ -754,13 +754,13 @@ public OnPlayerDisconnect(playerid, reason)
    			GroupData(group_id_fix)(gCash) += group_cash
 			SaveGroup(group_id_fix)
 			
-			format(string, sizeof(string), Otrzyma³e? premiê w wysoko?ci $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
+			format(string, sizeof(string), Otrzymałeś premię w wysokości $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
 			ShowPlayerDialog(driverid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
 		)
 		PlayerCache(driverid)(pTaxiPassenger) = INVALID_PLAYER_ID
 	)
 	
-	// Zakoñcz transmisje na ¿ywo
+	// Zakończ transmisje na żywo
 	if(PlayerCache(playerid)(pLive))
 	(
 		group_id_fix = GetPlayerDutyGroupID(playerid), radioslot = GetRadioSlot(group_id_fix)
@@ -769,7 +769,7 @@ public OnPlayerDisconnect(playerid, reason)
 		RadioData(radioslot)(IsUsingRadio) = false
 	)
 	
-	// Zakoñcz wywiad
+	// Zakończ wywiad
 	if(PlayerCache(playerid)(pInterview) != INVALID_PLAYER_ID)
 	(
 		interviewer_id = PlayerCache(playerid)(pInterview), radioslot = PlayerCache(playerid)(pInterviewSlot)
@@ -779,10 +779,10 @@ public OnPlayerDisconnect(playerid, reason)
   		format(string, sizeof(string), RADIO ~)~ Ostatni wywiad z %s przeprowadzil %s., PlayerName(interviewer_id), PlayerName(playerid))
 		TextDrawSetString(Text:TextDrawRadio(radioslot), string)
 		RadioData(radioslot)(IsUsingRadio) = false
-		ShowPlayerDialog(interviewer_id, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Wywiad zosta³ zakoñczony., OK, )
+		ShowPlayerDialog(interviewer_id, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Wywiad został zakończony., OK, )
 	)
 	
-	// Je¿eli by³ w AJ
+	// Jeżeli był w AJ
 	if(PlayerCache(playerid)(pAJ))
 	(
 		mysql_query_format(UPDATE hrp_punishlogs SET punish_value = %d WHERE punish_owneruid = %d AND punish_type = %d, PlayerCache(playerid)(pAJ), PlayerCache(playerid)(pUID), PUNISH_AJ)
@@ -824,7 +824,7 @@ public OnPlayerSpawn(playerid)
 	
 	if(!Logged(playerid))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystšpi³ b³šd, Aby móc rozpoczšæ grê, musisz siê zalogowaæ.\nZostajesz wyrzucony z serwera., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystąpił błąd, Aby móc rozpocząć grę, musisz się zalogować.\nZostajesz wyrzucony z serwera., OK, )
 		Kick(playerid)
 		return 1
 	)
@@ -877,7 +877,7 @@ public OnPlayerSpawn(playerid)
 	
 	if(IsPlayerInGroupType(playerid, GROUP_CRIMINAL))
 	(
-		// no niech odœwie¿y wygl¹d minimapki
+		// no niech odświeży wygląd minimapki
 		HidePlayerAllZones(playerid)
 		ShowPlayerAllZones(playerid)
 	)
@@ -953,8 +953,8 @@ public OnPlayerSpawn(playerid)
 	
 	if(PlayerCache(playerid)(pAdmin) != 0 && !PlayerCache(playerid)(pVerificated) && !DEBUG_MODE)
 	(
-		//Wy³¹czona autoryzacja g-auth, seler
-		//ShowPlayerDialog(playerid, D_VERIFICATE, DIALOG_STYLE_INPUT, Weryfikacja dwuetapowa, Wypisz poni¿ej kod wygenerowany przez aplikacjê Google Authenticator., Gotowe, Anuluj)
+		//Wyłączona autoryzacja g-auth, seler
+		//ShowPlayerDialog(playerid, D_VERIFICATE, DIALOG_STYLE_INPUT, Weryfikacja dwuetapowa, Wypisz poniżej kod wygenerowany przez aplikację Google Authenticator., Gotowe, Anuluj)
 	)
 	
 	return 1
@@ -975,7 +975,7 @@ public SetPlayerSpawn(playerid)
 		SetPlayerInterior(playerid, PlayerCache(playerid)(pInt))
 
 		PlayerCache(playerid)(pSpectate) = INVALID_PLAYER_ID
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Podglšdanie gracza zosta³o przerwane., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Podglądanie gracza zostało przerwane., OK, )
 		return 1
 	)
 	if(PlayerCache(playerid)(pAJ))
@@ -1024,7 +1024,7 @@ public SetPlayerSpawn(playerid)
 		
 		if(PlayerCache(playerid)(pArrestTime) (= 1)
 		(
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Twój wyrok dobieg³ koñca.\nTeraz mo¿esz opuœciæ areszt podchodz¹c do wyjœcia i u¿ywaj¹c komendy /opusc, b¹dŸ pozostaæ i graæ dalej tutaj.\nMi³ej gry!, OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Twój wyrok dobiegł końca.\nTeraz możesz opuścić areszt podchodząc do wyjścia i używając komendy /opusc, bądĹ¸ pozostać i grać dalej tutaj.\nMiłej gry!, OK, )
 		)
 		
 		return 1
@@ -1145,7 +1145,7 @@ public SetPlayerSpawn(playerid)
 	
 	SetCameraBehindPlayer(playerid)
 	
-	if(PlayerCache(playerid)(pHours) ( 1)	ShowPlayerDialog(playerid, D_INTRODUCTION, DIALOG_STYLE_MSGBOX, Wprowadzenie (1/2), Witaj na serwerze SERVER_NAME.\n\nPojawi³eœ siê w metrze Los Santos, na mieœcie znajdziesz wiele ró¿nego rodzaju\ninstytucji, dziêki którym bêdziesz móg³ przyj¹æ siê do pracy\na tak¿e skorzystaæ z ich us³ug np. kupiæ telefon, b¹dŸ zjeœæ obiad.\n\nNa pierwszy etat udaj siê do urzêdu miasta, by wyrobiæ dokumenty niezbêdne do gry., Dalej, Zamknij)
+	if(PlayerCache(playerid)(pHours) ( 1)	ShowPlayerDialog(playerid, D_INTRODUCTION, DIALOG_STYLE_MSGBOX, Wprowadzenie (1/2), Witaj na serwerze SERVER_NAME.\n\nPojawiłeś się w metrze Los Santos, na mieście znajdziesz wiele różnego rodzaju\ninstytucji, dzięki którym będziesz mógł przyjąć się do pracy\na także skorzystać z ich usług np. kupić telefon, bądĹ¸ zjeść obiad.\n\nNa pierwszy etat udaj się do urzędu miasta, by wyrobić dokumenty niezbędne do gry., Dalej, Zamknij)
 	return 1
 )
 
@@ -1154,7 +1154,7 @@ public OnPlayerDeath(playerid, killerid, reason)
 	// paintball
 	if(PlayerCache(playerid)(pPaintballPass))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Zosta³eœ trafiony podczas gry w paintball.\nWróci³eœ siê na miejsce rozpoczêcia gry., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Zostałeś trafiony podczas gry w paintball.\nWróciłeś się na miejsce rozpoczęcia gry., OK, )
 		hrp_SetPlayerHealth(playerid, 100)
 		hrp_SetPlayerHealth(playerid, 100)
 		
@@ -1252,7 +1252,7 @@ public OnPlayerDeath(playerid, killerid, reason)
 				if(PlayerCache(playerid)(pFCK) ) gettime() && !PlayerCache(playerid)(pSparing))
 				(
 					string(768)
-					format(string, sizeof(string), Na skutek otrzymanych obra¿eñ, straci³eœ przytomnoœæ.\n\n)
+					format(string, sizeof(string), Na skutek otrzymanych obrażeń, straciłeś przytomność.\n\n)
 					format(string, sizeof(string), %sGamemaster zaakceptowal podanie o CK na glowe Twojej postaci.\n, string)
 					format(string, sizeof(string), %sPonizej zdecyduj czy ta smierc byla wynikiem buga czy tez prawidlowym zabojstwem.\n, string)
 					format(string, sizeof(string), %sJezeli ta smierc wynika z buga typu skakanie przez plotki czy budowanie interiorow, kliknij \anuluj\.\n, string)
@@ -1262,11 +1262,11 @@ public OnPlayerDeath(playerid, killerid, reason)
 					format(string, sizeof(string), %s\nKLAMSTWO PRZY WYBORZE SKONCZY SIE AUTOMATYCZNA, PERMAMENTNA BANICJA\n\n, string)
 					format(string, sizeof(string), %s(ffffff)Czy zabic Twoja postac?, string)
 
-					ShowPlayerDialog(playerid, D_FCK_DECISION, DIALOG_STYLE_MSGBOX, Śmierć postaci, string, Zabij, Anuluj)
+					ShowPlayerDialog(playerid, D_FCK_DECISION, DIALOG_STYLE_MSGBOX, ĹšmierÄ‡ postaci, string, Zabij, Anuluj)
 				)
 				else
 				(
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Na skutek otrzymanych obra¿eñ, straci³eœ przytomnoœæ.\nPoczekaj do czasu gdy siê ockniesz, lub przyjedzie karetka., OK, )
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Na skutek otrzymanych obrażeń, straciłeś przytomność.\nPoczekaj do czasu gdy się ockniesz, lub przyjedzie karetka., OK, )
 				)
 			)
 			else
@@ -1277,7 +1277,7 @@ public OnPlayerDeath(playerid, killerid, reason)
 				) else (
 					PlayerCache(playerid)(pBW) = 5 * 60
 				)
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Na skutek otrzymanych obra¿eñ, straci³eœ przytomnoœæ.\nPoczekaj do czasu gdy siê ockniesz, lub przyjedzie karetka.\nZosta³eœ zabity przez gracza maj¹cego na koncie mniej ni¿ 10 godzin gry, BW zosta³o skrócone do 5 min., OK, )
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Na skutek otrzymanych obrażeń, straciłeś przytomność.\nPoczekaj do czasu gdy się ockniesz, lub przyjedzie karetka.\nZostałeś zabity przez gracza mającego na koncie mniej niż 10 godzin gry, BW zostało skrócone do 5 min., OK, )
 			)
 			
 			if(!PlayerCache(killerid)(pGloves))
@@ -1313,7 +1313,7 @@ public OnPlayerDeath(playerid, killerid, reason)
 			) else (
 				PlayerCache(playerid)(pBW) = 10 * 60
 			)
-			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Na skutek otrzymanych obra¿eñ, straci³eœ przytomnoœæ.\nPoczekaj do czasu gdy siê ockniesz, lub przyjedzie karetka., OK, )
+			ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, Na skutek otrzymanych obrażeń, straciłeś przytomność.\nPoczekaj do czasu gdy się ockniesz, lub przyjedzie karetka., OK, )
 
 			PlayerCache(playerid)(pKiller) = 0
 			PlayerCache(playerid)(pKillerWeapon) = 0
@@ -1434,39 +1434,39 @@ public OnPlayerClickPlayer(playerid, clickedplayerid, source)
 (
 	if(!Logged(playerid))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie mo¿esz wysy³aæ prywatnych wiadomoœci bêd¹c niezalogowanym., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystąpił błąd, Nie możesz wysyłać prywatnych wiadomości będąc niezalogowanym., OK, )
 		return 1
 	)
 	if(clickedplayerid == playerid || !Logged(clickedplayerid))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie mo¿esz wys³aæ prywatnej wiadomoœci do tego gracza., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystąpił błąd, Nie możesz wysłać prywatnej wiadomości do tego gracza., OK, )
 		return 1
 	)
 	if((PlayerCache(playerid)(pBlock) & BLOCK_OOC) && PlayerCache(clickedplayerid)(pAdmin) == 0)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Twoja postaæ ma na³o¿on¹ blokadê czatu OOC., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystąpił błąd, Twoja postać ma nałożoną blokadę czatu OOC., OK, )
 		return 1
 	)
 	if(PlayerCache(clickedplayerid)(pTogW))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Ten gracz ma wy³¹czone otrzymywanie prywatnych wiadomoœci., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystąpił błąd, Ten gracz ma wyłączone otrzymywanie prywatnych wiadomości., OK, )
 		return 1
 	)
 	if(PlayerCache(playerid)(pBW) && !PlayerToPlayer(25.0, playerid, clickedplayerid) && PlayerCache(clickedplayerid)(pAdmin) == 0)
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Podczas stanu nieprzytomnoœci, wiadomoœci prywatne mo¿esz wysy³aæ na okreœlon¹ odleg³oœæ., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystąpił błąd, Podczas stanu nieprzytomności, wiadomości prywatne możesz wysyłać na określoną odległość., OK, )
 		return 1
 	)
 	if(PlayerCache(playerid)(pAJ))
 	(
-		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wyst¹pi³ b³¹d, Nie mo¿esz wysy³aæ prywatnych wiadomoœci w chwili obecnej., OK, )
+		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystąpił błąd, Nie możesz wysyłać prywatnych wiadomości w chwili obecnej., OK, )
 		return 1
 	)
 	string(128)
 	MainPlayerTable(playerid) = clickedplayerid
 	
-	format(string, sizeof(string), WprowadŸ treœæ prywatnej wiadomoœci, która zostanie wys³ana do gracza %s., PlayerName(clickedplayerid))
-	ShowPlayerDialog(playerid, D_SEND_PW, DIALOG_STYLE_INPUT, Wysy³anie prywatnej wiadomoœci, string, Wyœlij, Anuluj)
+	format(string, sizeof(string), WprowadĹ¸ treść prywatnej wiadomości, która zostanie wysłana do gracza %s., PlayerName(clickedplayerid))
+	ShowPlayerDialog(playerid, D_SEND_PW, DIALOG_STYLE_INPUT, Wysyłanie prywatnej wiadomości, string, Wyślij, Anuluj)
 	return 1
 )
 
@@ -1760,19 +1760,19 @@ stock initializePlayerTextDraws(playerid)
 
 stock RemoveBuildings(playerid)
 (
-	// Dystrybutory (zmieniamy na nasze niewybuchaj¹ce)
+	// Dystrybutory (zmieniamy na nasze niewybuchające)
 	RemoveBuildingForPlayer(playerid, 1676, 1941.6563, -1778.4531, 14.1406, 0.25)
  	RemoveBuildingForPlayer(playerid, 1676, 1941.6563, -1774.3125, 14.1406, 0.25)
  	RemoveBuildingForPlayer(playerid, 1676, 1941.6563, -1771.3438, 14.1406, 0.25)
  	RemoveBuildingForPlayer(playerid, 1676, 1941.6563, -1767.2891, 14.1406, 0.25)
 
-	//Sygnalizacja na ca³ej mapie (1283, 1315, 1315, 1350)
+	//Sygnalizacja na całej mapie (1283, 1315, 1315, 1350)
  	RemoveBuildingForPlayer(playerid, 1283, 0.0, 0.0, 0.0, 6000.0)
  	RemoveBuildingForPlayer(playerid, 1284, 0.0, 0.0, 0.0, 6000.0)
  	RemoveBuildingForPlayer(playerid, 1315, 0.0, 0.0, 0.0, 6000.0)
  	RemoveBuildingForPlayer(playerid, 1350, 0.0, 0.0, 0.0, 6000.0)
 	
-	//Usuniêcie jednej latarni dla FD
+	//Usunięcie jednej latarni dla FD
 	RemoveBuildingForPlayer(playerid, 1294, 1735.0076, -1155.6365, 23.2838, 20.0)
 	
 	//Nowe centrum na Pershing Square, Akro
@@ -1815,10 +1815,10 @@ stock RemoveBuildings(playerid)
 	RemoveBuildingForPlayer(playerid,  645, 1976.17188, -1600.17969, 12.19531, 5.0)
 	RemoveBuildingForPlayer(playerid, 1308, 1832.82031, -1622, 12.78125, 5.0)
 	
-	//Jakaœ lampa na wjeÂ?dzie - proœba gracza
+	//Jakaś lampa na wjeździe - prośba gracza
 	//RemoveBuildingForPlayer(playerid, 1223, 2832.1045, -1593.5623, 10.9219, 50.0)
 
-	//Jakieœ p³otki - proœba gracza
+	//Jakieś płotki - prośba gracza
 	/*RemoveBuildingForPlayer(playerid, 1411, 444.577820, -1340.351563, 15.815981, 20.0)
 	RemoveBuildingForPlayer(playerid, 1411, 440.196350, -1343.254883, 15.777159, 20.0)
 	RemoveBuildingForPlayer(playerid, 1411, 431.381439, -1348.973389, 15.705402, 20.0)
@@ -1827,13 +1827,13 @@ stock RemoveBuildings(playerid)
 	//Brama Jackala
 	//RemoveBuildingForPlayer(playerid, 3036, -2176.7783, 660.6580, 49.4375, 20.0)
 	
-	//Jakieœ gówna Arczira (devgru)
+	//Jakieś gówna Arczira (devgru)
 	/*RemoveBuildingForPlayer(playerid, 10829, -1522.0662, 481.6288, 7.1875, 20.0)
 	RemoveBuildingForPlayer(playerid, 968, -1526.1235, 480.7867, 7.1875, 20.0)
 	RemoveBuildingForPlayer(playerid, 3115, -1456.9875, 502.2328, 18.2662, 20.0)
 	RemoveBuildingForPlayer(playerid, 3114, -1415.6456, 515.5402, 18.2427, 20.0)*/
 	
-	// Jakieœ domki Sebka - postawi³ nowe na miejsce starych // http://www.ls-rp.net/index.php?app=samp&module=admin&section=ticket&id=7677
+	// Jakieś domki Sebka - postawił nowe na miejsce starych // http://www.ls-rp.net/index.php?app=samp&module=admin&section=ticket&id=7677
 	/*RemoveBuildingForPlayer(playerid, 3582, 2246, -1434, 26, 40)
 	RemoveBuildingForPlayer(playerid, 3562, 2246, -1434, 26, 40)
 	RemoveBuildingForPlayer(playerid, 620, 2268, -1469, 25, 10)
@@ -1841,10 +1841,10 @@ stock RemoveBuildings(playerid)
 	RemoveBuildingForPlayer(playerid, 645, 2238, -1394, 24, 10)
 	RemoveBuildingForPlayer(playerid, 0, 2238, -1394, 24, 10)*/
 	
-	// Jakieœ obiekty w Polomino Creek - aaGruby - http://www.ls-rp.net/index.php?app=samp&module=admin&section=ticket&id=25004
+	// Jakieś obiekty w Polomino Creek - aaGruby - http://www.ls-rp.net/index.php?app=samp&module=admin&section=ticket&id=25004
 	//RemoveBuildingForPlayer(playerid, 12842, 2330.7031, 1.3203, 25.9531, 0.25)
 	
-	// Jakieœ obiekty dzielnicy na Sevilli - Pawe³_Franciszek - http://www.ls-rp.net/index.php?app=samp&module=admin&section=ticket&id=26167
+	// Jakieś obiekty dzielnicy na Sevilli - Paweł_Franciszek - http://www.ls-rp.net/index.php?app=samp&module=admin&section=ticket&id=26167
 	/*RemoveBuildingForPlayer(playerid, 3638, 2687.125, -1955.70312, 15.73438, 15.0)
 	RemoveBuildingForPlayer(playerid, 3638, 2666.4375, 1955.70312, 15.73438, 15.0)
 	RemoveBuildingForPlayer(playerid, 3638, 2644.61719, -1955.70312, 15.73438, 15.0)
@@ -1892,7 +1892,7 @@ stock RemoveBuildings(playerid)
 	RemoveBuildingForPlayer(playerid, 1256, 1422.9000244141, -1228.5, 13.39999961853, 10.0)
 	RemoveBuildingForPlayer(playerid, 1256, 1430.5, -1229.0999755859, 13.199999809265, 10.0)*/
 
-	// Miko³aj || Nexsus - jakiÅ? event
+	// Mikołaj || Nexsus - jakiś event
 	/*RemoveBuildingForPlayer(playerid, 671, 2535.71875, -1919.67187, 12.88281, 25.0)
 	RemoveBuildingForPlayer(playerid, 708, 2535.00781, -1911.19531, 12.55469, 25.0)
 	RemoveBuildingForPlayer(playerid, 671, 2530.11719, -1899.09375, 12.88281, 25.0)
@@ -1903,7 +1903,7 @@ stock RemoveBuildings(playerid)
 	RemoveBuildingForPlayer(playerid, 717, 1720.6276,-1150.1229,24.0607, 5.0)
 	RemoveBuildingForPlayer(playerid, 717, 1738.1738,-1150.1156,24.0607, 5.0)
 
-	// Blacky || Willofield - kana³y || Southern Crew
+	// Blacky || Willofield - kanały || Southern Crew
 	RemoveBuildingForPlayer(playerid, 3594, 2450.4609, -1890.7813, 13.1641, 25.0)
 	RemoveBuildingForPlayer(playerid, 1447, 2461.8828, -1879.7031, 13.8203, 25.0)
 	RemoveBuildingForPlayer(playerid, 1447, 2444.8281, -1879.8750, 13.8203, 25.0)

@@ -1,11 +1,11 @@
 /*
 	---------------------------------------------------------------------------------
-	Tutaj doklejamy skrypt roúlinek do hodowania itp.
+	Tutaj doklejamy skrypt ro≈õlinek do hodowania itp.
 	
 	Przedmiot - nasionko:
 		1. value1 = typ nasionka (co sadzi)
 		
-	Przedmiot - nawÛz:
+	Przedmiot - naw√≥z:
 		1. value1 = typ nawozu
 		
 	Przedmiot - produkt (taki rolny):
@@ -16,21 +16,21 @@
 		2. seed_x, seed_y, seed_z
 		3. seed_type
 		4. seed_planttime
-		5. seed_value = jakoúÊ roúlinki
+		5. seed_value = jako≈õƒá ro≈õlinki
 		5. seed_owner = uid grupy ktora zarzadza tym szajsem
 		
-	JakoúÊ:
-		1. roúlina musi byÊ dziennie podlana minimum dwa razy
-		2. nawÛz trzeba minimum raz
+	Jako≈õƒá:
+		1. ro≈õlina musi byƒá dziennie podlana minimum dwa razy
+		2. naw√≥z trzeba minimum raz
 		
 	531 - tractor
-	610 - p≥ug, czy co to
+	610 - p≈Çug, czy co to
 	532 - kombajn
 	
-	86400 - jedna doba, wed≥ug unixtime
+	86400 - jedna doba, wed≈Çug unixtime
 	value - 1690 = dojrzala roslina
 	
-	AI 1: Jeúli sadzi to sprawdü czy na duty grupy farmerÛw
+	AI 1: Je≈õli sadzi to sprawd≈∫ czy na duty grupy farmer√≥w
 	AI 2: Zbieranie powinno sie odbywac przy pomocy kombajna
 	---------------------------------------------------------------------------------
 */
@@ -38,7 +38,7 @@
 //#define MAX_SEEDS 1000
 #define INVALID_SEED_ID (-1)
 
-// Moøliwe typy aktualnego wyposaøenia
+// Mo≈ºliwe typy aktualnego wyposa≈ºenia
 #define FARMING_SET_NONE 0
 #define FARMING_SET_TRACTOR 2
 #define FARMING_SET_COMBINE 4		// kombajn
@@ -69,7 +69,7 @@ stock CreateSeed(playerid, Float:posx, Float:posy, Float:posz, type)
 	seed_id = seed_GetFreeID()
 	if(seed_id == INVALID_SEED_ID)
 	(
-		GuiMsg(playerid, Wystπpi≥ problem podczas tworzenia roúliny.\nPowiadom administratora o problemie z limitami., 1)
+		GuiMsg(playerid, WystƒÖpi≈Ç problem podczas tworzenia ro≈õliny.\nPowiadom administratora o problemie z limitami., 1)
 		return 0
 	)
 	
@@ -94,7 +94,7 @@ stock CreateSeed(playerid, Float:posx, Float:posy, Float:posz, type)
 		case SEED_TYPE_CARROT:
 			SeedInfo(seed_id)(sObject) = CreateDynamicObject(3409, posx, posy, posz - 2.0, 0.0, 0.0, 0.0)
 	)
-	//format(string, sizeof(string), (ffffff)Roúlina (0066FF)(ID: %d)\n(ffffff)WartoúÊ: (0066FF)%d, seed_id, SeedInfo(seed_id)(sValue))
+	//format(string, sizeof(string), (ffffff)Ro≈õlina (0066FF)(ID: %d)\n(ffffff)Warto≈õƒá: (0066FF)%d, seed_id, SeedInfo(seed_id)(sValue))
 	//SeedInfo(seed_id)(sLabel) = CreateDynamic3DTextLabel(string, COLOR_WHITE, posx, posy, posz, 10.0, INVALID_PLAYER_ID, INVALID_VEHICLE_ID, 1, GetPlayerVirtualWorld(playerid), GetPlayerInterior(playerid), -1, 80.0)
 	
 	owner_id = GroupData(GetPlayerDutyGroupID(playerid))(gUID)
@@ -134,7 +134,7 @@ stock DestroySeed(seed_id)
 
 stock LoadSeeds()
 (
-	// £adowanie wszystkich seedsÛw na starcie serwera
+	// ≈Åadowanie wszystkich seeds√≥w na starcie serwera
 	buffer(256), gameid = 0
 	format(buffer, sizeof(buffer), SELECT * FROM hrp_seeds)
 	mysql_query(buffer)
@@ -166,7 +166,7 @@ stock LoadSeeds()
 		)
 		
 		//SeedInfo(gameid)(sObject) = CreateDynamicObject(862, SeedInfo(gameid)(sPosX), SeedInfo(gameid)(sPosY), SeedInfo(gameid)(sPosZ) - 0.90, 0.0, 0.0, 0.0)
-		//format(string, sizeof(string), (ffffff)Roúlina (0066FF)(ID: %d)\n(ffffff)WartoúÊ: (0066FF)%d, gameid, SeedInfo(gameid)(sValue))
+		//format(string, sizeof(string), (ffffff)Ro≈õlina (0066FF)(ID: %d)\n(ffffff)Warto≈õƒá: (0066FF)%d, gameid, SeedInfo(gameid)(sValue))
 		//SeedInfo(gameid)(sLabel) = CreateDynamic3DTextLabel(string, COLOR_WHITE, SeedInfo(gameid)(sPosX), SeedInfo(gameid)(sPosY), SeedInfo(gameid)(sPosZ), 10.0, INVALID_PLAYER_ID, INVALID_VEHICLE_ID, 1, 0, 0, -1, 80.0)
 		
 		gameid++
@@ -211,7 +211,7 @@ stock seed_GetFreeID()
 
 stock GetPlayerFarmingSet(playerid)
 (
-	// Ta piÍkna funkcja zwrÛci to jaki set ma gracz aktualnie, w teorii
+	// Ta piƒôkna funkcja zwr√≥ci to jaki set ma gracz aktualnie, w teorii
 	farming_set = FARMING_SET_NONE
 	
 	if(IsPlayerInAnyVehicle(playerid))
@@ -260,7 +260,7 @@ stock seed_GetNearestSeed(playerid, Float:ddistance = 5.0)
 stock Create3DTextForSeed(seed_id)
 (
 	string(128)
-	format(string, sizeof(string), (ffffff)Roúlina (0066FF)(ID: %d)\n(ffffff)WartoúÊ: (0066FF)%d, seed_id, SeedInfo(seed_id)(sValue))
+	format(string, sizeof(string), (ffffff)Ro≈õlina (0066FF)(ID: %d)\n(ffffff)Warto≈õƒá: (0066FF)%d, seed_id, SeedInfo(seed_id)(sValue))
 	Text3D:label_id = CreateDynamic3DTextLabel(string, COLOR_WHITE, SeedInfo(seed_id)(sPosX), SeedInfo(seed_id)(sPosY), SeedInfo(seed_id)(sPosZ), 10.0, INVALID_PLAYER_ID, INVALID_VEHICLE_ID, 0, 0, 0, -1, 10.0)
 	Streamer_SetIntData(STREAMER_TYPE_3D_TEXT_LABEL, label_id, E_STREAMER_EXTRA_ID, SeedInfo(seed_id)(sUID))
 	SeedInfo(seed_id)(sLabel) = label_id
@@ -275,7 +275,7 @@ stock Create3DTextForSeeds()
 	(
 		if(SeedInfo(i)(sUID) ) 0)
 		(
-			format(string, sizeof(string), (ffffff)Roúlina (0066FF)(ID: %d)\n(ffffff)WartoúÊ: (0066FF)%d, i, SeedInfo(i)(sValue))
+			format(string, sizeof(string), (ffffff)Ro≈õlina (0066FF)(ID: %d)\n(ffffff)Warto≈õƒá: (0066FF)%d, i, SeedInfo(i)(sValue))
 			Text3D:label_id = CreateDynamic3DTextLabel(string, COLOR_WHITE, SeedInfo(i)(sPosX), SeedInfo(i)(sPosY), SeedInfo(i)(sPosZ), 10.0, INVALID_PLAYER_ID, INVALID_VEHICLE_ID, 0, 0, 0, -1, 10.0)
 			Streamer_SetIntData(STREAMER_TYPE_3D_TEXT_LABEL, label_id, E_STREAMER_EXTRA_ID, SeedInfo(i)(sUID))
 			SeedInfo(i)(sLabel) = label_id
@@ -291,35 +291,35 @@ stock Update3DTextForSeed(seed_id)
 	(
 		case SEED_TYPE_NONE:
 		(
-			format(string, sizeof(string), (ffffff)Roúlina (0066FF)(ID: %d)\n(ffffff)Gatunek: (0066FF)brak\n(ffffff)WartoúÊ: (0066FF)%d, seed_id, SeedInfo(seed_id)(sValue))
+			format(string, sizeof(string), (ffffff)Ro≈õlina (0066FF)(ID: %d)\n(ffffff)Gatunek: (0066FF)brak\n(ffffff)Warto≈õƒá: (0066FF)%d, seed_id, SeedInfo(seed_id)(sValue))
 		)
 		case SEED_TYPE_WHEAT:
 		(
-			format(string, sizeof(string), (ffffff)Roúlina (0066FF)(ID: %d)\n(ffffff)Gatunek: (0066FF)pszenica\n(ffffff)WartoúÊ: (0066FF)%d, seed_id, SeedInfo(seed_id)(sValue))
+			format(string, sizeof(string), (ffffff)Ro≈õlina (0066FF)(ID: %d)\n(ffffff)Gatunek: (0066FF)pszenica\n(ffffff)Warto≈õƒá: (0066FF)%d, seed_id, SeedInfo(seed_id)(sValue))
 		)
 		case SEED_TYPE_BEET:
 		(
-			format(string, sizeof(string), (ffffff)Roúlina (0066FF)(ID: %d)\n(ffffff)Gatunek: (0066FF)burak\n(ffffff)WartoúÊ: (0066FF)%d, seed_id, SeedInfo(seed_id)(sValue))
+			format(string, sizeof(string), (ffffff)Ro≈õlina (0066FF)(ID: %d)\n(ffffff)Gatunek: (0066FF)burak\n(ffffff)Warto≈õƒá: (0066FF)%d, seed_id, SeedInfo(seed_id)(sValue))
 		)
 		case SEED_TYPE_CARROT:
 		(
-			format(string, sizeof(string), (ffffff)Roúlina (0066FF)(ID: %d)\n(ffffff)Gatunek: (0066FF)marchew\n(ffffff)WartoúÊ: (0066FF)%d, seed_id, SeedInfo(seed_id)(sValue))
+			format(string, sizeof(string), (ffffff)Ro≈õlina (0066FF)(ID: %d)\n(ffffff)Gatunek: (0066FF)marchew\n(ffffff)Warto≈õƒá: (0066FF)%d, seed_id, SeedInfo(seed_id)(sValue))
 		)
 	)
 	
 	if(gettime() - SeedInfo(seed_id)(sPlantTime) ) 86400)
 	(
-		format(string, sizeof(string), (66FF00)(Roúlina wydaje sie byÊ dojrza≥a)\n%s, string)
+		format(string, sizeof(string), (66FF00)(Ro≈õlina wydaje sie byƒá dojrza≈Ça)\n%s, string)
 	)
 	
 	if(!SeedInfo(seed_id)(isSplashed))
 	(
-		format(string, sizeof(string), (990000)(Roúlina nie jest spryskana)\n%s, string)
+		format(string, sizeof(string), (990000)(Ro≈õlina nie jest spryskana)\n%s, string)
 	)
 	
 	if(SeedInfo(seed_id)(sWater) ( 30.0)
 	(
-		format(string, sizeof(string), (990000)(Roúlina nie jest podlana)\n%s, string)
+		format(string, sizeof(string), (990000)(Ro≈õlina nie jest podlana)\n%s, string)
 	)
 	
 	for (label_id = 0 label_id (= CountDynamic3DTextLabels() label_id++)
@@ -364,7 +364,7 @@ CMD:aplant(playerid, params())
 (
 	if(PlayerCache(playerid)(pAdmin) != 1)
 	(
-		GuiMsg(playerid, Nie moøesz uøyÊ tej komendy., 1)
+		GuiMsg(playerid, Nie mo≈ºesz u≈ºyƒá tej komendy., 1)
 		return 1
 	)
 	
@@ -380,18 +380,18 @@ CMD:aplant(playerid, params())
 		plant_id
 		if(sscanf(varchar, d, plant_id))
 		(
-			hrp_Tip(playerid, /aplant info (ID roúliny))
+			hrp_Tip(playerid, /aplant info (ID ro≈õliny))
 			return 1
 		)
 		
 		if(SeedInfo(plant_id)(sUID) (= 0)
 		(
-			GuiMsg(playerid, Nie ma takiej roúliny., 1)
+			GuiMsg(playerid, Nie ma takiej ro≈õliny., 1)
 			return 1
 		)
 		
 		string(256), title(64)
-		format(string, sizeof(string), ID roúliny: \t%d\nTyp roúliny: \t%d\nWartoúÊ: \t%d\nW≥aúciciel: \t%d, plant_id, SeedInfo(plant_id)(sType), SeedInfo(plant_id)(sValue), SeedInfo(plant_id)(sOwner))
+		format(string, sizeof(string), ID ro≈õliny: \t%d\nTyp ro≈õliny: \t%d\nWarto≈õƒá: \t%d\nW≈Ça≈õciciel: \t%d, plant_id, SeedInfo(plant_id)(sType), SeedInfo(plant_id)(sValue), SeedInfo(plant_id)(sOwner))
 		format(title, sizeof(title), UID: %d || Time: %d, SeedInfo(plant_id)(sUID), SeedInfo(plant_id)(sPlantTime))
 		ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_LIST, title, string, OK, )
 	)
@@ -401,18 +401,18 @@ CMD:aplant(playerid, params())
 		plant_id
 		if(sscanf(varchar, d, plant_id))
 		(
-			hrp_Tip(playerid, /aplant usun (ID roúliny))
+			hrp_Tip(playerid, /aplant usun (ID ro≈õliny))
 			return 1
 		)
 		
 		if(SeedInfo(plant_id)(sUID) (= 0)
 		(
-			GuiMsg(playerid, Nie ma takiej roúliny., 1)
+			GuiMsg(playerid, Nie ma takiej ro≈õliny., 1)
 			return 1
 		)
 		
 		DestroySeed(plant_id)
-		GuiMsg(playerid, Usunπ≥eú wskazanπ roúlinÍ., 1)
+		GuiMsg(playerid, UsunƒÖ≈Çe≈õ wskazanƒÖ ro≈õlinƒô., 1)
 	)
 	
 	if(!strcmp(type, wymaksuj, true))
@@ -420,13 +420,13 @@ CMD:aplant(playerid, params())
 		plant_id
 		if(sscanf(varchar, d, plant_id))
 		(
-			hrp_Tip(playerid, /aplant wymaksuj (ID roúliny))
+			hrp_Tip(playerid, /aplant wymaksuj (ID ro≈õliny))
 			return 1
 		)
 		
 		if(SeedInfo(plant_id)(sUID) (= 0)
 		(
-			GuiMsg(playerid, Nie ma takiej roúliny., 1)
+			GuiMsg(playerid, Nie ma takiej ro≈õliny., 1)
 			return 1
 		)
 		
@@ -434,7 +434,7 @@ CMD:aplant(playerid, params())
 		SeedInfo(plant_id)(sValue) = 1440 + 250
 		Update3DTextForSeed(plant_id)
 		
-		GuiMsg(playerid, Wskazana roúlina jest teraz gotowa do zebrania., 0)
+		GuiMsg(playerid, Wskazana ro≈õlina jest teraz gotowa do zebrania., 0)
 	)
 	
 	return 1
@@ -450,7 +450,7 @@ CMD:farma(playerid, params())
 		group_id_fix = GetPlayerDutyGroupID(playerid)
 		if(GroupData(group_id_fix)(gType) != GROUP_FARM)
 		(
-			GuiMsg(playerid, Musisz byÊ na s≥uøbie grupy o typie farmerskim by mÛc zebraÊ nasiona., 1)
+			GuiMsg(playerid, Musisz byƒá na s≈Çu≈ºbie grupy o typie farmerskim by m√≥c zebraƒá nasiona., 1)
 			return 1
 		)
 		
@@ -465,7 +465,7 @@ CMD:farma(playerid, params())
 		(
 			if(!IsPlayerInRangeOfPoint(playerid, 10.0, -62.8525, 116.9715, 3.1172) || GetPlayerVirtualWorld(playerid) != 0)
 			(
-				GuiMsg(playerid, Udaj siÍ na punkt skupu by sprzedaÊ trochÍ produktÛw., 0)
+				GuiMsg(playerid, Udaj siƒô na punkt skupu by sprzedaƒá trochƒô produkt√≥w., 0)
 				SetPlayerCheckpoint(playerid, -62.8525, 116.9715, 3.1172, 5.0)
 				Checkpoint(playerid) = 0
 			)
@@ -481,12 +481,12 @@ CMD:farma(playerid, params())
 			seed_id = seed_GetNearestSeed(playerid, 5.0)
 			if(seed_id == INVALID_SEED_ID || SeedInfo(seed_id)(sOwner) != GroupData(group_id_fix)(gUID))
 			(
-				GuiMsg(playerid, W pobliøu nie ma øadnej roúliny naleøπcej do Twojej farmy., 1)
+				GuiMsg(playerid, W pobli≈ºu nie ma ≈ºadnej ro≈õliny nale≈ºƒÖcej do Twojej farmy., 1)
 				return 1
 			)
 			
 			string(128)
-			format(string, sizeof(string), ** %s nawozi roúlinÍ., PlayerName(playerid))
+			format(string, sizeof(string), ** %s nawozi ro≈õlinƒô., PlayerName(playerid))
 			ApplyAnimation(playerid, ROB_BANK, CAT_Safe_Rob, 4.0, 0, 0, 0, 0, 0, 1)
 			FlashMe(playerid, string) //ProxDetector(10.0, playerid, string, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, true)
 			
@@ -499,12 +499,12 @@ CMD:farma(playerid, params())
 			seed_id = seed_GetNearestSeed(playerid, 5.0)
 			if(seed_id == INVALID_SEED_ID || SeedInfo(seed_id)(sOwner) != GroupData(group_id_fix)(gUID))
 			(
-				GuiMsg(playerid, W pobliøu nie ma øadnej roúliny naleøπcej do Twojej farmy., 1)
+				GuiMsg(playerid, W pobli≈ºu nie ma ≈ºadnej ro≈õliny nale≈ºƒÖcej do Twojej farmy., 1)
 				return 1
 			)
 			
 			string(128)
-			format(string, sizeof(string), ** %s podlewa roúlinÍ., PlayerName(playerid))
+			format(string, sizeof(string), ** %s podlewa ro≈õlinƒô., PlayerName(playerid))
 			ApplyAnimation(playerid, ROB_BANK, CAT_Safe_Rob, 4.0, 0, 0, 0, 0, 0, 1)
 			FlashMe(playerid, string) //ProxDetector(10.0, playerid, string, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, COLOR_PURPLE, true)
 			
@@ -517,15 +517,15 @@ CMD:farma(playerid, params())
 			seed_id = seed_GetNearestSeed(playerid, 5.0)
 			if(seed_id == INVALID_SEED_ID || SeedInfo(seed_id)(sOwner) != GroupData(group_id_fix)(gUID))
 			(
-				GuiMsg(playerid, W pobliøu nie ma øadnej roúliny naleøπcej do Twojej farmy., 1)
+				GuiMsg(playerid, W pobli≈ºu nie ma ≈ºadnej ro≈õliny nale≈ºƒÖcej do Twojej farmy., 1)
 				return 1
 			)
 			
 			if(gettime() - SeedInfo(seed_id)(sPlantTime) ( 80000 || SeedInfo(seed_id)(sValue) ( 1500)
 			(
-				// Daj GUI do usuniecia roúliny bez øadnych korzyúci
+				// Daj GUI do usuniecia ro≈õliny bez ≈ºadnych korzy≈õci
 				DestroySeed(seed_id)
-				GuiMsg(playerid, Zebra≥eú roúlinÍ, ktÛra nie nadawa≥a siÍ do uøytku.\nNiestety nie dosta≥eú nic., 0)
+				GuiMsg(playerid, Zebra≈Çe≈õ ro≈õlinƒô, kt√≥ra nie nadawa≈Ça siƒô do u≈ºytku.\nNiestety nie dosta≈Çe≈õ nic., 0)
 				return 1
 			)
 			
@@ -538,7 +538,7 @@ CMD:farma(playerid, params())
 				
 				
 				
-				GuiMsg(playerid, Zebra≥eú roúlinkÍ, ktÛra okaza≥a siÍ dojrza≥a.\nDo ekwipunku dodano odpowiedni produkt., 0)
+				GuiMsg(playerid, Zebra≈Çe≈õ ro≈õlinkƒô, kt√≥ra okaza≈Ça siƒô dojrza≈Ça.\nDo ekwipunku dodano odpowiedni produkt., 0)
 				DestroySeed(seed_id)
 				return 1
 			)
@@ -551,7 +551,7 @@ CMD:farma(playerid, params())
 	)
 	else
 	(
-		GuiMsg(playerid, Musisz byÊ na s≥uøbie grupy o typie farmerskim by mÛc zasadziÊ nasiona., 1)
+		GuiMsg(playerid, Musisz byƒá na s≈Çu≈ºbie grupy o typie farmerskim by m√≥c zasadziƒá nasiona., 1)
 		return 1
 	)
 	

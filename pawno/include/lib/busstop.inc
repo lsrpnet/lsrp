@@ -23,7 +23,7 @@ public LoadBusStops()
 	data(128), string(64), busstop_id = 0
 	mysql_query(SELECT * FROM hrp_busstops)
 	
-	print((load) Rozpoczynam proces wczytywania wszystkich przystanków z bazy...)
+	print((load) Rozpoczynam proces wczytywania wszystkich przystankÃ³w z bazy...)
 	
 	mysql_store_result()
 	while(mysql_fetch_row(data, |))
@@ -43,7 +43,7 @@ public LoadBusStops()
 	)
 	mysql_free_result()
 	
-	printf((load) Wczytano %d przystanki/ów z bazy danych., busstop_id)
+	printf((load) Wczytano %d przystanki/Ã³w z bazy danych., busstop_id)
 	return 1
 )
 
