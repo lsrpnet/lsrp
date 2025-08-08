@@ -96,8 +96,8 @@ public OnGameModeInit()
 {
 	new year, month, day, hour, minute, second;
 
-	getdate(year, month, day)
-	gettime(hour, minute, second)
+	getdate(year, month, day);
+	gettime(hour, minute, second);
 
 	if ( fexist("debug-true.txt") )
 	{
