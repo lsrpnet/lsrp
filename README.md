@@ -39,7 +39,7 @@ ls-rp.net server source code
 | lib\DB.inc                                      | 100% (20/20)     |
 | lib\dialog.inc                                  | 0% (0/9940)      |
 | lib\door.inc                                    | 0% (0/1212)      |
-| lib\ducktape.inc                                | 0% (0/314)       |
+| lib\ducktape.inc                                | 100% (314/314)   |
 | lib\farming.inc                                 | 0% (0/561)       |
 | lib\fps.inc                                     | 0% (0/46)        |
 | lib\gangzone_new.inc                            | 0% (0/762)       |
