@@ -30,7 +30,7 @@
 
 #include <lib\DB>				// Konfiguracja DB - NIE OTWIERAĆ NA STRUMIENIU !!!!!
 #include <lib\config>			// Definicje, makra, zmienne, enumy, tablice, etc.
-#include <lib\traffic>			// Główne funkcje zwi±zane z graczem (OnPlayerConnect/Disconnect etc.)
+#include <lib\traffic>			// Główne funkcje związane z graczem (OnPlayerConnect/Disconnect etc.)
 #include <lib\ducktape>			// Ducktape z kolejnością funkcji zwracających Float - nie wiem - nie pytaj - nie znam pawn
 #include <lib\states>			// Funkcje związane z różnymi stanami jak OnPlayerStateChange, OnPlayerKeyStateChange, OnPlayerTakeDamage, etc.
 #include <lib\vehicle>			// Funcke związane z pojazdami
