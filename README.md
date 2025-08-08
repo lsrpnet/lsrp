@@ -48,7 +48,7 @@ ls-rp.net server source code
 | lib\group_ann.inc                               | 0% (0/100)       |
 | lib\group.inc                                   | 0% (0/584)       |
 | lib\gym.inc                                     | 0% (0/221)       |
-| lib\hrpfunction.inc                             | 0% (0/144)       |
+| lib\hrpfunction.inc                             | 100% (144/144)   |
 | lib\item_interface_new.inc                      | 0% (0/483)       |
 | lib\item_use.inc                                | 0% (0/2956)      |
 | lib\item.inc                                    | 0% (0/1461)      |
