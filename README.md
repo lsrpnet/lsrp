@@ -53,7 +53,7 @@ ls-rp.net server source code
 | lib\item_use.inc                                | 0% (0/2956)      |
 | lib\item.inc                                    | 0% (0/1461)      |
 | lib\launcher.inc                                | 0% (0/64)        |
-| lib\log.inc                                     | 0% (0/179)       |
+| lib\log.inc                                     | 100% (179/179)   |
 | lib\lspd.inc                                    | 0% (0/81)        |
 | lib\machine.inc                                 | 0% (0/16)        |
 | lib\object.inc                                  | 0% (0/545)       |
