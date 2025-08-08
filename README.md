@@ -16,7 +16,7 @@ ls-rp.net server source code
 | lib\games\poker.inc                             | 0% (0/669)       |
 | lib\games\skate.inc                             | 0% (0/73)        |
 | lib\games\slots.inc                             | 0% (0/270)       |
-| lib\games\surf.inc                              | 0% (0/233)       |
+| lib\games\surf.inc                              | 100% (233/233)   |
 | lib\jobs\airport.inc                            | 100% (3/3)       |
 | lib\jobs\NO_SIE_ZAJEBALEM_POKI_CO_NIC_TU_NIE_MA | 100% (1/1)       |
 | lib\jobs\port.inc                               | 0% (0/92)        |
