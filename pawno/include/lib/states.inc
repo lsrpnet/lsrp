@@ -1,87 +1,87 @@
 public OnPlayerStateChange(playerid, newstate, oldstate)
-(
-	string(256)
+{
+	new string[256)];
 	
 	// Spectate
  	foreach(Player, i)
-  	(
-   		if(Logged(i) && Spawned(i))
-	 	(
-	  		if(PlayerCache(i)(pSpectate) == playerid)
-	  		(
+  	{
+   		if(Logged[i] && Spawned[i])
+	 	{
+	  		if(PlayerCache[i][pSpectate] == playerid)
+	  		{
 				switch(newstate)
-		  		(
+		  		{
 	 				case 0, 1, 7, 8:
 					(
-						PlayerSpectatePlayer(i, playerid)
-						SetPlayerInterior(i, GetPlayerInterior(playerid))
+						PlayerSpectatePlayer(i, playerid);
+						SetPlayerInterior(i, GetPlayerInterior(playerid));
 					)
 					case 2, 3:
 					(
-						PlayerSpectateVehicle(i , GetPlayerVehicleID(playerid))
+						PlayerSpectateVehicle(i , GetPlayerVehicleID(playerid));
 					)
 		   			case 9:
 					(
-						TogglePlayerSpectating(i, 0)
+						TogglePlayerSpectating(i, 0);
 						
-	   					hrp_SetPlayerPos(i, PlayerCache(i)(pPosX), PlayerCache(i)(pPosY), PlayerCache(i)(pPosZ))
+	   					hrp_SetPlayerPos(i, PlayerCache[i][pPosX], PlayerCache[i][pPosY], PlayerCache[i][pPosZ]);
 
-						SetPlayerVirtualWorld(i, PlayerCache(i)(pVW))
-						SetPlayerInterior(i, PlayerCache(i)(pInt))
+						SetPlayerVirtualWorld(i, PlayerCache[i][pVW]);
+						SetPlayerInterior(i, PlayerCache[i][pInt]);
 						
-						SetCameraBehindPlayer(i)
+						SetCameraBehindPlayer(i);
 					)
-				)
-		  	)
-		)
-   	)
+				}
+			}
+		}
+	}
 	
 	if(newstate == PLAYER_STATE_SPAWNED)
-	(
-		if(!Spawned(playerid))
-		(
-			Spawned(playerid) = true
-		)
-	)
+	{
+		if(!Spawned[playerid])
+		{
+			Spawned[playerid] = true;
+		}
+	}
 	
 	// wsiadl do wozu
 	
 	if(newstate == PLAYER_STATE_DRIVER)
-	(
-		vehid = GetPlayerVehicleID(playerid), model = GetVehicleModel(vehid)
+	{
+		new vehid = GetPlayerVehicleID(playerid), model = GetVehicleModel(vehid);
 		if(model == 509 || model == 510 || model == 481)
-		(
-			return 1
-		)
-  		if(!CarInfo(vehid)(cEngineTogged))
-  		(
-			TextDrawSetString(Text:TextDrawMainInfo(playerid), Wcisnij ~r~~k~~VEHICLE_HANDBRAKE~ + ~k~~VEHICLE_FIREWEAPON~~w~ jednoczesnie, aby uruchomic silnik. Klawisz ~g~~k~~VEHICLE_FIREWEAPON_ALT~~w~ kontroluje swiatla w pojezdzie.)
-			TextDrawShowForPlayer(playerid, Text:TextDrawMainInfo(playerid))
+		{
+			return 1;
+		}
+  		if(!CarInfo[vehid][cEngineTogged])
+  		{
+			TextDrawSetString(Text:TextDrawMainInfo[playerid], "Wcisnij ~r~~k~~VEHICLE_HANDBRAKE~ + ~k~~VEHICLE_FIREWEAPON~~w~ jednoczesnie, aby uruchomic silnik. Klawisz ~g~~k~~VEHICLE_FIREWEAPON_ALT~~w~ kontroluje swiatla w pojezdzie.");
+			TextDrawShowForPlayer(playerid, Text:TextDrawMainInfo[playerid]);
 
-			PlayerCache(playerid)(pShowInfoText) = 5
-		)
-  		ChangeVehicleEngineStatus(vehid, CarInfo(vehid)(cEngineTogged))
+			PlayerCache[playerid][pShowInfoText] = 5;
+		}
+  		ChangeVehicleEngineStatus(vehid, CarInfo[vehid][cEngineTogged]);
 		
 		if(model == 574)
-		(
-			if(PlayerCache(playerid)(pJob) == JOB_SWEEPER)
-			(
-				if(PlayerCache(playerid)(pDailyIncome) )= MAX_DAILY_INCOME)
-				(
-					GuiMsg(playerid, Wyczerpałeś dzisiejszy limit dochodu z prac dorywczych.\nWróć jutro., 1)
-					RemovePlayerFromVehicle(playerid)
-					return 1
-				)
+		{
+			if(PlayerCache[playerid][pJob] == JOB_SWEEPER)
+			{
+				if(PlayerCache[playerid][pDailyIncome] >= MAX_DAILY_INCOME)
+				{
+					GuiMsg(playerid, "Wyczerpałeś dzisiejszy limit dochodu z prac dorywczych.\nWróć jutro.", 1);
+					RemovePlayerFromVehicle(playerid);
+					return 1;
+				}
 				
 				
-				ShowPlayerDialog(playerid, D_SWEEP_ACCEPT, DIALOG_STYLE_MSGBOX, Praca sprzątacza ulic, Wsiadłeś do pojazdu Sweeper. Urząd miasta udostępnia Ci go do wykonania Twojej pracy czyszczenia ulic. Czy akceptujesz pracę sprzątacza?, Akceptuj, Odrzuć)
-			)
+				ShowPlayerDialog(playerid, D_SWEEP_ACCEPT, DIALOG_STYLE_MSGBOX, "Praca sprzątacza ulic", "Wsiadłeś do pojazdu Sweeper. Urząd miasta udostępnia Ci go do wykonania Twojej pracy czyszczenia ulic. Czy akceptujesz pracę sprzątacza?", "Akceptuj", "Odrzuć");
+			}
 			else
-			(
-				RemovePlayerFromVehicle(playerid)
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystąpił błąd, Nie jesteś sprzątaczem ulic. Aby zmienić swoją pracę dorywczą udaj się do urzędu., OK, )
-			)
-		)
+			{
+				RemovePlayerFromVehicle(playerid);
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, "Wystąpił błąd", "Nie jesteś sprzątaczem ulic. Aby zmienić swoją pracę dorywczą udaj się do urzędu.", "OK", "");
+			}
+		}
 		
 		//no prędkość trzeba przecież ustawić, sama sie nie ustawi
 		//POTEM DODAJ WYJĄTKI DLA HELIKOPTERÓW I SAMOLOTÓ
@@ -125,359 +125,359 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 		model != 593 && 
 		model != 592 && 
 		model != 595)
-		(
-			Float:boost = CarInfo(vehid)(cBoost)
-			Float:maxCap = (float(GetVehicleMaxSpeed(vehid)) / 160.0)
+		{
+			new Float:boost = CarInfo[vehid][cBoost];
+			new Float:maxCap = (float(GetVehicleMaxSpeed(vehid)) / 160.0);
 			
-			if(boost )= 35.0)
-			(
-				DisablePlayerSpeedCap( playerid )
-			)
+			if(boost >= 35.0)
+			{
+				DisablePlayerSpeedCap( playerid );
+			}
 			else
-			(
-				Float:cap = (maxCap * (65.0 + boost)) / 100.0
-				SetPlayerSpeedCap( playerid, Float:cap )
-			)
-		)
+			{
+				new Float:cap = (maxCap * (65.0 + boost)) / 100.0;
+				SetPlayerSpeedCap( playerid, Float:cap );
+			}
+		}
 		else
-		(
-			DisablePlayerSpeedCap( playerid )
-		)*/
+		{
+			DisablePlayerSpeedCap( playerid );
+		}*/
 		
-		GetVehiclePos(vehid, OldVehiclePosition(vehid)(0), OldVehiclePosition(vehid)(1), OldVehiclePosition(vehid)(2))
+		GetVehiclePos(vehid, OldVehiclePosition[vehid][0], OldVehiclePosition[vehid][1], OldVehiclePosition[vehid][2]);
 		
 		// wycofujemy skrypt silników
-		DisablePlayerSpeedCap(playerid)
+		DisablePlayerSpeedCap(playerid);
 		
 		// Dodaj checkpoint jeśli Course
-		if(PlayerCache(playerid)(pCourse))
-		(
-			if(CarInfo(vehid)(cOwnerType) == OWNER_GROUP)
-			(
-				group_id_fix = GetGroupID(CarInfo(vehid)(cOwner))
-				if(GroupData(group_id_fix)(gType) == GROUP_DRIVING)
-				(
-					SetPlayerRaceCheckpoint(playerid, 0, 1090.8137,-1745.6072,13.4456, 1170.5844,-1742.2474,13.3984, 5.0)
-					PlayerCache(playerid)(pCourseCP) = 1
-					PlayerCache(playerid)(pCourseVeh) = vehid
-					PlayerCache(playerid)(pCourseMS) = 0.0
-					//PlayerCache(playerid)(pCourseHP) = CarInfo(vehid)(cHealth)
+		if(PlayerCache[playerid][pCourse])
+		{
+			if(CarInfo[vehid][cOwnerType] == OWNER_GROUP)
+			{
+				new group_id_fix = GetGroupID(CarInfo[vehid][cOwner]);
+				if(GroupData[group_id_fix][gType] == GROUP_DRIVING)
+				{
+					SetPlayerRaceCheckpoint(playerid, 0, 1090.8137,-1745.6072,13.4456, 1170.5844,-1742.2474,13.3984, 5.0);
+					PlayerCache[playerid][pCourseCP] = 1;
+					PlayerCache[playerid][pCourseVeh] = vehid;
+					PlayerCache[playerid][pCourseMS] = 0.0;
+					//PlayerCache[playerid][pCourseHP] = CarInfo[vehid][cHealth];
 					
-					ChangeVehicleEngineStatus(vehid, 1)
-					CarInfo(vehid)(cEngineTogged) = true
+					ChangeVehicleEngineStatus(vehid, 1);
+					CarInfo[vehid][cEngineTogged] = true;
 					
-					GuiMsg(playerid, Rozpocząłeś egzamin, podążaj za punktami.\nPoruszaj się zgodnie z zasadami ruchu drogowego!, 0)
-				)
-			)
-		)
-	)
+					GuiMsg(playerid, "Rozpocząłeś egzamin, podążaj za punktami.\nPoruszaj się zgodnie z zasadami ruchu drogowego!", 0);
+				}
+			}
+		}
+	}
 	if(newstate == PLAYER_STATE_ONFOOT)
-	(
+	{
 		// Schowaj info o szybie
-		TextDrawHideForPlayer(playerid, Text:TextDrawWindow(playerid))
+		TextDrawHideForPlayer(playerid, Text:TextDrawWindow[playerid]);
 		
 		
 		if(oldstate == PLAYER_STATE_PASSENGER || oldstate == PLAYER_STATE_DRIVER)
-		(
-			vehid = PlayerCache(playerid)(pLastVeh)
+		{
+			new vehid = PlayerCache[playerid][pLastVeh];
 			
 			// Anti Car TP
-			GetVehiclePos(vehid, OldVehiclePosition(vehid)(0), OldVehiclePosition(vehid)(1), OldVehiclePosition(vehid)(2))
+			GetVehiclePos(vehid, OldVehiclePosition[vehid][0], OldVehiclePosition[vehid][1], OldVehiclePosition[vehid][2]);
 			
 			// Przyciemniony szyby
-			if(CarInfo(vehid)(cAccess) & VEH_ACCESS_DIM)
-			(
-				if(!PlayerCache(playerid)(pMaskUID))
-				(
-					if(!PlayerCache(playerid)(pAdminDuty))
-					(
-						name(32)
-						GetPlayerName(playerid, name, sizeof(name))
-						strmid(PlayerCache(playerid)(pName), name, 0, strlen(name), 32)
+			if(CarInfo[vehid][cAccess] & VEH_ACCESS_DIM)
+			{
+				if(!PlayerCache[playerid][pMaskUID])
+				{
+					if(!PlayerCache[playerid][pAdminDuty])
+					{
+						new name[32];
+						GetPlayerName(playerid, name, sizeof(name));
+						strmid(PlayerCache(playerid)(pName), name, 0, strlen(name), 32);
 
-						format(string, sizeof(string), %s (%d)%s, PlayerName(playerid), playerid, GetPlayerStatusInfo(playerid))
-						Update3DTextLabelText(Text3D:PlayerCache(playerid)(pNameTag), PlayerCache(playerid)(pNickColor), string)
-					)
-				)
-			)
+						format(string, sizeof(string), "%s (%d)%s", PlayerName(playerid), playerid, GetPlayerStatusInfo(playerid));
+						Update3DTextLabelText(Text3D:PlayerCache[playerid][pNameTag], PlayerCache[playerid][pNickColor], string);
+					}
+				}
+			}
 			
 			if(GetVehicleModel(vehid) == 574)
-			(
-				if(PlayerCache(playerid)(pSweep))
-				(
-					PlayerCache(playerid)(pSweep) = false
-					PlayerCache(playerid)(pSweepStep) = 0
-					PlayerCache(playerid)(pSweepSteps) = 0
-					PlayerCache(playerid)(pSweepRoute) = 0
+			{
+				if(PlayerCache[playerid][pSweep])
+				{
+					PlayerCache[playerid][pSweep] = false;
+					PlayerCache[playerid][pSweepStep] = 0;
+					PlayerCache[playerid][pSweepSteps] = 0;
+					PlayerCache[playerid][pSweepRoute] = 0;
 								
-					TextDrawSetString(Text:TextDrawMainInfo(playerid), Wysiadles ze Sweepera dlatego Twoja praca zostala ~r~anulowana.)
-					TextDrawShowForPlayer(playerid, Text:TextDrawMainInfo(playerid))
-					PlayerCache(playerid)(pShowInfoText) = 7
-				)
+					TextDrawSetString(Text:TextDrawMainInfo[playerid], "Wysiadles ze Sweepera dlatego Twoja praca zostala ~r~anulowana.");
+					TextDrawShowForPlayer(playerid, Text:TextDrawMainInfo[playerid]);
+					PlayerCache[playerid][pShowInfoText] = 7;
+				}
 				
-				DisablePlayerRaceCheckpoint(playerid)
+				DisablePlayerRaceCheckpoint(playerid);
 				
-				UpdateVehicleDamageStatus(vehid, 0, 0, 0, 0)
-				GetVehicleDamageStatus(vehid, CarInfo(vehid)(cVisual)(0), CarInfo(vehid)(cVisual)(1), CarInfo(vehid)(cVisual)(2), CarInfo(vehid)(cVisual)(3))
+				UpdateVehicleDamageStatus(vehid, 0, 0, 0, 0);
+				GetVehicleDamageStatus(vehid, CarInfo[vehid][cVisual][0], CarInfo[vehid][cVisual][1], CarInfo[vehid][cVisual][2], CarInfo[vehid][cVisual][3]);
 
-				CarInfo(vehid)(cHealth) = 1000.0
-				SetVehicleHealth(vehid, 1000.0)
+				CarInfo[vehid][cHealth] = 1000.0;
+				SetVehicleHealth(vehid, 1000.0);
 
-				SaveVehicle(vehid, SAVE_VEH_COUNT)
-				SaveVehicle(vehid, SAVE_VEH_ACCESS)
+				SaveVehicle(vehid, SAVE_VEH_COUNT);
+				SaveVehicle(vehid, SAVE_VEH_ACCESS);
 				
-				SetVehicleToRespawn(vehid)
-			)
-		)
-	)
+				SetVehicleToRespawn(vehid);
+			}
+		}
+	}
 	if(oldstate == PLAYER_STATE_DRIVER && newstate == PLAYER_STATE_ONFOOT)
-	(
-		if(PlayerCache(playerid)(pDrunkLevel) ( 500)
-		(
-			SetPlayerDrunkLevel(playerid, 0)
-		)
-		if(PlayerCache(playerid)(pAudioHandle) && PlayerCache(playerid)(pMusicPlayerUID) == 0)
-		(
-			StopAudioStreamForPlayer(playerid)
-			PlayerCache(playerid)(pAudioHandle) = 0
-		)
+	{
+		if(PlayerCache[playerid][pDrunkLevel] < 500)
+		{
+			SetPlayerDrunkLevel(playerid, 0);
+		}
+		if(PlayerCache[playerid][pAudioHandle] && PlayerCache[playerid][pMusicPlayerUID] == 0)
+		{
+			StopAudioStreamForPlayer(playerid);
+			PlayerCache[playerid][pAudioHandle] = 0;
+		}
 
-			//Audio_Stop(playerid, PlayerCache(playerid)(pAudioHandle))
+			//Audio_Stop(playerid, PlayerCache[playerid][pAudioHandle]);
 		
 		// Jeśli kierowca taksówki wysiądzie
-		if(PlayerCache(playerid)(pTaxiPassenger) != INVALID_PLAYER_ID)
-		(
-			passenger_id = PlayerCache(playerid)(pTaxiPassenger), price = PlayerCache(passenger_id)(pTaxiPay)
+		if(PlayerCache[playerid][pTaxiPassenger] != INVALID_PLAYER_ID)
+		{
+			new passenger_id = PlayerCache[playerid][pTaxiPassenger], price = PlayerCache[passenger_id][pTaxiPay];
 
-			if(price ) 0)
-			(
-				price = price ) PlayerCache(playerid)(pCash) ? PlayerCache(playerid)(pCash) : price
+			if(price > 0)
+			{
+				new price = price > PlayerCache[playerid][pCash] ? PlayerCache[playerid][pCash] : price;
 			
-	  			group_cash = floatround(0.50 * price),
-					playercash = floatround(0.50 * price)
+	  			new group_cash = floatround(0.50 * price),
+					playercash = floatround(0.50 * price);
 					
-				hrp_GivePlayerMoney(passenger_id, -price)
+				hrp_GivePlayerMoney(passenger_id, -price);
 				
 				// zabezpieczenie przed bugowaniem - seler
-				if(PlayerCache(playerid)(pGroupDuty))
-				(
-					hrp_GivePlayerMoney(playerid, playercash)
+				if(PlayerCache[playerid][pGroupDuty])
+				{
+					hrp_GivePlayerMoney(playerid, playercash);
 
-					group_id_fix = GetPlayerDutyGroupID(playerid)
+					new group_id_fix = GetPlayerDutyGroupID(playerid);
 					
-					GroupData(group_id_fix)(gCash) += group_cash
-					SaveGroup(group_id_fix)
+					GroupData[group_id_fix][gCash] += group_cash;
+					SaveGroup(group_id_fix);
 					
-					format(string, sizeof(string), Otrzymałeś premię w wysokości $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
+					format(string, sizeof(string), "Otrzymałeś premię w wysokości $%d!\nNa konto grupy dodano: $%d", playercash, group_cash);
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, "Informacja", string, "OK", "");
 					
-					AddGroupEvent(GroupData(group_id_fix)(gUID), PlayerCache(playerid)(pUID), PlayerCache(passenger_id)(pUID), price, group_cash, Taxi)
-				)
+					AddGroupEvent(GroupData[group_id_fix][gUID], PlayerCache[playerid][pUID], PlayerCache[passenger_id][pUID], price, group_cash, "Taxi");
+				}
 				else
-				(
-					printf((taxi-bug) Gracz %s (UID: %d) prawdopodobnie chcial teraz zbugowac nasz system bez duty z graczem %s (UID: %d)., PlayerName(playerid), PlayerCache(playerid)(pUID), PlayerName(passenger_id), PlayerCache(passenger_id)(pUID))
-					format(string,sizeof(string),Nie jesteś na służbie grupy, nie otrzymasz gotówki za przewóz klienta.)
-					GuiMsg(playerid,string,0)
-				)
+				{
+					printf("[taxi-bug] Gracz %s (UID: %d) prawdopodobnie chcial teraz zbugowac nasz system bez duty z graczem %s (UID: %d).", PlayerName(playerid), PlayerCache[playerid][pUID], PlayerName(passenger_id), PlayerCache[passenger_id][pUID]);
+					format(string,sizeof(string),"Nie jesteś na służbie grupy, nie otrzymasz gotówki za przewóz klienta.");
+					GuiMsg(playerid,string,0);
+				}
 				
-	   			format(string, sizeof(string), Zapłaciłeś $%d za przejazd taksówką., price)
-				ShowPlayerDialog(passenger_id, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
-			)
+	   			format(string, sizeof(string), "Zapłaciłeś $%d za przejazd taksówką.", price);
+				ShowPlayerDialog(passenger_id, D_INFO, DIALOG_STYLE_MSGBOX, "Informacja", string, "OK", "");
+			}
 
-			PlayerCache(playerid)(pTaxiPassenger) = INVALID_PLAYER_ID
+			PlayerCache[playerid][pTaxiPassenger] = INVALID_PLAYER_ID;
 
-			PlayerCache(passenger_id)(pTaxiVeh) = INVALID_VEHICLE_ID
-			PlayerCache(passenger_id)(pTaxiPay) = 0
-			PlayerCache(passenger_id)(pTaxiPrice) = 0
-		)
+			PlayerCache[passenger_id][pTaxiVeh] = INVALID_VEHICLE_ID;
+			PlayerCache[passenger_id][pTaxiPay] = 0;
+			PlayerCache[passenger_id][pTaxiPrice] = 0;
+		}
 		
 		// Jeśli bierze udział w wyścigu
-		if(PlayerCache(playerid)(pRacePhase))
-		(
-			if(PlayerCache(playerid)(pRacePhase) == 3)
-			(
-				TextDrawSetString(Text:TextDrawMainInfo(playerid), Nie mozesz ~y~wysiadac ~w~z pojazdu podczas trwania ~g~wyscigu~w~.~n~~n~Zostales ~r~zdyskwalifikowany~w~.)
-			)
+		if(PlayerCache[playerid][pRacePhase])
+		{
+			if(PlayerCache[playerid][pRacePhase] == 3)
+			{
+				TextDrawSetString(Text:TextDrawMainInfo[playerid], "Nie mozesz ~y~wysiadac ~w~z pojazdu podczas trwania ~g~wyscigu~w~.~n~~n~Zostales ~r~zdyskwalifikowany~w~.");
+			}
 			else
-			(
-				TextDrawSetString(Text:TextDrawMainInfo(playerid), Proces tworzenia wyscigu zostal ~r~przerwany~w~.)
-			)
-  			TextDrawShowForPlayer(playerid, Text:TextDrawMainInfo(playerid))
-			PlayerCache(playerid)(pShowInfoText) = 5
+			{
+				TextDrawSetString(Text:TextDrawMainInfo[playerid], "Proces tworzenia wyscigu zostal ~r~przerwany~w~.");
+			}
+  			TextDrawShowForPlayer(playerid, Text:TextDrawMainInfo[playerid]);
+			PlayerCache[playerid][pShowInfoText] = 5;
 			
-			DisablePlayerRaceCheckpoint(playerid)
+			DisablePlayerRaceCheckpoint(playerid);
 			
-   			PlayerCache(playerid)(pRacePhase) = 0
-	  		PlayerCache(playerid)(pRacePoint) = 0
+   			PlayerCache[playerid][pRacePhase] = 0;
+	  		PlayerCache[playerid][pRacePoint] = 0;
 
-			PlayerCache(playerid)(pRaceCheckpoints) = 0
-		)
+			PlayerCache[playerid][pRaceCheckpoints] = 0;
+		}
 		
-		vehid = PlayerCache(playerid)(pLastVeh)
+		new vehid = PlayerCache[playerid][pLastVeh];
 		
 		// Jeśli włączony GPS
-		if(CarInfo(vehid)(cGPS))
-		(
+		if(CarInfo[vehid][cGPS])
+		{
 			if(IsPlayerInGroupType(playerid, GROUP_POLICE))
-			(
-   				for (i = 0 i (= CountDynamicMapIcons() i++)
-   				(
+			{
+   				for (new i = 0; i <= CountDynamicMapIcons(); i++)
+   				{
  					if(IsValidDynamicMapIcon(i))
- 					(
+ 					{
 			   			if(Streamer_IsInArrayData(STREAMER_TYPE_MAP_ICON, i, E_STREAMER_PLAYER_ID, playerid))
-			   			(
-						   	DestroyDynamicMapIcon(i)
-			   			)
-					)
-   				)
-			)
-		)
+			   			{
+						   	DestroyDynamicMapIcon(i);
+						}
+					}
+				}
+			}
+		}
 		
 		// Odepnij pasy
-		if(PlayerCache(playerid)(pBelts))	PlayerCache(playerid)(pBelts) = false
-	)
+		if(PlayerCache[playerid][pBelts])	PlayerCache[playerid][pBelts] = false;
+	}
 	if(oldstate == PLAYER_STATE_PASSENGER && newstate == PLAYER_STATE_ONFOOT)
-	(
+	{
 		// Jeśli pasażer taksówki wysiądzie
- 		if(PlayerCache(playerid)(pTaxiVeh) != INVALID_VEHICLE_ID)
-		(
-			driverid = GetVehicleDriver(PlayerCache(playerid)(pTaxiVeh)), price = PlayerCache(playerid)(pTaxiPay)
+ 		if(PlayerCache[playerid][pTaxiVeh] != INVALID_VEHICLE_ID)
+		{
+			new driverid = GetVehicleDriver(PlayerCache[playerid][pTaxiVeh]), price = PlayerCache[playerid][pTaxiPay];
 
-			if(price ) 0)
-			(
-				price = price ) PlayerCache(playerid)(pCash) ? PlayerCache(playerid)(pCash) : price
+			if(price > 0)
+			{
+				price = price > PlayerCache[playerid][pCash] ? PlayerCache[playerid][pCash] : price;
 			
-	  			group_cash = floatround(0.50 * price),
-					playercash = floatround(0.50 * price)
+	  			new group_cash = floatround(0.50 * price),
+					playercash = floatround(0.50 * price);
 					
-				hrp_GivePlayerMoney(playerid, -price)
+				hrp_GivePlayerMoney(playerid, -price);
 
 				// zabezpieczenie przed bugowaniem - seler
-				if(PlayerCache(driverid)(pGroupDuty))
-				(
-					hrp_GivePlayerMoney(driverid, playercash)
+				if(PlayerCache[driverid][pGroupDuty])
+				{
+					hrp_GivePlayerMoney(driverid, playercash);
 
-					group_id_fix = GetPlayerDutyGroupID(driverid)
+					new group_id_fix = GetPlayerDutyGroupID(driverid);
 					
-					GroupData(group_id_fix)(gCash) += group_cash
-					SaveGroup(group_id_fix)
+					GroupData[group_id_fix][gCash] += group_cash;
+					SaveGroup(group_id_fix);
 					
-					format(string, sizeof(string), Otrzymałeś premię w wysokości $%d!\nNa konto grupy dodano: $%d, playercash, group_cash)
-					ShowPlayerDialog(driverid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
+					format(string, sizeof(string), "Otrzymałeś premię w wysokości $%d!\nNa konto grupy dodano: $%d", playercash, group_cash);
+					ShowPlayerDialog(driverid, D_INFO, DIALOG_STYLE_MSGBOX, "Informacja", string, "OK", "");
 					
-					AddGroupEvent(GroupData(group_id_fix)(gUID), PlayerCache(driverid)(pUID), PlayerCache(playerid)(pUID), price, group_cash, Taxi)
-				)
+					AddGroupEvent(GroupData[group_id_fix][gUID], PlayerCache[driverid][pUID], PlayerCache[playerid][pUID], price, group_cash, "Taxi");
+				}
 				else
-				(
-					printf((taxi-bug) Gracz %s (UID: %d) prawdopodobnie chcial teraz zbugowac nasz system bez duty z graczem %s (UID: %d)., PlayerName(driverid), PlayerCache(driverid)(pUID), PlayerName(playerid), PlayerCache(playerid)(pUID))
-					format(string,sizeof(string),Nie jesteś na służbie grupy, nie otrzymasz gotówki za przewóz klienta.)
-					GuiMsg(driverid,string,0)
-				)
+				{
+					printf("[taxi-bug] Gracz %s (UID: %d) prawdopodobnie chcial teraz zbugowac nasz system bez duty z graczem %s (UID: %d).", PlayerName(driverid), PlayerCache[driverid][pUID], PlayerName(playerid), PlayerCache[playerid][pUID]);
+					format(string,sizeof(string),"Nie jesteś na służbie grupy, nie otrzymasz gotówki za przewóz klienta.");
+					GuiMsg(driverid,string,0);
+				}
 				
-	   			format(string, sizeof(string), Zapłaciłeś $%d za przejazd taksówką., price)
-				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Informacja, string, OK, )
-			)
+	   			format(string, sizeof(string), "Zapłaciłeś $%d za przejazd taksówką.", price);
+				ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, "Informacja", string, "OK", "");
+			}
 						
-			PlayerCache(driverid)(pTaxiPassenger) = INVALID_PLAYER_ID
+			PlayerCache[driverid][pTaxiPassenger] = INVALID_PLAYER_ID;
 			
-			PlayerCache(playerid)(pTaxiVeh) = INVALID_VEHICLE_ID
-			PlayerCache(playerid)(pTaxiPay) = 0
-			PlayerCache(playerid)(pTaxiPrice) = 0
-		)
+			PlayerCache[playerid][pTaxiVeh] = INVALID_VEHICLE_ID;
+			PlayerCache[playerid][pTaxiPay] = 0;
+			PlayerCache[playerid][pTaxiPrice] = 0;
+		}
 		
 		// Odepnij pasy
-		if(PlayerCache(playerid)(pBelts))	PlayerCache(playerid)(pBelts) = false
-	)
+		if(PlayerCache[playerid][pBelts])	PlayerCache[playerid][pBelts] = false;
+	}
 	
 	if(oldstate == PLAYER_STATE_ONFOOT && (newstate == PLAYER_STATE_DRIVER || newstate == PLAYER_STATE_PASSENGER))
-	(	
-		vehid = GetPlayerVehicleID(playerid)
-		if(strlen(CarInfo(vehid)(cAudioURL)))
-		(
-   			if(PlayerCache(playerid)(pAudioHandle))
-			(
-				//Audio_Stop(playerid, PlayerCache(playerid)(pAudioHandle))
-				PlayerCache(playerid)(pAudioHandle) = 0
-				StopAudioStreamForPlayer(playerid)
+	{
+		new vehid = GetPlayerVehicleID(playerid);
+		if(strlen(CarInfo[vehid][cAudioURL]))
+		{
+   			if(PlayerCache[playerid][pAudioHandle])
+			{
+				//Audio_Stop(playerid, PlayerCache[playerid][pAudioHandle]);
+				PlayerCache[playerid][pAudioHandle] = 0;
+				StopAudioStreamForPlayer(playerid);
 				
-				if(PlayerCache(playerid)(pMusicPlayerUID))
-				(
-		  			itemid = GetItemID(PlayerCache(playerid)(pMusicPlayerUID))
-					ItemInfo(itemid)(iUsed) = 0
-				)
-			)
-			//Audio_StopRadio(playerid)
-	  		//PlayerCache(playerid)(pAudioHandle) = Audio_PlayStreamed(playerid, CarInfo(vehid)(cAudioURL))
+				if(PlayerCache[playerid][pMusicPlayerUID])
+				{
+		  			new itemid = GetItemID(PlayerCache[playerid][pMusicPlayerUID]);
+					ItemInfo[itemid][iUsed] = 0;
+				}
+			}
+			//Audio_StopRadio(playerid);
+	  		//PlayerCache[playerid][pAudioHandle] = Audio_PlayStreamed(playerid, CarInfo[vehid][cAudioURL]);
 			
-			PlayerCache(playerid)(pAudioHandle) = 1
-			PlayAudioStreamForPlayer(playerid, CarInfo(vehid)(cAudioURL))
+			PlayerCache[playerid][pAudioHandle] = 1;
+			PlayAudioStreamForPlayer(playerid, CarInfo[vehid][cAudioURL]);
 			
-		)
+		}
 		/*
 		if(HasWindow(vehid))
-		(
+		{
 			if(GetPlayerWindowStatus(vehid, playerid))
-			(
-				TextDrawSetString(Text:TextDrawWindow(playerid), Szyba otwarta)
-				TextDrawShowForPlayer(playerid, Text:TextDrawWindow(playerid))
-			)
+			{
+				TextDrawSetString(Text:TextDrawWindow[playerid], "Szyba otwarta");
+				TextDrawShowForPlayer(playerid, Text:TextDrawWindow[playerid]);
+			}
 			else
-			(
-				TextDrawSetString(Text:TextDrawWindow(playerid), Szyba zamknieta)
-				TextDrawShowForPlayer(playerid, Text:TextDrawWindow(playerid))
-			)
-		)
+			{
+				TextDrawSetString(Text:TextDrawWindow[playerid], "Szyba zamknieta");
+				TextDrawShowForPlayer(playerid, Text:TextDrawWindow[playerid]);
+			}
+		}
 		*/
-	)
+	}
 	
 	
 	// wysiadł z wozu
 	if((oldstate == PLAYER_STATE_DRIVER || oldstate == PLAYER_STATE_PASSENGER) && newstate == PLAYER_STATE_ONFOOT)
-	(
-		if(PlayerCache(playerid)(pAudioHandle) && !PlayerCache(playerid)(pMusicPlayerUID))
-		(
-			StopAudioStreamForPlayer(playerid)
-			PlayerCache(playerid)(pAudioHandle) = 0
+	{
+		if(PlayerCache[playerid][pAudioHandle] && !PlayerCache[playerid][pMusicPlayerUID])
+		{
+			StopAudioStreamForPlayer(playerid);
+			PlayerCache[playerid][pAudioHandle] = 0;
 			
-		)
+		}
 			
-		//if(PlayerCache(playerid)(pCourse))
-			//PlayerCache(playerid)(pCourseVeh) = INVALID_VEHICLE_ID
-	)
+		//if(PlayerCache[playerid][pCourse])
+			//PlayerCache[playerid][pCourseVeh] = INVALID_VEHICLE_ID;
+	}
 	
-	SyncCamera(playerid)
-	return 1
-)
+	SyncCamera(playerid);
+	return 1;
+}
 
 public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
-(
+{
 	if(newkeys & KEY_CROUCH)
-	(
+	{
 		if(IsPlayerInAnyVehicle(playerid))
-		(
-			if(PlayerCache(playerid)(pFlood) (= 0)
-			(
-				cmd_brama(playerid, skrypt)
-				PlayerCache(playerid)(pFlood) = 2
-			)
-		)
-	)
+		{
+			if(PlayerCache[playerid][pFlood] <= 0)
+			{
+				cmd_brama(playerid, "skrypt");
+				PlayerCache[playerid][pFlood] = 2;
+			}
+		}
+	}
 	
-	if(PlayerCache(playerid)(pFueling))
-	(
+	if(PlayerCache[playerid][pFueling])
+	{
 		if(newkeys & KEY_SPRINT)
-		(
-				price = floatround(RefuelData(playerid)(rPrice)), value = RefuelData(playerid)(rLiters), vehid = RefuelData(playerid)(rVeh), string(128)
-				if(PlayerCache(playerid)(pCash) ( price) // brakło kaski, jakiś jebany buger
-				(
-					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, Wystąpił błąd, Nie posiadasz takiej ilości gotówki., OK, )
-					PlayerCache(playerid)(pFueling) = false
-					RefuelData(playerid)(rType) = 0
-					RefuelData(playerid)(rLiters) = 0
-					RefuelData(playerid)(rPrice) = 0.00
-					RefuelData(playerid)(rPricePerL) = 0.00
-					RefuelData(playerid)(rVeh) = 0
-				)
+		{
+				new price = floatround(RefuelData[playerid][rPrice]), value = RefuelData[playerid][rLiters], vehid = RefuelData[playerid][rVeh], string[128];
+				if(PlayerCache[playerid][pCash] < price) // brakło kaski, jakiś jebany buger
+				{
+					ShowPlayerDialog(playerid, D_INFO, DIALOG_STYLE_MSGBOX, "Wystąpił błąd", "Nie posiadasz takiej ilości gotówki.", "OK", "");
+					PlayerCache[playerid][pFueling] = false;
+					RefuelData[playerid][rType] = 0;
+					RefuelData[playerid][rLiters] = 0;
+					RefuelData[playerid][rPrice] = 0.00;
+					RefuelData[playerid][rPricePerL] = 0.00;
+					RefuelData[playerid][rVeh] = 0;
+				}
 				else // ma kaske, nie buguje, dobry gracz
 				(
 					hrp_GivePlayerMoney(playerid, -price)
@@ -497,8 +497,8 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 					PlayerTextDrawHide(playerid, TextDrawFuelContent(playerid))
 					TextDrawHideForPlayer(playerid, Text:TextDrawFuelBack)					
 				)
-		)
-	)
+		}
+	}
 	
 	if(newkeys & KEY_SUBMISSION)
 	(
@@ -1238,7 +1238,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 	)
 		
 	return 1
-)
+}
 
 public OnPlayerUpdate(playerid)
 (	
