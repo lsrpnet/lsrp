@@ -71,7 +71,7 @@ ls-rp.net server source code
 | lib\tasks.inc                                   | 0% (0/4392)      |
 | lib\textdraw.inc                                | 0% (0/1431)      |
 | lib\todo.inc                                    | 100% (338/338)   |
-| lib\traffic.inc                                 | 0% (0/1924)      |
+| lib\traffic.inc                                 | 100% (1924/1924) |
 | lib\unused.inc                                  | 0% (0/57)        |
 | lib\utils.inc                                   | 0% (0/2931)      |
 | lib\vehicle.inc                                 | 0% (0/2438)      |
