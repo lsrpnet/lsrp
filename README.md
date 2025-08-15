@@ -66,7 +66,7 @@ ls-rp.net server source code
 | lib\product.inc                                 | 0% (0/371)       |
 | lib\quarry.inc                                  | 100% (1/1)       |
 | lib\sawmill.inc                                 | 100% (1/1)       |
-| lib\states.inc                                  | 20% (480/2361)   |
+| lib\states.inc                                  | 100% (2361/2361) |
 | lib\stockmarket.inc                             | 100% (1/1)       |
 | lib\tasks.inc                                   | 0% (0/4392)      |
 | lib\textdraw.inc                                | 0% (0/1431)      |
