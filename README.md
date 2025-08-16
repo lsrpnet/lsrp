@@ -68,7 +68,7 @@ ls-rp.net server source code
 | lib\sawmill.inc                                 | 100% (1/1)       |
 | lib\states.inc                                  | 100% (2361/2361) |
 | lib\stockmarket.inc                             | 100% (1/1)       |
-| lib\tasks.inc                                   | 0% (0/4392)      |
+| lib\tasks.inc                                   | 100% (4392/4392) |
 | lib\textdraw.inc                                | 0% (0/1431)      |
 | lib\todo.inc                                    | 100% (338/338)   |
 | lib\traffic.inc                                 | 100% (1924/1924) |
