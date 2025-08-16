@@ -74,6 +74,6 @@ ls-rp.net server source code
 | lib\traffic.inc                                 | 100% (1924/1924) |
 | lib\unused.inc                                  | 0% (0/57)        |
 | lib\utils.inc                                   | 0% (0/2931)      |
-| lib\vehicle.inc                                 | 0% (0/2438)      |
+| lib\vehicle.inc                                 | 100% (2438/2438) |
 | lib\wbc.inc                                     | 0% (0/231)       |
 | lib\weapon.inc                                  | 0% (0/483)       |
