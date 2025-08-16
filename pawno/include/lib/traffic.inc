@@ -77,7 +77,7 @@ public OnPlayerConnect(playerid)
 	
 	// Sprawdź, czy konto istnieje w bazie
 	new data[32];
-	mysql_query_format("SELECT char_uid, char_gid FROM hrp_characters WHERE BINARY char_name LIKE %s LIMIT 1", PlayerOriginalName(playerid));
+	mysql_query_format("SELECT char_uid, char_gid FROM hrp_characters WHERE BINARY char_name LIKE '%s' LIMIT 1", PlayerOriginalName(playerid));
 	
 	printf("[mysql] Zaczynam sprawdzać gracza %s w bazie danych...", PlayerRealName(playerid));
 
@@ -116,7 +116,7 @@ public OnPlayerConnect(playerid)
 		new passIP[16], bool:done;
 		GetPlayerIp(playerid, passIP, sizeof(passIP));
 		
-		mysql_query_format("SELECT user_login, user_admin, user_premium, user_premium_time, user_gamepoints, user_color FROM live_users WHERE user_id = %d AND user_loginpass ) %d AND user_loginip = %s LIMIT 1", PlayerCache[playerid][pGID], gettime(), passIP);
+		mysql_query_format("SELECT user_login, user_admin, user_premium, user_premium_time, user_gamepoints, user_color FROM live_users WHERE user_id = %d AND user_loginpass > %d AND user_loginip = '%s' LIMIT 1", PlayerCache[playerid][pGID], gettime(), passIP);
 		mysql_store_result();
 		if(mysql_fetch_row(data, "|"))
 		{
@@ -802,9 +802,9 @@ public OnPlayerDisconnect(playerid, reason)
 	new v_m = floatround((v_sum - (v_h*60*60)) / 60, floatround_floor);
 	new v_s = floatround(v_sum - (v_h*60*60) - (v_m*60));
 	format(verbose, sizeof(verbose), "%dh%dm%ds", v_h, v_m, v_s);
-	//mysql_query_format("UPDATE hrp_ingame SET (tout, verbose) VALUES(%d, %s) WHERE id = %d", gettime(), verbose, PlayerCache[playerid][pIGDBID]);
-	//mysql_query_format("UPDATE hrp_ingame SET out = %d, verbose = %s WHERE id = %d", gettime(), verbose, PlayerCache[playerid][pIGDBID]);
-	mysql_query_format("UPDATE hrp_ingame SET tout = %d, verbose = %s WHERE id = %d", gettime(), verbose, PlayerCache[playerid][pIGDBID]);
+	//mysql_query_format("UPDATE hrp_ingame SET (tout, verbose) VALUES(%d, '%s') WHERE id = %d", gettime(), verbose, PlayerCache[playerid][pIGDBID]);
+	//mysql_query_format("UPDATE hrp_ingame SET out = %d, verbose = '%s' WHERE id = %d", gettime(), verbose, PlayerCache[playerid][pIGDBID]);
+	mysql_query_format("UPDATE hrp_ingame SET tout = %d, verbose = '%s' WHERE id = %d", gettime(), verbose, PlayerCache[playerid][pIGDBID]);
 	
 	format(PlayerCache[playerid][pDescTagText], 128, "" );
 	

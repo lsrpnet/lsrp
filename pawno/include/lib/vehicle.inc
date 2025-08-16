@@ -1,7 +1,7 @@
 public CreateCar(modelid, Float:PosX, Float:PosY, Float:PosZ, Float:PosA, color1, color2, respawn_delay)
 {
 	new gameid, uid;
-	mysql_query_format("INSERT INTO hrp_cars (car_model, car_name, car_posx, car_posy, car_posz, car_posa, car_color1, car_color2, car_fuel, car_fueltype, car_lastactivity, car_activity) VALUES (%d, %s, %f, %f, %f, %f, %d, %d, %d, %d, %d, 1)", modelid, VehicleData[modelid-400][vName], PosX, PosY, PosZ, PosA, color1, color2, GetVehicleMaxFuel(modelid), GetVehicleFuelType(modelid), gettime());
+	mysql_query_format("INSERT INTO hrp_cars (car_model, car_name, car_posx, car_posy, car_posz, car_posa, car_color1, car_color2, car_fuel, car_fueltype, car_lastactivity, car_activity) VALUES (%d, '%s', %f, %f, %f, %f, %d, %d, %d, %d, %d, 1)", modelid, VehicleData[modelid-400][vName], PosX, PosY, PosZ, PosA, color1, color2, GetVehicleMaxFuel(modelid), GetVehicleFuelType(modelid), gettime());
 
 	uid = mysql_insert_id();
 	gameid = CreateVehicle(modelid, PosX, PosY, PosZ, PosA, color1, color2, respawn_delay);
@@ -179,7 +179,7 @@ public SaveVehicle(gameid, what)
 	if(what & SAVE_VEH_COUNT)
 	{
 		// Liczniki (paliwo, przebieg, uszkodzenie techniczne, uszkodzenie wizualne)
-		format(query, sizeof(query), " car_health = %f, car_fuel = %f, car_mileage = %f, car_visual = %d,%d,%d,%d, car_carfax = %f",
+		format(query, sizeof(query), " car_health = %f, car_fuel = %f, car_mileage = %f, car_visual = '%d,%d,%d,%d', car_carfax = %f",
 		CarInfo[gameid][cHealth],
 		CarInfo[gameid][cFuel],
 		CarInfo[gameid][cMileage],
@@ -198,7 +198,7 @@ public SaveVehicle(gameid, what)
 	if(what & SAVE_VEH_THINGS)
 	{
 		// Pozostałe (właściciel, model, nazwa, last activity)
-		format(query, sizeof(query), " car_owner = %d, car_ownertype = %d, car_model = %d, car_name = %s, car_register = %d",
+		format(query, sizeof(query), " car_owner = %d, car_ownertype = %d, car_model = %d, car_name = '%s', car_register = %d",
 		CarInfo[gameid][cOwner],
 		CarInfo[gameid][cOwnerType],
 		CarInfo[gameid][cModel],

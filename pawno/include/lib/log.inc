@@ -3,7 +3,7 @@ public AddPlayerLoginLog(playerid, bool: success)
 	new ip[16];
 	GetPlayerIp(playerid, ip, sizeof(ip))
 	
-	mysql_query_format("INSERT INTO hrp_loginlogs (loginlog_ownergid, loginlog_charname, loginlog_ip, loginlog_success, loginlog_date, loginlog_charuid) VALUES (%d, %s, %s, %d, NOW(), %d)", PlayerCache[playerid][pGID], PlayerRealName(playerid), ip, success, PlayerCache[playerid][pUID]);
+	mysql_query_format("INSERT INTO hrp_loginlogs (loginlog_ownergid, loginlog_charname, loginlog_ip, loginlog_success, loginlog_date, loginlog_charuid) VALUES (%d, '%s', '%s', %d, NOW(), %d)", PlayerCache[playerid][pGID], PlayerRealName(playerid), ip, success, PlayerCache[playerid][pUID]);
 	return 1;
 }
 
