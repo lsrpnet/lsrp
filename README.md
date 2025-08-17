@@ -30,7 +30,7 @@ ls-rp.net server source code
 | lib\booth.inc                                   | 0% (0/82)        |
 | lib\bots.inc                                    | 0% (0/328)       |
 | lib\busstop.inc                                 | 0% (0/74)        |
-| lib\chat.inc                                    | 0% (0/947)       |
+| lib\chat.inc                                    | 100% (947/947)   |
 | lib\chatcmd.inc                                 | 0% (0/842)       |
 | lib\checkpoint.inc                              | 0% (0/436)       |
 | lib\cmd.inc                                     | 0% (0/14621)     |
