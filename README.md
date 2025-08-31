@@ -25,7 +25,7 @@ ls-rp.net server source code
 | lib\lspad\lspad_draws.inc                       | 0% (0/2117)      |
 | lib\lspad\lspad.inc                             | 0% (0/780)       |
 | lib\3dtext.inc                                  | 0% (0/64)        |
-| lib\admincmd.inc                                | 0% (0/6138)      |
+| lib\admincmd.inc                                | 100% (6138/6138) |
 | lib\basket.inc                                  | 0% (0/81)        |
 | lib\booth.inc                                   | 0% (0/82)        |
 | lib\bots.inc                                    | 0% (0/328)       |
