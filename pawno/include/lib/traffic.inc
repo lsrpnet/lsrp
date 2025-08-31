@@ -381,7 +381,7 @@ public OnPlayerLogin(playerid)
 	Logged[playerid] = true;
 	
 	SetSpawnInfo(playerid, TEAM_DEFAULT, PlayerCache[playerid][pSkin], SettingData[MainSpawnPos][0], SettingData[MainSpawnPos][1], SettingData[MainSpawnPos][2], SettingData[MainSpawnPos][3], 0, 0, 0, 0, 0, 0);
-	SendClientFormatMessage(playerid, 0xF5DEB3FF, "Witaj, (FFFFFF)%s(F5DEB3). Zalogowaleś się na postać (FFFFFF)%s(F5DEB3). Milej gry!", PlayerCache[playerid][pGlobalName], PlayerName(playerid));
+	SendClientFormatMessage(playerid, 0xF5DEB3FF, "Witaj, {FFFFFF}%s{F5DEB3}. Zalogowaleś się na postać {FFFFFF}%s{F5DEB3}. Milej gry!", PlayerCache[playerid][pGlobalName], PlayerName(playerid));
 
 	if(PlayerCache[playerid][pAdmin] > 0)
 	{
