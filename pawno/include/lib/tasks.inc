@@ -49,7 +49,7 @@ task OnMinuteTimer[60000]()
 		}
 	}
 	
-	for(new i = 0;  i < MAX_PLAYERS;  i++)
+	for(new i = 0 ; i < MAX_PLAYERS ; i++)
 	{
 		PlayerCache[i][pCarryTries] = 0;
 		
@@ -66,7 +66,7 @@ task OnMinuteTimer[60000]()
 		}
 	}
 	
-	for(new i = 0;  i < MAX_SEEDS; i++)
+	for(new i = 0 ; i < MAX_SEEDS; i++)
 	{
 		if(SeedInfo[i][sUID] > 0)
 		{

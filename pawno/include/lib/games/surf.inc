@@ -26,7 +26,7 @@ stock surf_DestroySurfboard(surfid)
 stock surf_GetFreeID()
 {
 	new freeid = 0;
-	for(new i = 0;  i < MAX_SURFBOARDS; i++)
+	for(new i = 0 ; i < MAX_SURFBOARDS; i++)
 	{
 		if(IsValidObject(Surfboard[i][surfObjectID]))
 		{
@@ -137,7 +137,7 @@ stock surf_StopBoard(gameid)
 	else
 	{
 		new skateid = -1;
-		for(new i = 0;  i < MAX_SURFBOARDS i++)
+		for(new i = 0 ; i < MAX_SURFBOARDS i++)
 		{
 			if(GetPlayerVirtualWorld(playerid) == 0)
 			{
@@ -189,7 +189,7 @@ CMD:surfuj(playerid,params[])
 	else
 	{
 		new surfid = INVALID_SURFBOARD_ID;
-		for(new i = 0;  i < MAX_SURFBOARDS i++)
+		for(new i = 0 ; i < MAX_SURFBOARDS i++)
 		{
 			// Ten drugi to AquaPark
 			if(GetPlayerVirtualWorld(playerid) == 0 || GetPlayerVirtualWorld(playerid) == 3722)

@@ -436,7 +436,7 @@ public OnPlayerText(playerid, text[])
 		EscapePL(sub);
 		format(string, sizeof(string), "%s ~>~ ~p~~h~Na zywo - %s: ~w~%s", GroupData[group_id_fix][gTag], PlayerName(playerid), FormatTextDrawColors(sub));
 			
-		for(new i = 0;  i < MAX_PLAYERS; i++)
+		for(new i = 0 ; i < MAX_PLAYERS; i++)
 		{
 			if(PlayerCache[i][pStation] == GroupData[group_id_fix][gUID])
 			{
@@ -909,7 +909,7 @@ public ProxDetectorAlt(Float:radi, playerid, string[], col1, col2, col3, col4, c
 stock MakeTextColorMe(text[], fade)		//test
 {
 	new applyMe = 0, skip = 0;
-	for(new i = 0;  i < strlen(text); i++)
+	for(new i = 0 ; i < strlen(text); i++)
 	{
 		if(skip > 0)
 		{

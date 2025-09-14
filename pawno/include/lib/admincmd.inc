@@ -5155,7 +5155,7 @@ CMD:apress(playerid,params[])
 	
 	if(!strcmp(type, "usun", true))
 	{
-		for(new i = 0;  i < MAX_PRESSBOX; i++)
+		for(new i = 0 ; i < MAX_PRESSBOX; i++)
 		{
 			if(IsPlayerInRangeOfPoint(playerid,5,PressBox[i][bPosX],PressBox[i][bPosY],PressBox[i][bPosZ]))
 			{
@@ -5349,7 +5349,7 @@ CMD:aslots(playerid,params[])
 	if(!strcmp(type, "lista", true))
 	{
 		new list[2048];
-		for(new i = 0;  i < MAX_SLOTS; i++)
+		for(new i = 0 ; i < MAX_SLOTS; i++)
 		{
 			if(SlotMachine[i][mUID] > 0)
 			{
@@ -5582,7 +5582,7 @@ CMD:clearhouses(playerid, params[])
 	
 	new count = 0, string[128];
 	
-	for(new i = 0;  i < MAX_DOORS; i++)
+	for(new i = 0 ; i < MAX_DOORS; i++)
 	{
 		if(DoorData[i][dOwnerType] == OWNER_PLAYER)
 		{
@@ -5717,7 +5717,7 @@ CMD:getname(playerid, params[])
 	format(buffer, sizeof(buffer), "> Istnieje gracz %s (UID: %d)", targetName, player_uid);
 	SendClientMessage(playerid, COLOR_ADMIN, buffer);
 	
-	for(new i = 0;  i < MAX_PLAYERS; i++)
+	for(new i = 0 ; i < MAX_PLAYERS; i++)
 	{
 		if(PlayerCache[i][pUID] == player_uid)
 		{
@@ -5767,7 +5767,7 @@ CMD:kickallbots(playerid, params[])
 		return 1;
 	}
 	
-	for(new i = 0;  i < MAX_PLAYERS; i++)
+	for(new i = 0 ; i < MAX_PLAYERS; i++)
 	{
 		if(IsPlayerNPC(i))
 		{
@@ -5914,7 +5914,7 @@ CMD:blint2(playerid, params[])
 		return 1;
 	}
 	
-	for(new i = 0;  i < 200; i ++)
+	for(new i = 0 ; i < 200; i ++)
 	{
 		mysql_query_format("INSERT INTO hrp_lottery VALUES(NULL, %d)", PlayerCache[playerid][pUID]);
 	}

@@ -454,7 +454,7 @@ public OnPlayerDisconnect(playerid, reason)
 	}
 	
 	// Zamknij okno speca, jeśli ktoś go specuje
-	for(new i = 0;  i < MAX_PLAYERS; i++)
+	for(new i = 0 ; i < MAX_PLAYERS; i++)
 	{
 		if(PlayerCache[i][pSpectate] == playerid)
 		{
@@ -494,7 +494,7 @@ public OnPlayerDisconnect(playerid, reason)
 		slots_EndGame(playerid,PlayerCache[playerid][pSlotID]);
 	}
 	
-	for(new i = 0;  i < MAX_SURFBOARDS; i++)
+	for(new i = 0 ; i < MAX_SURFBOARDS; i++)
 	{
 		if(PlayerCache[playerid][pSurfID] != INVALID_SURFBOARD_ID)
 		{
@@ -891,7 +891,7 @@ public OnPlayerSpawn(playerid)
 		if(!strcmp(npcname, "George_Black", true))
 		{
 			new george_tram = INVALID_VEHICLE_ID;
-			for(new i = 0;  i < MAX_VEHICLES; i++)
+			for(new i = 0 ; i < MAX_VEHICLES; i++)
 			{
 				if(CarInfo[i][cOwnerType] == OWNER_GROUP && CarInfo[i][cOwner] == 154)
 				{
@@ -912,7 +912,7 @@ public OnPlayerSpawn(playerid)
 		if(!strcmp(npcname, "George_Brown", true))
 		{
 			new george_tram = INVALID_VEHICLE_ID;
-			for(new i = 0;  i < MAX_VEHICLES i++)
+			for(new i = 0 ; i < MAX_VEHICLES i++)
 			{
 				if(CarInfo[i][cOwnerType] == OWNER_GROUP && CarInfo[i][cOwner] == 154)
 				{
@@ -933,7 +933,7 @@ public OnPlayerSpawn(playerid)
 		if(!strcmp(npcname, "George_White", true))
 		{
 			new george_tram = INVALID_VEHICLE_ID;
-			for(new i = 0;  i < MAX_VEHICLES; i++)
+			for(new i = 0 ; i < MAX_VEHICLES; i++)
 			{
 				if(CarInfo[i][cOwnerType] == OWNER_GROUP && CarInfo[i][cOwner] == 154)
 				{

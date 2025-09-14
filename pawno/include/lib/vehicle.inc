@@ -806,7 +806,7 @@ public OnVehicleDamageStatusUpdate(vehicleid, playerid)
 	if(hitValue >= 50 && afterCrash > hitValue)
 	{
 		//jesli walnął więcej niż 50 HP to trzeba zakolorować nick gracza na chwilę
-		for(new i = 0;  i < MAX_PLAYERS; i++)
+		for(new i = 0 ; i < MAX_PLAYERS; i++)
 		{
 			if(IsPlayerInVehicle(i,vehicleid))
 			{
