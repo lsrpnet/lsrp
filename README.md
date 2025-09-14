@@ -58,7 +58,7 @@ ls-rp.net server source code
 | lib\machine.inc                                 | 0% (0/16)          |
 | lib\object.inc                                  | 0% (0/545)         |
 | lib\offer.inc                                   | 0% (0/2461)        |
-| lib\penalties.inc                               | 0% (0/373)         |
+| lib\penalties.inc                               | 100% (373/373)     |
 | lib\phone.inc                                   | 0% (0/743)         |
 | lib\photoradar.inc                              | 0% (0/68)          |
 | lib\plants.inc                                  | 0% (0/411)         |
