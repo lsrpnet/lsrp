@@ -62,7 +62,7 @@ ls-rp.net server source code
 | lib\phone.inc                                   | 0% (0/743)         |
 | lib\photoradar.inc                              | 0% (0/68)          |
 | lib\plants.inc                                  | 0% (0/411)         |
-| lib\player.inc                                  | 0% (0/1344)        |
+| lib\player.inc                                  | 100% (1344/1344)   |
 | lib\product.inc                                 | 0% (0/371)         |
 | lib\quarry.inc                                  | 100% (1/1)         |
 | lib\sawmill.inc                                 | 100% (1/1)         |
