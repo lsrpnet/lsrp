@@ -76,4 +76,4 @@ ls-rp.net server source code
 | lib\utils.inc                                   | 0% (0/2931)        |
 | lib\vehicle.inc                                 | 100% (2438/2438)   |
 | lib\wbc.inc                                     | 0% (0/231)         |
-| lib\weapon.inc                                  | 0% (0/483)         |
+| lib\weapon.inc                                  | 100% (483/483)     |
