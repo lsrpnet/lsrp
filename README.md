@@ -50,7 +50,7 @@ ls-rp.net server source code
 | lib\gym.inc                                     | 0% (0/221)         |
 | lib\hrpfunction.inc                             | 100% (144/144)     |
 | lib\item_interface_new.inc                      | 0% (0/483)         |
-| lib\item_use.inc                                | 0% (0/2956)        |
+| lib\item_use.inc                                | 100% (2956/2956)   |
 | lib\item.inc                                    | 100% (1461/1461)   |
 | lib\launcher.inc                                | 0% (0/64)          |
 | lib\log.inc                                     | 100% (179/179)     |
