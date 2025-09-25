@@ -630,67 +630,67 @@ stock FormatTextDrawColors(givenString[])
 		pos = strfind(editingString, "~", true, pos + 1);
 	}
 	
-	pos = strfind(editingString, "(w)", true);
+	pos = strfind(editingString, "<w>", true);
 	while(pos != -1)
 	{
 		strdel(editingString, pos, pos + 3);
 		strins(editingString, "~w~", pos);
 
-		pos = strfind(editingString, "(w)", true, pos + 3);
+		pos = strfind(editingString, "<w>", true, pos + 3);
 	}
 	
-	pos = strfind(editingString, "(b)", true);
+	pos = strfind(editingString, "<b>", true);
 	while(pos != -1)
 	{
 		strdel(editingString, pos, pos + 3);
 		strins(editingString, "~b~", pos);
 
-		pos = strfind(editingString, "(b)", true, pos + 3);
+		pos = strfind(editingString, "<b>", true, pos + 3);
 	}
 	
-	pos = strfind(editingString, "(g)", true);
+	pos = strfind(editingString, "<g>", true);
 	while(pos != -1)
 	{
 		strdel(editingString, pos, pos + 3);
 		strins(editingString, "~g~", pos);
 
-		pos = strfind(editingString, "(g)", true, pos + 3);
+		pos = strfind(editingString, "<g>", true, pos + 3);
 	}
 	
-	pos = strfind(editingString, "(r)", true);
+	pos = strfind(editingString, "<r>", true);
 	while(pos != -1)
 	{
 		strdel(editingString, pos, pos + 3);
 		strins(editingString, "~r~", pos);
 		
-		pos = strfind(editingString, "(r)", true, pos + 3);
+		pos = strfind(editingString, "<r>", true, pos + 3);
 	}
 	
-	pos = strfind(editingString, "(p)", true);
+	pos = strfind(editingString, "<p>", true);
 	while(pos != -1)
 	{
 		strdel(editingString, pos, pos + 3);
 		strins(editingString, "~p~", pos);
 
-		pos = strfind(editingString, "(p)", true, pos + 3);
+		pos = strfind(editingString, "<p>", true, pos + 3);
 	}
 	
-	pos = strfind(editingString, "(y)", true);
+	pos = strfind(editingString, "<y>", true);
 	while(pos != -1)
 	{
 		strdel(editingString, pos, pos + 3);
 		strins(editingString, "~y~", pos);
 
-		pos = strfind(editingString, "(y)", true, pos + 3);
+		pos = strfind(editingString, "<y>", true, pos + 3);
 	}
 	
-	pos = strfind(editingString, "(h)", true);
+	pos = strfind(editingString, "<y>", true);
 	while(pos != -1)
 	{
 		strdel(editingString, pos, pos + 3);
 		strins(editingString, "~h~", pos);
 
-		pos = strfind(editingString, "(h)", true, pos + 3);
+		pos = strfind(editingString, "<y>", true, pos + 3);
 	}
 	return editingString;
 }
@@ -700,58 +700,58 @@ stock FormatLabelColors(givenString[])
 	new pos, editingString[128];
 	memcpy(editingString, givenString, 0, 128 * 4);
 
-	pos = strfind(editingString, "(w)", true);
+	pos = strfind(editingString, "<w>", true);
 	while(pos != -1)
 	{
 		strdel(editingString, pos, pos + 3);
 		strins(editingString, "{FFFFFF}", pos);
 
-		pos = strfind(editingString, "(w)", true, pos + 8);
+		pos = strfind(editingString, "<w>", true, pos + 8);
 	}
 
-	pos = strfind(editingString, "(b)", true);
+	pos = strfind(editingString, "<b>", true);
 	while(pos != -1)
 	{
 		strdel(editingString, pos, pos + 3);
 		strins(editingString, "{0000BB}", pos);
 
-		pos = strfind(editingString, "(b)", true, pos + 8);
+		pos = strfind(editingString, "<b>", true, pos + 8);
 	}
 
-	pos = strfind(editingString, "(g)", true);
+	pos = strfind(editingString, "<g>", true);
 	while(pos != -1)
 	{
 		strdel(editingString, pos, pos + 3);
 		strins(editingString, "{33AA33}", pos);
 
-		pos = strfind(editingString, "(g)", true, pos + 8);
+		pos = strfind(editingString, "<g>", true, pos + 8);
 	}
 
-	pos = strfind(editingString, "(r)", true);
+	pos = strfind(editingString, "<r>", true);
 	while(pos != -1)
 	{
 		strdel(editingString, pos, pos + 3);
 		strins(editingString, "{AA3333}", pos);
 
-		pos = strfind(editingString, "(r)", true, pos + 8);
+		pos = strfind(editingString, "<r>", true, pos + 8);
 	}
 
-	pos = strfind(editingString, "(p)", true);
+	pos = strfind(editingString, "<p>", true);
 	while(pos != -1)
 	{
 		strdel(editingString, pos, pos + 3);
 		strins(editingString, "{C2A2DA}", pos);
 
-		pos = strfind(editingString, "(p)", true, pos + 8);
+		pos = strfind(editingString, "<p>", true, pos + 8);
 	}
 
-	pos = strfind(editingString, "(y)", true);
+	pos = strfind(editingString, "<y>", true);
 	while(pos != -1)
 	{
 		strdel(editingString, pos, pos + 3);
 		strins(editingString, "{FFFF00}", pos);
 
-		pos = strfind(editingString, "(y)", true, pos + 8);
+		pos = strfind(editingString, "<y>", true, pos + 8);
 	}
 	return editingString;
 }
